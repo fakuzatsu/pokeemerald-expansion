@@ -883,7 +883,7 @@ static const union AnimCmd *const sSnowflakeAnimCmds[] =
 static const struct SpriteTemplate sSnowflakeSpriteTemplate =
 {
     .tileTag = TAG_NONE,
-    .paletteTag = PALTAG_WEATHER,
+    .paletteTag = 0x1201,
     .oam = &sSnowflakeSpriteOamData,
     .anims = sSnowflakeAnimCmds,
     .images = sSnowflakeSpriteImages,
@@ -1622,7 +1622,7 @@ static const union AnimCmd *const sAshSpriteAnimCmds[] =
 static const struct SpriteTemplate sAshSpriteTemplate =
 {
     .tileTag = GFXTAG_ASH,
-    .paletteTag = PALTAG_WEATHER,
+    .paletteTag = 0x1201,
     .oam = &sAshSpriteOamData,
     .anims = sAshSpriteAnimCmds,
     .images = NULL,

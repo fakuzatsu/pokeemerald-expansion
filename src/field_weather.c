@@ -156,11 +156,11 @@ void StartWeather(void)
 {
     if (!FuncIsActiveTask(Task_WeatherMain))
     {
-        u8 index = AllocSpritePalette(PALTAG_WEATHER);
+        u8 index = 15;
         CpuCopy32(gFogPalette, &gPlttBufferUnfaded[0x100 + index * 16], 32);
         BuildColorMaps();
         gWeatherPtr->contrastColorMapSpritePalIndex = index;
-        gWeatherPtr->weatherPicSpritePalIndex = AllocSpritePalette(PALTAG_WEATHER_2);
+        gWeatherPtr->weatherPicSpritePalIndex = index;
         gWeatherPtr->rainSpriteCount = 0;
         gWeatherPtr->curRainSpriteIndex = 0;
         gWeatherPtr->cloudSpritesCreated = 0;
