@@ -1,9 +1,22 @@
 Route134_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, Route134_OnResume
+	map_script MAP_SCRIPT_ON_TRANSITION, Route134_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route134_OnResume
 	.byte 0
+
+Route134_OnResume_Night:
+	setweather WEATHER_SHADE
+	return
+
+Route134_OnResume_Day:
+	setweather WEATHER_SUNNY
+	return
 
 Route134_OnResume:
 	setdivewarp MAP_UNDERWATER_ROUTE134, 8, 6
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route134_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route134_OnResume_Day
 	end
 
 Route134_EventScript_Jack::

@@ -18,6 +18,14 @@ LavaridgeTown_PokemonCenter_1F_EventScript_Nurse::
 	release
 	end
 
+LavaridgeTown_PokemonCenter_1F_EventScript_BattleMaster::
+	lock
+	faceplayer
+	msgbox LavaridgeTown_PokemonCenter_1F_Text_TheyTookMySpot, MSGBOX_DEFAULT
+	goto Common_EventScript_PkmnCenterBattleMaster
+	release
+	end
+
 LavaridgeTown_PokemonCenter_1F_EventScript_Youngster::
 	msgbox LavaridgeTown_PokemonCenter_1F_Text_HotSpringCanInvigorate, MSGBOX_NPC
 	end
@@ -30,8 +38,13 @@ LavaridgeTown_PokemonCenter_1F_EventScript_Gentleman::
 	msgbox LavaridgeTown_PokemonCenter_1F_Text_TrainersShouldRestToo, MSGBOX_NPC
 	end
 
+LavaridgeTown_PokemonCenter_1F_Text_TheyTookMySpot:
+	.string "…I can't stand in my usual spot here…\n"
+	.string "… … …\p"
+	.string "Oh?…$"
+
 LavaridgeTown_PokemonCenter_1F_Text_TrainersPokemonSpendTimeTogether:
-	.string "I think POKéMON get closer to their\n"
+	.string "I think Pokémon get closer to their\n"
 	.string "TRAINERS if they spend time together.\p"
 	.string "The longer the better.\n"
 	.string "That's what I think.$"
@@ -39,12 +52,12 @@ LavaridgeTown_PokemonCenter_1F_Text_TrainersPokemonSpendTimeTogether:
 LavaridgeTown_PokemonCenter_1F_Text_HotSpringCanInvigorate:
 	.string "It's sort of magical how just sitting\n"
 	.string "in a hot-spring pool can invigorate.\p"
-	.string "I wish I could let my POKéMON\n"
+	.string "I wish I could let my Pokémon\n"
 	.string "soak, too.$"
 
 LavaridgeTown_PokemonCenter_1F_Text_TrainersShouldRestToo:
 	.string "Hohoho! Hey, kid, you can reach\n"
 	.string "the hot springs from here.\p"
-	.string "If POKéMON are getting rest, so too\n"
+	.string "If Pokémon are getting rest, so too\n"
 	.string "should their TRAINERS.$"
 

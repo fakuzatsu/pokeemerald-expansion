@@ -3,7 +3,39 @@
 .set LOCALID_GRUNT_3, 14
 
 Route121_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route121_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Route121_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route121_OnResume
 	.byte 0
+
+Route121_OnTransition:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route121_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route121_OnTransition_Day
+	end
+
+Route121_OnTransition_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	clearflag FLAG_HIDE_TRAINER_DAYNIGHT
+	return
+
+Route121_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_SHADE
+	setflag FLAG_HIDE_TRAINER_DAYNIGHT
+	return
+
+Route121_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	return
+
+Route121_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route121_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route121_OnResume_Day
+	end
 
 Route121_EventScript_Woman::
 	msgbox Route121_Text_AheadLoomsMtPyre, MSGBOX_NPC
@@ -179,7 +211,7 @@ Route121_Text_OkayMoveOutToMtPyre:
 Route121_Text_AheadLoomsMtPyre:
 	.string "Ahead looms MT. PYRE…\p"
 	.string "It is a natural monument to the spirits \n"
-	.string "of departed POKéMON…$"
+	.string "of departed Pokémon…$"
 
 Route121_Text_MtPyrePierSign:
 	.string "MT. PYRE PIER\p"
@@ -187,6 +219,6 @@ Route121_Text_MtPyrePierSign:
 	.string "The words are barely legible…$"
 
 Route121_Text_SafariZoneSign:
-	.string "“Filled with rare POKéMON!”\n"
+	.string "“Filled with rare Pokémon!”\n"
 	.string "SAFARI ZONE$"
 

@@ -1,18 +1,38 @@
 Route115_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, Route115_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, Route115_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route115_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, Route115_OnResume
 	.byte 0
+
+Route115_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route115_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route115_OnResume_Day
+	end
+
+Route115_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_SHADE
+	end
+
+Route115_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	end
 
 Route115_OnLoad:
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_WEST, AbnormalWeather_EventScript_PlaceTilesRoute115West
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_EventScript_PlaceTilesRoute115East
+	goto_if_eq VAR_RESULT, 1, Route115_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route115_OnResume_Day
 	end
 
 Route115_OnTransition:
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_WEST, AbnormalWeather_StartGroudonWeather
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_StartGroudonWeather
+	goto_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_WEST, AbnormalWeather_StartGroudonWeather
+	goto_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_StartGroudonWeather
+	goto_if_eq VAR_RESULT, 1, Route115_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route115_OnResume_Day
 	end
 
 Route115_OnFrame:
@@ -132,7 +152,7 @@ Route115_EventScript_Marlene::
 Route115_Text_NeverKnowWhenCavePokemonWillAppear:
 	.string "Exploring a cave isn't like walking\n"
 	.string "on a road.\p"
-	.string "You never know when wild POKéMON will\n"
+	.string "You never know when wild Pokémon will\n"
 	.string "appear. It's full of suspense.$"
 
 Route115_Text_RouteSignRustboro:

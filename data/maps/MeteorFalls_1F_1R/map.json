@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -143,6 +143,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MeteorFalls_1F_1R_EventScript_ProfCozmo",
       "flag": "FLAG_HIDE_METEOR_FALLS_1F_1R_COZMO"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_STEVEN",
+      "x": 22,
+      "y": 18,
+      "elevation": 4,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MeteorFalls_1F_1R_EventScript_TalkSteven",
+      "flag": "FLAG_HIDE_METEORFALLS_STEVEN"
     }
   ],
   "warp_events": [
@@ -197,7 +210,16 @@
       "elevation": 4,
       "var": "VAR_METEOR_FALLS_STATE",
       "var_value": "0",
-      "script": "MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene"
+      "script": "MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene1"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_METEOR_FALLS_STATE",
+      "var_value": "0",
+      "script": "MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene2"
     }
   ],
   "bg_events": [

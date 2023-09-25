@@ -3,6 +3,7 @@
 .set LOCALID_ARCHIE, 7
 .set LOCALID_AQUA_GRUNT_1, 8
 .set LOCALID_AQUA_GRUNT_2, 9
+.set LOCALID_STEVEN, 11
 
 MeteorFalls_1F_1R_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MeteorFalls_1F_1R_OnLoad
@@ -18,6 +19,14 @@ MeteorFalls_1F_1R_EventScript_OpenStevensCave::
 	setmetatile 4, 2, METATILE_MeteorFalls_CaveEntrance_Bottom, FALSE
 	setmetatile 5, 2, METATILE_MeteorFalls_CaveEntrance_Right, TRUE
 	return
+
+MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene1::
+	setvar VAR_0x8008, 1
+	goto MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene
+
+MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene2::
+	setvar VAR_0x8008, 2
+	goto MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene
 
 MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	lockall
@@ -40,12 +49,51 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	msgbox MeteorFalls_1F_1R_Text_DontExpectMercyFromMagma, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_MAGMA_GRUNT_1, MeteorFalls_1F_1R_Movement_MagmaGruntApproachPlayer
+	applymovement LOCALID_MAGMA_GRUNT_2, MeteorFalls_1F_1R_Movement_MagmaGrunt2ApproachPlayer
 	waitmovement 0
+	delay 30
+	addobject LOCALID_STEVEN
+	setobjectxy LOCALID_STEVEN, 22, 18
+	msgbox MeteorFalls_1F_1R_Text_IDontThinkSo, MSGBOX_DEFAULT
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_MAGMA_GRUNT_2, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_MAGMA_GRUNT_2, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	call_if_eq VAR_0x8008, 1, MeteorFalls_1F_1R_Movement_StevenApproaches1
+	call_if_eq VAR_0x8008, 2, MeteorFalls_1F_1R_Movement_StevenApproaches2
+	applymovement LOCALID_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_MAGMA_GRUNT_2, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox MeteorFalls_1F_1R_Text_IllFaceYouToo, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	delay 30
+	applymovement LOCALID_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFasterUp
+	msgbox MeteorFalls_1F_1R_Text_FineHaveItYourWay, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAGMA_GRUNT_1, MeteorFalls_1F_1R_Movement_MagmaGruntApproachForBattle
+	applymovement LOCALID_MAGMA_GRUNT_2, MeteorFalls_1F_1R_Movement_MagmaGrunt2ApproachForBattle
+	waitmovement 0
+	trainerbattle_no_intro TRAINER_MAGMA_GRUNT_METEORFALLS, MeteorFalls_1F_1R_Text_GruntDefeat
+	applymovement LOCALID_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_MAGMA_GRUNT_2, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	delay 30
+	applymovement LOCALID_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_MAGMA_GRUNT_2, Common_Movement_WalkInPlaceFasterUp
+	msgbox MeteorFalls_1F_1R_Text_WeWontStop, MSGBOX_DEFAULT
+	closemessage
+	delay 30
 	msgbox MeteorFalls_1F_1R_Text_HoldItRightThereMagma, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	applymovement LOCALID_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFasterLeft
 	applymovement LOCALID_MAGMA_GRUNT_2, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	addobject LOCALID_ARCHIE
 	addobject LOCALID_AQUA_GRUNT_1
@@ -60,14 +108,14 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua, MSGBOX_DEFAULT
 	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, MeteorFalls_1F_1R_Movement_PushPlayerOutOfWay
-	applymovement LOCALID_MAGMA_GRUNT_1, MeteorFalls_1F_1R_Movement_MagmaGrunt1Exit
-	applymovement LOCALID_MAGMA_GRUNT_2, MeteorFalls_1F_1R_Movement_MagmaGrunt2Exit
-	waitmovement 0
+	call_if_eq VAR_0x8008, 1, MeteorFalls_1F_1R_Movement_MagmaHighTailsIt1
+	call_if_eq VAR_0x8008, 2, MeteorFalls_1F_1R_Movement_MagmaHighTailsIt2
 	removeobject LOCALID_MAGMA_GRUNT_1
 	removeobject LOCALID_MAGMA_GRUNT_2
 	applymovement LOCALID_ARCHIE, MeteorFalls_1F_1R_Movement_ArchieApproachPlayer
 	waitmovement 0
+	call_if_eq VAR_0x8008, 2, MeteorFalls_1F_1R_Movement_ArchieFacePlayer
+	call_if_eq VAR_0x8008, 1, MeteorFalls_1F_1R_Movement_EveryoneFaceArchie
 	msgbox MeteorFalls_1F_1R_Text_ArchieSeenYouBefore, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_AQUA_GRUNT_1, MeteorFalls_1F_1R_Movement_AquaGrunt1ApproachArchie
@@ -77,8 +125,8 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_ArchieYesNoTellingWhatMagmaWillDo, MSGBOX_DEFAULT
-	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFasterLeft
-	waitmovement 0
+	call_if_eq VAR_0x8008, 2, MeteorFalls_1F_1R_Movement_ArchieFacePlayer
+	call_if_eq VAR_0x8008, 1, MeteorFalls_1F_1R_Movement_ArchieFacePlayer2
 	msgbox MeteorFalls_1F_1R_Text_ArchieFarewell, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_ARCHIE, MeteorFalls_1F_1R_Movement_ArchieExit
@@ -89,6 +137,7 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	removeobject LOCALID_ARCHIE
 	removeobject LOCALID_AQUA_GRUNT_1
 	removeobject LOCALID_AQUA_GRUNT_2
+	clearflag FLAG_HIDE_METEORFALLS_STEVEN
 	setflag FLAG_HIDE_ROUTE_112_TEAM_MAGMA
 	setflag FLAG_MET_ARCHIE_METEOR_FALLS
 	setflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
@@ -96,14 +145,69 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	releaseall
 	end
 
+MeteorFalls_1F_1R_Movement_StevenApproaches1::
+	applymovement LOCALID_STEVEN, MeteorFalls_1F_1R_Movement_StevenApproachPlayer1
+	waitmovement 0
+	return
+
+MeteorFalls_1F_1R_Movement_StevenApproaches2::
+	applymovement LOCALID_STEVEN, MeteorFalls_1F_1R_Movement_StevenApproachPlayer2
+	waitmovement 0
+	return
+
+MeteorFalls_1F_1R_Movement_MagmaHighTailsIt1::
+	applymovement OBJ_EVENT_ID_PLAYER, MeteorFalls_1F_1R_Movement_PushPlayerOutOfWay
+	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_MAGMA_GRUNT_1, MeteorFalls_1F_1R_Movement_MagmaGrunt1Exit
+	applymovement LOCALID_MAGMA_GRUNT_2, MeteorFalls_1F_1R_Movement_MagmaGrunt2Exit
+	waitmovement 0
+	return
+
+MeteorFalls_1F_1R_Movement_MagmaHighTailsIt2::
+	applymovement LOCALID_STEVEN, MeteorFalls_1F_1R_Movement_PushStevenOutOfWay
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_MAGMA_GRUNT_1, MeteorFalls_1F_1R_Movement_MagmaGrunt1Exit
+	applymovement LOCALID_MAGMA_GRUNT_2, MeteorFalls_1F_1R_Movement_MagmaGrunt2Exit
+	waitmovement 0
+	return
+
+MeteorFalls_1F_1R_Movement_ArchieFacePlayer::
+	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	return
+
+MeteorFalls_1F_1R_Movement_ArchieFacePlayer2::
+	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	return
+
+MeteorFalls_1F_1R_Movement_EveryoneFaceArchie::
+	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	return
+
 MeteorFalls_1F_1R_Movement_MagmaGruntApproachPlayer:
-	walk_right
 	walk_right
 	walk_in_place_faster_up
 	step_end
 
-MeteorFalls_1F_1R_Movement_MagmaGrunt1Exit:
+MeteorFalls_1F_1R_Movement_MagmaGrunt2ApproachPlayer:
+	walk_up
+	step_end
+
+MeteorFalls_1F_1R_Movement_MagmaGruntApproachForBattle:
 	walk_fast_up
+	step_end
+
+MeteorFalls_1F_1R_Movement_MagmaGrunt2ApproachForBattle:
+	walk_fast_up
+	step_end
+
+MeteorFalls_1F_1R_Movement_MagmaGrunt1Exit:
+	walk_fast_right
 	walk_fast_up
 	walk_fast_right
 	walk_fast_right
@@ -116,8 +220,6 @@ MeteorFalls_1F_1R_Movement_MagmaGrunt1Exit:
 
 MeteorFalls_1F_1R_Movement_MagmaGrunt2Exit:
 	walk_fast_up
-	walk_fast_up
-	walk_fast_up
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
@@ -125,6 +227,32 @@ MeteorFalls_1F_1R_Movement_MagmaGrunt2Exit:
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
+	step_end
+
+MeteorFalls_1F_1R_Movement_StevenApproachPlayer1:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_left
+	walk_left
+	walk_down
+	step_end
+
+MeteorFalls_1F_1R_Movement_StevenApproachPlayer2:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_in_place_faster_down
 	step_end
 
 MeteorFalls_1F_1R_Movement_ArchieArrive:
@@ -164,6 +292,7 @@ MeteorFalls_1F_1R_Movement_ArchieExit:
 	walk_right
 	walk_right
 	walk_right
+	walk_right
 	step_end
 
 MeteorFalls_1F_1R_Movement_ArchieApproachPlayer:
@@ -171,12 +300,12 @@ MeteorFalls_1F_1R_Movement_ArchieApproachPlayer:
 	walk_right
 	walk_up
 	walk_up
-	walk_in_place_faster_left
 	step_end
 
 MeteorFalls_1F_1R_Movement_AquaGrunt1Exit:
 	walk_up
 	walk_up
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -204,6 +333,7 @@ MeteorFalls_1F_1R_Movement_AquaGrunt2Exit:
 	walk_right
 	walk_right
 	walk_right
+	walk_right
 	step_end
 
 MeteorFalls_1F_1R_Movement_AquaGrunt2ApproachArchie:
@@ -215,10 +345,16 @@ MeteorFalls_1F_1R_Movement_AquaGrunt2ApproachArchie:
 
 MeteorFalls_1F_1R_Movement_PushPlayerOutOfWay:
 	walk_in_place_faster_down
-	delay_4
-	walk_in_place_faster_right
 	lock_facing_direction
-	walk_left
+	walk_up
+	unlock_facing_direction
+	face_right
+	step_end
+
+MeteorFalls_1F_1R_Movement_PushStevenOutOfWay:
+	walk_in_place_faster_down
+	lock_facing_direction
+	walk_up
 	unlock_facing_direction
 	face_right
 	step_end
@@ -237,6 +373,13 @@ MeteorFalls_1F_1R_EventScript_MetCozmo::
 	release
 	end
 
+MeteorFalls_1F_1R_EventScript_TalkSteven::
+	lock
+	faceplayer
+	msgbox MeteorFalls_1F_1R_Text_StevenSaysYouShouldHeadAfterThem, MSGBOX_DEFAULT
+	release
+	end
+
 MeteorFalls_1F_1R_Text_WithThisMeteorite:
 	.string "Hehehe!\p"
 	.string "With this METEORITE, that thing in\n"
@@ -246,17 +389,37 @@ MeteorFalls_1F_1R_Text_DontExpectMercyFromMagma:
 	.string "Heh?\p"
 	.string "I don't know who you are, but if you get\n"
 	.string "in the way of TEAM MAGMA, don't\l"
-	.string "expect any mercy!$"
+	.string "expect any mercy!\p"
+	.string "We'll both take you on!$"
+
+MeteorFalls_1F_1R_Text_IDontThinkSo:
+	.string "???: Hold it right there!$"
+
+MeteorFalls_1F_1R_Text_IllFaceYouToo:
+	.string "STEVEN: One of you will be facing off\n"
+	.string "against me.$"
+
+MeteorFalls_1F_1R_Text_FineHaveItYourWay:
+	.string "Fine! Have it your way!\n"
+	.string "We'll each take one of you on!$"
+
+MeteorFalls_1F_1R_Text_GruntDefeat:
+	.string "…I lost?$"
+
+MeteorFalls_1F_1R_Text_WeWontStop:
+	.string "We might have lost, but that doesn't\n"
+	.string "matter to us!\p"
+	.string "Yeah! that can't stop us!$"
 
 MeteorFalls_1F_1R_Text_HoldItRightThereMagma:
-	.string "Hold it right there, TEAM MAGMA!\p"
+	.string "???: Hold it right there, TEAM MAGMA!\p"
 	.string "You're badly mistaken if you think you\n"
 	.string "can have your way with the world!$"
 
 MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua:
 	.string "Hehehe!\n"
 	.string "Even TEAM AQUA joins us!\p"
-	.string "But it's too much trouble to deal with\n"
+	.string "But it's getting packed in here with\n"
 	.string "you all…\p"
 	.string "Heh, it doesn't matter!\p"
 	.string "We've got the METEORITE, so off to\n"
@@ -310,6 +473,17 @@ MeteorFalls_1F_1R_Text_MeetProfCozmo:
 	.string "METEORITE at MT. CHIMNEY?$"
 
 MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney:
-	.string "PROF. COZMO: But that TEAM MAGMA…\p"
+	.string "Prof. COZMO: But that TEAM MAGMA…\p"
 	.string "What are they going to do with that\n"
 	.string "METEORITE at MT. CHIMNEY?$"
+
+MeteorFalls_1F_1R_Text_StevenSaysYouShouldHeadAfterThem:
+	.string "STEVEN: Well met {PLAYER}.\p"
+	.string "I happened to come here looking for\n"
+	.string "PROFESSOR COSMO.\p"
+	.string "Looks like I showed up just in time!\p"
+	.string "I'll make sure the PROFESSOR is ok.\n"
+	.string "You should head after those goons.\p"
+	.string "There is no telling what they are\n"
+	.string "up to at MT. CHIMNEY.$"
+

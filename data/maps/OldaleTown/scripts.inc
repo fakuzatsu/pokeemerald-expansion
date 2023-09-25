@@ -4,6 +4,8 @@
 
 OldaleTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Oldale_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Oldale_OnResume
 	.byte 0
 
 OldaleTown_OnTransition:
@@ -12,6 +14,32 @@ OldaleTown_OnTransition:
 	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
 	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
 	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Oldale_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Oldale_OnTransition_Day
+	end
+
+Oldale_OnTransition_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	clearflag FLAG_HIDE_TRAINER_DAYNIGHT
+	end
+
+Oldale_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Oldale_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Oldale_OnResume_Day
+	end
+
+Oldale_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_SHADE
+	setflag FLAG_HIDE_TRAINER_DAYNIGHT
+	end
+
+Oldale_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
 	end
 
 @ This script seems pointless because nothing uses VAR_OLDALE_TOWN_STATE
@@ -25,7 +53,7 @@ OldaleTown_EventScript_BlockWestEntrance::
 	return
 
 OldaleTown_EventScript_MoveMartEmployee::
-	setobjectxyperm LOCALID_MART_EMPLOYEE, 13, 14
+	setobjectxyperm LOCALID_MART_EMPLOYEE, 12, 14
 	setobjectmovementtype LOCALID_MART_EMPLOYEE, MOVEMENT_TYPE_FACE_DOWN
 	return
 
@@ -102,6 +130,7 @@ OldaleTown_Movement_EmployeeEast:
 	walk_up
 	walk_up
 	walk_up
+	walk_right
 	walk_in_place_faster_down
 	step_end
 
@@ -115,6 +144,7 @@ OldaleTown_Movement_EmployeeSouth:
 	walk_up
 	walk_up
 	walk_up
+	walk_right
 	walk_in_place_faster_down
 	step_end
 
@@ -126,6 +156,7 @@ OldaleTown_Movement_EmployeeNorth:
 	walk_up
 	walk_up
 	walk_up
+	walk_right
 	walk_in_place_faster_down
 	step_end
 
@@ -153,6 +184,9 @@ OldaleTown_Movement_PlayerEast:
 	walk_up
 	walk_up
 	walk_up
+	delay_16
+	walk_right
+	walk_in_place_faster_up
 	step_end
 
 OldaleTown_Movement_PlayerSouth:
@@ -165,6 +199,9 @@ OldaleTown_Movement_PlayerSouth:
 	walk_up
 	walk_up
 	walk_up
+	delay_16
+	walk_right
+	walk_in_place_faster_up
 	step_end
 
 OldaleTown_Movement_PlayerNorth:
@@ -175,6 +212,9 @@ OldaleTown_Movement_PlayerNorth:
 	walk_up
 	walk_up
 	walk_up
+	delay_16
+	walk_right
+	walk_in_place_faster_up
 	step_end
 
 OldaleTown_Movement_Unknown2:
@@ -343,55 +383,103 @@ OldaleTown_Movement_ReturnToOriginalPosition:
 	walk_left
 	step_end
 
+OldaleTown_EventScript_CandyMan::
+	lock
+	faceplayer
+	goto_if_set FLAG_CANDYFACTORY_NPC_ITEM_GIFTED, OldaleTown_EventScript_AlreadyGifted
+	copyvar VAR_0x8009, VAR_RESULT
+	msgbox OldaleTown_Text_DoYouLikeCheating, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, OldaleTown_EventScript_GiveInfiniteCandy
+	call_if_eq VAR_RESULT, NO, OldaleTown_EventScript_DontGiveInfiniteCandy
+	release
+	end
+
+OldaleTown_EventScript_GiveInfiniteCandy::
+	msgbox OldaleTown_Text_CheatingIsBased, MSGBOX_DEFAULT
+	giveitem ITEM_INFINITE_CANDY
+	setflag FLAG_CANDYFACTORY_NPC_ITEM_GIFTED
+	release
+	end
+
+OldaleTown_EventScript_DontGiveInfiniteCandy::
+	msgbox OldaleTown_Text_DeclineOffer, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_EventScript_AlreadyGifted::
+	msgbox OldaleTown_Text_AlreadyGifted, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_Text_DoYouLikeCheating:
+	.string "Hey kid. Do you like cheating\n"
+	.string "in video games?$"
+
+OldaleTown_Text_CheatingIsBased:
+	.string "Nice. Cheating is based.\n"
+	.string "You can have this.$"
+
+OldaleTown_Text_DeclineOffer:
+	.string "No? That's fine. Enjoying\n"
+	.string "a game as intended is based too.$"
+
+OldaleTown_Text_AlreadyGifted:
+	.string "Hope you're sticking to what\n"
+	.string "you believe in.\p"
+	.string "Don't go getting into trouble.\p"
+	.string "… … …\p"
+	.string "Oh, and don't tell anybody\n"
+	.string "that I gave you that …Ok?$"
+
 OldaleTown_Text_SavingMyProgress:
 	.string "I want to take a rest, so I'm saving my\n"
 	.string "progress.$"
 
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Hi!\n"
-	.string "I work at a POKéMON MART.\p"
+	.string "I work at a Pokémon MART.\p"
 	.string "Can I get you to come with me?$"
 
 OldaleTown_Text_ThisIsAPokemonMart:
-	.string "This is a POKéMON MART.\n"
+	.string "This is a Pokémon MART.\n"
 	.string "Just look for our blue roof.\p"
 	.string "We sell a variety of goods including\n"
-	.string "POKé BALLS for catching POKéMON.\p"
+	.string "Poké Balls for catching Pokémon.\p"
 	.string "Here, I'd like you to have this as\n"
 	.string "a promotional item.$"
 
 OldaleTown_Text_PotionExplanation:
 	.string "A POTION can be used anytime, so it's\n"
-	.string "even more useful than a POKéMON CENTER\l"
+	.string "even more useful than a Pokémon CENTER\l"
 	.string "in certain situations.$"
 
 OldaleTown_Text_WaitDontComeInHere:
 	.string "Aaaaah! Wait!\n"
 	.string "Please don't come in here.\p"
 	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
+	.string "a rare Pokémon!\p"
 	.string "Wait until I finish sketching\n"
 	.string "them, okay?$"
 
 OldaleTown_Text_DiscoveredFootprints:
 	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
+	.string "a rare Pokémon!\p"
 	.string "Wait until I finish sketching\n"
 	.string "them, okay?$"
 
 OldaleTown_Text_FinishedSketchingFootprints:
 	.string "I finished sketching the footprints of\n"
-	.string "a rare POKéMON.\p"
+	.string "a rare Pokémon.\p"
 	.string "But it turns out they were only my\n"
 	.string "own footprints…$"
 
 OldaleTown_Text_MayLetsGoBack:
-	.string "MAY: {PLAYER}{KUN}!\n"
+	.string "May: {PLAYER}{KUN}!\n"
 	.string "Over here!\l"
 	.string "Let's hurry home!$"
 
 OldaleTown_Text_BrendanLetsGoBack:
-	.string "BRENDAN: I'm heading back to my dad's\n"
+	.string "Brendan: I'm heading back to my dad's\n"
 	.string "LAB now.\l"
 	.string "{PLAYER}, you should hustle back, too.$"
 

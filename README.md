@@ -1,43 +1,45 @@
-# pokeemerald Expansion
+# Verdant Pokeemerald Base
+*The Pokeemerald base with Verdant Emerald changes*
 
-## What is the pokeemerald Expansion?
+A fork of Pokeemerald that breathes extra life into Pokemon Emerald. With new ways to adventure through the game: alternate paths on existing routes, brand new areas with the same Hoenn feel, and new Pokemon encounters never before seen in the region.
 
-The Pokeemerald Expansion is a collection of feature branches that can be integrated into existing [pokeemerald](https://github.com/pret/pokeemerald) projects.
+## Installation
 
-## What features are included?
-- Upgraded battle engine.
-    - Fairy Type.
-    - Physical/Special/Status Category Split.
-    - New moves and abilities up to SwSh.
-    - Options to change behaviors and data by generation.
-    - Mega Evolution and Primal Reversion
-    - Z-Moves
-- Pokémon Species from newer Generations (with the option to disable them if needed).
-    - Updates Hoenn's Regional Dex to match ORAS'.
-    - Updates National Dex incorporating all the new species.
-    - Option to change base stats by generation.
-    - New evolution methods.
-    - Hidden Abilities data (How to make them available is up to the user).
-- Items from newer Generations and updated item effects for battle and field use.
+1. Follow this guide to download and install the linux subsystem and get Ubuntu working on your Windows machine: https://github.com/pret/pokeemerald/blob/master/INSTALL.md#windows-1011-wsl1
 
-Certain mechanics, moves, abilities and species sprites are missing. For more information, see [the project's milestones](https://github.com/rh-hideout/pokeemerald-expansion/milestones).
+> **ONLY FOLLOW UP TO THE INSTALLATION STEPS. DO NOT CLONE POKEEMERALD**
 
-### [Documentation on features can be found here](https://github.com/rh-hideout/pokeemerald-expansion/wiki)
+2. Instead of cloning the standard pokeemerald, clone our fork:
 
-## Who maintains the project?
+```
+git clone https://github.com/fakuzatsu/verdantemerald
+```
 
-The project was originally started by DizzyEgg alongside other contributors.
+> Cloning our base should also link your local repo to the remote repo and keep you up to date with our changes.
 
-The project has now gotten larger and DizzyEgg is now maintaining the project as part of the ROM Hacking Hideout community. Some members of this community are taking on larger roles to help maintain the project.
+3. Make sure you are in the root directory and can see our pokeemerald file (`ls` to see files in the current directory). Then, run the following:
 
-### Please consider crediting the entire [list of contributors](https://github.com/rh-hideout/pokeemerald-expansion/wiki/Credits) in your project, as they have all worked hard to develop this project :)
+```
+git clone https://github.com/pret/agbcc
+cd agbcc
+./build.sh
+./install.sh ../pokeemerald
+```
 
-## Can I contribute even if I'm not a member of ROM Hacking Hideout?
+## VSCode and Extensions
 
-Yes! Contributions are welcome via Pull Requests and they will be reviewed by maintainers. Don't feel discouraged if we take a bit to review your PR, we'll get to it.
+It is recommended to use VSCode to edit and add new files to our decomp, as well as Git. This will create a link between your own and the remote directory, which will let you push your changes for everyone to see using the Git tab on your VSCode. It will also let you pull changes that others have made, keeping us all up to date on development.
 
-## What is ROM Hacking Hideout?
+- [**VSCode**](https://code.visualstudio.com/) - An open source IDE for editing in multiple languages.
+- [**Git**](https://git-scm.com/downloads) - An engine for syncing your directory with ours.
+- [**Portscript**](https://marketplace.visualstudio.com/items?itemName=karathan.poryscript) - An extension for VSCode for decomp file compatibility.
 
-A Discord-based ROM hacking community that has many members who hack using the disassembly and decompilation projects for Pokémon. Quite a few contributors to the original feature branches by DizzyEgg were members of ROM Hacking Hideout. You can call it RHH for short!
+## Additional tools
 
-[Click here to join the RHH Discord Server!](https://discord.gg/6CzjAG6GZk)
+Tools for editing the decomp in order to add additional features, make changes to the world, impliment story and much more.
+
+- [**Porymap**](https://github.com/huderlem/porymap) - A map editor for the Pokémon generation 3 decompilation projects (pokeruby, pokeemerald, and pokefirered).
+    - And a [**Guide**](https://huderlem.github.io/porymap/)
+- [**Tilemap-Studio**](https://github.com/Rangi42/tilemap-studio) - A tilemap editor for Game Boy, GBC, GBA, NDS, SNES, Genesis, or TG16 projects.
+- [**Poryscript**](https://github.com/huderlem/poryscript) - Poryscript is a higher-level scripting language that compiles into the scripting language used in pokeemerald.
+    - Install by following [these steps](https://github.com/huderlem/poryscript#local-development). Ensuring you [install go](http://golang.org/) and are cloning the repo into the directory which contains your 'Pokeemerald' folder. ***Do not clone into the Pokeemerald folder***

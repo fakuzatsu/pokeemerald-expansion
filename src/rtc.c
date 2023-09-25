@@ -344,3 +344,17 @@ u32 RtcGetLocalDayCount(void)
 {
     return RtcGetDayCount(&sRtc);
 }
+
+void ToggleDayNight(void)
+{
+    struct Time localTimeOffset = gSaveBlock2Ptr->localTimeOffset;
+    int totalOffsetHours = localTimeOffset.hours;
+
+    totalOffsetHours += 12;
+    if (totalOffsetHours >= 24)
+    {
+        totalOffsetHours -= 24;
+    }
+
+    gSaveBlock2Ptr->localTimeOffset.hours = totalOffsetHours;
+}

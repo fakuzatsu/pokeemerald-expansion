@@ -1,9 +1,29 @@
 Route126_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route126_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Route126_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route126_OnResume
 	.byte 0
 
+Route126_OnResume_Night:
+	setweather WEATHER_RAIN
+	return
+
+Route126_OnResume_Day:
+	setweather WEATHER_SUNNY
+	return
+
+Route126_OnResume:
+	goto_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route126_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route126_OnResume_Day
+	end
+
 Route126_OnTransition:
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	goto_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route126_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route126_OnResume_Day
 	end
 
 Route126_EventScript_Barry::

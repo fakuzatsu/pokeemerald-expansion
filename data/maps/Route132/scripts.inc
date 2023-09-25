@@ -1,5 +1,22 @@
 Route132_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route132_OnResume
+	map_script MAP_SCRIPT_ON_RESUME, Route132_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route132_OnResume
 	.byte 0
+
+Route132_OnResume_Night:
+	setweather WEATHER_SHADE
+	return
+
+Route132_OnResume_Day:
+	setweather WEATHER_SUNNY
+	return
+
+Route132_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route132_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route132_OnResume_Day
+	end
 
 Route132_EventScript_Gilbert::
 	trainerbattle_single TRAINER_GILBERT, Route132_Text_GilbertIntro, Route132_Text_GilbertDefeat

@@ -50,9 +50,9 @@ NewMauville_Entrance_Text_DoorIsLocked:
 	.string "The door is locked.$"
 
 NewMauville_Entrance_Text_UseBasementKey:
-	.string "Use the BASEMENT KEY?$"
+	.string "Use the BASEMENT Key?$"
 
 NewMauville_Entrance_Text_UsedBasementKey:
-	.string "{PLAYER} used the BASEMENT KEY.\p"
+	.string "{PLAYER} used the BASEMENT Key.\p"
 	.string "The door opened!$"
 

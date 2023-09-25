@@ -17,6 +17,14 @@ MossdeepCity_PokemonCenter_1F_EventScript_Nurse::
 	release
 	end
 
+MossdeepCity_PokemonCenter_1F_EventScript_BattleMaster::
+	lock
+	faceplayer
+	msgbox MossdeepCity_PokemonCenter_1F_Text_BattleMaster_MyHomeTown, MSGBOX_DEFAULT
+	goto Common_EventScript_PkmnCenterBattleMaster
+	release
+	end
+
 MossdeepCity_PokemonCenter_1F_EventScript_Woman::
 	msgbox MossdeepCity_PokemonCenter_1F_Text_GymLeaderDuoFormidable, MSGBOX_NPC
 	end
@@ -24,6 +32,10 @@ MossdeepCity_PokemonCenter_1F_EventScript_Woman::
 MossdeepCity_PokemonCenter_1F_EventScript_Girl::
 	msgbox MossdeepCity_PokemonCenter_1F_Text_AbilitiesMightChangeMoves, MSGBOX_NPC
 	end
+
+MossdeepCity_PokemonCenter_1F_Text_BattleMaster_MyHomeTown:
+	.string "Welcome to my home town!\n"
+	.string "So…$"
 
 MossdeepCity_PokemonCenter_1F_Text_GymLeaderDuoFormidable:
 	.string "The GYM LEADERS in this town are\n"
@@ -33,6 +45,6 @@ MossdeepCity_PokemonCenter_1F_Text_GymLeaderDuoFormidable:
 
 MossdeepCity_PokemonCenter_1F_Text_AbilitiesMightChangeMoves:
 	.string "Depending on the special abilities of\n"
-	.string "POKéMON, some moves might change\l"
+	.string "Pokémon, some moves might change\l"
 	.string "or not work at all.$"
 

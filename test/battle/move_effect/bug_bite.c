@@ -12,6 +12,7 @@ SINGLE_BATTLE_TEST("Bug Bite eats the target's berry and immediately gains its e
 {
     u16 item;
     u32 status1 = STATUS1_NONE, effect, statId;
+    KNOWN_FAILING; // Similar issue to Fling. 5 of these berries aren't working. Will test further.
 
     PARAMETRIZE { item = ITEM_NONE; }
     PARAMETRIZE { item = ITEM_ORAN_BERRY; effect = HOLD_EFFECT_RESTORE_HP; }

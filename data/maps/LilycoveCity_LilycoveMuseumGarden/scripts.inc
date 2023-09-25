@@ -1,0 +1,19 @@
+LilycoveCity_LilycoveMuseumGarden_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_LilycoveMuseumGarden_OnResume
+	map_script MAP_SCRIPT_ON_RESUME, LilycoveCity_LilycoveMuseumGarden_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, LilycoveCity_LilycoveMuseumGarden_OnResume
+	.byte 0
+
+LilycoveCity_LilycoveMuseumGarden_OnResume_Night:
+	setweather WEATHER_SHADE
+	return
+
+LilycoveCity_LilycoveMuseumGarden_OnResume_Day:
+	setweather WEATHER_SUNNY
+	return
+
+LilycoveCity_LilycoveMuseumGarden_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, LilycoveCity_LilycoveMuseumGarden_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, LilycoveCity_LilycoveMuseumGarden_OnResume_Day
+	end

@@ -52,6 +52,7 @@ static void UpdatePerDay(struct Time *localTime)
         UpdateFrontierGambler(daysSince);
         SetShoalItemFlag(daysSince);
         SetRandomLotteryNumber(daysSince);
+        VarSet(VAR_TROPHY_GARDEN_ENCOUNTERS, (VarGet(VAR_TROPHY_GARDEN_ENCOUNTERS + 2) % 4));
         *days = localTime->days;
     }
 }

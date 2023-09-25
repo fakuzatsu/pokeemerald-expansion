@@ -22,6 +22,11 @@
       "map": "MAP_MAUVILLE_CITY",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_MAUVILLE_SANCTUARY",
+      "offset": 22,
+      "direction": "down"
     }
   ],
   "object_events": [
@@ -36,7 +41,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route117_EventScript_Woman",
-      "flag": "0"
+      "flag": "FLAG_HIDE_TRAINER_DAYNIGHT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
@@ -49,7 +54,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route117_EventScript_LittleBoy",
-      "flag": "0"
+      "flag": "FLAG_HIDE_TRAINER_DAYNIGHT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
@@ -119,7 +124,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M",
       "x": 38,
-      "y": 16,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
       "movement_range_x": 8,
@@ -296,7 +301,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route117_EventScript_Girl",
-      "flag": "0"
+      "flag": "FLAG_HIDE_TRAINER_DAYNIGHT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
@@ -347,7 +352,9 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

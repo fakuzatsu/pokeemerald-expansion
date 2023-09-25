@@ -1,14 +1,29 @@
 PacifidlogTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, PacifidlogTown_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, PacifidlogTown_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, PacifidlogTown_OnResume
 	.byte 0
 
-PacifidlogTown_OnTransition:
-	setflag FLAG_VISITED_PACIFIDLOG_TOWN
-	end
+PacifidlogTown_OnResume_Night:
+	setweather WEATHER_SHADE
+	return
+
+PacifidlogTown_OnResume_Day:
+	setweather WEATHER_SUNNY
+	return
 
 PacifidlogTown_OnResume:
 	setstepcallback STEP_CB_PACIFIDLOG_BRIDGE
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, PacifidlogTown_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, PacifidlogTown_OnResume_Day
+	end
+
+PacifidlogTown_OnTransition:
+	setflag FLAG_VISITED_PACIFIDLOG_TOWN
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, PacifidlogTown_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, PacifidlogTown_OnResume_Day
 	end
 
 PacifidlogTown_EventScript_NinjaBoy::

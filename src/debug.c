@@ -41,6 +41,7 @@
 #include "pokemon_storage_system.h"
 #include "random.h"
 #include "region_map.h"
+#include "rtc.h"
 #include "script.h"
 #include "script_pokemon_util.h"
 #include "sound.h"
@@ -112,6 +113,7 @@ enum { // Flags
     DEBUG_FLAG_MENU_ITEM_TRAINER_SEE_ONOFF,
     DEBUG_FLAG_MENU_ITEM_BAG_USE_ONOFF,
     DEBUG_FLAG_MENU_ITEM_CATCHING_ONOFF,
+    DEBUG_FLAG_MENU_ITEM_MOVEREMINDER_ONOFF,
 };
 enum { // Vars
     DEBUG_VARS_MENU_ITEM_VARS,
@@ -243,6 +245,7 @@ static void DebugAction_Flags_EncounterOnOff(u8 taskId);
 static void DebugAction_Flags_TrainerSeeOnOff(u8 taskId);
 static void DebugAction_Flags_BagUseOnOff(u8 taskId);
 static void DebugAction_Flags_CatchingOnOff(u8 taskId);
+static void DebugAction_Flags_MoveReminderOnOff(u8 taskId);
 
 static void DebugAction_Vars_Vars(u8 taskId);
 static void DebugAction_Vars_Select(u8 taskId);
@@ -307,7 +310,7 @@ static const u8 sDebugText_Give[] =      _("Give X");
 static const u8 sDebugText_Sound[] =     _("Sound");
 static const u8 sDebugText_Cancel[] =    _("Cancel");
 // Script menu
-static const u8 sDebugText_Util_Script_1[] = _("Script 1");
+static const u8 sDebugText_Util_Script_1[] = _("Change Time");
 static const u8 sDebugText_Util_Script_2[] = _("Script 2");
 static const u8 sDebugText_Util_Script_3[] = _("Script 3");
 static const u8 sDebugText_Util_Script_4[] = _("Script 4");
@@ -349,6 +352,7 @@ static const u8 sDebugText_Flags_SwitchEncounter[] =    _("Encounter ON/OFF");
 static const u8 sDebugText_Flags_SwitchTrainerSee[] =   _("TrainerSee ON/OFF");
 static const u8 sDebugText_Flags_SwitchBagUse[] =       _("BagUse ON/OFF");
 static const u8 sDebugText_Flags_SwitchCatching[] =     _("Catching ON/OFF");
+static const u8 sDebugText_Flags_SwitchMoveReminder[] = _("Reminder ON/OFF");
 static const u8 sDebugText_Flags_Flag[] =               _("Flag: {STR_VAR_1}   \n{STR_VAR_2}                   \n{STR_VAR_3}");
 static const u8 sDebugText_Flags_FlagHex[] =            _("{STR_VAR_1}           \n0x{STR_VAR_2}             ");
 static const u8 sDebugText_Flags_FlagSet[] =            _("TRUE");
@@ -484,6 +488,7 @@ static const struct ListMenuItem sDebugMenu_Items_Flags[] =
     [DEBUG_FLAG_MENU_ITEM_TRAINER_SEE_ONOFF] = {sDebugText_Flags_SwitchTrainerSee,   DEBUG_FLAG_MENU_ITEM_TRAINER_SEE_ONOFF},
     [DEBUG_FLAG_MENU_ITEM_BAG_USE_ONOFF]     = {sDebugText_Flags_SwitchBagUse,       DEBUG_FLAG_MENU_ITEM_BAG_USE_ONOFF},
     [DEBUG_FLAG_MENU_ITEM_CATCHING_ONOFF]    = {sDebugText_Flags_SwitchCatching,     DEBUG_FLAG_MENU_ITEM_CATCHING_ONOFF},
+    [DEBUG_FLAG_MENU_ITEM_MOVEREMINDER_ONOFF] = {sDebugText_Flags_SwitchMoveReminder, DEBUG_FLAG_MENU_ITEM_MOVEREMINDER_ONOFF},
 };
 static const struct ListMenuItem sDebugMenu_Items_Vars[] =
 {
@@ -564,6 +569,7 @@ static void (*const sDebugMenu_Actions_Flags[])(u8) =
     [DEBUG_FLAG_MENU_ITEM_TRAINER_SEE_ONOFF] = DebugAction_Flags_TrainerSeeOnOff,
     [DEBUG_FLAG_MENU_ITEM_BAG_USE_ONOFF]     = DebugAction_Flags_BagUseOnOff,
     [DEBUG_FLAG_MENU_ITEM_CATCHING_ONOFF]    = DebugAction_Flags_CatchingOnOff,
+    [DEBUG_FLAG_MENU_ITEM_MOVEREMINDER_ONOFF] = DebugAction_Flags_MoveReminderOnOff,
 };
 static void (*const sDebugMenu_Actions_Vars[])(u8) =
 {
@@ -1353,8 +1359,12 @@ static void DebugAction_Util_Clear_Boxes(u8 taskId)
 static void DebugAction_Util_Script_1(u8 taskId)
 {
     Debug_DestroyMenu_Full(taskId);
-    LockPlayerFieldControls();
-    ScriptContext_SetupScript(Debug_Script_1);
+    Overworld_ResetStateAfterDigEscRope();
+    ToggleDayNight();
+    ScriptContext_SetupScript(EventScript_ChangedTime);
+    RunOnResumeMapScript();
+    DoCurrentWeather();
+    DestroyTask(taskId);
 }
 static void DebugAction_Util_Script_2(u8 taskId)
 {
@@ -1655,6 +1665,15 @@ static void DebugAction_Flags_CatchingOnOff(u8 taskId)
         PlaySE(SE_PC_LOGIN);
     FlagToggle(B_FLAG_NO_CATCHING);
 #endif
+}
+static void DebugAction_Flags_MoveReminderOnOff(u8 taskId)
+{
+    // Sound effect
+    if (FlagGet(FLAG_RELEARN_AVAILABLE))
+        PlaySE(SE_PC_OFF);
+    else
+        PlaySE(SE_PC_LOGIN);
+    FlagToggle(FLAG_RELEARN_AVAILABLE);
 }
 
 // *******************************

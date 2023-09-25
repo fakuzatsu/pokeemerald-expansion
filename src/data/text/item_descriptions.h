@@ -3624,9 +3624,14 @@ static const u8 sWailmerPailDesc[] = _(
     "and plants.");
 
 static const u8 sPokeRadarDesc[] = _(
-    "A tool used to\n"
-    "search out Pokémon\n"
-    "hiding in grass.");
+    "A strange watch\n"
+    "infused with the\n"
+    "power of ROTOM.");
+
+static const u8 sInfiniteCandy[] = _(
+    "A Rare Candy that\n"
+    "seems to come back\n"
+    "whenever eaten.");
 
 static const u8 sPokeblockCaseDesc[] = _(
     "A case for holding\n"
@@ -3642,11 +3647,6 @@ static const u8 sPokeFluteDesc[] = _(
     "A sweet-sounding\n"
     "flute that awakens\n"
     "Pokémon.");
-
-static const u8 sFameCheckerDesc[] = _(
-    "Stores information\n"
-    "on famous people\n"
-    "for instant recall.");
 
 static const u8 sTeachyTVDesc[] = _(
     "A TV set tuned to\n"
@@ -3781,7 +3781,7 @@ static const u8 sLiftKeyDesc[] = _(
 static const u8 sSilphScopeDesc[] = _(
     "Silph Co's scope\n"
     "makes unseeable\n"
-    "POKéMON visible.");
+    "Pokémon visible.");
 
 static const u8 sTriPassDesc[] = _(
     "A pass for ferries\n"

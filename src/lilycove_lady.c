@@ -81,9 +81,6 @@ void ResetLilycoveLadyForRecordMix(void)
 {
     switch (GetLilycoveLadyId())
     {
-    case LILYCOVE_LADY_QUIZ:
-        ResetQuizLadyForRecordMix();
-        break;
     case LILYCOVE_LADY_FAVOR:
         ResetFavorLadyForRecordMix();
         break;

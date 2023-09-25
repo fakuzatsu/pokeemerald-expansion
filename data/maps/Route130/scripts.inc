@@ -1,6 +1,23 @@
 Route130_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route130_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Route130_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route130_OnResume
 	.byte 0
+
+Route130_OnResume_Night:
+	setweather WEATHER_RAIN
+	return
+
+Route130_OnResume_Day:
+	setweather WEATHER_SUNNY
+	return
+
+Route130_OnResume:
+	goto_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route130_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route130_OnResume_Day
+	end
 
 Route130_OnTransition:
 	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, Route130_EventScript_CheckSetAbnormalWeather
@@ -22,6 +39,9 @@ Route130_OnTransition:
 	setflag FLAG_TEMP_1E
 	setflag FLAG_TEMP_1F
 	setmaplayoutindex LAYOUT_ROUTE130
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route130_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route130_OnResume_Day
 	end
 
 Route130_EventScript_SetMirageIslandLayout::
@@ -29,7 +49,7 @@ Route130_EventScript_SetMirageIslandLayout::
 	end
 
 Route130_EventScript_CheckSetAbnormalWeather::
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	goto_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	return
 
 Route130_EventScript_Rodney::

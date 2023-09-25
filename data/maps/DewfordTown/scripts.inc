@@ -12,10 +12,38 @@
 
 DewfordTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, DewfordTown_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, DewfordTown_OnResume
 	.byte 0
+
+DewfordTown_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, DewfordTown_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, DewfordTown_OnResume_Day
+	end
+
+DewfordTown_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_RAIN
+	setflag FLAG_HIDE_TRAINER_DAYNIGHT
+	end
+
+DewfordTown_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	end
 
 DewfordTown_OnTransition:
 	setflag FLAG_VISITED_DEWFORD_TOWN
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, DewfordTown_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, DewfordTown_OnTransition_Day
+	end
+
+DewfordTown_OnTransition_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	clearflag FLAG_HIDE_TRAINER_DAYNIGHT
 	end
 
 DewfordTown_EventScript_Briney::
@@ -648,7 +676,7 @@ DewfordTown_Text_TownSign:
 	.string "“A tiny island in the blue sea.”$"
 
 DewfordTown_Text_GymSign:
-	.string "DEWFORD TOWN POKéMON GYM\n"
+	.string "DEWFORD TOWN Pokémon GYM\n"
 	.string "LEADER: BRAWLY\l"
 	.string "“A big wave in fighting!”$"
 

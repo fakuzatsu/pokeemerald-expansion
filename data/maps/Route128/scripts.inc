@@ -3,12 +3,25 @@
 .set LOCALID_MAXIE, 5
 
 Route128_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route128_OnTransition
+	map_script MAP_SCRIPT_ON_TRANSITION, Route128_OnResume
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route128_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, Route128_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route128_OnResume
 	.byte 0
 
-Route128_OnTransition:
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+Route128_OnResume_Night:
+	setweather WEATHER_RAIN
+	return
+
+Route128_OnResume_Day:
+	setweather WEATHER_SUNNY
+	return
+
+Route128_OnResume:
+	goto_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route128_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route128_OnResume_Day
 	end
 
 Route128_OnFrame:
@@ -277,7 +290,7 @@ Route128_Text_MaxieResposibilityFallsToArchieAndMe:
 
 Route128_Text_MaxieThisDefiesBelief:
 	.string "MAXIE: This defies belief…\p"
-	.string "Those super-ancient POKéMON…\p"
+	.string "Those super-ancient Pokémon…\p"
 	.string "Their power is unbelievable.\n"
 	.string "They've upset the balance of nature…$"
 

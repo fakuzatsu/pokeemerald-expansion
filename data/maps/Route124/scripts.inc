@@ -1,10 +1,39 @@
 Route124_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route124_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, Route124_OnResume
+	map_script MAP_SCRIPT_ON_RESUME, Route124_OnResume
 	.byte 0
 
-Route124_OnTransition:
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+Route124_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_SHADE
+	setflag FLAG_HIDE_TRAINER_DAYNIGHT
+	return
+
+Route124_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	return
+
+Route124_OnResume:
+	goto_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route124_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route124_OnResume_Day
 	end
+
+Route124_OnTransition:
+	goto_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route124_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route124_OnTransition_Day
+	end
+
+Route124_OnTransition_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	clearflag FLAG_HIDE_TRAINER_DAYNIGHT
+	return
 
 Route124_EventScript_HuntersHouseSign::
 	msgbox Route124_Text_HuntersHouse, MSGBOX_SIGN
@@ -100,5 +129,5 @@ Route124_EventScript_Isabella::
 	end
 
 Route124_Text_HuntersHouse:
-	.string "HUNTER'S HOUSE$"
+	.string "HUNTER's HOUSE$"
 

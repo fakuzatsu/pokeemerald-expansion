@@ -1,5 +1,24 @@
 Route108_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route108_OnResume
+	map_script MAP_SCRIPT_ON_RESUME, Route108_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route108_OnResume
 	.byte 0
+
+Route108_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route108_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route108_OnResume_Day
+	end
+
+Route108_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_RAIN
+	end
+
+Route108_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	end
 
 Route108_EventScript_Jerome::
 	trainerbattle_single TRAINER_JEROME, Route108_Text_JeromeIntro, Route108_Text_JeromeDefeated

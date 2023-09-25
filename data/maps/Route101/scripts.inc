@@ -3,11 +3,43 @@
 
 Route101_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Route101_OnResume
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route101_OnFrame
+	map_script MAP_SCRIPT_ON_LOAD, Route101_OnResume
 	.byte 0
 
 Route101_OnTransition:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route101_OnTransition_Night
+	goto_if_eq VAR_RESULT, 0, Route101_OnTransition_Day
+	end
+	
+Route101_OnTransition_Night:
+	setvar VAR_DAYNIGHT, 1
 	call ProfBirch_EventScript_UpdateLocation
+	setweather WEATHER_SHADE
+	end
+
+Route101_OnTransition_Day:
+	setvar VAR_DAYNIGHT, 0
+	call ProfBirch_EventScript_UpdateLocation
+	setweather WEATHER_SUNNY
+	end
+	
+Route101_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route101_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route101_OnResume_Day
+	end
+	
+Route101_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_SHADE
+	end
+
+Route101_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
 	end
 
 Route101_OnFrame:
@@ -266,7 +298,7 @@ Route101_Text_HelpMe:
 Route101_Text_PleaseHelp:
 	.string "Hello! You over there!\n"
 	.string "Please! Help!\p"
-	.string "In my BAG!\n"
+	.string "In my Bag!\n"
 	.string "There's a POKé BALL!$"
 
 Route101_Text_DontLeaveMe:
@@ -274,26 +306,26 @@ Route101_Text_DontLeaveMe:
 	.string "Don't leave me like this!$"
 
 Route101_Text_YouSavedMe:
-	.string "PROF. BIRCH: Whew…\p"
+	.string "Prof. Birch: Whew…\p"
 	.string "I was in the tall grass studying wild\n"
-	.string "POKéMON when I was jumped.\p"
+	.string "Pokémon when I was jumped.\p"
 	.string "You saved me.\n"
 	.string "Thanks a lot!\p"
 	.string "Oh?\p"
 	.string "Hi, you're {PLAYER}{KUN}!\p"
 	.string "This is not the place to chat, so come\n"
-	.string "by my POKéMON LAB later, okay?$"
+	.string "by my Pokémon LAB later, okay?$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
-	.string "If POKéMON get tired, take them to\n"
-	.string "a POKéMON CENTER.\p"
-	.string "There's a POKéMON CENTER in OLDALE\n"
+	.string "If Pokémon get tired, take them to\n"
+	.string "a Pokémon CENTER.\p"
+	.string "There's a Pokémon CENTER in OLDALE\n"
 	.string "TOWN right close by.$"
 
 Route101_Text_WildPokemonInTallGrass:
-	.string "Wild POKéMON will jump out at you in\n"
+	.string "Wild Pokémon will jump out at you in\n"
 	.string "tall grass.\p"
-	.string "If you want to catch POKéMON, you have\n"
+	.string "If you want to catch Pokémon, you have\n"
 	.string "to go into the tall grass and search.$"
 
 Route101_Text_RouteSign:

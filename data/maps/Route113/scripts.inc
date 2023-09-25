@@ -1,16 +1,37 @@
+.set LOCALID_BLACKBELT, 17
+
 Route113_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, Route113_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, Route113_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, Route113_OnResume
 	.byte 0
 
 Route113_OnResume:
 	setstepcallback STEP_CB_ASH
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route113_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route113_OnResume_Day
 	end
+
+Route113_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_SHADE
+	return
+
+Route113_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	return
 
 Route113_OnTransition:
 	clearflag FLAG_FORCE_MIRAGE_TOWER_VISIBLE
+	call_if_set FLAG_SYS_GAME_CLEAR, Route113_EventScript_MoveBlackBelt
 	call Route113_EventScript_CheckSetAshWeather
 	end
+
+Route113_EventScript_MoveBlackBelt::
+	setobjectxyperm LOCALID_BLACKBELT, 27, 4
+	return
 
 Route113_EventScript_CheckSetAshWeather::
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
@@ -20,7 +41,11 @@ Route113_EventScript_CheckSetAshWeather::
 	return
 
 Route113_EventScript_DontSetAshWeather::
-	return
+	special GetDayOrNight
+	call_if_eq VAR_RESULT, 1, Route113_OnResume_Night
+	call_if_eq VAR_RESULT, 0, Route113_OnResume_Day
+	doweather
+	end
 
 Route113_EventScript_Gentleman::
 	msgbox Route113_Text_AshCanBeFashionedIntoGlass, MSGBOX_NPC
@@ -44,6 +69,13 @@ Route113_EventScript_GlassWorkshopSign::
 
 Route113_EventScript_TrainerTipsRegisterKeyItems::
 	msgbox Route113_Text_TrainerTipsRegisterKeyItems, MSGBOX_SIGN
+	end
+
+Route113_EventScript_SunTrigger::
+	special GetDayOrNight
+	call_if_eq VAR_RESULT, 1, Route113_OnResume_Night
+	call_if_eq VAR_RESULT, 0, Route113_OnResume_Day
+	doweather
 	end
 
 Route113_EventScript_Jaylen::
@@ -133,6 +165,19 @@ Route113_EventScript_Wyatt::
 	msgbox Route113_Text_WyattPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route113_EventScript_BlackBelt::
+	lock
+	faceplayer
+	goto_if_set FLAG_SYS_GAME_CLEAR, Route113_EventScript_BlackBeltAcknowledgement
+	msgbox Route113_Text_YouAreNotStrongEnough, MSGBOX_DEFAULT
+	release
+	end
+
+Route113_EventScript_BlackBeltAcknowledgement::
+	msgbox Route113_Text_BlackBeltAcknowledgePlayer, MSGBOX_DEFAULT
+	release
+	end
+
 Route113_Text_AshCanBeFashionedIntoGlass:
 	.string "Wahahaha! Today's technology is a\n"
 	.string "wondrous thing!\p"
@@ -154,13 +199,21 @@ Route113_Text_RouteSignFallarbor:
 	.string "{LEFT_ARROW} FALLARBOR TOWN$"
 
 Route113_Text_TrainerTipsRegisterKeyItems:
-	.string "TRAINER TIPS\p"
-	.string "You may register one of the KEY ITEMS\n"
-	.string "in your BAG as SELECT.\p"
-	.string "Simply press SELECT to use\n"
-	.string "the registered item conveniently.$"
+	.string "Trainer TIPS\p"
+	.string "You may register up to four Key Items\n"
+	.string "in your Bag to Select.\p"
+	.string "Simply press Select to use\n"
+	.string "the registered items conveniently.$"
 
 Route113_Text_GlassWorkshopSign:
 	.string "GLASS WORKSHOP\n"
 	.string "“Turning Volcanic Ash into Glass Items”$"
+
+Route113_Text_YouAreNotStrongEnough:
+	.string "… … …\p"
+	.string "You are not strong enough.\p"
+	.string "… … …$"
+
+Route113_Text_BlackBeltAcknowledgePlayer:
+	.string "… … …$"
 

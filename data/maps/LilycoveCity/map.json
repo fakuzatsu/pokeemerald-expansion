@@ -49,7 +49,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_EventScript_Girl",
-      "flag": "0"
+      "flag": "FLAG_HIDE_TRAINER_DAYNIGHT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
@@ -92,7 +92,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 35,
+      "x": 34,
       "y": 27,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -101,11 +101,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_EventScript_Woman2",
-      "flag": "0"
+      "flag": "FLAG_HIDE_TRAINER_DAYNIGHT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
-      "x": 35,
+      "x": 40,
       "y": 37,
       "elevation": 5,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -118,7 +118,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
-      "x": 34,
+      "x": 39,
       "y": 37,
       "elevation": 5,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -183,8 +183,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 46,
-      "y": 12,
+      "x": 47,
+      "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -196,8 +196,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 45,
-      "y": 12,
+      "x": 46,
+      "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -222,7 +222,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 50,
+      "x": 48,
       "y": 7,
       "elevation": 5,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -231,7 +231,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_EventScript_BerryGentleman",
-      "flag": "0"
+      "flag": "FLAG_HIDE_TRAINER_DAYNIGHT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
@@ -257,7 +257,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_EventScript_SchoolKidM",
-      "flag": "0"
+      "flag": "FLAG_HIDE_TRAINER_DAYNIGHT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
@@ -412,7 +412,9 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

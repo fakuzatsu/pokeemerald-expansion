@@ -703,7 +703,7 @@ SecretBase_Text_WhatWouldYouLikeToDo:
 
 SecretBase_Text_RegistryInfo:
 	.string "Once registered, a SECRET BASE will not\n"
-	.string "disappear unless the other TRAINER\l"
+	.string "disappear unless the other Trainer\l"
 	.string "moves it to a different location.\p"
 	.string "If a SECRET BASE is deleted from the\n"
 	.string "registered list, another one may take\l"
@@ -713,7 +713,7 @@ SecretBase_Text_RegistryInfo:
 
 SecretBase_Text_BattleTowerShield:
 	.string "A shield of {STR_VAR_2} that marks winning\n"
-	.string "{STR_VAR_1} times in a row at the BATTLE TOWER.$"
+	.string "{STR_VAR_1} times in a row at the Battle TOWER.$"
 
 SecretBase_Text_ToyTV:
 	.string "A realistic toy TV. It could be easily\n"

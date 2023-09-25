@@ -4,11 +4,23 @@ SkyPillar_Outside_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_Outside_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, SkyPillar_Outside_OnLoad
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SkyPillar_Outside_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, AbandonedShip_Deck_OnTransition
 	.byte 0
+
+SkyPillar_Outside_OnResume_Night:
+	setweather WEATHER_SHADE
+	end
+
+SkyPillar_Outside_OnResume_Day:
+	setweather WEATHER_SUNNY
+	end
 
 SkyPillar_Outside_OnTransition:
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 3, SkyPillar_Outside_EventScript_HideMapNamePopup
-	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, SkyPillar_Outside_EventScript_CheckSetAbnormalWeather
+	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, SkyPillar_Outside_EventScript_CheckSetAbnormalWeather
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, AbandonedShip_Deck_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, AbandonedShip_Deck_OnResume_Day
 	end
 
 SkyPillar_Outside_EventScript_HideMapNamePopup::
@@ -16,8 +28,8 @@ SkyPillar_Outside_EventScript_HideMapNamePopup::
 	return
 
 SkyPillar_Outside_EventScript_CheckSetAbnormalWeather::
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
-	return
+	goto_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	end
 
 SkyPillar_Outside_OnLoad:
 	call_if_set FLAG_WALLACE_GOES_TO_SKY_PILLAR, SkyPillar_Outside_EventScript_OpenDoor

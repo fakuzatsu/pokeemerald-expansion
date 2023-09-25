@@ -1,0 +1,68 @@
+{
+  "id": "MAP_PETALBURG_WOODS_DEEP",
+  "name": "PetalburgWoods_Deep",
+  "layout": "LAYOUT_PETALBURG_WOODS_DEEP",
+  "music": "MUS_PETALBURG_WOODS",
+  "region_map_section": "MAPSEC_PETALBURG_WOODS",
+  "requires_flash": false,
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_PETALBURG_WOODS",
+      "offset": 0,
+      "direction": "left"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 38,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_GROVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 38,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_GROVE",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_FARAWAY_ISLAND_INTERIOR",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_FARAWAY_ISLAND_INTERIOR",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 5,
+      "y": 26,
+      "elevation": 0,
+      "item": "ITEM_RARE_CANDY",
+      "flag": "FLAG_HIDDEN_ITEM_PETALBURG_WOODS_DEEP_RARE_CANDY"
+    }
+  ]
+}

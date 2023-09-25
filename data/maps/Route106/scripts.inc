@@ -1,5 +1,24 @@
 Route106_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route106_OnResume
+	map_script MAP_SCRIPT_ON_RESUME, Route106_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route106_OnResume
 	.byte 0
+
+Route106_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route106_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route106_OnResume_Day
+	end
+
+Route106_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_RAIN
+	end
+
+Route106_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	end
 
 Route106_EventScript_TrainerTipsSign::
 	msgbox Route106_Text_TrainerTips, MSGBOX_SIGN
@@ -42,7 +61,7 @@ Route106_EventScript_Ned::
 	end
 
 Route106_Text_TrainerTips:
-	.string "TRAINER TIPS\p"
-	.string "Advice on catching POKéMON with a ROD:\n"
+	.string "Trainer TIPS\p"
+	.string "Advice on catching Pokémon with a ROD:\n"
 	.string "Press the A Button if you get a bite.$"
 

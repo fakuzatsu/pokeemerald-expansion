@@ -1,5 +1,24 @@
 Route107_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route107_OnResume
+	map_script MAP_SCRIPT_ON_RESUME, Route107_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route107_OnResume
 	.byte 0
+
+Route107_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route107_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route107_OnResume_Day
+	end
+
+Route107_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_RAIN
+	end
+
+Route107_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	end
 
 Route107_EventScript_Darrin::
 	trainerbattle_single TRAINER_DARRIN, Route107_Text_DarrinIntro, Route107_Text_DarrinDefeated

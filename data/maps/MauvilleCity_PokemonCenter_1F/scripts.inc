@@ -23,6 +23,11 @@ MauvilleCity_PokemonCenter_1F_EventScript_Nurse::
 	release
 	end
 
+MauvilleCity_PokemonCenter_1F_EventScript_BattleMaster::
+	goto Common_EventScript_PkmnCenterBattleMaster
+	release
+	end
+
 MauvilleCity_PokemonCenter_1F_EventScript_Woman1::
 	msgbox MauvilleCity_PokemonCenter_1F_Text_ManOverThereSaysWeirdThings, MSGBOX_NPC
 	end
@@ -50,7 +55,7 @@ MauvilleCity_PokemonCenter_1F_Text_MyDataUpdatedFromRecordCorner:
 
 MauvilleCity_PokemonCenter_1F_Text_RecordCornerSoundsFun:
 	.string "A RECORD CORNER opened upstairs in\n"
-	.string "the POKéMON CENTER.\p"
+	.string "the Pokémon CENTER.\p"
 	.string "I don't know what it's about, but it\n"
 	.string "sounds fun. I'll go check it out!$"
 

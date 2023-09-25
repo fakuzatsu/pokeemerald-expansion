@@ -1,10 +1,25 @@
 Route123_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route123_OnTransition
+	map_script MAP_SCRIPT_ON_TRANSITION, Route123_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route123_OnResume
+	map_script MAP_SCRIPT_ON_RESUME, Route123_OnResume
 	.byte 0
 
-Route123_OnTransition:
+Route123_OnResume:
 	special SetRoute123Weather
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route123_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route123_OnResume_Day
 	end
+
+Route123_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_SHADE
+	return
+
+Route123_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_ROUTE123_CYCLE
+	return
 
 Route123_EventScript_GigaDrainGirl::
 	lock
@@ -171,19 +186,19 @@ Route123_EventScript_RematchFernando::
 	end
 
 Route123_Text_LoveGrassMonsHaveAny:
-	.string "I love GRASS-type POKéMON!\p"
-	.string "Do you have any GRASS-type POKéMON?$"
+	.string "I love GRASS-type Pokémon!\p"
+	.string "Do you have any GRASS-type Pokémon?$"
 
 Route123_Text_YouLikeGrassMonsTooHaveThis:
 	.string "Oh?\p"
-	.string "You like GRASS-type POKéMON, too,\n"
+	.string "You like GRASS-type Pokémon, too,\n"
 	.string "don't you?\p"
 	.string "I'm so happy, you can have this!\n"
 	.string "It's a token of our friendship.$"
 
 Route123_Text_CheckTreesWithMyGrassMon:
 	.string "I check trees with my GRASS-type\n"
-	.string "POKéMON. I'm like a tree doctor.$"
+	.string "Pokémon. I'm like a tree doctor.$"
 
 Route123_Text_RouteSign:
 	.string "{RIGHT_ARROW} ROUTE 123\n"
@@ -194,5 +209,5 @@ Route123_Text_RouteSignMtPyre:
 	.string "“Forbidden to the faint of heart.”$"
 
 Route123_Text_BerryMastersHouse:
-	.string "BERRY MASTER'S HOUSE$"
+	.string "Berry MASTER's HOUSE$"
 
