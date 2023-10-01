@@ -76,8 +76,8 @@ SSTidalRooms_Text_ColtonDefeat:
 
 SSTidalRooms_Text_ColtonPostBattle:
 	.string "I get so excited imagining what kinds\n"
-	.string "of POKéMON I'll get to see in the next\l"
-	.string "CONTEST. The anticipation of it thrills!$"
+	.string "of Pokémon I'll get to see in the next\l"
+	.string "Contest. The anticipation of it thrills!$"
 
 SSTidalRooms_Text_MicahIntro:
 	.string "Are your friends strong?$"
@@ -87,7 +87,7 @@ SSTidalRooms_Text_MicahDefeat:
 
 SSTidalRooms_Text_MicahPostBattle:
 	.string "Friends need not be human.\n"
-	.string "For me, POKéMON are treasured friends!$"
+	.string "For me, Pokémon are treasured friends!$"
 
 SSTidalRooms_Text_ThomasIntro:
 	.string "Child…\n"
@@ -111,10 +111,10 @@ SSTidalRooms_Text_JedDefeat:
 SSTidalRooms_Text_JedPostBattle:
 	.string "JED: It's the first time that our lovey-\n"
 	.string "dovey power couldn't prevail!\l"
-	.string "You must be an awesome TRAINER!$"
+	.string "You must be an awesome Trainer!$"
 
 SSTidalRooms_Text_JedNotEnoughMons:
-	.string "JED: You only have one POKéMON?\n"
+	.string "JED: You only have one Pokémon?\n"
 	.string "Isn't that just too lonesome?$"
 
 SSTidalRooms_Text_LeaIntro:
@@ -127,11 +127,11 @@ SSTidalRooms_Text_LeaDefeat:
 SSTidalRooms_Text_LeaPostBattle:
 	.string "LEA: I can't believe it!\n"
 	.string "Our lovey-dovey power failed…\l"
-	.string "You must be an awesome TRAINER!$"
+	.string "You must be an awesome Trainer!$"
 
 SSTidalRooms_Text_LeaNotEnoughMons:
 	.string "LEA: I wanted to battle…\n"
-	.string "But you don't even have two POKéMON…$"
+	.string "But you don't even have two Pokémon…$"
 
 SSTidalRooms_Text_GarretIntro:
 	.string "Ah, you've come just in time.\p"
@@ -144,10 +144,10 @@ SSTidalRooms_Text_GarretDefeat:
 SSTidalRooms_Text_GarretPostBattle:
 	.string "Perhaps I shall get Father to acquire\n"
 	.string "a yacht for me.\l"
-	.string "A yacht for me and POKéMON!$"
+	.string "A yacht for me and Pokémon!$"
 
 SSTidalRooms_Text_NaomiIntro:
-	.string "Oh, you're such an adorable TRAINER.\n"
+	.string "Oh, you're such an adorable Trainer.\n"
 	.string "Would you like to have tea?\l"
 	.string "Or would you rather battle?$"
 

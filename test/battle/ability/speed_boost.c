@@ -13,7 +13,7 @@ SINGLE_BATTLE_TEST("Speed Boost gradually boosts Speed")
         MESSAGE("Foe Wobbuffet used Celebrate!");
         MESSAGE("Torchic used Celebrate!");
         ABILITY_POPUP(player, ABILITY_SPEED_BOOST);
-        MESSAGE("Torchic's Speed Boost raised its SPEED!");
+        MESSAGE("Torchic's Speed Boost raised its Speed!");
         MESSAGE("Torchic used Celebrate!");
         MESSAGE("Foe Wobbuffet used Celebrate!");
     }

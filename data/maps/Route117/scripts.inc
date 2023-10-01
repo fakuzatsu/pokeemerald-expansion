@@ -2,10 +2,37 @@
 
 Route117_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route117_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Route117_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route117_OnResume
 	.byte 0
+
+Route117_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route117_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route117_OnResume_Day
+	end
+
+Route117_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_SHADE
+	setflag FLAG_HIDE_TRAINER_DAYNIGHT
+	end
+
+Route117_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	end
 
 Route117_OnTransition:
 	call Route117_EventScript_TryMoveDayCareMan
+	goto_if_eq VAR_RESULT, 1, Route117_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route117_OnTransition_Day
+	end
+
+Route117_OnTransition_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	clearflag FLAG_HIDE_TRAINER_DAYNIGHT
 	end
 
 Route117_EventScript_TryMoveDayCareMan::
@@ -181,7 +208,7 @@ Route117_EventScript_Aisha::
 	end
 
 Route117_Text_DayCarePokemonHadNewMove:
-	.string "I left my POKéMON at the DAY CARE.\p"
+	.string "I left my Pokémon at the DAY CARE.\p"
 	.string "When I got it back, it had a new move\n"
 	.string "that I didn't teach it.\l"
 	.string "I was really, really surprised.$"
@@ -203,6 +230,6 @@ Route117_Text_RouteSignMauville:
 	.string "{RIGHT_ARROW} MAUVILLE CITY$"
 
 Route117_Text_DayCareSign:
-	.string "POKéMON DAY CARE\n"
-	.string "“Let us raise your POKéMON.”$"
+	.string "Pokémon DAY CARE\n"
+	.string "“Let us raise your Pokémon.”$"
 

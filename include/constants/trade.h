@@ -9,6 +9,8 @@
 #define INGAME_TRADE_PLUSLE 1
 #define INGAME_TRADE_HORSEA 2
 #define INGAME_TRADE_MEOWTH 3
+#define INGAME_TRADE_BELLSPROUT 4
+#define INGAME_TRADE_APPLIN 5
 
 // Return values for CanTradeSelectedMon and CanSpinTradeMon
 #define CAN_TRADE_MON              0

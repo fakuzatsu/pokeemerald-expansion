@@ -3,53 +3,39 @@
   "name": "BirthIsland_Harbor",
   "layout": "LAYOUT_ISLAND_HARBOR",
   "music": "MUS_NONE",
-  "region_map_section": "MAPSEC_BIRTH_ISLAND",
+  "region_map_section": "MAPSEC_SHOAL_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_INDOOR",
+  "map_type": "MAP_TYPE_UNDERGROUND",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 8,
-      "y": 5,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "BirthIsland_Harbor_EventScript_Sailor",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
-      "x": 8,
-      "y": 7,
-      "elevation": 1,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
-      "flag": "0"
-    }
+
   ],
   "warp_events": [
     {
-      "x": 8,
-      "y": 2,
+      "x": 4,
+      "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_BIRTH_ISLAND_EXTERIOR",
+      "dest_map": "MAP_SHOAL_CAVE_LOW_TIDE_INNER_ROOM",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 12,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP1",
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

@@ -76,4 +76,7 @@
 // General settings
 #define EXPANSION_INTRO   TRUE    // If TRUE, a custom RHH intro will play after the vanilla copyright screen.
 
+// Verdant settings
+//#define CANON_MODE      // if defined, opponent's will use their canon (pre-Verdant-changed) teams. Comment out for the intended Verdant experience.
+
 #endif // GUARD_CONFIG_H

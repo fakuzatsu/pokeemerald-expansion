@@ -1,0 +1,34 @@
+{
+  "id": "MAP_UNDERWATER_ROUTE131",
+  "name": "Underwater_Route131",
+  "layout": "LAYOUT_UNDERWATER_ROUTE131",
+  "music": "MUS_UNDERWATER",
+  "region_map_section": "MAPSEC_UNDERWATER_129",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERWATER",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE131",
+      "offset": 0,
+      "direction": "emerge"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

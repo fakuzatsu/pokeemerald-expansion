@@ -783,7 +783,7 @@ static void HandleDecorationCategoriesMenuInput(u8 taskId)
         switch (input)
         {
         case MENU_B_PRESSED:
-        case DECORCAT_COUNT: // CANCEL
+        case DECORCAT_COUNT: // Cancel
             PlaySE(SE_SELECT);
             ExitDecorationCategoriesMenu(taskId);
             break;

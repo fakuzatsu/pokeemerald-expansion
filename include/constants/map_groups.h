@@ -63,6 +63,20 @@
 #define MAP_UNDERWATER_ROUTE129 (54 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE105 (55 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE125 (56 | (0 << 8))
+#define MAP_PETALBURG_GROVE     (57 | (0 << 8))
+#define MAP_ACORN_ACRE          (58 | (0 << 8))
+#define MAP_MOUNTAIN_FOOT       (59 | (0 << 8))
+#define MAP_DEWFORD_HIVE        (60 | (0 << 8))
+#define MAP_MAUVILLE_SANCTUARY  (61 | (0 << 8))
+#define MAP_SLATEPORT_LEFT      (62 | (0 << 8))
+#define MAP_CANDY_FACTORY       (63 | (0 << 8))
+#define MAP_ASHVEIL_PARK        (64 | (0 << 8))
+#define MAP_CORONET_HOTSPRINGS  (65 | (0 << 8))
+#define MAP_ROUTE119EAST        (66 | (0 << 8))
+#define MAP_SPRING_PEAK         (67 | (0 << 8))
+#define MAP_UNDERWATER_ROUTE131 (68 | (0 << 8))
+#define MAP_VERDANT_FOREST      (69 | (0 << 8))
+#define MAP_VERDANT_ISLE        (70 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
@@ -133,6 +147,7 @@
 #define MAP_PETALBURG_CITY_POKEMON_CENTER_1F (4 | (8 << 8))
 #define MAP_PETALBURG_CITY_POKEMON_CENTER_2F (5 | (8 << 8))
 #define MAP_PETALBURG_CITY_MART              (6 | (8 << 8))
+#define MAP_ACORN_HOUSE                      (7 | (8 << 8))
 
 // gMapGroup_IndoorSlateport
 #define MAP_SLATEPORT_CITY_STERNS_SHIPYARD_1F      (0 | (9 << 8))
@@ -149,6 +164,8 @@
 #define MAP_SLATEPORT_CITY_POKEMON_CENTER_1F       (11 | (9 << 8))
 #define MAP_SLATEPORT_CITY_POKEMON_CENTER_2F       (12 | (9 << 8))
 #define MAP_SLATEPORT_CITY_MART                    (13 | (9 << 8))
+#define MAP_SLATEPORT_CITY_STORAGE_SHED            (14 | (9 << 8))
+#define MAP_SLATEPORT_CITY_COLD_STORAGE            (15 | (9 << 8))
 
 // gMapGroup_IndoorMauville
 #define MAP_MAUVILLE_CITY_GYM               (0 | (10 << 8))
@@ -159,6 +176,8 @@
 #define MAP_MAUVILLE_CITY_POKEMON_CENTER_1F (5 | (10 << 8))
 #define MAP_MAUVILLE_CITY_POKEMON_CENTER_2F (6 | (10 << 8))
 #define MAP_MAUVILLE_CITY_MART              (7 | (10 << 8))
+#define MAP_MAUVILLE_CITY_HOUSE3            (8 | (10 << 8))
+#define MAP_MAUVILLE_CITY_FLOWER_SHOP       (9 | (10 << 8))
 
 // gMapGroup_IndoorRustboro
 #define MAP_RUSTBORO_CITY_DEVON_CORP_1F     (0 | (11 << 8))
@@ -190,6 +209,8 @@
 #define MAP_FORTREE_CITY_HOUSE4            (7 | (12 << 8))
 #define MAP_FORTREE_CITY_HOUSE5            (8 | (12 << 8))
 #define MAP_FORTREE_CITY_DECORATION_SHOP   (9 | (12 << 8))
+#define MAP_FORTREE_CITY_HOUSE6            (10 | (12 << 8))
+#define MAP_FORTREE_CITY_HOUSE7            (11 | (12 << 8))
 
 // gMapGroup_IndoorLilycove
 #define MAP_LILYCOVE_CITY_COVE_LILY_MOTEL_1F        (0 | (13 << 8))
@@ -215,6 +236,7 @@
 #define MAP_LILYCOVE_CITY_DEPARTMENT_STORE_5F       (20 | (13 << 8))
 #define MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP  (21 | (13 << 8))
 #define MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR (22 | (13 << 8))
+#define MAP_LILYCOVE_CITY_LILYCOVE_MUSEUM_GARDEN    (23 | (13 << 8))
 
 // gMapGroup_IndoorMossdeep
 #define MAP_MOSSDEEP_CITY_GYM               (0 | (14 << 8))
@@ -400,6 +422,11 @@
 #define MAP_TERRA_CAVE_END                           (105 | (24 << 8))
 #define MAP_ALTERING_CAVE                            (106 | (24 << 8))
 #define MAP_METEOR_FALLS_STEVENS_CAVE                (107 | (24 << 8))
+#define MAP_PETALBURG_WOODS_DEEP                     (108 | (24 << 8))
+#define MAP_COLD_STORAGE_B1F                         (109 | (24 << 8))
+#define MAP_COLD_STORAGE_1F                          (110 | (24 << 8))
+#define MAP_FIERY_PATH_B1F                           (111 | (24 << 8))
+#define MAP_DESERT_CAVERN_1F                         (112 | (24 << 8))
 
 // gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))

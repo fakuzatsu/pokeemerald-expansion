@@ -70,7 +70,7 @@ VictoryRoad_B2F_Text_CarolinePostBattle:
 
 VictoryRoad_B2F_Text_JulieIntro:
 	.string "You shouldn't get complacent just\n"
-	.string "because you have a lot of GYM BADGES.\p"
+	.string "because you have a lot of GYM Badges.\p"
 	.string "There's always going to be someone\n"
 	.string "who's better than you!$"
 
@@ -78,7 +78,7 @@ VictoryRoad_B2F_Text_JulieDefeat:
 	.string "You're better than me!$"
 
 VictoryRoad_B2F_Text_JuliePostBattle:
-	.string "Gaze on your collected BADGES and\n"
+	.string "Gaze on your collected Badges and\n"
 	.string "remember the TRAINERS you've faced.$"
 
 VictoryRoad_B2F_Text_FelixIntro:

@@ -34,7 +34,6 @@ static void ClearDaycareMonMail(struct DaycareMail *mail);
 static void SetInitialEggData(struct Pokemon *mon, u16 species, struct DayCare *daycare);
 static void DaycarePrintMonInfo(u8 windowId, u32 daycareSlotId, u8 y);
 static u8 ModifyBreedingScoreForOvalCharm(u8 score);
-static u8 GetEggMoves(struct Pokemon *pokemon, u16 *eggMoves);
 
 // RAM buffers used to assist with BuildEggMoveset()
 EWRAM_DATA static u16 sHatchedEggLevelUpMoves[EGG_LVL_UP_MOVES_ARRAY_COUNT] = {0};
@@ -320,10 +319,38 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
         species = newSpecies;
     }
 
-    if (GetMonData(&pokemon, MON_DATA_LEVEL) != MAX_LEVEL)
+    if (GetMonData(&pokemon, MON_DATA_LEVEL) < GetPkmnLevelCap())
     {
+        u8 level;
+        u8 i;
+        u8 cap;
+
         experience = GetMonData(&pokemon, MON_DATA_EXP) + daycareMon->steps;
         SetMonData(&pokemon, MON_DATA_EXP, &experience);
+        level = GetLevelFromMonExp(&pokemon);
+
+        for (i = 0; i < NUM_SOFT_CAPS; i++)
+        {
+            if (i <= 2)
+                cap = sLevelCaps[i] / 2;
+            else
+                cap = sLevelCaps[i];
+
+            if (!FlagGet(sLevelCapFlags[i]) && level >= cap)
+            {
+                u8 levelDiff;
+                u32 newSteps;
+
+                levelDiff = level - cap;
+
+                newSteps = daycareMon->steps / (levelDiff + 1);
+                experience = GetBoxMonData(&daycareMon->mon, MON_DATA_EXP) + newSteps;
+
+                SetMonData(&pokemon, MON_DATA_EXP, &experience);
+                break;
+            }
+        }
+
         ApplyDaycareExperience(&pokemon);
     }
 
@@ -354,13 +381,42 @@ u16 TakePokemonFromDaycare(void)
 }
 
 static u8 GetLevelAfterDaycareSteps(struct BoxPokemon *mon, u32 steps)
-{
-    struct BoxPokemon tempMon = *mon;
+    {
+        struct BoxPokemon tempMon = *mon;
+        u32 experience = GetBoxMonData(mon, MON_DATA_EXP) + steps;
+        u8 i;
+        u8 level;
+        u8 cap;
 
-    u32 experience = GetBoxMonData(mon, MON_DATA_EXP) + steps;
-    SetBoxMonData(&tempMon, MON_DATA_EXP,  &experience);
-    return GetLevelFromBoxMonExp(&tempMon);
-}
+        // set experience now to be able to get levelAfter
+        SetBoxMonData(&tempMon, MON_DATA_EXP, &experience);
+        level = GetLevelFromBoxMonExp(&tempMon);
+
+        // loop through to check caps
+        for (i = 0; i < NUM_SOFT_CAPS; i++)
+        {
+            if (i <= 2)
+                cap = sLevelCaps[i] / 2;
+            else
+                cap = sLevelCaps[i];
+
+            if (!FlagGet(sLevelCapFlags[i]) && level >= cap)
+            {
+                u8 levelDiff;
+                u32 newSteps;
+
+                levelDiff = level - cap;
+
+                newSteps = steps / (levelDiff + 1);
+                experience = GetBoxMonData(mon, MON_DATA_EXP) + newSteps;
+
+                SetBoxMonData(&tempMon, MON_DATA_EXP, &experience);
+                break;
+            }
+        }
+
+        return GetLevelFromBoxMonExp(&tempMon);
+    }
 
 static u8 GetNumLevelsGainedFromSteps(struct DaycareMon *daycareMon)
 {
@@ -742,7 +798,7 @@ static void InheritAbility(struct Pokemon *egg, struct BoxPokemon *father, struc
 
 // Counts the number of egg moves a pokemon learns and stores the moves in
 // the given array.
-static u8 GetEggMoves(struct Pokemon *pokemon, u16 *eggMoves)
+u8 GetEggMoves(struct Pokemon *pokemon, u16 *eggMoves)
 {
     u16 eggMoveIdx;
     u16 numEggMoves;

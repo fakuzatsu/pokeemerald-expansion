@@ -728,7 +728,7 @@ static void RestorePlayerPartyHeldItems(void)
     }
 }
 
-// Get the IV to use for the opponent's pokémon.
+// Get the IV to use for the opponent's Pokémon.
 // The IVs get higher for each subsequent challenge and for
 // the last trainer in each challenge. Noland is an exception
 // to this, as he uses the IVs that would be used by the regular

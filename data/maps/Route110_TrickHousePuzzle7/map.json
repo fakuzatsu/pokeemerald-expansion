@@ -262,15 +262,5 @@
       "var_value": "0",
       "script": "Route110_TrickHousePuzzle7_EventScript_PurpleButton"
     }
-  ],
-  "bg_events": [
-    {
-      "type": "sign",
-      "x": 6,
-      "y": 17,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route110_TrickHousePuzzle7_EventScript_Scroll"
-    }
   ]
 }

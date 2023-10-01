@@ -246,7 +246,6 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_SPIT_UP]                    = 3,
     [EFFECT_SWALLOW]                    = 3,
     [EFFECT_HAIL]                       = 4,
-    [EFFECT_SNOWSCAPE]                  = 4,
     [EFFECT_TORMENT]                    = 7,
     [EFFECT_FLATTER]                    = 7,
     [EFFECT_WILL_O_WISP]                = 5,
@@ -476,6 +475,7 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_SPECIAL_ATTACK_UP_HIT]      = 1,
     [EFFECT_VICTORY_DANCE]              = 0, // TODO: Assign points
     [EFFECT_FROSTBITE_HIT]              = 1,
+    [EFFECT_SNOWSCAPE]                  = 4,
 };
 
 static const u16 sPoints_Effectiveness[] =

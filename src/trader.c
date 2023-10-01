@@ -122,7 +122,7 @@ void Task_HandleGetDecorationMenuInput(u8 taskId)
         case MENU_NOTHING_CHOSEN:
             break;
         case MENU_B_PRESSED:
-        case NUM_TRADER_ITEMS: // EXIT
+        case NUM_TRADER_ITEMS: // Exit
             PlaySE(SE_SELECT);
             Task_BufferDecorSelectionAndCloseWindow(taskId, 0);
             break;

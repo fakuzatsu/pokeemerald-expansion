@@ -22,6 +22,11 @@
       "map": "MAP_DEWFORD_TOWN",
       "offset": 60,
       "direction": "down"
+    },
+    {
+      "map": "MAP_DEWFORD_HIVE",
+      "offset": 26,
+      "direction": "down"
     }
   ],
   "object_events": [
@@ -100,7 +105,9 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

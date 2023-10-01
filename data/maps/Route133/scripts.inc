@@ -1,5 +1,22 @@
 Route133_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route133_OnResume
+	map_script MAP_SCRIPT_ON_RESUME, Route133_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route133_OnResume
 	.byte 0
+
+Route133_OnResume_Night:
+	setweather WEATHER_SHADE
+	return
+
+Route133_OnResume_Day:
+	setweather WEATHER_SUNNY
+	return
+
+Route133_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route133_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route133_OnResume_Day
+	end
 
 Route133_EventScript_Franklin::
 	trainerbattle_single TRAINER_FRANKLIN, Route133_Text_FranklinIntro, Route133_Text_FranklinDefeat

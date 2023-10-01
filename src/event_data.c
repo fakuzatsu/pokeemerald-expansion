@@ -52,6 +52,11 @@ void ClearDailyFlags(void)
     memset(&gSaveBlock1Ptr->flags[DAILY_FLAGS_START / 8], 0, DAILY_FLAGS_SIZE);
 }
 
+void IncrimentTrophyGardenVar(void)
+{
+    VarSet(VAR_TROPHY_GARDEN_ENCOUNTERS, (VarGet(VAR_TROPHY_GARDEN_ENCOUNTERS + 2) % 4));
+}
+
 void DisableNationalPokedex(void)
 {
     u16 *nationalDexVar = GetVarPointer(VAR_NATIONAL_DEX);

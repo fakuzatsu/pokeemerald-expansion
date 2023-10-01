@@ -651,6 +651,7 @@ EventScript_SetBrineyLocation_Route109::
 	setvar VAR_BRINEY_LOCATION, 3
 	return
 
+	.include "data/scripts/pkmn_center_battle_master.inc"
 	.include "data/scripts/pkmn_center_nurse.inc"
 	.include "data/scripts/obtain_item.inc"
 	.include "data/scripts/record_mix.inc"
@@ -711,7 +712,7 @@ Common_EventScript_NoRoomForDecor::
 
 Common_EventScript_SetAbnormalWeather::
 	setweather WEATHER_ABNORMAL
-	return
+	end
 
 Common_EventScript_PlayGymBadgeFanfare::
 	playfanfare MUS_OBTAIN_BADGE
@@ -831,6 +832,7 @@ Common_EventScript_PlayerHandedOverTheItem::
 	.include "data/scripts/check_furniture.inc"
 	.include "data/text/record_mix.inc"
 	.include "data/text/pc.inc"
+	.include "data/text/pkmn_center_battle_master.inc"
 	.include "data/text/pkmn_center_nurse.inc"
 	.include "data/text/mart_clerk.inc"
 	.include "data/text/obtain_item.inc"
@@ -838,11 +840,11 @@ Common_EventScript_PlayerHandedOverTheItem::
 @ The below and surf.inc could be split into some text/notices.inc
 gText_PokemartSign::
 	.string "“Selected items for your convenience!”\n"
-	.string "POKéMON MART$"
+	.string "Pokémon MART$"
 
 gText_PokemonCenterSign::
 	.string "“Rejuvenate your tired partners!”\n"
-	.string "POKéMON CENTER$"
+	.string "Pokémon CENTER$"
 
 gText_MomOrDadMightLikeThisProgram::
 	.string "{STR_VAR_1} might like this program.\n"
@@ -850,7 +852,7 @@ gText_MomOrDadMightLikeThisProgram::
 	.string "Better get going!$"
 
 gText_WhichFloorWouldYouLike::
-	.string "Welcome to LILYCOVE DEPARTMENT STORE.\p"
+	.string "Welcome to LILYCOVE DEPARTMENT Store.\p"
 	.string "Which floor would you like?$"
 
 gText_SandstormIsVicious::
@@ -858,16 +860,16 @@ gText_SandstormIsVicious::
 	.string "It's impossible to keep going.$"
 
 gText_SelectWithoutRegisteredItem::
-	.string "An item in the BAG can be\n"
-	.string "registered to SELECT for easy use.$"
+	.string "Up to four items in the Bag can be\n"
+	.string "registered to Select for easy use.$"
 
 gText_PokemonTrainerSchoolEmail::
-	.string "There's an e-mail from POKéMON TRAINER\n"
+	.string "There's an e-mail from Pokémon Trainer\n"
 	.string "SCHOOL.\p"
 	.string "… … … … … …\p"
-	.string "A POKéMON may learn up to four moves.\p"
-	.string "A TRAINER's expertise is tested on the\n"
-	.string "move sets chosen for POKéMON.\p"
+	.string "A Pokémon may learn up to four moves.\p"
+	.string "A Trainer's expertise is tested on the\n"
+	.string "move sets chosen for Pokémon.\p"
 	.string "… … … … … …$"
 
 gText_PlayerHouseBootPC::
@@ -882,11 +884,11 @@ gText_UnusedNicknameReceivedPokemon::
 
 gText_PlayerWhitedOut::
 	.string "{PLAYER} is out of usable\n"
-	.string "POKéMON!\p{PLAYER} whited out!$"
+	.string "Pokémon!\p{PLAYER} whited out!$"
 
 gText_RegisteredTrainerinPokeNav::
 	.string "Registered {STR_VAR_1} {STR_VAR_2}\n"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 
 gText_ComeBackWithSecretPower::
 	.string "Do you know the TM SECRET POWER?\p"
@@ -898,12 +900,12 @@ gText_ComeBackWithSecretPower::
 	.string "you good stuff in secrecy.$"
 
 gText_PokerusExplanation::
-	.string "Your POKéMON may be infected with\n"
+	.string "Your Pokémon may be infected with\n"
 	.string "POKéRUS.\p"
 	.string "Little is known about the POKéRUS\n"
 	.string "except that they are microscopic life-\l"
-	.string "forms that attach to POKéMON.\p"
-	.string "While infected, POKéMON are said to\n"
+	.string "forms that attach to Pokémon.\p"
+	.string "While infected, Pokémon are said to\n"
 	.string "grow exceptionally well.$"
 
 	.include "data/text/surf.inc"
@@ -917,7 +919,7 @@ gText_BigHoleInTheWall::
 
 gText_SorryWirelessClubAdjustments::
 	.string "I'm terribly sorry.\n"
-	.string "The POKéMON WIRELESS CLUB is\l"
+	.string "The Pokémon WIRELESS CLUB is\l"
 	.string "undergoing adjustments now.$"
 
 gText_UndergoingAdjustments::
@@ -1059,3 +1061,47 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+    .include "data/scripts/dexnav.inc"
+    
+	.include "data/maps/PetalburgGrove/scripts.inc"
+	.include "data/maps/PetalburgWoods_Deep/scripts.inc"
+	.include "data/maps/AcornAcre/scripts.inc"
+	.include "data/maps/AcornHouse/scripts.inc"
+	.include "data/maps/MountainFoot/scripts.inc"
+	.include "data/maps/DewfordHive/scripts.inc"
+	.include "data/maps/MauvilleSanctuary/scripts.inc"
+	.include "data/maps/Slateport_Left/scripts.inc"
+	.include "data/maps/SlateportCity_StorageShed/scripts.inc"
+	.include "data/maps/SlateportCity_ColdStorage/scripts.inc"
+	.include "data/maps/ColdStorage_B1F/scripts.inc"
+	.include "data/maps/CandyFactory/scripts.inc"
+	.include "data/maps/ColdStorage_1F/scripts.inc"
+
+
+	.include "data/maps/FieryPath_B1F/scripts.inc"
+
+	.include "data/maps/AshveilPark/scripts.inc"
+
+	.include "data/maps/MauvilleCity_House3/scripts.inc"
+
+	.include "data/maps/CoronetHotsprings/scripts.inc"
+
+	.include "data/maps/MauvilleCity_FlowerShop/scripts.inc"
+
+	.include "data/maps/Route119East/scripts.inc"
+
+	.include "data/maps/SpringPeak/scripts.inc"
+
+	.include "data/maps/DesertCavern_1F/scripts.inc"
+
+	.include "data/maps/FortreeCity_House6/scripts.inc"
+
+	.include "data/maps/FortreeCity_House7/scripts.inc"
+
+	.include "data/maps/Underwater_Route131/scripts.inc"
+
+	.include "data/maps/LilycoveCity_LilycoveMuseumGarden/scripts.inc"
+
+	.include "data/maps/VerdantForest/scripts.inc"
+
+	.include "data/maps/VerdantIsle/scripts.inc"

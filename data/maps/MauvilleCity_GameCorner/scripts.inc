@@ -757,16 +757,16 @@ MauvilleCity_GameCorner_Text_UpTo3CoinsCanBeUsed:
 MauvilleCity_GameCorner_Text_DifficultToStopOn7:
 	.string "It's very difficult to make it stop\n"
 	.string "right on “7.”\p"
-	.string "If it stops on “7” during the REEL TIME\n"
+	.string "If it stops on “7” during the REEL Time\n"
 	.string "bonus game, you'll receive extra COINS.$"
 
 MauvilleCity_GameCorner_Text_HeresSomeSlotsInfo:
 	.string "Here's some information for you\n"
 	.string "about the SLOTS.\p"
 	.string "The more lightning bolts you stock,\n"
-	.string "the more REEL TIME chances you get.\p"
+	.string "the more REEL Time chances you get.\p"
 	.string "In a game with the maximum five\n"
-	.string "REEL TIME chances…\p"
+	.string "REEL Time chances…\p"
 	.string "It is possible to receive four regular\n"
 	.string "bonuses, then a big bonus.\p"
 	.string "That would total 660 COINS, but it's\n"

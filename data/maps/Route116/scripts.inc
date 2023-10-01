@@ -5,13 +5,40 @@ Route116_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route116_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, Route116_OnLoad
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route116_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, Route116_OnResume
 	.byte 0
+
+Route116_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route116_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route116_OnResume_Day
+	end
+
+Route116_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_SHADE
+	end
+
+Route116_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	setflag FLAG_HIDE_TRAINER_DAYNIGHT
+	end
 
 Route116_OnTransition:
 	call_if_set FLAG_RECOVERED_DEVON_GOODS, Route116_EventScript_SetWandasBoyfriendPos
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_NORTH, AbnormalWeather_StartGroudonWeather
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_SOUTH, AbnormalWeather_StartGroudonWeather
+	goto_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_NORTH, AbnormalWeather_StartGroudonWeather
+	goto_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_SOUTH, AbnormalWeather_StartGroudonWeather
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route116_OnTransition_Night
+	goto_if_eq VAR_RESULT, 0, Route116_OnResume_Day
+	end
+
+Route116_OnTransition_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_SHADE
+	clearflag FLAG_HIDE_TRAINER_DAYNIGHT
 	end
 
 Route116_EventScript_SetWandasBoyfriendPos::
@@ -21,11 +48,21 @@ Route116_EventScript_SetWandasBoyfriendPos::
 Route116_OnLoad:
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_NORTH, AbnormalWeather_EventScript_PlaceTilesRoute116North
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_SOUTH, AbnormalWeather_EventScript_PlaceTilesRoute116South
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route116_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route116_OnResume_Day
 	end
 
 Route116_OnFrame:
 	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
 	.2byte 0
+
+Route116_EventScript_ClefairyLady::
+	lock
+	faceplayer
+	msgbox Route116_Text_ClefairysUpMountain, MSGBOX_DEFAULT
+	release
+	end
 
 Route116_EventScript_WandasBoyfriend::
 	lock
@@ -359,6 +396,11 @@ Route116_Text_ScoundrelMadeOffWithPeeko:
 	.string "darling PEEKO!\p"
 	.string "Wrrrooooooaaaar! PEEKO!$"
 
+Route116_Text_ClefairysUpMountain:
+	.string "I come here every night to watch\n"
+	.string "the CLEFAIRY descend the mountain.\p"
+	.string "They have such a serene grace.$"
+
 Route116_Text_WantToDigTunnel:
 	.string "Nnn… Roar!\p"
 	.string "I want to dig that tunnel!$"
@@ -368,14 +410,14 @@ Route116_Text_DiggingTunnelWhenGoonOrderedMeOut:
 	.string "What's going on?\p"
 	.string "I was digging the tunnel without any\n"
 	.string "tools when some goon ordered me out!\p"
-	.string "That tunnel's filled with POKéMON\n"
+	.string "That tunnel's filled with Pokémon\n"
 	.string "that react badly to loud noises.\l"
 	.string "They could cause an uproar.\p"
 	.string "That's why we stopped using heavy\n"
 	.string "equipment for tunneling…\p"
 	.string "I'm worried that the goon will do\n"
 	.string "something stupid and startle the\l"
-	.string "POKéMON into an uproar.$"
+	.string "Pokémon into an uproar.$"
 
 Route116_Text_GoonHightailedItOutOfTunnel:
 	.string "Nnn… Roar!\p"
@@ -394,28 +436,28 @@ Route116_Text_ThankYouTokenOfAppreciation:
 	.string "Why, if I were a rain cloud, I would\n"
 	.string "shower you with gratitude and hail\l"
 	.string "you as a hero!\p"
-	.string "For you, the most wonderful TRAINER,\n"
+	.string "For you, the most wonderful Trainer,\n"
 	.string "I bear good news!\p"
 	.string "Recently, our company developed\n"
 	.string "a new kind of POKé BALL.\p"
 	.string "As a token of our appreciation, this\n"
-	.string "is our gift to our wonderful TRAINER!$"
+	.string "is our gift to our wonderful Trainer!$"
 
 Route116_Text_NewBallAvailableAtMart:
 	.string "Our new POKé BALL will be available\n"
-	.string "at the POKéMON MART in RUSTBORO.\p"
+	.string "at the Pokémon MART in RUSTBORO.\p"
 	.string "Please do try it out!\n"
 	.string "Thank you and bye-bye!$"
 
 Route116_Text_BagIsJamPacked:
-	.string "Your BAG is jam-packed.\n"
+	.string "Your Bag is jam-packed.\n"
 	.string "I can't give you this REPEAT BALL.$"
 
 Route116_Text_TokenOfAppreciation:
 	.string "As a token of our appreciation for\n"
 	.string "your delivering our package, I have\l"
 	.string "a gift of a new kind of POKé BALL\l"
-	.string "for our most wonderful TRAINER!$"
+	.string "for our most wonderful Trainer!$"
 
 Route116_Text_CanYouHelpMeFindGlasses:
 	.string "I dropped my glasses…\n"
@@ -453,21 +495,21 @@ Route116_Text_RusturfTunnelSign:
 	.string "canceled.”$"
 
 Route116_Text_TunnelersRestHouse:
-	.string "TUNNELER'S REST HOUSE$"
+	.string "TUNNELER's REST HOUSE$"
 
 Route116_Text_TrainerTipsBToStopEvolution:
-	.string "TRAINER TIPS\p"
-	.string "If you want to stop a POKéMON from\n"
+	.string "Trainer TIPS\p"
+	.string "If you want to stop a Pokémon from\n"
 	.string "evolving, press the B Button while it\l"
 	.string "is trying to evolve.\l"
-	.string "The startled POKéMON will stop.\p"
+	.string "The startled Pokémon will stop.\p"
 	.string "This is called an evolution cancel.$"
 
 Route116_Text_TrainerTipsBagHasPockets:
-	.string "TRAINER TIPS\p"
-	.string "Your BAG has several POCKETS.\p"
+	.string "Trainer TIPS\p"
+	.string "Your Bag has several POCKETS.\p"
 	.string "Items you obtain are automatically\n"
 	.string "placed in the appropriate POCKETS.\p"
-	.string "No TRAINER can afford to be without\n"
-	.string "a BAG of their own.$"
+	.string "No Trainer can afford to be without\n"
+	.string "a Bag of their own.$"
 

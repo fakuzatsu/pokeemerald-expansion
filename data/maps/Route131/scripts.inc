@@ -1,10 +1,30 @@
 Route131_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route131_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Route131_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route131_OnResume
 	.byte 0
 
+Route131_OnResume_Night:
+	setweather WEATHER_SHADE
+	return
+
+Route131_OnResume_Day:
+	setweather WEATHER_SUNNY
+	return
+
+Route131_OnResume:
+	goto_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route131_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route131_OnResume_Day
+	end
+
 Route131_OnTransition:
-	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, Route131_EventScript_CheckSetAbnormalWeather
 	call Route131_EventScript_SetLayout
+	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, Route131_EventScript_CheckSetAbnormalWeather
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route131_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route131_OnResume_Day
 	end
 
 Route131_EventScript_SetLayout::
@@ -12,7 +32,7 @@ Route131_EventScript_SetLayout::
 	return
 
 Route131_EventScript_CheckSetAbnormalWeather::
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	goto_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	return
 
 Route131_EventScript_Richard::

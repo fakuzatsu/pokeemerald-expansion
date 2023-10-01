@@ -203,7 +203,7 @@ VictoryRoad_1F_Text_QuincyDefeat:
 
 VictoryRoad_1F_Text_QuincyPostBattle:
 	.string "Getting through here safely--that's\n"
-	.string "the final test for any TRAINER aiming\l"
+	.string "the final test for any Trainer aiming\l"
 	.string "to become the POKéMON CHAMPION.\p"
 	.string "That's why it's called the VICTORY\n"
 	.string "ROAD.$"

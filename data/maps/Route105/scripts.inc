@@ -2,12 +2,31 @@ Route105_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, Route105_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, Route105_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route105_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, Route105_OnResume
 	.byte 0
+
+Route105_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route105_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route105_OnResume_Day
+	end
+
+Route105_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_RAIN
+	end
+
+Route105_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	end
 
 Route105_OnLoad:
 	call_if_unset FLAG_REGI_DOORS_OPENED, Route105_CloseRegiEntrance
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_105_NORTH, AbnormalWeather_EventScript_PlaceTilesRoute105North
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_105_SOUTH, AbnormalWeather_EventScript_PlaceTilesRoute105South
+	goto_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_105_NORTH, AbnormalWeather_EventScript_PlaceTilesRoute105North
+	goto_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_105_SOUTH, AbnormalWeather_EventScript_PlaceTilesRoute105South
+	goto_if_eq VAR_RESULT, 1, Route105_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route105_OnResume_Day
 	end
 
 Route105_CloseRegiEntrance::
@@ -17,8 +36,10 @@ Route105_CloseRegiEntrance::
 
 Route105_OnTransition:
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_105_NORTH, AbnormalWeather_StartKyogreWeather
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_105_SOUTH, AbnormalWeather_StartKyogreWeather
+	goto_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_105_NORTH, AbnormalWeather_StartKyogreWeather
+	goto_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_105_SOUTH, AbnormalWeather_StartKyogreWeather
+	goto_if_eq VAR_RESULT, 1, Route105_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route105_OnResume_Day
 	end
 
 Route105_OnFrame:
@@ -84,7 +105,7 @@ Route104_Text_DadPokenavCall:
 	.string "Where are you now?\l"
 	.string "It sounds windy wherever you are.\p"
 	.string "I just heard from DEVON's MR. STONE\n"
-	.string "about your POKéNAV, so I decided\l"
+	.string "about your PokéNav, so I decided\l"
 	.string "to give you a call.\p"
 	.string "It sounds like you're doing fine,\n"
 	.string "so that's fine with me.\p"
@@ -94,4 +115,4 @@ Route104_Text_DadPokenavCall:
 
 Route104_Text_RegisteredDadInPokenav:
 	.string "Registered DAD NORMAN\n"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"

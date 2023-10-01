@@ -3,11 +3,39 @@
 
 Route112_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route112_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Route112_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route112_OnResume
 	.byte 0
+
+Route112_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route112_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route112_OnResume_Day
+	end
+
+Route112_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_SHADE
+	end
+
+Route112_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	setflag FLAG_HIDE_TRAINER_DAYNIGHT
+	end
 
 Route112_OnTransition:
 	clearflag FLAG_FORCE_MIRAGE_TOWER_VISIBLE
 	setvar VAR_JAGGED_PASS_ASH_WEATHER, 0
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route112_OnTransition_Night
+	goto_if_eq VAR_RESULT, 0, Route112_OnResume_Day
+	end
+
+Route112_OnTransition_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_SHADE
+	clearflag FLAG_HIDE_TRAINER_DAYNIGHT
 	end
 
 Route112_EventScript_MagmaGrunts::
@@ -59,6 +87,50 @@ Route112_EventScript_RouteSignLavaridge::
 	msgbox Route112_Text_RouteSignLavaridge, MSGBOX_SIGN
 	end
 
+Route112_EventScript_Cook::
+	lock
+	faceplayer
+	goto_if_set FLAG_ROUTE112_NPC_TRADE_COMPLETED, Route112_EventScript_TradeCompleted
+	setvar VAR_0x8008, INGAME_TRADE_APPLIN
+	copyvar VAR_0x8004, VAR_0x8008
+	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
+	copyvar VAR_0x8009, VAR_RESULT
+	msgbox Route112_Text_YouWillTradeWontYou, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route112_EventScript_DeclineTrade
+	special ChoosePartyMon
+	waitstate
+	copyvar VAR_0x800A, VAR_0x8004
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Route112_EventScript_DeclineTrade
+	copyvar VAR_0x8005, VAR_0x800A
+	specialvar VAR_RESULT, GetTradeSpecies
+	copyvar VAR_0x800B, VAR_RESULT
+	goto_if_ne VAR_RESULT, VAR_0x8009, Route112_EventScript_NotRequestedMon
+	copyvar VAR_0x8004, VAR_0x8008
+	copyvar VAR_0x8005, VAR_0x800A
+	special CreateInGameTradePokemon
+	special DoInGameTradeScene
+	waitstate
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox Route112_Text_MonYouTakeCare, MSGBOX_DEFAULT
+	setflag FLAG_ROUTE112_NPC_TRADE_COMPLETED
+	release
+	end
+
+Route112_EventScript_DeclineTrade::
+	msgbox Route112_Text_YouWontTradeMe, MSGBOX_DEFAULT
+	release
+	end
+
+Route112_EventScript_NotRequestedMon::
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox Route112_Text_ThisIsntAMon, MSGBOX_DEFAULT
+	release
+	end
+
+Route112_EventScript_TradeCompleted::
+	msgbox Route112_Text_ThanksForTheMunchlax, MSGBOX_DEFAULT
+	end
+
 Route112_EventScript_Hiker::
 	msgbox Route112_Text_NotEasyToGetBackToLavaridge, MSGBOX_NPC
 	end
@@ -108,6 +180,35 @@ Route112_EventScript_Shayla::
 	trainerbattle_single TRAINER_SHAYLA, Route112_Text_ShaylaIntro, Route112_Text_ShaylaDefeat
 	msgbox Route112_Text_ShaylaPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+Route112_Text_YouWillTradeWontYou:
+	.string "Ho there!\p"
+	.string "I'm off-shift looking for Pokémon\n"
+	.string "to share my passions!\p"
+	.string "Say, do you happen to have a\n"
+	.string "MUNCHLAX?\p"
+	.string "Would you be willing to TRADE in\n"
+	.string "return for my APPLIN?$"
+
+Route112_Text_MonYouTakeCare:
+	.string "How exciting!\p"
+	.string "{STR_VAR_1}, welcome!\n"
+	.string "{STR_VAR_2}, you take care!$"
+
+Route112_Text_ThisIsntAMon:
+	.string "Oh. That isn't a {STR_VAR_1}.\p"
+	.string "I need a Pokémon like {STR_VAR_1}\n"
+	.string "to share in my passion for food!$"
+
+Route112_Text_YouWontTradeMe:
+	.string "No? Perhaps I'll never find anyone\n"
+	.string "who loves food as much as me…$"
+
+Route112_Text_ThanksForTheMunchlax:
+	.string "Thank you for trading me a\n"
+	.string "MUNCHLAX!\p"
+	.string "I finally found somebody who loves\n"
+	.string "my cooking as much as me!$"
 
 Route112_Text_LeaderGoingToAwakenThing:
 	.string "Hey, man, is our leader really going\n"

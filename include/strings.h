@@ -256,6 +256,7 @@ extern const u8 gText_MenuOption[];
 extern const u8 gText_MenuExit[];
 extern const u8 gText_MenuRetire[];
 extern const u8 gText_MenuRest[];
+extern const u8 gText_MenuDexNav[];
 extern const u8 gText_Floor1[];
 extern const u8 gText_Floor2[];
 extern const u8 gText_Floor3[];
@@ -429,6 +430,7 @@ extern const u8 gText_Var1IsSelected[];
 extern const u8 gText_TossHowManyVar1s[];
 extern const u8 gText_ConfirmTossItems[];
 extern const u8 gText_ThrewAwayVar2Var1s[];
+extern const u8 gText_PressAnyDpadKey[];
 extern const u8 gText_CantWriteMail[];
 extern const u8 gText_NoPokemon[];
 extern const u8 gText_Var1CantBeHeld[];
@@ -523,6 +525,7 @@ extern const u8 gText_SpDef[];
 extern const u8 gText_Speed[];
 extern const u8 gText_Dash[];
 extern const u8 gText_Plus[];
+extern const u8 gText_Nickname[];
 
 //pokedex text
 extern const u8 gText_CryOf[];
@@ -952,6 +955,7 @@ extern const u8 gText_BattleMoves[];
 extern const u8 gText_ContestMoves[];
 extern const u8 gText_HMMovesCantBeForgotten2[];
 extern const u8 gText_Info[];
+extern const u8 gText_EVs[];
 extern const u8 gText_Switch[];
 extern const u8 gText_RentalPkmn[];
 extern const u8 gText_TypeSlash[];
@@ -1301,6 +1305,9 @@ extern const u8 gText_NormalTagMatch[];
 extern const u8 gText_VarietyTagMatch[];
 extern const u8 gText_UniqueTagMatch[];
 extern const u8 gText_ExpertTagMatch[];
+extern const u8 gText_SoftLevelCap[];
+extern const u8 gText_HardLevelCap[];
+extern const u8 gText_Toggle[];
 extern const u8 gText_TimeBoard[];
 extern const u8 gText_TimeCleared[];
 extern const u8 gText_XMinYDotZSec[];
@@ -3033,6 +3040,9 @@ extern const u8 gText_YourName[];
 extern const u8 gText_BoxName[];
 extern const u8 gText_PkmnsNickname[];
 extern const u8 gText_TellHimTheWords[];
+
+//Move Relearn
+extern const u8 gText_Moves_Menu[];
 
 // Exp. Share
 extern const u8 gText_ExpShareOn[];

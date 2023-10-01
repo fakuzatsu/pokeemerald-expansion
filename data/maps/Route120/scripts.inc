@@ -10,7 +10,21 @@ Route120_MapScripts::
 
 Route120_OnResume:
 	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, Route120_EventScript_RemoveKecleonObject
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route120_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route120_OnResume_Day
 	end
+
+Route120_OnResume_Night:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SHADE
+	setflag FLAG_HIDE_TRAINER_DAYNIGHT
+	return
+
+Route120_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	return
 
 Route120_EventScript_RemoveKecleonObject::
 	call_if_eq VAR_0x8009, 0, Route120_EventScript_RemoveBridgeKecleon
@@ -69,11 +83,27 @@ Route120_EventScript_SetWeather::
 	return
 
 Route120_EventScript_SetCloudyWeather::
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route120_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route120_EventScript_SetCloudyWeather_Day
+	end
+
+Route120_EventScript_SetCloudyWeather_Day::
+	setvar VAR_DAYNIGHT, 0
 	setweather WEATHER_SUNNY_CLOUDS
+	clearflag FLAG_HIDE_TRAINER_DAYNIGHT
 	return
 
 Route120_EventScript_SetSunnyWeather::
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route120_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route120_OnTransition_Day
+	end
+
+Route120_OnTransition_Day:
+	setvar VAR_DAYNIGHT, 0
 	setweather WEATHER_SUNNY
+	clearflag FLAG_HIDE_TRAINER_DAYNIGHT
 	return
 
 Route120_EventScript_TrySetRainyWeather::
@@ -83,7 +113,34 @@ Route120_EventScript_TrySetRainyWeather::
 	end
 
 Route120_EventScript_SetRainyWeather::
+	setvar VAR_DAYNIGHT, 1
 	setweather WEATHER_RAIN
+	setflag FLAG_HIDE_TRAINER_DAYNIGHT
+	return
+
+Route120_EventScript_SunTrigger::
+	special GetDayOrNight
+	call_if_eq VAR_RESULT, 1, Route120_OnResume_Night
+	call_if_eq VAR_RESULT, 0, Route120_OnResume_Day
+	doweather
+	end
+
+Route120_EventScript_RainTrigger::
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_RAIN
+	doweather
+	end
+
+Route120_EventScript_SunCloudsTrigger::
+	special GetDayOrNight
+	call_if_eq VAR_RESULT, 1, Route120_OnResume_Night
+	call_if_eq VAR_RESULT, 0, Route120_OnResume_SunnyClouds
+	doweather
+	end
+
+Route120_OnResume_SunnyClouds::
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY_CLOUDS
 	return
 
 Route120_EventScript_BerryBeauty::
@@ -229,6 +286,7 @@ Route120_EventScript_StevenGiveDeconScope::
 	dofieldeffect FLDEFF_NPCFLY_OUT
 	delay 15
 	removeobject LOCALID_STEVEN
+	setflag FLAG_HIDE_ROUTE_120_STEVEN
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	setmetatile 13, 15, METATILE_Fortree_WoodBridge1_Top, FALSE
 	setmetatile 12, 16, METATILE_Fortree_WoodBridge1_Bottom, FALSE
@@ -364,7 +422,11 @@ Route120_EventScript_Callie::
 
 Route120_Text_StevenGreeting:
 	.string "STEVEN: Hm? {PLAYER}{KUN}, hi.\n"
-	.string "It's been a while.\p"
+	.string "Pleasure to see you again.\p"
+	.string "Have you been searching for more\n"
+	.string "MEGA STONES?\p"
+	.string "… … …\p"
+	.string "Speaking of searching…\p"
 	.string "There's something here that you can't\n"
 	.string "see, right?\p"
 	.string "Now, if I were to use this device on\n"
@@ -372,7 +434,7 @@ Route120_Text_StevenGreeting:
 	.string "No, no. Rather than describing it,\n"
 	.string "I should just show you.\l"
 	.string "That would be more fun.\p"
-	.string "{PLAYER}{KUN}, are your POKéMON ready for\n"
+	.string "{PLAYER}{KUN}, are your Pokémon ready for\n"
 	.string "battle?$"
 
 Route120_Text_StevenIllWaitHere:
@@ -380,34 +442,36 @@ Route120_Text_StevenIllWaitHere:
 	.string "I'll wait here, so you can get ready.$"
 
 Route120_Text_StevenReadyForBattle:
-	.string "STEVEN: {PLAYER}{KUN}, are your POKéMON\n"
+	.string "STEVEN: {PLAYER}{KUN}, are your Pokémon\n"
 	.string "ready for battle?$"
 
 Route120_Text_StevenShowMeYourPower:
-	.string "STEVEN: {PLAYER}{KUN}, show me your true\n"
-	.string "power as a TRAINER!$"
+	.string "STEVEN: {PLAYER}{KUN}, show me the power\n"
+	.string "you used at MT. CORONET!$"
 
 Route120_Text_StevenUsedDevonScope:
 	.string "STEVEN used the DEVON SCOPE.\p"
-	.string "An invisible POKéMON became completely\n"
+	.string "An invisible Pokémon became completely\n"
 	.string "visible!\p"
-	.string "The startled POKéMON attacked!$"
+	.string "The startled Pokémon attacked!$"
 
 Route120_Text_StevenGiveDevonScope:
 	.string "STEVEN: I see…\n"
 	.string "Your battle style is intriguing.\p"
-	.string "Your POKéMON have obviously grown\n"
-	.string "since I first met you in DEWFORD.\p"
+	.string "Your Pokémon have obviously grown\n"
+	.string "since I battled with you in MT. MOON.\p"
 	.string "I'd like you to have this\n"
 	.string "DEVON SCOPE.\p"
 	.string "Who knows, there may be other\n"
-	.string "concealed POKéMON.$"
+	.string "concealed Pokémon.$"
 
 Route120_Text_StevenGoodbye:
 	.string "STEVEN: {PLAYER}{KUN}.\p"
-	.string "I enjoy seeing POKéMON and TRAINERS\n"
+	.string "I enjoy seeing Pokémon and TRAINERS\n"
 	.string "who strive together.\p"
 	.string "I think you're doing great.\p"
+	.string "PROFESSOR COSMO choose a great Trainer\n"
+	.string "to wield his MEGA BRACELET.\p"
 	.string "Well, let's meet again somewhere.$"
 
 Kecleon_Text_SomethingUnseeable:
@@ -419,9 +483,9 @@ Kecleon_Text_WantToUseDevonScope:
 
 Kecleon_Text_UseDevonScopeMonAttacked:
 	.string "{PLAYER} used the DEVON SCOPE.\p"
-	.string "An invisible POKéMON became completely\n"
+	.string "An invisible Pokémon became completely\n"
 	.string "visible!\p"
-	.string "The startled POKéMON attacked!$"
+	.string "The startled Pokémon attacked!$"
 
 Route120_Text_RouteSignFortree:
 	.string "ROUTE 120\n"

@@ -2,7 +2,25 @@ Route129_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route129_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, Route129_OnLoad
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route129_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, Route129_OnResume
 	.byte 0
+
+Route129_OnResume_Night:
+	setweather WEATHER_RAIN
+	return
+
+Route129_OnResume_Day:
+	setweather WEATHER_SUNNY
+	return
+
+Route129_OnResume:
+	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, Route129_EventScript_CheckSetAbnormalWeather
+	goto_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_129_WEST, AbnormalWeather_StartKyogreWeather
+	goto_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_129_EAST, AbnormalWeather_StartKyogreWeather
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route129_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route129_OnResume_Day
+	end
 
 Route129_OnLoad:
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_129_WEST, AbnormalWeather_EventScript_PlaceTilesRoute129West
@@ -12,12 +30,15 @@ Route129_OnLoad:
 Route129_OnTransition:
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, Route129_EventScript_CheckSetAbnormalWeather
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_129_WEST, AbnormalWeather_StartKyogreWeather
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_129_EAST, AbnormalWeather_StartKyogreWeather
+	goto_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_129_WEST, AbnormalWeather_StartKyogreWeather
+	goto_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_129_EAST, AbnormalWeather_StartKyogreWeather
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route129_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route129_OnResume_Day
 	end
 
 Route129_EventScript_CheckSetAbnormalWeather::
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	goto_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	return
 
 Route129_OnFrame:

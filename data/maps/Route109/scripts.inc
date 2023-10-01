@@ -2,7 +2,39 @@
 @  These are labeled in DewfordTown/scripts.inc
 
 Route109_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route109_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Route109_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route109_OnResume
 	.byte 0
+
+Route109_OnTransition:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route109_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route109_OnTransition_Day
+	end
+
+Route109_OnTransition_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	clearflag FLAG_HIDE_TRAINER_DAYNIGHT
+	end
+
+Route109_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route109_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route109_OnResume_Day
+	end
+
+Route109_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_SHADE
+	setflag FLAG_HIDE_TRAINER_DAYNIGHT
+	end
+
+Route109_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	end
 
 Route109_EventScript_StartDepartForDewford::
 	call EventScript_BackupMrBrineyLocation
@@ -522,7 +554,7 @@ Route109_Text_LittleKidsDartAround:
 	.string "Little kids can dart around so quickly…\p"
 	.string "You don't dare take your eyes off them\n"
 	.string "for an instant. It's very taxing.\p"
-	.string "Mine are with my POKéMON, so they\n"
+	.string "Mine are with my Pokémon, so they\n"
 	.string "should be okay, but…$"
 
 Route109_Text_SandCastleTakingLongTime:
@@ -557,8 +589,8 @@ Route109_Text_SeashoreHouseSign:
 	.string "The place for hot TRAINERS!”$"
 
 Route109_Text_TrainerTipsSign:
-	.string "TRAINER TIPS\p"
-	.string "POKéMON at the same level may not\n"
+	.string "Trainer TIPS\p"
+	.string "Pokémon at the same level may not\n"
 	.string "always have identical stats.\p"
-	.string "POKéMON raised by TRAINERS are said\n"
-	.string "to grow stronger than wild POKéMON.$"
+	.string "Pokémon raised by TRAINERS are said\n"
+	.string "to grow stronger than wild Pokémon.$"

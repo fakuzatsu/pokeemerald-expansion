@@ -310,6 +310,10 @@ PetalburgCity_EventScript_ItemEther::
 	finditem ITEM_ETHER
 	end
 
+PetalburgCity_EventScript_ItemBottleCap::
+	finditem ITEM_BOTTLE_CAP
+	end
+
 MauvilleCity_EventScript_ItemXSpeed::
 	finditem ITEM_X_SPEED
 	end

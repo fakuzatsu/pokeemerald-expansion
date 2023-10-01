@@ -8,6 +8,10 @@ MtPyre_4F_EventScript_Tasha::
 	msgbox MtPyre_4F_Text_TashaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+MtPyre_5F_EventScript_LaxIncenseArea::
+	setvar VAR_DAYNIGHT, 1
+	end
+
 MtPyre_4F_Text_TashaIntro:
 	.string "I love all things horrifying…\n"
 	.string "It's like a disease…\p"

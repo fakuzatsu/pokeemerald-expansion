@@ -164,11 +164,11 @@ AbnormalWeather_EventScript_HideMapNamePopup::
 
 AbnormalWeather_StartKyogreWeather::
 	setweather WEATHER_DOWNPOUR
-	return
+	end
 
 AbnormalWeather_StartGroudonWeather::
 	setweather WEATHER_DROUGHT
-	return
+	end
 
 AbnormalWeather_EventScript_EndEventAndCleanup_1::
 	lockall

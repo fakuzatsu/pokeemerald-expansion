@@ -329,7 +329,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenu[] =
         .paletteNum = 15,
         .baseBlock = 0x9D
     },
-    // OPTION / MYSTERY GIFT
+    // Option / MYSTERY GIFT
     {
         .bg = 0,
         .tilemapLeft = MENU_LEFT,
@@ -339,7 +339,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenu[] =
         .paletteNum = 15,
         .baseBlock = 0xD1
     },
-    // OPTION / MYSTERY EVENTS
+    // Option / MYSTERY EVENTS
     {
         .bg = 0,
         .tilemapLeft = MENU_LEFT,
@@ -349,7 +349,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenu[] =
         .paletteNum = 15,
         .baseBlock = 0x105
     },
-    // OPTION
+    // Option
     {
         .bg = 0,
         .tilemapLeft = MENU_LEFT,
@@ -510,10 +510,10 @@ static const u8 *const sFemalePresetNames[] = {
 
 enum
 {
-    HAS_NO_SAVED_GAME,  //NEW GAME, OPTION
-    HAS_SAVED_GAME,     //CONTINUE, NEW GAME, OPTION
-    HAS_MYSTERY_GIFT,   //CONTINUE, NEW GAME, MYSTERY GIFT, OPTION
-    HAS_MYSTERY_EVENTS, //CONTINUE, NEW GAME, MYSTERY GIFT, MYSTERY EVENTS, OPTION
+    HAS_NO_SAVED_GAME,  //NEW GAME, Option
+    HAS_SAVED_GAME,     //CONTINUE, NEW GAME, Option
+    HAS_MYSTERY_GIFT,   //CONTINUE, NEW GAME, MYSTERY GIFT, Option
+    HAS_MYSTERY_EVENTS, //CONTINUE, NEW GAME, MYSTERY GIFT, MYSTERY EVENTS, Option
 };
 
 enum

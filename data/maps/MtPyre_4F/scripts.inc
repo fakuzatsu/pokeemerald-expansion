@@ -1,11 +1,20 @@
 MtPyre_4F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MtPyre_5F_OnTransition
 	.byte 0
 
 @ Seems like the scripts for the 4F and 5F were swapped
 
+MtPyre_5F_OnTransition::
+	setvar VAR_DAYNIGHT, 0
+	end
+
 MtPyre_5F_EventScript_Atsushi::
 	trainerbattle_single TRAINER_ATSUSHI, MtPyre_5F_Text_AtsushiIntro, MtPyre_5F_Text_AtsushiDefeat
 	msgbox MtPyre_5F_Text_AtsushiPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MtPyre_4F_EventScript_SeaIncenseArea::
+	setvar VAR_DAYNIGHT, 1
 	end
 
 MtPyre_5F_Text_AtsushiIntro:

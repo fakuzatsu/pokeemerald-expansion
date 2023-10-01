@@ -43,6 +43,7 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/songs.h"
+#include "rtc.h"
 
 static void SetUpItemUseCallback(u8);
 static void FieldCB_UseItemOnField(void);
@@ -821,8 +822,22 @@ void ItemUseOutOfBattle_PPUp(u8 taskId)
 
 void ItemUseOutOfBattle_RareCandy(u8 taskId)
 {
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
     gItemUseCB = ItemUseCB_RareCandy;
     SetUpItemUseCallback(taskId);
+    }
+    else
+    {
+    sItemUseOnFieldCB = ItemUseCB_CannotUse;
+    SetUpItemUseOnFieldCallback(taskId);
+    }
+}
+
+void ItemUseCB_CannotUse(u8 taskId)
+{
+    ScriptContext_SetupScript(EventScript_CantRegisterRareCandy);
+    DestroyTask(taskId);
 }
 
 void ItemUseOutOfBattle_TMHM(u8 taskId)
@@ -1068,7 +1083,7 @@ bool32 CanThrowBall(void)
 
 static const u8 sText_CantThrowPokeBall_TwoMons[] = _("Cannot throw a ball!\nThere are two Pokémon out there!\p");
 static const u8 sText_CantThrowPokeBall_SemiInvulnerable[] = _("Cannot throw a ball!\nThere's no Pokémon in sight!\p");
-static const u8 sText_CantThrowPokeBall_Disabled[] = _("POKé BALLS cannot be used\nright now!\p");
+static const u8 sText_CantThrowPokeBall_Disabled[] = _("Poké Balls cannot be used\nright now!\p");
 void ItemUseInBattle_PokeBall(u8 taskId)
 {
     switch (GetBallThrowableState())
@@ -1343,6 +1358,32 @@ void ItemUseOutOfBattle_Honey(u8 taskId)
     gFieldCallback = FieldCB_UseItemOnField;
     gBagMenu->newScreenCallback = CB2_ReturnToField;
     Task_FadeAndCloseBagMenu(taskId);
+}
+
+void ItemUseCB_Poketch(u8 taskId)
+{
+    Overworld_ResetStateAfterDigEscRope();
+    ToggleDayNight();
+    ScriptContext_SetupScript(EventScript_ChangedTime);
+    RunOnResumeMapScript();
+    DoCurrentWeather();
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_Poketch(u8 taskId)
+{
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        sItemUseOnFieldCB = ItemUseCB_Poketch; 
+        gFieldCallback = FieldCB_UseItemOnField; 
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else 
+    {
+        sItemUseOnFieldCB = ItemUseCB_Poketch;
+        SetUpItemUseOnFieldCallback(taskId);
+    }
 }
 
 void ItemUseOutOfBattle_CannotUse(u8 taskId)

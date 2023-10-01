@@ -4,18 +4,41 @@ Route118_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route118_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, Route118_OnLoad
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route118_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, Route118_OnResume
 	.byte 0
+
+Route118_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route118_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route118_OnResume_Day
+	end
+
+Route118_OnResume_Night:
+	setvar VAR_DAYNIGHT, 1
+	setweather WEATHER_SHADE
+	end
+
+Route118_OnResume_Day:
+	setvar VAR_DAYNIGHT, 0
+	setweather WEATHER_SUNNY
+	end
 
 Route118_OnTransition:
 	call GabbyAndTy_EventScript_UpdateLocation
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_EAST, AbnormalWeather_StartGroudonWeather
-	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_WEST, AbnormalWeather_StartGroudonWeather
+	goto_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_EAST, AbnormalWeather_StartGroudonWeather
+	goto_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_WEST, AbnormalWeather_StartGroudonWeather
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route118_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route118_OnResume_Day
 	end
 
 Route118_OnLoad:
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_EAST, AbnormalWeather_EventScript_PlaceTilesRoute118East
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_WEST, AbnormalWeather_EventScript_PlaceTilesRoute118West
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route118_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route118_OnResume_Day
 	end
 
 Route118_OnFrame:
@@ -246,19 +269,20 @@ Route118_EventScript_Deandre::
 
 Route118_Text_StevenQuestions:
 	.string "STEVEN: Hi, {PLAYER}{KUN}!\p"
-	.string "It's me, STEVEN!\n"
-	.string "We met in the cave near DEWFORD.\p"
-	.string "Have you met many kinds of POKéMON\n"
-	.string "since I last saw you?\p"
-	.string "There are many, many kinds of POKéMON\n"
-	.string "in this wide world of ours.\p"
-	.string "If you wanted to raise only your\n"
-	.string "favorites, that's fine.\p"
-	.string "Perhaps you find it more fun to raise\n"
-	.string "all sorts of POKéMON.\p"
-	.string "As a TRAINER of POKéMON,\n"
-	.string "what do you think?\p"
-	.string "Of course, it's not any of my business.\p"
+	.string "Pleasure to see you again.\p"
+	.string "I heard that you were able to stop\n"
+	.string "TEAM MAGMA on MT. CORONET.\p"
+	.string "Were you able to unlock the power\n"
+	.string "of that stone I gave you?\p"
+	.string "… … …\p"
+	.string "Regardless, I know that you and your\n"
+	.string "Pokémon will go far together.\p"
+	.string "…In the meantime, I am working with\n"
+	.string "PROFESSOR COSMO…\p"
+	.string "Hunting down more of these mysterious\n"
+	.string "MEGA STONES.\p"
+	.string "…Perhaps you will find more of them\n"
+	.string "yourself {PLAYER}{KUN}!\p"
 	.string "It would be nice if we were to meet\n"
 	.string "again somewhere.$"
 
@@ -281,14 +305,14 @@ Route118_Text_DontYouLikeToFish:
 	.string "Don't you like to fish?$"
 
 Route118_Text_TryCatchingMonWithGoodRod:
-	.string "Try catching all sorts of POKéMON\n"
+	.string "Try catching all sorts of Pokémon\n"
 	.string "with your GOOD ROD.$"
 
 Route118_Text_CanCrossRiversWithSurf:
 	.string "Even if there isn't a boat, you can\n"
 	.string "cross rivers and the sea if you have\l"
-	.string "a POKéMON that knows SURF.\p"
-	.string "POKéMON can be counted on to do so\n"
+	.string "a Pokémon that knows SURF.\p"
+	.string "Pokémon can be counted on to do so\n"
 	.string "much!$"
 
 Route118_Text_RouteSignMauville:

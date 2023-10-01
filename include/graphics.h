@@ -8927,14 +8927,14 @@ extern const u32 gItemIcon_WailmerPail[];
 extern const u32 gItemIconPalette_WailmerPail[];
 extern const u32 gItemIcon_PokeRadar[];
 extern const u32 gItemIconPalette_PokeRadar[];
+extern const u32 gItemIcon_InfiniteCandy[];
+extern const u32 gItemIconPalette_InfiniteCandy[];
 extern const u32 gItemIcon_PokeblockCase[];
 extern const u32 gItemIconPalette_PokeblockCase[];
 extern const u32 gItemIcon_SootSack[];
 extern const u32 gItemIconPalette_SootSack[];
 extern const u32 gItemIcon_PokeFlute[];
 extern const u32 gItemIconPalette_PokeFlute[];
-extern const u32 gItemIcon_FameChecker[];
-extern const u32 gItemIconPalette_FameChecker[];
 extern const u32 gItemIcon_TeachyTV[];
 extern const u32 gItemIconPalette_TeachyTV[];
 // Story Key Items

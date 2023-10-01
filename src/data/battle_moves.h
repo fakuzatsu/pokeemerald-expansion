@@ -12136,21 +12136,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .argument = ARG_TRY_REMOVE_TERRAIN_FAIL, // Remove a field terrain if there is one and hit, otherwise fail.
     },
 
-    [MOVE_SCALE_SHOT] =
-    {
-        .effect = EFFECT_MULTI_HIT,
-        .power = 25,
-        .type = TYPE_DRAGON,
-        .accuracy = 90,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-        .argument = MOVE_EFFECT_SCALE_SHOT,
-    },
-
     [MOVE_METEOR_BEAM] =
     {
         .effect = EFFECT_METEOR_BEAM,
@@ -12731,7 +12716,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         #else
             .power = 120,
         #endif
-        .effect = EFFECT_STEEL_BEAM,
+        .effect = EFFECT_RECOIL_50,
         .type = TYPE_GRASS,
         .accuracy = 95,
         .pp = 5,

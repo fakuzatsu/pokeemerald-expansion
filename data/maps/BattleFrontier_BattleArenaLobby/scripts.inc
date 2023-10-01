@@ -355,27 +355,27 @@ BattleFrontier_BattleArenaLobby_EventScript_ExitRules::
 BattleFrontier_BattleArenaLobby_Text_WelcomeToBattleArena:
 	.string "Where the battling spirit of TRAINERS\n"
 	.string "is put to the test!\p"
-	.string "I welcome you to the BATTLE ARENA!\p"
+	.string "I welcome you to the Battle ARENA!\p"
 	.string "I am your guide to the Set KO Tourney!$"
 
 BattleFrontier_BattleArenaLobby_Text_WishToTakeChallenge:
 	.string "Now, do you wish to take\n"
-	.string "the BATTLE ARENA challenge?$"
+	.string "the Battle ARENA challenge?$"
 
 BattleFrontier_BattleArenaLobby_Text_AwaitAnotherChallenge:
 	.string "We await your challenge on\n"
 	.string "another occasion!$"
 
 BattleFrontier_BattleArenaLobby_Text_ExplainChallenge:
-	.string "In the BATTLE ARENA, we undertake\n"
+	.string "In the Battle ARENA, we undertake\n"
 	.string "the Set KO Tourney.\p"
 	.string "All participants enter with a team of\n"
-	.string "three POKéMON.\p"
-	.string "The three POKéMON must be lined up in\n"
+	.string "three Pokémon.\p"
+	.string "The three Pokémon must be lined up in\n"
 	.string "the order in which they are to appear.\p"
-	.string "During battle, the POKéMON will appear\n"
+	.string "During battle, the Pokémon will appear\n"
 	.string "one at a time in the preset order.\p"
-	.string "Once a POKéMON enters battle, it must\n"
+	.string "Once a Pokémon enters battle, it must\n"
 	.string "remain out until the match is decided.\p"
 	.string "If a match remains undecided in\n"
 	.string "three turns, it goes to judging.\p"
@@ -388,24 +388,24 @@ BattleFrontier_BattleArenaLobby_Text_ExplainChallenge:
 	.string "we will present you with Battle Points.$"
 
 BattleFrontier_BattleArenaLobby_Text_OkayToSave:
-	.string "Before showing you to the BATTLE\n"
+	.string "Before showing you to the Battle\n"
 	.string "ARENA, you must save. Is that okay?$"
 
 BattleFrontier_BattleArenaLobby_Text_WhichLevelMode:
-	.string "The BATTLE ARENA offers two levels\n"
+	.string "The Battle ARENA offers two levels\n"
 	.string "of challenge, Level 50 and Open Level.\l"
 	.string "Which is your choice?$"
 
 BattleFrontier_BattleArenaLobby_Text_SelectThreeMons:
 	.string "Very well, now select your\n"
-	.string "three POKéMON, please.$"
+	.string "three Pokémon, please.$"
 
 BattleFrontier_BattleArenaLobby_Text_NotEnoughValidMonsLvOpen:
 	.string "My dear challenger!\p"
-	.string "You do not have the three POKéMON\n"
+	.string "You do not have the three Pokémon\n"
 	.string "required for entry.\p"
 	.string "To qualify, you must bring three\n"
-	.string "different kinds of POKéMON.\p"
+	.string "different kinds of Pokémon.\p"
 	.string "They also must not hold the same\n"
 	.string "kinds of items.\p"
 	.string "EGGS{STR_VAR_1} ineligible.\p"
@@ -414,11 +414,11 @@ BattleFrontier_BattleArenaLobby_Text_NotEnoughValidMonsLvOpen:
 
 BattleFrontier_BattleArenaLobby_Text_NotEnoughValidMonsLv50:
 	.string "My dear challenger!\p"
-	.string "You do not have the three POKéMON\n"
+	.string "You do not have the three Pokémon\n"
 	.string "required for entry.\p"
 	.string "To qualify, you must bring three\n"
-	.string "different kinds of POKéMON.\p"
-	.string "The three different POKéMON\n"
+	.string "different kinds of Pokémon.\p"
+	.string "The three different Pokémon\n"
 	.string "must all be Level 50 or lower.\p"
 	.string "They also must not hold the same\n"
 	.string "kinds of items.\p"
@@ -428,7 +428,7 @@ BattleFrontier_BattleArenaLobby_Text_NotEnoughValidMonsLv50:
 
 BattleFrontier_BattleArenaLobby_Text_GuideYouToArena:
 	.string "I shall now guide you to\n"
-	.string "the BATTLE ARENA.$"
+	.string "the Battle ARENA.$"
 
 BattleFrontier_BattleArenaLobby_Text_DidntSaveBeforeShuttingDown:
 	.string "My dear challenger!\p"
@@ -461,7 +461,7 @@ BattleFrontier_BattleArenaLobby_Text_ReceivedPrize:
 @ Unused
 BattleFrontier_BattleArenaLobby_Text_BagFullReturnForPrize:
 	.string "Oh?\n"
-	.string "Your BAG seems to be full.\p"
+	.string "Your Bag seems to be full.\p"
 	.string "I urge you to clear space and\n"
 	.string "return for your prize.$"
 
@@ -476,12 +476,12 @@ BattleFrontier_BattleArenaLobby_Text_AwaitAnotherChallenge2:
 BattleFrontier_BattleArenaLobby_Text_LookingForwardToArrivalSaveGame:
 	.string "We have been looking forward to\n"
 	.string "your arrival.\p"
-	.string "Before I show you to the BATTLE\n"
+	.string "Before I show you to the Battle\n"
 	.string "ARENA, I must save the game.\l"
 	.string "Please wait.$"
 
 BattleFrontier_BattleArenaLobby_Text_RecordLastMatch:
-	.string "Shall I record your last BATTLE ARENA\n"
+	.string "Shall I record your last Battle ARENA\n"
 	.string "match on your FRONTIER PASS?$"
 
 BattleFrontier_BattleArenaLobby_Text_BadIdeaToNotAttack:
@@ -492,20 +492,20 @@ BattleFrontier_BattleArenaLobby_Text_BadIdeaToNotAttack:
 BattleFrontier_BattleArenaLobby_Text_LandingHitsWorked:
 	.string "I won in judging!\p"
 	.string "Landing hits consistently on\n"
-	.string "the opponent's POKéMON worked!$"
+	.string "the opponent's Pokémon worked!$"
 
 BattleFrontier_BattleArenaLobby_Text_MatchWasDeclaredDraw:
 	.string "Our match was declared a draw.\p"
 	.string "When we ran out of time, both my\n"
-	.string "POKéMON and the opponent's had about\l"
+	.string "Pokémon and the opponent's had about\l"
 	.string "the same amount of HP left.$"
 
 BattleFrontier_BattleArenaLobby_Text_OrderOfMonsImportant:
-	.string "In the BATTLE ARENA, the order of\n"
-	.string "POKéMON is totally important.\p"
-	.string "For example, if your first POKéMON\n"
+	.string "In the Battle ARENA, the order of\n"
+	.string "Pokémon is totally important.\p"
+	.string "For example, if your first Pokémon\n"
 	.string "has certain type disadvantages,\l"
-	.string "try making your second POKéMON one\l"
+	.string "try making your second Pokémon one\l"
 	.string "with moves that are super effective\l"
 	.string "against the first one.\p"
 	.string "I think that will be a good way of\n"
@@ -525,8 +525,8 @@ BattleFrontier_BattleArenaLobby_Text_ExplainBattleRules:
 	.string "If the outcome is not decided after\n"
 	.string "three turns, it goes to judging.\p"
 	.string "The REFEREE will choose the winner\n"
-	.string "based on how the POKéMON battled.\p"
-	.string "Also, a POKéMON cannot be switched out\n"
+	.string "based on how the Pokémon battled.\p"
+	.string "Also, a Pokémon cannot be switched out\n"
 	.string "until its battle's outcome is decided.$"
 
 BattleFrontier_BattleArenaLobby_Text_ExplainMindRules:
@@ -540,7 +540,7 @@ BattleFrontier_BattleArenaLobby_Text_ExplainMindRules:
 BattleFrontier_BattleArenaLobby_Text_ExplainSkillRules:
 	.string "The second judging factor is “Skill.”\n"
 	.string "This factor evaluates how effectively\l"
-	.string "POKéMON moves were used.\p"
+	.string "Pokémon moves were used.\p"
 	.string "If a move worked successfully,\n"
 	.string "the Skill rating goes up.\p"
 	.string "If a move failed, the Skill rating\n"
@@ -552,7 +552,7 @@ BattleFrontier_BattleArenaLobby_Text_ExplainSkillRules:
 	.string "The Skill rating will not go up for\n"
 	.string "moves such as PROTECT and DETECT.\p"
 	.string "If the opponent used PROTECT or\n"
-	.string "DETECT, and your POKéMON failed to\l"
+	.string "DETECT, and your Pokémon failed to\l"
 	.string "hit with a move, its Skill rating will not\l"
 	.string "go down.$"
 
@@ -561,12 +561,12 @@ BattleFrontier_BattleArenaLobby_Text_ExplainBodyRules:
 	.string "This factor is based on how much HP\l"
 	.string "remained at the end of a battle.\p"
 	.string "The rating takes into account how much\n"
-	.string "HP a POKéMON had at the start of\l"
+	.string "HP a Pokémon had at the start of\l"
 	.string "battle, and what remained at the end.$"
 
 BattleFrontier_BattleArenaLobby_Text_CongratsOnDefeatingTycoon:
 	.string "A victory snatched from the ARENA\n"
-	.string "TYCOON, and a seven-TRAINER sweep!\p"
+	.string "TYCOON, and a seven-Trainer sweep!\p"
 	.string "We congratulate you on your most\n"
 	.string "splendid challenge!$"
 

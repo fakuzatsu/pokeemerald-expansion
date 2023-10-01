@@ -1220,7 +1220,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
         .flingPower = 30,
-    },
+    }, 
 
     [ITEM_EXP_CANDY_XS] =
     {
@@ -1285,7 +1285,7 @@ const struct Item gItems[] =
     [ITEM_DYNAMAX_CANDY] =
     {
         .name = _("DynamaxCandy"),
-        .price = 0,
+        .price = 10000,
         .description = sDynamaxCandyDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -8803,13 +8803,24 @@ const struct Item gItems[] =
 
     [ITEM_POKE_RADAR] =
     {
-        .name = _("Poké Radar"),
+        .name = _("Poké Watch"),
         .price = 0,
         .description = sPokeRadarDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
+        .fieldUseFunc = ItemUseOutOfBattle_Poketch,
+    },
+
+    [ITEM_INFINITE_CANDY] =
+    {
+        .name = _("Inf. Candy"),
+        .price = 0,
+        .description = sInfiniteCandy,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
     },
 
     [ITEM_POKEBLOCK_CASE] =
@@ -8839,17 +8850,6 @@ const struct Item gItems[] =
         .name = _("Poké Flute"),
         .price = 0,
         .description = sPokeFluteDesc,
-        .importance = 1,
-        .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    },
-
-    [ITEM_FAME_CHECKER] =
-    {
-        .name = _("Fame Checker"),
-        .price = 0,
-        .description = sFameCheckerDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

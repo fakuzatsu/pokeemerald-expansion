@@ -11,11 +11,29 @@ Route111_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route111_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Route111_OnWarp
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route111_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, Route111_OnResume
 	.byte 0
+
+Route111_OnResume:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route111_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route111_OnResume_Day
+	end
+
+Route111_OnResume_Night:
+	setweather WEATHER_SHADE
+	setflag FLAG_HIDE_TRAINER_DAYNIGHT
+	return
+
+Route111_OnResume_Day:
+	setweather WEATHER_SUNNY
+	return
 
 Route111_OnLoad:
 	call_if_unset FLAG_REGI_DOORS_OPENED, Route111_EventScript_CloseDesertRuins
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 1, Route111_EventScript_ShowTemporaryMirageTower
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call Route111_EventScript_CheckSetSandstorm
 	end
 
 Route111_EventScript_CloseDesertRuins::
@@ -77,9 +95,21 @@ Route111_EventScript_CheckSetSandstorm::
 	goto_if_gt VAR_TEMP_1, 72, Route111_EventScript_SetSandstorm
 	goto_if_gt VAR_TEMP_0, 2000, Route111_EventScript_EndCheckSetSandstorm
 	goto_if_lt VAR_TEMP_0, 8, Route111_EventScript_EndCheckSetSandstorm
+	doweather
+	return
+
 Route111_EventScript_SetSandstorm::
 	setweather WEATHER_SANDSTORM
+
 Route111_EventScript_EndCheckSetSandstorm::
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, Route111_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, Route111_OnTransition_Day
+	return
+
+Route111_OnTransition_Day:
+	setweather WEATHER_SUNNY
+	clearflag FLAG_HIDE_TRAINER_DAYNIGHT
 	return
 
 Route111_EventScript_SetWinstratesNotDefeated::
@@ -252,7 +282,9 @@ Route111_Movement_PushRightFromRoute:
 	step_end
 
 Route111_EventScript_SunTrigger::
-	setweather WEATHER_SUNNY
+	special GetDayOrNight
+	call_if_eq VAR_RESULT, 1, Route111_OnResume_Night
+	call_if_eq VAR_RESULT, 0, Route111_OnResume_Day
 	fadenewbgm MUS_ROUTE110
 	doweather
 	setvar VAR_TEMP_3, 0
@@ -577,7 +609,7 @@ Route111_Text_BattleOurFamily:
 	.string "Hello! I take it you're a traveler.\p"
 	.string "How's this? What do you say to taking\n"
 	.string "on our family of four in a series of\l"
-	.string "POKéMON battles?$"
+	.string "Pokémon battles?$"
 
 Route111_Text_IsThatSo:
 	.string "Is that so?\n"
@@ -592,11 +624,11 @@ Route111_Text_VictorDefeat:
 
 Route111_Text_VictorPostBattle:
 	.string "Hey, all!\n"
-	.string "I've found a pretty strong TRAINER!$"
+	.string "I've found a pretty strong Trainer!$"
 
 Route111_Text_VictoriaIntro:
 	.string "Oh, my goodness! Aren't you young?\p"
-	.string "You must be quite the TRAINER to beat\n"
+	.string "You must be quite the Trainer to beat\n"
 	.string "my husband, though.\p"
 	.string "It's my turn to battle now!$"
 
@@ -605,7 +637,7 @@ Route111_Text_VictoriaDefeat:
 	.string "I can't get over how strong you are!$"
 
 Route111_Text_VictoriaPostBattle:
-	.string "There's a strong TRAINER here!\n"
+	.string "There's a strong Trainer here!\n"
 	.string "This one's really strong!$"
 
 Route111_Text_ViviIntro:
@@ -635,10 +667,10 @@ Route111_Text_VickyPostBattle:
 	.string "visit with us awhile.$"
 
 Route111_Text_ToughToKeepWinningUpTheRanks:
-	.string "If you don't raise your POKéMON some\n"
+	.string "If you don't raise your Pokémon some\n"
 	.string "more, it could be tough to keep winning\l"
 	.string "up through the ranks.\p"
-	.string "I've heard the POKéMON LEAGUE's\n"
+	.string "I've heard the Pokémon LEAGUE's\n"
 	.string "ELITE FOUR are far stronger than\l"
 	.string "any GYM LEADER.$"
 
@@ -653,7 +685,7 @@ Route111_Text_RouteSignMauville:
 
 Route111_Text_WinstrateHouseSign:
 	.string "“Our family's hearts beat as one!”\n"
-	.string "THE WINSTRATE'S HOUSE$"
+	.string "THE WINSTRATE's HOUSE$"
 
 Route111_Text_RouteSign112:
 	.string "ROUTE 111\n"
@@ -664,12 +696,12 @@ Route111_Text_RouteSign113:
 	.string "{LEFT_ARROW} ROUTE 113$"
 
 Route111_Text_OldLadysRestStopSign:
-	.string "OLD LADY'S REST STOP\n"
+	.string "OLD LADY's REST STOP\n"
 	.string "“Come in and rest your tired bones.”$"
 
 Route111_Text_TrainerTipsSpAtkSpDef:
-	.string "TRAINER TIPS\p"
-	.string "One of the indicators of a POKéMON's\n"
+	.string "Trainer TIPS\p"
+	.string "One of the indicators of a Pokémon's\n"
 	.string "powerfulness is SP. ATK. It stands for\l"
 	.string "“SPECIAL ATTACK.”\p"
 	.string "Likewise, SP. DEF stands for “SPECIAL\n"
@@ -723,7 +755,7 @@ Route111_Text_MauvilleUncleToldMeToTakeRockSmash:
 	.string "the bike shop in MAUVILLE.$"
 
 Route111_Text_TrainerHillSign:
-	.string "{RIGHT_ARROW} TRAINER HILL ENTRANCE\p"
+	.string "{RIGHT_ARROW} Trainer HILL ENTRANCE\p"
 	.string "“Scale the heights, you hot-blooded\n"
 	.string "TRAINERS!”$"
 

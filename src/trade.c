@@ -1408,7 +1408,7 @@ static void TradeMenuMoveCursor(u8 *cursorPosition, u8 direction)
 {
     u8 newPosition = GetNewCursorPosition(*cursorPosition, direction);
 
-    if (newPosition == (PARTY_SIZE * 2)) // CANCEL
+    if (newPosition == (PARTY_SIZE * 2)) // Cancel
     {
         StartSpriteAnim(&gSprites[sTradeMenu->cursorSpriteId], CURSOR_ANIM_ON_CANCEL);
         gSprites[sTradeMenu->cursorSpriteId].x = DISPLAY_WIDTH - 16;

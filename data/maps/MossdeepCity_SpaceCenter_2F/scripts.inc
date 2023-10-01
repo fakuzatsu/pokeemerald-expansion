@@ -481,7 +481,8 @@ MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand:
 	.string "I just want to expand the land mass…$"
 
 MossdeepCity_SpaceCenter_Text_TabithaDefeat:
-	.string "I'm with our leader…$"
+	.string "COURTNEY: …Again? That's unanticipated\p"
+	.string "…Funny$"
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided:
 	.string "MAXIE: We failed to make the volcano\n"
