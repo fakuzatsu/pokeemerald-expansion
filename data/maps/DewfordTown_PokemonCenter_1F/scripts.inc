@@ -23,6 +23,34 @@ Dewford_PokemonCenter_1F_EventScript_BattleMaster::
 	release
 	end
 
+DewfordTown_PokemonCenter_1F_EventScript_MoveTutor::
+	lock
+	msgbox DewfordTown_PokemonCenter_1F_Text_WouldYouLikeToBattle, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, DewfordTown_PokemonCenter_1F_EventScript_YesToBattle
+	msgbox DewfordTown_PokemonCenter_1F_Text_OhMaybeNextTime, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_PokemonCenter_1F_EventScript_YesToBattle::
+	msgbox DewfordTown_PokemonCenter_1F_Text_TeachIntro, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_EDWARD_TEACH, VerdantIsle_Text_TeachDefeat
+	goto DewfordTown_PokemonCenter_1F_EventScript_WellIllTeachYou
+	end
+
+DewfordTown_PokemonCenter_1F_EventScript_WellIllTeachYou::
+	msgbox DewfordTown_PokemonCenter_1F_Text_BeatMeFairAndSquare, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	playfanfare MUS_OBTAIN_ITEM
+	message DewfordTown_PokemonCenter_1F_EventScript_YouCanTeachPokemon
+	waitmessage
+	waitfanfare
+	setflag FLAG_RELEARN_AVAILABLE
+	fadescreen FADE_FROM_BLACK
+	msgbox DewfordTown_PokemonCenter_1F_Text_NowBackToWaiting, MSGBOX_DEFAULT
+	release
+	end
+
 DewfordTown_PokemonCenter_1F_EventScript_PokefanF::
 	msgbox DewfordTown_PokemonCenter_1F_Text_StoneCavern, MSGBOX_NPC
 	end
@@ -30,6 +58,44 @@ DewfordTown_PokemonCenter_1F_EventScript_PokefanF::
 DewfordTown_PokemonCenter_1F_EventScript_Man::
 	msgbox DewfordTown_PokemonCenter_1F_Text_FaintedMonCanUseHM, MSGBOX_NPC
 	end
+
+DewfordTown_PokemonCenter_1F_Text_WouldYouLikeToBattle:
+	.string "Ahoy! I be marooned here after I\n"
+	.string "grounded me' ship on a rock over\l"
+	.string "on Route 107.\p"
+	.string "There's not much to do here\n"
+	.string "compared to Slateport.\p"
+	.string "Yarrgh!\n"
+	.string "I'm itching for a battle.\p"
+	.string "How about it? If ye beat me, I'll\n"
+	.string "teach ye a special power.$"
+
+DewfordTown_PokemonCenter_1F_Text_OhMaybeNextTime::
+	.string "Yarrgh!\p"
+	.string "Well maybe next time.$"
+
+DewfordTown_PokemonCenter_1F_Text_TeachIntro::
+	.string "Yarrgh!\p"
+	.string "Prepare yerself!$"
+
+VerdantIsle_Text_TeachDefeat::
+	.string "Ohohoh.\p"
+	.string "There's more to ye than meet the\n"
+	.string "eye, ain't there?$"
+
+DewfordTown_PokemonCenter_1F_Text_BeatMeFairAndSquare::
+	.string "Well ye beat me fair and square.\p"
+	.string "As promised. I'll share me power\n"
+	.string "with ye.\p"
+	.string "So what ye do is…$"
+
+DewfordTown_PokemonCenter_1F_EventScript_YouCanTeachPokemon::
+	.string "{PLAYER} can now teach Pokémon\n"
+	.string "forgotten moves.$"
+
+DewfordTown_PokemonCenter_1F_Text_NowBackToWaiting::
+	.string "Well ye gave me a good time.\p"
+	.string "Back to me waiting I suppose…$"
 
 DewfordTown_PokemonCenter_1F_Text_StoneCavern:
 	.string "There's a stone cavern at the edge\n"

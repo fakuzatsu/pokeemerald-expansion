@@ -863,11 +863,12 @@
 #define TRAINER_LISLA                       859
 #define TRAINER_BRAWLY_ALT                  860
 #define TRAINER_WATTSON_ALT                 861
+#define TRAINER_EDWARD_TEACH                862
 
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      862
+#define TRAINERS_COUNT                      863
 #define MAX_TRAINERS_COUNT                  912
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

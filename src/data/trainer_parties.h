@@ -1571,6 +1571,19 @@ static const struct TrainerMon sParty_Lisla[] = {
     }
 };
 
+static const struct TrainerMon sParty_Teach[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+    .lvl = 16,
+    .species = SPECIES_CHATOT,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 16,
+    .species = SPECIES_DHELMISE,
+    }
+};
+
 static const struct TrainerMon sParty_Jessica1[] = {
     {
     .lvl = 29,
