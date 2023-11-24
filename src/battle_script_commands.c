@@ -4105,17 +4105,17 @@ int GetPkmnExpMultiplier(u8 level)
     u8 i;
     int lvlCapMultiplier = 0;
     u8 levelDiff;
-    bool flagFound = false;
+    bool8 flagFound = FALSE;
 
     for (i = 0; i < NUM_LEVEL_CAPS; i++)
     {
-        if (!FlagGet(sProgressionFlags[i]) && level >= sLevelCaps[i])
+        if ((!FlagGet(sProgressionFlags[i]) || (i == NUM_PROGRESSION_FLAGS)) && level >= sLevelCaps[i])
         {
             levelDiff = (level + 1) - sLevelCaps[i];
             if (levelDiff > 3)
                 levelDiff = 3;
             lvlCapMultiplier = sLevelCapReduction[levelDiff];
-            flagFound = true;
+            flagFound = TRUE;
             break;
         }
     }
@@ -4145,7 +4145,7 @@ int GetPkmnLevelCap(void)
     u8 i;
     int numFlagsSet = 0;
 
-    for (i = 0; i < NUM_LEVEL_CAPS; i++)
+    for (i = 0; i < NUM_PROGRESSION_FLAGS; i++)
     {
         if (FlagGet(sProgressionFlags[i]))
         {
