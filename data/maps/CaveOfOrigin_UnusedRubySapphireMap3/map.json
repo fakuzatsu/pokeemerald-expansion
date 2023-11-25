@@ -2,10 +2,10 @@
   "id": "MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP3",
   "name": "CaveOfOrigin_UnusedRubySapphireMap3",
   "layout": "LAYOUT_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP3",
-  "music": "MUS_CAVE_OF_ORIGIN",
-  "region_map_section": "MAPSEC_CAVE_OF_ORIGIN",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": true,
-  "weather": "WEATHER_FOG_HORIZONTAL",
+  "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_UNDERGROUND",
   "allow_cycling": true,
   "allow_escaping": true,
@@ -18,10 +18,17 @@
   ],
   "warp_events": [
     {
-      "x": 12,
-      "y": 6,
-      "elevation": 3,
-      "dest_map": "MAP_CAVE_OF_ORIGIN_B1F",
+      "x": 3,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ABANDONED_SHIP_HIDDEN_FLOOR_CORRIDORS",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 14,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_AQUA_HIDEOUT_UNUSED_RUBY_MAP1",
       "dest_warp_id": "0"
     }
   ],

@@ -17,7 +17,27 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 11,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP3",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_NAVEL_ROCK_BOTTOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_NAVEL_ROCK_BOTTOM",
+      "dest_warp_id": "2"
+    }
   ],
   "coord_events": [
 
