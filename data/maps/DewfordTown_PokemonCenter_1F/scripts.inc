@@ -25,9 +25,15 @@ Dewford_PokemonCenter_1F_EventScript_BattleMaster::
 
 DewfordTown_PokemonCenter_1F_EventScript_MoveTutor::
 	lock
+	goto_if_set FLAG_RELEARN_AVAILABLE, DewfordTown_PokemonCenter_1F_EventScript_Explain
 	msgbox DewfordTown_PokemonCenter_1F_Text_WouldYouLikeToBattle, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, DewfordTown_PokemonCenter_1F_EventScript_YesToBattle
 	msgbox DewfordTown_PokemonCenter_1F_Text_OhMaybeNextTime, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_PokemonCenter_1F_EventScript_Explain::
+	msgbox DewfordTown_PokemonCenter_1F_Text_ExplainPower, MSGBOX_DEFAULT
 	release
 	end
 
@@ -63,12 +69,23 @@ DewfordTown_PokemonCenter_1F_Text_WouldYouLikeToBattle:
 	.string "Ahoy! I be marooned here after I\n"
 	.string "grounded me' ship on a rock over\l"
 	.string "on Route 107.\p"
-	.string "There's not much to do here\n"
+	.string "There be little to do here\n"
 	.string "compared to Slateport.\p"
 	.string "Yarrgh!\n"
 	.string "I'm itching for a battle.\p"
 	.string "How about it? If ye beat me, I'll\n"
 	.string "teach ye a special power.$"
+
+DewfordTown_PokemonCenter_1F_Text_ExplainPower::
+	.string "That power I've given ye…\p"
+	.string "Ye'll be able to teach Pokémon\n"
+	.string "moves they had forgotten.\p"
+	.string "Yarrgh!\p"
+	.string "No need to find ye a Pokémon center,\n"
+	.string "just interact with ye squad.\p"
+	.string "… … …\p"
+	.string "Just bear ye in mind, that Pokémon\n"
+	.string "can't relearn TMs moves.$"
 
 DewfordTown_PokemonCenter_1F_Text_OhMaybeNextTime::
 	.string "Yarrgh!\p"
