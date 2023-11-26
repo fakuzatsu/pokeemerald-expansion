@@ -18,38 +18,45 @@
   ],
   "warp_events": [
     {
-      "x": 13,
+      "x": 23,
       "y": 15,
       "elevation": 3,
       "dest_map": "MAP_ROUTE108",
       "dest_warp_id": "0"
     },
     {
-      "x": 14,
+      "x": 24,
       "y": 15,
       "elevation": 3,
       "dest_map": "MAP_ROUTE108",
       "dest_warp_id": "0"
     },
     {
-      "x": 13,
+      "x": 23,
       "y": 9,
       "elevation": 3,
       "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
       "dest_warp_id": "1"
     },
     {
-      "x": 8,
+      "x": 18,
       "y": 9,
       "elevation": 3,
       "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
       "dest_warp_id": "2"
     },
     {
-      "x": 12,
+      "x": 22,
       "y": 5,
       "elevation": 3,
       "dest_map": "MAP_ABANDONED_SHIP_CAPTAINS_OFFICE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_AQUA_HIDEOUT_UNUSED_RUBY_MAP2",
       "dest_warp_id": "0"
     }
   ],
@@ -59,7 +66,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 4,
+      "x": 14,
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

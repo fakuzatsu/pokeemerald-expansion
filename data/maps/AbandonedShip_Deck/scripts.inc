@@ -30,7 +30,7 @@ AbandonedShip_Deck_OnLoad:
 	end
 
 AbandonedShip_Deck_Hide_Blastoisite::
-    setmetatile 4, 5, METATILE_Facility_shipFloor, FALSE
+    setmetatile 14, 5, METATILE_Facility_shipFloor, FALSE
     return
 
 AbandonedShip_Deck_Blastoisite::

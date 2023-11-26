@@ -7,7 +7,7 @@
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_UNDERGROUND",
-  "allow_cycling": true,
+  "allow_cycling": false,
   "allow_escaping": true,
   "allow_running": true,
   "show_map_name": true,
@@ -58,6 +58,13 @@
       "elevation": 3,
       "dest_map": "MAP_ABANDONED_SHIP_HIDDEN_FLOOR_ROOMS",
       "dest_warp_id": "8"
+    },
+    {
+      "x": 11,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP3",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

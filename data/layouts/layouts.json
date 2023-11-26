@@ -1605,9 +1605,9 @@
       "id": "LAYOUT_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP3",
       "name": "CaveOfOrigin_UnusedRubySapphireMap3_Layout",
       "width": 19,
-      "height": 21,
+      "height": 8,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/CaveOfOrigin_UnusedRubySapphireMap3/border.bin",
       "blockdata_filepath": "data/layouts/CaveOfOrigin_UnusedRubySapphireMap3/map.bin"
     },
@@ -1854,7 +1854,7 @@
     {
       "id": "LAYOUT_ABANDONED_SHIP_DECK",
       "name": "AbandonedShip_Deck_Layout",
-      "width": 23,
+      "width": 33,
       "height": 21,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
@@ -3154,20 +3154,20 @@
     {
       "id": "LAYOUT_AQUA_HIDEOUT_UNUSED_RUBY_MAP1",
       "name": "AquaHideout_UnusedRubyMap1_Layout",
-      "width": 28,
-      "height": 30,
+      "width": 13,
+      "height": 13,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Facility",
+      "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/AquaHideout_UnusedRubyMap1/border.bin",
       "blockdata_filepath": "data/layouts/AquaHideout_UnusedRubyMap1/map.bin"
     },
     {
       "id": "LAYOUT_AQUA_HIDEOUT_UNUSED_RUBY_MAP2",
       "name": "AquaHideout_UnusedRubyMap2_Layout",
-      "width": 62,
-      "height": 24,
+      "width": 22,
+      "height": 8,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Facility",
+      "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/AquaHideout_UnusedRubyMap2/border.bin",
       "blockdata_filepath": "data/layouts/AquaHideout_UnusedRubyMap2/map.bin"
     },
@@ -4224,10 +4224,10 @@
     {
       "id": "LAYOUT_NAVEL_ROCK_TOP",
       "name": "NavelRock_Top_Layout",
-      "width": 25,
-      "height": 28,
+      "width": 27,
+      "height": 35,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_NavelRock",
+      "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/NavelRock_Top/border.bin",
       "blockdata_filepath": "data/layouts/NavelRock_Top/map.bin"
     },
@@ -4235,9 +4235,9 @@
       "id": "LAYOUT_NAVEL_ROCK_BOTTOM",
       "name": "NavelRock_Bottom_Layout",
       "width": 22,
-      "height": 22,
+      "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_NavelRock",
+      "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/NavelRock_Bottom/border.bin",
       "blockdata_filepath": "data/layouts/NavelRock_Bottom/map.bin"
     },
