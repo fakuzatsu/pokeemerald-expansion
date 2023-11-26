@@ -4124,7 +4124,7 @@ static u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
 #define CALC_FRIENDSHIP_BOOST()
 #endif
 
-static bool8 IsStatHyperTrained(struct Pokemon *mon, u8 statIndex)
+bool8 IsStatHyperTrained(struct Pokemon *mon, u8 statIndex)
 {
     switch (statIndex)
     {

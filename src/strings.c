@@ -491,6 +491,7 @@ ALIGNED(4) const u8 gText_OtherTrainerCantAcceptPkmn[] = _("The other Trainer ca
 ALIGNED(4) const u8 gText_CantTradeWithTrainer[] = _("You can't trade with that\nTRAINER now.");
 ALIGNED(4) const u8 gText_NotPkmnOtherTrainerWants[] = _("That isn't the type of Pokémon\nthat the other Trainer wants.");
 ALIGNED(4) const u8 gText_ThatIsntAnEgg[] = _("That isn't an EGG.");
+const u8 gText_HyperStat[] = _("{COLOR}{05}Hy!");
 const u8 gText_Register[] = _("Register");
 const u8 gText_Attack3[] = _("ATTACK");
 const u8 gText_Defense3[] = _("DEFENSE");

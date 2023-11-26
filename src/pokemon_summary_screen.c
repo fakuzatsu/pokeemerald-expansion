@@ -3581,6 +3581,36 @@ static void BufferIvOrEvStats(u8 mode)
         PrintRightColumnStats();
         break;
     case 1:
+    if (IsStatHyperTrained(&sMonSummaryScreen->currentMon, STAT_HP))
+        StringCopy(gStringVar1, gText_HyperStat);
+    else
+        BufferStat(gStringVar1, 0, hp, 0, 7);
+    if (IsStatHyperTrained(&sMonSummaryScreen->currentMon, STAT_ATK))
+        StringCopy(gStringVar2, gText_HyperStat);
+    else
+        BufferStat(gStringVar2, 0, atk, 1, 7);
+    if (IsStatHyperTrained(&sMonSummaryScreen->currentMon, STAT_DEF))
+        StringCopy(gStringVar3, gText_HyperStat);
+    else
+        BufferStat(gStringVar3, 0, def, 2, 7);
+        DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsLeftColumnLayoutIVEV);
+        PrintLeftColumnStats();
+
+    if (IsStatHyperTrained(&sMonSummaryScreen->currentMon, STAT_SPATK))
+        StringCopy(gStringVar1, gText_HyperStat);
+    else
+        BufferStat(gStringVar1, 0, spA, 0, 3);
+    if (IsStatHyperTrained(&sMonSummaryScreen->currentMon, STAT_SPDEF))
+        StringCopy(gStringVar2, gText_HyperStat);
+    else
+        BufferStat(gStringVar2, 0, spD, 1, 3);
+    if (IsStatHyperTrained(&sMonSummaryScreen->currentMon, STAT_SPEED))
+        StringCopy(gStringVar3, gText_HyperStat);
+    else
+        BufferStat(gStringVar3, 0, spe, 2, 3);
+        DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsRightColumnLayout);
+        PrintRightColumnStats();
+        break;
     case 2:
         BufferStat(gStringVar1, 0, hp, 0, 7);
         BufferStat(gStringVar2, 0, atk, 1, 7);
