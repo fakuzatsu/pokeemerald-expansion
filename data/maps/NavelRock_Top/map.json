@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_HOOH",
-      "x": 12,
+      "x": 13,
       "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -30,18 +30,18 @@
   ],
   "warp_events": [
     {
-      "x": 13,
-      "y": 20,
-      "elevation": 3,
-      "dest_map": "MAP_NAVEL_ROCK_UP4",
-      "dest_warp_id": "1"
+      "x": 9,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_AQUA_HIDEOUT_UNUSED_RUBY_MAP2",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [
     {
       "type": "trigger",
-      "x": 12,
-      "y": 10,
+      "x": 13,
+      "y": 11,
       "elevation": 3,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -51,8 +51,8 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 12,
-      "y": 9,
+      "x": 13,
+      "y": 10,
       "elevation": 3,
       "item": "ITEM_SACRED_ASH",
       "flag": "FLAG_HIDDEN_ITEM_NAVEL_ROCK_TOP_SACRED_ASH"
