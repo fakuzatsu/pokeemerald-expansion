@@ -276,8 +276,80 @@ MossdeepCity_EventScript_DeclineKingsRock::
 	release
 	end
 
-MossdeepCity_EventScript_BlackBelt::
-	msgbox MossdeepCity_Text_SootopolisNewGymLeader, MSGBOX_NPC
+MossdeepCity_EventScript_HyperTrainer::
+	lock
+	msgbox MossdeepCity_Text_HyperTrainer, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, MossdeepCity_EventScript_HyperTrainerCheckBottleCaps
+MossdeepCity_EventScript_DeclineHyperTrain::
+	msgbox MossdeepCity_Text_RejectHyperTrainer, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_EventScript_HyperTrainerCheckBottleCaps::
+	setvar VAR_0x8008, 0
+	checkitem ITEM_BOTTLE_CAP
+	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_EventScript_HyperTrainWhichPokemon
+	setvar VAR_0x8008, 1
+	checkitem ITEM_GOLD_BOTTLE_CAP
+	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_EventScript_HyperTrainWhichPokemon
+	msgbox MossdeepCity_Text_NoBottleCapsForHyperTrainer, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_EventScript_HyperTrainWhichPokemon::
+	msgbox MossdeepCity_Text_HyperTrainWhichMon, MSGBOX_DEFAULT
+	special ChoosePartyMon
+	waitstate
+	goto_if_ne VAR_0x8004, PARTY_NOTHING_CHOSEN, MossdeepCity_EventScript_WhichBottleCapHyperTrain
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, MossdeepCity_EventScript_DeclineHyperTrain
+	end
+
+MossdeepCity_EventScript_WhichBottleCapHyperTrain::
+	goto_if_eq VAR_0x8008, 1, MossdeepCity_EventScript_GoldBottleCapPrepareHyperTrain
+	checkitem ITEM_GOLD_BOTTLE_CAP
+	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_EventScript_BothBottleCapsHyperTrain
+	goto MossdeepCity_EventScript_RegularBottleCapPrepareHyperTrain
+	end
+
+MossdeepCity_EventScript_RegularBottleCapPrepareHyperTrain::
+	msgbox MossdeepCity_Text_NotImplimented, MSGBOX_DEFAULT
+	goto MossdeepCity_EventScript_DeclineHyperTrain
+	end
+
+MossdeepCity_EventScript_GoldBottleCapPrepareHyperTrain::
+	msgbox MossdeepCity_Text_UseGoldCapIsThisOk, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, MossdeepCity_EventScript_GoldBottleCapDoHyperTrain
+	goto MossdeepCity_EventScript_DeclineHyperTrain
+	end
+
+MossdeepCity_EventScript_BothBottleCapsHyperTrain::
+    message MossdeepCity_Text_WhichCapToUse
+	waitmessage
+	multichoice 16, 6, MULTI_CHOOSE_BOTTLE_CAP, FALSE
+	switch VAR_RESULT
+	case 0, MossdeepCity_EventScript_RegularBottleCapPrepareHyperTrain
+	case 1, MossdeepCity_EventScript_GoldBottleCapDoHyperTrain
+	case 2, MossdeepCity_EventScript_DeclineHyperTrain
+	case MULTI_B_PRESSED, MossdeepCity_EventScript_DeclineHyperTrain
+	end
+
+MossdeepCity_EventScript_GoldBottleCapDoHyperTrain::
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	bufferspeciesname STR_VAR_1, VAR_RESULT
+	msgbox MossdeepCity_Text_HyperTrainerOkLetsDoThis, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	playfanfare MUS_OBTAIN_ITEM
+	message MossdeepCity_Text_PokemonWasHyperTrained
+	waitmessage
+	waitfanfare
+	special DoGoldHyperTraining
+	fadescreen FADE_FROM_BLACK
+	goto MossdeepCity_EventScript_HyperTrainingFinished
+	end
+
+MossdeepCity_EventScript_HyperTrainingFinished::
+	msgbox MossdeepCity_Text_HyperTrainerFinished, MSGBOX_DEFAULT
+	release
 	end
 
 MossdeepCity_EventScript_Scott::
@@ -448,13 +520,59 @@ MossdeepCity_Text_ScottSomethingWrongWithTown:
 	.string "I don't think it concerns me in any\n"
 	.string "way, though.$"
 
-MossdeepCity_Text_SootopolisNewGymLeader:
-	.string "Ahh… It feels great letting the waves\n"
-	.string "wash over my feet…\p"
-	.string "Speaking of the waves, you know that\n"
-	.string "island city SOOTOPOLIS?\p"
-	.string "I think the GYM there had a new\n"
-	.string "LEADER come in.\p"
-	.string "People tell me the new LEADER once\n"
-	.string "mentored WALLACE.$"
+MossdeepCity_Text_HyperTrainer:
+	.string "Argh! Punch! Punch! Punch!\p"
+	.string "I'm training my Pokémon on the\n"
+	.string "crashing waves, in the city\l"
+	.string "that reaches for the stars!\p"
+	.string "You and your Pokémon should reach\n"
+	.string "for the stars too…\p"
+	.string "What do you say?\p"
+	.string "In exchange for a Bottle Cap, I'll\n"
+	.string "train your Pokémon with my Hyper\l"
+	.string "technique?$"
+
+MossdeepCity_Text_RejectHyperTrainer:
+	.string "Argh! Punch! Punch! Punch!\p"
+	.string "You know where to find me\n"
+	.string "if you change your mind!$"
+
+MossdeepCity_Text_NoBottleCapsForHyperTrainer:
+	.string "Argh! Punch! Punch! Punch!\p"
+	.string "You don't have any Bottle Caps!\p"
+	.string "I'll train your Pokémon for a\n"
+	.string "Bottle Cap.$"
+
+MossdeepCity_Text_HyperTrainWhichMon:
+	.string "Which Pokémon should I train?$"
+
+MossdeepCity_Text_WhichCapToUse:
+	.string "I'll train a single stat for a\n"
+	.string "Bottle Cap or all stats for a\l"
+	.string "Golden Cap.$"
+
+MossdeepCity_Text_NotImplimented:
+	.string "Argh! Punch! Punch! Punch!\p"
+	.string "Our creator got lazy and\n"
+	.string "forgot to impliment this!\p"
+	.string "Tell him if you saw this.$"
+
+MossdeepCity_Text_UseGoldCapIsThisOk:
+	.string "I'll train all stats for your\n"
+	.string "Golden Cap. Is this ok?$"
+
+MossdeepCity_Text_HyperTrainerOkLetsDoThis:
+	.string "Alright!\p"
+	.string "Let's do this!$"
+
+MossdeepCity_Text_PokemonWasHyperTrained:
+	.string "{PLAYER}'s {STR_VAR_1} recieved\n"
+	.string "Hyper training.$"
+
+MossdeepCity_Text_HyperTrainerFinished:
+	.string "Huff-puff\p"
+	.string "Our training is complete!\n"
+	.string "Huff-puff\p"
+	.string "Come back with another Cap\n"
+	.string "if you want to train again!$"
 

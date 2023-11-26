@@ -364,6 +364,18 @@ void IncrementAdoptionSpecials(void)
         VarSet(VAR_DAYCARE_ADOPTION_SPECIALS, 1);
 }
 
+void DoGoldHyperTraining(void)
+{
+    u8 value = TRUE;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HYPER_TRAINED_HP, &value);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HYPER_TRAINED_ATK, &value);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HYPER_TRAINED_DEF, &value);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HYPER_TRAINED_SPEED, &value);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HYPER_TRAINED_SPATK, &value);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HYPER_TRAINED_SPDEF, &value);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
 void ResetCyclingRoadChallengeData(void)
 {
     gBikeCyclingChallenge = FALSE;

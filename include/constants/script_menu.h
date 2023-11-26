@@ -123,7 +123,8 @@
 #define MULTI_FALLARBOR_TENT_RULES         112
 #define MULTI_TAG_MATCH_TYPE               113
 #define MULTI_CHOOSE_LEVEL_CAP             114
-#define MULTI_EXPLAIN_OR_TOGGLE            115
+#define MULTI_CHOOSE_BOTTLE_CAP            115
+#define MULTI_EXPLAIN_OR_TOGGLE            116
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

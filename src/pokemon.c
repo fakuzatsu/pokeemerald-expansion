@@ -3644,6 +3644,14 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     }
 
     GiveBoxMonInitialMoveset(boxMon);
+
+    value = FALSE;
+    SetBoxMonData(boxMon, MON_DATA_HYPER_TRAINED_HP, &value);
+    SetBoxMonData(boxMon, MON_DATA_HYPER_TRAINED_ATK, &value);
+    SetBoxMonData(boxMon, MON_DATA_HYPER_TRAINED_DEF, &value);
+    SetBoxMonData(boxMon, MON_DATA_HYPER_TRAINED_SPEED, &value);
+    SetBoxMonData(boxMon, MON_DATA_HYPER_TRAINED_SPATK, &value);
+    SetBoxMonData(boxMon, MON_DATA_HYPER_TRAINED_SPDEF, &value);
 }
 
 void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature)
@@ -4116,21 +4124,56 @@ static u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
 #define CALC_FRIENDSHIP_BOOST()
 #endif
 
-#define CALC_STAT(base, iv, ev, statIndex, field)               \
-{                                                               \
-    u8 baseStat = gSpeciesInfo[species].base;                   \
-    s32 n = (((2 * baseStat + iv + ev / 4) * level) / 100) + 5; \
-    u8 nature = GetNature(mon);                                 \
-    n = ModifyStatByNature(nature, n, statIndex);               \
-    CALC_FRIENDSHIP_BOOST()                                     \
-    SetMonData(mon, field, &n);                                 \
+static bool8 IsStatHyperTrained(struct Pokemon *mon, u8 statIndex)
+{
+    switch (statIndex)
+    {
+    case STAT_HP:
+        if (GetMonData(mon, MON_DATA_HYPER_TRAINED_HP, NULL))
+            return TRUE;
+        break;
+    case STAT_ATK:
+        if (GetMonData(mon, MON_DATA_HYPER_TRAINED_ATK, NULL))
+            return TRUE;
+        break;
+    case STAT_DEF:
+        if (GetMonData(mon, MON_DATA_HYPER_TRAINED_DEF, NULL))
+            return TRUE;
+        break;
+    case STAT_SPEED:
+        if (GetMonData(mon, MON_DATA_HYPER_TRAINED_SPEED, NULL))
+            return TRUE;
+        break;
+    case STAT_SPATK:
+        if (GetMonData(mon, MON_DATA_HYPER_TRAINED_SPATK, NULL))
+            return TRUE;
+        break;
+    case STAT_SPDEF:
+        if (GetMonData(mon, MON_DATA_HYPER_TRAINED_SPDEF, NULL))
+            return TRUE;
+        break;
+    }
+
+    return FALSE;
+}
+
+#define CALC_STAT(base, iv, ev, statIndex, field)                             \
+{                                                                             \
+    u8 baseStat = gSpeciesInfo[species].base;                                 \
+    s32 n = (((2 * baseStat + iv + ev / 4) * level) / 100) + 5;               \
+    u8 nature = GetNature(mon);                                               \
+    if (IsStatHyperTrained(mon, statIndex))                                   \
+        n = (((2 * baseStat + MAX_PER_STAT_IVS + ev / 4) * level) / 100) + 5; \
+    n = ModifyStatByNature(nature, n, statIndex);                             \
+    CALC_FRIENDSHIP_BOOST()                                                   \
+    SetMonData(mon, field, &n);                                               \
 }
 
 void CalculateMonStats(struct Pokemon *mon)
 {
     s32 oldMaxHP = GetMonData(mon, MON_DATA_MAX_HP, NULL);
     s32 currentHP = GetMonData(mon, MON_DATA_HP, NULL);
-    s32 hpIV = GetMonData(mon, MON_DATA_HP_IV, NULL);
+    s32 hpIV = IsStatHyperTrained(mon, STAT_HP) ? MAX_PER_STAT_IVS : GetMonData(mon, MON_DATA_HP_IV, NULL);
     s32 hpEV = GetMonData(mon, MON_DATA_HP_EV, NULL);
     s32 attackIV = GetMonData(mon, MON_DATA_ATK_IV, NULL);
     s32 attackEV = GetMonData(mon, MON_DATA_ATK_EV, NULL);
@@ -4817,6 +4860,24 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_FRIENDSHIP:
             retVal = substruct0->friendship;
             break;
+        case MON_DATA_HYPER_TRAINED_HP:
+            retVal = substruct0->hyperTrainedHp;
+            break;
+        case MON_DATA_HYPER_TRAINED_ATK:
+            retVal = substruct0->hyperTrainedAtk;
+            break;
+        case MON_DATA_HYPER_TRAINED_DEF:
+            retVal = substruct0->hyperTrainedDef;
+            break;
+        case MON_DATA_HYPER_TRAINED_SPEED:
+            retVal = substruct0->hyperTrainedSpeed;
+            break;
+        case MON_DATA_HYPER_TRAINED_SPATK:
+            retVal = substruct0->hyperTrainedSpAtk;
+            break;
+        case MON_DATA_HYPER_TRAINED_SPDEF:
+            retVal = substruct0->hyperTrainedSpDef;
+            break;
         case MON_DATA_MOVE1:
         case MON_DATA_MOVE2:
         case MON_DATA_MOVE3:
@@ -5237,6 +5298,24 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         case MON_DATA_FRIENDSHIP:
             SET8(substruct0->friendship);
+            break;
+        case MON_DATA_HYPER_TRAINED_HP:
+            SET8(substruct0->hyperTrainedHp);
+            break;
+        case MON_DATA_HYPER_TRAINED_ATK:
+            SET8(substruct0->hyperTrainedAtk);
+            break;
+        case MON_DATA_HYPER_TRAINED_DEF:
+            SET8(substruct0->hyperTrainedDef);
+            break;
+        case MON_DATA_HYPER_TRAINED_SPEED:
+            SET8(substruct0->hyperTrainedSpeed);
+            break;
+        case MON_DATA_HYPER_TRAINED_SPATK:
+            SET8(substruct0->hyperTrainedSpAtk);
+            break;
+        case MON_DATA_HYPER_TRAINED_SPDEF:
+            SET8(substruct0->hyperTrainedSpDef);
             break;
         case MON_DATA_MOVE1:
         case MON_DATA_MOVE2:

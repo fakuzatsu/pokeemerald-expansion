@@ -1308,6 +1308,8 @@ extern const u8 gText_UniqueTagMatch[];
 extern const u8 gText_ExpertTagMatch[];
 extern const u8 gText_SoftLevelCap[];
 extern const u8 gText_HardLevelCap[];
+extern const u8 gText_BottleCap[];
+extern const u8 gText_GoldBottleCap[];
 extern const u8 gText_Toggle[];
 extern const u8 gText_TimeBoard[];
 extern const u8 gText_TimeCleared[];

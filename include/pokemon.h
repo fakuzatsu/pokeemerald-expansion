@@ -100,6 +100,12 @@ enum {
     MON_DATA_SPEED2,
     MON_DATA_SPATK2,
     MON_DATA_SPDEF2,
+    MON_DATA_HYPER_TRAINED_HP,
+    MON_DATA_HYPER_TRAINED_ATK,
+    MON_DATA_HYPER_TRAINED_DEF,
+    MON_DATA_HYPER_TRAINED_SPEED,
+    MON_DATA_HYPER_TRAINED_SPATK,
+    MON_DATA_HYPER_TRAINED_SPDEF,
 };
 
 struct PokemonSubstruct0
@@ -110,7 +116,13 @@ struct PokemonSubstruct0
     /*0x08*/ u8 ppBonuses;
     /*0x09*/ u8 friendship;
     /*0x0A*/ u16 pokeball:5; //31 balls
-             u16 filler:11;
+             u16 filler:5;
+             u8 hyperTrainedHp:1;
+             u8 hyperTrainedAtk:1;
+             u8 hyperTrainedDef:1;
+             u8 hyperTrainedSpeed:1;
+             u8 hyperTrainedSpAtk:1;
+             u8 hyperTrainedSpDef:1;
 }; /* size = 12 */
 
 struct PokemonSubstruct1

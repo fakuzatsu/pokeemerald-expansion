@@ -778,6 +778,13 @@ static const struct MenuAction MultichoiceList_ChooseLevelCap[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_ChooseBottleCap[] =
+{   
+    {gText_BottleCap},
+    {gText_GoldBottleCap},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_ExplainOrToggle[] =
 {
     {gText_Toggle},
@@ -913,6 +920,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_CHOOSE_LEVEL_CAP]           = MULTICHOICE(MultichoiceList_ChooseLevelCap),
+    [MULTI_CHOOSE_BOTTLE_CAP]          = MULTICHOICE(MultichoiceList_ChooseBottleCap),
     [MULTI_EXPLAIN_OR_TOGGLE]           = MULTICHOICE(MultichoiceList_ExplainOrToggle),
 };
 
