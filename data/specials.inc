@@ -544,4 +544,5 @@ gSpecials::
 	def_special GetSpeciesForRandomEgg
 	def_special GetSpeciesForSpecialEgg
 	def_special IncrementAdoptionSpecials
+	def_special EnterCode
 	def_special DoGoldHyperTraining

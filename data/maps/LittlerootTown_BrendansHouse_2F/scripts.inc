@@ -268,8 +268,23 @@ PlayersHouse_2F_EventScript_Notebook::
 	msgbox PlayersHouse_2F_Text_Notebook, MSGBOX_SIGN
 	end
 
-PlayersHouse_2F_EventScript_GameCube::
+LittlerootTown_BrendansHouse_2F_EventScript_GameCube::
 	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN
+	lockall
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, PlayersHouse_2F_EventScript_ItsYourGameCube
+	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_ItsYourGameCube::
+	msgbox PlayersHouse_2F_Text_ItsYourGameCube, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PlayersHouse_2F_EventScriptCancelGameCube
+	special EnterCode
+	waitstate
+PlayersHouse_2F_EventScriptCancelGameCube::
+	releaseall
 	end
 
 PlayersHouse_2F_Text_ClockIsStopped:
@@ -302,3 +317,8 @@ PlayersHouse_2F_Text_ItsAGameCube:
 	.string "It's a Nintendo GameCube.\p"
 	.string "A Game Boy Advance is connected to\n"
 	.string "serve as the Controller.$"
+
+PlayersHouse_2F_Text_ItsYourGameCube:
+	.string "It's your Nintendo GameCube.\p"
+	.string "You have a cheat device connected.\n"
+	.string "Input a cheat code?$"

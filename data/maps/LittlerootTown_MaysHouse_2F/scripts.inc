@@ -310,6 +310,15 @@ LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC::
 	releaseall
 	end
 
+LittlerootTown_MaysHouse_2F_EventScript_GameCube::
+	lockall
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, PlayersHouse_2F_EventScript_ItsYourGameCube
+	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
 RivalsHouse_2F_Text_MayWhoAreYou:
 	.string "Huh?\n"
 	.string "Who… Who are you?\p"

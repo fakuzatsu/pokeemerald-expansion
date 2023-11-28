@@ -3052,4 +3052,16 @@ extern const u8 gText_Moves_Menu[];
 extern const u8 gText_ExpShareOn[];
 extern const u8 gText_ExpShareOff[];
 
+// Codes:
+extern const u8 gText_Code1[];
+extern const u8 gText_Code2[];
+
+// Code returns:
+extern const u8 gText_WasAddedToParty[];
+extern const u8 gText_WasTransfered[];
+extern const u8 gText_FailedToAddMon[];
+extern const u8 gText_NoCodeActivated[];
+extern const u8 gText_Code1Activated[];
+extern const u8 gText_Code2Activated[];
+
 #endif // GUARD_STRINGS_H

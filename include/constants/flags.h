@@ -114,12 +114,12 @@
 #define FLAG_MET_TEAM_AQUA_HARBOR            0x61
 #define FLAG_TV_EXPLAINED                    0x62
 #define FLAG_MAUVILLE_GYM_BARRIERS_STATE     0x63
-#define FLAG_MOSSDEEP_GYM_SWITCH_1           0x64 // Leftover from the RS version of Mossdeep Gym, functionally unused
-#define FLAG_MOSSDEEP_GYM_SWITCH_2           0x65 //
-#define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
-#define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
 
-#define FLAG_UNUSED_0x068                    0x68  // Unused Flag
+#define FLAG_CHEAT_CODE_1                    0x64 // Custom Flag
+#define FLAG_CHEAT_CODE_2                    0x65 // Custom Flag
+#define FLAG_CHEAT_CODE_3                    0x66 // Custom Flag
+#define FLAG_CHEAT_CODE_4                    0x67 // Custom Flag
+#define FLAG_CHEAT_CODE_5                     0x68 // Custom Flag
 
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A

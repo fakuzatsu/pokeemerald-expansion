@@ -1845,3 +1845,6 @@ const u8 gText_Nickname[] = _("Nickname");
 const u8 gText_Moves_Menu[] = _("Relearn");
 const u8 gText_ExpShareOn[] = _("The Exp. Share has been turned on.{PAUSE_UNTIL_PRESS}");
 const u8 gText_ExpShareOff[] = _("The Exp. Share has been turned off.{PAUSE_UNTIL_PRESS}");
+const u8 gText_WasAddedToParty[] = _("{STR_VAR_2} was added to\nyour Party.{PAUSE_UNTIL_PRESS}");
+const u8 gText_WasTransfered[] = _("{STR_VAR_2} was transferred to\nthe PC.{PAUSE_UNTIL_PRESS}");
+const u8 gText_FailedToAddMon[] = _("No space in Party or PC for\n{STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
