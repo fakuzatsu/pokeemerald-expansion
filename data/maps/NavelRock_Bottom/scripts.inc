@@ -18,6 +18,8 @@ NavelRock_Bottom_EventScript_HideLugia::
 NavelRock_Bottom_EventScript_TryShowLugia::
 	setvar VAR_TEMP_1, 1
 	goto_if_set FLAG_DEFEATED_LUGIA, Common_EventScript_NopReturn
+	checkitem ITEM_SILVER_WING
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_NopReturn
 	setvar VAR_TEMP_1, 0
 	clearflag FLAG_HIDE_LUGIA
 	return
@@ -36,6 +38,9 @@ NavelRock_Bottom_EventScript_Lugia0::
 	lockall
 	setvar VAR_TEMP_1, 1
 	setvar VAR_0x8008, 0
+	playse SE_M_DETECT
+	dofieldeffectsparkle 10, 13, 0
+	waitfieldeffect FLDEFF_SPARKLE
 	goto NavelRock_Bottom_EventScript_Lugia
 	end
 
@@ -43,6 +48,9 @@ NavelRock_Bottom_EventScript_Lugia1::
 	lockall
 	setvar VAR_TEMP_1, 1
 	setvar VAR_0x8008, 1
+	playse SE_M_DETECT
+	dofieldeffectsparkle 11, 13, 0
+	waitfieldeffect FLDEFF_SPARKLE
 	goto NavelRock_Bottom_EventScript_Lugia
 	end
 
@@ -50,10 +58,15 @@ NavelRock_Bottom_EventScript_Lugia2::
 	lockall
 	setvar VAR_TEMP_1, 1
 	setvar VAR_0x8008, 2
+	playse SE_M_DETECT
+	dofieldeffectsparkle 12, 13, 0
+	waitfieldeffect FLDEFF_SPARKLE
 	goto NavelRock_Bottom_EventScript_Lugia
 	end
 
 NavelRock_Bottom_EventScript_Lugia::
+	msgbox NavelRock_Bottom_Text_TheSilverWing, MSGBOX_DEFAULT
+	closemessage
 	special SpawnCameraObject
 	setvar VAR_0x8004, 3  @ num loops
 	setvar VAR_0x8005, 35 @ delay
@@ -165,3 +178,8 @@ NavelRock_Bottom_Movement_HoOhAppear:
 	walk_in_place_down
 	walk_in_place_down
 	step_end
+
+NavelRock_Bottom_Text_TheSilverWing:
+	.string "The Silver Wing started\n"
+	.string "to shimmer!$"
+

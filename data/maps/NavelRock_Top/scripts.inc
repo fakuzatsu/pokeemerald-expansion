@@ -18,6 +18,8 @@ NavelRock_Top_EventScript_HideHoOh::
 NavelRock_Top_EventScript_TryShowHoOh::
 	setvar VAR_TEMP_1, 1
 	goto_if_set FLAG_DEFEATED_HO_OH, Common_EventScript_NopReturn
+	checkitem ITEM_RAINBOW_WING
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_NopReturn
 	setvar VAR_TEMP_1, 0
 	clearflag FLAG_HIDE_HO_OH
 	return
@@ -34,6 +36,11 @@ NavelRock_Top_EventScript_TryRemoveHoOh::
 
 NavelRock_Top_EventScript_HoOh::
 	lockall
+	playse SE_M_DETECT
+	dofieldeffectsparkle 13, 11, 0
+	waitfieldeffect FLDEFF_SPARKLE
+	msgbox NavelRock_Top_Text_TheRainbowWing, MSGBOX_DEFAULT
+	closemessage
 	setvar VAR_TEMP_1, 1
 	special SpawnCameraObject
 	setvar VAR_0x8004, 3  @ num loops
@@ -115,3 +122,8 @@ NavelRock_Top_Movement_HoOhAppear:
 	walk_in_place_down
 	walk_in_place_down
 	step_end
+
+NavelRock_Top_Text_TheRainbowWing:
+	.string "The Rainbow Wing started\n"
+	.string "to shimmer!$"
+
