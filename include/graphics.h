@@ -8933,10 +8933,10 @@ extern const u32 gItemIcon_PokeblockCase[];
 extern const u32 gItemIconPalette_PokeblockCase[];
 extern const u32 gItemIcon_SootSack[];
 extern const u32 gItemIconPalette_SootSack[];
-extern const u32 gItemIcon_PokeFlute[];
-extern const u32 gItemIconPalette_PokeFlute[];
-extern const u32 gItemIcon_TeachyTV[];
-extern const u32 gItemIconPalette_TeachyTV[];
+extern const u32 gItemIcon_RainbowWing[];
+extern const u32 gItemIconPalette_RainbowWing[];
+extern const u32 gItemIcon_SilverWing[];
+extern const u32 gItemIconPalette_SilverWing[];
 // Story Key Items
 extern const u32 gItemIcon_SSTicket[];
 extern const u32 gItemIconPalette_SSTicket[];

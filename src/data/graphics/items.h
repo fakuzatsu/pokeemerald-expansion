@@ -1845,11 +1845,11 @@ const u32 gItemIconPalette_PokeblockCase[] = INCBIN_U32("graphics/items/icon_pal
 const u32 gItemIcon_SootSack[] = INCBIN_U32("graphics/items/icons/soot_sack.4bpp.lz");
 const u32 gItemIconPalette_SootSack[] = INCBIN_U32("graphics/items/icon_palettes/soot_sack.gbapal.lz");
 
-const u32 gItemIcon_PokeFlute[] = INCBIN_U32("graphics/items/icons/poke_flute.4bpp.lz");
-const u32 gItemIconPalette_PokeFlute[] = INCBIN_U32("graphics/items/icon_palettes/poke_flute.gbapal.lz");
+const u32 gItemIcon_RainbowWing[] = INCBIN_U32("graphics/items/icons/rainbow_wing.4bpp.lz");
+const u32 gItemIconPalette_RainbowWing[] = INCBIN_U32("graphics/items/icon_palettes/rainbow_wing.gbapal.lz");
 
-const u32 gItemIcon_TeachyTV[] = INCBIN_U32("graphics/items/icons/teachy_tv.4bpp.lz");
-const u32 gItemIconPalette_TeachyTV[] = INCBIN_U32("graphics/items/icon_palettes/teachy_tv.gbapal.lz");
+const u32 gItemIcon_SilverWing[] = INCBIN_U32("graphics/items/icons/silver_wing.4bpp.lz");
+const u32 gItemIconPalette_SilverWing[] = INCBIN_U32("graphics/items/icon_palettes/silver_wing.gbapal.lz");
 
 // Story Key Items
 
