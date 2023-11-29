@@ -3649,15 +3649,15 @@ static const u8 sSootSackDesc[] = _(
     "gather and hold\n"
     "volcanic ash.");
 
-static const u8 sPokeFluteDesc[] = _(
-    "A sweet-sounding\n"
-    "flute that awakens\n"
-    "Pokémon.");
+static const u8 sRainbowWingDesc[] = _(
+    "A mystical, rainbow\n"
+    "feather that\n"
+    "sparkles.");
 
-static const u8 sTeachyTVDesc[] = _(
-    "A TV set tuned to\n"
-    "an advice program\n"
-    "for Trainers.");
+static const u8 sSilverWingDesc[] = _(
+    "A strange, silvery\n"
+    "feather that\n"
+    "sparkles.");
 
 // Story Key Items
 static const u8 sSSTicketDesc[] = _(

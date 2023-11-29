@@ -8843,29 +8843,29 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_POKE_FLUTE] =
+// Story Key Items
+
+    [ITEM_RAINBOW_WING] =
     {
-        .name = _("Poké Flute"),
+        .name = _("Rainbow Wing"),
         .price = 0,
-        .description = sPokeFluteDesc,
+        .description = sRainbowWingDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_TEACHY_TV] =
+    [ITEM_SILVER_WING] =
     {
-        .name = _("Teachy TV"),
+        .name = _("Silver Wing"),
         .price = 0,
-        .description = sTeachyTVDesc,
+        .description = sSilverWingDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_FIELD,
+        .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
-
-// Story Key Items
 
     [ITEM_SS_TICKET] =
     {

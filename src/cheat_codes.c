@@ -54,7 +54,7 @@ static void Task_ActivateCode1(u8 taskId)
     u8 evs[NUM_STATS] = {0, 0, 0, 0, 0, 0};
     u8 ivs[NUM_STATS] = {31, 31, 31, 31, 31, 31};
     u16 moves[4] = {MOVE_LIGHT_OF_RUIN, MOVE_MAGICAL_LEAF, MOVE_SAFEGUARD, MOVE_WISH};
-    int sentToPc = ScriptGiveCustomMon(SPECIES_FLOETTE_ETERNAL_FLOWER, 17, ITEM_NONE, BALL_CHERISH, 0, 1, evs, ivs, moves, 0);
+    int sentToPc = ScriptGiveCustomMon(SPECIES_FLOETTE_ETERNAL_FLOWER, 17, ITEM_NONE, ITEM_CHERISH_BALL, 0, 1, evs, ivs, moves, 0);
     StringCopy(gStringVar2, GetSpeciesName(SPECIES_FLOETTE_ETERNAL_FLOWER));
 
     if (sentToPc == MON_GIVEN_TO_PARTY) {
@@ -151,7 +151,6 @@ static u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 natur
     u16 nationalDexNum;
     int sentToPc;
     u8 heldItem[2];
-    u8 adjustedBall;
     struct Pokemon mon;
     u8 i;
     u8 evTotal = 0;
@@ -218,10 +217,8 @@ static u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 natur
     SetMonData(&mon, MON_DATA_ABILITY_NUM, &abilityNum);
     
     // ball
-    if (ball <= POKEBALL_COUNT) {
-        adjustedBall = ball + 1;
-        SetMonData(&mon, MON_DATA_POKEBALL, &adjustedBall);
-    }
+    if (ball <= POKEBALL_COUNT)
+        SetMonData(&mon, MON_DATA_POKEBALL, &ball);
     
     // item
     heldItem[0] = item;

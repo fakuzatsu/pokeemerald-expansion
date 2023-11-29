@@ -769,8 +769,8 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_INFINITE_CANDY] = {gItemIcon_InfiniteCandy, gItemIconPalette_InfiniteCandy},
     [ITEM_POKEBLOCK_CASE] = {gItemIcon_PokeblockCase, gItemIconPalette_PokeblockCase},
     [ITEM_SOOT_SACK] = {gItemIcon_SootSack, gItemIconPalette_SootSack},
-    [ITEM_POKE_FLUTE] = {gItemIcon_PokeFlute, gItemIconPalette_PokeFlute},
-    [ITEM_TEACHY_TV] = {gItemIcon_TeachyTV, gItemIconPalette_TeachyTV},
+    [ITEM_RAINBOW_WING] = {gItemIcon_PokeFlute, gItemIconPalette_PokeFlute},
+    [ITEM_SILVER_WING] = {gItemIcon_TeachyTV, gItemIconPalette_TeachyTV},
     // Story Key Items
     [ITEM_SS_TICKET] = {gItemIcon_SSTicket, gItemIconPalette_SSTicket},
     [ITEM_EON_TICKET] = {gItemIcon_EonTicket, gItemIconPalette_EonTicket},
