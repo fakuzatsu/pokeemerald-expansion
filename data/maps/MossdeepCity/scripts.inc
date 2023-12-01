@@ -301,6 +301,8 @@ MossdeepCity_EventScript_HyperTrainWhichPokemon::
 	end
 
 MossdeepCity_EventScript_WhichBottleCapHyperTrain::
+	specialvar VAR_RESULT, CheckIfPokemonIsFullyTrained
+	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_EventScript_ThisPokemonCanLearnNoMore
 	goto_if_eq VAR_0x8008, 1, MossdeepCity_EventScript_GoldBottleCapPrepareHyperTrain
 	checkitem ITEM_GOLD_BOTTLE_CAP
 	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_EventScript_BothBottleCapsHyperTrain
@@ -374,6 +376,11 @@ MossdeepCity_EventScript_RegularBottleCapDoHyperTrain::
 
 MossdeepCity_EventScript_HyperTrainingFinished::
 	msgbox MossdeepCity_Text_HyperTrainerFinished, MSGBOX_DEFAULT
+	releaseall
+	end
+
+MossdeepCity_EventScript_ThisPokemonCanLearnNoMore::
+	msgbox MossdeepCity_Text_ThisPokemonCanLearnNoMore, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -591,4 +598,11 @@ MossdeepCity_Text_HyperTrainerFinished:
 	.string "Huff-puff\p"
 	.string "Come back with another Cap\n"
 	.string "if you want to train again!$"
+
+MossdeepCity_Text_ThisPokemonCanLearnNoMore:
+	.string "Oh…\n"
+	.string "This Pokémon…\p"
+	.string "There is nothing more I can\n"
+	.string "teach it!\p"
+	.string "It's already perfect!$"
 

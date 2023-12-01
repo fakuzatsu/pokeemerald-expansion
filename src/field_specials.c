@@ -411,6 +411,61 @@ void DoRegularHyperTraining(void)
         CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 
+bool8 CheckIfPokemonIsFullyTrained(void)
+{
+    if (IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], sHyperTrainingStatCheck[0])
+    && IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], sHyperTrainingStatCheck[1])
+    && IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], sHyperTrainingStatCheck[2])
+    && IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], sHyperTrainingStatCheck[3])
+    && IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], sHyperTrainingStatCheck[4])
+    && IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], sHyperTrainingStatCheck[5]))
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void SetHpEvs(void)
+{
+    u8 HpEv = gSpecialVar_0x8000;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV, &HpEv);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetAtkEvs(void)
+{
+    u8 AtkEv = gSpecialVar_0x8001;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_EV, &AtkEv);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetDefEvs(void)
+{
+    u8 DefEv = gSpecialVar_0x8002;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_EV, &DefEv);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetSpdEvs(void)
+{
+    u8 SpdEv = gSpecialVar_0x8003;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_EV, &SpdEv);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetSpAtkEvs(void)
+{
+    u8 SpAtkEv = gSpecialVar_0x8005;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_EV, &SpAtkEv);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetSpDefEvs(void)
+{
+    u8 SpDefEv = gSpecialVar_0x8006;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_EV, &SpDefEv);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
 void ResetCyclingRoadChallengeData(void)
 {
     gBikeCyclingChallenge = FALSE;
