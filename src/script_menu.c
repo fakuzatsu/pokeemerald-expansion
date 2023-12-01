@@ -31,6 +31,7 @@ static void DrawMultichoiceMenu(u8 left, u8 top, u8 multichoiceId, bool8 ignoreB
 static void InitMultichoiceCheckWrap(bool8 ignoreBPress, u8 count, u8 windowId, u8 multichoiceId);
 static void DrawLinkServicesMultichoiceMenu(u8 multichoiceId);
 static void CreatePCMultichoice(void);
+static void CreateHyperTrainingMultichoice(void);
 static void CreateLilycoveSSTidalMultichoice(void);
 static bool8 IsPicboxClosed(void);
 static void CreateStartMenuForPokenavTutorial(void);
@@ -451,6 +452,98 @@ static void CreatePCMultichoice(void)
     InitMenuInUpperLeftCornerNormal(windowId, numChoices, 0);
     CopyWindowToVram(windowId, COPYWIN_FULL);
     InitMultichoiceCheckWrap(FALSE, numChoices, windowId, MULTI_PC);
+}
+
+bool16 ScriptMenu_CreateHyperTrainingMultichoice(void)
+{
+    if (FuncIsActiveTask(Task_HandleMultichoiceInput) == TRUE)
+    {
+        return FALSE;
+    }
+    else
+    {
+        gSpecialVar_Result = 0xFF;
+        CreateHyperTrainingMultichoice();
+        return TRUE;
+    }
+}
+
+static void CreateHyperTrainingMultichoice(void)
+{
+    u8 x = 8;
+    u8 y = 1;
+    u32 pixelWidth = 0;
+    u8 numChoices = 0;
+    u8 width;
+    u8 windowId;
+
+    if (!IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], STAT_SPEED)) {
+        ++numChoices;
+        pixelWidth = DisplayTextAndGetWidth(gText_Speed, pixelWidth);
+    }
+
+    if (!IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], STAT_ATK)) {
+        ++numChoices;
+        pixelWidth = DisplayTextAndGetWidth(gText_Attack, pixelWidth);
+    }
+
+    if (!IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], STAT_DEF)) {
+        ++numChoices;
+        pixelWidth = DisplayTextAndGetWidth(gText_Defense, pixelWidth);
+    }
+
+    if (!IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], STAT_HP)) {
+        ++numChoices;
+        pixelWidth = DisplayTextAndGetWidth(gText_MaxHP, pixelWidth);
+    }
+
+    if (!IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], STAT_SPATK)) {
+        ++numChoices;
+        pixelWidth = DisplayTextAndGetWidth(gText_SpAtk, pixelWidth);
+    }
+
+    if (!IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], STAT_SPDEF)) {
+        ++numChoices;
+        pixelWidth = DisplayTextAndGetWidth(gText_SpDef, pixelWidth);
+    }
+
+    width = ConvertPixelWidthToTileWidth(pixelWidth);
+    windowId = CreateWindowFromRect(0, 0, width, (numChoices * 2));
+    SetStandardWindowBorderStyle(windowId, FALSE);
+
+    if (!IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], STAT_HP)) {
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_MaxHP, x, y, TEXT_SKIP_DRAW, NULL);
+        y += 16;
+    }
+
+    if (!IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], STAT_ATK)) {
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_Attack, x, y, TEXT_SKIP_DRAW, NULL);
+        y += 16;
+    }
+
+    if (!IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], STAT_DEF)) {
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_Defense, x, y, TEXT_SKIP_DRAW, NULL);
+        y += 16;
+    }
+
+    if (!IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], STAT_SPATK)) {
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_SpAtk, x, y, TEXT_SKIP_DRAW, NULL);
+        y += 16;
+    }
+
+    if (!IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], STAT_SPDEF)) {
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_SpDef, x, y, TEXT_SKIP_DRAW, NULL);
+        y += 16;
+    }
+
+    if (!IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], STAT_SPEED)) {
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_Speed, x, y, TEXT_SKIP_DRAW, NULL);
+        y += 16;
+    }
+
+    InitMenuInUpperLeftCornerNormal(windowId, numChoices, 0);
+    CopyWindowToVram(windowId, COPYWIN_FULL);
+    InitMultichoiceCheckWrap(FALSE, numChoices, windowId, MULTI_HYPER_TRAINING);
 }
 
 void ScriptMenu_DisplayPCStartupPrompt(void)

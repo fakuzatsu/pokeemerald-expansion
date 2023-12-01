@@ -273,12 +273,12 @@ MossdeepCity_EventScript_DeclineKingsRock::
 	end
 
 MossdeepCity_EventScript_HyperTrainer::
-	lock
+	lockall
 	msgbox MossdeepCity_Text_HyperTrainer, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, MossdeepCity_EventScript_HyperTrainerCheckBottleCaps
 MossdeepCity_EventScript_DeclineHyperTrain::
 	msgbox MossdeepCity_Text_RejectHyperTrainer, MSGBOX_DEFAULT
-	release
+	releaseall
 	end
 
 MossdeepCity_EventScript_HyperTrainerCheckBottleCaps::
@@ -289,7 +289,7 @@ MossdeepCity_EventScript_HyperTrainerCheckBottleCaps::
 	checkitem ITEM_GOLD_BOTTLE_CAP
 	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_EventScript_HyperTrainWhichPokemon
 	msgbox MossdeepCity_Text_NoBottleCapsForHyperTrainer, MSGBOX_DEFAULT
-	release
+	releaseall
 	end
 
 MossdeepCity_EventScript_HyperTrainWhichPokemon::
@@ -308,8 +308,22 @@ MossdeepCity_EventScript_WhichBottleCapHyperTrain::
 	end
 
 MossdeepCity_EventScript_RegularBottleCapPrepareHyperTrain::
-	msgbox MossdeepCity_Text_NotImplimented, MSGBOX_DEFAULT
-	goto MossdeepCity_EventScript_DeclineHyperTrain
+	msgbox MossdeepCity_Text_WhichStatToTrain, MSGBOX_DEFAULT
+	waitmessage
+	special ScriptMenu_CreateHyperTrainingMultichoice
+	waitstate
+	goto MossdeepCity_EventScript_DoStatInput
+	end
+
+MossdeepCity_EventScript_DoStatInput::
+	switch VAR_RESULT
+	case 0, MossdeepCity_EventScript_RegularBottleCapDoHyperTrain
+	case 1, MossdeepCity_EventScript_RegularBottleCapDoHyperTrain
+	case 2, MossdeepCity_EventScript_RegularBottleCapDoHyperTrain
+	case 3, MossdeepCity_EventScript_RegularBottleCapDoHyperTrain
+	case 4, MossdeepCity_EventScript_RegularBottleCapDoHyperTrain
+	case 5, MossdeepCity_EventScript_RegularBottleCapDoHyperTrain
+	case MULTI_B_PRESSED, MossdeepCity_EventScript_DeclineHyperTrain
 	end
 
 MossdeepCity_EventScript_GoldBottleCapPrepareHyperTrain::
@@ -343,9 +357,23 @@ MossdeepCity_EventScript_GoldBottleCapDoHyperTrain::
 	goto MossdeepCity_EventScript_HyperTrainingFinished
 	end
 
+MossdeepCity_EventScript_RegularBottleCapDoHyperTrain::
+	special DoRegularHyperTraining
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	bufferspeciesname STR_VAR_1, VAR_RESULT
+	msgbox MossdeepCity_Text_HyperTrainerOkLetsDoThis, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	playfanfare MUS_OBTAIN_ITEM
+	message MossdeepCity_Text_PokemonWasHyperTrained
+	waitmessage
+	waitfanfare
+	fadescreen FADE_FROM_BLACK
+	goto MossdeepCity_EventScript_HyperTrainingFinished
+	end
+
 MossdeepCity_EventScript_HyperTrainingFinished::
 	msgbox MossdeepCity_Text_HyperTrainerFinished, MSGBOX_DEFAULT
-	release
+	releaseall
 	end
 
 MossdeepCity_EventScript_Scott::
@@ -552,6 +580,10 @@ MossdeepCity_Text_NotImplimented:
 	.string "Our creator got lazy and\n"
 	.string "forgot to impliment this!\p"
 	.string "Tell him if you saw this.$"
+
+MossdeepCity_Text_WhichStatToTrain:
+	.string "Which stat do you want me\n"
+	.string "to train?$"
 
 MossdeepCity_Text_UseGoldCapIsThisOk:
 	.string "I'll train all stats for your\n"

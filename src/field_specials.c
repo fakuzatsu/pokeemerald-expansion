@@ -216,6 +216,18 @@ static const u16 sRandomSpeciesForSpecialEgg[NUM_SPECIAL_EGG_SPECIES] =
     SPECIES_JANGMO_O, SPECIES_DREEPY
 };
 
+static const u16 sHyperTrainingStats[NUM_STATS] =
+{
+    MON_DATA_HYPER_TRAINED_HP, MON_DATA_HYPER_TRAINED_ATK, MON_DATA_HYPER_TRAINED_DEF, 
+    MON_DATA_HYPER_TRAINED_SPATK, MON_DATA_HYPER_TRAINED_SPDEF, MON_DATA_HYPER_TRAINED_SPEED
+};
+
+static const u16 sHyperTrainingStatCheck[NUM_STATS] =
+{
+    STAT_HP, STAT_ATK, STAT_DEF, STAT_SPATK, STAT_SPDEF, STAT_SPEED
+};
+
+
 void Special_ShowDiploma(void)
 {
     SetMainCallback2(CB2_ShowDiploma);
@@ -374,6 +386,29 @@ void DoGoldHyperTraining(void)
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HYPER_TRAINED_SPATK, &value);
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HYPER_TRAINED_SPDEF, &value);
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void DoRegularHyperTraining(void)
+{
+    u8 value = TRUE;
+    u8 index = gSpecialVar_Result;
+    u8 i;
+
+    for (i = 0; i < NUM_STATS; ++i)
+    {
+        if (IsStatHyperTrained(&gPlayerParty[gSpecialVar_0x8004], sHyperTrainingStatCheck[i]))
+        {
+            index++;
+        }
+        else if (index == i)
+        {
+            SetMonData(&gPlayerParty[gSpecialVar_0x8008], sHyperTrainingStats[i], &value);
+            break;
+        }
+    }
+
+    if (index < 6)
+        CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 
 void ResetCyclingRoadChallengeData(void)
