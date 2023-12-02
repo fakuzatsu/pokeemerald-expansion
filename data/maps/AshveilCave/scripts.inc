@@ -27,8 +27,8 @@ AshveilCave_Blazikenite::
 	case 2, AshveilCave_Give_Blazikenite
 	end
 
-@ Rainbow Wing item needs to actually be made.
 AshveilCave_Give_RainbowWing::
+	giveitem ITEM_RAINBOW_WING
 	goto AshveilCave_End_Blazikenite
 	end
 

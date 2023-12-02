@@ -27,8 +27,8 @@ ThunderCave_Sceptilite::
 	case 2, ThunderCave_Give_Sceptilite
 	end
 
-@ Rainbow Wing item needs to actually be made.
 ThunderCave_Give_RainbowWing::
+	giveitem ITEM_RAINBOW_WING
 	goto ThunderCave_End_Sceptilite
 	end
 

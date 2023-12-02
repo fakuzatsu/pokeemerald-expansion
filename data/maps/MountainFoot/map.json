@@ -40,7 +40,13 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 61,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_AQUA_HIDEOUT_UNUSED_RUBY_MAP3",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 

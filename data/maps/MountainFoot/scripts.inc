@@ -6,6 +6,12 @@ MountainFoot_MapScripts::
 
 MountainFoot_OnLoad:
 	call_if_set FLAG_HIDDEN_ITEM_ALAKAZITE, MountainFoot_Hide_Alakazite
+	goto_if_set FLAG_SYS_GAME_CLEAR, MountainFoot_Open_LegendaryBirdCave
+	end
+
+MountainFoot_Open_LegendaryBirdCave::
+	setmetatile 61, 2, METATILE_General_CaveEntrance_Bottom, FALSE
+	setmetatile 61, 1, METATILE_General_CaveEntrance_Top, TRUE
 	end
 
 MountainFoot_Hide_Alakazite::

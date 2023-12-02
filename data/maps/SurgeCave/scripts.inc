@@ -27,8 +27,8 @@ SurgeCave_Swampertite::
 	case 2, SurgeCave_Give_RainbowWing
 	end
 
-@ Rainbow Wing item needs to actually be made.
 SurgeCave_Give_RainbowWing::
+	giveitem ITEM_RAINBOW_WING
 	goto SurgeCave_End_Swampertite
 	end
 
