@@ -336,9 +336,11 @@
 #define FLAG_WALLACE_GOES_TO_SKY_PILLAR      0x137 // Set after speaking to Wallace within the Cave of Origin.
 #define FLAG_RECEIVED_HM_WATERFALL           0x138
 #define FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS    0x139
-#define FLAG_RECEIVED_AURORA_TICKET          0x13A
-#define FLAG_RECEIVED_MYSTIC_TICKET          0x13B
-#define FLAG_RECEIVED_OLD_SEA_MAP            0x13C
+
+#define FLAG_UNUSED_0x13A                    0x13A // Unused Flag
+#define FLAG_UNUSED_0x13B                    0x13B // Unused Flag
+#define FLAG_UNUSED_0x13C                    0x13C // Unused Flag
+
 #define FLAG_CANDYFACTORY_NPC_ITEM_GIFTED    0x13D // Custom Flag
 #define FLAG_ADOPTION_LADY_USES_NAME         0x13E // Custom Flag
 #define FLAG_ADOPTION_LADY_GIVES_CHARM       0x13F // Custom Flag
@@ -356,7 +358,7 @@
 #define FLAG_WONDER_CARD_UNUSED_15           0x14B
 #define FLAG_WONDER_CARD_UNUSED_16           0x14C
 #define FLAG_WONDER_CARD_UNUSED_17           0x14D
-#define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_RECEIVED_AURORA_TICKET)
+#define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_WONDER_CARD_UNUSED_4)
 
 #define FLAG_MIRAGE_TOWER_VISIBLE            0x14E
 #define FLAG_CHOSE_ROOT_FOSSIL               0x14F
@@ -462,8 +464,8 @@
 #define FLAG_DEFEATED_DEOXYS                        0x1AC
 #define FLAG_CAUGHT_DEOXYS                          0x1AD // Renamed Flag
 #define FLAG_SHOWN_EON_TICKET                       0x1AE
-#define FLAG_SHOWN_AURORA_TICKET                    0x1AF
-#define FLAG_SHOWN_OLD_SEA_MAP                      0x1B0
+#define FLAG_UNUSED_0x1AF                           0x1AF // Unused Flag
+#define FLAG_UNUSED_01B0                            0x1B0 // Unused Flag
 #define FLAG_DEFEATED_ENTEI                         0x1B1 // Custom Flag
 #define FLAG_CAUGHT_ENTEI                           0x1B2 // Custom Flag
 #define FLAG_DEFEATED_SUICUNE                       0x1B3 // Custom Flag
@@ -508,7 +510,7 @@
 
 #define FLAG_EVERGRANDE_BOTTLECAP_READY             0x1DA // Custom Flag
 
-#define FLAG_SHOWN_MYSTIC_TICKET                    0x1DB
+#define FLAG_UNUSED_0x1DB                           0x1DB // Unused Flag
 #define FLAG_DEFEATED_HO_OH                         0x1DC
 #define FLAG_DEFEATED_LUGIA                         0x1DD
 
