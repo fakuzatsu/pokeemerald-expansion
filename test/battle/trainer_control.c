@@ -108,7 +108,7 @@ TEST("CreateNPCTrainerPartyForTrainer generates customized Pokémon")
     EXPECT(StringCompare(nickBuffer, COMPOUND_STRING("Wobbuffet")) == 0);
 
     EXPECT(GetMonGender(&testParty[0]) == MON_FEMALE);
-    EXPECT(GetNature(&testParty[0]) == NATURE_HASTY);
+    EXPECT(GetNature(&testParty[0], FALSE) == NATURE_HASTY);
 
     Free(testParty);
 }
