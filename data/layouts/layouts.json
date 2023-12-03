@@ -4820,6 +4820,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/OldaleTown_House3/border.bin",
       "blockdata_filepath": "data/layouts/OldaleTown_House3/map.bin"
+    },
+    {
+      "id": "LAYOUT_RUSTURF_CLIFF",
+      "name": "RusturfCliff_Layout",
+      "width": 30,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/RusturfCliff/border.bin",
+      "blockdata_filepath": "data/layouts/RusturfCliff/map.bin"
     }
   ]
 }

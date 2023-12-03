@@ -437,6 +437,7 @@
 #define MAP_THUNDER_CAVE                             (113 | (24 << 8))
 #define MAP_ASHVEIL_CAVE                             (114 | (24 << 8))
 #define MAP_SURGE_CAVE                               (115 | (24 << 8))
+#define MAP_RUSTURF_CLIFF                            (116 | (24 << 8))
 
 // gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))

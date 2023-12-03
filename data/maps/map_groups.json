@@ -466,7 +466,8 @@
     "DesertCavern_1F",
     "ThunderCave",
     "AshveilCave",
-    "SurgeCave"
+    "SurgeCave",
+    "RusturfCliff"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
