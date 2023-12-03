@@ -115,6 +115,7 @@ enum { // Flags and Vars
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKENAV,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS,
+    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_GAME_CLEAR,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_COLISSION,
@@ -333,6 +334,7 @@ static void DebugAction_FlagsVars_SwitchDex(u8 taskId);
 static void DebugAction_FlagsVars_SwitchNatDex(u8 taskId);
 static void DebugAction_FlagsVars_SwitchPokeNav(u8 taskId);
 static void DebugAction_FlagsVars_ToggleFlyFlags(u8 taskId);
+static void DebugAction_FlagsVars_ToggleGameClear(u8 taskId);
 static void DebugAction_FlagsVars_ToggleBadgeFlags(u8 taskId);
 static void DebugAction_FlagsVars_ToggleFrontierPass(u8 taskId);
 static void DebugAction_FlagsVars_CollisionOnOff(u8 taskId);
@@ -468,6 +470,7 @@ static const u8 sDebugText_FlagsVars_SwitchNationalDex[] =      _("Toggle {STR_V
 static const u8 sDebugText_FlagsVars_SwitchPokeNav[] =          _("Toggle {STR_VAR_1}PokéNav");
 static const u8 sDebugText_FlagsVars_RunningShoes[] =           _("Toggle {STR_VAR_1}Running Shoes");
 static const u8 sDebugText_FlagsVars_ToggleFlyFlags[] =         _("Toggle {STR_VAR_1}Fly Flags");
+static const u8 sDebugText_FlagsVars_ToggleGameClear[] =        _("Toggle {STR_VAR_1}Game Clear");
 static const u8 sDebugText_FlagsVars_ToggleAllBadges[] =        _("Toggle {STR_VAR_1}All badges");
 static const u8 sDebugText_FlagsVars_ToggleFrontierPass[] =     _("Toggle {STR_VAR_1}Frontier Pass");
 static const u8 sDebugText_FlagsVars_SwitchCollision[] =        _("Toggle {STR_VAR_1}No Collision");
@@ -641,6 +644,7 @@ static const struct ListMenuItem sDebugMenu_Items_FlagsVars[] =
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKENAV]       = {sDebugText_FlagsVars_SwitchPokeNav,      DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKENAV},
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES]     = {sDebugText_FlagsVars_RunningShoes,       DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES},
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS]     = {sDebugText_FlagsVars_ToggleFlyFlags,     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS},
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_GAME_CLEAR]    = {sDebugText_FlagsVars_ToggleGameClear,    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_GAME_CLEAR},
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL]    = {sDebugText_FlagsVars_ToggleAllBadges,    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL},
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS] = {sDebugText_FlagsVars_ToggleFrontierPass, DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS},
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_COLISSION]     = {sDebugText_FlagsVars_SwitchCollision,    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_COLISSION},
@@ -777,6 +781,7 @@ static void (*const sDebugMenu_Actions_Flags[])(u8) =
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKENAV]       = DebugAction_FlagsVars_SwitchPokeNav,
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES]     = DebugAction_FlagsVars_RunningShoes,
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS]     = DebugAction_FlagsVars_ToggleFlyFlags,
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_GAME_CLEAR]    = DebugAction_FlagsVars_ToggleGameClear,
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL]    = DebugAction_FlagsVars_ToggleBadgeFlags,
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS] = DebugAction_FlagsVars_ToggleFrontierPass,
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_COLISSION]     = DebugAction_FlagsVars_CollisionOnOff,
@@ -1076,6 +1081,9 @@ static u8 Debug_CheckToggleFlags(u8 id)
                 FlagGet(FLAG_VISITED_EVER_GRANDE_CITY) &&
                 FlagGet(FLAG_LANDMARK_POKEMON_LEAGUE) &&
                 FlagGet(FLAG_LANDMARK_BATTLE_FRONTIER);
+            break;
+        case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_GAME_CLEAR:
+            result = FlagGet(FLAG_SYS_GAME_CLEAR);
             break;
         case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL:
             result = FlagGet(FLAG_BADGE01_GET) &&
@@ -2451,6 +2459,15 @@ static void DebugAction_FlagsVars_ToggleFlyFlags(u8 taskId)
         FlagSet(FLAG_LANDMARK_POKEMON_LEAGUE);
         FlagSet(FLAG_LANDMARK_BATTLE_FRONTIER);
     }
+}
+static void DebugAction_FlagsVars_ToggleGameClear(u8 taskId)
+{
+    // Sound effect
+    if (FlagGet(FLAG_SYS_GAME_CLEAR))
+        PlaySE(SE_PC_OFF);
+    else
+        PlaySE(SE_PC_LOGIN);
+    FlagToggle(FLAG_SYS_GAME_CLEAR);
 }
 static void DebugAction_FlagsVars_ToggleBadgeFlags(u8 taskId)
 {
