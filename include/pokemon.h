@@ -117,7 +117,7 @@ struct PokemonSubstruct0
     /*0x08*/ u8 ppBonuses;
     /*0x09*/ u8 friendship;
     /*0x0A*/ u16 pokeball:5; //31 balls
-             u8 hiddenNature:5; // 25 natures
+             u16 hiddenNature:5; // 25 natures
              u8 hyperTrainedHp:1;
              u8 hyperTrainedAtk:1;
              u8 hyperTrainedDef:1;
