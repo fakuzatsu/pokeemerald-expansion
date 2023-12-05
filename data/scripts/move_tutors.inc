@@ -258,12 +258,221 @@ MoveTutor_EventScript_ExplosionTaught::
 	release
 	end
 
+Mauvillecity_GameCorner_EventScript_TrickRoomTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_TRICK_ROOM, MoveTutor_EventScript_TrickRoomTaught
+	msgbox MoveTutor_Text_TrickRoomTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_TrickRoomDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_TrickRoomDeclined
+	msgbox MoveTutor_Text_ExplosionWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_TRICK_ROOM
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_TrickRoomDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_TRICK_ROOM
+	goto MoveTutor_EventScript_TrickRoomTaught
+	end
+
+MoveTutor_EventScript_TrickRoomDeclined::
+	msgbox MoveTutor_Text_TrickRoomDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_TrickRoomTaught::
+	msgbox MoveTutor_Text_TrickRoomTaught, MSGBOX_DEFAULT
+	release
+	end
+
+Route123_EventScript_NaturalGiftTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_NATURAL_GIFT, MoveTutor_EventScript_NaturalGiftTaught
+	msgbox MoveTutor_Text_NaturalGiftTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_NaturalGiftDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_NaturalGiftDeclined
+	msgbox MoveTutor_Text_NaturalGiftWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_NATURAL_GIFT
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_NaturalGiftDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_NATURAL_GIFT
+	goto MoveTutor_EventScript_NaturalGiftTaught
+	end
+
+MoveTutor_EventScript_NaturalGiftDeclined::
+	msgbox MoveTutor_Text_NaturalGiftDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_NaturalGiftTaught::
+	msgbox MoveTutor_Text_NaturalGiftTaught, MSGBOX_DEFAULT
+	release
+	end
+
+Route120_EventScript_FlingTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_FLING, MoveTutor_EventScript_FlingTaught
+	msgbox MoveTutor_Text_FlingTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_FlingDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_FlingDeclined
+	msgbox MoveTutor_Text_FlingWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_FLING
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_FlingDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_FLING
+	goto MoveTutor_EventScript_FlingTaught
+	end
+
+MoveTutor_EventScript_FlingDeclined::
+	msgbox MoveTutor_Text_FlingDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_FlingTaught::
+	msgbox MoveTutor_Text_FlingTaught, MSGBOX_DEFAULT
+	release
+	end
+
+Route111_EventScript_ScorchingSandsTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_SCORCHING_SANDS, MoveTutor_EventScript_ScorchingSandsTaught
+	msgbox MoveTutor_Text_ScorchingSandsTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_ScorchingSandsDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_ScorchingSandsDeclined
+	msgbox MoveTutor_Text_ScorchingSandsWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SCORCHING_SANDS
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_ScorchingSandsDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_SCORCHING_SANDS
+	goto MoveTutor_EventScript_ScorchingSandsTaught
+	end
+
+MoveTutor_EventScript_ScorchingSandsDeclined::
+	msgbox MoveTutor_Text_ScorchingSandsDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_ScorchingSandsTaught::
+	msgbox MoveTutor_Text_ScorchingSandsTaught, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_EventScript_DualChopTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_DUAL_CHOP, MoveTutor_EventScript_DualChopTaught
+	msgbox MoveTutor_Text_DualChopTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_DualChopDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_DualChopDeclined
+	msgbox MoveTutor_Text_DualChopWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_DUAL_CHOP
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_DualChopDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_DUAL_CHOP
+	goto MoveTutor_EventScript_DualChopTaught
+	end
+
+MoveTutor_EventScript_DualChopDeclined::
+	msgbox MoveTutor_Text_DualChopDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_DualChopTaught::
+	msgbox MoveTutor_Text_DualChopTaught, MSGBOX_DEFAULT
+	release
+	end
+
+Route114_EventScript_EarthPowerTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_EARTH_POWER, MoveTutor_EventScript_EarthPowerTaught
+	msgbox MoveTutor_Text_EarthPowerTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_EarthPowerDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_EarthPowerDeclined
+	msgbox MoveTutor_Text_EarthPowerWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_EARTH_POWER
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_EarthPowerDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_EARTH_POWER
+	goto MoveTutor_EventScript_EarthPowerTaught
+	end
+
+MoveTutor_EventScript_EarthPowerDeclined::
+	msgbox MoveTutor_Text_EarthPowerDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_EarthPowerTaught::
+	msgbox MoveTutor_Text_EarthPowerTaught, MSGBOX_DEFAULT
+	release
+	end
+
+Route115_EventScript_GrassKnotTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_GRASS_KNOT, MoveTutor_EventScript_GrassKnotTaught
+	msgbox MoveTutor_Text_GrassKnotTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_GrassKnotDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_GrassKnotDeclined
+	msgbox MoveTutor_Text_GrassKnotWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_GRASS_KNOT
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_GrassKnotDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_GRASS_KNOT
+	goto MoveTutor_EventScript_GrassKnotTaught
+	end
+
+MoveTutor_EventScript_GrassKnotDeclined::
+	msgbox MoveTutor_Text_GrassKnotDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_GrassKnotTaught::
+	msgbox MoveTutor_Text_GrassKnotTaught, MSGBOX_DEFAULT
+	release
+	end
+
+Route110_EventScript_RecycleTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_RECYCLE, MoveTutor_EventScript_RecycleTaught
+	msgbox MoveTutor_Text_RecycleTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RecycleDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RecycleDeclined
+	msgbox MoveTutor_Text_RecycleWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_RECYCLE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RecycleDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_RECYCLE
+	goto MoveTutor_EventScript_RecycleTaught
+	end
+
+MoveTutor_EventScript_RecycleDeclined::
+	msgbox MoveTutor_Text_RecycleDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_RecycleTaught::
+	msgbox MoveTutor_Text_RecycleTaught, MSGBOX_DEFAULT
+	release
+	end
+
 MoveTutor_EventScript_OpenPartyMenu::
 	special ChooseMonForMoveTutor
 	waitstate
 	lock
 	faceplayer
 	return
+
 
 MoveTutor_EventScript_CanOnlyBeLearnedOnce::
 	msgbox MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnce, MSGBOX_YESNO

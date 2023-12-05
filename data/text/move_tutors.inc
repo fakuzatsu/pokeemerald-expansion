@@ -235,3 +235,188 @@ MoveTutor_Text_ExplosionTaught:
 	.string "to ignite my own EXPLOSION…\p"
 	.string "Maybe it's because deep down,\n"
 	.string "I would rather stay here…$"
+
+MoveTutor_Text_TrickRoomTeach:
+	.string "I lost all my coins on these slots.\p"
+	.string "The only thing I have left to my\n"
+	.string "name is my tricky technique.\p"
+	.string "With it, slow Pokémon get to move\n"
+	.string "before faster Pokémon.\p"
+	.string "I was hoping to use it to make the\n"
+	.string "slots slower, but there are eyes\l"
+	.string "all over this place…\p"
+	.string "How about I teach you my technique\n"
+	.string "for a measly 50 coins?$"
+
+MoveTutor_Text_TrickRoomDeclined:
+	.string "Humph! Fine, but you can't make\n"
+	.string "more coins without a little investing.$"
+
+MoveTutor_Text_TrickRoomWhichMon:
+	.string "Right. Which Pokémon want to learn\n"
+	.string "this tricky technique?$"
+
+MoveTutor_Text_TrickRoomTaught:
+	.string "Best of luck to you on your games\n"
+	.string "kid.\p"
+	.string "Heh heh…\p"
+	.string "Time to win my big break.$"
+
+MoveTutor_Text_NaturalGiftTeach:
+	.string "They say that plants grow up faster\n"
+	.string "and stronger if you speak to them.\p"
+	.string "So I'm here giving these berries\n" 
+	.string "plenty of encouragement.\n"
+	.string "The old folks say I have a gift but\n"
+	.string "I just want nature to flourish…\p"
+	.string "Why don't I teach one of your\n"
+	.string "Pokémon my natural gift?$"
+
+MoveTutor_Text_NaturalGiftDeclined:
+	.string "Oh? That's ok…\n"
+	.string "I'll be here if you need me.$"
+
+MoveTutor_Text_NaturalGiftWhichMon:
+	.string "Which Pokémon should learn to grant\n"
+	.string "natures gift?$"
+
+MoveTutor_Text_NaturalGiftTaught:
+	.string "Phew! I'm spent.\p"
+	.string "I think I'll just sit and listen\n"
+	.string "to the berries for a little bit.$"
+
+MoveTutor_Text_FlingTeach:
+	.string "Huh?…\p"
+	.string "Oh hey.\p"
+	.string "I'm just flinging sticks into the\n"
+	.string "lake to watch them float.\p"
+	.string "I always fling sticks into the\n"
+	.string "lake when I'm feeling moody.\p"
+	.string "Are you here because you're\n"
+	.string "feeling moody too?\p"
+	.string "I can teach you how to fling\n"
+	.string "stuff, if you want?$"
+
+MoveTutor_Text_FlingDeclined:
+	.string "Humph. Fine.$"
+
+MoveTutor_Text_FlingWhichMon:
+	.string "Which Pokémon should learn to fling\n"
+	.string "stuff?$"
+
+MoveTutor_Text_FlingTaught:
+	.string "Now we can fling stuff together\n"
+	.string "I guess.\p"
+	.string "Oh… but stay away from my sticks.$"
+
+MoveTutor_Text_ScorchingSandsTeach:
+	.string "I'm practicing guitar in the\n"
+	.string "desert because it's totally metal!\p"
+	.string "I'm going to shred up these sands\n"
+	.string "and set them ablaze with the fire\l"
+	.string "in my heart!\p"
+	.string "If you wanna shred with me, you've\n"
+	.string "got to set your heart ablaze too!\p"
+	.string "How about I teach you?$"
+
+MoveTutor_Text_ScorchingSandsDeclined:
+	.string "Nah? That's not very metal of\n"
+	.string "you mann…$"
+
+MoveTutor_Text_ScorchingSandsWhichMon:
+	.string "Yeah! Who wants to set the sands\n"
+	.string "ablaze in your party?$"
+
+MoveTutor_Text_ScorchingSandsTaught:
+	.string "Righteous! Get practicing mann!\p"
+	.string "Maybe one day you can shred as\n"
+	.string "hard as me, little dude!$"
+
+MoveTutor_Text_DualChopTeach:
+	.string "Chop! Chop!\p"
+	.string "Hm?…\p"
+	.string "Oh hey, kid.\n"
+	.string "Best keep a safe distance.\p"
+	.string "I'm cutting back these trees\n"
+	.string "with my Dual Chop technique!\p"
+	.string "… … …\p"
+	.string "Hm? You want to learn my Dual\n"
+	.string "Chop technique kid?$"
+
+MoveTutor_Text_DualChopDeclined:
+	.string "Yeah, best keep this work to\n"
+	.string "the professionals.$"
+
+MoveTutor_Text_DualChopWhichMon:
+	.string "Which Pokémon is going to be\n"
+	.string "doing the work, kid?$"
+
+MoveTutor_Text_DualChopTaught:
+	.string "Chop! Chop!\p"
+	.string "Work is never done around\n"
+	.string "these parts.$"
+
+MoveTutor_Text_EarthPowerTeach:
+	.string "When continental plates collide\n"
+	.string "the power of the earth forces the\l"
+	.string "land up into a peak.\p"
+	.string "We call those mountains!\p"
+	.string "Isn't the power of earth just\n"
+	.string "amazing?\p"
+	.string "Would you like to learn how to\p"
+	.string "conjure the Power of Earth?$"
+
+MoveTutor_Text_EarthPowerDeclined:
+	.string "No? Guess I'll keep my earth\n"
+	.string "knowledge to myself…$"
+
+MoveTutor_Text_EarthPowerWhichMon:
+	.string "Which Pokémon wants to share in\n"
+	.string "the Power of Earth?$"
+
+MoveTutor_Text_EarthPowerTaught:
+	.string "Meteor Falls and Mt. Pyre form\n"
+	.string "a mountain range where the plates\l"
+	.string "collide.\p"
+	.string "Fascinating, right?$"
+
+MoveTutor_Text_GrassKnotTeach:
+	.string "Hihi! I'm playing in the grass.\p"
+	.string "It's fun to make daisy chains\n"
+	.string "like this!\p"
+	.string "To do it, you have to tie the\n"
+	.string "stems up like this!\p"
+	.string "Do you want to learn how to make\n"
+	.string "Grass Knots for daisy chains?$"
+
+MoveTutor_Text_GrassKnotDeclined:
+	.string "No? Your loss!$"
+
+MoveTutor_Text_GrassKnotWhichMon:
+	.string "Which Pokémon wants to make\n"
+	.string "daisy chains for you?$"
+
+MoveTutor_Text_GrassKnotTaught:
+	.string "WooHoo!\p"
+	.string "It's fun to play in the grass.$"
+
+MoveTutor_Text_RecycleTeach:
+	.string "I'm collecting bits of trash\n"
+	.string "that wash up on this path.\p"
+	.string "It cleans up the environment\n"
+	.string "and the trash can be Recycled\l"
+	.string "into something useful!$"
+	.string "Want me to teach you and your\n"
+	.string "Pokémon how to Recycle?$"
+
+MoveTutor_Text_RecycleDeclined:
+	.string "Oh dear… double the work\n"
+	.string "for me then…$"
+
+MoveTutor_Text_RecycleWhichMon:
+	.string "Which Pokémon wants to do\n"
+	.string "some Recycling?$"
+
+MoveTutor_Text_RecycleTaught:
+	.string "Fantastic! Now you can clean up\n"
+	.string "and make useful things too!$"
