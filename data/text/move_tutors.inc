@@ -266,7 +266,7 @@ MoveTutor_Text_NaturalGiftTeach:
 	.string "They say that plants grow up faster\n"
 	.string "and stronger if you speak to them.\p"
 	.string "So I'm here giving these berries\n" 
-	.string "plenty of encouragement.\n"
+	.string "plenty of encouragement.\p"
 	.string "The old folks say I have a gift but\n"
 	.string "I just want nature to flourish…\p"
 	.string "Why don't I teach one of your\n"
@@ -363,7 +363,7 @@ MoveTutor_Text_EarthPowerTeach:
 	.string "We call those mountains!\p"
 	.string "Isn't the power of earth just\n"
 	.string "amazing?\p"
-	.string "Would you like to learn how to\p"
+	.string "Would you like to learn how to\n"
 	.string "conjure the Power of Earth?$"
 
 MoveTutor_Text_EarthPowerDeclined:
@@ -405,7 +405,7 @@ MoveTutor_Text_RecycleTeach:
 	.string "that wash up on this path.\p"
 	.string "It cleans up the environment\n"
 	.string "and the trash can be Recycled\l"
-	.string "into something useful!$"
+	.string "into something useful!\p"
 	.string "Want me to teach you and your\n"
 	.string "Pokémon how to Recycle?$"
 

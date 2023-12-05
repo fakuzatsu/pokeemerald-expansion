@@ -470,9 +470,11 @@ PokemonLeague_EventScript_DragonMaster::
 	lock
 	faceplayer
 	goto_if_eq VAR_TEMP_1, 1, MoveTutor_EventScript_DragonMasterSquable
-	setvar VAR_TEMP_1, 1
+	setvar VAR_TEMP_2, 1
 	msgbox MoveTutor_Text_DragonMasterIntroduction, MSGBOX_DEFAULT
 PokemonLeague_EventScript_DragonMasterAfterIntro::
+	msgbox MoveTutor_Text_DragonMasterChallenge, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_DragonMasterDeclined
 	goto_if_set FLAG_DEFEATED_DRAGON_MASTER, MoveTutor_EventScript_DefeatedDragonMaster
 	trainerbattle_no_intro TRAINER_DRAGON_MASTER, MoveTutor_Text_DragonMasterDefeat
 	setflag FLAG_DEFEATED_DRAGON_MASTER
@@ -523,10 +525,12 @@ MoveTutor_EventScript_DragonMasterTaught::
 PokemonLeague_EventScript_FightingMaster::
 	lock
 	faceplayer
-	goto_if_eq VAR_TEMP_1, 1, MoveTutor_EventScript_FightingMasterSquable
+	goto_if_eq VAR_TEMP_2, 1, MoveTutor_EventScript_FightingMasterSquable
 	setvar VAR_TEMP_1, 1
 	msgbox MoveTutor_Text_FightingMasterIntroduction, MSGBOX_DEFAULT
 PokemonLeague_EventScript_FightingMasterAfterIntro::
+	msgbox MoveTutor_Text_FightingMasterChallenge, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_FightingMasterDeclined
 	goto_if_set FLAG_DEFEATED_FIGHTING_MASTER, MoveTutor_EventScript_DefeatedFightingMaster
 	trainerbattle_no_intro TRAINER_FIGHTING_MASTER, MoveTutor_Text_FightingMasterDefeat
 	setflag FLAG_DEFEATED_FIGHTING_MASTER
