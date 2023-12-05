@@ -1307,10 +1307,11 @@
 #define FLAG_UNUSED_0x4E8                                           0x4E8 // Unused Flag
 #define FLAG_UNUSED_0x4E9                                           0x4E9 // Unused Flag
 #define FLAG_UNUSED_0x4EA                                           0x4EA // Unused Flag
-#define FLAG_UNUSED_0x4EB                                           0x4EB // Unused Flag
-#define FLAG_UNUSED_0x4EC                                           0x4EC // Unused Flag
 
 // Significant Trainers
+#define FLAG_DEFEATED_DRAGON_MASTER                                 0x4EB // Custom Flag
+#define FLAG_DEFEATED_FIGHTING_MASTER                               0x4EC // Custom Flag
+
 #define FLAG_DEFEATED_TRAINER_LISLA                                 0x4ED // Custom Flag
 #define FLAG_DEFEATED_TRAINER_LYDIA                                 0x4EE // Custom Flag
 #define FLAG_DEFEATED_TRAINER_LORNA                                 0x4EF // Custom Flag

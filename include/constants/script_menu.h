@@ -125,6 +125,8 @@
 #define MULTI_CHOOSE_LEVEL_CAP             114
 #define MULTI_CHOOSE_BOTTLE_CAP            115
 #define MULTI_EXPLAIN_OR_TOGGLE            116
+#define MULTI_WHICH_DRAGON_MOVE            117
+#define MULTI_WHICH_FIGHTING_MOVE          118
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

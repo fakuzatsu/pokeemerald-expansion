@@ -420,3 +420,81 @@ MoveTutor_Text_RecycleWhichMon:
 MoveTutor_Text_RecycleTaught:
 	.string "Fantastic! Now you can clean up\n"
 	.string "and make useful things too!$"
+
+MoveTutor_Text_DragonMasterIntroduction:
+	.string "Greetings. I am the Dragon type\n"
+	.string "Master.\p"
+	.string "I am versed in some of the strongest\n"
+	.string "Dragon techniques ever known.$"
+
+MoveTutor_Text_DragonMasterSquabble:
+	.string "Of course that Fighting type\n"
+	.string "“Master” doesn't get it.\p"
+	.string "Dragon types are far beyond them\n"
+	.string "in terms of Power…$"
+
+MoveTutor_Text_DragonMasterChallenge:
+	.string "If you can defeat me, I'll teach\n"
+	.string "you a true, Dragon technique.$"
+
+MoveTutor_Text_DragonMasterDefeat:
+	.string "Power worthy of the dragon!$"
+
+MoveTutor_Text_DragonMasterWhichMove:
+	.string "You have proven yourself to me.\p"
+	.string "Which Dragon technique would you\n"
+	.string "care to learn?$"
+
+MoveTutor_Text_DragonMasterDeclined:
+	.string "To learn such a powerful technique\n"
+	.string "requires potential.\p"
+	.string "Return when you are ready to learn\n"
+	.string "again.$"
+
+MoveTutor_Text_DragonMasterWhichMon:
+	.string "Which Pokémon will learn such a\n"
+	.string "powerful technique?$"
+
+MoveTutor_Text_DragonMasterTaught:
+	.string "Return when you are ready to learn\n"
+	.string "again.$"
+
+MoveTutor_Text_FightingMasterIntroduction:
+	.string "Greetings. I am the Fighting\n"
+	.string "type Master.\p"
+	.string "I am trained in some of the toughest\n"
+	.string "Fighting styles ever known.$"
+
+MoveTutor_Text_FightingMasterSquabble:
+	.string "That Dragon “Master” wouldn't know\n"
+	.string "power if it smacked him.\p"
+	.string "True strength comes from Fighting\n"
+	.string "spirit!$"
+
+MoveTutor_Text_FightingMasterChallenge:
+	.string "If you can bring me down, I'll teach\n"
+	.string "you a true, Fighting technique.$"
+
+MoveTutor_Text_FightingMasterDefeat:
+	.string "Huahahah! Yes!\n"
+	.string "A truly indomitable spirit!$"
+
+MoveTutor_Text_FightingMasterWhichMove:
+	.string "Your spirit is absolutely ablaze with\n"
+	.string "Fighting power!\p"
+	.string "Which Fighting style do you want me\n"
+	.string "to teach you?$"
+
+MoveTutor_Text_FightingMasterDeclined:
+	.string "Learning these Fighting styles takes\n"
+	.string "pure determination!\p"
+	.string "Come back when you're ready to work\n"
+	.string "to your core!$"
+
+MoveTutor_Text_FightingMasterWhichMon:
+	.string "Which Pokémon has the guts to learn\n"
+	.string "this powerful Fighting style?$"
+
+MoveTutor_Text_FightingMasterTaught:
+	.string "Come back when you're ready to work\n"
+	.string "to your core again!$"

@@ -780,6 +780,20 @@ static const struct MenuAction MultichoiceList_ExplainOrToggle[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_DracoMeteorOrOutrage[] =
+{
+    {gText_MoveDracoMeteor},
+    {gText_MoveOutrage},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_SuperpowerOrAuraSphere[] =
+{
+    {gText_Superpower},
+    {gText_AuraSphere},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -909,7 +923,9 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_CHOOSE_LEVEL_CAP]           = MULTICHOICE(MultichoiceList_ChooseLevelCap),
     [MULTI_CHOOSE_BOTTLE_CAP]          = MULTICHOICE(MultichoiceList_ChooseBottleCap),
-    [MULTI_EXPLAIN_OR_TOGGLE]           = MULTICHOICE(MultichoiceList_ExplainOrToggle),
+    [MULTI_EXPLAIN_OR_TOGGLE]          = MULTICHOICE(MultichoiceList_ExplainOrToggle),
+    [MULTI_WHICH_DRAGON_MOVE]          = MULTICHOICE(MultichoiceList_DracoMeteorOrOutrage),
+    [MULTI_WHICH_FIGHTING_MOVE]        = MULTICHOICE(MultichoiceList_SuperpowerOrAuraSphere),
 };
 
 const u8 *const gStdStrings[] =

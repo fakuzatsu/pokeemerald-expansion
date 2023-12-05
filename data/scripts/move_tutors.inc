@@ -466,6 +466,114 @@ MoveTutor_EventScript_RecycleTaught::
 	release
 	end
 
+PokemonLeague_EventScript_DragonMaster::
+	lock
+	faceplayer
+	goto_if_eq VAR_TEMP_1, 1, MoveTutor_EventScript_DragonMasterSquable
+	setvar VAR_TEMP_1, 1
+	msgbox MoveTutor_Text_DragonMasterIntroduction, MSGBOX_DEFAULT
+PokemonLeague_EventScript_DragonMasterAfterIntro::
+	goto_if_set FLAG_DEFEATED_DRAGON_MASTER, MoveTutor_EventScript_DefeatedDragonMaster
+	trainerbattle_no_intro TRAINER_DRAGON_MASTER, MoveTutor_Text_DragonMasterDefeat
+	setflag FLAG_DEFEATED_DRAGON_MASTER
+	goto MoveTutor_EventScript_DefeatedDragonMaster
+	end
+
+MoveTutor_EventScript_DragonMasterSquable::
+	msgbox MoveTutor_Text_DragonMasterSquabble, MSGBOX_DEFAULT
+	goto PokemonLeague_EventScript_DragonMasterAfterIntro
+	end
+
+MoveTutor_EventScript_DefeatedDragonMaster::
+	message MoveTutor_Text_DragonMasterWhichMove
+	waitmessage
+	multichoice 16, 6, MULTI_WHICH_DRAGON_MOVE, FALSE
+	switch VAR_RESULT
+	case 0, MoveTutor_EventScript_DragonMasterTeachDracoMeteor
+	case 1, MoveTutor_EventScript_DragonMasterTeachOutrage
+	case 2, MoveTutor_EventScript_DragonMasterDeclined
+	end
+
+MoveTutor_EventScript_DragonMasterTeachDracoMeteor::
+	msgbox MoveTutor_Text_DragonMasterWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_DRACO_METEOR
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_DragonMasterDeclined
+	goto MoveTutor_EventScript_DragonMasterTaught
+	end
+
+MoveTutor_EventScript_DragonMasterTeachOutrage::
+	msgbox MoveTutor_Text_DragonMasterWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_OUTRAGE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_DragonMasterDeclined
+	goto MoveTutor_EventScript_DragonMasterTaught
+	end	
+
+MoveTutor_EventScript_DragonMasterDeclined::
+	msgbox MoveTutor_Text_DragonMasterDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_DragonMasterTaught::
+	msgbox MoveTutor_Text_DragonMasterTaught, MSGBOX_DEFAULT
+	release
+	end
+
+PokemonLeague_EventScript_FightingMaster::
+	lock
+	faceplayer
+	goto_if_eq VAR_TEMP_1, 1, MoveTutor_EventScript_FightingMasterSquable
+	setvar VAR_TEMP_1, 1
+	msgbox MoveTutor_Text_FightingMasterIntroduction, MSGBOX_DEFAULT
+PokemonLeague_EventScript_FightingMasterAfterIntro::
+	goto_if_set FLAG_DEFEATED_FIGHTING_MASTER, MoveTutor_EventScript_DefeatedFightingMaster
+	trainerbattle_no_intro TRAINER_FIGHTING_MASTER, MoveTutor_Text_FightingMasterDefeat
+	setflag FLAG_DEFEATED_FIGHTING_MASTER
+	goto MoveTutor_EventScript_DefeatedFightingMaster
+	end
+
+MoveTutor_EventScript_FightingMasterSquable::
+	msgbox MoveTutor_Text_FightingMasterSquabble, MSGBOX_DEFAULT
+	goto PokemonLeague_EventScript_FightingMasterAfterIntro
+	end
+
+MoveTutor_EventScript_DefeatedFightingMaster::
+	message MoveTutor_Text_FightingMasterWhichMove
+	waitmessage
+	multichoice 16, 6, MULTI_WHICH_FIGHTING_MOVE, FALSE
+	switch VAR_RESULT
+	case 0, MoveTutor_EventScript_FightingMasterTeachSuperpower
+	case 1, MoveTutor_EventScript_FightingMasterTeachAuraSphere
+	case 2, MoveTutor_EventScript_FightingMasterDeclined
+	end
+
+MoveTutor_EventScript_FightingMasterTeachSuperpower::
+	msgbox MoveTutor_Text_FightingMasterWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SUPERPOWER
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_FightingMasterDeclined
+	goto MoveTutor_EventScript_FightingMasterTaught
+	end
+
+MoveTutor_EventScript_FightingMasterTeachAuraSphere::
+	msgbox MoveTutor_Text_FightingMasterWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_AURA_SPHERE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_FightingMasterDeclined
+	goto MoveTutor_EventScript_FightingMasterTaught
+	end	
+
+MoveTutor_EventScript_FightingMasterDeclined::
+	msgbox MoveTutor_Text_FightingMasterDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_FightingMasterTaught::
+	msgbox MoveTutor_Text_FightingMasterTaught, MSGBOX_DEFAULT
+	release
+	end
+
 MoveTutor_EventScript_OpenPartyMenu::
 	special ChooseMonForMoveTutor
 	waitstate
