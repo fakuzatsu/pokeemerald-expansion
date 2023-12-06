@@ -1153,7 +1153,7 @@ Route110_Text_EdwinPostBattle:
 	.string "my passion as a collector is ignited!$"
 
 Route110_Text_EdwinRegister:
-	.string "I like collecting MATCH CALL\n"
+	.string "I like collecting Match CALL\n"
 	.string "registrations, too…$"
 
 Route110_Text_EdwinRematchIntro:
@@ -1257,17 +1257,17 @@ Route110_Text_KalebPostBattle:
 	.string "could, my pretties.$"
 
 Route111_Text_DrewIntro:
-	.string "Oh, hey! Those GO-GOGGLES suit you.\n"
+	.string "Oh, hey! Those Go-GOGGLES suit you.\n"
 	.string "But I think they look better on me.\p"
 	.string "Let's decide who they look better on\n"
 	.string "with a battle!$"
 
 Route111_Text_DrewDefeat:
 	.string "I couldn't see what was happening at\n"
-	.string "my sides because of the GO-GOGGLES.$"
+	.string "my sides because of the Go-GOGGLES.$"
 
 Route111_Text_DrewPostBattle:
-	.string "The GO-GOGGLES make it possible to\n"
+	.string "The Go-GOGGLES make it possible to\n"
 	.string "get through sandstorms.\l"
 	.string "That makes me happy!$"
 
@@ -1286,7 +1286,7 @@ Route111_Text_HeidiPostBattle:
 	.string "an eye on it!$"
 
 Route111_Text_BeauIntro:
-	.string "Wearing these GO-GOGGLES makes me\n"
+	.string "Wearing these Go-GOGGLES makes me\n"
 	.string "feel like a superhero.\l"
 	.string "Right now, nobody can beat me!$"
 
@@ -1459,7 +1459,7 @@ Route111_Text_CeliaDefeat:
 Route111_Text_CeliaPostBattle:
 	.string "In a sandstorm like this, I can't set\n"
 	.string "the places for a picnic even with my\l"
-	.string "GO-GOGGLES on…$"
+	.string "Go-GOGGLES on…$"
 
 Route111_Text_BryanIntro:
 	.string "How tough are you?\n"
@@ -2169,7 +2169,7 @@ Route115_Text_HelenePostBattle:
 	.string "I rarely meet anyone who's better\n"
 	.string "than me…\p"
 	.string "I get it now!\n"
-	.string "You're a GYM LEADER, aren't you?$"
+	.string "You're a GYM Leader, aren't you?$"
 
 Route115_Text_AlixIntro:
 	.string "Our eyes met!\n"
@@ -4226,7 +4226,7 @@ Route128_Text_KatelynRematchDefeat:
 
 Route128_Text_KatelynPostRematch:
 	.string "You should give serious thought to\n"
-	.string "challenges on VICTORY ROAD.$"
+	.string "challenges on Victory ROAD.$"
 
 Route128_Text_AlexaIntro:
 	.string "We've been working so hard to mount\n"

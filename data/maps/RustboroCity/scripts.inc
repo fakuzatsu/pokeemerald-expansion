@@ -1127,7 +1127,7 @@ RustboroCity_Text_YoureNewAroundHere:
 	.string "Pokémon Trainer's SCHOOL?$"
 
 RustboroCity_Text_GymLeaderIsntEasyWithFire:
-	.string "I challenged the GYM LEADER, but…\p"
+	.string "I challenged the GYM Leader, but…\p"
 	.string "It's not going to be easy winning with\n"
 	.string "my FIRE-type Pokémon…\p"
 	.string "FIRE-type Pokémon don't match up\n"
@@ -1212,7 +1212,7 @@ RustboroCity_Text_PleaseComeWithMe:
 
 RustboroCity_Text_MayHiLetsRegister:
 	.string "May: Oh, hi, {PLAYER}{KUN}!\p"
-	.string "You had a MATCH CALL feature put\n"
+	.string "You had a Match CALL feature put\n"
 	.string "on your PokéNav!\p"
 	.string "Let's register each other so we can\n"
 	.string "contact one another anytime!\p"
@@ -1259,7 +1259,7 @@ RustboroCity_Text_MayMrBrineyHint:
 
 RustboroCity_Text_BrendanHiLetsRegister:
 	.string "Brendan: Oh, hey, {PLAYER}!\p"
-	.string "You had a MATCH CALL feature put\n"
+	.string "You had a Match CALL feature put\n"
 	.string "on your PokéNav! Cool!\p"
 	.string "Let's register each other so we can\n"
 	.string "get in touch anytime!\p"
@@ -1317,7 +1317,7 @@ RustboroCity_Text_DevonCorpSign:
 
 RustboroCity_Text_GymSign:
 	.string "RUSTBORO CITY Pokémon GYM\n"
-	.string "LEADER: ROXANNE\p"
+	.string "Leader: ROXANNE\p"
 	.string "“The ROCK-loving honors student!”$"
 
 RustboroCity_Text_DevonCorpBranchOfficeSign:
@@ -1348,8 +1348,8 @@ RustboroCity_Text_DevelopedNewPokenavFeature:
 RustboroCity_Text_AddedMatchCallPleaseCallMrStone:
 	.string "There you go, {PLAYER}!\p"
 	.string "I added a new feature named\n"
-	.string "MATCH CALL to your PokéNav.\p"
-	.string "Using the MATCH CALL feature,\n"
+	.string "Match CALL to your PokéNav.\p"
+	.string "Using the Match CALL feature,\n"
 	.string "you can chat with people who have\l"
 	.string "been registered in your PokéNav.\p"
 	.string "{PLAYER}, our PRESIDENT STONE should\n"

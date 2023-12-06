@@ -645,7 +645,7 @@ LilycoveCity_PokemonTrainerFanClub_Text_NobodyUnderstandsBrawly:
 
 LilycoveCity_PokemonTrainerFanClub_Text_MyFavoriteTrainerIsBrawly:
 	.string "Whatever anyone says, my favorite\n"
-	.string "Trainer is DEWFORD's GYM LEADER\l"
+	.string "Trainer is DEWFORD's GYM Leader\l"
 	.string "BRAWLY!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YouveSurpassedYourFather:

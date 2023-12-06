@@ -371,19 +371,19 @@ CableClub_Text_ExplainBattleModes:
 
 CableClub_Text_ChooseGroupLeaderOfTwo:
 	.string "Please decide which of you two\n"
-	.string "will become the LEADER.\p"
+	.string "will become the Leader.\p"
 	.string "The other player must then choose\n"
 	.string "“JOIN GROUP.”$"
 
 CableClub_Text_ChooseGroupLeaderOfFour:
 	.string "Please decide which of you four\n"
-	.string "will become the GROUP LEADER.\p"
+	.string "will become the GROUP Leader.\p"
 	.string "The other players must then choose\n"
 	.string "“JOIN GROUP.”$"
 
 CableClub_Text_ChooseGroupLeader:
 	.string "Please decide which of you will\n"
-	.string "become the GROUP LEADER.\p"
+	.string "become the GROUP Leader.\p"
 	.string "The other players must then choose\n"
 	.string "“JOIN GROUP.”$"
 

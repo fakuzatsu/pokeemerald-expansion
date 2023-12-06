@@ -209,7 +209,7 @@ gText_Softboiled::
 	.string "SOFTBOILED$"
 
 gText_HornAttack::
-	.string "HORN ATTACK$"
+	.string "HORN Attack$"
 
 gText_SwordsDance::
 	.string "SWORDS DANCE$"

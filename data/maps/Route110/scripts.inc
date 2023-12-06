@@ -1015,7 +1015,7 @@ Route110_Text_HeardYouInstallMatchCall:
 	.string "You two are running separately.\l"
 	.string "Well, that's fine.\p"
 	.string "Oh, yes, I heard that your PokéNav\n"
-	.string "had the MATCH CALL system installed.\p"
+	.string "had the Match CALL system installed.\p"
 	.string "Well, then, I should register you in\n"
 	.string "my PokéNav as well.\p"
 	.string "That way, even when we're apart,\n"

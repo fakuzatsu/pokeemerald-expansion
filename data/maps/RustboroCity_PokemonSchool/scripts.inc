@@ -232,7 +232,7 @@ RustboroCity_PokemonSchool_Text_ExplainSleep:
 	.string "Wake it up using an AWAKENING.$"
 
 RustboroCity_PokemonSchool_Text_ExplainBurn:
-	.string "A burn reduces ATTACK power, and it\n"
+	.string "A burn reduces Attack power, and it\n"
 	.string "steadily reduces the victim's HP.\p"
 	.string "A burn lingers after battle.\n"
 	.string "Cure a burn using a BURN HEAL.$"

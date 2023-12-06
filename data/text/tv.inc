@@ -1843,13 +1843,13 @@ TVSpotTheCuties_Text_RibbonWinning::
 	.string "The combination is super effective!$"
 
 TVSpotTheCuties_Text_RibbonVictory::
-	.string "The VICTORY RIBBON is especially\n"
+	.string "The Victory RIBBON is especially\n"
 	.string "fetching.\p"
 	.string "{STR_VAR_2} received it for its feats\n"
 	.string "at the Battle TOWER.\p"
 	.string "It verily draws out the incredible\n"
 	.string "mightiness of {STR_VAR_2}.\p"
-	.string "{STR_VAR_2} and the VICTORY RIBBON!\n"
+	.string "{STR_VAR_2} and the Victory RIBBON!\n"
 	.string "The combination is super effective!$"
 
 TVSpotTheCuties_Text_RibbonArtist::
@@ -2005,7 +2005,7 @@ gTVPokemonNewsBattleFrontierText18::
 	.string "That's the news on Pokémon NEWS!$"
 
 gTVWhatsNo1InHoennTodayText00::
-	.string "WHAT's NO. 1 IN HOENN TODAY?\n"
+	.string "WHAT's No. 1 IN HOENN TODAY?\n"
 	.string "Yes, it's that time again!\p"
 	.string "Hello, viewers! Are you giving your\n"
 	.string "best at whatever you do?\p"

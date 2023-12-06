@@ -4,7 +4,7 @@
 @       section by editing ScrCmd_braillemessage.
 Underwater_SealedChamber_Braille_GoUpHere:
 	brailleformat 4, 6, 26, 13, 7, 9
-	.braille "GO UP HERE.$"
+	.braille "Go UP HERE.$"
 
 SealedChamber_OuterRoom_Braille_ABC:
 	brailleformat 7, 6, 21, 13, 10, 9

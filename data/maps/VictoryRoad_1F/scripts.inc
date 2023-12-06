@@ -184,7 +184,7 @@ VictoryRoad_1F_Text_AlbertPostBattle:
 
 VictoryRoad_1F_Text_HopeIntro:
 	.string "This seemingly infinite and harsh road\n"
-	.string "lives up to its name of VICTORY.$"
+	.string "lives up to its name of Victory.$"
 
 VictoryRoad_1F_Text_HopeDefeat:
 	.string "Your battle style is fantastic…$"
@@ -194,7 +194,7 @@ VictoryRoad_1F_Text_HopePostBattle:
 	.string "becoming the CHAMPION.$"
 
 VictoryRoad_1F_Text_QuincyIntro:
-	.string "What is the VICTORY ROAD?\n"
+	.string "What is the Victory ROAD?\n"
 	.string "I'll tell you if you win!$"
 
 VictoryRoad_1F_Text_QuincyDefeat:
@@ -205,7 +205,7 @@ VictoryRoad_1F_Text_QuincyPostBattle:
 	.string "Getting through here safely--that's\n"
 	.string "the final test for any Trainer aiming\l"
 	.string "to become the Pokémon CHAMPION.\p"
-	.string "That's why it's called the VICTORY\n"
+	.string "That's why it's called the Victory\n"
 	.string "ROAD.$"
 
 VictoryRoad_1F_Text_KatelynnIntro:

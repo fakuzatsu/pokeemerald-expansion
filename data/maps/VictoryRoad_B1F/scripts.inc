@@ -83,7 +83,7 @@ VictoryRoad_B1F_Text_HalleDefeat:
 	.string "Wonderful!$"
 
 VictoryRoad_B1F_Text_HallePostBattle:
-	.string "Sure, this is VICTORY ROAD.\p"
+	.string "Sure, this is Victory ROAD.\p"
 	.string "But it's not all that different from\n"
 	.string "the path you've taken so far.\p"
 	.string "Try to enjoy things the rest of\n"

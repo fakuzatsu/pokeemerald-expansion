@@ -1302,7 +1302,7 @@ MatchCall_PersonalizedText59::
 	.string "This is {STR_VAR_1}!\p"
 	.string "I went to DEWFORD's GYM again\n"
 	.string "for training.\p"
-	.string "BRAWLY, the GYM LEADER, seems\n"
+	.string "BRAWLY, the GYM Leader, seems\n"
 	.string "to be tougher now.\p"
 	.string "Something about being toughened\n"
 	.string "by the wild waves…\p"
@@ -2150,7 +2150,7 @@ MatchCall_Text_Flannery2::
 	.string "well here.\p"
 	.string "When the GYM's ready, a mark will\n"
 	.string "appear beside my name in the\l"
-	.string "MATCH CALL list.$"
+	.string "Match CALL list.$"
 
 MatchCall_Text_Flannery3::
 	.string "FLANNERY: Oh, {PLAYER}?\n"
@@ -2197,7 +2197,7 @@ MatchCall_Text_TateLiza1::
 	.string "TATE: When our GYM is ready…\n"
 	.string "LIZA: When our GYM is ready…\p"
 	.string "TATE: A mark'll appear by our name…\n"
-	.string "LIZA: On the MATCH CALL list.$"
+	.string "LIZA: On the Match CALL list.$"
 
 MatchCall_Text_TateLiza2::
 	.string "TATE: {PLAYER}, congratulations!\n"
@@ -2207,7 +2207,7 @@ MatchCall_Text_TateLiza2::
 	.string "TATE: We need some more time, but…\n"
 	.string "LIZA: When our GYM is ready…\p"
 	.string "TATE: A mark'll appear by our name…\n"
-	.string "LIZA: On the MATCH CALL list.$"
+	.string "LIZA: On the Match CALL list.$"
 
 MatchCall_Text_TateLiza3::
 	.string "TATE: {PLAYER}!\n"
@@ -2349,7 +2349,7 @@ MatchCall_Text_May2::
 	.string "For some reason, the big port of\n"
 	.string "SLATEPORT doesn't have a GYM.\p"
 	.string "When they finally build a GYM there,\n"
-	.string "I should apply to be the LEADER.$"
+	.string "I should apply to be the Leader.$"
 
 MatchCall_Text_May3::
 	.string "May: Hi, {PLAYER}{KUN}!\p"
@@ -2448,7 +2448,7 @@ MatchCall_Text_May14::
 	.string "May: {PLAYER}{KUN}!\n"
 	.string "I heard the rumors!\p"
 	.string "You beat the SOOTOPOLIS GYM\n"
-	.string "LEADER?\p"
+	.string "Leader?\p"
 	.string "That means you don't have far\n"
 	.string "to go, do you?$"
 
@@ -2475,7 +2475,7 @@ MatchCall_Text_Brendan2::
 	.string "I mean, not when the big port of\n"
 	.string "SLATEPORT doesn't have a GYM.\p"
 	.string "When they finally build a GYM there,\n"
-	.string "I should apply to be the LEADER.$"
+	.string "I should apply to be the Leader.$"
 
 MatchCall_Text_Brendan3::
 	.string "Brendan: Yo, {PLAYER}!\p"
@@ -2575,7 +2575,7 @@ MatchCall_Text_Brendan14::
 	.string "Brendan: {PLAYER}!\n"
 	.string "I heard the rumors!\p"
 	.string "You beat the SOOTOPOLIS GYM\n"
-	.string "LEADER? Awesome!\p"
+	.string "Leader? Awesome!\p"
 	.string "You're getting awful close now!$"
 
 MatchCall_Text_Brendan15::
@@ -2835,7 +2835,7 @@ MatchCall_Text_BirchRegisterCall:
 	.string "Prof. Birch: Oh, {PLAYER}{KUN}!\n"
 	.string "I've already heard about you!\p"
 	.string "It seems your PokéNav's been\n"
-	.string "upgraded with MATCH CALL.\p"
+	.string "upgraded with Match CALL.\p"
 	.string "Well, I should register, too!\p"
 	.string "That way, I'd be able to examine\n"
 	.string "your Pokédex even while you're\l"

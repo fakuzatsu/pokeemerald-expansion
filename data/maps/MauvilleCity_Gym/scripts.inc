@@ -272,7 +272,7 @@ MauvilleCity_Gym_EventScript_GymStatue::
 MauvilleCity_Gym_Text_GymGuideAdvice:
 	.string "Hey, how's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
-	.string "WATTSON, the LEADER of MAUVILLE\n"
+	.string "WATTSON, the Leader of MAUVILLE\n"
 	.string "GYM, uses ELECTRIC-type Pokémon.\p"
 	.string "If you challenge him with WATER-type\n"
 	.string "Pokémon, he'll zap them! Bzzt!\p"
@@ -304,7 +304,7 @@ MauvilleCity_Gym_Text_ShawnDefeat:
 	.string "Unplugged and turned off…$"
 
 MauvilleCity_Gym_Text_ShawnPostBattle:
-	.string "WATTSON, our GYM LEADER, has been\n"
+	.string "WATTSON, our GYM Leader, has been\n"
 	.string "around for a long, long time.\p"
 	.string "He was battling even before your\n"
 	.string "daddy was born, that tough coot.$"
@@ -355,7 +355,7 @@ MauvilleCity_Gym_Text_WattsonIntro:
 	.string "past all my rigged doors?\p"
 	.string "Wahahahah!\n"
 	.string "Now, that is amusing!\p"
-	.string "Then, I, WATTSON, the LEADER of\n"
+	.string "Then, I, WATTSON, the Leader of\n"
 	.string "MAUVILLE GYM, shall electrify you!$"
 
 MauvilleCity_Gym_Text_WattsonDefeat:
@@ -385,7 +385,7 @@ MauvilleCity_Gym_Text_ExplainShockWave:
 	.string "… … … … … …$"
 
 MauvilleCity_Gym_Text_RegisteredWattson:
-	.string "Registered GYM LEADER WATTSON\n"
+	.string "Registered GYM Leader WATTSON\n"
 	.string "in the PokéNav.$"
 
 MauvilleCity_Gym_Text_WattsonPostBattle:

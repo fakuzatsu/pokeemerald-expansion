@@ -233,7 +233,7 @@ static const u8 sText_PkmnChoseXAsDestiny[] = _("{B_ATK_NAME_WITH_PREFIX} chose\
 static const u8 sText_PkmnAttack[] = _("{B_BUFF1}'s attack!");
 static const u8 sText_PkmnCenterAttention[] = _("{B_DEF_NAME_WITH_PREFIX} became the\ncenter of attention!");
 static const u8 sText_PkmnChargingPower[] = _("{B_ATK_NAME_WITH_PREFIX} began\ncharging power!");
-static const u8 sText_NaturePowerTurnedInto[] = _("NATURE POWER turned into\n{B_CURRENT_MOVE}!");
+static const u8 sText_NaturePowerTurnedInto[] = _("NATURE Power turned into\n{B_CURRENT_MOVE}!");
 static const u8 sText_PkmnStatusNormal[] = _("{B_ATK_NAME_WITH_PREFIX}'s status\nreturned to normal!");
 static const u8 sText_PkmnSubjectedToTorment[] = _("{B_DEF_NAME_WITH_PREFIX} was subjected\nto torment!");
 static const u8 sText_PkmnTighteningFocus[] = _("{B_ATK_NAME_WITH_PREFIX} is tightening\nits focus!");
@@ -1991,7 +1991,7 @@ const u8 gText_BattleYesNoChoice[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAM
 const u8 gText_BattleSwitchWhich[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}Switch\nwhich?");
 const u8 gText_BattleSwitchWhich2[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}");
 const u8 gText_BattleSwitchWhich3[] = _("{UP_ARROW}");
-const u8 gText_BattleSwitchWhich4[] = _("{ESCAPE 4}");
+const u8 gText_BattleSwitchWhich4[] = _("{Escape 4}");
 const u8 gText_BattleSwitchWhich5[] = _("-");
 
 // Unused

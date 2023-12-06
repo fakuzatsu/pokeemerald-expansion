@@ -9,7 +9,7 @@ Route111_Text_MakingRoomUseTMToMakeYourOwn:
 Route111_Text_ExplainSecretPower:
 	.string "Find a big tree that looks like it might\n"
 	.string "drop some vines.\p"
-	.string "Use SECRET POWER in front of the tree.\n"
+	.string "Use SECRET Power in front of the tree.\n"
 	.string "Some vines should get free and drop\l"
 	.string "down, so you can climb the tree.\p"
 	.string "You'll find a lot of space for putting\n"
@@ -19,7 +19,7 @@ Route111_Text_ExplainSecretPower:
 	.string "You should make one, too.\p"
 	.string "Another thing, you don't always have\n"
 	.string "to make your SECRET BASE in a tree.\p"
-	.string "Try using SECRET POWER on rock walls\n"
+	.string "Try using SECRET Power on rock walls\n"
 	.string "that have small indents in them.\p"
 	.string "I'm going to look for other places, too.\n"
 	.string "Okay, bye!$"

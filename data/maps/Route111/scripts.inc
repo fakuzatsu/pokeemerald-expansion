@@ -672,7 +672,7 @@ Route111_Text_ToughToKeepWinningUpTheRanks:
 	.string "up through the ranks.\p"
 	.string "I've heard the Pokémon LEAGUE's\n"
 	.string "ELITE FOUR are far stronger than\l"
-	.string "any GYM LEADER.$"
+	.string "any GYM Leader.$"
 
 Route111_Text_WinstrateFamilyDestroyedMe:
 	.string "I challenged the WINSTRATE family,\n"
@@ -703,7 +703,7 @@ Route111_Text_TrainerTipsSpAtkSpDef:
 	.string "Trainer TIPS\p"
 	.string "One of the indicators of a Pokémon's\n"
 	.string "powerfulness is SP. ATK. It stands for\l"
-	.string "“SPECIAL ATTACK.”\p"
+	.string "“SPECIAL Attack.”\p"
 	.string "Likewise, SP. DEF stands for “SPECIAL\n"
 	.string "DEFENSE.”$"
 

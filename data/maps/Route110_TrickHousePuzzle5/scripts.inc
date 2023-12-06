@@ -912,7 +912,7 @@ Route110_TrickHousePuzzle5_Text_Mechadoll1Intro:
 	.string "CLICKETY-CLACK…\n"
 	.string "MECHADOLL 1 AM I!\p"
 	.string "IF YOU ANSWER QUIZZES CORRECTLY,\n"
-	.string "THEN YOU WILL GO TO MECHADOLL 5.\l"
+	.string "THEN YOU WILL Go TO MECHADOLL 5.\l"
 	.string "THEN YOU CAN OBTAIN THE SECRET CODE.$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll1Quiz1:
@@ -932,7 +932,7 @@ Route110_TrickHousePuzzle5_Text_Mechadoll1Quiz3:
 
 Route110_TrickHousePuzzle5_Text_CorrectGoThrough:
 	.string "CONGRATULATIONS. CORRECT YOU ARE.\n"
-	.string "GO THROUGH. Please.$"
+	.string "Go THROUGH. Please.$"
 
 Route110_TrickHousePuzzle5_Text_DisappointmentError:
 	.string "BZZZT. DISAPPOINTMENT.\n"
@@ -943,7 +943,7 @@ Route110_TrickHousePuzzle5_Text_Wahahahaha:
 	.string "CLICKETY-CLACK!$"
 
 Route110_TrickHousePuzzle5_Text_WaitForNextChallenge:
-	.string "YOUR NEXT CHALLENGE WE WAIT FOR.$"
+	.string "YOUR NEXT Challenge WE WAIT FOR.$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll2Intro:
 	.string "CLICKETY-CLACK…\n"

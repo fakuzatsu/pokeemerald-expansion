@@ -670,7 +670,7 @@ MauvilleCity_Text_CitySign:
 
 MauvilleCity_Text_GymSign:
 	.string "MAUVILLE CITY Pokémon GYM\n"
-	.string "LEADER: WATTSON\l"
+	.string "Leader: WATTSON\l"
 	.string "“The cheerfully electrifying man!”$"
 
 MauvilleCity_Text_BikeShopSign:

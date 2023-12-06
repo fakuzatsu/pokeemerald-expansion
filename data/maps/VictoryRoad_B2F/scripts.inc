@@ -64,7 +64,7 @@ VictoryRoad_B2F_Text_CarolineDefeat:
 	.string "No signs of tiring at all!$"
 
 VictoryRoad_B2F_Text_CarolinePostBattle:
-	.string "VICTORY ROAD and the Pokémon LEAGUE\n"
+	.string "Victory ROAD and the Pokémon LEAGUE\n"
 	.string "are long and grueling challenges.\l"
 	.string "Beware of fatigue!$"
 

@@ -311,7 +311,7 @@ LavaridgeTown_Text_MayNiceBadgesTakeThis:
 	.string "have this.$"
 
 LavaridgeTown_Text_MayExplainGoGogglesChallengeDad:
-	.string "May: With those GO-GOGGLES, you'll\n"
+	.string "May: With those Go-GOGGLES, you'll\n"
 	.string "have no trouble getting through the\l"
 	.string "desert near ROUTE 111.\p"
 	.string "But, wow, {PLAYER}{KUN}…\n"
@@ -339,7 +339,7 @@ LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
 	.string "You might look around for those.\p"
 	.string "As for me…\n"
 	.string "I'm considering challenging NORMAN,\l"
-	.string "the GYM LEADER of PETALBURG.\p"
+	.string "the GYM Leader of PETALBURG.\p"
 	.string "Unlike you, {PLAYER}, your dad looks like\n"
 	.string "he really is tough.\p"
 	.string "See you around!$"
@@ -402,7 +402,7 @@ LavaridgeTown_Text_OhYouLikeHotSprings:
 LavaridgeTown_Text_BatheInHotSpringsEveryDay:
 	.string "I bathe in the hot springs every day.\p"
 	.string "I want to become a beautiful and strong\n"
-	.string "GYM LEADER like FLANNERY.$"
+	.string "GYM Leader like FLANNERY.$"
 
 LavaridgeTown_Text_IfPokemonInHotSprings:
 	.string "If people put Pokémon in hot springs,\n"
@@ -424,7 +424,7 @@ LavaridgeTown_Text_TownSign:
 
 LavaridgeTown_Text_GymSign:
 	.string "LAVARIDGE TOWN Pokémon GYM\n"
-	.string "LEADER: FLANNERY\l"
+	.string "Leader: FLANNERY\l"
 	.string "“One with a fiery passion that burns!”$"
 
 LavaridgeTown_Text_HerbShopSign:
