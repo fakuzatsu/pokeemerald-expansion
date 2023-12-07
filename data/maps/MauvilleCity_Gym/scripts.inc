@@ -270,7 +270,7 @@ MauvilleCity_Gym_EventScript_GymStatue::
 	end
 
 MauvilleCity_Gym_Text_GymGuideAdvice:
-	.string "Hey, how's it going, CHAMPION-\n"
+	.string "Hey, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
 	.string "WATTSON, the Leader of MAUVILLE\n"
 	.string "GYM, uses ELECTRIC-type Pokémon.\p"

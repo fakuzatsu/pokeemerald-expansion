@@ -300,7 +300,7 @@ FortreeCity_Text_ThatsRight:
 	.string "With the power of our bonds we will\n"
 	.string "unleash Mega Evolution!\p"
 	.string "Together!\p"
-	.string "My BIRD Pokémon and I will soar\n"
+	.string "My Bird Pokémon and I will soar\n"
 	.string "to the very heavens!$"
 
 FortreeCity_Text_WowSoCool:

@@ -250,7 +250,7 @@ gText_ApprenticePleaseTeach5::
 	.string "Oh, hi, there! {PLAYER}{KUN}!\n"
 	.string "I know you because you're famous!\l"
 	.string "Call me {STR_VAR_1}! Glad to meet you!\p"
-	.string "I'm a TRIATHLETE, so I keep myself\n"
+	.string "I'm a Triathlete, so I keep myself\n"
 	.string "fit even while I raise Pokémon.\p"
 	.string "I'm also involved with other things\n"
 	.string "like work, napping, ballroom dancing…\p"
@@ -438,7 +438,7 @@ gText_ApprenticePleaseTeach10::
 	.string "… … …\n"
 	.string "Of course I'm lying!\p"
 	.string "Me, I'm {STR_VAR_1}. Despite the way\n"
-	.string "I look, I'm the Pokémon CHAMPION!\l"
+	.string "I look, I'm the Pokémon Champion!\l"
 	.string "…That's a lie, too!\p"
 	.string "This is no lie, though.\n"
 	.string "I'm not very good at battling.\p"
@@ -476,7 +476,7 @@ gText_ApprenticeLevelModeThanks10::
 gText_ApprenticePleaseTeach11::
 	.string "A-H-O-Y!\n"
 	.string "And that spells ahoy, and it means hi!\p"
-	.string "I'm {STR_VAR_1}, the rappin' SAILOR\n"
+	.string "I'm {STR_VAR_1}, the rappin' Sailor\n"
 	.string "am I!\p"
 	.string "Your turn now, tell me a little about\n"
 	.string "yourself, give it a try!\p"
@@ -1049,7 +1049,7 @@ gText_ApprenticeItemAlreadyRecommended10::
 gText_ApprenticeWhatHeldItem11::
 	.string "A-H-O-Y!\n"
 	.string "And that spells ahoy!\p"
-	.string "The rappin' SAILOR am I!\n"
+	.string "The rappin' Sailor am I!\n"
 	.string "I present to you a question\l"
 	.string "that's pretty fly!\p"
 	.string "It's an item question\n"
@@ -1441,7 +1441,7 @@ gText_ApprenticeMonFirstThanks10::
 gText_ApprenticeWhichMonFirst11::
 	.string "A-H-O-Y!\n"
 	.string "And that spells ahoy!\p"
-	.string "The rappin' SAILOR am I!\n"
+	.string "The rappin' Sailor am I!\n"
 	.string "I present to you a question\l"
 	.string "that's pretty fly!\p"
 	.string "It's a team lineup question\n"
@@ -1745,7 +1745,7 @@ gText_ApprenticeMonThanks10::
 gText_ApprenticeWhichMon11::
 	.string "A-H-O-Y!\n"
 	.string "And that spells ahoy!\p"
-	.string "The rappin' SAILOR am I!\n"
+	.string "The rappin' Sailor am I!\n"
 	.string "Surely you remember who am I?\p"
 	.string "Today, I have a Pokémon question\n"
 	.string "that begs your suggestion!\p"
@@ -2045,7 +2045,7 @@ gText_ApprenticeMoveThanks10::
 gText_ApprenticeWhichMove11::
 	.string "A-H-O-Y!\n"
 	.string "And that spells ahoy!\p"
-	.string "The rappin' SAILOR am I!\n"
+	.string "The rappin' Sailor am I!\n"
 	.string "I'm always with it, don't ask me why.\p"
 	.string "Today, I have a move question\n"
 	.string "that begs your suggestion!\p"
@@ -2403,7 +2403,7 @@ gText_ApprenticeWinSpeechThanks10::
 gText_ApprenticePickWinSpeech11::
 	.string "A-H-O-Y!\n"
 	.string "And that spells ahoy!\p"
-	.string "The rappin' SAILOR am I!\n"
+	.string "The rappin' Sailor am I!\n"
 	.string "This will be my last question,\l"
 	.string "don't you cry!\p"
 	.string "It's a saying question\n"

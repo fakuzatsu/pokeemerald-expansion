@@ -459,7 +459,7 @@ PetalburgWoods_Text_YouHaveToHelpMe:
 PetalburgWoods_Text_NoOneCrossesTeamAqua:
 	.string "Hunh? What do you think you're doing?\n"
 	.string "What, you're going to protect him?\p"
-	.string "No one who crosses TEAM AQUA\n"
+	.string "No one who crosses Team Aqua\n"
 	.string "gets any mercy, not even a kid!\p"
 	.string "Come on and battle me!$"
 
@@ -468,11 +468,11 @@ PetalburgWoods_Text_YoureKiddingMe:
 
 PetalburgWoods_Text_YouveGotSomeNerve:
 	.string "Grrr… You've got some nerve\n"
-	.string "meddling with TEAM AQUA!\l"
+	.string "meddling with Team Aqua!\l"
 	.string "Come on and battle me again!\p"
 	.string "I wish I could say that, but I'm out of\n"
 	.string "Pokémon…\p"
-	.string "And, hey, we of TEAM AQUA are also\n"
+	.string "And, hey, we of Team Aqua are also\n"
 	.string "after something in RUSTBORO.\p"
 	.string "I'll let you go today!$"
 
@@ -485,7 +485,7 @@ PetalburgWoods_Text_ThatWasAwfullyClose:
 	.string "my thanks!$"
 
 PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro:
-	.string "Didn't that TEAM AQUA thug say\n"
+	.string "Didn't that Team Aqua thug say\n"
 	.string "they were after something in\l"
 	.string "RUSTBORO, too?$"
 

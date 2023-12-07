@@ -182,7 +182,7 @@ Route112_CableCarStation_Text_StevenGiveMegaRing:
 	.string "unlocking the potential of stones.\p"
 	.string "These special stones have been\n"
 	.string "appearing all around the region!\p"
-	.string "…It seems TEAM MAGMA weren't aware of\n"
+	.string "…It seems Team Magma weren't aware of\n"
 	.string "the PROFESSORS invention…\p"
 	.string "He wants you to have it for coming\n"
 	.string "to his rescue!$"
@@ -206,11 +206,11 @@ Route112_CableCarStation_Text_SorryICantStay:
 	.string "they ran back towards Fallarbor!\p"
 	.string "… … …\p"
 	.string "… I would hate for COSMO to run into\n"
-	.string "more trouble with TEAM MAGMA.\p"
+	.string "more trouble with Team Magma.\p"
 	.string "So I must make sure he remains safe!$"
 
 Route112_CableCarStation_Text_YouAreARemarkableTrainer:
-	.string "I have a feeling TEAM MAGMA don't have\n"
+	.string "I have a feeling Team Magma don't have\n"
 	.string "a chance against you {PLAYER}!\p"
 	.string "…You are a truly remarkable trainer.$"
 

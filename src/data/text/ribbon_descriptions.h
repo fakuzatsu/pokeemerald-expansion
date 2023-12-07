@@ -1,7 +1,7 @@
-const u8 gRibbonDescriptionPart1_Champion[] = _("CHAMPION-beating, HALL");
+const u8 gRibbonDescriptionPart1_Champion[] = _("Champion-beating, HALL");
 const u8 gRibbonDescriptionPart2_Champion[] = _("OF FAME Member RIBBON");
 const u8 gRibbonDescriptionPart1_CoolContest[] = _("COOL Contest");
-const u8 gRibbonDescriptionPart1_BeautyContest[] = _("BEAUTY Contest");
+const u8 gRibbonDescriptionPart1_BeautyContest[] = _("Beauty Contest");
 const u8 gRibbonDescriptionPart1_CuteContest[] = _("CUTE Contest");
 const u8 gRibbonDescriptionPart1_SmartContest[] = _("SMART Contest");
 const u8 gRibbonDescriptionPart1_ToughContest[] = _("TOUGH Contest");

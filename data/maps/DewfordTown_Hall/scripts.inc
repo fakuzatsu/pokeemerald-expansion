@@ -321,11 +321,11 @@ DewfordTown_Hall_Text_CollectTrendMerchandise:
 	.string "I'm not sharing anything with you!$"
 
 DewfordTown_Hall_Text_BooksAboutTrend:
-	.string "IDENTIFYING GOOD\n"
+	.string "IDENTIFYING Good\n"
 	.string "“{STR_VAR_1}” &\l"
 	.string "BAD “{STR_VAR_1}”…\p"
 	.string "THE LINK BETWEEN\n"
-	.string "“{STR_VAR_1}” AND\l"
+	.string "“{STR_VAR_1}” And\l"
 	.string "Pokémon…\p"
 	.string "USEFUL\n"
 	.string "“{STR_VAR_1}”…\p"

@@ -72,7 +72,7 @@ SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn:
 	.string "Trainer in the whole HOENN region.\p"
 	.string "This town's GYM is led by the Trainer\n"
 	.string "who taught WALLACE.\p"
-	.string "But the ELITE FOUR… They're said to be\n"
+	.string "But the Elite Four… They're said to be\n"
 	.string "even stronger than WALLACE's mentor.\p"
 	.string "How strong could they be?$"
 

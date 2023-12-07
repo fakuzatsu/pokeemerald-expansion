@@ -55,11 +55,11 @@ MagmaHideout_2F_2R_Text_Grunt15PostBattle:
 
 MagmaHideout_2F_2R_Text_Grunt6Intro:
 	.string "I can't stand heat. Maybe I should've\n"
-	.string "joined TEAM AQUA instead…$"
+	.string "joined Team Aqua instead…$"
 
 MagmaHideout_2F_2R_Text_Grunt6Defeat:
 	.string "Yeah, I really may not be right for\n"
-	.string "TEAM MAGMA…$"
+	.string "Team Magma…$"
 
 MagmaHideout_2F_2R_Text_Grunt6PostBattle:
 	.string "Don't you get lonely for the sea\n"
@@ -79,12 +79,12 @@ MagmaHideout_2F_2R_Text_Grunt7Defeat:
 MagmaHideout_2F_2R_Text_Grunt7PostBattle:
 	.string "You just happened to win this time,\n"
 	.string "but that doesn't matter.\p"
-	.string "TEAM MAGMA's goal is about to be\n"
+	.string "Team Magma's goal is about to be\n"
 	.string "reached!$"
 
 MagmaHideout_2F_2R_Text_Grunt8Intro:
 	.string "One of our guys was freaking out that\n"
-	.string "he lost his MAGMA EMBLEM…\p"
+	.string "he lost his Magma EMBLEM…\p"
 	.string "Wait a minute!\n"
 	.string "Was it you who found it?$"
 

@@ -21,7 +21,7 @@ gText_TuckerDefeatSilver::
 	.string "What the…$"
 
 gText_TuckerWonGold::
-	.string "My DOME ACE title isn't just for show!$"
+	.string "My Dome Ace title isn't just for show!$"
 
 gText_TuckerDefeatGold::
 	.string "Ahahaha!\n"

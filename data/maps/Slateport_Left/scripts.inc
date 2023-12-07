@@ -73,6 +73,6 @@ SlateportCity_Left_Text_ThisIsTheShed:
 	.string "materials are in here.$"
 
 SlateportCity_Left_Text_ColdStorage:
-	.string "SLATEPORT COLD Storage\n"
+	.string "SLATEPORT Cold Storage\n"
 	.string "“ABANDONED”$"
 

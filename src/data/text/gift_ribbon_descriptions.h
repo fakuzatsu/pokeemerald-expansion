@@ -1,5 +1,5 @@
 const u8 gGiftRibbonDescriptionPart1_2003RegionalTourney[] = _("2003 REGIONAL TOURNEY");
-const u8 gGiftRibbonDescriptionPart2_Champion[] = _("CHAMPION RIBBON");
+const u8 gGiftRibbonDescriptionPart2_Champion[] = _("Champion RIBBON");
 const u8 gGiftRibbonDescriptionPart1_2003NationalTourney[] = _("2003 NATIONAL TOURNEY");
 const u8 gGiftRibbonDescriptionPart1_2003GlobalCup[] = _("2003 GLOBAL CUP");
 const u8 gGiftRibbonDescriptionPart2_RunnerUp[] = _("Runner-up RIBBON");

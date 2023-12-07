@@ -295,7 +295,7 @@ DewfordTown_Gym_EventScript_GymStatue::
 	end
 
 DewfordTown_Gym_Text_GymGuideAdvice:
-	.string "Hey, how's it going, CHAMPION-\n"
+	.string "Hey, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
 	.string "DEWFORD's GYM Leader BRAWLY commands\n"
 	.string "FIGHTING-type Pokémon.\p"
@@ -339,7 +339,7 @@ DewfordTown_Gym_Text_JocelynPostBattle:
 	.string "I'll use it to motivate me to train!\p"
 	.string "One day I'll become a GYM Leader…\p"
 	.string "No, I'll become the Pokémon LEAGUE\n"
-	.string "CHAMPION!$"
+	.string "Champion!$"
 
 DewfordTown_Gym_Text_LauraIntro:
 	.string "Don't you dare brush me off!\n"

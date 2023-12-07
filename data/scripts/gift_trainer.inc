@@ -20,8 +20,8 @@ MysteryGiftScript_VisitingTrainerArrived:
 	end
 
 sText_MysteryGiftVisitingTrainerInstructions:
-	.string "Thank you for using the MYSTERY\n"
-	.string "GIFT System.\p"
+	.string "Thank you for using the Mystery\n"
+	.string "Gift System.\p"
 	.string "By holding this WONDER Card, you\n"
 	.string "may take part in a survey at a\l"
 	.string "Pokémon MART.\p"
@@ -36,8 +36,8 @@ sText_MysteryGiftVisitingTrainerInstructions:
 	.string "COMMUNICATION SYSTEM.$"
 
 sText_MysteryGiftVisitingTrainerArrived:
-	.string "Thank you for using the MYSTERY\n"
-	.string "GIFT System.\p"
+	.string "Thank you for using the Mystery\n"
+	.string "Gift System.\p"
 	.string "A Trainer has arrived in\n"
 	.string "SOOTOPOLIS CITY looking for you.\p"
 	.string "We hope you will enjoy\n"

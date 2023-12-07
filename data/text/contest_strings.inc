@@ -85,7 +85,7 @@ gText_BadlyStartleCoolAppeals::
 
 gText_BadlyStartleBeautyAppeals::
 	.string "Badly startles Pokémon\n"
-	.string "that made BEAUTY appeals.$"
+	.string "that made Beauty appeals.$"
 
 gText_BadlyStartleCuteAppeals::
 	.string "Badly startles Pokémon\n"
@@ -238,7 +238,7 @@ gContestMoveTypeCoolText::
 	.string "COOL$"
 
 gContestMoveTypeBeautyText::
-	.string "BEAUTY$"
+	.string "Beauty$"
 
 gContestMoveTypeCuteText::
 	.string "CUTE$"
@@ -757,7 +757,7 @@ gText_CoolMove::
 	.string "COOL Move$"
 
 gText_BeautyMove::
-	.string "BEAUTY Move$"
+	.string "Beauty Move$"
 
 gText_CuteMove::
 	.string "CUTE Move$"

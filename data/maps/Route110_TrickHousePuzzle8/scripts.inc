@@ -43,7 +43,7 @@ Route110_TrickHousePuzzle8_Text_VincentDefeat:
 
 Route110_TrickHousePuzzle8_Text_VincentPostBattle:
 	.string "You've beaten the Pokémon LEAGUE\n"
-	.string "CHAMPION? That's too much!$"
+	.string "Champion? That's too much!$"
 
 Route110_TrickHousePuzzle8_Text_KeiraIntro:
 	.string "Consider yourself lucky to be\n"

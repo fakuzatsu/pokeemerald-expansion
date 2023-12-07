@@ -5,7 +5,7 @@ SecretBase_Text_TreeCanBeClimbed:
 SecretBase_Text_TreeUseSecretPower:
 	.string "If some vines drop down, this tree can\n"
 	.string "be climbed.\p"
-	.string "Use the SECRET Power?$"
+	.string "Use the Secret Power?$"
 
 SecretBase_Text_VineDroppedDown:
 	.string "A thick vine dropped down!$"
@@ -17,7 +17,7 @@ SecretBase_Text_ClumpOfGrass:
 SecretBase_Text_ClumpUseSecretPower:
 	.string "If this clump of grass can be moved,\n"
 	.string "it might be possible to go inside.\p"
-	.string "Use the SECRET Power?$"
+	.string "Use the Secret Power?$"
 
 SecretBase_Text_DiscoveredSmallEntrance:
 	.string "Discovered a small entrance!$"
@@ -673,12 +673,12 @@ SecretBase_EventScript_CushionInteract::
 
 SecretBase_Text_AllDecorationsWillBeReturned:
 	.string "All decorations and furniture in your\n"
-	.string "SECRET BASE will be returned to your PC.\p"
+	.string "Secret Base will be returned to your PC.\p"
 	.string "Is that okay?$"
 
 SecretBase_Text_WantToRegisterSecretBase:
 	.string "Do you want to register\n"
-	.string "{STR_VAR_1}'s SECRET BASE?$"
+	.string "{STR_VAR_1}'s Secret Base?$"
 
 SecretBase_Text_AlreadyRegisteredDelete:
 	.string "This data is already registered.\n"
@@ -702,13 +702,13 @@ SecretBase_Text_WhatWouldYouLikeToDo:
 	.string "What would you like to do?$"
 
 SecretBase_Text_RegistryInfo:
-	.string "Once registered, a SECRET BASE will not\n"
+	.string "Once registered, a Secret Base will not\n"
 	.string "disappear unless the other Trainer\l"
 	.string "moves it to a different location.\p"
-	.string "If a SECRET BASE is deleted from the\n"
+	.string "If a Secret Base is deleted from the\n"
 	.string "registered list, another one may take\l"
 	.string "its place.\p"
-	.string "Up to ten SECRET BASE locations\n"
+	.string "Up to ten Secret Base locations\n"
 	.string "may be registered.$"
 
 SecretBase_Text_BattleTowerShield:
@@ -728,10 +728,10 @@ SecretBase_Text_SkittyTV:
 	.string "It looks ready to stroll away…$"
 
 SecretBase_Text_WouldYouLikeToMoveBases:
-	.string "You may only make one SECRET BASE.\p"
-	.string "Would you like to move from the SECRET\n"
-	.string "BASE near {STR_VAR_1}?$"
+	.string "You may only make one Secret Base.\p"
+	.string "Would you like to move from the Secret\n"
+	.string "Base near {STR_VAR_1}?$"
 
 SecretBase_Text_MovingCompletedUseSecretPower:
 	.string "Moving completed.\p"
-	.string "Would you like to use the SECRET Power?$"
+	.string "Would you like to use the Secret Power?$"

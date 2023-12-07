@@ -25,7 +25,7 @@ gContestCoolness::
 	.string "COOLNESS$"
 
 gContestBeauty::
-	.string "BEAUTY$"
+	.string "Beauty$"
 
 gContestCuteness::
 	.string "CUTENESS$"

@@ -491,7 +491,7 @@ BattleFrontier_OutsideWest_Text_DomeAceLookedBecauseOfMyCheering:
 	.string "Pfft!\p"
 	.string "That only happened because\n"
 	.string "I happened to be sitting next to you!\p"
-	.string "The DOME ACE only looked our way\n"
+	.string "The Dome Ace only looked our way\n"
 	.string "because my cheering was so loud!$"
 
 BattleFrontier_OutsideWest_Text_DomeAceIsMine:
@@ -499,7 +499,7 @@ BattleFrontier_OutsideWest_Text_DomeAceIsMine:
 	.string "Keep that racket down!\p"
 	.string "You fair-weather fans should stick\n"
 	.string "to cheering for some GYM Leader!\p"
-	.string "The DOME ACE is mine!\n"
+	.string "The Dome Ace is mine!\n"
 	.string "The only idol for me!$"
 
 BattleFrontier_OutsideWest_Text_FansOverThereUsedToBeTrainers:

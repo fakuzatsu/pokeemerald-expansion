@@ -66,7 +66,7 @@ SootopolisCity_Mart_Text_TooScaryOutside:
 	.string "scary to go outside.$"
 
 SootopolisCity_Mart_Text_FullRestoreItemOfDreams:
-	.string "Do you know FULL RESTORE?\p"
+	.string "Do you know Full RESTORE?\p"
 	.string "Full restoration of HP!\n"
 	.string "Eradication of all status problems!\p"
 	.string "It's truly an item of your dreams!$"

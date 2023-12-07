@@ -767,7 +767,7 @@ BattleFrontier_BattlePikeRoomNormal_Text_EnjoyRestOfChallenge2:
 BattleFrontier_BattlePikeRoomNormal_Text_ImThePikeQueen:
 	.string "I am LUCY…\n"
 	.string "I am the law here…\l"
-	.string "For I am the PIKE QUEEN…\p"
+	.string "For I am the Pike Queen…\p"
 	.string "You already know it, but to advance,\n"
 	.string "you must defeat me…\p"
 	.string "…I'm not one for idle chatter.\n"

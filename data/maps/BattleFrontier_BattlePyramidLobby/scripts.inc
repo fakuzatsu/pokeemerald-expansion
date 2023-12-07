@@ -765,9 +765,9 @@ BattleFrontier_BattlePyramidLobby_Text_HintExplosion:
 	.string "to them…$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintPsychic:
-	.string "I see PSYCHIC-type Pokémon…\p"
+	.string "I see Psychic-type Pokémon…\p"
 	.string "…And, I see your Pokémon in torment\n"
-	.string "from PSYCHIC moves…$"
+	.string "from Psychic moves…$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintRock:
 	.string "I see ROCK-type Pokémon…\p"
@@ -853,7 +853,7 @@ BattleFrontier_BattlePyramidLobby_Text_LostLotOfItems:
 BattleFrontier_BattlePyramidLobby_Text_YouveDefeatedPyramidKing:
 	.string "Welcome back!\n"
 	.string "You've done the unthinkable!\p"
-	.string "You've defeated the PYRAMID KING\n"
+	.string "You've defeated the Pyramid King\n"
 	.string "and conquered the Battle PYRAMID!$"
 
 BattleFrontier_BattlePyramidLobby_Text_GiveYouTheseBattlePoints:

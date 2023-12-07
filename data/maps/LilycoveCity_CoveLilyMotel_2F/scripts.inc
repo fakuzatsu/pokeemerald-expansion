@@ -96,9 +96,9 @@ LilycoveCity_CoveLilyMotel_2F_Text_ImTheGraphicArtist:
 
 LilycoveCity_CoveLilyMotel_2F_Text_GirlsAreCute:
 	.string "The girl TUBERS, they're cute, hey?\n"
-	.string "To battle against a cute TUBER…\p"
+	.string "To battle against a cute Tuber…\p"
 	.string "Whoop, it's so awesome!\p"
-	.string "And the TWINS! Aren't they cute?\n"
+	.string "And the Twins! Aren't they cute?\n"
 	.string "A 2-on-2 battle with TWINS…\p"
 	.string "Whoop, it's unbearably fun!$"
 
@@ -110,7 +110,7 @@ LilycoveCity_CoveLilyMotel_2F_Text_NeverLeaveWithoutGameBoy:
 	.string "You never know when and where\n"
 	.string "people will challenge you.\p"
 	.string "That's why I never leave home without\n"
-	.string "my GAME BOY ADVANCE.$"
+	.string "my GAME Boy ADVANCE.$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_SnoozingPreferBattles:
 	.string "SCOTT: … … … … …\n"

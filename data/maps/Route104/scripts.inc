@@ -1095,7 +1095,7 @@ Route104_Text_RouteSignRustboro:
 	.string "{UP_ARROW} RUSTBORO CITY$"
 
 Route104_Text_PrettyPetalFlowShop:
-	.string "PRETTY PETAL FLOWER SHOP$"
+	.string "Pretty PETAL FLOWER SHOP$"
 
 Route104_Text_TrainerTipsDoubleBattles:
 	.string "Trainer TIPS\p"

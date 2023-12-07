@@ -99,7 +99,7 @@ SSTidalRooms_Text_ThomasDefeat:
 
 SSTidalRooms_Text_ThomasPostBattle:
 	.string "To be never ruffled in any situation is\n"
-	.string "the GENTLEMAN's code of conduct.$"
+	.string "the Gentleman's code of conduct.$"
 
 SSTidalRooms_Text_JedIntro:
 	.string "JED: I feel a little shy about this, but…\n"

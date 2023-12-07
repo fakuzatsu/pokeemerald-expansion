@@ -336,7 +336,7 @@ LilycoveCity_ContestHall_EventScript_SmartStageSign::
 	end
 
 LilycoveCity_ContestHall_Text_TodayWonSmartnessContest:
-	.string "This Pokémon won the BEAUTY Contest\n"
+	.string "This Pokémon won the Beauty Contest\n"
 	.string "here before.\p"
 	.string "Well, guess what? Today, I made it\n"
 	.string "win a SMARTNESS Contest!\p"
@@ -421,7 +421,7 @@ LilycoveCity_ContestHall_Text_StillLoveSmartnessContests:
 	.string "It's so… So… Cool.$"
 
 LilycoveCity_ContestHall_Text_AreYouEnteringBeautyContest:
-	.string "MC: Are you entering the BEAUTY\n"
+	.string "MC: Are you entering the Beauty\n"
 	.string "Contest, too? Good luck!$"
 
 LilycoveCity_ContestHall_Text_EveryPokemonPristineBeauty:
@@ -457,7 +457,7 @@ LilycoveCity_ContestHall_Text_PokemonLooksLikeYoungerMe:
 	.string "Did I say something funny?$"
 
 LilycoveCity_ContestHall_Text_WinBeautyContestMakesMeHappy:
-	.string "You know, if I win at a BEAUTY\n"
+	.string "You know, if I win at a Beauty\n"
 	.string "Contest, sure it makes me\l"
 	.string "happy. More than usual, anyway.$"
 
@@ -525,7 +525,7 @@ LilycoveCity_ContestHall_Text_WantCuteMonOfMyOwn:
 	.string "I'm going to go catch some!$"
 
 LilycoveCity_ContestHall_Text_BeautyContestStage:
-	.string "BEAUTY Contest STAGE\n"
+	.string "Beauty Contest STAGE\n"
 	.string "BE ALLURED BY BEAUTIFUL Pokémon!$"
 
 LilycoveCity_ContestHall_Text_CuteContestStage:

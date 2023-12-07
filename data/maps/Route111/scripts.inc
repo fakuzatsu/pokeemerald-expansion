@@ -671,11 +671,11 @@ Route111_Text_ToughToKeepWinningUpTheRanks:
 	.string "more, it could be tough to keep winning\l"
 	.string "up through the ranks.\p"
 	.string "I've heard the Pokémon LEAGUE's\n"
-	.string "ELITE FOUR are far stronger than\l"
+	.string "Elite Four are far stronger than\l"
 	.string "any GYM Leader.$"
 
 Route111_Text_WinstrateFamilyDestroyedMe:
-	.string "I challenged the WINSTRATE family,\n"
+	.string "I challenged the Winstrate family,\n"
 	.string "but four matches in a row is tough\l"
 	.string "going… They destroyed me.$"
 
@@ -685,7 +685,7 @@ Route111_Text_RouteSignMauville:
 
 Route111_Text_WinstrateHouseSign:
 	.string "“Our family's hearts beat as one!”\n"
-	.string "THE WINSTRATE's HOUSE$"
+	.string "THE Winstrate's HOUSE$"
 
 Route111_Text_RouteSign112:
 	.string "ROUTE 111\n"
@@ -696,7 +696,7 @@ Route111_Text_RouteSign113:
 	.string "{LEFT_ARROW} ROUTE 113$"
 
 Route111_Text_OldLadysRestStopSign:
-	.string "OLD LADY's REST STOP\n"
+	.string "OLD Lady's REST Stop\n"
 	.string "“Come in and rest your tired bones.”$"
 
 Route111_Text_TrainerTipsSpAtkSpDef:

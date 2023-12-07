@@ -31,7 +31,7 @@ static u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 natur
 // -------------------TEMPLATE----------------------
 
 // Activation Code:
-const u8 gText_Code0[] = _("NONE");
+const u8 gText_Code0[] = _("None");
 
 // Code Execution:
 static void Task_DontActivateCode(u8 taskId)

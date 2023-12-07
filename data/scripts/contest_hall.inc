@@ -1425,7 +1425,7 @@ LilycoveCity_ContestLobby_Text_ExplainContests:
 
 LilycoveCity_ContestLobby_Text_ExplainContestTypes:
 	.string "There are five kinds of CONTESTS.\p"
-	.string "COOL, BEAUTY, CUTE, SMART, and\n"
+	.string "COOL, Beauty, CUTE, SMART, and\n"
 	.string "TOUGH are the five categories.\p"
 	.string "Choose the Contest that is right for\n"
 	.string "the Pokémon you plan to enter.$"

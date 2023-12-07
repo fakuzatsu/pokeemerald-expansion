@@ -63,7 +63,7 @@ EverGrandeCity_DrakesRoom_EventScript_Defeated::
 
 EverGrandeCity_DrakesRoom_Text_IntroSpeech:
 	.string "I am the last of the Pokémon LEAGUE\n"
-	.string "ELITE FOUR, DRAKE the DRAGON master!\p"
+	.string "Elite Four, DRAKE the DRAGON master!\p"
 	.string "In their natural state, Pokémon are\n"
 	.string "wild living things. They are free.\p"
 	.string "At times, they hinder us.\n"
@@ -88,5 +88,5 @@ EverGrandeCity_DrakesRoom_Text_PostBattleSpeech:
 	.string "They touch the good hearts of\n"
 	.string "TRAINERS and grow strong.\p"
 	.string "Go! Go onwards!\n"
-	.string "The CHAMPION is waiting!$"
+	.string "The Champion is waiting!$"
 
