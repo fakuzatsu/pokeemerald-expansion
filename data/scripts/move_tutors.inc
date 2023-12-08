@@ -262,8 +262,13 @@ Mauvillecity_GameCorner_EventScript_TrickRoomTutor::
 	lock
 	faceplayer
 	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_TRICK_ROOM, MoveTutor_EventScript_TrickRoomTaught
+	checkitem ITEM_COIN_CASE
+	goto_if_eq VAR_RESULT, FALSE, MoveTutor_EventScript_TrickRoomNoCoinCase
+	showcoinsbox 1, 1
 	msgbox MoveTutor_Text_TrickRoomTeach, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_TrickRoomDeclined
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, 50, MoveTutor_EventScript_TrickRoomNotEnoughCoins
 	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_TrickRoomDeclined
 	msgbox MoveTutor_Text_ExplosionWhichMon, MSGBOX_DEFAULT
@@ -271,16 +276,32 @@ Mauvillecity_GameCorner_EventScript_TrickRoomTutor::
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_TrickRoomDeclined
 	setflag FLAG_MOVE_TUTOR_TAUGHT_TRICK_ROOM
+	removecoins 50
+	updatecoinsbox 1, 1
+	delay 30
+	hidecoinsbox 0, 0
 	goto MoveTutor_EventScript_TrickRoomTaught
 	end
 
 MoveTutor_EventScript_TrickRoomDeclined::
 	msgbox MoveTutor_Text_TrickRoomDeclined, MSGBOX_DEFAULT
+	hidecoinsbox 0, 0
 	release
 	end
 
 MoveTutor_EventScript_TrickRoomTaught::
 	msgbox MoveTutor_Text_TrickRoomTaught, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_TrickRoomNoCoinCase::
+	msgbox MoveTutor_Text_TrickRoomNoCoinCase, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_TrickRoomNotEnoughCoins::
+	msgbox MoveTutor_Text_TrickRoomNotEnoughCoins, MSGBOX_DEFAULT
+	hidecoinsbox 0, 0
 	release
 	end
 

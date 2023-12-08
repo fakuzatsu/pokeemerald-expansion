@@ -262,6 +262,16 @@ MoveTutor_Text_TrickRoomTaught:
 	.string "Heh heh…\p"
 	.string "Time to win my big break.$"
 
+MoveTutor_Text_TrickRoomNoCoinCase:
+	.string "Hm…\p"
+	.string "Sorry kid. You're no use to me if you\n"
+	.string "don't have a Coin Case.$"
+
+MoveTutor_Text_TrickRoomNotEnoughCoins:
+	.string "Uh… is this a stick up or something,\n"
+	.string "kid?\p"
+	.string "You don't even have 50 coins.$"
+
 MoveTutor_Text_NaturalGiftTeach:
 	.string "They say that plants grow up faster\n"
 	.string "and stronger if you speak to them.\p"

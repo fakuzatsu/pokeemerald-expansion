@@ -51,7 +51,7 @@ LittlerootTown_OnTransition:
 	call_if_eq VAR_OLDALE_RIVAL_STATE, 1, LittlerootTown_EventScript_MoveRivalFromOldale
 	call_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_EventScript_SetRivalLeftForRoute103
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_HideMapNamePopup
-	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_EventScript_LeftLabAfterDexUpgrade
+	call_if_eq VAR_BIRCH_LAB_STATE, 5, LittlerootTown_EventScript_LeftLabAfterDexUpgrade
 	special GetDayOrNight
 	goto_if_eq VAR_RESULT, 1, LittlerootTown_OnResume_Night
 	goto_if_eq VAR_RESULT, 0, LittlerootTown_OnResume_Day
