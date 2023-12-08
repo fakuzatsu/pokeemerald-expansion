@@ -2671,6 +2671,7 @@ void ShowScrollableMultichoice(void)
         break;
     case SCROLL_MULTI_BF_MOVE_TUTOR_1:
     case SCROLL_MULTI_BF_MOVE_TUTOR_2:
+    case SCROLL_MULTI_BF_MOVE_TUTOR_3:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 11;
         task->tLeft = 15;
@@ -2823,7 +2824,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_BodySlam48BP,
         gText_RockSlide48BP,
         gText_Counter48BP,
-        gText_ThunderWave48BP,
+        gText_StealthRock48BP,
         gText_SwordsDance48BP,
         gText_Exit
     },
@@ -2832,13 +2833,27 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_DefenseCurl16BP,
         gText_Snore24BP,
         gText_MudSlap24BP,
-        gText_Swift24BP,
+        gText_Pluck24BP,
         gText_IcyWind24BP,
         gText_Endure48BP,
         gText_PsychUp48BP,
         gText_IcePunch48BP,
         gText_ThunderPunch48BP,
         gText_FirePunch48BP,
+        gText_Exit
+    },
+    [SCROLL_MULTI_BF_MOVE_TUTOR_3] =
+    {
+        gText_DrillRun24BP,
+        gText_IronHead24BP,
+        gText_IceFang24BP,
+        gText_ThunderFang24BP,
+        gText_FireFang24BP,
+        gText_HyperVoice48BP,
+        gText_PollenPuff48BP,
+        gText_SolarBlade48BP,
+        gText_Hurricane48BP,
+        gText_BatonPass48BP,
         gText_Exit
     },
     [SCROLL_MULTI_SS_TIDAL_DESTINATION] =
@@ -3394,7 +3409,7 @@ static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection)
         .baseBlock = 28,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_3)
     {
         if (gSpecialVar_0x8006 == 0)
         {
@@ -3417,7 +3432,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_BodySlamDesc,
         BattleFrontier_Lounge7_Text_RockSlideDesc,
         BattleFrontier_Lounge7_Text_CounterDesc,
-        BattleFrontier_Lounge7_Text_ThunderWaveDesc,
+        BattleFrontier_Lounge7_Text_StealthRockDesc,
         BattleFrontier_Lounge7_Text_SwordsDanceDesc,
         gText_Exit,
     };
@@ -3427,7 +3442,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_DefenseCurlDesc,
         BattleFrontier_Lounge7_Text_SnoreDesc,
         BattleFrontier_Lounge7_Text_MudSlapDesc,
-        BattleFrontier_Lounge7_Text_SwiftDesc,
+        BattleFrontier_Lounge7_Text_PluckDesc,
         BattleFrontier_Lounge7_Text_IcyWindDesc,
         BattleFrontier_Lounge7_Text_EndureDesc,
         BattleFrontier_Lounge7_Text_PsychUpDesc,
@@ -3437,10 +3452,27 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         gText_Exit,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+    static const u8 *const sBattleFrontier_TutorMoveDescriptions3[] =
+    {
+        BattleFrontier_Lounge7_Text_DrillRunDesc,
+        BattleFrontier_Lounge7_Text_IronHeadDesc,
+        BattleFrontier_Lounge7_Text_IceFangDesc,
+        BattleFrontier_Lounge7_Text_ThunderFangDesc,
+        BattleFrontier_Lounge7_Text_FireFangDesc,
+        BattleFrontier_Lounge7_Text_HyperVoiceDesc,
+        BattleFrontier_Lounge7_Text_PollenPuffDesc,
+        BattleFrontier_Lounge7_Text_SolarBladeDesc,
+        BattleFrontier_Lounge7_Text_HurricaneDesc,
+        BattleFrontier_Lounge7_Text_BatonPassDesc,
+        gText_Exit,
+    };
+
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_3)
     {
         FillWindowPixelRect(sTutorMoveAndElevatorWindowId, PIXEL_FILL(1), 0, 0, 96, 48);
-        if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+        if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_3)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions3[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions2[selection], 0, 1, 0, NULL);
         else
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);

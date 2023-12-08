@@ -35,7 +35,7 @@ BattleFrontier_Lounge7_EventScript_ChooseLeftTutorMove::
 	case 5, BattleFrontier_Lounge7_EventScript_BodySlam
 	case 6, BattleFrontier_Lounge7_EventScript_RockSlide
 	case 7, BattleFrontier_Lounge7_EventScript_Counter
-	case 8, BattleFrontier_Lounge7_EventScript_ThunderWave
+	case 8, BattleFrontier_Lounge7_EventScript_StealthRock
 	case 9, BattleFrontier_Lounge7_EventScript_SwordsDance
 	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
@@ -59,7 +59,7 @@ BattleFrontier_Lounge7_EventScript_ChooseNewLeftTutorMove::
 	case 5, BattleFrontier_Lounge7_EventScript_BodySlam
 	case 6, BattleFrontier_Lounge7_EventScript_RockSlide
 	case 7, BattleFrontier_Lounge7_EventScript_Counter
-	case 8, BattleFrontier_Lounge7_EventScript_ThunderWave
+	case 8, BattleFrontier_Lounge7_EventScript_StealthRock
 	case 9, BattleFrontier_Lounge7_EventScript_SwordsDance
 	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
@@ -113,9 +113,9 @@ BattleFrontier_Lounge7_EventScript_Counter::
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
-BattleFrontier_Lounge7_EventScript_ThunderWave::
+BattleFrontier_Lounge7_EventScript_StealthRock::
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_THUNDER_WAVE
+	setvar VAR_0x8005, MOVE_STEALTH_ROCK
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
@@ -154,7 +154,7 @@ BattleFrontier_Lounge7_EventScript_ChooseRightTutorMove::
 	case 0, BattleFrontier_Lounge7_EventScript_DefenseCurl
 	case 1, BattleFrontier_Lounge7_EventScript_Snore
 	case 2, BattleFrontier_Lounge7_EventScript_MudSlap
-	case 3, BattleFrontier_Lounge7_EventScript_Swift
+	case 3, BattleFrontier_Lounge7_EventScript_Pluck
 	case 4, BattleFrontier_Lounge7_EventScript_IcyWind
 	case 5, BattleFrontier_Lounge7_EventScript_Endure
 	case 6, BattleFrontier_Lounge7_EventScript_PsychUp
@@ -178,7 +178,7 @@ BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove::
 	case 0, BattleFrontier_Lounge7_EventScript_DefenseCurl
 	case 1, BattleFrontier_Lounge7_EventScript_Snore
 	case 2, BattleFrontier_Lounge7_EventScript_MudSlap
-	case 3, BattleFrontier_Lounge7_EventScript_Swift
+	case 3, BattleFrontier_Lounge7_EventScript_Pluck
 	case 4, BattleFrontier_Lounge7_EventScript_IcyWind
 	case 5, BattleFrontier_Lounge7_EventScript_Endure
 	case 6, BattleFrontier_Lounge7_EventScript_PsychUp
@@ -207,9 +207,9 @@ BattleFrontier_Lounge7_EventScript_MudSlap::
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
-BattleFrontier_Lounge7_EventScript_Swift::
+BattleFrontier_Lounge7_EventScript_Pluck::
 	setvar VAR_0x8008, 24
-	setvar VAR_0x8005, MOVE_SWIFT
+	setvar VAR_0x8005, MOVE_PLUCK
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
@@ -246,6 +246,130 @@ BattleFrontier_Lounge7_EventScript_ThunderPunch::
 BattleFrontier_Lounge7_EventScript_FirePunch::
 	setvar VAR_0x8008, 48
 	setvar VAR_0x8005, MOVE_FIRE_PUNCH
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_CenterMoveTutor::
+	lock
+	faceplayer
+	setvar VAR_TEMP_C, SCROLL_MULTI_BF_MOVE_TUTOR_3
+	goto_if_set FLAG_MET_FRONTIER_WISE_MOVE_TUTOR, BattleFrontier_Lounge7_EventScript_AlreadyMetCenterTutor
+	msgbox BattleFrontier_Lounge7_Text_CenterTutorIntro, MSGBOX_DEFAULT
+	setflag FLAG_MET_FRONTIER_WISE_MOVE_TUTOR
+	goto BattleFrontier_Lounge7_EventScript_ChooseCenterTutorMove
+	end
+
+BattleFrontier_Lounge7_EventScript_AlreadyMetCenterTutor::
+	msgbox BattleFrontier_Lounge7_Text_CenterTutorWelcomeBack, MSGBOX_DEFAULT
+	goto BattleFrontier_Lounge7_EventScript_ChooseCenterTutorMove
+	end
+
+BattleFrontier_Lounge7_EventScript_ChooseCenterTutorMove::
+	message BattleFrontier_Lounge7_Text_TeachWhichMove
+	waitmessage
+	special ShowBattlePointsWindow
+	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 2
+	setvar VAR_0x8004, SCROLL_MULTI_BF_MOVE_TUTOR_3
+	setvar VAR_0x8006, 0
+	special ShowScrollableMultichoice
+	waitstate
+	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+	switch VAR_RESULT
+	case 0, BattleFrontier_Lounge7_EventScript_DrillRun
+	case 1, BattleFrontier_Lounge7_EventScript_IronHead
+	case 2, BattleFrontier_Lounge7_EventScript_IceFang
+	case 3, BattleFrontier_Lounge7_EventScript_ThunderFang
+	case 4, BattleFrontier_Lounge7_EventScript_FireFang
+	case 5, BattleFrontier_Lounge7_EventScript_HyperVoice
+	case 6, BattleFrontier_Lounge7_EventScript_PollenPuff
+	case 7, BattleFrontier_Lounge7_EventScript_SolarBlade
+	case 8, BattleFrontier_Lounge7_EventScript_Hurricane
+	case 9, BattleFrontier_Lounge7_EventScript_BatonPass
+	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	end
+
+BattleFrontier_Lounge7_EventScript_ChooseNewCenterTutorMove::
+	message BattleFrontier_Lounge7_Text_TeachWhichMove
+	waitmessage
+	setvar VAR_TEMP_FRONTIER_TUTOR_ID, 2
+	setvar VAR_0x8004, SCROLL_MULTI_BF_MOVE_TUTOR_3
+	setvar VAR_0x8006, 0
+	special ShowScrollableMultichoice
+	waitstate
+	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+	switch VAR_RESULT
+	case 0, BattleFrontier_Lounge7_EventScript_DrillRun
+	case 1, BattleFrontier_Lounge7_EventScript_IronHead
+	case 2, BattleFrontier_Lounge7_EventScript_IceFang
+	case 3, BattleFrontier_Lounge7_EventScript_ThunderFang
+	case 4, BattleFrontier_Lounge7_EventScript_FireFang
+	case 5, BattleFrontier_Lounge7_EventScript_HyperVoice
+	case 6, BattleFrontier_Lounge7_EventScript_PollenPuff
+	case 7, BattleFrontier_Lounge7_EventScript_SolarBlade
+	case 8, BattleFrontier_Lounge7_EventScript_Hurricane
+	case 9, BattleFrontier_Lounge7_EventScript_BatonPass
+	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	end
+
+BattleFrontier_Lounge7_EventScript_DrillRun::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8005, MOVE_DRILL_RUN
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_IronHead::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8005, MOVE_IRON_HEAD
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_IceFang::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8005, MOVE_ICE_FANG
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_ThunderFang::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8005, MOVE_THUNDER_FANG
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_FireFang::
+	setvar VAR_0x8008, 24
+	setvar VAR_0x8005, MOVE_FIRE_FANG
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_HyperVoice::
+	setvar VAR_0x8008, 48
+	setvar VAR_0x8005, MOVE_HYPER_VOICE
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_PollenPuff::
+	setvar VAR_0x8008, 48
+	setvar VAR_0x8005, MOVE_POLLEN_PUFF
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_SolarBlade::
+	setvar VAR_0x8008, 48
+	setvar VAR_0x8005, MOVE_SOLAR_BLADE
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_Hurricane::
+	setvar VAR_0x8008, 48
+	setvar VAR_0x8005, MOVE_HURRICANE
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_BatonPass::
+	setvar VAR_0x8008, 48
+	setvar VAR_0x8005, MOVE_BATON_PASS
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
@@ -292,7 +416,8 @@ BattleFrontier_Lounge7_EventScript_TeachTutorMove::
 
 BattleFrontier_Lounge7_EventScript_ChooseNewMove::
 	goto_if_eq VAR_TEMP_FRONTIER_TUTOR_ID, 0, BattleFrontier_Lounge7_EventScript_ChooseNewLeftTutorMove
-	goto BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove
+	goto_if_eq VAR_TEMP_FRONTIER_TUTOR_ID, 1, BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove
+	goto_if_eq VAR_TEMP_FRONTIER_TUTOR_ID, 2, BattleFrontier_Lounge7_EventScript_ChooseNewCenterTutorMove
 	end
 
 BattleFrontier_Lounge7_EventScript_Sailor::
@@ -312,7 +437,7 @@ BattleFrontier_Lounge7_Text_LeftTutorIntro:
 	.string "… … … … … …\p"
 	.string "What is it now?\n"
 	.string "You don't believe me.\p"
-	.string "I'm not like that blowhard woman over\n"
+	.string "I'm not like those blowhard women over\n"
 	.string "there. I'm actually talented!\p"
 	.string "Let me prove it to you.\n"
 	.string "I can teach your Pokémon special and\l"
@@ -361,7 +486,7 @@ BattleFrontier_Lounge7_Text_RightTutorIntro:
 	.string "… … … … … …\p"
 	.string "What's wrong?\n"
 	.string "You don't believe me.\p"
-	.string "I'm not like that buffoonish woman over\n"
+	.string "I'm not like those buffoonish women over\n"
 	.string "there. I'm actually experienced!\p"
 	.string "I can prove it to you.\n"
 	.string "I can teach your Pokémon hard and\l"
@@ -374,6 +499,29 @@ BattleFrontier_Lounge7_Text_RightTutorWelcomeBack:
 	.string "Ihihihi!\p"
 	.string "Have you come to learn hard and\n"
 	.string "yet pretty Pokémon moves?$"
+
+BattleFrontier_Lounge7_Text_CenterTutorIntro:
+	.string "Ohohoho!\p"
+	.string "You might not believe me, but I used\n"
+	.string "to be one spectacular Trainer.\p"
+	.string "I had a reputation as the most\n"
+	.string "tactical Grandmaster around, I tell you!\p"
+	.string "… … … … … …\p"
+	.string "What's wrong?\n"
+	.string "You don't believe me.\p"
+	.string "I'm not like those foolhardy women over\n"
+	.string "there. I'm actually experienced!\p"
+	.string "I can prove it to you.\n"
+	.string "I can teach your Pokémon bold and\l"
+	.string "yet smart moves.\p"
+	.string "But my lessons don't come free.\n"
+	.string "How about paying for the moves I teach\l"
+	.string "with a wee bit of Battle Points?$"
+
+BattleFrontier_Lounge7_Text_CenterTutorWelcomeBack:
+	.string "Ohohoho!\p"
+	.string "Have you come to learn bold and\n"
+	.string "yet smart Pokémon moves?$"
 
 BattleFrontier_Lounge7_Text_ThinkLadiesDontGetAlong:
 	.string "Those ladies, the way they bad-mouth\n"
@@ -434,10 +582,10 @@ BattleFrontier_Lounge7_Text_CounterDesc::
 	.string "physical hit with\n"
 	.string "double the power.$"
 
-BattleFrontier_Lounge7_Text_ThunderWaveDesc::
-	.string "A weak jolt of\n"
-	.string "electricity that\n"
-	.string "paralyzes the foe.$"
+BattleFrontier_Lounge7_Text_StealthRockDesc::
+	.string "lays levitating\n"
+	.string "rocks that hurt\n"
+	.string "foes that enter.$"
 
 BattleFrontier_Lounge7_Text_SwordsDanceDesc::
 	.string "A fighting dance\n"
@@ -459,10 +607,10 @@ BattleFrontier_Lounge7_Text_MudSlapDesc::
 	.string "foe's face to re-\n"
 	.string "duce its accuracy.$"
 
-BattleFrontier_Lounge7_Text_SwiftDesc::
-	.string "Sprays star-\n"
-	.string "shaped rays\n"
-	.string "that never miss.$"
+BattleFrontier_Lounge7_Text_PluckDesc::
+	.string "Pecks the foe,\n"
+	.string "stealing and\n"
+	.string "eating it's berry$"
 
 BattleFrontier_Lounge7_Text_IcyWindDesc::
 	.string "A chilling attack\n"
@@ -493,3 +641,53 @@ BattleFrontier_Lounge7_Text_FirePunchDesc::
 	.string "A fiery punch\n"
 	.string "that may burn\n"
 	.string "the foe.$"
+
+BattleFrontier_Lounge7_Text_DrillRunDesc::
+	.string "A fast rotating\n"
+	.string "attack like a\n"
+	.string "drill.$"
+
+BattleFrontier_Lounge7_Text_IronHeadDesc::
+	.string "A steel-hard\n"
+	.string "slam that may\n"
+	.string "flinch the foe.$"
+
+BattleFrontier_Lounge7_Text_IceFangDesc::
+	.string "An icy bite\n"
+	.string "that may flinch\n"
+	.string "or freeze.$"
+
+BattleFrontier_Lounge7_Text_ThunderFangDesc::
+	.string "An static bite\n"
+	.string "that may flinch\n"
+	.string "or paralyze.$"
+
+BattleFrontier_Lounge7_Text_FireFangDesc::
+	.string "An fiery bite\n"
+	.string "that may flinch\n"
+	.string "or burn.$"
+
+BattleFrontier_Lounge7_Text_HyperVoiceDesc::
+	.string "A loud attack\n"
+	.string "using sound\n"
+	.string "waves.$"
+
+BattleFrontier_Lounge7_Text_PollenPuffDesc::
+	.string "A pollen puff\n"
+	.string "that hurts foes\n"
+	.string "but heals allies.$"
+
+BattleFrontier_Lounge7_Text_SolarBladeDesc::
+	.string "A two-turn attack\n"
+	.string "using light from\n"
+	.string "from the sun.$"
+
+BattleFrontier_Lounge7_Text_HurricaneDesc::
+	.string "Wraps the foe in\n"
+	.string "a fierce wind\n"
+	.string "that may confuse$"
+
+BattleFrontier_Lounge7_Text_BatonPassDesc::
+	.string "A move that keeps\n"
+	.string "status changes but\n"
+	.string "switches out.$"
