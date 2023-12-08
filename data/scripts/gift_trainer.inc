@@ -22,7 +22,7 @@ MysteryGiftScript_VisitingTrainerArrived:
 sText_MysteryGiftVisitingTrainerInstructions:
 	.string "Thank you for using the Mystery\n"
 	.string "Gift System.\p"
-	.string "By holding this WONDER Card, you\n"
+	.string "By holding this Wonder Card, you\n"
 	.string "may take part in a survey at a\l"
 	.string "Pokémon MART.\p"
 	.string "Use these surveys to invite\n"

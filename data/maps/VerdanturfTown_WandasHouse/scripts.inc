@@ -162,7 +162,7 @@ VerdanturfTown_WandasHouse_Text_IfAnythingHappenedToWally:
 	.string "parents in PETALBURG in the eye…$"
 
 VerdanturfTown_WandasHouse_Text_WallyWasInEverGrande:
-	.string "WALLY was in EVER GRANDE?\p"
+	.string "WALLY was in Ever GRANDE?\p"
 	.string "His parents in PETALBURG would be\n"
 	.string "astonished to hear that!$"
 

@@ -113,7 +113,7 @@ PetalburgCity_WallysHouse_Text_WallyIsComingHomeSoon:
 
 PetalburgCity_WallysHouse_Text_YouMetWallyInEverGrandeCity:
 	.string "Oh? You met WALLY in\n"
-	.string "EVER GRANDE CITY?\p"
+	.string "Ever GRANDE CITY?\p"
 	.string "Oh, {PLAYER}{KUN}, don't be silly.\p"
 	.string "He may have gotten healthy, but he\n"
 	.string "can't go somewhere far away like\l"

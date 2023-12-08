@@ -4171,7 +4171,7 @@ Route127_Text_AthenaPostBattle:
 	.string "and sky, it feels as if time slows down.$"
 
 Route128_Text_IsaiahIntro:
-	.string "EVER GRANDE CITY is still a long ways\n"
+	.string "Ever GRANDE CITY is still a long ways\n"
 	.string "away…$"
 
 Route128_Text_IsaiahDefeat:
@@ -4189,13 +4189,13 @@ Route128_Text_IsaiahRegister:
 
 Route128_Text_IsaiahRematchIntro:
 	.string "I'm still feeling good. I'll keep on\n"
-	.string "swimming to EVER GRANDE CITY.$"
+	.string "swimming to Ever GRANDE CITY.$"
 
 Route128_Text_IsaiahRematchDefeat:
 	.string "I've yet to taste my first victory…$"
 
 Route128_Text_IsaiahPostRematch:
-	.string "I'll eventually reach EVER GRANDE CITY\n"
+	.string "I'll eventually reach Ever GRANDE CITY\n"
 	.string "where I can eventually win…$"
 
 Route128_Text_KatelynIntro:
@@ -4252,7 +4252,7 @@ Route128_Text_RubenPostBattle:
 	.string "than you!$"
 
 Route128_Text_WayneIntro:
-	.string "I want to visit EVER GRANDE, so I\n"
+	.string "I want to visit Ever GRANDE, so I\n"
 	.string "caught myself a Pokémon that knows\l"
 	.string "the move WATERFALL to crest the falls.$"
 
@@ -4274,7 +4274,7 @@ Route128_Text_HarrisonDefeat:
 
 Route128_Text_HarrisonPostBattle:
 	.string "There are tough TRAINERS galore\n"
-	.string "around EVER GRANDE.\p"
+	.string "around Ever GRANDE.\p"
 	.string "Do you think I may be out\n"
 	.string "of my league?$"
 
