@@ -4,7 +4,7 @@
 @       section by editing ScrCmd_braillemessage.
 Underwater_SealedChamber_Braille_GoUpHere:
 	brailleformat 4, 6, 26, 13, 7, 9
-	.braille "Go UP HERE.$"
+	.braille "GO UP HERE.$"
 
 SealedChamber_OuterRoom_Braille_ABC:
 	brailleformat 7, 6, 21, 13, 10, 9
@@ -99,14 +99,14 @@ DesertRuins_Braille_UseRockSmash:
 	brailleformat 1, 0, 27, 19, 4, 3
 	.braille "LEFT, LEFT,\n"
 	.braille "DOWN, DOWN.\n"
-	.braille "THEN, Use\n"
+	.braille "THEN, USE\n"
 	.braille "ROCK SMASH.$"
 
 IslandCave_Braille_RunLapAroundWall:
 	brailleformat 5, 0, 25, 19, 8, 3
 	.braille "STAY CLOSE\n"
 	.braille "TO THE WALL.\n"
-	.braille "Run AROUND\n"
+	.braille "RUN AROUND\n"
 	.braille "ONE LAP.$"
 
 AncientTomb_Braille_ShineInTheMiddle:

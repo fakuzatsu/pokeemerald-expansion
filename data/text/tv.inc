@@ -1686,7 +1686,7 @@ gTVTrainerFanClubText05::
 
 gTVTrainerFanClubText06::
 	.string "FANS: The Trainer's amazing\n"
-	.string "BIKE-riding techniques!$"
+	.string "Bike-riding techniques!$"
 
 gTVTrainerFanClubText07::
 	.string "FANS: The Trainer's impressive\n"
@@ -2005,7 +2005,7 @@ gTVPokemonNewsBattleFrontierText18::
 	.string "That's the news on Pokémon NEWS!$"
 
 gTVWhatsNo1InHoennTodayText00::
-	.string "WHAT's No. 1 IN HOENN TODAY?\n"
+	.string "What's No. 1 IN HOENN TODAY?\n"
 	.string "Yes, it's that time again!\p"
 	.string "Hello, viewers! Are you giving your\n"
 	.string "best at whatever you do?\p"

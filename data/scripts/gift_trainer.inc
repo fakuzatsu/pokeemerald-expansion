@@ -29,7 +29,7 @@ sText_MysteryGiftVisitingTrainerInstructions:
 	.string "TRAINERS to SOOTOPOLIS CITY.\p"
 	.string "…Let me give you a secret\n"
 	.string "password for a survey:\p"
-	.string "“Give ME\n"
+	.string "“Give Me\n"
 	.string "AWESOME Trainer”\p"
 	.string "Write that in on a survey and send\n"
 	.string "it to the Wireless\l"

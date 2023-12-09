@@ -324,7 +324,7 @@ BattleFrontier_OutsideEast_Text_OnceBeatGymLeader:
 	.string "another shot at glory.$"
 
 BattleFrontier_OutsideEast_Text_FastOnBikeAndBattles:
-	.string "I'm fast on my BIKE, and that goes for\n"
+	.string "I'm fast on my Bike, and that goes for\n"
 	.string "the way I battle, too.\p"
 	.string "I win matches in the blink of\n"
 	.string "an eye!$"

@@ -1029,7 +1029,7 @@ Route109_Text_ElijahPostBattle:
 
 Route110_Text_JacobIntro:
 	.string "Whoa! Watch it!\n"
-	.string "I guess you're not used to BIKE racing.$"
+	.string "I guess you're not used to Bike racing.$"
 
 Route110_Text_JacobDefeated:
 	.string "Whoa!\n"
@@ -1038,7 +1038,7 @@ Route110_Text_JacobDefeated:
 Route110_Text_JacobPostBattle:
 	.string "Flat tires and brake problems can\n"
 	.string "cause serious injury!\l"
-	.string "Inspect your BIKE for problems!$"
+	.string "Inspect your Bike for problems!$"
 
 Route110_Text_AnthonyIntro:
 	.string "Yo, you!\n"
@@ -1052,7 +1052,7 @@ Route110_Text_AnthonyPostBattle:
 	.string "I need to reconsider this…$"
 
 Route110_Text_BenjaminIntro:
-	.string "Don't panic if your BIKE's going fast!$"
+	.string "Don't panic if your Bike's going fast!$"
 
 Route110_Text_BenjaminDefeated:
 	.string "I shouldn't panic during Pokémon\n"
@@ -4208,7 +4208,7 @@ Route128_Text_KatelynDefeat:
 	.string "A Pokémon battle is grueling, too…$"
 
 Route128_Text_KatelynPostBattle:
-	.string "I have to ride a BIKE next, but…\n"
+	.string "I have to ride a Bike next, but…\n"
 	.string "I'm about to throw in the towel…$"
 
 Route128_Text_KatelynRegister:

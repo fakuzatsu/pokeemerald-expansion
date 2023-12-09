@@ -1,4 +1,4 @@
-const u8 gEasyChatWord_KthxBye[] = _("KTHX, BYE.");
+const u8 gEasyChatWord_KthxBye[] = _("KTHX, Bye.");
 const u8 gEasyChatWord_YesSirExcl[] = _("YES, SIR!");
 const u8 gEasyChatWord_AvantGarde[] = _("AVANT GARDE");
 const u8 gEasyChatWord_Couple[] = _("COUPLE");
@@ -19,7 +19,7 @@ const u8 gEasyChatWord_Shake[] = _("SHAKE");
 const u8 gEasyChatWord_Shady[] = _("SHADY");
 const u8 gEasyChatWord_Upbeat[] = _("UPBEAT");
 const u8 gEasyChatWord_Modern[] = _("MODERN");
-const u8 gEasyChatWord_SmellYa[] = _("SMELL YA");
+const u8 gEasyChatWord_SmellYa[] = _("Smell YA");
 const u8 gEasyChatWord_Bang[] = _("BANG");
 const u8 gEasyChatWord_Knockout[] = _("KNOCKOUT");
 const u8 gEasyChatWord_Hassle[] = _("HASSLE");

@@ -329,7 +329,7 @@ MauvilleCity_PokemonCenter_1F_Text_BerriesPlantedStory::
 	.string "Berries!$"
 
 MauvilleCity_PokemonCenter_1F_Text_BikeTradesTitle::
-	.string "The BIKE-Loving Trainer$"
+	.string "The Bike-Loving Trainer$"
 
 MauvilleCity_PokemonCenter_1F_Text_BikeTradesAction::
 	.string "Traded BIKES$"
@@ -856,7 +856,7 @@ MauvilleCity_PokemonCenter_1F_EventScript_StorytellerEnd::
 
 @ Giddy
 MauvilleCity_PokemonCenter_1F_Text_HearMyStory:
-	.string "I'm GIDDY!\n"
+	.string "I'm Giddy!\n"
 	.string "I have a scintillating story for you!\p"
 	.string "Would you like to hear my story?$"
 

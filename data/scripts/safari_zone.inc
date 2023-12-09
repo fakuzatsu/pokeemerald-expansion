@@ -189,7 +189,7 @@ SafariZone_South_Text_Boy:
 
 SafariZone_South_Text_Man:
 	.string "I want to keep going deeper, but I\n"
-	.string "forgot to bring a BIKE.\p"
+	.string "forgot to bring a Bike.\p"
 	.string "Something tells me that rare Pokémon\n"
 	.string "live in the outlying areas.$"
 
