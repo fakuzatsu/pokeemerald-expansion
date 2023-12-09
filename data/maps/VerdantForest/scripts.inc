@@ -30,6 +30,7 @@ VerdantForest_EventScript_DisableTrigger::
 VerdantForest_EventScript_LydiaTalk::
 	lockall
 	faceplayer
+	call_if_eq VAR_MAUVILLE_FLOWER_SHOP_STATE, 0, MauvilleCity_FlowerShop_EventScript_SetQuestAvailable
 	goto_if_set FLAG_DEFEATED_TRAINER_LYDIA, VerdantForest_EventScript_YoureStrongKid
 	msgbox VerdantForest_Text_HeyKid, MSGBOX_DEFAULT
 	closemessage
@@ -95,6 +96,7 @@ VerdantForest_EventScript_BattleLydia::
 	closemessage
 	trainerbattle_no_intro TRAINER_LYDIA, VerdantForest_Text_LydiaDefeat
 	setflag FLAG_DEFEATED_TRAINER_LYDIA
+	goto_if_ge VAR_MAUVILLE_FLOWER_SHOP_STATE, 2, VerdantForest_EventScript_HuhFlowerShopAfterBattle
 	goto VerdantForest_EventScript_YoureStrongKid
 	end
 
@@ -124,9 +126,25 @@ VerdantForest_EventScript_LydiaResetPlayer2::
 	end
 
 VerdantForest_EventScript_YoureStrongKid::
+	goto_if_ge VAR_MAUVILLE_FLOWER_SHOP_STATE, 2, VerdantForest_EventScript_HuhFlowerShop
 	msgbox VerdantForest_Text_YoureStrongYouCanGoThrough, MSGBOX_DEFAULT
 	releaseall
 	end
+
+VerdantForest_EventScript_HuhFlowerShop::
+	msgbox VerdantForest_Text_HuhFlowerShop, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_LYDIA
+	setvar VAR_MAUVILLE_FLOWER_SHOP_STATE, 3
+	setflag FLAG_LYDIA_MOVED_TO_SHOP
+	delay 16
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	end
+
+VerdantForest_EventScript_HuhFlowerShopAfterBattle::
+	msgbox VerdantForest_Text_YoureStrongYouCanGoThrough, MSGBOX_DEFAULT
+	goto VerdantForest_EventScript_HuhFlowerShop
 
 VerdantForest_Movement_LydiaApproachPlayer1:
 	walk_down
@@ -223,4 +241,15 @@ VerdantForest_Text_YoureStrongYouCanGoThrough:
 	.string "I reckon you've got what it takes to\n"
 	.string "defeat anything ahead.\p"
 	.string "Nice work kid.$"
+
+VerdantForest_Text_HuhFlowerShop:
+	.string "… … …\p"
+	.string "Huh? What's this about a new flower\n"
+	.string "shop in Mauville?\p"
+	.string "… … …\p"
+	.string "Selling mysterious berries, huh?\p"
+	.string "Sounds cool.\n"
+	.string "Guess I gotta check this out.\p"
+	.string "Make sure nobody wanders into the\n"
+	.string "woods for me kid.$"	
 

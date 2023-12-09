@@ -63,6 +63,7 @@ PetalburgGrove_EventScript_LornaStopPlayerTalk::
 	end
 
 PetalburgGrove_EventScript_LornaStopPlayer::
+	call_if_eq VAR_MAUVILLE_FLOWER_SHOP_STATE, 0, MauvilleCity_FlowerShop_EventScript_SetQuestAvailable
 	goto_if_set FLAG_DEFEATED_TRAINER_LORNA, PetalburgGrove_EventScript_YoureStrongYouCanGoThrough
 	msgbox PetalburgGrove_Text_HeyWait, MSGBOX_DEFAULT
 	closemessage
@@ -89,6 +90,7 @@ PetalburgGrove_EventScript_BattleLorna::
 	closemessage
 	trainerbattle_no_intro TRAINER_SHIRLEY, PetalburgGrove_Text_LornaDefeat
 	setflag FLAG_DEFEATED_TRAINER_LORNA
+	goto_if_ge VAR_MAUVILLE_FLOWER_SHOP_STATE, 2, PetalburgGrove_EventScript_HuhFlowerShopAfterBattle
 	goto PetalburgGrove_EventScript_YoureStrongYouCanGoThrough
 	end
 
@@ -100,6 +102,7 @@ PetalburgGrove_EventScript_DontBattleLorna::
 	end
 
 PetalburgGrove_EventScript_YoureStrongYouCanGoThrough::
+	goto_if_ge VAR_MAUVILLE_FLOWER_SHOP_STATE, 2, PetalburgGrove_EventScript_HuhFlowerShop
 	msgbox PetalburgGrove_Text_YoureStrongYouCanGoThrough, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -108,6 +111,21 @@ PetalburgGrove_EventScript_LornaMoveBackIntoPlace::
 	applymovement LOCALID_LORNA, PetalburgGrove_Movement_LornaMoveBackIntoPlace
 	waitmovement 0
 	return
+
+PetalburgGrove_EventScript_HuhFlowerShop::
+	msgbox PetalburgGrove_Text_HuhFlowerShop, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_LORNA
+	setvar VAR_MAUVILLE_FLOWER_SHOP_STATE, 3
+	setflag FLAG_LORNA_MOVED_TO_SHOP
+	delay 16
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	end
+
+PetalburgGrove_EventScript_HuhFlowerShopAfterBattle::
+	msgbox PetalburgGrove_Text_YoureStrongYouCanGoThrough, MSGBOX_DEFAULT
+	goto PetalburgGrove_EventScript_HuhFlowerShop
 
 PetalburgGrove_Movement_PlayerPushedBack:
 	walk_in_place_faster_up
@@ -165,4 +183,15 @@ PetalburgGrove_Text_YoureStrongYouCanGoThrough:
 	.string "You should be able to handle\n"
 	.string "anything you find beyond here.\p"
 	.string "Go ahead!$"
+
+PetalburgGrove_Text_HuhFlowerShop:
+	.string "Oh… huh?\p"
+	.string "What's this about going to a\n"
+	.string "new flower shop in Mauville?\p"
+	.string "… … …\p"
+	.string "It does sound interesting…\p"
+	.string "Hm… sure!\n"
+	.string "It couldn't hurt I guess.\p"
+	.string "Not many can make it over that\n"
+	.string "pond anyways.$"
 

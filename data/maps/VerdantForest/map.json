@@ -44,7 +44,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VerdantForest_EventScript_LydiaTalk",
-      "flag": "0"
+      "flag": "FLAG_LYDIA_MOVED_TO_SHOP"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",

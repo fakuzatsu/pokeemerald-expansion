@@ -1499,9 +1499,9 @@
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH                            0x923
 #define FLAG_HIDE_WINONA_CUSTSCENE_ACTORS                           0x924 // Custom Flag
 
-#define FLAG_UNUSED_0x916                                           0x925 // Unused Flag
-#define FLAG_UNUSED_0x917                                           0x926 // Unused Flag
-#define FLAG_UNUSED_0x918                                           0x927 // Unused Flag
+#define FLAG_LORNA_MOVED_TO_SHOP                                    0x925 // Custom Flag
+#define FLAG_LYDIA_MOVED_TO_SHOP                                    0x926 // Custom Flag
+#define FLAG_LISLA_MOVED_TO_SHOP                                    0x927 // Custom Flag
 #define FLAG_UNUSED_0x919                                           0x928 // Unused Flag
 #define FLAG_UNUSED_0x91A                                           0x929 // Unused Flag
 #define FLAG_UNUSED_0x91B                                           0x92A // Unused Flag

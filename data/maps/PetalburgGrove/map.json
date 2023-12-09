@@ -36,7 +36,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgGrove_EventScript_LornaStopPlayerTalk",
-      "flag": "0"
+      "flag": "FLAG_LORNA_MOVED_TO_SHOP"
     }
   ],
   "warp_events": [

@@ -30,6 +30,7 @@ VerdantIsle_EventScript_DisableTrigger::
 VerdantIsle_EventScript_LislaTalk::
 	lockall
 	faceplayer
+	call_if_eq VAR_MAUVILLE_FLOWER_SHOP_STATE, 0, MauvilleCity_FlowerShop_EventScript_SetQuestAvailable
 	goto_if_set FLAG_DEFEATED_TRAINER_LISLA, VerdantIsle_EventScript_YouCanComeAndGo
 	msgbox VerdantIsle_Text_OhYouWantToBattle, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, VerdantIsle_EventScript_AreYouSure
@@ -66,6 +67,7 @@ VerdantIsle_EventScript_BattleLisla::
 	trainerbattle_no_intro TRAINER_LISLA, VerdantIsle_Text_LislaDefeat
 	setflag FLAG_DEFEATED_TRAINER_LISLA
 	setvar VAR_TEMP_0, 1
+	goto_if_ge VAR_MAUVILLE_FLOWER_SHOP_STATE, 2, VerdantIsle_EventScript_HuhFlowerShopAfterBattle
 	goto VerdantIsle_EventScript_YouCanComeAndGo
 	end
 
@@ -76,6 +78,7 @@ VerdantIsle_EventScript_DontBattleLisla::
 	end
 
 VerdantIsle_EventScript_YouCanComeAndGo::
+	goto_if_ge VAR_MAUVILLE_FLOWER_SHOP_STATE, 2, VerdantIsle_EventScript_HuhFlowerShop
 	msgbox VerdantIsle_Text_YouCanComeAndGo, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -138,6 +141,21 @@ VerdantIsle_EventScript_LislaYouShouldntGo::
 	msgbox VerdantIsle_Text_ItsMyDuty, MSGBOX_DEFAULT
 	closemessage
 	return
+
+VerdantIsle_EventScript_HuhFlowerShop::
+	msgbox VerdantIsle_Text_HuhFlowerShop, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_LISLA
+	setvar VAR_MAUVILLE_FLOWER_SHOP_STATE, 3
+	setflag FLAG_LISLA_MOVED_TO_SHOP
+	delay 16
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	end
+
+VerdantIsle_EventScript_HuhFlowerShopAfterBattle::
+	msgbox VerdantIsle_Text_YouCanComeAndGo, MSGBOX_DEFAULT
+	goto VerdantIsle_EventScript_HuhFlowerShop
 
 VerdantIsle_Movement_LislaApproachPlayer1:
 	walk_down
@@ -238,4 +256,13 @@ VerdantIsle_Text_ItsMyDuty:
 	.string "I promised my sisters I would\n"
 	.string "keep people out of danger…\p"
 	.string "S-sorry!$"
+
+VerdantIsle_Text_HuhFlowerShop:
+	.string "…Oh?\p"
+	.string "…You want me to go to Mauville\n"
+	.string "to see a new flower shop?\p"
+	.string "Uh…\n"
+	.string "Y-yeah ok. I'll go.\p"
+	.string "Just be carefull around here,\n"
+	.string "ok?$"
 
