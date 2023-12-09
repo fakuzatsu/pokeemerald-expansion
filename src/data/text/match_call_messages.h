@@ -41,7 +41,7 @@ const u8 gText_MatchCallCooltrainer_Brooke_Intro2[] = _("Pokémon Champion.");
 const u8 gText_MatchCallCooltrainer_Wilton_Strategy[] = _("Upset the opponent.");
 const u8 gText_MatchCallCooltrainer_Wilton_Pokemon[] = _("Type doesn't matter.");
 const u8 gText_MatchCallCooltrainer_Wilton_Intro1[] = _("I'm a top student at the");
-const u8 gText_MatchCallCooltrainer_Wilton_Intro2[] = _("Trainer's SCHOOL.");
+const u8 gText_MatchCallCooltrainer_Wilton_Intro2[] = _("Trainer's School.");
 
 const u8 gText_MatchCallHexManiac_Valerie_Strategy[] = _("Slow, steady suffering.");
 const u8 gText_MatchCallHexManiac_Valerie_Pokemon[] = _("Scary to meet at night.");

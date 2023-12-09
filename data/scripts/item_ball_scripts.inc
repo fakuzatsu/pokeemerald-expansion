@@ -2,10 +2,6 @@ Route102_EventScript_ItemPotion::
 	finditem ITEM_POTION
 	end
 
-Route103_EventScript_ItemGuardSpec::
-	finditem ITEM_GUARD_SPEC
-	end
-
 Route103_EventScript_ItemPPUp::
 	finditem ITEM_PP_UP
 	end
@@ -114,10 +110,6 @@ Route115_EventScript_ItemIron::
 	finditem ITEM_IRON
 	end
 
-Route115_EventScript_ItemGreatBall::
-	finditem ITEM_GREAT_BALL
-	end
-
 Route115_EventScript_ItemHealPowder::
 	finditem ITEM_HEAL_POWDER
 	end
@@ -140,10 +132,6 @@ Route116_EventScript_ItemRepel::
 
 Route116_EventScript_ItemHPUp::
 	finditem ITEM_HP_UP
-	end
-
-Route116_EventScript_ItemPotion::
-	finditem ITEM_POTION
 	end
 
 Route117_EventScript_ItemGreatBall::
@@ -192,10 +180,6 @@ Route119_EventScript_ItemElixir2::
 
 Route120_EventScript_ItemNugget::
 	finditem ITEM_NUGGET
-	end
-
-Route120_EventScript_ItemFullHeal::
-	finditem ITEM_FULL_HEAL
 	end
 
 Route120_EventScript_ItemHyperPotion::
@@ -302,6 +286,62 @@ Route134_EventScript_ItemStarPiece::
 	finditem ITEM_STAR_PIECE
 	end
 
+VerdantForest_EventScript_ItemTM53::
+	finditem ITEM_TM53
+	end
+
+Route103_EventScript_ItemTM54::
+	finditem ITEM_TM54
+	end
+
+Route119_EventScript_ItemTM55::
+	finditem ITEM_TM55
+	end
+
+MagmaHideout_3F_2R_EventScript_ItemTM56::
+	finditem ITEM_TM56
+	end
+
+ColdStorage_EventScript_TM_57::
+	finditem ITEM_TM57
+	end
+
+Route134_EventScript_ItemTM59::
+	finditem ITEM_TM59
+	end
+
+FieryCavern_EventScript_ItemTM61::
+	finditem ITEM_TM61
+	end
+
+PetalburgWoods_EventScript_ItemTM62::
+	finditem ITEM_TM62
+	end
+
+SlateportCity_Factory_EventScript_ItemTM63::
+	finditem ITEM_TM63
+	end
+
+NewMauville_Inside_EventScript_ItemTM64::
+	finditem ITEM_TM64
+	end
+
+Route116_EventScript_ItemTM66::
+	finditem ITEM_TM66
+	end
+
+Route120_EventScript_ItemTM71::
+	finditem ITEM_TM71
+	end
+
+Route115_EventScript_ItemTM72::
+	finditem ITEM_TM72
+	end
+
+OutsetPath_EventScript_ItemTM73::
+	finditem ITEM_TM73
+	end
+
 PetalburgCity_EventScript_ItemMaxRevive::
 	finditem ITEM_MAX_REVIVE
 	end
@@ -332,10 +372,6 @@ MossdeepCity_EventScript_ItemNetBall::
 
 PetalburgWoods_EventScript_ItemXAttack::
 	finditem ITEM_X_ATTACK
-	end
-
-PetalburgWoods_EventScript_ItemGreatBall::
-	finditem ITEM_GREAT_BALL
 	end
 
 PetalburgWoods_EventScript_ItemEther::
@@ -400,10 +436,6 @@ MeteorFalls_1F_1R_EventScript_ItemPPUP::
 
 MeteorFalls_B1F_2R_EventScript_ItemTMDragonClaw::
 	finditem ITEM_TM_DRAGON_CLAW
-	end
-
-NewMauville_Inside_EventScript_ItemUltraBall::
-	finditem ITEM_ULTRA_BALL
 	end
 
 NewMauville_Inside_EventScript_ItemEscapeRope::

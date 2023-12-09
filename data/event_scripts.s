@@ -866,7 +866,7 @@ gText_SelectWithoutRegisteredItem::
 
 gText_PokemonTrainerSchoolEmail::
 	.string "There's an e-mail from Pokémon Trainer\n"
-	.string "SCHOOL.\p"
+	.string "School.\p"
 	.string "… … … … … …\p"
 	.string "A Pokémon may learn up to four moves.\p"
 	.string "A Trainer's expertise is tested on the\n"

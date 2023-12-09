@@ -2243,7 +2243,7 @@ Route116_Text_JanicePostBattle:
 
 Route116_Text_JerryIntro:
 	.string "We learn all sorts of things at the\n"
-	.string "Trainer's SCHOOL.\p"
+	.string "Trainer's School.\p"
 	.string "I want to test things out for real!$"
 
 Route116_Text_JerryDefeat:
@@ -2252,24 +2252,24 @@ Route116_Text_JerryDefeat:
 
 Route116_Text_JerryPostBattle:
 	.string "I'll have to redo some courses at\n"
-	.string "the Trainer's SCHOOL.\l"
+	.string "the Trainer's School.\l"
 	.string "If I don't, ROXANNE will be steamed.$"
 
 Route116_Text_JerryRegister1:
-	.string "I learned at the Trainer's SCHOOL\n"
+	.string "I learned at the Trainer's School\n"
 	.string "that a PokéNav can register TRAINERS.\p"
 	.string "I don't really get what that means,\n"
 	.string "so can I just try it?$"
 
 Route116_Text_JerryRegister2:
-	.string "I learned at the Trainer's SCHOOL\n"
+	.string "I learned at the Trainer's School\n"
 	.string "that a PokéNav can register TRAINERS.\p"
 	.string "I don't really get what that means,\n"
 	.string "so can I just try it?$"
 
 Route116_Text_JerryRematchIntro:
 	.string "I've been studying seriously at the\n"
-	.string "Trainer's SCHOOL.\l"
+	.string "Trainer's School.\l"
 	.string "I won't lose like I did last time.$"
 
 Route116_Text_JerryRematchDefeat:
@@ -2278,7 +2278,7 @@ Route116_Text_JerryRematchDefeat:
 
 Route116_Text_JerryPostRematch:
 	.string "I'll have to redo some courses at\n"
-	.string "the Trainer's SCHOOL.\l"
+	.string "the Trainer's School.\l"
 	.string "If I don't, ROXANNE will be steamed.$"
 
 Route116_Text_KarenIntro:
@@ -3172,7 +3172,7 @@ Route121_Text_VanessaDefeat:
 Route121_Text_VanessaPostBattle:
 	.string "I'm going to a Contest in LILYCOVE.\p"
 	.string "My Pokémon should have no problem\n"
-	.string "sweeping the Master CLASS.$"
+	.string "sweeping the Master Class.$"
 
 Route121_Text_WalterIntro:
 	.string "With my Pokémon, I have traveled\n"
@@ -3322,7 +3322,7 @@ Route121_Text_CaleDefeat:
 
 Route121_Text_CalePostBattle:
 	.string "I bought too much stuff at\n"
-	.string "the LILYCOVE DEPT. Store.\p"
+	.string "the LILYCOVE Dept. Store.\p"
 	.string "It's up the road from here.\n"
 	.string "I wish I had a Bag like yours.$"
 

@@ -110,7 +110,7 @@ GraniteCave_StevensRoom_Text_ImStevenLetterForMe:
 	.string "an AGGRON…\p"
 	.string "But I haven't found anything…\p"
 	.string "Oh?\n"
-	.string "A LETTER for me?$"
+	.string "A Letter for me?$"
 
 GraniteCave_StevensRoom_Text_ThankYouTakeThis:
 	.string "STEVEN: Okay, thank you.\p"

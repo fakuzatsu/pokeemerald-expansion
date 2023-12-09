@@ -108,7 +108,7 @@ Route104_MrBrineysHouse_Text_ItsYouLetsSailToDewford:
 	.string "What's that?\n"
 	.string "You want to sail with me?\p"
 	.string "Hmhm…\p"
-	.string "You have a LETTER bound for DEWFORD\n"
+	.string "You have a Letter bound for DEWFORD\n"
 	.string "and a package for SLATEPORT, then?\p"
 	.string "Quite the busy life you must lead!\p"
 	.string "But, certainly, what you're asking is\n"
@@ -130,7 +130,7 @@ Route104_MrBrineysHouse_Text_DeclineDeliverySail:
 Route104_MrBrineysHouse_Text_NeedToMakeDeliveriesSailToDewford:
 	.string "MR. BRINEY: Ahoy!\n"
 	.string "I know exactly what you want to say!\p"
-	.string "You're to deliver a LETTER to DEWFORD\n"
+	.string "You're to deliver a Letter to DEWFORD\n"
 	.string "and a package to SLATEPORT.\p"
 	.string "What you need me to do is no problem\n"
 	.string "at all--I'm the man for the job!\p"

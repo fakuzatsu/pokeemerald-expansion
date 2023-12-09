@@ -43,7 +43,7 @@ BattleFrontier_PokemonCenter_1F_Text_NeverSeenPokemon:
 	.string "There was someone here using a \n"
 	.string "Pokémon I've never seen before.\p"
 	.string "I never learned about it at\n"
-	.string "Trainer's SCHOOL at least.\p"
+	.string "Trainer's School at least.\p"
 	.string "I wonder where you can catch Pokémon\n"
 	.string "like that.$"
 

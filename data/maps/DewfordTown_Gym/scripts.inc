@@ -417,8 +417,8 @@ DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis:
 	.string "trades, obey without question.\p"
 	.string "And, you'll be able to use the HM move\n"
 	.string "FLASH outside of battle.\p"
-	.string "If you'd like, use this TECHNICAL\n"
-	.string "MACHINE, too.$"
+	.string "If you'd like, use this Technical\n"
+	.string "Machine, too.$"
 
 DewfordTown_Gym_Text_ExplainBulkUp:
 	.string "That TM08 contains BULK UP.\p"

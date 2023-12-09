@@ -32,7 +32,7 @@ sText_MysteryGiftBattleCountCard:
 	.string "Look for and battle TRAINERS who\n"
 	.string "have the same Card as you.\p"
 	.string "You may check the overall rankings\n"
-	.string "by reading the NEWS.\p"
+	.string "by reading the News.\p"
 	.string "Please do give it a try!$"
 
 sText_MysteryGiftBattleCountCard_WonPrize:

@@ -687,11 +687,11 @@ Route104_Text_LandedInDewfordDeliverLetter:
 	.string "MR. BRINEY: Ahoy!\n"
 	.string "We've hit land in DEWFORD.\p"
 	.string "I suppose you're off to deliver that\n"
-	.string "LETTER to, who was it now, STEVEN!$"
+	.string "Letter to, who was it now, STEVEN!$"
 
 DewfordTown_Text_SetSailBackToPetalburg:
 	.string "MR. BRINEY: Have you delivered your\n"
-	.string "LETTER?\p"
+	.string "Letter?\p"
 	.string "Or were you meaning to sail back to\n"
 	.string "PETALBURG?$"
 
@@ -702,7 +702,7 @@ DewfordTown_Text_PetalburgWereSettingSail2:
 
 DewfordTown_Text_GoDeliverIllBeWaiting:
 	.string "MR. BRINEY: Then you go on and deliver\n"
-	.string "the LETTER. I'll be waiting.$"
+	.string "the Letter. I'll be waiting.$"
 
 DewfordTown_Text_BrineyLandedInDewford:
 	.string "MR. BRINEY: Ahoy!\n"

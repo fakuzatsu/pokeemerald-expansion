@@ -255,7 +255,7 @@ BattleFrontier_OutsideEast_Text_RankingHallSign:
 	.string "Set your sights on new records!$"
 
 BattleFrontier_OutsideEast_Text_ExchangeCornerSign:
-	.string "Battle POINT EXCHANGE SERVICE CORNER\n"
+	.string "Battle POINT EXCHANGE Service CORNER\n"
 	.string "Exchange your Battle Points!$"
 
 BattleFrontier_OutsideEast_Text_BattleTowerFeelsSpecial:

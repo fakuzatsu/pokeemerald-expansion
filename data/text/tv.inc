@@ -559,7 +559,7 @@ gTVRecentHappeningsText05::
 
 gTVMassOutbreakText00::
 	.string "Greetings!\n"
-	.string "It's time for Pokémon NEWS.\p"
+	.string "It's time for Pokémon News.\p"
 	.string "We've just received word of a very\n"
 	.string "rare occurrence.\p"
 	.string "There have been reports of a mass\n"
@@ -571,7 +571,7 @@ gTVMassOutbreakText00::
 	.string "It sounds like a rare opportunity to\n"
 	.string "see the mystifying outbreak of\l"
 	.string "{STR_VAR_2} in the wild.\p"
-	.string "That's the news on Pokémon NEWS.$"
+	.string "That's the news on Pokémon News.$"
 
 gTV3CheersForPokeblocksText00::
 	.string "MC: We hope you're in good cheer,\n"
@@ -1139,7 +1139,7 @@ SmartShopper_Text_OutroMax::
 	.string "Still, {STR_VAR_1} is certainly an enigma…$"
 
 gTVWorldOfMastersText00::
-	.string "THE WORLD OF MASTERS\p"
+	.string "THE World OF MASTERS\p"
 	.string "Hello, viewers.\p"
 	.string "Perhaps you are aware of a Trainer\n"
 	.string "named {STR_VAR_1}.\p"
@@ -1371,7 +1371,7 @@ gTVFindThatGamerText03::
 	.string "That's all for today!$"
 
 gTVBreakingNewsText00::
-	.string "BREAKING NEWS TV!$"
+	.string "BREAKING News TV!$"
 
 gTVBreakingNewsText01::
 	.string "Rare {STR_VAR_2} caught by\n"
@@ -1881,7 +1881,7 @@ TVSpotTheCuties_Text_Outro::
 
 gTVPokemonNewsBattleFrontierText00::
 	.string "Greetings!\n"
-	.string "It's time for Pokémon NEWS.\p"
+	.string "It's time for Pokémon News.\p"
 	.string "We've got some uplifting news from\n"
 	.string "the Battle Frontier.$"
 
@@ -2002,7 +2002,7 @@ gTVPokemonNewsBattleFrontierText18::
 	.string "Let's hope for more record-setting\n"
 	.string "feats from {STR_VAR_1} and the loyal\l"
 	.string "Pokémon!\p"
-	.string "That's the news on Pokémon NEWS!$"
+	.string "That's the news on Pokémon News!$"
 
 gTVWhatsNo1InHoennTodayText00::
 	.string "What's No. 1 IN HOENN TODAY?\n"

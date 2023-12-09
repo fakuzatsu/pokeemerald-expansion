@@ -310,7 +310,7 @@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut:
 	.string "search of outstanding TRAINERS.\p"
 	.string "More specifically, I'm looking for\n"
 	.string "Pokémon battle experts.\p"
-	.string "So, what brings you to this SCHOOL?\n"
+	.string "So, what brings you to this School?\n"
 	.string "Are you a Trainer, too?\p"
 	.string "The first thing you should do is to\n"
 	.string "have a Pokémon learn the move CUT.\p"

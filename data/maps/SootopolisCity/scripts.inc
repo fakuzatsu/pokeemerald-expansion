@@ -1722,7 +1722,7 @@ SootopolisCity_Text_ThankYouForHelpAcceptThis:
 	.string "Please accept it.$"
 
 SootopolisCity_Text_ExplainWaterfallGoToGym:
-	.string "That Hidden MACHINE contains\n"
+	.string "That Hidden Machine contains\n"
 	.string "WATERFALL.\p"
 	.string "If you have the RAIN BADGE, a Pokémon\n"
 	.string "that has learned that HM move can\l"
