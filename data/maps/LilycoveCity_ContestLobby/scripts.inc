@@ -1025,10 +1025,10 @@ LilycoveCity_ContestLobby_Text_TakeMementoOfPainting:
 	.string "Pokémon, please take this.$"
 
 LilycoveCity_ContestLobby_Text_ReceivedARibbon:
-	.string "{PLAYER} received a RIBBON.$"
+	.string "{PLAYER} received a Ribbon.$"
 
 LilycoveCity_ContestLobby_Text_PutTheRibbonOnMon:
-	.string "{PLAYER} put the RIBBON on\n"
+	.string "{PLAYER} put the Ribbon on\n"
 	.string "{STR_VAR_1}.$"
 
 LilycoveCity_ContestLobby_Text_OkaySeeYou:

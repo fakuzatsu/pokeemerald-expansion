@@ -105,16 +105,16 @@ SootopolisCity_Gym_B1F_Text_ConniePostBattle:
 	.string "need to walk on each floor tile once.$"
 
 SootopolisCity_Gym_B1F_Text_BridgetIntro:
-	.string "The Pokémon GYM of the highest level\n"
+	.string "The Pokémon Gym of the highest level\n"
 	.string "in the HOENN region…\p"
-	.string "That's the SOOTOPOLIS GYM.$"
+	.string "That's the SOOTOPOLIS Gym.$"
 
 SootopolisCity_Gym_B1F_Text_BridgetDefeat:
 	.string "What a high level you are!$"
 
 SootopolisCity_Gym_B1F_Text_BridgetPostBattle:
 	.string "Rather than being satisfied by being\n"
-	.string "in a strong GYM, I imagine training in\l"
+	.string "in a strong Gym, I imagine training in\l"
 	.string "other places will make you stronger.\l"
 	.string "But above all, it looks more fun.$"
 
@@ -164,7 +164,7 @@ SootopolisCity_Gym_B1F_Text_AnnikaDefeat:
 	.string "at my Pokémon?$"
 
 SootopolisCity_Gym_B1F_Text_AnnikaPostBattle:
-	.string "I came to this GYM because JUAN\n"
+	.string "I came to this Gym because JUAN\n"
 	.string "praised me for my darling Pokémon.\p"
 	.string "Oh, if only I'd met JUAN years ago\n"
 	.string "when I was younger…$"

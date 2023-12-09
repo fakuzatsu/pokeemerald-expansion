@@ -273,11 +273,11 @@ MauvilleCity_Gym_Text_GymGuideAdvice:
 	.string "Hey, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
 	.string "WATTSON, the Leader of MAUVILLE\n"
-	.string "GYM, uses ELECTRIC-type Pokémon.\p"
+	.string "Gym, uses ELECTRIC-type Pokémon.\p"
 	.string "If you challenge him with WATER-type\n"
 	.string "Pokémon, he'll zap them! Bzzt!\p"
 	.string "And, he's put in switch-controlled\n"
-	.string "doors all over his GYM! Eccentric!\p"
+	.string "doors all over his Gym! Eccentric!\p"
 	.string "Hey, go for it!$"
 
 MauvilleCity_Gym_Text_GymGuidePostVictory:
@@ -304,13 +304,13 @@ MauvilleCity_Gym_Text_ShawnDefeat:
 	.string "Unplugged and turned off…$"
 
 MauvilleCity_Gym_Text_ShawnPostBattle:
-	.string "WATTSON, our GYM Leader, has been\n"
+	.string "WATTSON, our Gym Leader, has been\n"
 	.string "around for a long, long time.\p"
 	.string "He was battling even before your\n"
 	.string "daddy was born, that tough coot.$"
 
 MauvilleCity_Gym_Text_BenIntro:
-	.string "This GYM's got puzzles!\n"
+	.string "This Gym's got puzzles!\n"
 	.string "Isn't it fun?$"
 
 MauvilleCity_Gym_Text_BenDefeat:
@@ -342,21 +342,21 @@ MauvilleCity_Gym_Text_AngeloDefeat:
 	.string "My eyes are frazzled…$"
 
 MauvilleCity_Gym_Text_AngeloPostBattle:
-	.string "MAUVILLE GYM's WATTSON has a shiny\n"
+	.string "MAUVILLE Gym's WATTSON has a shiny\n"
 	.string "forehead. It makes me happy!$"
 
 MauvilleCity_Gym_Text_WattsonIntro:
 	.string "I've given up on my plans to convert\n"
 	.string "the city, I have.\p"
 	.string "And so, I put my time into making\n"
-	.string "door traps in my GYM.\p"
+	.string "door traps in my Gym.\p"
 	.string "Oh? Now, what are you doing here?\p"
 	.string "What's that? You say you've gotten\n"
 	.string "past all my rigged doors?\p"
 	.string "Wahahahah!\n"
 	.string "Now, that is amusing!\p"
 	.string "Then, I, WATTSON, the Leader of\n"
-	.string "MAUVILLE GYM, shall electrify you!$"
+	.string "MAUVILLE Gym, shall electrify you!$"
 
 MauvilleCity_Gym_Text_WattsonDefeat:
 	.string "Wahahahah!\n"
@@ -385,7 +385,7 @@ MauvilleCity_Gym_Text_ExplainShockWave:
 	.string "… … … … … …$"
 
 MauvilleCity_Gym_Text_RegisteredWattson:
-	.string "Registered GYM Leader WATTSON\n"
+	.string "Registered Gym Leader WATTSON\n"
 	.string "in the PokéNav.$"
 
 MauvilleCity_Gym_Text_WattsonPostBattle:
@@ -397,10 +397,10 @@ MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor:
 	.string "Go forth and endeavor, youngster!$"
 
 MauvilleCity_Gym_Text_GymStatue:
-	.string "MAUVILLE CITY Pokémon GYM$"
+	.string "MAUVILLE CITY Pokémon Gym$"
 
 MauvilleCity_Gym_Text_GymStatueCertified:
-	.string "MAUVILLE CITY Pokémon GYM\p"
+	.string "MAUVILLE CITY Pokémon Gym\p"
 	.string "WATTSON's CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 

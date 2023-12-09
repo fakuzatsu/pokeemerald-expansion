@@ -1007,13 +1007,13 @@ SlateportCity_Text_OhYourPokemon:
 SlateportCity_Text_PleaseGiveItThisEffortRibbon:
 	.string "Went for it stupendously!\p"
 	.string "As its reward, please give it this\n"
-	.string "EFFORT RIBBON.$"
+	.string "EFFORT Ribbon.$"
 
 SlateportCity_Text_ReceivedEffortRibbon:
-	.string "{PLAYER} received the EFFORT RIBBON.$"
+	.string "{PLAYER} received the EFFORT Ribbon.$"
 
 SlateportCity_Text_PutEffortRibbonOnMon:
-	.string "{PLAYER} put the EFFORT RIBBON\n"
+	.string "{PLAYER} put the EFFORT Ribbon\n"
 	.string "on {STR_VAR_1}.$"
 
 SlateportCity_Text_GoForItLittleHarder:
@@ -1023,7 +1023,7 @@ SlateportCity_Text_GoForItLittleHarder:
 
 SlateportCity_Text_EffortRibbonLooksGoodOnIt:
 	.string "Oh! Your {STR_VAR_1}, that EFFORT\n"
-	.string "RIBBON looks good on it!$"
+	.string "Ribbon looks good on it!$"
 
 SlateportCity_Text_WonderIfLighthouseStartlesPokemon:
 	.string "The light of the lighthouse reaches\n"
@@ -1347,8 +1347,8 @@ SlateportCity_Text_ExplainBerries:
 SlateportCity_Text_ExplainBerryPowder:
 	.string "I recently had machines installed at\n"
 	.string "Pokémon CENTERS for crushing Berries.\p"
-	.string "The Berry CRUSH machines are at\n"
-	.string "the DIRECT CORNER upstairs.\p"
+	.string "The Berry Crush machines are at\n"
+	.string "the Direct CORNER upstairs.\p"
 	.string "Did you know?\p"
 	.string "Could you make Berry POWDER for\n"
 	.string "me using those machines?\p"

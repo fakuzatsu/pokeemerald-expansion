@@ -734,15 +734,15 @@ PetalburgCity_Text_AreYouRookieTrainer:
 	.string "A rookie Trainer?\p"
 	.string "Do you know what Pokémon TRAINERS\n"
 	.string "do when they reach a new town?\p"
-	.string "They first check what kind of GYM\n"
+	.string "They first check what kind of Gym\n"
 	.string "is in the town.$"
 
 PetalburgCity_Text_ThisIsPetalburgGym:
-	.string "See? This is PETALBURG CITY's GYM.$"
+	.string "See? This is PETALBURG CITY's Gym.$"
 
 PetalburgCity_Text_ThisIsGymSign:
-	.string "This is the GYM's sign. Look for it\n"
-	.string "whenever you're looking for a GYM.$"
+	.string "This is the Gym's sign. Look for it\n"
+	.string "whenever you're looking for a Gym.$"
 
 PetalburgCity_Text_WaterReflection:
 	.string "My face is reflected in the water.\p"
@@ -758,7 +758,7 @@ PetalburgCity_Text_FullPartyExplanation:
 	.string "But none of my Pokémon know SURF...$"
 
 PetalburgCity_Text_GymSign:
-	.string "PETALBURG CITY Pokémon GYM\n"
+	.string "PETALBURG CITY Pokémon Gym\n"
 	.string "Leader: NORMAN\l"
 	.string "“A man in pursuit of power!”$"
 

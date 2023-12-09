@@ -90,7 +90,7 @@ FallarborTown_Text_Azurill:
 
 FallarborTown_Text_HaveYouChallengedFlannery:
 	.string "Have you already challenged FLANNERY,\n"
-	.string "the Leader of LAVARIDGE GYM?\p"
+	.string "the Leader of LAVARIDGE Gym?\p"
 	.string "The girl's grandfather was famous.\n"
 	.string "He was one of the Elite Four in the\l"
 	.string "Pokémon LEAGUE at one point.\p"

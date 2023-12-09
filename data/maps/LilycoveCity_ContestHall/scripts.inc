@@ -368,7 +368,7 @@ LilycoveCity_ContestHall_Text_GiveItBestSmartAppeal:
 	.string "Let's appeal!$"
 
 LilycoveCity_ContestHall_Text_AreYouEnjoyingThisContest:
-	.string "JUDGE: Are you enjoying this Contest?\p"
+	.string "Judge: Are you enjoying this Contest?\p"
 	.string "Come back with three friends, and\n"
 	.string "all of you may enter a Contest!$"
 
@@ -425,7 +425,7 @@ LilycoveCity_ContestHall_Text_AreYouEnteringBeautyContest:
 	.string "Contest, too? Good luck!$"
 
 LilycoveCity_ContestHall_Text_EveryPokemonPristineBeauty:
-	.string "JUDGE: Ah, every Pokémon here is\n"
+	.string "Judge: Ah, every Pokémon here is\n"
 	.string "a model of pristine beauty!\p"
 	.string "Why, I almost forgot to score them!$"
 
@@ -445,7 +445,7 @@ LilycoveCity_ContestHall_Text_OverdidGrooming:
 
 LilycoveCity_ContestHall_Text_JudgeWontSeeAuroraBeam:
 	.string "This AURORA BEAM is so dazzling,\n"
-	.string "the JUDGE won't be able to see it.\p"
+	.string "the Judge won't be able to see it.\p"
 	.string "Uh, wait a second…\n"
 	.string "That'll be meaningless, then!$"
 
@@ -480,7 +480,7 @@ LilycoveCity_ContestHall_Text_InTheMiddleOfContest:
 	.string "counter and come out, okay?$"
 
 LilycoveCity_ContestHall_Text_SuchCharmingCuteAppeals:
-	.string "JUDGE: Oh, such charming and cute\n"
+	.string "Judge: Oh, such charming and cute\n"
 	.string "appeals!\p"
 	.string "Oh, my goodness! What a perfectly\n"
 	.string "adorable WATER SPORT appeal!$"
@@ -525,14 +525,14 @@ LilycoveCity_ContestHall_Text_WantCuteMonOfMyOwn:
 	.string "I'm going to go catch some!$"
 
 LilycoveCity_ContestHall_Text_BeautyContestStage:
-	.string "Beauty Contest STAGE\n"
+	.string "Beauty Contest Stage\n"
 	.string "BE ALLURED BY BEAUTIFUL Pokémon!$"
 
 LilycoveCity_ContestHall_Text_CuteContestStage:
-	.string "CUTENESS Contest STAGE\n"
+	.string "CUTENESS Contest Stage\n"
 	.string "BE CHARMED BY CUTE Pokémon!$"
 
 LilycoveCity_ContestHall_Text_SmartContestStage:
-	.string "SMARTNESS Contest STAGE\n"
+	.string "SMARTNESS Contest Stage\n"
 	.string "BE IMPRESSED BY SMART Pokémon!$"
 

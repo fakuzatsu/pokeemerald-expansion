@@ -1109,15 +1109,15 @@ RustboroCity_Text_SneakyLookingManWentAroundCorner:
 	.string "looking guy went around the corner.$"
 
 RustboroCity_Text_HaveYouChallengedGym:
-	.string "Have you taken the Pokémon GYM\n"
+	.string "Have you taken the Pokémon Gym\n"
 	.string "challenge?\p"
-	.string "When you get that shiny GYM BADGE\n"
+	.string "When you get that shiny Gym BADGE\n"
 	.string "in hand, I guess TRAINERS begin to\l"
 	.string "realize what is required of them.$"
 
 RustboroCity_Text_HeyThatsRustborosGymBadge:
-	.string "Hey, that's RUSTBORO's GYM BADGE!\p"
-	.string "Out of all the Pokémon GYM Badges,\n"
+	.string "Hey, that's RUSTBORO's Gym BADGE!\p"
+	.string "Out of all the Pokémon Gym Badges,\n"
 	.string "RUSTBORO's is the coolest, I'd say.$"
 
 RustboroCity_Text_YoureNewAroundHere:
@@ -1127,7 +1127,7 @@ RustboroCity_Text_YoureNewAroundHere:
 	.string "Pokémon Trainer's SCHOOL?$"
 
 RustboroCity_Text_GymLeaderIsntEasyWithFire:
-	.string "I challenged the GYM Leader, but…\p"
+	.string "I challenged the Gym Leader, but…\p"
 	.string "It's not going to be easy winning with\n"
 	.string "my FIRE-type Pokémon…\p"
 	.string "FIRE-type Pokémon don't match up\n"
@@ -1169,7 +1169,7 @@ RustboroCity_Text_PokemonChangeShape:
 RustboroCity_Text_TradePokemonGrowFast:
 	.string "A Pokémon you get in a trade from\n"
 	.string "someone grows fast.\p"
-	.string "But if you don't have certain GYM\n"
+	.string "But if you don't have certain Gym\n"
 	.string "Badges, it may not obey you…$"
 
 RustboroCity_Text_OutOfTheWay:
@@ -1316,7 +1316,7 @@ RustboroCity_Text_DevonCorpSign:
 	.string "it all.”$"
 
 RustboroCity_Text_GymSign:
-	.string "RUSTBORO CITY Pokémon GYM\n"
+	.string "RUSTBORO CITY Pokémon Gym\n"
 	.string "Leader: ROXANNE\p"
 	.string "“The ROCK-loving honors student!”$"
 

@@ -713,7 +713,7 @@ SecretBase_Text_RegistryInfo:
 
 SecretBase_Text_BattleTowerShield:
 	.string "A shield of {STR_VAR_2} that marks winning\n"
-	.string "{STR_VAR_1} times in a row at the Battle TOWER.$"
+	.string "{STR_VAR_1} times in a row at the Battle Tower.$"
 
 SecretBase_Text_ToyTV:
 	.string "A realistic toy TV. It could be easily\n"

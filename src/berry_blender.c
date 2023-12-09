@@ -268,7 +268,7 @@ static const u8 sText_WasMade[] = _(" was made!");
 static const u8 sText_Mister[] = _("MISTER");
 static const u8 sText_Laddie[] = _("LADDIE");
 static const u8 sText_Lassie[] = _("LASSIE");
-static const u8 sText_Master[] = _("MASTER");
+static const u8 sText_Master[] = _("Master");
 static const u8 sText_Dude[] = _("DUDE");
 static const u8 sText_Miss[] = _("MISS");
 

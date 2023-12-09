@@ -365,7 +365,7 @@ BattleFrontier_BattleDomePreBattleRoom_Text_SavingDataPleaseWait:
 
 BattleFrontier_BattleDomePreBattleRoom_Text_RecordLastMatch:
 	.string "Should I record your last match\n"
-	.string "on your FRONTIER PASS?$"
+	.string "on your Frontier PASS?$"
 
 BattleFrontier_BattleDomePreBattleRoom_Text_ReadyForTuckerSilver:
 	.string "Congratulations for advancing\n"

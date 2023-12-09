@@ -677,7 +677,7 @@ Route107_Text_DeniseDefeated:
 
 Route107_Text_DenisePostBattle:
 	.string "A weird saying is getting really\n"
-	.string "trendy at DEWFORD HALL.$"
+	.string "trendy at DEWFORD Hall.$"
 
 Route107_Text_BethIntro:
 	.string "Did you want to battle me?\n"
@@ -1113,7 +1113,7 @@ Route110_Text_JasmineDefeated:
 	.string "I'm worried about muscle cramps…$"
 
 Route110_Text_JasminePostBattle:
-	.string "Oh, you have some GYM Badges?\n"
+	.string "Oh, you have some Gym Badges?\n"
 	.string "No wonder you're so strong!$"
 
 Route110_Text_EdwardIntro:
@@ -2169,7 +2169,7 @@ Route115_Text_HelenePostBattle:
 	.string "I rarely meet anyone who's better\n"
 	.string "than me…\p"
 	.string "I get it now!\n"
-	.string "You're a GYM Leader, aren't you?$"
+	.string "You're a Gym Leader, aren't you?$"
 
 Route115_Text_AlixIntro:
 	.string "Our eyes met!\n"
@@ -3172,7 +3172,7 @@ Route121_Text_VanessaDefeat:
 Route121_Text_VanessaPostBattle:
 	.string "I'm going to a Contest in LILYCOVE.\p"
 	.string "My Pokémon should have no problem\n"
-	.string "sweeping the MASTER CLASS.$"
+	.string "sweeping the Master CLASS.$"
 
 Route121_Text_WalterIntro:
 	.string "With my Pokémon, I have traveled\n"
@@ -3374,7 +3374,7 @@ Route123_Text_WendyPostBattle:
 
 Route123_Text_BraxtonIntro:
 	.string "You seem to have a big collection\n"
-	.string "of GYM Badges.\p"
+	.string "of Gym Badges.\p"
 	.string "Let me see if you're actually worthy of\n"
 	.string "those Badges!$"
 
@@ -3394,7 +3394,7 @@ Route123_Text_VioletDefeat:
 	.string "I smell the bitter scent of misery…$"
 
 Route123_Text_VioletPostBattle:
-	.string "The Berry MASTER's garden is filled\n"
+	.string "The Berry Master's garden is filled\n"
 	.string "with uplifting fragrances.$"
 
 Route123_Text_CameronIntro:
@@ -4262,7 +4262,7 @@ Route128_Text_WayneDefeat:
 Route128_Text_WaynePostBattle:
 	.string "Awww, phooey!\p"
 	.string "My Pokémon knows WATERFALL, but\n"
-	.string "I don't have the SOOTOPOLIS GYM BADGE!$"
+	.string "I don't have the SOOTOPOLIS Gym BADGE!$"
 
 Route128_Text_HarrisonIntro:
 	.string "You're looking awfully tough.\n"

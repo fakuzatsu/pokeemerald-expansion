@@ -472,11 +472,11 @@ BattleFrontier_BattleTowerBattleRoom_Text_ReadyFor7thOpponent:
 
 BattleFrontier_BattleTowerBattleRoom_Text_RecordYourBattle:
 	.string "Record your battle on your\n"
-	.string "FRONTIER PASS?$"
+	.string "Frontier PASS?$"
 
 BattleFrontier_BattleTowerLobby_Text_BattleRecordedOnPass:
 	.string "{PLAYER}'s battle was recorded\n"
-	.string "on the FRONTIER PASS.$"
+	.string "on the Frontier PASS.$"
 
 BattleFrontier_BattleTowerBattleRoom_Text_SaveAndQuitGame:
 	.string "Would you like to save and\n"
@@ -488,7 +488,7 @@ BattleFrontier_BattleTowerBattleRoom_Text_SavingPleaseWait:
 
 BattleFrontier_BattleTowerBattleRoom_Text_CancelYourChallenge:
 	.string "Would you like to cancel your Battle\n"
-	.string "ROOM challenge?$"
+	.string "Room challenge?$"
 
 BattleFrontier_BattleTowerBattleRoom_Text_RecordCouldntBeSaved::
 	.string "There was an error of some sort.\n"
@@ -508,7 +508,7 @@ BattleFrontier_BattleTowerBattleRoom_Text_GreetingsImAnabel:
 	.string "Greetings…\n"
 	.string "My name is ANABEL.\p"
 	.string "I am the Salon Maiden, and I am in\n"
-	.string "charge of running the Battle TOWER…\p"
+	.string "charge of running the Battle Tower…\p"
 	.string "I have heard several rumors\n"
 	.string "about you…\p"
 	.string "In all honesty, what I have heard does\n"
@@ -522,12 +522,12 @@ BattleFrontier_BattleTowerBattleRoom_Text_LetMeSeeYourTalent:
 
 BattleFrontier_BattleTowerBattleRoom_Text_AnabelTalentShallBeRecognized:
 	.string "ANABEL: Fufufu, nicely done…\p"
-	.string "Your FRONTIER PASS, please…\n"
+	.string "Your Frontier PASS, please…\n"
 	.string "Your talent shall be recognized.$"
 
 BattleFrontier_BattleTowerBattleRoom_Text_ReceivedAbilitySymbol:
 	.string "The Ability Symbol was embossed on\n"
-	.string "the FRONTIER PASS!$"
+	.string "the Frontier PASS!$"
 
 BattleFrontier_BattleTowerBattleRoom_Text_UntilNextTime:
 	.string "… … … … … …\p"
@@ -553,7 +553,7 @@ BattleFrontier_BattleTowerBattleRoom_Text_LetsBeginShallWe:
 
 BattleFrontier_BattleTowerBattleRoom_Text_AnabelCongratsYourPassPlease:
 	.string "ANABEL: Fufu, congratulations…\n"
-	.string "Your FRONTIER PASS, please…$"
+	.string "Your Frontier PASS, please…$"
 
 BattleFrontier_BattleTowerBattleRoom_Text_AbilitySymbolTookGoldenShine:
 	.string "The Ability Symbol took on\n"

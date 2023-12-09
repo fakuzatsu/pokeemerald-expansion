@@ -77,7 +77,7 @@ RustboroCity_Mart_Text_BuyingHealsInCaseOfShroomish:
 RustboroCity_Mart_Text_ShouldBuySuperPotionsInstead:
 	.string "My Pokémon evolved.\n"
 	.string "It has a lot of HP now.\p"
-	.string "I should buy SUPER POTIONS for it\n"
+	.string "I should buy Super POTIONS for it\n"
 	.string "instead of ordinary POTIONS.$"
 
 RustboroCity_Mart_Text_GettingEscapeRopeJustInCase:

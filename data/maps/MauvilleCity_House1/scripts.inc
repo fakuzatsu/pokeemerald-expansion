@@ -28,7 +28,7 @@ MauvilleCity_House1_Text_ImRockSmashDudeTakeThis:
 	.string "Anyways, your Pokémon look pretty\n"
 	.string "strong.\p"
 	.string "I like that!\n"
-	.string "Here, take this HIDDEN MACHINE!$"
+	.string "Here, take this Hidden MACHINE!$"
 
 MauvilleCity_House1_Text_ExplainRockSmash:
 	.string "That HM contains ROCK SMASH.\p"

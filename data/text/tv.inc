@@ -121,7 +121,7 @@ BattleFrontier_BattleTowerLobby_Text_HowDidBattleTowerTurnOut::
 	.string "Thank you!\l"
 	.string "Then, uh…\p"
 	.string "How did things turn out in\n"
-	.string "the Battle TOWER today?\p"
+	.string "the Battle Tower today?\p"
 	.string "Were you satisfied with the battle?\n"
 	.string "Or are you unhappy?$"
 
@@ -129,7 +129,7 @@ BattleFrontier_BattleTowerLobby_Text_SorryWeDisturbedYou::
 	.string "Oh…\n"
 	.string "Sorry we disturbed you.\p"
 	.string "Please give us an interview the next\n"
-	.string "time you visit the Battle TOWER.$"
+	.string "time you visit the Battle Tower.$"
 
 BattleFrontier_BattleTowerLobby_Text_ObviousYouHadGreatBattle::
 	.string "Well, of course!\p"
@@ -170,7 +170,7 @@ BravoTrainerBattleTower_Text_Intro::
 	.string "Yeah!\n"
 	.string "It's BRAVO Trainer time!\p"
 	.string "Today, we're going to profile {STR_VAR_1},\n"
-	.string "who took the Battle TOWER challenge!\p"
+	.string "who took the Battle Tower challenge!\p"
 	.string "For the challenge, {STR_VAR_1} entered\n"
 	.string "one wicked {STR_VAR_2}.$"
 
@@ -979,7 +979,7 @@ gTVPokemonTodaySuccessfulText04::
 gTVPokemonTodaySuccessfulText05::
 	.string "Big Sis: {STR_VAR_1}'s {STR_VAR_2} is a\n"
 	.string "memorable Pokémon because it took an\l"
-	.string "invaluable MASTER Ball to catch!\p"
+	.string "invaluable Master Ball to catch!\p"
 	.string "Big Bro: Wow! That's mega-awesome!\p"
 	.string "Big Sis: {STR_VAR_1} must have really\n"
 	.string "wanted that {STR_VAR_2}, for sure!$"
@@ -1209,17 +1209,17 @@ gTVTodaysRivalTrainerText02::
 
 gTVTodaysRivalTrainerText03::
 	.string "Our rival hasn't obtained a single\n"
-	.string "Battle FRONTIER Symbol yet.$"
+	.string "Battle Frontier Symbol yet.$"
 
 gTVTodaysRivalTrainerText04::
-	.string "Let's see how many Battle FRONTIER\n"
+	.string "Let's see how many Battle Frontier\n"
 	.string "Symbols our rival has.\p"
 	.string "Gold Symbols: {STR_VAR_1}!\n"
 	.string "Silver Symbols: {STR_VAR_2}!$"
 
 gTVTodaysRivalTrainerText05::
 	.string "Our rival has collected {STR_VAR_1} Battle\n"
-	.string "Point(s) at the Battle FRONTIER.$"
+	.string "Point(s) at the Battle Frontier.$"
 
 gTVTodaysRivalTrainerText06::
 	.string "So, how did you measure up in\n"
@@ -1773,103 +1773,103 @@ TVSpotTheCuties_Text_RibbonIntro::
 	.string "RIBBONS worn by {STR_VAR_2}.$"
 
 TVSpotTheCuties_Text_RibbonChampion::
-	.string "The Champion RIBBON is especially\n"
+	.string "The Champion Ribbon is especially\n"
 	.string "fetching.\p"
 	.string "{STR_VAR_2} received it upon entering\n"
-	.string "the HALL OF FAME.\p"
+	.string "the Hall of Fame.\p"
 	.string "It verily draws out the bravery\n"
 	.string "of {STR_VAR_2}.\p"
-	.string "{STR_VAR_2} and the CHAMP RIBBON!\n"
+	.string "{STR_VAR_2} and the CHAMP Ribbon!\n"
 	.string "The combination is super effective!$"
 
 TVSpotTheCuties_Text_RibbonCool::
-	.string "The COOL RIBBON is especially\n"
+	.string "The COOL Ribbon is especially\n"
 	.string "fetching.\p"
 	.string "{STR_VAR_2} received it for winning\n"
 	.string "a COOL Contest.\p"
 	.string "It verily draws out the coolness\n"
 	.string "of {STR_VAR_2}.\p"
-	.string "{STR_VAR_2} and the COOL RIBBON!\n"
+	.string "{STR_VAR_2} and the COOL Ribbon!\n"
 	.string "The combination is super effective!$"
 
 TVSpotTheCuties_Text_RibbonBeauty::
-	.string "The Beauty RIBBON is especially\n"
+	.string "The Beauty Ribbon is especially\n"
 	.string "fetching.\p"
 	.string "{STR_VAR_2} received it for winning\n"
 	.string "a Beauty Contest.\p"
 	.string "It verily draws out the beauty\n"
 	.string "of {STR_VAR_2}.\p"
-	.string "{STR_VAR_2} and the Beauty RIBBON!\n"
+	.string "{STR_VAR_2} and the Beauty Ribbon!\n"
 	.string "The combination is super effective!$"
 
 TVSpotTheCuties_Text_RibbonCute::
-	.string "The CUTE RIBBON is especially\n"
+	.string "The CUTE Ribbon is especially\n"
 	.string "fetching.\p"
 	.string "{STR_VAR_2} received it for winning\n"
 	.string "a CUTE Contest.\p"
 	.string "It verily draws out the cuteness\n"
 	.string "of {STR_VAR_2}.\p"
-	.string "{STR_VAR_2} and the CUTE RIBBON!\n"
+	.string "{STR_VAR_2} and the CUTE Ribbon!\n"
 	.string "The combination is super effective!$"
 
 TVSpotTheCuties_Text_RibbonSmart::
-	.string "The SMART RIBBON is especially\n"
+	.string "The SMART Ribbon is especially\n"
 	.string "fetching.\p"
 	.string "{STR_VAR_2} received it for winning\n"
 	.string "a SMART Contest.\p"
 	.string "It verily draws out the smartness\n"
 	.string "of {STR_VAR_2}.\p"
-	.string "{STR_VAR_2} and the SMART RIBBON!\n"
+	.string "{STR_VAR_2} and the SMART Ribbon!\n"
 	.string "The combination is super effective!$"
 
 TVSpotTheCuties_Text_RibbonTough::
-	.string "The TOUGH RIBBON is especially\n"
+	.string "The TOUGH Ribbon is especially\n"
 	.string "fetching.\p"
 	.string "{STR_VAR_2} received it for winning\n"
 	.string "a TOUGH Contest.\p"
 	.string "It verily draws out the toughness\n"
 	.string "of {STR_VAR_2}.\p"
-	.string "{STR_VAR_2} and the TOUGH RIBBON!\n"
+	.string "{STR_VAR_2} and the TOUGH Ribbon!\n"
 	.string "The combination is super effective!$"
 
 TVSpotTheCuties_Text_RibbonWinning::
-	.string "The WINNING RIBBON is especially\n"
+	.string "The WINNING Ribbon is especially\n"
 	.string "fetching.\p"
 	.string "{STR_VAR_2} received it for its feats\n"
-	.string "at the Battle TOWER.\p"
+	.string "at the Battle Tower.\p"
 	.string "It verily draws out the mightiness\n"
 	.string "of {STR_VAR_2}.\p"
-	.string "{STR_VAR_2} and the WINNING RIBBON!\n"
+	.string "{STR_VAR_2} and the WINNING Ribbon!\n"
 	.string "The combination is super effective!$"
 
 TVSpotTheCuties_Text_RibbonVictory::
-	.string "The Victory RIBBON is especially\n"
+	.string "The Victory Ribbon is especially\n"
 	.string "fetching.\p"
 	.string "{STR_VAR_2} received it for its feats\n"
-	.string "at the Battle TOWER.\p"
+	.string "at the Battle Tower.\p"
 	.string "It verily draws out the incredible\n"
 	.string "mightiness of {STR_VAR_2}.\p"
-	.string "{STR_VAR_2} and the Victory RIBBON!\n"
+	.string "{STR_VAR_2} and the Victory Ribbon!\n"
 	.string "The combination is super effective!$"
 
 TVSpotTheCuties_Text_RibbonArtist::
-	.string "The ARTIST RIBBON is especially\n"
+	.string "The ARTIST Ribbon is especially\n"
 	.string "fetching.\p"
 	.string "{STR_VAR_2} received it for being\n"
 	.string "the model for an artist.\p"
 	.string "It verily draws out the pop-star charm\n"
 	.string "of {STR_VAR_2}.\p"
-	.string "{STR_VAR_2} and the ARTIST RIBBON!\n"
+	.string "{STR_VAR_2} and the ARTIST Ribbon!\n"
 	.string "The combination is super effective!$"
 
 TVSpotTheCuties_Text_RibbonEffort::
-	.string "The Hard Worker RIBBON is\n"
+	.string "The Hard Worker Ribbon is\n"
 	.string "especially fetching.\p"
 	.string "{STR_VAR_2} received it for being\n"
 	.string "an especially dedicated worker.\p"
 	.string "It verily draws out the determination\n"
 	.string "of {STR_VAR_2}.\p"
-	.string "{STR_VAR_2} and the Hard Worker RIBBON!\n"
+	.string "{STR_VAR_2} and the Hard Worker Ribbon!\n"
 	.string "The combination is super effective!$"
 
 TVSpotTheCuties_Text_Outro::
@@ -1883,34 +1883,34 @@ gTVPokemonNewsBattleFrontierText00::
 	.string "Greetings!\n"
 	.string "It's time for Pokémon NEWS.\p"
 	.string "We've got some uplifting news from\n"
-	.string "the Battle FRONTIER.$"
+	.string "the Battle Frontier.$"
 
 gTVPokemonNewsBattleFrontierText01::
 	.string "The Trainer {STR_VAR_1} set a new\n"
 	.string "{STR_VAR_2}-win-streak record while on\l"
-	.string "the Battle TOWER's SINGLE Battle\l"
-	.string "ROOM challenge.\p"
+	.string "the Battle Tower's SINGLE Battle\l"
+	.string "Room challenge.\p"
 	.string "Here's to {STR_VAR_1}!$"
 
 gTVPokemonNewsBattleFrontierText02::
 	.string "The Trainer {STR_VAR_1} set a new\n"
 	.string "{STR_VAR_2}-win-streak record while on\l"
-	.string "the Battle TOWER's DOUBLE Battle\l"
-	.string "ROOM challenge.\p"
+	.string "the Battle Tower's DOUBLE Battle\l"
+	.string "Room challenge.\p"
 	.string "Here's to {STR_VAR_1}!$"
 
 gTVPokemonNewsBattleFrontierText03::
 	.string "The Trainer {STR_VAR_1} set a new\n"
 	.string "{STR_VAR_2}-win-streak record while on\l"
-	.string "the Battle TOWER's MULTI Battle\l"
-	.string "ROOM challenge.\p"
+	.string "the Battle Tower's MULTI Battle\l"
+	.string "Room challenge.\p"
 	.string "Here's to {STR_VAR_1}!$"
 
 gTVPokemonNewsBattleFrontierText04::
 	.string "The Trainer {STR_VAR_1} set a new\n"
 	.string "{STR_VAR_2}-win-streak record while on\l"
-	.string "the Battle TOWER's LINK MULTI Battle\l"
-	.string "ROOM challenge.\p"
+	.string "the Battle Tower's LINK MULTI Battle\l"
+	.string "Room challenge.\p"
 	.string "Here's to {STR_VAR_1}!$"
 
 gTVPokemonNewsBattleFrontierText05::
@@ -1959,14 +1959,14 @@ gTVPokemonNewsBattleFrontierText11::
 	.string "The Trainer {STR_VAR_1} set a new\n"
 	.string "{STR_VAR_2}-win-streak record while on\l"
 	.string "the Battle PALACE's SINGLE Battle\l"
-	.string "HALL challenge.\p"
+	.string "Hall challenge.\p"
 	.string "Here's to {STR_VAR_1}!$"
 
 gTVPokemonNewsBattleFrontierText12::
 	.string "The Trainer {STR_VAR_1} set a new\n"
 	.string "{STR_VAR_2}-win-streak record while on\l"
 	.string "the Battle PALACE's DOUBLE Battle\l"
-	.string "HALL challenge.\p"
+	.string "Hall challenge.\p"
 	.string "Here's to {STR_VAR_1}!$"
 
 gTVPokemonNewsBattleFrontierText13::
@@ -2621,7 +2621,7 @@ ContestLiveUpdates_Text_LostBySmallMargin::
 	.string "were weeping over this outcome.$"
 
 ContestLiveUpdates_Text_RepeatedAppeals::
-	.string "It disappointed the JUDGE by\n"
+	.string "It disappointed the Judge by\n"
 	.string "repeating the same appeals.\p"
 	.string "It's an unforgivable error in any\n"
 	.string "Contest, and the Pokémon paid.\p"

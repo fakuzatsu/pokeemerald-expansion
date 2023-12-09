@@ -920,7 +920,7 @@ gText_BigHoleInTheWall::
 
 gText_SorryWirelessClubAdjustments::
 	.string "I'm terribly sorry.\n"
-	.string "The Pokémon WIRELESS CLUB is\l"
+	.string "The Pokémon Wireless CLUB is\l"
 	.string "undergoing adjustments now.$"
 
 gText_UndergoingAdjustments::

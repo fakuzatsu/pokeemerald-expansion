@@ -414,7 +414,7 @@ SlateportCity_Harbor_Text_LilycoveItIs:
 	.string "LILYCOVE CITY it is, then!$"
 
 SlateportCity_Harbor_Text_BattleFrontierItIs:
-	.string "Battle FRONTIER it is, then!$"
+	.string "Battle Frontier it is, then!$"
 
 SlateportCity_Harbor_Text_PleaseBoardFerry:
 	.string "Please board the ferry and wait for\n"

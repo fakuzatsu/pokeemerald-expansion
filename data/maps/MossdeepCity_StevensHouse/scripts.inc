@@ -156,7 +156,7 @@ MossdeepCity_StevensHouse_Text_YouveEarnedHMDive:
 	.string "but this is my home.\p"
 	.string "Thank you for all that you've done.\p"
 	.string "This is my token of appreciation.\n"
-	.string "It's the HIDDEN MACHINE DIVE.\p"
+	.string "It's the Hidden MACHINE DIVE.\p"
 	.string "No need to be shy--you've earned\n"
 	.string "this HM.$"
 

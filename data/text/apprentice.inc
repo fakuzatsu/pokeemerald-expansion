@@ -86,7 +86,7 @@ gText_ApprenticeWhichLevelMode0::
 	.string "Oh… I'm sorry…\n"
 	.string "I'm so happy, I'm crying…\p"
 	.string "Um… Then please tell me!\n"
-	.string "It's about the Battle TOWER.\p"
+	.string "It's about the Battle Tower.\p"
 	.string "Which would be better for me: Level 50\n"
 	.string "or the Open Level?$"
 
@@ -117,7 +117,7 @@ gText_ApprenticeRejectTeaching1::
 gText_ApprenticeWhichLevelMode1::
 	.string "Yay! Great!\p"
 	.string "The first thing I wanted to ask you is\n"
-	.string "about the Battle TOWER!\p"
+	.string "about the Battle Tower!\p"
 	.string "The Level 50 and Open Level Rooms…\n"
 	.string "Which would be perfect for me?$"
 
@@ -145,7 +145,7 @@ gText_ApprenticeRejectTeaching2::
 gText_ApprenticeWhichLevelMode2::
 	.string "Thank you!\n"
 	.string "Here's my first question right away!\p"
-	.string "The Battle TOWER has two levels,\n"
+	.string "The Battle Tower has two levels,\n"
 	.string "Level 50 and Open Level, right?\p"
 	.string "Which level do you think is more\n"
 	.string "suitable for me?$"
@@ -197,7 +197,7 @@ gText_ApprenticeWhichLevelMode3::
 	.string "I… I'm so happy…\p"
 	.string "What I want to ask you is really\n"
 	.string "trivial, but I can't decide…\p"
-	.string "At the Battle TOWER, they let you\n"
+	.string "At the Battle Tower, they let you\n"
 	.string "choose Level 50 or Open Level.\p"
 	.string "Which course do you think even I may\n"
 	.string "have a chance at?$"
@@ -218,7 +218,7 @@ gText_ApprenticePleaseTeach4::
 	.string "I'm {STR_VAR_1}!\n"
 	.string "I'll be your friend!\p"
 	.string "Did you know?\p"
-	.string "You can't win at the Battle FRONTIER\n"
+	.string "You can't win at the Battle Frontier\n"
 	.string "if all you know is what they teach at\l"
 	.string "the Trainer's SCHOOL.\p"
 	.string "I'm willing to listen to your advice.\n"
@@ -232,7 +232,7 @@ gText_ApprenticeRejectTeaching4::
 gText_ApprenticeWhichLevelMode4::
 	.string "Okay, so there is this something.\n"
 	.string "I want you to decide it for me.\p"
-	.string "You know that the Battle TOWER has\n"
+	.string "You know that the Battle Tower has\n"
 	.string "Level 50 and Open Level Rooms?\p"
 	.string "Which do you think would be good\n"
 	.string "for me, {PLAYER}{KUN}?$"
@@ -270,7 +270,7 @@ gText_ApprenticeRejectTeaching5::
 gText_ApprenticeWhichLevelMode5::
 	.string "Thank you! That's more like it!\n"
 	.string "So, let's start with an easy one!\p"
-	.string "You know about the Battle TOWER's\n"
+	.string "You know about the Battle Tower's\n"
 	.string "two courses, right?\l"
 	.string "You know, Level 50 and Open Level.\p"
 	.string "Me being a busy guy, which one should\n"
@@ -308,7 +308,7 @@ gText_ApprenticeWhichLevelMode6::
 	.string "…Oh, I thought of something!\p"
 	.string "Drum roll, please!\n"
 	.string "The question I have is…\p"
-	.string "If I were to take a Battle TOWER\n"
+	.string "If I were to take a Battle Tower\n"
 	.string "challenge, which way should I go?\p"
 	.string "Level 50 or Open Level?\n"
 	.string "Which suits me more?$"
@@ -348,7 +348,7 @@ gText_ApprenticeWhichLevelMode7::
 	.string "Oh… I'm delighted!\p"
 	.string "I don't wish to waste your time,\n"
 	.string "so please advise me on this.\p"
-	.string "I plan to take a Battle TOWER\n"
+	.string "I plan to take a Battle Tower\n"
 	.string "challenge soon.\p"
 	.string "However, there are two levels…\p"
 	.string "Which would be most suitable for me?\n"
@@ -388,7 +388,7 @@ gText_ApprenticeWhichLevelMode8::
 	.string "I won't be able to sleep tonight…\n"
 	.string "Thank you ever so much!\p"
 	.string "Then, here's my question!\p"
-	.string "At the Battle TOWER, what is right\n"
+	.string "At the Battle Tower, what is right\n"
 	.string "for me, Level 50 or Open Level?$"
 
 gText_ApprenticeLevelModeThanks8::
@@ -421,7 +421,7 @@ gText_ApprenticeWhichLevelMode9::
 	.string "Oh, yeah! That's a solid reply!\n"
 	.string "Excellent, I might add!\p"
 	.string "So how about a first piece of advice\n"
-	.string "on the Battle TOWER?\p"
+	.string "on the Battle Tower?\p"
 	.string "If I were to go, what would be better?\n"
 	.string "Level 50 or Open Level?$"
 
@@ -460,7 +460,7 @@ gText_ApprenticeWhichLevelMode10::
 	.string "Of course I'm lying again!\n"
 	.string "But… Thank you, master!\p"
 	.string "You know how there's Level 50 and\n"
-	.string "Open Level at the Battle TOWER?\p"
+	.string "Open Level at the Battle Tower?\p"
 	.string "I'm having trouble deciding which\n"
 	.string "level I should challenge…\p"
 	.string "Can you decide for me, master?$"
@@ -502,7 +502,7 @@ gText_ApprenticeWhichLevelMode11::
 	.string "{PLAYER}, you've got the spirit!\p"
 	.string "So here's my first question\n"
 	.string "that begs your suggestion!\p"
-	.string "It's about the Battle TOWER,\n"
+	.string "It's about the Battle Tower,\n"
 	.string "and it hinges on my power!\p"
 	.string "Level 50 and Open Level there be,\n"
 	.string "which is the one that's good for me?$"
@@ -538,7 +538,7 @@ gText_ApprenticeRejectTeaching12::
 gText_ApprenticeWhichLevelMode12::
 	.string "Lucky, yeah, woohoo!\n"
 	.string "Should I pop a question to you?\p"
-	.string "Since we're near the Battle TOWER,\n"
+	.string "Since we're near the Battle Tower,\n"
 	.string "how about a question about its power?\p"
 	.string "Of the choices you see,\n"
 	.string "which is the right one for me?$"
@@ -574,7 +574,7 @@ gText_ApprenticeWhichLevelMode13::
 	.string "Thank you. Mighty good of you!\n"
 	.string "…Cough! Cough!\p"
 	.string "Oogh, I have to toughen up quick…\p"
-	.string "I'll be heading off to the Battle TOWER\n"
+	.string "I'll be heading off to the Battle Tower\n"
 	.string "right away, but what would be better\l"
 	.string "for me? Level 50 or Open Level?$"
 
@@ -593,7 +593,7 @@ gText_ApprenticePleaseTeach14::
 	.string "I'm really embarrassed to say this,\n"
 	.string "but I explore ancient ruins and such.\p"
 	.string "I'm even more embarrassed to admit\n"
-	.string "I'm interested in the Battle FRONTIER.\p"
+	.string "I'm interested in the Battle Frontier.\p"
 	.string "{PLAYER}{KUN}, you have a reputation as\n"
 	.string "a tough Trainer…\p"
 	.string "It's hard for me to say this,\n"
@@ -613,7 +613,7 @@ gText_ApprenticeWhichLevelMode14::
 	.string "It makes me all flustered.\p"
 	.string "Please, answer me without looking\n"
 	.string "at my eyes.\p"
-	.string "At the Battle TOWER…\n"
+	.string "At the Battle Tower…\n"
 	.string "Which level should I attempt?$"
 
 gText_ApprenticeLevelModeThanks14::
@@ -650,7 +650,7 @@ gText_ApprenticeWhichLevelMode15::
 	.string "I don't wish to celebrate prematurely.\p"
 	.string "If it is true, I apologize.\n"
 	.string "But now, I need your advice.\p"
-	.string "If I were to enter the Battle TOWER,\n"
+	.string "If I were to enter the Battle Tower,\n"
 	.string "what would be worthy of me?\l"
 	.string "Level 50 or Open Level?$"
 

@@ -209,10 +209,10 @@ BattleFrontier_Lounge3_Text_YouLookToughExplainGambling::
 	.string "Listen, I have this proposition.\p"
 	.string "We have a little group going here,\n"
 	.string "and we play a little game with what\l"
-	.string "goes on in the Battle FRONTIER.\p"
+	.string "goes on in the Battle Frontier.\p"
 	.string "The rules are really simple.\p"
 	.string "First, we pick one of the facilities\n"
-	.string "in the Battle FRONTIER.\p"
+	.string "in the Battle Frontier.\p"
 	.string "Then, we each pick a different Trainer\n"
 	.string "who's taking that facility's challenge,\l"
 	.string "and bet with our Battle Points.\p"
@@ -225,21 +225,21 @@ BattleFrontier_Lounge3_Text_YouLookToughExplainGambling::
 BattleFrontier_Lounge3_Text_ChallengeBattleTowerSingle::
 	.string "What I'm looking for is a Trainer who's\n"
 	.string "going to be challenging the Battle\l"
-	.string "TOWER's SINGLE Battle ROOMS.\p"
+	.string "Tower's SINGLE Battle ROOMS.\p"
 	.string "But so far, I haven't seen a Trainer\n"
 	.string "that has that winning quality.$"
 
 BattleFrontier_Lounge3_Text_ChallengeBattleTowerDouble::
 	.string "What I'm looking for is a Trainer who's\n"
 	.string "going to be challenging the Battle\l"
-	.string "TOWER's DOUBLE Battle ROOMS.\p"
+	.string "Tower's DOUBLE Battle ROOMS.\p"
 	.string "But so far, I haven't seen a Trainer\n"
 	.string "that has that winning quality.$"
 
 BattleFrontier_Lounge3_Text_ChallengeBattleTowerMulti::
 	.string "What I'm looking for is a Trainer who's\n"
 	.string "going to be challenging the Battle\l"
-	.string "TOWER's MULTI Battle ROOMS.\p"
+	.string "Tower's MULTI Battle ROOMS.\p"
 	.string "But so far, I haven't seen a Trainer\n"
 	.string "that has that winning quality.$"
 
@@ -333,21 +333,21 @@ BattleFrontier_Lounge3_Text_ThanksOffYouGo::
 	.string "So, off you go!$"
 
 BattleFrontier_Lounge3_Text_GetToBattleTowerSingle::
-	.string "Get to the Battle TOWER's\n"
+	.string "Get to the Battle Tower's\n"
 	.string "SINGLE Battle ROOMS pronto!\p"
 	.string "It's a must-win situation!\n"
 	.string "Don't blow your chance!\l"
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_GetToBattleTowerDouble::
-	.string "Get to the Battle TOWER's\n"
+	.string "Get to the Battle Tower's\n"
 	.string "DOUBLE Battle ROOMS pronto!\p"
 	.string "It's a must-win situation!\n"
 	.string "Don't blow your chance!\l"
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_GetToBattleTowerMulti::
-	.string "Get to the Battle TOWER's\n"
+	.string "Get to the Battle Tower's\n"
 	.string "MULTI Battle ROOMS pronto!\p"
 	.string "It's a must-win situation!\n"
 	.string "Don't blow your chance!\l"

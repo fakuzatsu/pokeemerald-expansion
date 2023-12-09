@@ -35,12 +35,12 @@ Route111_Text_WhatColorBerriesToLookForToday:
 	.string "for today?$"
 
 Route114_Text_LoveUsingBerryCrushShareBerry:
-	.string "I love using the Berry CRUSH machine,\n"
+	.string "I love using the Berry Crush machine,\n"
 	.string "so I'm collecting Berries.\p"
 	.string "I'll share one with you, if you'd like.$"
 
 Route114_Text_TryBerryCrushWithFriends:
-	.string "You should try the Berry CRUSH\n"
+	.string "You should try the Berry Crush\n"
 	.string "machine with your friends.$"
 
 Route114_Text_FunToThinkAboutBerries:
@@ -70,7 +70,7 @@ Route120_Text_BerryIsRareRaiseItWithCare:
 
 Route120_Text_IllGetMoreBerriesFromBerryMaster:
 	.string "I'll get more Berries from\n"
-	.string "the Berry MASTER.$"
+	.string "the Berry Master.$"
 
 LilycoveCity_Text_BerrySuitsYou:
 	.string "When it gets right down to it…\p"
@@ -89,7 +89,7 @@ LilycoveCity_Text_PokeblocksSuitPokemon:
 	.string "{POKEBLOCK}S perfectly suit Pokémon.$"
 
 Route123_BerryMastersHouse_Text_YoureDeservingOfBerry:
-	.string "You may call me the Berry MASTER.\p"
+	.string "You may call me the Berry Master.\p"
 	.string "I dream of filling the world with\n"
 	.string "beautiful flowers, so I raise Berries\l"
 	.string "and hand them out to everyone.\p"

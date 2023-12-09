@@ -1415,7 +1415,7 @@ LilycoveCity_ContestLobby_Text_ExplainContests:
 	.string "Secondary judging features appeals\n"
 	.string "by the Pokémon using their moves.\p"
 	.string "Plan appeals carefully to earn the\n"
-	.string "most attention of the JUDGE and\l"
+	.string "most attention of the Judge and\l"
 	.string "excite the audience.\l"
 	.string "Do your best to stand out.\p"
 	.string "The primary and secondary scores are\n"
@@ -1433,19 +1433,19 @@ LilycoveCity_ContestLobby_Text_ExplainContestTypes:
 LilycoveCity_ContestLobby_Text_ExplainContestRanks:
 	.string "There are four ranks of Pokémon\n"
 	.string "CONTESTS.\p"
-	.string "Normal, SUPER, HYPER, and MASTER\n"
+	.string "Normal, Super, Hyper, and Master\n"
 	.string "are the four ranks.\p"
 	.string "In the Normal Rank, any Pokémon may\n"
 	.string "enter.\p"
 	.string "Any Pokémon that won a Normal Rank\n"
-	.string "Contest may move up to the SUPER Rank\l"
+	.string "Contest may move up to the Super Rank\l"
 	.string "in the same category.\p"
-	.string "In the same way, a SUPER Rank winner\n"
-	.string "can move up to the HYPER Rank, and\l"
-	.string "a HYPER Rank winner can advance to\l"
-	.string "the MASTER Rank in the same category.\p"
-	.string "A Pokémon that won in the MASTER Rank\n"
-	.string "may compete in the MASTER Rank as\l"
+	.string "In the same way, a Super Rank winner\n"
+	.string "can move up to the Hyper Rank, and\l"
+	.string "a Hyper Rank winner can advance to\l"
+	.string "the Master Rank in the same category.\p"
+	.string "A Pokémon that won in the Master Rank\n"
+	.string "may compete in the Master Rank as\l"
 	.string "often as its Trainer wants.$"
 
 LilycoveCity_ContestLobby_Text_EnterWhichRank:
@@ -1471,7 +1471,7 @@ LilycoveCity_ContestLobby_Text_MonInNoConditionForContest:
 	.string "condition to take part in a Contest…$"
 
 LilycoveCity_ContestLobby_Text_AlreadyWonEnterAnyway:
-	.string "Oh, but that RIBBON…\p"
+	.string "Oh, but that Ribbon…\p"
 	.string "Your Pokémon has won this Contest\n"
 	.string "before, hasn't it?\p"
 	.string "Would you like to enter it in this\n"
@@ -1553,11 +1553,11 @@ ContestHall_Text_ThankYouForAppeals:
 ContestHall_Text_JudgeLooksReady:
 	.string "Now, all that remains is the pulse-\n"
 	.string "pounding proclamation of the winner.\p"
-	.string "The JUDGE looks ready to make\n"
+	.string "The Judge looks ready to make\n"
 	.string "the announcement!$"
 
 ContestHall_Text_WeWillNowDeclareWinner:
-	.string "JUDGE: We will now declare the winner!$"
+	.string "Judge: We will now declare the winner!$"
 
 ContestHall_Text_CongratsTrainerXandMon:
 	.string "MC: Entry No. {STR_VAR_2}!\p"
@@ -1573,14 +1573,14 @@ ContestHall_Text_AcceptYourPrize:
 	.string "Please accept your prize!$"
 
 ContestHall_Text_ConferRibbonAsPrize:
-	.string "We confer on you this RIBBON\n"
+	.string "We confer on you this Ribbon\n"
 	.string "as your prize!$"
 
 ContestHall_Text_ReceivedRibbon:
-	.string "{PLAYER} received a RIBBON.$"
+	.string "{PLAYER} received a Ribbon.$"
 
 ContestHall_Text_PutRibbonOnMon:
-	.string "{PLAYER} put the RIBBON on\n"
+	.string "{PLAYER} put the Ribbon on\n"
 	.string "{STR_VAR_1}.$"
 
 ContestHall_Text_PickUpPrizeAtCounterLater:

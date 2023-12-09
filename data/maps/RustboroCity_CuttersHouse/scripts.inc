@@ -29,12 +29,12 @@ RustboroCity_CuttersHouse_Text_YouCanPutThisHMToGoodUse:
 	.string "No, wait, don't say a word.\n"
 	.string "I can tell just by looking at you.\p"
 	.string "I'm sure that you can put this\n"
-	.string "HIDDEN MACHINE to good use.\p"
+	.string "Hidden MACHINE to good use.\p"
 	.string "No need to be modest or shy.\n"
 	.string "Go on, take it!$"
 
 RustboroCity_CuttersHouse_Text_ExplainCut:
-	.string "That HIDDEN MACHINE, or HM for\n"
+	.string "That Hidden MACHINE, or HM for\n"
 	.string "short, is CUT.\p"
 	.string "An HM move is one that can be used\n"
 	.string "by Pokémon outside of battle.\p"

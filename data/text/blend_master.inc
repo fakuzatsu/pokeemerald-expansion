@@ -1,11 +1,11 @@
 BerryBlender_Text_BlendWithTheBlendMaster:
-	.string "BLEND MASTER: Indeed I am!\n"
-	.string "The BLEND MASTER am I!\p"
+	.string "Blend Master: Indeed I am!\n"
+	.string "The Blend Master am I!\p"
 	.string "Blend with me, and you shall witness\n"
 	.string "the mastery I bring to blending!$"
 
 BerryBlender_Text_SeeMyMasteryInAction:
-	.string "BLEND MASTER: Hmmm! So, you wish to\n"
+	.string "Blend Master: Hmmm! So, you wish to\n"
 	.string "see my mastery in action?$"
 
 BerryBlender_Text_TooBusyNowIsee:
@@ -40,7 +40,7 @@ BerryBlender_Text_BlendMasterExplainBerryBlending:
 BerryBlender_Text_BlendMasterLetsBerryBlender:
 	.string "Fine!\p"
 	.string "Let's get started, then!\p"
-	.string "All together with the BLEND MASTER,\n"
+	.string "All together with the Blend Master,\n"
 	.string "let's Berry BLENDER!$"
 
 BerryBlender_Text_BlendMasterNoPokeblockCase:
@@ -67,7 +67,7 @@ BerryBlender_Text_WhatAnExpert:
 	.string "What an expert!$"
 
 BerryBlender_Text_MadeAmazingPokeblocksWithMaster:
-	.string "When I blended with the MASTER,\n"
+	.string "When I blended with the Master,\n"
 	.string "we made amazing {POKEBLOCK}S!$"
 
 BerryBlender_Text_QualitiesOfBlendMaster:
@@ -76,10 +76,10 @@ BerryBlender_Text_QualitiesOfBlendMaster:
 	.string "A hand that taps the A Button\n"
 	.string "with clockwork-like precision…\p"
 	.string "Possessing these qualities makes\n"
-	.string "the BLEND MASTER truly great.$"
+	.string "the Blend Master truly great.$"
 
 BerryBlender_Text_MasterWorksOnSkillsInMountains:
-	.string "The BLEND MASTER's supposed to work\n"
+	.string "The Blend Master's supposed to work\n"
 	.string "on his skills deep in the mountains.\p"
 	.string "Sometimes, he comes to LILYCOVE\n"
 	.string "to blend Berries all day long.$"

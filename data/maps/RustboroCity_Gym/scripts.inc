@@ -112,17 +112,17 @@ RustboroCity_Gym_Text_GymGuideAdvice:
 	.string "That's settled, then! We'll aim for the\n"
 	.string "Pokémon CHAMPIONSHIP together!\p"
 	.string "It's your job as a Trainer to collect\n"
-	.string "GYM Badges, am I right?\p"
-	.string "But GYM LEADERS aren't pushovers!\p"
+	.string "Gym Badges, am I right?\p"
+	.string "But Gym Leaders aren't pushovers!\p"
 	.string "And that's where I come in!\n"
 	.string "I'm here to provide expert advice!\p"
-	.string "ROXANNE, the GYM Leader, is a user\n"
+	.string "ROXANNE, the Gym Leader, is a user\n"
 	.string "of ROCK-type Pokémon.\p"
 	.string "The ROCK type is very durable, but\n"
 	.string "it can't stand WATER-type and\l"
 	.string "GRASS-type moves.\p"
 	.string "Come see me afterwards, if you beat\n"
-	.string "the GYM Leader.\p"
+	.string "the Gym Leader.\p"
 	.string "Well, go for it!$"
 
 RustboroCity_Gym_Text_GymGuidePostVictory:
@@ -138,7 +138,7 @@ RustboroCity_Gym_Text_GymGuidePostVictory:
 	.string "That's got to feel awesome!$"
 
 RustboroCity_Gym_Text_JoshIntro:
-	.string "Don't take us GYM TRAINERS lightly!\n"
+	.string "Don't take us Gym TRAINERS lightly!\n"
 	.string "I'll show you why we're better!$"
 
 RustboroCity_Gym_Text_JoshDefeat:
@@ -177,8 +177,8 @@ RustboroCity_Gym_Text_MarcPostBattle:
 
 RustboroCity_Gym_Text_RoxanneIntro:
 	.string "Hello, I am ROXANNE, the RUSTBORO\n"
-	.string "Pokémon GYM Leader.\p"
-	.string "I became a GYM Leader so that I might\n"
+	.string "Pokémon Gym Leader.\p"
+	.string "I became a Gym Leader so that I might\n"
 	.string "apply what I learned at the Pokémon\l"
 	.string "Trainer's SCHOOL in battle.\p"
 	.string "Would you kindly demonstrate how you\n"
@@ -192,7 +192,7 @@ RustboroCity_Gym_Text_RoxanneDefeat:
 	.string "I understand.\p"
 	.string "The Pokémon LEAGUE's rules state\n"
 	.string "that TRAINERS are to be given this\l"
-	.string "if they defeat a GYM Leader.\p"
+	.string "if they defeat a Gym Leader.\p"
 	.string "Please accept the official Pokémon\n"
 	.string "LEAGUE STONE BADGE.$"
 
@@ -220,15 +220,15 @@ RustboroCity_Gym_Text_ExplainRockTomb:
 
 RustboroCity_Gym_Text_RoxannePostBattle:
 	.string "Since you are so strong, you should\n"
-	.string "challenge other GYM LEADERS.\p"
+	.string "challenge other Gym Leaders.\p"
 	.string "By battling many TRAINERS, you should\n"
 	.string "learn many things.$"
 
 RustboroCity_Gym_Text_GymStatue:
-	.string "RUSTBORO CITY Pokémon GYM$"
+	.string "RUSTBORO CITY Pokémon Gym$"
 
 RustboroCity_Gym_Text_GymStatueCertified:
-	.string "RUSTBORO CITY Pokémon GYM\p"
+	.string "RUSTBORO CITY Pokémon Gym\p"
 	.string "ROXANNE's CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
@@ -242,7 +242,7 @@ RustboroCity_Gym_Text_RoxanneRegisterCall:
 	.string "TRAINERS at an incredible clip.\p"
 	.string "Well, I'd rather not think that\n"
 	.string "I can't beat you.\p"
-	.string "I promise, I will shape up my GYM\n"
+	.string "I promise, I will shape up my Gym\n"
 	.string "so that you may challenge us again.\p"
 	.string "I hope you'll be looking forward to\n"
 	.string "that occasion as much as me!\p"
@@ -250,12 +250,12 @@ RustboroCity_Gym_Text_RoxanneRegisterCall:
 	.string "… … … … … Click!$"
 
 RustboroCity_Gym_Text_RegisteredRoxanne:
-	.string "Registered GYM Leader ROXANNE\n"
+	.string "Registered Gym Leader ROXANNE\n"
 	.string "in the PokéNav.$"
 
 RustboroCity_Gym_Text_RoxannePreRematch:
 	.string "ROXANNE: I'm so glad to see you again.\n"
-	.string "I'm ROXANNE, the GYM Leader here.\p"
+	.string "I'm ROXANNE, the Gym Leader here.\p"
 	.string "I'm sure we've both experienced many\n"
 	.string "battles since we last met.\p"
 	.string "I would like to see how much better\n"
@@ -273,7 +273,7 @@ RustboroCity_Gym_Text_RoxannePostRematch:
 
 RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
 	.string "ROXANNE: I'm so glad to see you again.\n"
-	.string "I'm ROXANNE, the GYM Leader here.\p"
+	.string "I'm ROXANNE, the Gym Leader here.\p"
 	.string "I'm sure we've both experienced many\n"
 	.string "battles since we last met.\p"
 	.string "I would like to see how much better\n"

@@ -7,16 +7,16 @@ gContestPaintingContest::
 	.string "Contest$"
 
 gContestRankNormal::
-	.string "Normal RANK$"
+	.string "Normal Rank$"
 
 gContestRankSuper::
-	.string "SUPER RANK$"
+	.string "Super Rank$"
 
 gContestRankHyper::
-	.string "HYPER RANK$"
+	.string "Hyper Rank$"
 
 gContestRankMaster::
-	.string "MASTER RANK$"
+	.string "Master Rank$"
 
 gContestLink::
 	.string "LINK$"

@@ -383,7 +383,7 @@ BattleFrontier_BattlePalaceLobby_Text_WelcomeForSingleBattle:
 
 BattleFrontier_BattlePalaceLobby_Text_TakeSingleBattleChallenge:
 	.string "Do you wish to take\n"
-	.string "the SINGLE Battle HALL challenge?$"
+	.string "the SINGLE Battle Hall challenge?$"
 
 BattleFrontier_BattlePalaceLobby_Text_ExplainSingleBattleChallenge:
 	.string "In the Battle PALACE, there are\n"
@@ -449,7 +449,7 @@ BattleFrontier_BattlePalaceLobby_Text_NowSelectThreeMons:
 
 BattleFrontier_BattlePalaceLobby_Text_MustSaveBeforeChallenge2:
 	.string "I must save before I show you to\n"
-	.string "the Battle HALL. Is that okay?$"
+	.string "the Battle Hall. Is that okay?$"
 
 BattleFrontier_BattlePalaceLobby_Text_FollowMe:
 	.string "Good.\n"
@@ -486,7 +486,7 @@ BattleFrontier_BattlePalaceLobby_Text_WeHaveBeenWaiting:
 
 BattleFrontier_BattlePalaceLobby_Text_MustSaveBeforeChallenge:
 	.string "I must save before I show you to\n"
-	.string "the Battle HALL. Is that okay?$"
+	.string "the Battle Hall. Is that okay?$"
 
 BattleFrontier_BattlePalaceLobby_Text_FailedToSaveBeforeEndingChallenge:
 	.string "Sigh…\p"
@@ -531,7 +531,7 @@ BattleFrontier_BattlePalaceLobby_Text_NatureAndMovesKeyHere:
 
 BattleFrontier_BattlePalaceLobby_Text_MonDocileButTransforms:
 	.string "My Pokémon is usually very docile.\p"
-	.string "But when it's in a Battle HALL,\n"
+	.string "But when it's in a Battle Hall,\n"
 	.string "it sometimes seems to become\l"
 	.string "transformed into something wicked!\p"
 	.string "It becomes totally intimidating.\n"
@@ -553,7 +553,7 @@ BattleFrontier_BattlePalaceLobby_Text_WelcomeForDoubleBattle:
 
 BattleFrontier_BattlePalaceLobby_Text_TakeDoubleBattleChallenge:
 	.string "Do you wish to take\n"
-	.string "the DOUBLE Battle HALL challenge?$"
+	.string "the DOUBLE Battle Hall challenge?$"
 
 BattleFrontier_BattlePalaceLobby_Text_ExplainDoubleBattleChallenge:
 	.string "In the Battle PALACE, there are\n"
@@ -590,10 +590,10 @@ BattleFrontier_BattlePalaceLobby_Text_PresentYouWithBattlePoints:
 BattleFrontier_BattlePalaceLobby_Text_LikeToRecordMatch:
 	.string "Would you like to record your latest\n"
 	.string "Battle PALACE match on your\l"
-	.string "FRONTIER PASS?$"
+	.string "Frontier PASS?$"
 
 BattleFrontier_BattlePalaceLobby_Text_RulesAreListed:
-	.string "The Battle HALL rules are listed.$"
+	.string "The Battle Hall rules are listed.$"
 
 BattleFrontier_BattlePalaceLobby_Text_ReadWhichHeading:
 	.string "Which heading do you want to read?$"

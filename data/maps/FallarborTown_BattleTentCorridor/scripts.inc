@@ -58,7 +58,7 @@ FallarborTown_ContestHall_Text_MonAllTheseRibbons:
 
 @ Unused
 FallarborTown_ContestHall_Text_CantWinEverywhere:
-	.string "I can't beat GYM LEADERS…\p"
+	.string "I can't beat Gym Leaders…\p"
 	.string "I can't win any CONTESTS…\p"
 	.string "I've been here, there, and everywhere,\n"
 	.string "and it's all for naught…$"
@@ -66,5 +66,5 @@ FallarborTown_ContestHall_Text_CantWinEverywhere:
 @ Unused
 FallarborTown_ContestHall_Text_SuperRankStage:
 	.string "Pokémon CONTESTS\n"
-	.string "SUPER RANK STAGE!$"
+	.string "Super Rank Stage!$"
 

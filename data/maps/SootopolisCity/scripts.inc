@@ -1419,9 +1419,9 @@ SootopolisCity_Movement_DestroyTask::
 	step_end
 
 SootopolisCity_Text_GymSign:
-	.string "SOOTOPOLIS CITY Pokémon GYM\n"
+	.string "SOOTOPOLIS CITY Pokémon Gym\n"
 	.string "Leader: JUAN\p"
-	.string "“The GYM Leader with the beauty\n"
+	.string "“The Gym Leader with the beauty\n"
 	.string "of pure water!”$"
 
 SootopolisCity_Text_CitySign:
@@ -1722,7 +1722,7 @@ SootopolisCity_Text_ThankYouForHelpAcceptThis:
 	.string "Please accept it.$"
 
 SootopolisCity_Text_ExplainWaterfallGoToGym:
-	.string "That HIDDEN MACHINE contains\n"
+	.string "That Hidden MACHINE contains\n"
 	.string "WATERFALL.\p"
 	.string "If you have the RAIN BADGE, a Pokémon\n"
 	.string "that has learned that HM move can\l"
@@ -1730,7 +1730,7 @@ SootopolisCity_Text_ExplainWaterfallGoToGym:
 	.string "And where does one get the RAIN BADGE?\n"
 	.string "You know, don't you?\p"
 	.string "That's right! You have to beat\n"
-	.string "the SOOTOPOLIS GYM Leader.\p"
+	.string "the SOOTOPOLIS Gym Leader.\p"
 	.string "When you're all set to go, step through\n"
 	.string "that door.$"
 

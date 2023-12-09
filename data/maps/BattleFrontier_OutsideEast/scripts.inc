@@ -234,7 +234,7 @@ BattleFrontier_OutsideEast_EventScript_Camper::
 	end
 
 BattleFrontier_OutsideEast_Text_BattleTowerSign:
-	.string "This is the Battle TOWER!\n"
+	.string "This is the Battle Tower!\n"
 	.string "Keep the win streak as the toughest\l"
 	.string "Trainer!$"
 
@@ -251,7 +251,7 @@ BattleFrontier_OutsideEast_Text_BattlePyramidSign:
 	.string "Advance through the Battle Quest!$"
 
 BattleFrontier_OutsideEast_Text_RankingHallSign:
-	.string "Battle FRONTIER RANKING HALL\n"
+	.string "Battle Frontier RANKING Hall\n"
 	.string "Set your sights on new records!$"
 
 BattleFrontier_OutsideEast_Text_ExchangeCornerSign:
@@ -261,12 +261,12 @@ BattleFrontier_OutsideEast_Text_ExchangeCornerSign:
 BattleFrontier_OutsideEast_Text_BattleTowerFeelsSpecial:
 	.string "Wow!\n"
 	.string "It's huge!\p"
-	.string "The Battle TOWER feels special.\n"
+	.string "The Battle Tower feels special.\n"
 	.string "It's different from the others.$"
 
 BattleFrontier_OutsideEast_Text_ConquerLeagueAndFrontier:
 	.string "My grand ambition is to conquer both\n"
-	.string "the Battle FRONTIER and the Pokémon\l"
+	.string "the Battle Frontier and the Pokémon\l"
 	.string "LEAGUE.\p"
 	.string "And if my dream comes true…\p"
 	.string "I… I'm going to ask MIMI next door\n"
@@ -319,7 +319,7 @@ BattleFrontier_OutsideEast_Text_PeopleCallMeBusybody:
 
 BattleFrontier_OutsideEast_Text_OnceBeatGymLeader:
 	.string "I may not look that impressive now,\n"
-	.string "but I once beat a GYM Leader.\p"
+	.string "but I once beat a Gym Leader.\p"
 	.string "Who knows, maybe I should give it\n"
 	.string "another shot at glory.$"
 
@@ -377,10 +377,10 @@ BattleFrontier_OutsideEast_Text_GotWipedOut:
 BattleFrontier_OutsideEast_Text_ToughTrainerInBattleTower:
 	.string "This guy ran into a horribly tough\n"
 	.string "Trainer while he was on the Battle\l"
-	.string "TOWER challenge.\p"
+	.string "Tower challenge.\p"
 	.string "Now look at him…\p"
 	.string "You need to be cautious if you ever\n"
-	.string "decide to go to the Battle TOWER.$"
+	.string "decide to go to the Battle Tower.$"
 
 BattleFrontier_OutsideEast_Text_EnoughBattlePointsForDoll:
 	.string "Yes!\n"
@@ -390,7 +390,7 @@ BattleFrontier_OutsideEast_Text_EnoughBattlePointsForDoll:
 
 BattleFrontier_OutsideEast_Text_LikeToHaveNameRecordedHere:
 	.string "Oh, yeah, okay!\n"
-	.string "So this is the RANKING HALL!\p"
+	.string "So this is the RANKING Hall!\p"
 	.string "I'd like to go down in history as\n"
 	.string "a super champ and have my name\l"
 	.string "recorded here for posterity.$"
@@ -401,7 +401,7 @@ BattleFrontier_OutsideEast_Text_CanDoAnythingWithYou:
 BattleFrontier_OutsideEast_Text_PowerOfOurLoveWillOvercome:
 	.string "Ooh, darling, you are so wonderful!\p"
 	.string "Ooh, I just can't wait anymore!\p"
-	.string "Let's go to a MULTI Battle ROOM\n"
+	.string "Let's go to a MULTI Battle Room\n"
 	.string "right this instant!\p"
 	.string "If we get together in the Battle SALON,\n"
 	.string "the power of our love will overcome\l"
@@ -410,7 +410,7 @@ BattleFrontier_OutsideEast_Text_PowerOfOurLoveWillOvercome:
 	.string "will topple like dominoes!$"
 
 BattleFrontier_OutsideEast_Text_FrontierNotExclusivelyForToughTrainers:
-	.string "The Battle FRONTIER isn't exclusively\n"
+	.string "The Battle Frontier isn't exclusively\n"
 	.string "for tough TRAINERS.\p"
 	.string "Many people with special abilities\n"
 	.string "have been invited, it seems.\p"

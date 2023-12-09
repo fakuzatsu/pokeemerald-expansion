@@ -320,7 +320,7 @@ BattleFrontier_OutsideWest_Text_BattlePikeSign:
 	.string "Choose one of three paths!$"
 
 BattleFrontier_OutsideWest_Text_ThisIsBattleTower:
-	.string "This is the Battle TOWER.\p"
+	.string "This is the Battle Tower.\p"
 	.string "TRAINERS bring their best-raised\n"
 	.string "Pokémon for elimination-style matches.$"
 
@@ -361,9 +361,9 @@ BattleFrontier_OutsideWest_Text_BestOutOfAllMyFriends:
 	.string "I've been useless!$"
 
 BattleFrontier_OutsideWest_Text_CantFindBattleTower:
-	.string "I want to go to the Battle TOWER,\n"
+	.string "I want to go to the Battle Tower,\n"
 	.string "but I can't find it even though I have\l"
-	.string "a map of the Battle FRONTIER.\p"
+	.string "a map of the Battle Frontier.\p"
 	.string "This place is just too big!$"
 
 BattleFrontier_OutsideWest_Text_GotSeasickOnWayHere:
@@ -378,7 +378,7 @@ BattleFrontier_OutsideWest_Text_OnlyToughTrainersBroughtHere:
 	.string "Only those TRAINERS who've been\n"
 	.string "recognized as tough are brought here.\p"
 	.string "That's why many TRAINERS don't even\n"
-	.string "know about the Battle FRONTIER.$"
+	.string "know about the Battle Frontier.$"
 
 BattleFrontier_OutsideWest_Text_SureWeCanChallengeWithNoMons:
 	.string "Hey, bro…\p"
@@ -457,7 +457,7 @@ BattleFrontier_OutsideWest_Text_NothingHereNotLongAgo:
 
 BattleFrontier_OutsideWest_Text_FinallyArrivedAtFrontier:
 	.string "I've finally arrived at the Battle\n"
-	.string "FRONTIER!\p"
+	.string "Frontier!\p"
 	.string "I'm sure to grab attention with\n"
 	.string "my looks and ability!$"
 
@@ -498,7 +498,7 @@ BattleFrontier_OutsideWest_Text_DomeAceIsMine:
 	.string "Oh, shush!\n"
 	.string "Keep that racket down!\p"
 	.string "You fair-weather fans should stick\n"
-	.string "to cheering for some GYM Leader!\p"
+	.string "to cheering for some Gym Leader!\p"
 	.string "The Dome Ace is mine!\n"
 	.string "The only idol for me!$"
 
@@ -519,7 +519,7 @@ BattleFrontier_OutsideWest_Text_FansOverThereUsedToBeTrainers:
 BattleFrontier_OutsideWest_Text_MonWithLongTailInFrontier:
 	.string "I heard a rumor that someone saw\n"
 	.string "a Pokémon with an unusually long tail\l"
-	.string "somewhere in the Battle FRONTIER.\p"
+	.string "somewhere in the Battle Frontier.\p"
 	.string "It must be adorable. I'm sure of it…\p"
 	.string "Oh, challenges can wait. I feel driven\n"
 	.string "to find the delightful creature!$"

@@ -32,7 +32,7 @@ sText_MysteryGiftVisitingTrainerInstructions:
 	.string "“Give ME\n"
 	.string "AWESOME Trainer”\p"
 	.string "Write that in on a survey and send\n"
-	.string "it to the WIRELESS\l"
+	.string "it to the Wireless\l"
 	.string "COMMUNICATION SYSTEM.$"
 
 sText_MysteryGiftVisitingTrainerArrived:

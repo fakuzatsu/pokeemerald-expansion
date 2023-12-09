@@ -629,7 +629,7 @@ BattleFrontier_BattleFactoryPreBattleRoom_Text_SavingDataPleaseWait:
 
 BattleFrontier_BattleFactoryPreBattleRoom_Text_RecordLatestBattle:
 	.string "Would you like to record your latest\n"
-	.string "battle on your FRONTIER PASS?$"
+	.string "battle on your Frontier PASS?$"
 
 BattleFrontier_BattleFactoryPreBattleRoom_Text_WaitFewMoments:
 	.string "Excuse me! Excuse me, please!\n"

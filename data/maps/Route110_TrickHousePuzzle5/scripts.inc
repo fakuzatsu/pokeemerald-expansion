@@ -904,7 +904,7 @@ Route110_TrickHousePuzzle5_Movement_MechadollShake:
 Route110_TrickHousePuzzle5_Text_WroteSecretCodeLockOpened:
 	.string "{PLAYER} wrote down the secret code\n"
 	.string "on the door.\p"
-	.string "“TRICK MASTER is a genius.”\n"
+	.string "“TRICK Master is a genius.”\n"
 	.string "… … … … … … … …\p"
 	.string "The lock clicked open!$"
 
@@ -984,7 +984,7 @@ Route110_TrickHousePuzzle5_Text_Mechadoll3Quiz2:
 Route110_TrickHousePuzzle5_Text_Mechadoll3Quiz3:
 	.string "MECHADOLL 3 QUIZ.\p"
 	.string "Do one REPEL and SODA POP cost\n"
-	.string "more than one SUPER POTION?$"
+	.string "more than one Super POTION?$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll4Intro:
 	.string "CLICKETY-CLACK…\n"
@@ -1009,7 +1009,7 @@ Route110_TrickHousePuzzle5_Text_Mechadoll4Quiz3:
 Route110_TrickHousePuzzle5_Text_Mechadoll5Intro:
 	.string "CLICKETY-CLACK…\n"
 	.string "MECHADOLL 5 AM I!\p"
-	.string "THE MASTER's BEST AND PROUDEST\n"
+	.string "THE Master's BEST AND PROUDEST\n"
 	.string "ACHIEVEMENT AM I.$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll5Quiz1:

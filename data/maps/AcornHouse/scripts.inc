@@ -48,7 +48,7 @@ AcornHouse_EventScript_TradeCompleted::
 
 AcornHouse_Text_YouWillTradeWontYou:
 	.string "Welcome!\n"
-	.string "People call me the BONZAI MASTER.\p"
+	.string "People call me the BONZAI Master.\p"
 	.string "I came here from far across the\n"
 	.string "region to plant beautiful trees!\p"
 	.string "Would you like to trade a SEEDOT\n"

@@ -558,7 +558,7 @@ PetalburgWoods_Text_HiddenItemsExplanation:
 
 PetalburgWoods_Text_TryUsingThisItem:
 	.string "Oh, neat!\n"
-	.string "That's the BADGE from RUSTBORO GYM!\p"
+	.string "That's the BADGE from RUSTBORO Gym!\p"
 	.string "You must be a Trainer.\n"
 	.string "You should try using this item.$"
 

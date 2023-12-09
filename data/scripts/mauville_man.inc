@@ -566,18 +566,18 @@ MauvilleCity_PokemonCenter_1F_Text_RouletteWinsStory::
 	.string "bounced in ROULETTE!$"
 
 MauvilleCity_PokemonCenter_1F_Text_BattleTowerChallengesTitle::
-	.string "The Battle TOWER Challenger$"
+	.string "The Battle Tower Challenger$"
 
 MauvilleCity_PokemonCenter_1F_Text_BattleTowerChallengesAction::
-	.string "Took the Battle TOWER challenge$"
+	.string "Took the Battle Tower challenge$"
 
 MauvilleCity_PokemonCenter_1F_Text_BattleTowerChallengesStory::
 	.string "This is a tale of a Trainer\n"
 	.string "named {STR_VAR_3}.\p"
-	.string "This Trainer took the Battle TOWER\n"
+	.string "This Trainer took the Battle Tower\n"
 	.string "challenge {STR_VAR_1} times!\p"
 	.string "{STR_VAR_3} is a Trainer who aspires\n"
-	.string "for excellence in the Battle TOWER!$"
+	.string "for excellence in the Battle Tower!$"
 
 MauvilleCity_PokemonCenter_1F_Text_MadePokeblocksTitle::
 	.string "The Blend-Loving Trainer$"
@@ -678,7 +678,7 @@ MauvilleCity_PokemonCenter_1F_Text_CheckedPokedexStory::
 	.string "Pokémon in a Pokédex!$"
 
 MauvilleCity_PokemonCenter_1F_Text_ReceivedRibbonsTitle::
-	.string "The RIBBON Collector$"
+	.string "The Ribbon Collector$"
 
 MauvilleCity_PokemonCenter_1F_Text_ReceivedRibbonsAction::
 	.string "Received RIBBONS$"

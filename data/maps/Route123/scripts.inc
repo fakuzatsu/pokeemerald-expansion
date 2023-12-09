@@ -219,5 +219,5 @@ Route123_Text_RouteSignMtPyre:
 	.string "“Forbidden to the faint of heart.”$"
 
 Route123_Text_BerryMastersHouse:
-	.string "Berry MASTER's HOUSE$"
+	.string "Berry Master's HOUSE$"
 

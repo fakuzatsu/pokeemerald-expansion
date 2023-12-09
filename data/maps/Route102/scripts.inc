@@ -105,7 +105,7 @@ Route102_Text_WallyIDidIt:
 
 Route102_Text_LetsGoBack:
 	.string "{PLAYER}, thank you!\n"
-	.string "Let's go back to the GYM!$"
+	.string "Let's go back to the Gym!$"
 
 Route102_Text_ImNotVeryTall:
 	.string "I'm…not very tall, so I sink right\n"

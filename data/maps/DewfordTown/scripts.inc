@@ -675,12 +675,12 @@ DewfordTown_Text_TownSign:
 	.string "“A tiny island in the blue sea.”$"
 
 DewfordTown_Text_GymSign:
-	.string "DEWFORD TOWN Pokémon GYM\n"
+	.string "DEWFORD TOWN Pokémon Gym\n"
 	.string "Leader: BRAWLY\l"
 	.string "“A big wave in fighting!”$"
 
 DewfordTown_Text_HallSign:
-	.string "DEWFORD HALL\n"
+	.string "DEWFORD Hall\n"
 	.string "“Everyone's information exchange!”$"
 
 Route104_Text_LandedInDewfordDeliverLetter:

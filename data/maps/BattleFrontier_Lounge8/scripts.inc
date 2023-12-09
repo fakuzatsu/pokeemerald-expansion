@@ -28,14 +28,14 @@ BattleFrontier_Lounge8_Text_WhatATrainerNeeds:
 	.string "What's that?$"
 
 BattleFrontier_Lounge8_Text_KnowAboutFrontierBrains:
-	.string "Do you know about the FRONTIER\n"
+	.string "Do you know about the Frontier\n"
 	.string "BRAINS?\p"
 	.string "That's what SCOTT calls the seven\n"
 	.string "special TRAINERS that run the seven\l"
-	.string "facilities in the Battle FRONTIER.$"
+	.string "facilities in the Battle Frontier.$"
 
 BattleFrontier_Lounge8_Text_ToldMeIHaveTalentForBattling:
-	.string "At the Battle TOWER, an older girl\n"
+	.string "At the Battle Tower, an older girl\n"
 	.string "told me that I have a lot of talent\l"
 	.string "for battling!\p"
 	.string "I like Pokémon CONTESTS more!\p"

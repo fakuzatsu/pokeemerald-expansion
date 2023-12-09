@@ -315,7 +315,7 @@ PlayersHouse_1F_Text_OhComeQuickly:
 	.string "Quick! Come quickly!$"
 
 PlayersHouse_1F_Text_MaybeDadWillBeOn:
-	.string "MOM: Look! It's PETALBURG GYM!\n"
+	.string "MOM: Look! It's PETALBURG Gym!\n"
 	.string "Maybe DAD will be on!$"
 
 PlayersHouse_1F_Text_ItsOverWeMissedHim:
@@ -373,7 +373,7 @@ PlayersHouse_1F_Text_Vigoroth2:
 
 PlayersHouse_1F_Text_ReportFromPetalburgGym:
 	.string "Interviewer: …We brought you this\n"
-	.string "report from in front of PETALBURG GYM.$"
+	.string "report from in front of PETALBURG Gym.$"
 
 PlayersHouse_1F_Text_TheresAMovieOnTV:
 	.string "There is a movie on TV.\p"
@@ -406,7 +406,7 @@ PlayersHouse_1F_Text_PortsInSlateportLilycove:
 	.string "SLATEPORT and LILYCOVE.$"
 
 PlayersHouse_1F_Text_BetterGetBackToGym:
-	.string "I'd better get back to PETALBURG GYM.\p"
+	.string "I'd better get back to PETALBURG Gym.\p"
 	.string "MOM, thanks for looking after the house\n"
 	.string "while I'm away.$"
 

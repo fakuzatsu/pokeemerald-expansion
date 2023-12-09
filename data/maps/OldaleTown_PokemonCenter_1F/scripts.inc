@@ -57,13 +57,13 @@ OldaleTown_PokemonCenter_1F_Text_PokemonCentersAreGreat:
 	.string "You never have to worry!$"
 
 OldaleTown_PokemonCenter_1F_Text_WirelessClubNotAvailable:
-	.string "The Pokémon WIRELESS CLUB on\n"
+	.string "The Pokémon Wireless CLUB on\n"
 	.string "the second floor was built recently.\p"
 	.string "But they say they're still making\n"
 	.string "adjustments.$"
 
 OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub:
-	.string "The Pokémon WIRELESS CLUB on\n"
+	.string "The Pokémon Wireless CLUB on\n"
 	.string "the second floor was built recently.\p"
 	.string "I traded Pokémon right away.$"
 

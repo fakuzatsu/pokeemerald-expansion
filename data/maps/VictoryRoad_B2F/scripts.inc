@@ -70,7 +70,7 @@ VictoryRoad_B2F_Text_CarolinePostBattle:
 
 VictoryRoad_B2F_Text_JulieIntro:
 	.string "You shouldn't get complacent just\n"
-	.string "because you have a lot of GYM Badges.\p"
+	.string "because you have a lot of Gym Badges.\p"
 	.string "There's always going to be someone\n"
 	.string "who's better than you!$"
 

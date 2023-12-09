@@ -672,7 +672,7 @@ Route111_Text_ToughToKeepWinningUpTheRanks:
 	.string "up through the ranks.\p"
 	.string "I've heard the Pokémon LEAGUE's\n"
 	.string "Elite Four are far stronger than\l"
-	.string "any GYM Leader.$"
+	.string "any Gym Leader.$"
 
 Route111_Text_WinstrateFamilyDestroyedMe:
 	.string "I challenged the Winstrate family,\n"
@@ -712,7 +712,7 @@ Route111_Text_ShouldBeMirageTowerAroundHere:
 	.string "around here somewhere.\p"
 	.string "But for some reason, it can be seen\n"
 	.string "sometimes, and sometimes not.\p"
-	.string "That's why I call it the MIRAGE TOWER.$"
+	.string "That's why I call it the MIRAGE Tower.$"
 
 Route111_Text_MirageTowerClearlyVisible:
 	.string "I see it!\n"
@@ -736,7 +736,7 @@ Route111_Text_MirageTowerHasntBeenSeenSince:
 	.string "Since I spoke to you, the tower of sand\n"
 	.string "hasn't been seen.\p"
 	.string "Perhaps it really was\n"
-	.string "the MIRAGE TOWER…$"
+	.string "the MIRAGE Tower…$"
 
 Route111_Text_ClawFossilDisappeared:
 	.string "The CLAW FOSSIL disappeared into\n"

@@ -184,10 +184,10 @@ EverGrandeCity_PokemonLeague_1F_Text_SoCloseNow:
 
 EverGrandeCity_PokemonLeague_1F_Text_MustHaveAllGymBadges:
 	.string "Beyond this point, only those TRAINERS\n"
-	.string "who have collected all the GYM Badges\l"
+	.string "who have collected all the Gym Badges\l"
 	.string "are permitted to enter.\p"
 	.string "Trainer, let us confirm that you have\n"
-	.string "all the GYM Badges.$"
+	.string "all the Gym Badges.$"
 
 EverGrandeCity_PokemonLeague_1F_Text_HaventObtainedAllBadges:
 	.string "You haven't obtained all the Badges.\p"

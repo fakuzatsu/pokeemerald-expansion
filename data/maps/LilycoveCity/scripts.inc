@@ -483,7 +483,7 @@ LilycoveCity_Text_MayGoingBackToLittleroot:
 
 LilycoveCity_Text_MayYouGoingToCollectBadges:
 	.string "{PLAYER}{KUN}, what are you going to do?\p"
-	.string "Collect all the GYM Badges and take\n"
+	.string "Collect all the Gym Badges and take\n"
 	.string "the Pokémon LEAGUE challenge?\p"
 	.string "Well, while you're collecting Badges,\n"
 	.string "{PLAYER}{KUN}, I'm going to work on my\l"
@@ -502,7 +502,7 @@ LilycoveCity_Text_MayYouGoingToPokemonLeague:
 
 LilycoveCity_Text_MayYouGoingToBattleFrontier:
 	.string "{PLAYER}{KUN}, what are you going to do?\p"
-	.string "Are you taking the Battle FRONTIER\n"
+	.string "Are you taking the Battle Frontier\n"
 	.string "challenge?\p"
 	.string "Or, are you going to complete your\n"
 	.string "Pokédex?\p"
@@ -545,7 +545,7 @@ LilycoveCity_Text_BrendanGoingBackToLittleroot:
 
 LilycoveCity_Text_BrendanYouGoingToCollectBadges:
 	.string "{PLAYER}, what are you going to do?\p"
-	.string "Collect all the GYM Badges and take\n"
+	.string "Collect all the Gym Badges and take\n"
 	.string "the Pokémon LEAGUE challenge?\p"
 	.string "Maybe I'll do that, too…\p"
 	.string "Well, anyway, hang in there!$"
@@ -561,16 +561,16 @@ LilycoveCity_Text_BrendanYouGoingToPokemonLeague:
 
 LilycoveCity_Text_BrendanYouGoingToBattleFrontier:
 	.string "{PLAYER}, what are you going to do?\p"
-	.string "Are you taking the Battle FRONTIER\n"
+	.string "Are you taking the Battle Frontier\n"
 	.string "challenge?\p"
 	.string "Or, are you going to complete your\n"
 	.string "Pokédex?\p"
 	.string "Since you're that strong, you should\n"
-	.string "consider the Battle FRONTIER.\p"
+	.string "consider the Battle Frontier.\p"
 	.string "Heh, if I train my Pokémon a bit more,\n"
 	.string "I'll get stronger than you, {PLAYER}.\p"
 	.string "Maybe I should go to the Battle\n"
-	.string "FRONTIER.\p"
+	.string "Frontier.\p"
 	.string "Well, anyway, hang in there!$"
 
 LilycoveCity_Text_MovedLootIntoHideoutToday:
@@ -609,7 +609,7 @@ LilycoveCity_Text_GetLostMessingUpTraining:
 	.string "so can you, like, get lost?$"
 
 LilycoveCity_Text_ContestHallInTown:
-	.string "There's a Pokémon Contest HALL\n"
+	.string "There's a Pokémon Contest Hall\n"
 	.string "right in this here town. \p"
 	.string "That means well-raised Pokémon will\n"
 	.string "come from all over the country.\p"
@@ -700,7 +700,7 @@ LilycoveCity_Text_CitySign:
 	.string "sea begins.”$"
 
 LilycoveCity_Text_ContestHallSign:
-	.string "Pokémon Contest HALL\n"
+	.string "Pokémon Contest Hall\n"
 	.string "“The gathering place for TRAINERS!”$"
 
 LilycoveCity_Text_MotelSign:

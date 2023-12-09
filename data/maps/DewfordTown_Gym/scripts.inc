@@ -297,14 +297,14 @@ DewfordTown_Gym_EventScript_GymStatue::
 DewfordTown_Gym_Text_GymGuideAdvice:
 	.string "Hey, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
-	.string "DEWFORD's GYM Leader BRAWLY commands\n"
+	.string "DEWFORD's Gym Leader BRAWLY commands\n"
 	.string "FIGHTING-type Pokémon.\p"
 	.string "Going against him with Normal-type\n"
 	.string "Pokémon is asking for trouble.\p"
 	.string "FIGHTING Pokémon will lay a serious\n"
 	.string "smack down on Normal Pokémon,\l"
 	.string "so be careful!\p"
-	.string "What's worse, the GYM is as dark as\n"
+	.string "What's worse, the Gym is as dark as\n"
 	.string "the ocean floor.\p"
 	.string "But it will get brighter after defeating\n"
 	.string "the TRAINERS in your way.\p"
@@ -337,7 +337,7 @@ DewfordTown_Gym_Text_JocelynDefeat:
 DewfordTown_Gym_Text_JocelynPostBattle:
 	.string "I'm not going to waste this loss.\n"
 	.string "I'll use it to motivate me to train!\p"
-	.string "One day I'll become a GYM Leader…\p"
+	.string "One day I'll become a Gym Leader…\p"
 	.string "No, I'll become the Pokémon LEAGUE\n"
 	.string "Champion!$"
 
@@ -377,7 +377,7 @@ DewfordTown_Gym_Text_BrendenDefeat:
 
 DewfordTown_Gym_Text_BrendenPostBattle:
 	.string "Oh, aye! You're worthy of seeing\n"
-	.string "our GYM Leader.$"
+	.string "our Gym Leader.$"
 
 DewfordTown_Gym_Text_CristianIntro:
 	.string "If you mean to pass, it has to be\n"
@@ -393,7 +393,7 @@ DewfordTown_Gym_Text_CristianPostBattle:
 
 DewfordTown_Gym_Text_BrawlyIntro:
 	.string "I'm BRAWLY!\n"
-	.string "DEWFORD's GYM Leader!\p"
+	.string "DEWFORD's Gym Leader!\p"
 	.string "I've been churned in the rough waves\n"
 	.string "of these parts, and I've grown tough\l"
 	.string "in the pitch-black cave!\p"
@@ -405,7 +405,7 @@ DewfordTown_Gym_Text_BrawlyDefeat:
 	.string "splash than I expected!\p"
 	.string "You swamped me!\p"
 	.string "Okay, you've got me.\n"
-	.string "Take this GYM BADGE!$"
+	.string "Take this Gym BADGE!$"
 
 DewfordTown_Gym_Text_ReceivedKnuckleBadge:
 	.string "{PLAYER} received the KNUCKLE BADGE\n"
@@ -427,7 +427,7 @@ DewfordTown_Gym_Text_ExplainBulkUp:
 	.string "… … … … … …$"
 
 DewfordTown_Gym_Text_RegisteredBrawly:
-	.string "Registered GYM Leader BRAWLY\n"
+	.string "Registered Gym Leader BRAWLY\n"
 	.string "in the PokéNav.$"
 
 DewfordTown_Gym_Text_BrawlyPostBattle:
@@ -436,10 +436,10 @@ DewfordTown_Gym_Text_BrawlyPostBattle:
 	.string "among TRAINERS one day!$"
 
 DewfordTown_Gym_Text_GymStatue:
-	.string "DEWFORD TOWN Pokémon GYM$"
+	.string "DEWFORD TOWN Pokémon Gym$"
 
 DewfordTown_Gym_Text_GymStatueCertified:
-	.string "DEWFORD TOWN Pokémon GYM\p"
+	.string "DEWFORD TOWN Pokémon Gym\p"
 	.string "BRAWLY's CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 

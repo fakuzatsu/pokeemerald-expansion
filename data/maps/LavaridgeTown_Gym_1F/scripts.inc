@@ -188,7 +188,7 @@ LavaridgeTown_Gym_1F_EventScript_GymStatue::
 LavaridgeTown_Gym_1F_Text_GymGuideAdvice:
 	.string "Hey, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
-	.string "LAVARIDGE's GYM Leader FLANNERY\n"
+	.string "LAVARIDGE's Gym Leader FLANNERY\n"
 	.string "uses FIRE-type Pokémon.\p"
 	.string "Her passion for Pokémon burns stronger\n"
 	.string "and hotter than a volcano.\p"
@@ -309,7 +309,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryIntro:
 	.string "made it here!\p"
 	.string "I have been entrusted with the…\n"
 	.string "No, wait.\p"
-	.string "I am FLANNERY, and I'm the GYM\n"
+	.string "I am FLANNERY, and I'm the Gym\n"
 	.string "Leader here!\p"
 	.string "Uh…\n"
 	.string "Dare not underestimate me, though\l"
@@ -322,7 +322,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryDefeat:
 	.string "Oh…\n"
 	.string "I guess I was trying too hard…\p"
 	.string "I… I've only recently become\n"
-	.string "a GYM Leader.\p"
+	.string "a Gym Leader.\p"
 	.string "I tried too hard to be someone\n"
 	.string "I'm not.\p"
 	.string "I have to do things my natural way. If\n"
@@ -353,19 +353,19 @@ LavaridgeTown_Gym_1F_Text_ExplainOverheat:
 	.string "be suitable for longer battles.$"
 
 LavaridgeTown_Gym_1F_Text_RegisteredFlannery:
-	.string "Registered GYM Leader FLANNERY\n"
+	.string "Registered Gym Leader FLANNERY\n"
 	.string "in the PokéNav.$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryPostBattle:
 	.string "Your power reminds me of someone…\p"
 	.string "Oh! I know! You battle like NORMAN,\n"
-	.string "the GYM Leader of PETALBURG.$"
+	.string "the Gym Leader of PETALBURG.$"
 
 LavaridgeTown_Gym_1F_Text_GymStatue:
-	.string "LAVARIDGE TOWN Pokémon GYM$"
+	.string "LAVARIDGE TOWN Pokémon Gym$"
 
 LavaridgeTown_Gym_1F_Text_GymStatueCertified:
-	.string "LAVARIDGE TOWN Pokémon GYM\p"
+	.string "LAVARIDGE TOWN Pokémon Gym\p"
 	.string "FLANNERY's CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
@@ -374,7 +374,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryPreRematch:
 	.string "to deflate me.\p"
 	.string "I love Pokémon.\n"
 	.string "I love to battle.\l"
-	.string "And… I love this GYM!\p"
+	.string "And… I love this Gym!\p"
 	.string "Let's exchange superhot moves\n"
 	.string "in another battle!$"
 
@@ -395,7 +395,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons:
 	.string "to deflate me.\p"
 	.string "I love Pokémon.\n"
 	.string "I love to battle.\l"
-	.string "And… I love this GYM!\p"
+	.string "And… I love this Gym!\p"
 	.string "Let's exchange superhot moves\n"
 	.string "in another battle!\p"
 	.string "Oh, wait. Do you only have one Pokémon\n"

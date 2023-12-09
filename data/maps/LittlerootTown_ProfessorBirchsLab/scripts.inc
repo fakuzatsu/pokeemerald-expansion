@@ -1232,12 +1232,12 @@ LittlerootTown_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly:
 LittlerootTown_ProfessorBirchsLab_Text_MayHaveYouGoneToBattleFrontier:
 	.string "May: Oh, hi, {PLAYER}{KUN}!\n"
 	.string "Have you gone to that place,\l"
-	.string "the Battle FRONTIER?$"
+	.string "the Battle Frontier?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BrendanHaveYouGoneToBattleFrontier:
 	.string "Brendan: Hey, {PLAYER}!\n"
 	.string "Have you gone out to that place,\l"
-	.string "the Battle FRONTIER?$"
+	.string "the Battle Frontier?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 	.string "… … … … … …\n"
