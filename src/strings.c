@@ -1291,7 +1291,6 @@ const u8 gText_PsychUp48BP[] = _("Psych Up{CLEAR_TO 0x4E}48BP");
 const u8 gText_IcePunch48BP[] = _("Ice Punch{CLEAR_TO 0x4E}48BP");
 const u8 gText_ThunderPunch48BP[] = _("Thunderpunch{CLEAR_TO 0x4E}48BP");
 const u8 gText_FirePunch48BP[] = _("Fire Punch{CLEAR_TO 0x4E}48BP");
-const u8 gText_PkmnFainted_FldPsn[] = _("{STR_VAR_1} fainted…\p\n");
 const u8 gText_Marco[] = _("Marco");
 const u8 gText_TrainerCardName[] = _("Name: ");
 #if OW_POISON_DAMAGE < GEN_4
