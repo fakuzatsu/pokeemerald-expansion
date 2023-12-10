@@ -42,3 +42,47 @@ u16 RandRange(u16 min, u16 max)
     return (Random() % (max - min)) + min;
 }
 
+__attribute__((weak, alias("RandomUniformDefault")))
+u32 RandomUniform(enum RandomTag tag, u32 lo, u32 hi);
+
+__attribute__((weak, alias("RandomUniformExceptDefault")))
+u32 RandomUniformExcept(enum RandomTag, u32 lo, u32 hi, bool32 (*reject)(u32));
+
+__attribute__((weak, alias("RandomWeightedArrayDefault")))
+u32 RandomWeightedArray(enum RandomTag tag, u32 sum, u32 n, const u8 *weights);
+
+__attribute__((weak, alias("RandomElementArrayDefault")))
+const void *RandomElementArray(enum RandomTag tag, const void *array, size_t size, size_t count);
+
+u32 RandomUniformDefault(enum RandomTag tag, u32 lo, u32 hi)
+{
+    return lo + (((hi - lo + 1) * Random()) >> 16);
+}
+
+u32 RandomUniformExceptDefault(enum RandomTag tag, u32 lo, u32 hi, bool32 (*reject)(u32))
+{
+    while (TRUE)
+    {
+        u32 n = RandomUniformDefault(tag, lo, hi);
+        if (!reject(n))
+            return n;
+    }
+}
+
+u32 RandomWeightedArrayDefault(enum RandomTag tag, u32 sum, u32 n, const u8 *weights)
+{
+    s32 i, targetSum;
+    targetSum = (sum * Random()) >> 16;
+    for (i = 0; i < n - 1; i++)
+    {
+        targetSum -= weights[i];
+        if (targetSum < 0)
+            return i;
+    }
+    return n - 1;
+}
+
+const void *RandomElementArrayDefault(enum RandomTag tag, const void *array, size_t size, size_t count)
+{
+    return (const u8 *)array + size * RandomUniformDefault(tag, 0, count - 1);
+}

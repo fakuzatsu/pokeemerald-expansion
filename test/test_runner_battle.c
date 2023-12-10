@@ -3,11 +3,23 @@
 #include "battle_anim.h"
 #include "battle_controllers.h"
 #include "characters.h"
+#include "item_menu.h"
 #include "main.h"
 #include "malloc.h"
 #include "random.h"
-#include "test_battle.h"
+#include "test/battle.h"
 #include "window.h"
+
+#if defined(__INTELLISENSE__)
+#undef TestRunner_Battle_RecordAbilityPopUp
+#undef TestRunner_Battle_RecordAnimation
+#undef TestRunner_Battle_RecordHP
+#undef TestRunner_Battle_RecordMessage
+#undef TestRunner_Battle_RecordStatus1
+#undef TestRunner_Battle_AfterLastTurn
+#undef TestRunner_Battle_CheckBattleRecordActionType
+#undef TestRunner_Battle_GetForcedAbility
+#endif
 
 #define INVALID(fmt, ...) Test_ExitWithResult(TEST_RESULT_INVALID, "%s:%d: " fmt, gTestRunnerState.test->filename, sourceLine, ##__VA_ARGS__)
 #define INVALID_IF(c, fmt, ...) do { if (c) Test_ExitWithResult(TEST_RESULT_INVALID, "%s:%d: " fmt, gTestRunnerState.test->filename, sourceLine, ##__VA_ARGS__); } while (0)
@@ -15,26 +27,10 @@
 #define STATE gBattleTestRunnerState
 #define DATA gBattleTestRunnerState->data
 
-/* RNG seeds for controlling the first move of the turn.
- * Found via brute force. */
+#define RNG_SEED_DEFAULT 0x00000000
 
-/* Default seed, triggers most things.
- * The 1st roll % 100 is <= 29, to make 30%+ accuracycheck pass.
- * The 2nd roll is not a critical hit at the regular crit stage.
- * The 3rd roll is consumed by damagecalc.
- * The 4th roll is consumed by adjustdamage.
- * The 5th roll % 100 is <= 9, to make 10%+ seteffectwithchance pass
- *          and % 3 is == 0, to make Poison Point and other 1/3s pass. */
-#define RNG_SEED_DEFAULT 0x000002BE
-
-/* Causes the first attack to critical hit if B_CRIT_CHANCE >= GEN_6.
- * The 2nd roll % 24 == 0 to be a critical hit at any stage.
- * The other rolls match RNG_SEED_DEFAULT. */
-#define RNG_SEED_CRITICAL_HIT 0x0000A9F4
-
-/* Causes the first attack to miss if possible.
- * The 1st roll % 100 is 99, to make 99%- accuracycheck fail. */
-#define RNG_SEED_MISS 0x00000074
+#undef Q_4_12
+#define Q_4_12(n) (s32)((n) * 4096)
 
 EWRAM_DATA struct BattleTestRunnerState *gBattleTestRunnerState = NULL;
 
@@ -129,12 +125,13 @@ static u32 BattleTest_EstimateCost(void *data)
     if (!STATE)
         return 0;
     STATE->runRandomly = TRUE;
-    DATA.recordedBattle.rngSeed = RNG_SEED_DEFAULT;
     InvokeTestFunction(test);
     cost = 1;
     if (STATE->parametersCount != 0)
         cost *= STATE->parametersCount;
-    if (STATE->trials != 0)
+    if (STATE->trials == 1)
+        cost *= 3;
+    else if (STATE->trials > 1)
         cost *= STATE->trials;
     FREE_AND_SET_NULL(STATE);
     return cost;
@@ -148,6 +145,8 @@ static void BattleTest_SetUp(void *data)
         Test_ExitWithResult(TEST_RESULT_ERROR, "OOM: STATE = AllocZerod(%d)", sizeof(*STATE));
     InvokeTestFunction(test);
     STATE->parameters = STATE->parametersCount;
+    if (STATE->parametersCount == 0 && test->resultsSize > 0)
+        Test_ExitWithResult(TEST_RESULT_INVALID, "results without PARAMETRIZE");
     STATE->results = AllocZeroed(test->resultsSize * STATE->parameters);
     if (!STATE->results)
         Test_ExitWithResult(TEST_RESULT_ERROR, "OOM: STATE->results = AllocZerod(%d)", sizeof(test->resultsSize * STATE->parameters));
@@ -159,6 +158,28 @@ static void BattleTest_SetUp(void *data)
     case BATTLE_TEST_DOUBLES:
         STATE->battlersCount = 4;
         break;
+    }
+}
+
+static void PrintTestName(void)
+{
+    if (STATE->trials && STATE->parameters)
+    {
+        if (STATE->trials == 1)
+            MgbaPrintf_(":N%s %d/%d (%d/?)", gTestRunnerState.test->name, STATE->runParameter + 1, STATE->parameters, STATE->runTrial + 1);
+        else
+            MgbaPrintf_(":N%s %d/%d (%d/%d)", gTestRunnerState.test->name, STATE->runParameter + 1, STATE->parameters, STATE->runTrial + 1, STATE->trials);
+    }
+    else if (STATE->trials)
+    {
+        if (STATE->trials == 1)
+            MgbaPrintf_(":N%s (%d/?)", gTestRunnerState.test->name, STATE->runTrial + 1);
+        else
+            MgbaPrintf_(":N%s (%d/%d)", gTestRunnerState.test->name, STATE->runTrial + 1, STATE->trials);
+    }
+    else if (STATE->parameters)
+    {
+        MgbaPrintf_(":N%s %d/%d", gTestRunnerState.test->name, STATE->runParameter + 1, STATE->parameters);
     }
 }
 
@@ -280,12 +301,192 @@ static void BattleTest_Run(void *data)
     STATE->checkProgressTrial = 0;
     STATE->checkProgressTurn = 0;
 
-    if (STATE->trials && STATE->parameters)
-        MgbaPrintf_(":N%s %d/%d (%d/%d)", gTestRunnerState.test->name, STATE->runParameter + 1, STATE->parameters, STATE->runTrial + 1, STATE->trials);
-    else if (STATE->trials)
-        MgbaPrintf_(":N%s (%d/%d)", gTestRunnerState.test->name, STATE->runTrial + 1, STATE->trials);
-    else if (STATE->parameters)
-        MgbaPrintf_(":N%s %d/%d", gTestRunnerState.test->name, STATE->runParameter + 1, STATE->parameters);
+    PrintTestName();
+}
+
+u32 RandomUniform(enum RandomTag tag, u32 lo, u32 hi)
+{
+    const struct BattlerTurn *turn = NULL;
+
+    if (gCurrentTurnActionNumber < gBattlersCount)
+    {
+        u32 battlerId = gBattlerByTurnOrder[gCurrentTurnActionNumber];
+        turn = &DATA.battleRecordTurns[gBattleResults.battleTurnCounter][battlerId];
+        if (turn && turn->rng.tag == tag)
+            return turn->rng.value;
+    }
+
+    if (tag == STATE->rngTag)
+    {
+        u32 n = hi - lo + 1;
+        if (STATE->trials == 1)
+        {
+            STATE->trials = n;
+            PrintTestName();
+        }
+        else if (STATE->trials != n)
+        {
+            Test_ExitWithResult(TEST_RESULT_ERROR, "RandomUniform called with inconsistent trials %d and %d", STATE->trials, n);
+        }
+        STATE->trialRatio = Q_4_12(1) / STATE->trials;
+        return STATE->runTrial + lo;
+    }
+
+    return hi;
+}
+
+u32 RandomUniformExcept(enum RandomTag tag, u32 lo, u32 hi, bool32 (*reject)(u32))
+{
+    const struct BattlerTurn *turn = NULL;
+    u32 default_;
+
+    if (gCurrentTurnActionNumber < gBattlersCount)
+    {
+        u32 battlerId = gBattlerByTurnOrder[gCurrentTurnActionNumber];
+        turn = &DATA.battleRecordTurns[gBattleResults.battleTurnCounter][battlerId];
+        if (turn && turn->rng.tag == tag)
+        {
+            if (reject(turn->rng.value))
+                Test_ExitWithResult(TEST_RESULT_INVALID, "WITH_RNG specified a rejected value (%d)", turn->rng.value);
+            return turn->rng.value;
+        }
+    }
+
+    if (tag == STATE->rngTag)
+    {
+        if (STATE->trials == 1)
+        {
+            u32 n = 0, i;
+            for (i = lo; i < hi; i++)
+                if (!reject(i))
+                    n++;
+            STATE->trials = n;
+            PrintTestName();
+        }
+        STATE->trialRatio = Q_4_12(1) / STATE->trials;
+
+        while (reject(STATE->runTrial + lo + STATE->rngTrialOffset))
+        {
+            if (STATE->runTrial + lo + STATE->rngTrialOffset > hi)
+                Test_ExitWithResult(TEST_RESULT_INVALID, "RandomUniformExcept called with inconsistent reject");
+            STATE->rngTrialOffset++;
+        }
+
+        return STATE->runTrial + lo + STATE->rngTrialOffset;
+    }
+
+    default_ = hi;
+    while (reject(default_))
+    {
+        if (default_ == lo)
+            Test_ExitWithResult(TEST_RESULT_INVALID, "RandomUniformExcept rejected all values");
+        default_--;
+    }
+    return default_;
+}
+
+u32 RandomWeightedArray(enum RandomTag tag, u32 sum, u32 n, const u8 *weights)
+{
+    const struct BattlerTurn *turn = NULL;
+
+    if (sum == 0)
+        Test_ExitWithResult(TEST_RESULT_ERROR, "RandomWeightedArray called with zero sum");
+
+    if (gCurrentTurnActionNumber < gBattlersCount)
+    {
+        u32 battlerId = gBattlerByTurnOrder[gCurrentTurnActionNumber];
+        turn = &DATA.battleRecordTurns[gBattleResults.battleTurnCounter][battlerId];
+        if (turn && turn->rng.tag == tag)
+            return turn->rng.value;
+    }
+
+    if (tag == STATE->rngTag)
+    {
+        if (STATE->trials == 1)
+        {
+            STATE->trials = n;
+            PrintTestName();
+        }
+        else if (STATE->trials != n)
+        {
+            Test_ExitWithResult(TEST_RESULT_ERROR, "RandomWeighted called with inconsistent trials %d and %d", STATE->trials, n);
+        }
+        // TODO: Detect inconsistent sum.
+        STATE->trialRatio = Q_4_12(weights[STATE->runTrial]) / sum;
+        return STATE->runTrial;
+    }
+
+    switch (tag)
+    {
+    case RNG_ACCURACY:
+        ASSUME(n == 2);
+        if (turn && turn->hit)
+            return turn->hit - 1;
+        else
+            return TRUE;
+
+    case RNG_CRITICAL_HIT:
+        ASSUME(n == 2);
+        if (turn && turn->criticalHit)
+            return turn->criticalHit - 1;
+        else
+            return FALSE;
+
+    case RNG_SECONDARY_EFFECT:
+        ASSUME(n == 2);
+        if (turn && turn->secondaryEffect)
+            return turn->secondaryEffect - 1;
+        else
+            return TRUE;
+
+    default:
+        while (weights[n-1] == 0)
+        {
+            if (n == 1)
+                Test_ExitWithResult(TEST_RESULT_ERROR, "RandomWeightedArray called with all zero weights");
+            n--;
+        }
+        return n-1;
+    }
+}
+
+const void *RandomElementArray(enum RandomTag tag, const void *array, size_t size, size_t count)
+{
+    const struct BattlerTurn *turn = NULL;
+    u32 index = count-1;
+
+    if (gCurrentTurnActionNumber < gBattlersCount)
+    {
+        u32 battlerId = gBattlerByTurnOrder[gCurrentTurnActionNumber];
+        turn = &DATA.battleRecordTurns[gBattleResults.battleTurnCounter][battlerId];
+        if (turn && turn->rng.tag == tag)
+        {
+            u32 element = 0;
+            for (index = 0; index < count; index++)
+            {
+                memcpy(&element, (const u8 *)array + size * index, size);
+                if (element == turn->rng.value)
+                    return (const u8 *)array + size * index;
+            }
+            // TODO: Incorporate the line number.
+            Test_ExitWithResult(TEST_RESULT_ERROR, "%s: RandomElement illegal value requested: %d", gTestRunnerState.test->filename, turn->rng.value);
+        }
+    }
+
+    if (tag == STATE->rngTag)
+    {
+        if (STATE->trials == 1)
+        {
+            STATE->trials = count;
+            PrintTestName();
+        }
+        else if (STATE->trials != count)
+        {
+            Test_ExitWithResult(TEST_RESULT_ERROR, "RandomElement called with inconsistent trials %d and %d", STATE->trials, count);
+        }
+        STATE->trialRatio = Q_4_12(1) / count;
+        return (const u8 *)array + size * STATE->runTrial;
+    }
 }
 
 static s32 TryAbilityPopUp(s32 i, s32 n, u32 battlerId, u32 ability)
@@ -694,59 +895,63 @@ void TestRunner_Battle_AfterLastTurn(void)
     STATE->runFinally = FALSE;
 }
 
-static void CB2_BattleTest_NextParameter(void)
-{
-    if (++STATE->runParameter >= STATE->parameters)
-        SetMainCallback2(CB2_TestRunner);
-    else
-        BattleTest_Run(gTestRunnerState.test->data);
-}
-
-static void CB2_BattleTest_NextTrial(void)
+static void TearDownBattle(void)
 {
     FreeMonSpritesGfx();
     FreeBattleSpritesData();
     FreeBattleResources();
     FreeAllWindowBuffers();
+}
+
+static void CB2_BattleTest_NextParameter(void)
+{
+    if (++STATE->runParameter >= STATE->parameters)
+    {
+        SetMainCallback2(CB2_TestRunner);
+    }
+    else
+    {
+        STATE->trials = 0;
+        BattleTest_Run(gTestRunnerState.test->data);
+    }
+}
+
+static void CB2_BattleTest_NextTrial(void)
+{
+    TearDownBattle();
 
     SetMainCallback2(CB2_BattleTest_NextParameter);
 
+    switch (gTestRunnerState.result)
+    {
+    case TEST_RESULT_FAIL:
+        break;
+    case TEST_RESULT_PASS:
+        STATE->observedRatio += STATE->trialRatio;
+        break;
+    default:
+        return;
+    }
+    if (STATE->rngTag)
+        STATE->trialRatio = 0;
+
     if (++STATE->runTrial < STATE->trials)
     {
-        switch (gTestRunnerState.result)
-        {
-        case TEST_RESULT_FAIL:
-            break;
-        case TEST_RESULT_PASS:
-            STATE->observedPasses++;
-            break;
-        case TEST_RESULT_SKIP:
-            STATE->skippedTrials++;
-            if (STATE->skippedTrials > STATE->trials / 4)
-                Test_ExitWithResult(TEST_RESULT_INVALID, "25%% of the trials were SKIPed");
-            break;
-        default:
-            return;
-        }
-        if (STATE->parameters)
-            MgbaPrintf_(":N%s %d/%d (%d/%d)", gTestRunnerState.test->name, STATE->runParameter + 1, STATE->parameters, STATE->runTrial + 1, STATE->trials);
-        else
-            MgbaPrintf_(":N%s (%d/%d)", gTestRunnerState.test->name, STATE->runTrial + 1, STATE->trials);
-                gTestRunnerState.result = TEST_RESULT_PASS;
+        PrintTestName();
+        gTestRunnerState.result = TEST_RESULT_PASS;
         DATA.recordedBattle.rngSeed = ISO_RANDOMIZE1(STATE->runTrial);
         DATA.queuedEvent = 0;
         DATA.lastActionTurn = 0;
-        DATA.nextRNGTurn = 0;
         SetVariablesForRecordedBattle(&DATA.recordedBattle);
         SetMainCallback2(CB2_InitBattle);
     }
     else
     {
-        // This is a tolerance of +/- 4%.
-        if (abs(STATE->observedPasses - STATE->expectedPasses) <= 2)
+        // This is a tolerance of +/- ~2%.
+        if (abs(STATE->observedRatio - STATE->expectedRatio) <= Q_4_12(0.02))
             gTestRunnerState.result = TEST_RESULT_PASS;
         else
-            Test_ExitWithResult(TEST_RESULT_FAIL, "Expected %d/%d passes, observed %d/%d", STATE->expectedPasses, STATE->trials, STATE->observedPasses, STATE->trials);
+            Test_ExitWithResult(TEST_RESULT_FAIL, "Expected %q passes/successes, observed %q", STATE->expectedRatio, STATE->observedRatio);
     }
 }
 
@@ -754,6 +959,10 @@ static void BattleTest_TearDown(void *data)
 {
     if (STATE)
     {
+        // Free resources that aren't cleaned up when the battle was
+        // aborted unexpectedly.
+        if (STATE->tearDownBattle)
+            TearDownBattle();
         FREE_AND_SET_NULL(STATE->results);
         FREE_AND_SET_NULL(STATE);
     }
@@ -773,7 +982,8 @@ static bool32 BattleTest_CheckProgress(void *data)
 
 static bool32 BattleTest_HandleExitWithResult(void *data, enum TestResult result)
 {
-    if (result != TEST_RESULT_INVALID
+    if (result != TEST_RESULT_ASSUMPTION_FAIL
+     && result != TEST_RESULT_INVALID
      && result != TEST_RESULT_ERROR
      && result != TEST_RESULT_TIMEOUT
      && STATE->runTrial < STATE->trials)
@@ -783,20 +993,34 @@ static bool32 BattleTest_HandleExitWithResult(void *data, enum TestResult result
     }
     else
     {
+        STATE->tearDownBattle = TRUE;
         return FALSE;
     }
 }
 
-void Randomly(u32 sourceLine, u32 passes, u32 trials)
+void Randomly(u32 sourceLine, u32 passes, u32 trials, struct RandomlyContext ctx)
 {
-    INVALID_IF(DATA.recordedBattle.rngSeed != RNG_SEED_DEFAULT, "RNG seed already set");
-    // This is a precision of 2%.
-    STATE->trials = 50;
-    STATE->expectedPasses = STATE->trials * passes / trials;
-    STATE->observedPasses = 0;
-    STATE->skippedTrials = 0;
+    const struct BattleTest *test = gTestRunnerState.test->data;
+    INVALID_IF(STATE->trials != 0, "PASSES_RANDOMLY can only be used once per test");
+    INVALID_IF(test->resultsSize > 0, "PASSES_RANDOMLY is incompatible with results");
+    INVALID_IF(passes > trials, "%d passes specified, but only %d trials", passes, trials);
+    STATE->rngTag = ctx.tag;
+    STATE->rngTrialOffset = 0;
     STATE->runTrial = 0;
-    DATA.recordedBattle.rngSeed = 0;
+    STATE->expectedRatio = Q_4_12(passes) / trials;
+    STATE->observedRatio = 0;
+    if (STATE->rngTag)
+    {
+        STATE->trials = 1;
+        STATE->trialRatio = Q_4_12(1);
+    }
+    else
+    {
+        INVALID_IF(DATA.recordedBattle.rngSeed != RNG_SEED_DEFAULT, "RNG seed already set");
+        STATE->trials = 50;
+        STATE->trialRatio = Q_4_12(1) / STATE->trials;
+        DATA.recordedBattle.rngSeed = 0;
+    }
 }
 
 void RNGSeed_(u32 sourceLine, u32 seed)
@@ -927,15 +1151,22 @@ void Ability_(u32 sourceLine, u32 ability)
             break;
         }
     }
-    INVALID_IF(i == NUM_ABILITY_SLOTS, "%S cannot have %S", gSpeciesNames[species], gAbilityNames[ability]);
+    // Store forced ability to be set when the battle starts if invalid.
+    if (i == NUM_ABILITY_SLOTS)
+    {
+        DATA.forcedAbilities[DATA.currentSide][DATA.currentPartyIndex] = ability;
+    }
 }
 
 void Level_(u32 sourceLine, u32 level)
 {
     // TODO: Preserve any explicitly-set stats.
+    u32 species = GetMonData(DATA.currentMon, MON_DATA_SPECIES);
     INVALID_IF(!DATA.currentMon, "Level outside of PLAYER/OPPONENT");
     INVALID_IF(level == 0 || level > MAX_LEVEL, "Illegal level: %d", level);
     SetMonData(DATA.currentMon, MON_DATA_LEVEL, &level);
+    SetMonData(DATA.currentMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][level]);
+    CalculateMonStats(DATA.currentMon);
 }
 
 void MaxHP_(u32 sourceLine, u32 maxHP)
@@ -1012,6 +1243,21 @@ void Moves_(u32 sourceLine, const u16 moves[MAX_MON_MOVES])
     DATA.explicitMoves[DATA.currentSide] |= 1 << DATA.currentPartyIndex;
 }
 
+void MovesWithPP_(u32 sourceLine, struct moveWithPP moveWithPP[MAX_MON_MOVES])
+{
+    s32 i;
+    INVALID_IF(!DATA.currentMon, "Moves outside of PLAYER/OPPONENT");
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (moveWithPP[i].moveId == MOVE_NONE)
+            break;
+        INVALID_IF(moveWithPP[i].moveId >= MOVES_COUNT, "Illegal move: %d", &moveWithPP[i].moveId);
+        SetMonData(DATA.currentMon, MON_DATA_MOVE1 + i, &moveWithPP[i].moveId);
+        SetMonData(DATA.currentMon, MON_DATA_PP1 + i, &moveWithPP[i].pp);
+    }
+    DATA.explicitMoves[DATA.currentSide] |= 1 << DATA.currentPartyIndex;
+}
+
 void Friendship_(u32 sourceLine, u32 friendship)
 {
     INVALID_IF(!DATA.currentMon, "Friendship outside of PLAYER/OPPONENT");
@@ -1025,6 +1271,31 @@ void Status1_(u32 sourceLine, u32 status1)
     SetMonData(DATA.currentMon, MON_DATA_STATUS, &status1);
 }
 
+static const char *const sBattlerIdentifiersSingles[] =
+{
+    "player",
+    "opponent",
+};
+
+static const char *const sBattlerIdentifiersDoubles[] =
+{
+    "playerLeft",
+    "opponentLeft",
+    "playerRight",
+    "opponentRight",
+};
+
+static const char *BattlerIdentifier(s32 battlerId)
+{
+    const struct BattleTest *test = gTestRunnerState.test->data;
+    switch (test->type)
+    {
+    case BATTLE_TEST_SINGLES: return sBattlerIdentifiersSingles[battlerId];
+    case BATTLE_TEST_DOUBLES: return sBattlerIdentifiersDoubles[battlerId];
+    }
+    return "<unknown>";
+}
+
 static void PushBattlerAction(u32 sourceLine, s32 battlerId, u32 actionType, u32 byte)
 {
     u32 recordIndex = DATA.recordIndexes[battlerId]++;
@@ -1035,18 +1306,8 @@ static void PushBattlerAction(u32 sourceLine, s32 battlerId, u32 actionType, u32
     DATA.recordedBattle.battleRecord[battlerId][recordIndex] = byte;
 }
 
-void BattleTest_CheckBattleRecordActionType(u32 battlerId, u32 recordIndex, u32 actionType)
+void TestRunner_Battle_CheckBattleRecordActionType(u32 battlerId, u32 recordIndex, u32 actionType)
 {
-    // TODO: Support explicit seeds for each turn?
-    if (DATA.nextRNGTurn == gBattleResults.battleTurnCounter
-     && (DATA.recordedBattle.rngSeed == RNG_SEED_DEFAULT
-      || DATA.recordedBattle.rngSeed == RNG_SEED_CRITICAL_HIT
-      || DATA.recordedBattle.rngSeed == RNG_SEED_MISS))
-    {
-        gRngValue = DATA.recordedBattle.rngSeed;
-        DATA.nextRNGTurn++;
-    }
-
     // An illegal move choice will cause the battle to request a new
     // move slot and target. This detects the move slot.
     if (actionType == RECORDED_MOVE_SLOT
@@ -1088,6 +1349,9 @@ void BattleTest_CheckBattleRecordActionType(u32 battlerId, u32 recordIndex, u32 
                 case B_ACTION_SWITCH:
                     actualMacro = "SWITCH";
                     break;
+                case B_ACTION_USE_ITEM:
+                    actualMacro = "USE_ITEM";
+                    break;
                 }
                 break;
             case RECORDED_PARTY_INDEX:
@@ -1122,10 +1386,11 @@ void BattleTest_CheckBattleRecordActionType(u32 battlerId, u32 recordIndex, u32 
 void OpenTurn(u32 sourceLine)
 {
     INVALID_IF(DATA.turnState != TURN_CLOSED, "Nested TURN");
+    if (DATA.turns == MAX_TURNS)
+        Test_ExitWithResult(TEST_RESULT_ERROR, "%s:%d: TURN exceeds MAX_TURNS", gTestRunnerState.test->filename, sourceLine);
     DATA.turnState = TURN_OPEN;
     DATA.actionBattlers = 0x00;
     DATA.moveBattlers = 0x00;
-    DATA.hasRNGActions = FALSE;
 }
 
 static void SetSlowerThan(s32 battlerId)
@@ -1195,7 +1460,6 @@ void Move(u32 sourceLine, struct BattlePokemon *battler, struct MoveContext ctx)
             else if (moveId == MOVE_NONE)
             {
                 INVALID_IF(DATA.explicitMoves[battlerId & BIT_SIDE] & (1 << DATA.currentMonIndexes[battlerId]), "Missing explicit %S", gMoveNames[ctx.move]);
-                INVALID_IF(i == MAX_MON_MOVES, "Too many different moves");
                 SetMonData(mon, MON_DATA_MOVE1 + i, &ctx.move);
                 SetMonData(DATA.currentMon, MON_DATA_PP1 + i, &gBattleMoves[ctx.move].pp);
                 moveSlot = i;
@@ -1203,6 +1467,7 @@ void Move(u32 sourceLine, struct BattlePokemon *battler, struct MoveContext ctx)
                 break;
             }
         }
+        INVALID_IF(i == MAX_MON_MOVES, "Too many different moves for %s", BattlerIdentifier(battlerId));
     }
     else if (ctx.explicitMoveSlot)
     {
@@ -1227,6 +1492,7 @@ void Move(u32 sourceLine, struct BattlePokemon *battler, struct MoveContext ctx)
         const struct BattleMove *move = &gBattleMoves[moveId];
         if (move->target == MOVE_TARGET_RANDOM
          || move->target == MOVE_TARGET_BOTH
+         || move->target == MOVE_TARGET_DEPENDS
          || move->target == MOVE_TARGET_FOES_AND_ALLY
          || move->target == MOVE_TARGET_OPPONENTS_FIELD
          || move->target == MOVE_TARGET_ALL_BATTLERS)
@@ -1253,21 +1519,14 @@ void Move(u32 sourceLine, struct BattlePokemon *battler, struct MoveContext ctx)
         }
     }
 
-    if (ctx.explicitHit && !ctx.hit)
-    {
-        if (DATA.hasRNGActions != 0)
-            Test_ExitWithResult(TEST_RESULT_ERROR, "%s:%d: hit only supported on the first move", gTestRunnerState.test->filename, sourceLine);
-        INVALID_IF(DATA.recordedBattle.rngSeed != RNG_SEED_DEFAULT, "RNG seed already set");
-        DATA.recordedBattle.rngSeed = RNG_SEED_MISS;
-    }
-
-    if (ctx.explicitCriticalHit && ctx.criticalHit)
-    {
-        if (DATA.hasRNGActions != 0)
-            Test_ExitWithResult(TEST_RESULT_ERROR, "%s:%d: criticalHit only supported on the first move", gTestRunnerState.test->filename, sourceLine);
-        INVALID_IF(DATA.recordedBattle.rngSeed != RNG_SEED_DEFAULT, "RNG seed already set");
-        DATA.recordedBattle.rngSeed = RNG_SEED_CRITICAL_HIT;
-    }
+    if (ctx.explicitHit)
+        DATA.battleRecordTurns[DATA.turns][battlerId].hit = 1 + ctx.hit;
+    if (ctx.explicitCriticalHit)
+        DATA.battleRecordTurns[DATA.turns][battlerId].criticalHit = 1 + ctx.criticalHit;
+    if (ctx.explicitSecondaryEffect)
+        DATA.battleRecordTurns[DATA.turns][battlerId].secondaryEffect = 1 + ctx.secondaryEffect;
+    if (ctx.explicitRNG)
+        DATA.battleRecordTurns[DATA.turns][battlerId].rng = ctx.rng;
 
     if (!(DATA.actionBattlers & (1 << battlerId)))
     {
@@ -1287,14 +1546,6 @@ void Move(u32 sourceLine, struct BattlePokemon *battler, struct MoveContext ctx)
 
         DATA.actionBattlers |= 1 << battlerId;
         DATA.moveBattlers |= 1 << battlerId;
-    }
-
-    // WARNING: Approximation. The move could still cause the RNG to
-    // advance.
-    if (gBattleMoves[moveId].accuracy != 0
-     || gBattleMoves[moveId].split != SPLIT_STATUS)
-    {
-        DATA.hasRNGActions = TRUE;
     }
 }
 
@@ -1356,6 +1607,42 @@ void SendOut(u32 sourceLine, struct BattlePokemon *battler, u32 partyIndex)
         Move(sourceLine, battler, (struct MoveContext) { move: MOVE_CELEBRATE, explicitMove: TRUE });
     PushBattlerAction(sourceLine, battlerId, RECORDED_PARTY_INDEX, partyIndex);
     DATA.currentMonIndexes[battlerId] = partyIndex;
+}
+
+void UseItem(u32 sourceLine, struct BattlePokemon *battler, struct ItemContext ctx)
+{
+    s32 i;
+    s32 battlerId = battler - gBattleMons;
+    bool32 requirePartyIndex = ItemId_GetType(ctx.itemId) == ITEM_USE_PARTY_MENU || ItemId_GetType(ctx.itemId) == ITEM_USE_PARTY_MENU_MOVES;
+    // Check general bad use.
+    INVALID_IF(DATA.turnState == TURN_CLOSED, "USE_ITEM outside TURN");
+    INVALID_IF(DATA.actionBattlers & (1 << battlerId), "Multiple battler actions");
+    INVALID_IF(ctx.itemId >= ITEMS_COUNT, "Illegal item: %d", ctx.itemId);
+    // Check party menu items.
+    INVALID_IF(requirePartyIndex && !ctx.explicitPartyIndex, "%S requires explicit party index", ItemId_GetName(ctx.itemId));
+    INVALID_IF(requirePartyIndex && ctx.partyIndex >= ((battlerId & BIT_SIDE) == B_SIDE_PLAYER ? DATA.playerPartySize : DATA.opponentPartySize), \
+                "USE_ITEM to invalid party index");
+    // Check move slot items.
+    if (ItemId_GetType(ctx.itemId) == ITEM_USE_PARTY_MENU_MOVES)
+    {
+        INVALID_IF(!ctx.explicitMove, "%S requires an explicit move", ItemId_GetName(ctx.itemId));
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            if (GetMonData(CurrentMon(battlerId), MON_DATA_MOVE1 + i, NULL) == ctx.move)
+                break;
+        }
+        INVALID_IF(i == MAX_MON_MOVES, "USE_ITEM on invalid move: %d", ctx.move);
+    }
+    else
+    {
+        i = 0;
+    }
+    PushBattlerAction(sourceLine, battlerId, RECORDED_ACTION_TYPE, B_ACTION_USE_ITEM);
+    PushBattlerAction(sourceLine, battlerId, RECORDED_ITEM_ID, (ctx.itemId >> 8) & 0xFF);
+    PushBattlerAction(sourceLine, battlerId, RECORDED_ITEM_ID, ctx.itemId & 0xFF);
+    PushBattlerAction(sourceLine, battlerId, RECORDED_ITEM_TARGET, ctx.partyIndex);
+    PushBattlerAction(sourceLine, battlerId, RECORDED_ITEM_MOVE, i);
+    DATA.actionBattlers |= 1 << battlerId;
 }
 
 static const char *const sQueueGroupTypeMacros[] =
@@ -1505,7 +1792,6 @@ void QueueMessage(u32 sourceLine, const u8 *pattern)
     };
 }
 
-
 void QueueStatus(u32 sourceLine, struct BattlePokemon *battler, struct StatusEventContext ctx)
 {
     s32 battlerId = battler - gBattleMons;
@@ -1529,6 +1815,8 @@ void QueueStatus(u32 sourceLine, struct BattlePokemon *battler, struct StatusEve
         mask = STATUS1_PARALYSIS;
     else if (ctx.badPoison)
         mask = STATUS1_TOXIC_POISON;
+    else if (ctx.frostbite)
+        mask = STATUS1_FROSTBITE;
     else
         mask = ctx.status1;
 
@@ -1542,4 +1830,17 @@ void QueueStatus(u32 sourceLine, struct BattlePokemon *battler, struct StatusEve
             .mask = mask,
         }},
     };
+}
+
+void ValidateFinally(u32 sourceLine)
+{
+    // Defer this error until after estimating the cost.
+    if (STATE->results == NULL)
+        return;
+    INVALID_IF(STATE->parametersCount == 0, "FINALLY without PARAMETRIZE");
+}
+
+u32 TestRunner_Battle_GetForcedAbility(u32 side, u32 partyIndex)
+{
+    return DATA.forcedAbilities[side][partyIndex];
 }

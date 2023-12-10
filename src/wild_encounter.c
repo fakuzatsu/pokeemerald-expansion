@@ -961,7 +961,7 @@ void FishingWildEncounter(u8 rod)
         else
             species = GenerateFishingWildMon(gWildMonHeaders[GetCurrentMapWildMonHeaderId()].fishingMonsInfo, rod);
     }
-    IncrementGameStat(GAME_STAT_FISHING_CAPTURES);
+    IncrementGameStat(GAME_STAT_FISHING_ENCOUNTERS);
     SetPokemonAnglerSpecies(species);
     gIsFishingEncounter = TRUE;
     BattleSetup_StartWildBattle();
@@ -1220,7 +1220,11 @@ static void ApplyCleanseTagEncounterRateMod(u32 *encRate)
 
 bool8 TryDoDoubleWildBattle(void)
 {
+#if B_DOUBLE_WILD_REQUIRE_2_MONS == TRUE
     if (GetSafariZoneFlag() || GetMonsStateToDoubles() != PLAYER_HAS_TWO_USABLE_MONS)
+#else
+    if (GetSafariZoneFlag())
+#endif
         return FALSE;
 #if B_FLAG_FORCE_DOUBLE_WILD != 0
     else if (FlagGet(B_FLAG_FORCE_DOUBLE_WILD))

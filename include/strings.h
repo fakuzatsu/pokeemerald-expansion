@@ -486,6 +486,7 @@ extern const u8 gText_EscapeFromHere[];
 extern const u8 gText_PkmnCuredOfPoison[];
 extern const u8 gText_PkmnWokeUp2[];
 extern const u8 gText_PkmnBurnHealed[];
+extern const u8 gText_PkmnFrostbiteHealed[];
 extern const u8 gText_PkmnThawedOut[];
 extern const u8 gText_PkmnCuredOfParalysis[];
 extern const u8 gText_PkmnGotOverInfatuation[];
@@ -1185,6 +1186,8 @@ extern const u8 gText_ThrowInPremierBalls[];
 extern const u8 gText_ShopBuy[];
 extern const u8 gText_ShopSell[];
 extern const u8 gText_ShopQuit[];
+extern const u8 gText_ThatItemIsSoldOut[];
+extern const u8 gText_SoldOut[];
 
 extern const u8 gText_OhABite[];
 extern const u8 gText_PokemonOnHook[];
