@@ -28,7 +28,13 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 29,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_DEWFORD_TOWN_HOLIDAY_HOME",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 

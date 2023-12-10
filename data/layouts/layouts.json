@@ -4840,6 +4840,16 @@
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/VerdantForest_CelebiRoom/border.bin",
       "blockdata_filepath": "data/layouts/VerdantForest_CelebiRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_DEWFORD_TOWN_HOLIDAY_HOME",
+      "name": "DewfordTown_HolidayHome_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/DewfordTown_HolidayHome/border.bin",
+      "blockdata_filepath": "data/layouts/DewfordTown_HolidayHome/map.bin"
     }
   ]
 }
