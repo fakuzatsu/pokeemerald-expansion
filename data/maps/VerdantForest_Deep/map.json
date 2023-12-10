@@ -18,17 +18,31 @@
   ],
   "warp_events": [
     {
-      "x": 24,
+      "x": 26,
       "y": 1,
       "elevation": 0,
       "dest_map": "MAP_VERDANT_FOREST",
       "dest_warp_id": "0"
     },
     {
-      "x": 25,
+      "x": 27,
       "y": 1,
       "elevation": 0,
       "dest_map": "MAP_VERDANT_FOREST",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 16,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_VERDANT_FOREST_CELEBI_ROOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 17,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_VERDANT_FOREST_CELEBI_ROOM",
       "dest_warp_id": "1"
     }
   ],

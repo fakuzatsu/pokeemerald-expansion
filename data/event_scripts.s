@@ -1140,3 +1140,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/OldaleTown_House3/scripts.inc"
 
 	.include "data/maps/RusturfCliff/scripts.inc"
+
+	.include "data/maps/VerdantForest_CelebiRoom/scripts.inc"

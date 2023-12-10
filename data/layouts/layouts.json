@@ -4830,6 +4830,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/RusturfCliff/border.bin",
       "blockdata_filepath": "data/layouts/RusturfCliff/map.bin"
+    },
+    {
+      "id": "LAYOUT_VERDANT_FOREST_CELEBI_ROOM",
+      "name": "VerdantForest_CelebiRoom_Layout",
+      "width": 22,
+      "height": 18,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/VerdantForest_CelebiRoom/border.bin",
+      "blockdata_filepath": "data/layouts/VerdantForest_CelebiRoom/map.bin"
     }
   ]
 }
