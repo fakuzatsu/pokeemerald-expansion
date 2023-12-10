@@ -25,9 +25,10 @@ MauvilleCity_FlowerShop_HideLisla::
 
 MauvilleCity_FlowerShop_onTransition::
 	goto_if_unset FLAG_LORNA_MOVED_TO_SHOP, MauvilleCity_FlowerShop_StopCheck
-	goto_if_unset FLAG_LORNA_MOVED_TO_SHOP, MauvilleCity_FlowerShop_StopCheck
+	goto_if_unset FLAG_LYDIA_MOVED_TO_SHOP, MauvilleCity_FlowerShop_StopCheck
 	goto_if_unset FLAG_LISLA_MOVED_TO_SHOP, MauvilleCity_FlowerShop_StopCheck
 	setvar VAR_MAUVILLE_FLOWER_SHOP_STATE, 4
+	end
 
 MauvilleCity_FlowerShop_StopCheck::
 	end
@@ -43,7 +44,7 @@ MauvilleCity_FlowerShop_EventScript_ShopOwner::
 	lock
 	faceplayer
 	call_if_unset FLAG_MAUVILLE_FLOWER_SHOP, MauvilleCity_FlowerShop_EventScript_DescribeShop
-	goto_if_eq VAR_0x8002, 1, MauvilleCity_FlowerShop_EventScript_SkipQuestFirstTimeMet
+	goto_if_eq VAR_TEMP_4, 1, MauvilleCity_FlowerShop_EventScript_SkipQuestFirstTimeMet
 	call_if_eq VAR_MAUVILLE_FLOWER_SHOP_STATE, 5, MauvilleCity_FlowerShop_EventScript_PersonalWelcome
 	goto_if_eq VAR_MAUVILLE_FLOWER_SHOP_STATE, 4, MauvilleCity_FlowerShop_EventScript_QuestComplete
 	call_if_eq VAR_MAUVILLE_FLOWER_SHOP_STATE, 3, MauvilleCity_FlowerShop_EventScript_ThankForQuest
@@ -69,7 +70,7 @@ MauvilleCity_FlowerShop_EventScript_DescribeShop::
 	waitmovement 0
 	msgbox MauvilleCity_FlowerShop_Text_WelcomeToShop
 	closemessage
-	setvar VAR_0x8002, 1
+	setvar VAR_TEMP_4, 1
 	setflag FLAG_MAUVILLE_FLOWER_SHOP
 	return
 
@@ -101,23 +102,23 @@ MauvilleCity_FlowerShop_EventScript_SetQuestAvailable::
 	return
 
 MauvilleCity_FlowerShop_EventScript_ActivateQuest::
-	setvar VAR_0x8002, 1
+	setvar VAR_TEMP_4, 1
 	setvar VAR_MAUVILLE_FLOWER_SHOP_STATE, 2
 	msgbox MauvilleCity_FlowerShop_Text_LookingForCustomers, MSGBOX_DEFAULT
 	return
 
 MauvilleCity_FlowerShop_EventScript_AskAboutQuest::
-	setvar VAR_0x8002, 1
+	setvar VAR_TEMP_4, 1
 	msgbox MauvilleCity_FlowerShop_Text_AnyLuckWithQuest, MSGBOX_DEFAULT
 	return
 
 MauvilleCity_FlowerShop_EventScript_ThankForQuest::
-	setvar VAR_0x8002, 1
+	setvar VAR_TEMP_4, 1
 	msgbox MauvilleCity_FlowerShop_Text_ThankForQuest, MSGBOX_DEFAULT
 	return
 
 MauvilleCity_FlowerShop_EventScript_QuestComplete::
-	setvar VAR_0x8002, 1
+	setvar VAR_TEMP_4, 1
 	setvar VAR_MAUVILLE_FLOWER_SHOP_STATE, 5
 	msgbox MauvilleCity_FlowerShop_Text_TakeThisAsThanks, MSGBOX_DEFAULT
 	giveitem ITEM_GRACIDEA
@@ -127,7 +128,7 @@ MauvilleCity_FlowerShop_EventScript_QuestComplete::
 
 MauvilleCity_FlowerShop_EventScript_PersonalWelcome::
 	msgbox MauvilleCity_FlowerShop_Text_OhHiPlayer, MSGBOX_DEFAULT
-	setvar VAR_0x8002, 1
+	setvar VAR_TEMP_4, 1
 	goto MauvilleCity_FlowerShop_EventScript_SkipQuestFirstTimeMet
 
 MauvilleCity_FlowerShop_EventScript_Lorna::
@@ -140,7 +141,13 @@ MauvilleCity_FlowerShop_EventScript_Lorna::
 	end
 
 MauvilleCity_FlowerShop_EventScript_LornaSistersPresent::
-	msgbox MauvilleCity_FlowerShop_Text_LornaSistersPresent, MSGBOX_DEFAULT
+	goto_if_ge VAR_MAUVILLE_FLOWER_SHOP_STATE, 4, MauvilleCity_FlowerShop_EventScript_LornaAllSistersPresent
+	msgbox MauvilleCity_FlowerShop_Text_LornaOneSisterPresent, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_FlowerShop_EventScript_LornaAllSistersPresent::
+	msgbox MauvilleCity_FlowerShop_Text_LornaAllSistersPresent, MSGBOX_DEFAULT
 	release
 	end
 
@@ -262,10 +269,70 @@ MauvilleCity_FlowerShop_Text_OhHiPlayer:
 	.string "Oh! Hi, {PLAYER}!$"
 
 MauvilleCity_FlowerShop_Text_LornaInterestingPlace:
-MauvilleCity_FlowerShop_Text_LornaSistersPresent:
+	.string "Well I can certainly say this\n"
+	.string "place is interesting!\p"
+	.string "I'd have chosen to grow more\n"
+	.string "than just one type of plant.\p"
+	.string "…Maybe I should help the poor\n"
+	.string "girl out…\p"
+	.string "Say… if you're looking to bring\n"
+	.string "more people here, you should\l"
+	.string "find my sisters!$"
+
+MauvilleCity_FlowerShop_Text_LornaOneSisterPresent:
+	.string "Hey thanks for bringing us\n"
+	.string "together like this!\p"
+	.string "It's been ages since I last\n"
+	.string "saw any of my sisters!\p"
+	.string "There's just one more of us\n"
+	.string "left to find.$"
+
+MauvilleCity_FlowerShop_Text_LornaAllSistersPresent:
+	.string "Oh hey! Looks like you found\n"
+	.string "both of my sisters!\p"
+	.string "It's so nice to be back\n"
+	.string "together for a while!\p"
+	.string "Exploring the wilds and\n"
+	.string "cataloguing new plants and\l"
+	.string "species is such hard work.\p"
+	.string "I love carrying out the family\n"
+	.string "legacy, but I just wish it\l"
+	.string "would let us hang out more.$"
+
 MauvilleCity_FlowerShop_Text_LydiaInterestingPlace:
+	.string "Huh… well this place sure is\n"
+	.string "… … …\p"
+	.string "…Something…\p"
+	.string "…Lacking a bit of diversity\n"
+	.string "with only one berry plant.\p"
+	.string "I bet my sisters would love to\n"
+	.string "do this place up.$"
+
 MauvilleCity_FlowerShop_Text_LydiaSistersPresent:
+	.string "Hey Kid!\p"
+	.string "Looks like you've met my\n"
+	.string "sisters, huh?\p"
+	.string "Yeah there are three of us\n"
+	.string "total.\p"
+	.string "Fancy that, huh? You could\n"
+	.string "barely take just me!\p"
+	.string "It's sort of our duty to\n"
+	.string "catalogue plants and stuff.\p"
+	.string "You know… family stuff.$"
+
 MauvilleCity_FlowerShop_Text_LislaInterestingPlace:
+	.string "Oh… I uh…\p"
+	.string "I e-expected a few different\n"
+	.string "types of plant I guess…\p"
+	.string "Uh… not that it isn't nice!\p"
+	.string "This berry is d-definitely\n"
+	.string "fascinating.\p"
+	.string "I bet my sisters would know\n"
+	.string "what it is…$"
+
 MauvilleCity_FlowerShop_Text_LislaSistersPresent:
-	.string "Unfinished.$"
+	.string "Oh. T-thanks for bringing\n"
+	.string "my family here.\p"
+	.string "It's really nice, being\n"
+	.string "together again…$"
 
