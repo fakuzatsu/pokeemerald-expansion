@@ -905,8 +905,7 @@ BattleScript_EffectFling:
 	attackcanceler
 	jumpifcantfling BS_ATTACKER, BattleScript_FailedFromAtkString
 	setlastuseditem BS_ATTACKER
-	removeitem BS_ATTACKER
-	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	accuracycheck BattleScript_FlingMissed, ACC_CURR_MOVE
 	attackstring
 	pause B_WAIT_TIME_SHORT
 	printstring STRINGID_PKMNFLUNG
@@ -915,6 +914,7 @@ BattleScript_EffectFling:
 	critcalc
 	damagecalc
 	adjustdamage
+	removeitem BS_ATTACKER
 	attackanimation
 	waitanimation
 	effectivenesssound
@@ -989,6 +989,12 @@ BattleScript_FlingWhiteHerb:
 	waitmessage B_WAIT_TIME_MED
 	swapattackerwithtarget
 	goto BattleScript_FlingEnd
+
+BattleScript_FlingMissed:
+	removeitem BS_ATTACKER
+	attackstring
+	ppreduce
+	goto BattleScript_MoveMissedPause
 
 BattleScript_EffectShellSideArm:
 	shellsidearmcheck
@@ -1998,7 +2004,7 @@ BattleScript_EffectDefog:
 	jumpifsubstituteblocks BattleScript_DefogIfCanClearHazards
 	jumpifstat BS_TARGET, CMP_NOT_EQUAL, STAT_EVASION, MIN_STAT_STAGE, BattleScript_DefogWorks
 BattleScript_DefogIfCanClearHazards:
-	defogclear BS_ATTACKER, FALSE, BattleScript_FailedFromAtkString
+	trydefog FALSE, BattleScript_FailedFromAtkString
 BattleScript_DefogWorks:
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
 	attackstring
@@ -2018,7 +2024,7 @@ BattleScript_DefogPrintString::
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_DefogTryHazards::
 	copybyte gEffectBattler, gBattlerAttacker
-	defogclear BS_ATTACKER, TRUE, NULL
+	trydefog TRUE, NULL
 	copybyte gBattlerAttacker, gEffectBattler
 	goto BattleScript_MoveEnd
 BattleScript_DefogTryHazardsWithAnim:
@@ -4691,8 +4697,11 @@ BattleScript_EffectThief::
 	goto BattleScript_EffectHit
 
 BattleScript_EffectHitPreventEscape:
+	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
 	setmoveeffect MOVE_EFFECT_PREVENT_ESCAPE
-	goto BattleScript_EffectHit
+	seteffectprimary
+	goto BattleScript_HitFromAtkString
 
 BattleScript_EffectMeanLook::
 	attackcanceler
@@ -7948,10 +7957,11 @@ BattleScript_IllusionOff::
 	return
 
 BattleScript_CottonDownActivates::
-	setbyte sFIXED_ABILITY_POPUP, TRUE
-	call BattleScript_AbilityPopUp
+	showabilitypopup BS_TARGET
+	pause B_WAIT_TIME_LONG
+	destroyabilitypopup
 	copybyte gEffectBattler, gBattlerTarget
-	savetarget
+	swapattackerwithtarget
 	setbyte gBattlerTarget, 0
 BattleScript_CottonDownLoop:
 	jumpiffainted BS_TARGET, TRUE, BattleScript_CottonDownLoopIncrement
@@ -7970,8 +7980,7 @@ BattleScript_CottonDownLoopIncrement:
 	addbyte gBattlerTarget, 1
 	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_CottonDownLoop
 BattleScript_CottonDownReturn:
-	restoretarget
-	destroyabilitypopup
+	swapattackerwithtarget
 	return
 
 BattleScript_AnticipationActivates::
