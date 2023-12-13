@@ -22,7 +22,6 @@ sound/songs/midi/*.s
 tools/agbcc
 tools/poryscript
 *.map
-*.ld
 *.bat
 *.dump
 *.sa*

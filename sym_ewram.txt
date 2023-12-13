@@ -1,5 +1,6 @@
 	.include "src/decompress.o"
 	.include "src/main.o"
+	.include "gflib/malloc.o"
 	.include "gflib/window.o"
 	.include "gflib/text.o"
 	.include "gflib/sprite.o"
