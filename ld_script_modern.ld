@@ -17,6 +17,7 @@ SECTIONS {
     {
         src/*.o(ewram_data);
         gflib/*.o(ewram_data);
+
     } > EWRAM
 
     iwram 0x3000000 (NOLOAD) :
@@ -122,6 +123,8 @@ SECTIONS {
     {
         src/graphics.o(.rodata);
     } > ROM =0
+
+    __rom_end = .;
 
     /* DWARF debug sections.
        Symbols in the DWARF debugging sections are relative to the beginning

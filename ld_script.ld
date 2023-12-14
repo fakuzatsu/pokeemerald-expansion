@@ -1323,6 +1323,8 @@ SECTIONS {
         data/*.o(.rodata);
     } > ROM =0
 
+   __rom_end = .;
+
     /* DWARF debug sections.
        Symbols in the DWARF debugging sections are relative to the beginning
        of the section so we begin them at 0.  */
