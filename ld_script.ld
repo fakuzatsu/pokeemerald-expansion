@@ -29,16 +29,13 @@ SECTIONS {
     iwram 0x3000000 (NOLOAD) :
     ALIGN(4)
     {
-        /* .bss starts at 0x3000000 */
         INCLUDE "sym_bss.ld"
         src/*.o(.bss);
         gflib/*.o(.bss);
         data/*.o(.bss);
 
-        /* .bss.code starts at 0x3001AA8 */
         src/m4a.o(.bss.code);
 
-        /* COMMON starts at 0x30022A8 */
         INCLUDE "sym_common.ld"
         *libc.a:sbrkr.o(COMMON);
     } > IWRAM

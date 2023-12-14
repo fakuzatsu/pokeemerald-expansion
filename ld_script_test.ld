@@ -18,9 +18,9 @@ SECTIONS {
         src/*.o(ewram_data);
         gflib/*.o(ewram_data);
         test/*.o(ewram_data);
-
-        . = 0x40000;
     } > EWRAM
+
+    . = 0x3000000;
 
     iwram 0x3000000 (NOLOAD) :
     ALIGN(4)
@@ -42,13 +42,12 @@ SECTIONS {
         *libc.a:sbrkr.o(COMMON);
         end = .;
 
-	/* .persistent starts at 0x3007F00 */
-	/* WARNING: This is the end of the IRQ stack, if there's too
-	 * much data it WILL be overwritten. */
-	. = 0x7F00;
-	test/*.o(.persistent);
-
-        . = 0x8000;
+        /* .persistent starts at 0x3007F00 */
+        /* WARNING: This is the end of the IRQ stack, if there's too
+         * much data it WILL be overwritten. */
+        . = ALIGN(4);
+        . = 0x7F00;
+        test/*.o(.persistent);
     } > IWRAM
 
     /* BEGIN ROM DATA */
