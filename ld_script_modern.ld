@@ -2,6 +2,7 @@ ENTRY(Start)
 
 gNumMusicPlayers = 4;
 gMaxLines = 0;
+gInitialMainCB2 = CB2_InitCopyrightScreenAfterBootup;
 
 MEMORY
 {
@@ -11,12 +12,13 @@ MEMORY
 }
 
 SECTIONS {
-
     ewram 0x2000000 (NOLOAD) :
     ALIGN(4)
     {
         src/*.o(ewram_data);
         gflib/*.o(ewram_data);
+
+        . = 0x40000;
     } > EWRAM
 
     iwram 0x3000000 (NOLOAD) :
@@ -107,7 +109,7 @@ SECTIONS {
         *libc.a:*.o(.rodata*);
         *libc.a:*.o(.data*);
         src/libisagbprn.o(.rodata);
-    } =0
+    } > ROM =0
 
     multiboot_data :
     ALIGN(4)
@@ -115,12 +117,6 @@ SECTIONS {
         data/multiboot_ereader.o(.rodata);
         data/multiboot_berry_glitch_fix.o(.rodata);
         data/multiboot_pokemon_colosseum.o(.rodata);
-    } > ROM =0
-
-    anim_mon_front_pic_data :
-    ALIGN(4)
-    {
-        src/anim_mon_front_pics.o(.rodata);
     } > ROM =0
 
     gfx_data :
