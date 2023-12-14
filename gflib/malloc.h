@@ -9,9 +9,6 @@
 
 #define TRY_FREE_AND_SET_NULL(ptr) if (ptr != NULL) FREE_AND_SET_NULL(ptr)
 
-#define HEAP_SIZE 0x1C000
-extern u8 gHeap[HEAP_SIZE];
-
 #define MALLOC_SYSTEM_ID 0xA3A3
 
 struct MemBlock
@@ -42,6 +39,9 @@ struct MemBlock
     // Data in the memory block. (Arrays of length 0 are a GNU extension.)
     u8 data[0];
 };
+
+#define HEAP_SIZE 0x1C000
+extern u8 gHeap[HEAP_SIZE];
 
 #if TESTING || !defined(NDEBUG)
 
