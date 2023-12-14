@@ -24,8 +24,6 @@ SECTIONS {
         *libc.a:mallocr.o(.data);
     } > EWRAM
 
-    . = 0x3000000;
-
     iwram 0x3000000 (NOLOAD) :
     ALIGN(4)
     {

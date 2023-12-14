@@ -17,8 +17,6 @@ SECTIONS {
     {
         src/*.o(ewram_data);
         gflib/*.o(ewram_data);
-
-        . = 0x40000;
     } > EWRAM
 
     iwram 0x3000000 (NOLOAD) :
