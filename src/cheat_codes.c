@@ -4,6 +4,8 @@
 #include "window.h"
 #include "naming_screen.h"
 #include "field_screen_effect.h"
+#include "constants/species.h"
+#include "constants/items.h"
 #include "field_weather.h"
 #include "event_data.h"
 #include "item_menu.h"
@@ -259,4 +261,74 @@ static u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 natur
     }
     
     return sentToPc;
+}
+
+static u8 ConvertStringToPokemon(u8 *string) {
+    u8 i;
+    int sentToPc;
+    u8 charIndex;
+    u8 segments[13];
+    u16 species;
+    u8 level;
+    u8 nature;
+    u8 shininess;
+    u8 abilitynum;
+    u8 ball;
+    u8 ivs[NUM_STATS] = {0, 0, 0, 0, 0, 0};
+    u8 evs[NUM_STATS] = {0, 0, 0, 0, 0, 0};
+    const u8 customCharMap[] = _("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+    const u8 segmentIndices[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+
+    for (i = 0; i < 13; ++i) {
+        while (customCharMap[charIndex] != string[segmentIndices[i]]) {
+            ++charIndex;
+        }
+        segments[i] = charIndex;
+    }
+
+    // Combine the two u8 values to create the species identifier
+    species = ((segments[0] << 6) | segments[1]) % NUM_SPECIES;
+    ivs[0] = segments[2] % (MAX_IV_MASK + 1);
+    ivs[1] = segments[3] % (MAX_IV_MASK + 1);
+    ivs[2] = segments[4] % (MAX_IV_MASK + 1);
+    ivs[3] = segments[5] % (MAX_IV_MASK + 1);
+    ivs[4] = segments[6] % (MAX_IV_MASK + 1);
+    ivs[5] = segments[7] % (MAX_IV_MASK + 1);
+    level = segments[8] % MAX_LEVEL;
+    nature = segments[9] % NUM_NATURES;
+    shininess = segments[10] % 2;
+    abilitynum = segments[11] % 3;
+    ball = segments[12] % (LAST_BALL + 1);
+
+    sentToPc = ScriptGiveCustomMon(species, level + 1, ITEM_NONE, ball + 1, nature, abilitynum, evs, ivs, 0, shininess);
+
+    return sentToPc;
+}
+
+void ConvertPokemonToString(u16 species, u8 level, u8 nature, u8 shininess, u8 abilitynum, u8 ball, u8 ivs[NUM_STATS]) {
+    u8 i;
+    const u8 customCharMap[] = _("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+    u8 segments[13];
+    u8 outputString[13];
+
+    // Convert each attribute to the corresponding segment value, seperating species into two
+    segments[0] = (species >> 6) & 0x3F;
+    segments[1] = species & 0x3F;
+    segments[2] = ivs[0];
+    segments[3] = ivs[1];
+    segments[4] = ivs[2];
+    segments[5] = ivs[3];
+    segments[6] = ivs[4];
+    segments[7] = ivs[5];
+    segments[8] = level;
+    segments[9] = nature;
+    segments[10] = shininess;
+    segments[11] = abilitynum;
+    segments[12] = ball;
+
+    for (i = 0; i < 13; ++i) {
+        outputString[i] = customCharMap[segments[i] & 0x3F];
+    }
+
+    outputString[13] = EOS;
 }
