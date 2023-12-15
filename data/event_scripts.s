@@ -1144,3 +1144,37 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/VerdantForest_CelebiRoom/scripts.inc"
 
 	.include "data/maps/DewfordTown_HolidayHome/scripts.inc"
+
+	.include "data/maps/OldaleTown_PokemonCenter_BF1/scripts.inc"
+
+	.include "data/maps/PetalburgCity_PokemonCenter_B1F/scripts.inc"
+
+	.include "data/maps/RustboroCity_PokemonCenter_B1F/scripts.inc"
+
+	.include "data/maps/DewfordTown_PokemonCenter_B1F/scripts.inc"
+
+	.include "data/maps/FallarborTown_PokemonCenter_B1F/scripts.inc"
+
+	.include "data/maps/VerdanturfTown_PokemonCenter_B1F/scripts.inc"
+
+	.include "data/maps/PacifidlogTown_PokemonCenter_B1F/scripts.inc"
+
+	.include "data/maps/SlateportCity_PokemonCenter_B1F/scripts.inc"
+
+	.include "data/maps/MauvilleCity_PokemonCenter_B1F/scripts.inc"
+
+	.include "data/maps/FortreeCity_PokemonCenter_B1F/scripts.inc"
+
+	.include "data/maps/LilycoveCity_PokemonCenter_B1F/scripts.inc"
+
+	.include "data/maps/MossdeepCity_PokemonCenter_B1F/scripts.inc"
+
+	.include "data/maps/SootopolisCity_PokemonCenter_B1F/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_PokemonCenter_B1F/scripts.inc"
+
+	.include "data/maps/BattleFrontier_PokemonCenter_B1F/scripts.inc"
+
+	.include "data/maps/LavaridgeTown_PokemonCenter_B1F/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_PokemonLeague_B1F/scripts.inc"

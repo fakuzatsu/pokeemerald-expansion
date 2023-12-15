@@ -4850,6 +4850,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/DewfordTown_HolidayHome/border.bin",
       "blockdata_filepath": "data/layouts/DewfordTown_HolidayHome/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLDALE_TOWN_POKEMON_CENTER_BF1",
+      "name": "OldaleTown_PokemonCenter_BF1_Layout",
+      "width": 14,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/OldaleTown_PokemonCenter_BF1/border.bin",
+      "blockdata_filepath": "data/layouts/OldaleTown_PokemonCenter_BF1/map.bin"
     }
   ]
 }
