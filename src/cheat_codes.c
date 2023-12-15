@@ -1,7 +1,7 @@
 #include "global.h"
 #include "task.h"
-#include "string_util.h"
 #include "window.h"
+#include "string_util.h"
 #include "naming_screen.h"
 #include "field_screen_effect.h"
 #include "constants/species.h"
@@ -21,10 +21,15 @@
 #include "pokedex.h"
 
 static void CB2_HandleGivenCode(void);
+static void CB2_HandleGTSCode(void);
 static void MapPostLoadHook_ReturnToCodeActivation(void);
+static void MapPostLoadHook_ReturnToGTSActivation(void);
 static void MapPostLoadHook_ReturnToShopMenu(void);
 static void Task_ReturnToCodeActivation(u8 taskId);
+static void Task_ReturnToGTSActivation(u8 taskId);
 static u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 nature, u8 abilityNum, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny);
+static void ConvertPokemonToString(u16 species, u8 level, u8 nature, u8 shininess, u8 abilitynum, u8 ball, u8 *ivs);
+static u8 ConvertStringToPokemon(u8 *string);
 
 //--------------------------------------------------
 // Codes and Effects
@@ -140,6 +145,74 @@ static void Task_ReturnToCodeActivation(u8 taskId)
         }
         else
             DisplayItemMessageOnField(taskId, gText_NoCodeActivated, Task_DontActivateCode);
+    }
+}
+
+//--------------------------------------------------
+// Beginning of GTS Codes
+//--------------------------------------------------
+
+void PutPokemonOnGTS(void)
+{
+    u16 species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
+    u8 level = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_LEVEL);
+    u8 nature = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_PERSONALITY);
+    u8 shininess = 0;
+    u8 abilitynum = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ABILITY_NUM);
+    u8 ball = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_POKEBALL);
+    u8 ivs[NUM_STATS] = {
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV),
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV),
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV),
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV),
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV),
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV)};
+
+    VarSet(VAR_SPECIES_IN_GTS, species);
+    ZeroMonData(&gPlayerParty[gSpecialVar_0x8004]);
+
+    ConvertPokemonToString(species, level, nature, shininess, abilitynum, ball, ivs);
+}
+
+void EnterGTSCode(void)
+{
+    DoNamingScreen(NAMING_SCREEN_GTS, gStringVar2, 0, 0, 0, CB2_HandleGTSCode);
+}
+
+static void CB2_HandleGTSCode(void)
+{
+    if (gStringVar2[1] == EOS)
+        gSpecialVar_Result = 0;
+    else
+        gSpecialVar_Result = 1;
+
+    gFieldCallback = MapPostLoadHook_ReturnToGTSActivation;
+    SetMainCallback2(CB2_ReturnToField);
+}
+
+static void MapPostLoadHook_ReturnToGTSActivation(void)
+{
+    FadeInFromBlack();
+    CreateTask(Task_ReturnToGTSActivation, 8);
+}
+
+static void Task_ReturnToGTSActivation(u8 taskId)
+{
+    if (gSpecialVar_Result == 1) {
+        int sentToPc = ConvertStringToPokemon(gStringVar2);
+        StringCopy(gStringVar2, GetSpeciesName(SPECIES_FLOETTE_ETERNAL_FLOWER));
+
+        if (sentToPc == MON_GIVEN_TO_PARTY) {
+        DisplayItemMessageOnField(taskId, gText_WasAddedToParty, Task_DontActivateCode);
+        }
+        else if (sentToPc == MON_GIVEN_TO_PC) {
+        DisplayItemMessageOnField(taskId, gText_WasTransfered, Task_DontActivateCode);
+        }
+        else
+        DisplayItemMessageOnField(taskId, gText_FailedToAddMon, Task_DontActivateCode);
+    }
+    else {
+        DisplayItemMessageOnField(taskId, gText_FailedToAddMon, Task_DontActivateCode);
     }
 }
 
@@ -305,11 +378,12 @@ static u8 ConvertStringToPokemon(u8 *string) {
     return sentToPc;
 }
 
-void ConvertPokemonToString(u16 species, u8 level, u8 nature, u8 shininess, u8 abilitynum, u8 ball, u8 ivs[NUM_STATS]) {
+// Call with StringCopy(gStringVarX, ConvertPokemonToString(species, level, nature, shininess, abilitynum, ball, ivs));
+static void ConvertPokemonToString(u16 species, u8 level, u8 nature, u8 shininess, u8 abilitynum, u8 ball, u8 *ivs) {
     u8 i;
     const u8 customCharMap[] = _("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
     u8 segments[13];
-    u8 outputString[13];
+    u8 outputString[14];
 
     // Convert each attribute to the corresponding segment value, seperating species into two
     segments[0] = (species >> 6) & 0x3F;
@@ -331,4 +405,6 @@ void ConvertPokemonToString(u16 species, u8 level, u8 nature, u8 shininess, u8 a
     }
 
     outputString[13] = EOS;
+
+    StringCopy(gStringVar2, outputString);
 }

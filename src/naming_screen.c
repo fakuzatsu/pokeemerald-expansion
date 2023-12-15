@@ -1745,6 +1745,7 @@ static void (*const sDrawTextEntryBoxFuncs[])(void) =
     [NAMING_SCREEN_NICKNAME]   = DrawMonTextEntryBox,
     [NAMING_SCREEN_WALDA]      = DrawNormalTextEntryBox,
     [NAMING_SCREEN_CODE]       = DrawNormalTextEntryBox,
+    [NAMING_SCREEN_GTS]        = DrawNormalTextEntryBox,
 };
 
 static void DrawTextEntryBox(void)
@@ -2159,6 +2160,17 @@ static const struct NamingScreenTemplate sCodeNamingScreenTemplate =
     .title = sText_Code,
 };
 
+static const struct NamingScreenTemplate sGTSNamingScreenTemplate =
+{
+    .copyExistingString = TRUE,
+    .maxChars = WALDA_PHRASE_LENGTH,
+    .iconFunction = 6,
+    .addGenderIcon = FALSE,
+    .initialPage = KBPAGE_LETTERS_UPPER,
+    .unused = 11,
+    .title = sText_Code,
+};
+
 static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
 {
     [NAMING_SCREEN_PLAYER]     = &sPlayerNamingScreenTemplate,
@@ -2167,6 +2179,7 @@ static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
     [NAMING_SCREEN_NICKNAME]   = &sMonNamingScreenTemplate,
     [NAMING_SCREEN_WALDA]      = &sWaldaWordsScreenTemplate,
     [NAMING_SCREEN_CODE]       = &sCodeNamingScreenTemplate,
+    [NAMING_SCREEN_GTS]        = &sGTSNamingScreenTemplate,
 };
 
 static const struct OamData sOam_8x8 =
