@@ -1982,3 +1982,6 @@ const u8 gText_Thursday[] = _("Thursday");
 const u8 gText_Friday[] = _("Friday");
 const u8 gText_Saturday[] = _("Saturday");
 const u8 gText_Sunday[] = _("Sunday");
+
+const u8 gText_ExpShareOn[] = _("The Exp. Share has been turned on.{PAUSE_UNTIL_PRESS}");
+const u8 gText_ExpShareOff[] = _("The Exp. Share has been turned off.{PAUSE_UNTIL_PRESS}");

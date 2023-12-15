@@ -773,7 +773,7 @@ void Snow_InitVars(void)
 {
     gWeatherPtr->initStep = 0;
     gWeatherPtr->weatherGfxLoaded = FALSE;
-    gWeatherPtr->targetColorMapIndex = 3;
+    gWeatherPtr->targetColorMapIndex = 0;
     gWeatherPtr->colorMapStepDelay = 20;
     gWeatherPtr->targetSnowflakeSpriteCount = 16;
     gWeatherPtr->snowflakeVisibleCounter = 0;
@@ -945,7 +945,6 @@ static void InitSnowflakeSpriteMovement(struct Sprite *sprite)
 
 static void WaitSnowflakeSprite(struct Sprite *sprite)
 {
-    // Timer is never incremented
     if (++gWeatherPtr->snowflakeTimer > 18)
     {
         sprite->invisible = FALSE;
@@ -975,7 +974,6 @@ static void UpdateSnowflakeSprite(struct Sprite *sprite)
         sprite->x = 242 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
     else if (x > 242)
         sprite->x = -3 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
-
 }
 
 #undef tPosY

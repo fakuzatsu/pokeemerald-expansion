@@ -34,7 +34,7 @@ ShoalCave_LowTideEntranceRoom_EventScript_ShellBellExpert::
 	removeitem ITEM_SHOAL_SALT, 4
 	removeitem ITEM_SHOAL_SHELL, 4
 	giveitem ITEM_SHELL_BELL
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull  @ Never FALSE, we already made sure there will be room in the bag.
 	msgbox ShoalCave_LowTideEntranceRoom_Text_ExplainShellBell, MSGBOX_DEFAULT
 	setflag FLAG_TEMP_2
 	goto_if_set FLAG_ITEM_SLOWBRONITE, ShoalCave_LowTideEntranceRoom_EventScript_End

@@ -8,11 +8,11 @@ ASSUMPTIONS
     ASSUME(gBattleMoves[MOVE_TACKLE].power != 0);
     ASSUME(gBattleMoves[MOVE_AIR_CUTTER].power != 0);
     ASSUME(gBattleMoves[MOVE_AIR_CUTTER].target == MOVE_TARGET_BOTH);
-    ASSUME(gBattleMoves[MOVE_AIR_CUTTER].flags & FLAG_WIND_MOVE);
+    ASSUME(gBattleMoves[MOVE_AIR_CUTTER].windMove == TRUE);
     ASSUME(gBattleMoves[MOVE_PETAL_BLIZZARD].power != 0);
     ASSUME(gBattleMoves[MOVE_PETAL_BLIZZARD].target == MOVE_TARGET_FOES_AND_ALLY);
-    ASSUME(gBattleMoves[MOVE_PETAL_BLIZZARD].flags & FLAG_WIND_MOVE);
-    ASSUME(!(gBattleMoves[MOVE_TACKLE].flags & FLAG_WIND_MOVE));
+    ASSUME(gBattleMoves[MOVE_PETAL_BLIZZARD].windMove == TRUE);
+    ASSUME(gBattleMoves[MOVE_TACKLE].windMove == FALSE);
 }
 
 SINGLE_BATTLE_TEST("Wind Power sets up Charge for player when hit by a wind move")
@@ -133,8 +133,10 @@ DOUBLE_BATTLE_TEST("Wind Power activates correctly for every battler with the ab
             ABILITY_POPUP(playerRight, ABILITY_WIND_POWER);
             MESSAGE("Being hit by Air Cutter charged Wobbuffet with power!");
         }
-        NOT HP_BAR(opponentLeft);
-        NOT HP_BAR(opponentRight);
+        NONE_OF {
+            HP_BAR(opponentLeft);
+            HP_BAR(opponentRight);
+        }
     }
     THEN {
         EXPECT_NE(playerLeft->hp, playerLeft->maxHP);

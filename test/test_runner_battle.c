@@ -3,12 +3,14 @@
 #include "battle_anim.h"
 #include "battle_controllers.h"
 #include "characters.h"
+#include "fieldmap.h"
 #include "item_menu.h"
 #include "main.h"
 #include "malloc.h"
 #include "random.h"
 #include "test/battle.h"
 #include "window.h"
+#include "constants/trainers.h"
 
 #if defined(__INTELLISENSE__)
 #undef TestRunner_Battle_RecordAbilityPopUp
@@ -32,7 +34,9 @@
 #undef Q_4_12
 #define Q_4_12(n) (s32)((n) * 4096)
 
-EWRAM_DATA struct BattleTestRunnerState *gBattleTestRunnerState = NULL;
+// Alias sBackupMapData to avoid using heap.
+struct BattleTestRunnerState *const gBattleTestRunnerState = (void *)sBackupMapData;
+STATIC_ASSERT(sizeof(struct BattleTestRunnerState) <= sizeof(sBackupMapData), sBackupMapDataSpace);
 
 static void CB2_BattleTest_NextParameter(void);
 static void CB2_BattleTest_NextTrial(void);
@@ -121,9 +125,7 @@ static u32 BattleTest_EstimateCost(void *data)
 {
     u32 cost;
     const struct BattleTest *test = data;
-    STATE = AllocZeroed(sizeof(*STATE));
-    if (!STATE)
-        return 0;
+    memset(STATE, 0, sizeof(*STATE));
     STATE->runRandomly = TRUE;
     InvokeTestFunction(test);
     cost = 1;
@@ -133,23 +135,21 @@ static u32 BattleTest_EstimateCost(void *data)
         cost *= 3;
     else if (STATE->trials > 1)
         cost *= STATE->trials;
-    FREE_AND_SET_NULL(STATE);
     return cost;
 }
 
 static void BattleTest_SetUp(void *data)
 {
     const struct BattleTest *test = data;
-    STATE = AllocZeroed(sizeof(*STATE));
-    if (!STATE)
-        Test_ExitWithResult(TEST_RESULT_ERROR, "OOM: STATE = AllocZerod(%d)", sizeof(*STATE));
+    memset(STATE, 0, sizeof(*STATE));
     InvokeTestFunction(test);
     STATE->parameters = STATE->parametersCount;
     if (STATE->parametersCount == 0 && test->resultsSize > 0)
         Test_ExitWithResult(TEST_RESULT_INVALID, "results without PARAMETRIZE");
-    STATE->results = AllocZeroed(test->resultsSize * STATE->parameters);
-    if (!STATE->results)
-        Test_ExitWithResult(TEST_RESULT_ERROR, "OOM: STATE->results = AllocZerod(%d)", sizeof(test->resultsSize * STATE->parameters));
+    if (sizeof(*STATE) + test->resultsSize * STATE->parameters > sizeof(sBackupMapData))
+        Test_ExitWithResult(TEST_RESULT_ERROR, "OOM: STATE (%d) + STATE->results (%d) too big for sBackupMapData (%d)", sizeof(*STATE), test->resultsSize * STATE->parameters, sizeof(sBackupMapData));
+    STATE->results = (void *)((char *)sBackupMapData + sizeof(struct BattleTestRunnerState));
+    memset(STATE->results, 0, test->resultsSize * STATE->parameters);
     switch (test->type)
     {
     case BATTLE_TEST_SINGLES:
@@ -232,11 +232,15 @@ static void BattleTest_Run(void *data)
     memset(&DATA, 0, sizeof(DATA));
 
     DATA.recordedBattle.rngSeed = RNG_SEED_DEFAULT;
+    DATA.recordedBattle.opponentA = TRAINER_LINK_OPPONENT;
 
     DATA.recordedBattle.textSpeed = OPTIONS_TEXT_SPEED_FAST;
     DATA.recordedBattle.battleFlags = BATTLE_TYPE_RECORDED_IS_MASTER | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_TRAINER | BATTLE_TYPE_IS_MASTER;
     if (test->type == BATTLE_TEST_DOUBLES)
+    {
         DATA.recordedBattle.battleFlags |= BATTLE_TYPE_DOUBLE;
+        DATA.recordedBattle.opponentB = TRAINER_LINK_OPPONENT;
+    }
     for (i = 0; i < STATE->battlersCount; i++)
     {
         DATA.recordedBattle.playersName[i][0] = CHAR_1 + i;
@@ -430,7 +434,7 @@ u32 RandomWeightedArray(enum RandomTag tag, u32 sum, u32 n, const u8 *weights)
         if (turn && turn->criticalHit)
             return turn->criticalHit - 1;
         else
-            return FALSE;
+            return weights[FALSE] > 0 ? FALSE : TRUE;
 
     case RNG_SECONDARY_EFFECT:
         ASSUME(n == 2);
@@ -957,15 +961,10 @@ static void CB2_BattleTest_NextTrial(void)
 
 static void BattleTest_TearDown(void *data)
 {
-    if (STATE)
-    {
-        // Free resources that aren't cleaned up when the battle was
-        // aborted unexpectedly.
-        if (STATE->tearDownBattle)
-            TearDownBattle();
-        FREE_AND_SET_NULL(STATE->results);
-        FREE_AND_SET_NULL(STATE);
-    }
+    // Free resources that aren't cleaned up when the battle was
+    // aborted unexpectedly.
+    if (STATE->tearDownBattle)
+        TearDownBattle();
 }
 
 static bool32 BattleTest_CheckProgress(void *data)
@@ -1483,6 +1482,9 @@ void Move(u32 sourceLine, struct BattlePokemon *battler, struct MoveContext ctx)
     if (ctx.explicitMegaEvolve && ctx.megaEvolve)
         moveSlot |= RET_MEGA_EVOLUTION;
 
+    if (ctx.explicitUltraBurst && ctx.ultraBurst)
+        moveSlot |= RET_ULTRA_BURST;
+
     if (ctx.explicitTarget)
     {
         target = ctx.target - gBattleMons;
@@ -1655,8 +1657,18 @@ static const char *const sQueueGroupTypeMacros[] =
 void OpenQueueGroup(u32 sourceLine, enum QueueGroupType type)
 {
     INVALID_IF(DATA.queueGroupType, "%s inside %s", sQueueGroupTypeMacros[type], sQueueGroupTypeMacros[DATA.queueGroupType]);
-    DATA.queueGroupType = type;
-    DATA.queueGroupStart = DATA.queuedEventsCount;
+    if (DATA.queuedEventsCount > 0
+     && DATA.queuedEvents[DATA.queueGroupStart].groupType == QUEUE_GROUP_NONE_OF
+     && DATA.queuedEvents[DATA.queueGroupStart].groupSize == DATA.queuedEventsCount - DATA.queueGroupStart
+     && type == QUEUE_GROUP_NONE_OF)
+    {
+        INVALID("'NOT x; NOT y;', did you mean 'NONE_OF { x; y; }'?");
+    }
+    else
+    {
+        DATA.queueGroupType = type;
+        DATA.queueGroupStart = DATA.queuedEventsCount;
+    }
 }
 
 void CloseQueueGroup(u32 sourceLine)
@@ -1835,8 +1847,6 @@ void QueueStatus(u32 sourceLine, struct BattlePokemon *battler, struct StatusEve
 void ValidateFinally(u32 sourceLine)
 {
     // Defer this error until after estimating the cost.
-    if (STATE->results == NULL)
-        return;
     INVALID_IF(STATE->parametersCount == 0, "FINALLY without PARAMETRIZE");
 }
 
