@@ -157,7 +157,7 @@ Route112_Movement_RivalApproachPlayer: @ 81EF9A8
 Route112_EventScript_May:: @ 81EF7EB
 	msgbox Route112_Text_May, MSGBOX_DEFAULT
 	giveitem ITEM_HM04_STRENGTH
-	setflag FLAG_RECEIVED_HM04
+	setflag FLAG_RECEIVED_HM_STRENGTH
 	msgbox Route112_Text_May2, MSGBOX_DEFAULT
 	goto Route112_EventScript_RivalExit
 	end
@@ -165,7 +165,7 @@ Route112_EventScript_May:: @ 81EF7EB
 Route112_EventScript_Brendan:: @ 81EF7EB
 	msgbox Route112_Text_Brendan, MSGBOX_DEFAULT
 	giveitem ITEM_HM04_STRENGTH
-	setflag FLAG_RECEIVED_HM04
+	setflag FLAG_RECEIVED_HM_STRENGTH
 	msgbox Route112_Text_May2, MSGBOX_DEFAULT
 	goto Route112_EventScript_RivalExit
 	end

@@ -35,7 +35,7 @@ RustboroCity_Mart_EventScript_PokefanF::
 	end
 
 RustboroCity_Mart_EventScript_Boy::
- 	goto_if_set FLAG_RECEIVED_TM03, RustboroCity_Mart_EventScript_ReceivedTM54
+ 	goto_if_set FLAG_RECEIVED_TM_WATER_PULSE, RustboroCity_Mart_EventScript_ReceivedTM54
 	msgbox RustboroCity_Mart_Text_ShouldBuySuperPotionsInstead, MSGBOX_NPC
 	giveitem ITEM_TM54
 	end

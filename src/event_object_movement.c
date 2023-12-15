@@ -1808,21 +1808,6 @@ static u8 LoadDynamicFollowerPalette(u16 species, u8 form, bool8 shiny) {
         else
             spritePalette = &(shiny ? gFollowMonShinyPaletteTableFemale : gFollowMonPaletteTableFemale)[species];
     }
-    else if(species==SPECIES_CASTFORM){
-        switch(form % NUM_CASTFORM_FORMS){
-            case CASTFORM_FIRE:
-                spritePalette = &(shiny ? gFollowMonShinyPaletteTable : gFollowMonPaletteTable)[SPECIES_CASTFORM_SUNNY];
-                break;
-            case CASTFORM_WATER:
-                spritePalette = &(shiny ? gFollowMonShinyPaletteTable : gFollowMonPaletteTable)[SPECIES_CASTFORM_RAINY];
-                break;
-            case CASTFORM_ICE:
-                spritePalette = &(shiny ? gFollowMonShinyPaletteTable : gFollowMonPaletteTable)[SPECIES_CASTFORM_SNOWY];
-                break;
-            case CASTFORM_NORMAL:
-                spritePalette = &(shiny ? gFollowMonShinyPaletteTable : gFollowMonPaletteTable)[SPECIES_CASTFORM];
-        }
-    }
     else
         spritePalette = &(shiny ? gFollowMonShinyPaletteTable : gFollowMonPaletteTable)[species];
 
@@ -1892,20 +1877,20 @@ static void RefreshFollowerGraphics(struct ObjectEvent *objEvent) {
 }
 
 // Like CastformDataTypeChange, but for overworld weather
-static u8 GetOverworldCastformForm(void) {
+static u16 GetOverworldCastformForm(void) {
     switch (GetCurrentWeather())
     {
     case WEATHER_SUNNY_CLOUDS:
     case WEATHER_DROUGHT:
-        return CASTFORM_FIRE;
+        return SPECIES_CASTFORM_SUNNY;
     case WEATHER_RAIN:
     case WEATHER_RAIN_THUNDERSTORM:
     case WEATHER_DOWNPOUR:
-        return CASTFORM_WATER;
+        return SPECIES_CASTFORM_RAINY;
     case WEATHER_SNOW:
-        return CASTFORM_ICE;
+        return SPECIES_CASTFORM_SNOWY;
     }
-    return CASTFORM_NORMAL;
+    return SPECIES_CASTFORM;
 }
 
 // Retrieve graphic information about the following pokemon, if any
@@ -1933,7 +1918,7 @@ static bool8 GetFollowerInfo(u16 *species, u8 *form, u8 *shiny) {
             *form = GetMonGender(mon);
             break;
         case SPECIES_CASTFORM: // form is based on overworld weather
-            *form = GetOverworldCastformForm();
+            *species = GetOverworldCastformForm();
             break;
         default:
             *form = 0;

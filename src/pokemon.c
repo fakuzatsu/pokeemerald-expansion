@@ -5131,9 +5131,6 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_CHECKSUM:
             retVal = boxMon->checksum;
             break;
-        case MON_DATA_ENCRYPT_SEPARATOR:
-            retVal = boxMon->unknown;
-            break;
         default:
             break;
         }
@@ -5467,9 +5464,6 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         case MON_DATA_CHECKSUM:
             SET16(boxMon->checksum);
-            break;
-        case MON_DATA_ENCRYPT_SEPARATOR:
-            SET16(boxMon->unknown);
             break;
         }
     }

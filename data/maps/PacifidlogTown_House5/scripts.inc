@@ -17,12 +17,12 @@ PacifidlogTown_House5_EventScript_MirageIslandPresent::
 
 PacifidlogTown_House5_EventScript_Gentleman::
 	msgbox PacifidlogTown_House5_Text_MirageIslandAppearDependingOnWeather, MSGBOX_NPC
-	goto_if_unset FLAG_RECEIVED_TM03, PacifidlogTown_House5_EventScript_GiveTM03
+	goto_if_unset FLAG_RECEIVED_TM_WATER_PULSE, PacifidlogTown_House5_EventScript_GiveTM03
 	end
 
 PacifidlogTown_House5_EventScript_GiveTM03::
 	giveitem ITEM_TM03
-	setflag FLAG_RECEIVED_TM03
+	setflag FLAG_RECEIVED_TM_WATER_PULSE
 	end
 
 PacifidlogTown_House5_Text_CantSeeMirageIslandToday:

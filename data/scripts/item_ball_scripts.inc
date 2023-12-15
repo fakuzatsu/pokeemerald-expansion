@@ -107,7 +107,7 @@ Route115_EventScript_ItemSuperPotion::
 	end
 
 Route115_EventScript_ItemTMFocusPunch::
-	finditem ITEM_TM_FOCUS_PUNCH
+	finditem ITEM_TM_HONE_CLAWS
 	end
 
 Route115_EventScript_ItemIron::
@@ -379,7 +379,7 @@ FieryPath_EventScript_ItemTMToxic::
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemTMIronTail::
-	finditem ITEM_TM_IRON_TAIL
+	finditem ITEM_TM_SMACK_DOWN
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemFullHeal::

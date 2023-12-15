@@ -308,7 +308,7 @@ EverGrandeCity_ChampionsRoom_Text_GiveMetagrossite:
 	.string "Steven: Congratulations!\p"
 	.string "The feelings you have for your\n"
 	.string "Pokémon…\p"
-	.string "And the POKéMON that responded to\n"
+	.string "And the Pokémon that responded to\n"
 	.string "those feelings with all their might…\p"
 	.string "They came together as one, and created\n"
 	.string "an even greater power.\p"

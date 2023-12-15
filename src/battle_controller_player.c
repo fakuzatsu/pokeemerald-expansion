@@ -91,7 +91,6 @@ static void Task_SetControllerToWaitForString(u8);
 static void Task_GiveExpWithExpBar(u8);
 static void Task_UpdateLvlInHealthbox(u8);
 static void PrintLinkStandbyMsg(void);
-static void StartSendOutAnim(u8 battlerId, bool8 dontClearSubstituteBit, bool8);
 
 static void ReloadMoveNames(u32 battler);
 

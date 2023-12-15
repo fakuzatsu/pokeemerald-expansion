@@ -9203,7 +9203,6 @@ const struct Item gItems[] =
     [ITEM_EON_FLUTE] =
     {
         .name = _("Eon Flute"),
-        .itemId = ITEM_EON_FLUTE,
         .price = 0,
         .description = sEonFluteDesc,
         .importance = 1,

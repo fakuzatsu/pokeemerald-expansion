@@ -3882,7 +3882,7 @@ static const u8 sLiftKeyDesc[] = _(
 static const u8 sSilphScopeDesc[] = _(
     "Silph Co's scope\n"
     "makes unseeable\n"
-    "POKéMON visible.");
+    "Pokémon visible.");
 
 static const u8 sTriPassDesc[] = _(
     "A pass for ferries\n"
