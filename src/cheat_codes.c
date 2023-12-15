@@ -168,10 +168,11 @@ void PutPokemonOnGTS(void)
     GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV),
     GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV)};
 
-    VarSet(VAR_SPECIES_IN_GTS, species);
     ZeroMonData(&gPlayerParty[gSpecialVar_0x8004]);
-
     ConvertPokemonToString(species, level, nature, shininess, abilitynum, ball, ivs);
+
+    StringCopy(gSaveBlock1Ptr->waldaPhrase.text, gStringVar2);
+    gSaveBlock1Ptr->waldaPhrase.colors[0] = species;
 }
 
 void EnterGTSCode(void)
@@ -359,7 +360,8 @@ static u8 ConvertStringToPokemon(u8 *string) {
         segments[i] = charIndex;
     }
 
-    // Combine the two u8 values to create the species identifier
+    // Combine the two u8 values to create the species identifier.
+    // Bitshift by 6 because we only have 62 total characters. So we essentially take the first value as base 6.
     species = ((segments[0] << 6) | segments[1]) % NUM_SPECIES;
     ivs[0] = segments[2] % (MAX_IV_MASK + 1);
     ivs[1] = segments[3] % (MAX_IV_MASK + 1);
@@ -373,7 +375,7 @@ static u8 ConvertStringToPokemon(u8 *string) {
     abilitynum = segments[11] % 3;
     ball = segments[12] % (LAST_BALL + 1);
 
-    sentToPc = ScriptGiveCustomMon(species, level + 1, ITEM_NONE, ball + 1, nature, abilitynum, evs, ivs, 0, shininess);
+    sentToPc = ScriptGiveCustomMon(species, level, ITEM_NONE, ball, nature, abilitynum, evs, ivs, 0, shininess);
 
     return sentToPc;
 }
