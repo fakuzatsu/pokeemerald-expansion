@@ -2848,7 +2848,7 @@ const u8 *GetMonIconTiles(u16 species, u32 personality)
 void TryLoadAllMonIconPalettesAtOffset(u16 offset)
 {
     s32 i;
-    if (offset <= BG_PLTT_ID(16 - ARRAY_COUNT(gMonIconPaletteTable)))
+    if (offset <= 0x1A0)
     {
         for (i = 0; i < (int)ARRAY_COUNT(gMonIconPaletteTable); i++)
         {
