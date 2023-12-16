@@ -4,6 +4,7 @@
 #include "string_util.h"
 #include "naming_screen.h"
 #include "field_screen_effect.h"
+#include "pokemon_storage_system.h"
 #include "constants/species.h"
 #include "constants/items.h"
 #include "field_weather.h"
@@ -169,6 +170,8 @@ void PutPokemonOnGTS(void)
     GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV)};
 
     ZeroMonData(&gPlayerParty[gSpecialVar_0x8004]);
+    CompactPartySlots();
+    CompactPartySprites();
     ConvertPokemonToString(species, level, nature, shininess, abilitynum, ball, ivs);
 
     StringCopy(gSaveBlock1Ptr->waldaPhrase.text, gStringVar2);

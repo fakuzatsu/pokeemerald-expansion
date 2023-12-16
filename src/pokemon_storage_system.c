@@ -643,7 +643,7 @@ static void InitMonIconFields(void);
 static void SpriteCB_BoxMonIconScrollOut(struct Sprite *);
 static void GetIncomingBoxMonData(u8);
 static void CreatePartyMonsSprites(bool8);
-static void CompactPartySprites(void);
+void CompactPartySprites(void);
 static u8 GetNumPartySpritesCompacting(void);
 static void MovePartySpriteToNextSlot(struct Sprite *, u16);
 static void SpriteCB_MovePartyMonToNextSlot(struct Sprite *);
@@ -4809,7 +4809,7 @@ static void CreatePartyMonsSprites(bool8 visible)
     }
 }
 
-static void CompactPartySprites(void)
+void CompactPartySprites(void)
 {
     u16 i, targetSlot;
 

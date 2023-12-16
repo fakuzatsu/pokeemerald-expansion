@@ -654,7 +654,7 @@ EventScript_SetBrineyLocation_Route109::
 
 	.include "data/scripts/pkmn_center_battle_master.inc"
 	.include "data/scripts/pkmn_center_nurse.inc"
-	.include "data/scripts/pkmn_center_GTS_lady.inc"
+	.include "data/scripts/pkmn_center_global_ladies.inc"
 	.include "data/scripts/obtain_item.inc"
 	.include "data/scripts/record_mix.inc"
 	.include "data/scripts/pc.inc"
@@ -836,7 +836,7 @@ Common_EventScript_PlayerHandedOverTheItem::
 	.include "data/text/pc.inc"
 	.include "data/text/pkmn_center_battle_master.inc"
 	.include "data/text/pkmn_center_nurse.inc"
-	.include "data/text/pkmn_center_GTS_lady.inc"
+	.include "data/text/pkmn_center_global_ladies.inc"
 	.include "data/text/mart_clerk.inc"
 	.include "data/text/obtain_item.inc"
 

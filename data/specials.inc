@@ -523,6 +523,7 @@ gSpecials::
 	def_special TryBufferWaldaPhrase
 	def_special DoWaldaNamingScreen
 	def_special TryGetWallpaperWithWaldaPhrase
+	def_special ResetWaldaWallpaper
 	def_special PlayerNotAtTrainerHillEntrance
 	def_special GetBattlePyramidHint
 	def_special LoadLinkContestPlayerPalettes
@@ -557,3 +558,4 @@ gSpecials::
 	def_special SetSpdEvs
 	def_special SetSpAtkEvs
 	def_special SetSpDefEvs
+	def_special CreateWonderTradePokemon
