@@ -156,7 +156,7 @@ void PutPokemonOnGTS(void)
 {
     u16 species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
     u8 level = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_LEVEL);
-    u8 nature = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_PERSONALITY);
+    u8 nature = GetNatureFromPersonality(GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_PERSONALITY));
     u8 shininess = 0;
     u8 abilitynum = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ABILITY_NUM);
     u8 ball = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_POKEBALL);
@@ -362,7 +362,9 @@ static u8 ConvertStringToPokemon(u8 *string) {
 
     // Combine the two u8 values to create the species identifier.
     // Bitshift by 6 because we only have 62 total characters. So we essentially take the first value as base 6.
-    species = ((segments[0] << 6) | segments[1]) % NUM_SPECIES;
+    species = segments[0];
+    species <<= 6;
+    species |= segments[1];
     ivs[0] = segments[2] % (MAX_IV_MASK + 1);
     ivs[1] = segments[3] % (MAX_IV_MASK + 1);
     ivs[2] = segments[4] % (MAX_IV_MASK + 1);
@@ -388,8 +390,9 @@ static void ConvertPokemonToString(u16 species, u8 level, u8 nature, u8 shinines
     u8 outputString[14];
 
     // Convert each attribute to the corresponding segment value, seperating species into two
-    segments[0] = (species >> 6) & 0x3F;
     segments[1] = species & 0x3F;
+    species >>= 6;
+    segments[0] = species & 0x3F;
     segments[2] = ivs[0];
     segments[3] = ivs[1];
     segments[4] = ivs[2];
