@@ -1241,8 +1241,8 @@ const u16 sSoftLevelCaps[NUM_LEVEL_CAPS] =
 100 //Post game
 };
 
-const int sLevelCapReduction[4] = { 100, 3, 2, 1 };
-const int sRelativePartyScaling[4] = { 5, 3, 2, 1 };
+const u8 sLevelCapReduction[4] = { 100, 3, 2, 1 };
+const u8 sRelativePartyScaling[4] = { 5, 3, 2, 1 };
 // The scaling that should be applied.
 // Base exp is divided by the provided value, then either added to the final exp
 // value for LevelCapReduction or added for RelativePartyScaling.
@@ -4100,14 +4100,13 @@ u8 GetTeamLevel(void)
     return partyLevel;
 }
 
-int GetPkmnExpMultiplier(u8 level)
+u8 GetPkmnExpMultiplier(u8 level)
 {
     u8 i;
-    int lvlCapMultiplier = 0;
     u8 levelDiff;
-    bool8 flagFound = FALSE;
+    u8 lvlCapMultiplier = sLevelCapReduction[0];
 
-    for (i = 0; i < NUM_LEVEL_CAPS; i++)
+    for (i = 0; i < NUM_PROGRESSION_FLAGS; i++)
     {
         if ((!FlagGet(sProgressionFlags[i]) || (i == NUM_PROGRESSION_FLAGS)) && level >= sLevelCaps[i])
         {
@@ -4115,18 +4114,14 @@ int GetPkmnExpMultiplier(u8 level)
             if (levelDiff > 3)
                 levelDiff = 3;
             lvlCapMultiplier = sLevelCapReduction[levelDiff];
-            flagFound = TRUE;
             break;
         }
     }
 
-    if (!flagFound)
-        lvlCapMultiplier = sLevelCapReduction[0];
-
     return lvlCapMultiplier;
 }
 
-int GetPkmnExpScaling(u8 level)
+u8 GetPkmnExpScaling(u8 level)
 {
     s8 avgDiff;
 
@@ -4140,10 +4135,10 @@ int GetPkmnExpScaling(u8 level)
     return sRelativePartyScaling[avgDiff];
 }
 
-int GetPkmnLevelCap(void)
+u8 GetPkmnLevelCap(void)
 {
     u8 i;
-    int numFlagsSet = 0;
+    u8 numFlagsSet = 0;
 
     for (i = 0; i < NUM_PROGRESSION_FLAGS; i++)
     {
@@ -4164,7 +4159,7 @@ int GetPkmnLevelCap(void)
 
 void SetLevelCapStringVar(void)
 {
-    int levelCap = GetPkmnLevelCap();
+    u8 levelCap = GetPkmnLevelCap();
     u8 levelCapStr[4];
 
     // Convert the integer to a string
@@ -4335,8 +4330,8 @@ static void Cmd_getexp(void)
 
                 if (IsValidForBattle(&gPlayerParty[*expMonId]))
                 {
-                    int expMultiplier;
-                    int expScaling;
+                    u8 expMultiplier;
+                    u8 expScaling;
 
                     expMultiplier = GetPkmnExpMultiplier(gPlayerParty[gBattleStruct->expGetterMonId].level);
                     expScaling = GetPkmnExpScaling(gPlayerParty[gBattleStruct->expGetterMonId].level);
@@ -4344,7 +4339,7 @@ static void Cmd_getexp(void)
                         {
                         gBattleMoveDamage = gBattleStruct->expValue + (gBattleStruct->expValue / expScaling);
                         if (FlagGet(FLAG_SYS_SOFT_LEVEL_CAP))
-                            gBattleMoveDamage = gBattleStruct->expValue - (gBattleMoveDamage / expMultiplier);
+                            gBattleMoveDamage -= (gBattleMoveDamage / expMultiplier);
                         }
                     else
                         {
@@ -4358,7 +4353,10 @@ static void Cmd_getexp(void)
                         #endif
                        )
                     {
+                        if (FlagGet(FLAG_SYS_SOFT_LEVEL_CAP))
                         gBattleMoveDamage += gBattleStruct->expShareExpValue - (gBattleStruct->expShareExpValue / expMultiplier);
+                        else
+                        gBattleMoveDamage += gBattleStruct->expShareExpValue;
                     }
 
                     ApplyExperienceMultipliers(&gBattleMoveDamage, *expMonId, gBattlerFainted);
