@@ -185,11 +185,13 @@ void EnterGTSCode(void)
 
 static void CB2_HandleGTSCode(void)
 {
+    int sentToPc;
+
     if (gStringVar2[0] == EOS)
         gSpecialVar_Result = 0;
     else {
         gSpecialVar_Result = 1;
-        int sentToPc = ConvertStringToPokemon(gStringVar2);
+        sentToPc = ConvertStringToPokemon(gStringVar2);
     }
 
     gFieldCallback = FieldCB_ContinueScriptHandleMusic;
