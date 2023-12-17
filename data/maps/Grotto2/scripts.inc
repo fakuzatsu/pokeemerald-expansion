@@ -7,4 +7,3 @@ Grotto2_OnLoad::
 	call Grotto_Layout2_CloseLeftPathToTop
 	call Grotto_Layout2_CloseRightPathToTop
 	end
-

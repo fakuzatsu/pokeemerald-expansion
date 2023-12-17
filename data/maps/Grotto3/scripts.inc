@@ -7,4 +7,3 @@ Grotto3_OnLoad::
 	call Grotto_Layout3_CloseRightPath
 	call Grotto_Layout3_OpenMiddlePath
 	end
-

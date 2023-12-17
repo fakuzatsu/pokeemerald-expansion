@@ -693,3 +693,27 @@ MagmaHideout_4F_EventScript_ItemMaxRevive::
 MagmaHideout_3F_3R_EventScript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
 	end
+
+Hidden_Grotto_3_EventScript_Relic_Band::
+	finditem ITEM_RELIC_BAND
+	end
+
+Hidden_Grotto_4_EventScript_Leek::
+	finditem ITEM_LEEK
+	end
+
+Hidden_Grotto_5_EventScript_Relic_Vase::
+	finditem ITEM_RELIC_VASE
+	end
+
+Hidden_Grotto_9_EventScript_Thick_Club::
+	finditem ITEM_THICK_CLUB
+	end
+
+Hidden_Grotto_10_EventScript_Relic_Statue::
+	finditem ITEM_RELIC_STATUE
+	end
+
+Hidden_Grotto_10_EventScript_Light_Ball::
+	finditem ITEM_LIGHT_BALL
+	end

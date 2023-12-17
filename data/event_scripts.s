@@ -1180,3 +1180,19 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/LavaridgeTown_PokemonCenter_B1F/scripts.inc"
 
 	.include "data/maps/EverGrandeCity_PokemonLeague_B1F/scripts.inc"
+
+	.include "data/maps/Grotto5/scripts.inc"
+
+	.include "data/maps/Grotto6/scripts.inc"
+
+	.include "data/maps/Grotto7/scripts.inc"
+
+	.include "data/maps/Grotto8/scripts.inc"
+
+	.include "data/maps/Grotto9/scripts.inc"
+
+	.include "data/maps/Grotto10/scripts.inc"
+
+	.include "data/maps/Grotto11/scripts.inc"
+
+	.include "data/maps/Grotto12/scripts.inc"

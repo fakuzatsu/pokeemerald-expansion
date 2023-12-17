@@ -656,8 +656,8 @@
 #define FLAG_UNUSED_0x264                                    0x264 // Unused Flag
 #define FLAG_HIDDEN_ITEM_PETALBURG_WOODS_DEEP_RARE_CANDY     0x265 // Custom Flag
 #define FLAG_HIDDEN_ITEM_ACORN_ACRE_TINY_MUSHROOM            0x266 // Custom Flag
-#define FLAG_UNUSED_0x267                                    0x267 // Unused Flag
-#define FLAG_UNUSED_0x268                                    0x268 // Unused Flag
+#define FLAG_HIDDEN_ITEM_GROTTO_6_RELIC_COPPER               0x267 // Custom Flag
+#define FLAG_HIDDEN_ITEM_GROTTO_8_RELIC_SILVER               0x268 // Custom Flag
 #define FLAG_UNUSED_0x269                                    0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A                                    0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B                                    0x26B // Unused Flag
@@ -1232,9 +1232,9 @@
 #define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
 #define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
+#define FLAG_ITEM_HIDDEN_GROTTO_4_LEEK                              0x4A0 // Custom Flag
+#define FLAG_ITEM_HIDDEN_GROTTO_9_THICK_CLUB                        0x4A1 // Custom Flag
+#define FLAG_ITEM_HIDDEN_GROTTO_10_LIGHT_BALL                       0x4A2 // Custom Flag
 #define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
 #define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
 #define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
@@ -1552,15 +1552,18 @@
 #define FLAG_MOVE_TUTOR_TAUGHT_NATURAL_GIFT         (DAILY_FLAGS_START + 0x20) // Custom Flag
 #define FLAG_MOVE_TUTOR_TAUGHT_FLING                (DAILY_FLAGS_START + 0x21) // Custom Flag
 #define FLAG_MOVE_TUTOR_TAUGHT_SCORCHING_SANDS      (DAILY_FLAGS_START + 0x22) // Custom Flag
-#define FLAG_MOVE_TUTOR_TAUGHT_DUAL_CHOP            (DAILY_FLAGS_START + 0x23) // Unused Flag
-#define FLAG_MOVE_TUTOR_TAUGHT_EARTH_POWER          (DAILY_FLAGS_START + 0x24) // Unused Flag
-#define FLAG_MOVE_TUTOR_TAUGHT_GRASS_KNOT           (DAILY_FLAGS_START + 0x25) // Unused Flag
-#define FLAG_MOVE_TUTOR_TAUGHT_RECYCLE              (DAILY_FLAGS_START + 0x26) // Unused Flag
-#define FLAG_UNUSED_0x947                           (DAILY_FLAGS_START + 0x27) // Unused Flag
-#define FLAG_UNUSED_0x948                           (DAILY_FLAGS_START + 0x28) // Unused Flag
-#define FLAG_UNUSED_0x949                           (DAILY_FLAGS_START + 0x29) // Unused Flag
-#define FLAG_UNUSED_0x94A                           (DAILY_FLAGS_START + 0x2A) // Unused Flag
-#define FLAG_UNUSED_0x94B                           (DAILY_FLAGS_START + 0x2B) // Unused Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_DUAL_CHOP            (DAILY_FLAGS_START + 0x23) // Custom Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_EARTH_POWER          (DAILY_FLAGS_START + 0x24) // Custom Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_GRASS_KNOT           (DAILY_FLAGS_START + 0x25) // Custom Flag
+#define FLAG_MOVE_TUTOR_TAUGHT_RECYCLE              (DAILY_FLAGS_START + 0x26) // Custom Flag
+
+// Hidden Grotto Event flags. These refresh Daily in case you open the
+// same grotto the exact next day.
+#define FLAG_ITEM_GROTTO_3_RELIC_BAND               (DAILY_FLAGS_START + 0x27) // Custom Flag
+#define FLAG_ITEM_GROTTO_5_RELIC_VASE               (DAILY_FLAGS_START + 0x28) // Custom Flag
+#define FLAG_EVENT_GROTTO_7_PAWNIARD                (DAILY_FLAGS_START + 0x29) // Custom Flag
+#define FLAG_ITEM_GROTTO_10_RELIC_STATUE            (DAILY_FLAGS_START + 0x2A) // Custom Flag
+#define FLAG_EVENT_GROTTO_12_FALINKS                (DAILY_FLAGS_START + 0x2B) // Custom Flag
 #define FLAG_UNUSED_0x94C                           (DAILY_FLAGS_START + 0x2C) // Unused Flag
 #define FLAG_UNUSED_0x94D                           (DAILY_FLAGS_START + 0x2D) // Unused Flag
 #define FLAG_UNUSED_0x94E                           (DAILY_FLAGS_START + 0x2E) // Unused Flag

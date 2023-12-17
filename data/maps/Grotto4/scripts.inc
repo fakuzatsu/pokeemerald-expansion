@@ -7,4 +7,3 @@ Grotto4_OnLoad::
 	call Grotto_Layout4_CloseLeftTreeArea
 	call Grotto_Layout4_CloseRightTreeArea
 	end
-
