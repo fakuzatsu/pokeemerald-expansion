@@ -524,6 +524,7 @@ gSpecials::
 	def_special DoWaldaNamingScreen
 	def_special TryGetWallpaperWithWaldaPhrase
 	def_special ResetWaldaWallpaper
+	def_special getSpeciesFromWaldaStruct
 	def_special PlayerNotAtTrainerHillEntrance
 	def_special GetBattlePyramidHint
 	def_special LoadLinkContestPlayerPalettes

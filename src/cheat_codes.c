@@ -107,7 +107,7 @@ void EnterCode(void)
 
 static void CB2_HandleGivenCode(void)
 {
-    if (gStringVar2[1] == EOS)
+    if (gStringVar2[0] == EOS)
         gSpecialVar_Result = 0;
     else {
     if (StringCompare(gStringVar2, gText_Code1) == 0)
@@ -174,7 +174,7 @@ void PutPokemonOnGTS(void)
     CompactPartySprites();
     ConvertPokemonToString(species, level, nature, shininess, abilitynum, ball, ivs);
 
-    StringCopy(gSaveBlock1Ptr->waldaPhrase.text, gStringVar2);
+    StringCopy(gSaveBlock1Ptr->waldaPhrase.text, gStringVar1);
     gSaveBlock1Ptr->waldaPhrase.colors[0] = species;
 }
 
@@ -185,39 +185,15 @@ void EnterGTSCode(void)
 
 static void CB2_HandleGTSCode(void)
 {
-    if (gStringVar2[1] == EOS)
+    if (gStringVar2[0] == EOS)
         gSpecialVar_Result = 0;
-    else
-        gSpecialVar_Result = 1;
-
-    gFieldCallback = MapPostLoadHook_ReturnToGTSActivation;
-    SetMainCallback2(CB2_ReturnToField);
-}
-
-static void MapPostLoadHook_ReturnToGTSActivation(void)
-{
-    FadeInFromBlack();
-    CreateTask(Task_ReturnToGTSActivation, 8);
-}
-
-static void Task_ReturnToGTSActivation(u8 taskId)
-{
-    if (gSpecialVar_Result == 1) {
-        int sentToPc = ConvertStringToPokemon(gStringVar2);
-        StringCopy(gStringVar2, GetSpeciesName(SPECIES_FLOETTE_ETERNAL_FLOWER));
-
-        if (sentToPc == MON_GIVEN_TO_PARTY) {
-        DisplayItemMessageOnField(taskId, gText_WasAddedToParty, Task_DontActivateCode);
-        }
-        else if (sentToPc == MON_GIVEN_TO_PC) {
-        DisplayItemMessageOnField(taskId, gText_WasTransfered, Task_DontActivateCode);
-        }
-        else
-        DisplayItemMessageOnField(taskId, gText_FailedToAddMon, Task_DontActivateCode);
-    }
     else {
-        DisplayItemMessageOnField(taskId, gText_FailedToAddMon, Task_DontActivateCode);
+        gSpecialVar_Result = 1;
+        int sentToPc = ConvertStringToPokemon(gStringVar2);
     }
+
+    gFieldCallback = FieldCB_ContinueScriptHandleMusic;
+    SetMainCallback2(CB2_ReturnToField);
 }
 
 //--------------------------------------------------
@@ -382,6 +358,8 @@ static u8 ConvertStringToPokemon(u8 *string) {
 
     sentToPc = ScriptGiveCustomMon(species, level, ITEM_NONE, ball, nature, abilitynum, evs, ivs, 0, shininess);
 
+    StringCopy(gStringVar2, GetSpeciesName(species));
+
     return sentToPc;
 }
 
@@ -414,5 +392,5 @@ static void ConvertPokemonToString(u16 species, u8 level, u8 nature, u8 shinines
 
     outputString[13] = EOS;
 
-    StringCopy(gStringVar2, outputString);
+    StringCopy(gStringVar1, outputString);
 }

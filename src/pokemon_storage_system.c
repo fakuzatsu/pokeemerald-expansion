@@ -9796,6 +9796,11 @@ u16 *GetWaldaWallpaperColorsPtr(void)
     return gSaveBlock1Ptr->waldaPhrase.colors;
 }
 
+u16 getSpeciesFromWaldaStruct(void)
+{
+    return gSaveBlock1Ptr->waldaPhrase.colors[0];
+}
+
 void SetWaldaWallpaperColors(u16 color1, u16 color2)
 {
     gSaveBlock1Ptr->waldaPhrase.colors[0] = color1;
