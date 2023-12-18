@@ -11,6 +11,7 @@
 #include "random.h"
 #include "test/battle.h"
 #include "window.h"
+#include "constants/trainers.h"
 
 #if defined(__INTELLISENSE__)
 #undef TestRunner_Battle_RecordAbilityPopUp
