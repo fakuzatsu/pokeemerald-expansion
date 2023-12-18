@@ -88,6 +88,7 @@ static const u8 sText_DashesNoPlayer[] = _("-------");
 static const u8 sText_DashesNoScore[] = _("----");
 
 // code
+#ifndef FREE_LINK_BATTLE_RECORDS
 static void ClearLinkBattleRecord(struct LinkBattleRecord *record)
 {
     CpuFill16(0, record, sizeof(struct LinkBattleRecord));
@@ -219,6 +220,7 @@ static void UpdateLinkBattleRecords(struct LinkBattleRecords *records, const u8 
     UpdateLinkBattleRecord(&records->entries[index], battleOutcome);
     SortLinkBattleRecords(records);
 }
+#endif
 
 void ClearPlayerLinkBattleRecords(void)
 {   
@@ -227,6 +229,7 @@ void ClearPlayerLinkBattleRecords(void)
     #endif
 }
 
+#ifndef FREE_LINK_BATTLE_RECORDS
 static void IncTrainerCardWins(s32 battlerId)
 {
     u16 *wins = &gTrainerCards[battlerId].linkBattleWins;
@@ -257,6 +260,7 @@ static void UpdateTrainerCardWinsLosses(s32 battlerId)
         break;
     }
 }
+#endif
 
 void UpdatePlayerLinkBattleRecords(s32 battlerId)
 {
@@ -274,6 +278,7 @@ void UpdatePlayerLinkBattleRecords(s32 battlerId)
     #endif
 }
 
+#ifndef FREE_LINK_BATTLE_RECORDS
 static void PrintLinkBattleWinsLossesDraws(struct LinkBattleRecord *records)
 {
     s32 x;
@@ -315,10 +320,15 @@ static void PrintLinkBattleRecord(struct LinkBattleRecord *record, u8 y, s32 lan
         AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gStringVar1, 176, (y * 8) + 1, 0, NULL);
     }
 }
+#endif
 
 void ShowLinkBattleRecords(void)
 {
+    #ifndef FREE_LINK_BATTLE_RECORDS
     s32 i, x;
+    #else
+    s32 x;
+    #endif
 
     gRecordsWindowId = AddWindow(&sLinkBattleRecordsWindow);
     DrawStdWindowFrame(gRecordsWindowId, FALSE);

@@ -7892,7 +7892,7 @@ BattleScript_MegaEvolutionAfterString:
 
 BattleScript_MegaEvolutionQ::
 	printstring STRINGID_EMPTYSTRING3
-	trytrainerslidemegaevolutionmsg BS_ATTACKER
+	trytrainerslidemegaevolutionmsg
 	printstring STRINGID_MEGAEVOREACTING
 BattleScript_MegaEvolutionQAfterString:
 	waitmessage B_WAIT_TIME_LONG
@@ -7914,7 +7914,7 @@ BattleScript_WishMegaEvolution::
 
 BattleScript_WishMegaEvolutionQ::
 	printstring STRINGID_EMPTYSTRING3
-	trytrainerslidemegaevolutionmsg BS_ATTACKER
+	trytrainerslidemegaevolutionmsg
 	printstring STRINGID_FERVENTWISHREACHED
 	goto BattleScript_MegaEvolutionQAfterString
 
@@ -7980,7 +7980,7 @@ BattleScript_UltraBurst::
 
 BattleScript_UltraBurstQ::
 	printstring STRINGID_EMPTYSTRING3
-	trytrainerslidezmovemsg BS_ATTACKER
+	trytrainerslidezmovemsg
 	printstring STRINGID_ULTRABURSTREACTING
 	waitmessage B_WAIT_TIME_LONG
 	setbyte gIsCriticalHit, 0

@@ -23,7 +23,6 @@
 static void InitLilycoveQuizLady(void);
 static void InitLilycoveFavorLady(void);
 static void InitLilycoveContestLady(void);
-static void ResetQuizLadyForRecordMix(void);
 static void ResetFavorLadyForRecordMix(void);
 static void ResetContestLadyForRecordMix(void);
 static u8 BufferQuizAuthorName(void);
@@ -330,15 +329,6 @@ static void InitLilycoveQuizLady(void)
     sQuizLadyPtr->prevQuestionId = ARRAY_COUNT(sQuizLadyQuizQuestions);
     sQuizLadyPtr->language = gGameLanguage;
     QuizLadyPickQuestion();
-}
-
-static void ResetQuizLadyForRecordMix(void)
-{
-    sQuizLadyPtr = &gSaveBlock1Ptr->lilycoveLady.quiz;
-    sQuizLadyPtr->id = LILYCOVE_LADY_QUIZ;
-    sQuizLadyPtr->state = LILYCOVE_LADY_STATE_READY;
-    sQuizLadyPtr->waitingForChallenger = FALSE;
-    sQuizLadyPtr->playerAnswer = EC_EMPTY_WORD;
 }
 
 u8 GetQuizLadyState(void)

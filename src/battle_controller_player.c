@@ -1758,6 +1758,7 @@ static void MoveSelectionDisplayMoveType(u32 battler)
 {
     u8 *txtPtr;
     u8 type;
+    u8 typeBits;
     u32 itemId;
     struct Pokemon *mon;
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
@@ -1769,14 +1770,14 @@ static void MoveSelectionDisplayMoveType(u32 battler)
 
       if (moveInfo->moves[gMoveSelectionCursor[battler]] == MOVE_HIDDEN_POWER)
     {
-        u8 typeBits  = ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_HP_IV) & 1) << 0)
+        typeBits  = ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_HP_IV) & 1) << 0)
                      | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_ATK_IV) & 1) << 1)
                      | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_DEF_IV) & 1) << 2)
                      | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_SPEED_IV) & 1) << 3)
                      | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_SPATK_IV) & 1) << 4)
                      | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_SPDEF_IV) & 1) << 5);
 
-        u8 type = (15 * typeBits) / 63 + 1;
+        type = (15 * typeBits) / 63 + 1;
         if (type >= TYPE_MYSTERY)
             type++;
         type |= 0xC0;

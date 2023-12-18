@@ -186,7 +186,6 @@ u8 CreateWarpArrowSprite(void)
     return spriteId;
 }
 
-// this function is only used for the warp arrow sprite
 void SetSpriteInvisible(u8 spriteId)
 {
     // needed in order to trick the palette system into thinking that no sprite is using that palette
@@ -842,6 +841,12 @@ void UpdateHotSpringsWaterFieldEffect(struct Sprite *sprite)
     }
 }
 
+#undef sLocalId
+#undef sMapNum
+#undef sMapGroup
+#undef sPrevX
+#undef sPrevY
+
 u32 FldEff_ShakingGrass(void)
 {
     u8 spriteId;
@@ -855,7 +860,6 @@ u32 FldEff_ShakingGrass(void)
         sprite->oam.priority = gFieldEffectArguments[3];
         sprite->sWaitFldEff = FLDEFF_SHAKING_GRASS;
     }
-    
     return spriteId;
 }
 
@@ -872,7 +876,6 @@ u32 FldEff_ShakingGrass2(void)
         sprite->oam.priority = gFieldEffectArguments[3];
         sprite->sWaitFldEff = FLDEFF_SHAKING_LONG_GRASS;
     }
-    
     return spriteId;
 }
 
@@ -905,7 +908,6 @@ u32 FldEff_WaterSurfacing(void)
         sprite->oam.priority = gFieldEffectArguments[3];
         sprite->sWaitFldEff = FLDEFF_WATER_SURFACING;
     }
-    
     return spriteId;
 }
 
@@ -1431,7 +1433,7 @@ u32 FldEff_Sparkle(void)
         gSprites[spriteId].oam.priority = gFieldEffectArguments[2];
         gSprites[spriteId].coordOffsetEnabled = TRUE;
     }
-    return spriteId;
+    return 0;
 }
 
 void UpdateSparkleFieldEffect(struct Sprite *sprite)
@@ -1694,4 +1696,3 @@ static void UpdateGrassFieldEffectSubpriority(struct Sprite *sprite, u8 elevatio
         }
     }
 }
-

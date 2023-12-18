@@ -413,7 +413,7 @@ void CB2_FlashNotDetectedScreen(void){
         }
     };
 	
-    static const char errorMsg[] = _(
+    static const u8 errorMsg[] = _(
         "{COLOR RED}ERROR!\n"
         "{COLOR DARK_GRAY}Flash memory not detected.\n\n"
         "Set your emulator's save type\nsetting to Flash 1Mb / 128K\n"

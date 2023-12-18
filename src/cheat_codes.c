@@ -24,10 +24,7 @@
 static void CB2_HandleGivenCode(void);
 static void CB2_HandleGTSCode(void);
 static void MapPostLoadHook_ReturnToCodeActivation(void);
-static void MapPostLoadHook_ReturnToGTSActivation(void);
-static void MapPostLoadHook_ReturnToShopMenu(void);
 static void Task_ReturnToCodeActivation(u8 taskId);
-static void Task_ReturnToGTSActivation(u8 taskId);
 static u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 nature, u8 abilityNum, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny);
 static void ConvertPokemonToString(u16 species, u8 level, u8 nature, u8 shininess, u8 abilitynum, u8 ball, u8 *ivs);
 static u8 ConvertStringToPokemon(u8 *string);
@@ -192,6 +189,8 @@ static void CB2_HandleGTSCode(void)
     else {
         gSpecialVar_Result = 1;
         sentToPc = ConvertStringToPokemon(gStringVar2);
+        if (sentToPc == MON_CANT_GIVE)
+            gSpecialVar_Result = 0;
     }
 
     gFieldCallback = FieldCB_ContinueScriptHandleMusic;
@@ -293,7 +292,7 @@ static u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 natur
 
     if (i >= PARTY_SIZE)
     {
-        sentToPc = SendMonToPC(&mon);
+        sentToPc = CopyMonToPC(&mon);
     }
     else
     {
@@ -321,7 +320,7 @@ static u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 natur
 static u8 ConvertStringToPokemon(u8 *string) {
     u8 i;
     int sentToPc;
-    u8 charIndex;
+    u8 charIndex = 0;
     u8 segments[13];
     u16 species;
     u8 level;

@@ -913,7 +913,9 @@ void EnterUnionRoomChat(void)
 
 static void InitUnionRoomChat(struct UnionRoomChat *chat)
 {
+    #ifndef FREE_UNION_ROOM_CHAT
     int i;
+    #endif
 
     chat->funcId = CHAT_FUNC_JOIN;
     chat->funcState = 0;

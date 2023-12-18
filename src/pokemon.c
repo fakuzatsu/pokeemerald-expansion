@@ -1466,7 +1466,8 @@ bool8 IsStatHyperTrained(struct Pokemon *mon, u8 statIndex)
     if (IsStatHyperTrained(mon, statIndex))                                   \
         n = (((2 * baseStat + MAX_PER_STAT_IVS + ev / 4) * level) / 100) + 5; \
     n = ModifyStatByNature(nature, n, statIndex);                             \
-    CALC_FRIENDSHIP_BOOST()                                                   \
+    if (B_FRIENDSHIP_BOOST == TRUE)                                           \
+        n = n + ((n * 10 * friendship) / (MAX_FRIENDSHIP * 100));             \
     SetMonData(mon, field, &n);                                               \
 }
 

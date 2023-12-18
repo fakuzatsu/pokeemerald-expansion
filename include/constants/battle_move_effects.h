@@ -423,6 +423,6 @@
 #define EFFECT_RAGE_FIST                    417
 #define EFFECT_MEGA_DOUBLE_DMG              418
 
-#define NUM_BATTLE_MOVE_EFFECTS             418
+#define NUM_BATTLE_MOVE_EFFECTS             419
 
 #endif  // GUARD_CONSTANTS_BATTLE_MOVE_EFFECTS_H

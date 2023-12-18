@@ -391,10 +391,6 @@ static void SetVBlank(void);
 static void VBlankCB_NamingScreen(void);
 static void NamingScreen_ShowBgs(void);
 static bool8 IsWideLetter(u8);
-static void CB2_HandleGivenCode(void);
-static void MapPostLoadHook_ReturnToCodeActivation(void);
-static void MapPostLoadHook_ReturnToShopMenu(void);
-static void Task_ReturnToCodeActivation(u8 taskId);
 
 void DoNamingScreen(u8 templateNum, u8 *destBuffer, u16 monSpecies, u16 monGender, u32 monPersonality, MainCallback returnCallback)
 {

@@ -77,7 +77,9 @@ static void FillFactoryFrontierTrainerParty(u16 trainerId, u8 firstMonId);
 static void FillFactoryTentTrainerParty(u16 trainerId, u8 firstMonId);
 static u8 GetFrontierTrainerFixedIvs(u16 trainerId);
 static void FillPartnerParty(u16 trainerId);
+#ifndef FREE_BATTLE_TOWER_E_READER
 static void SetEReaderTrainerChecksum(struct BattleTowerEReaderTrainer *ereaderTrainer);
+#endif
 static u8 SetTentPtrsGetLevel(void);
 
 const u16 gBattleFrontierHeldItems[] =
@@ -3010,16 +3012,16 @@ void ValidateEReaderTrainer(void)
     #endif
 }
 
+#ifndef FREE_BATTLE_TOWER_E_READER
 static void SetEReaderTrainerChecksum(struct BattleTowerEReaderTrainer *ereaderTrainer)
 {
-    #ifndef FREE_BATTLE_TOWER_E_READER
     s32 i;
 
     ereaderTrainer->checksum = 0;
     for (i = 0; i < (sizeof(struct BattleTowerEReaderTrainer) - 4) / 4; i++) // - 4, because of the last field being the checksum itself.
         ereaderTrainer->checksum += ((u32 *)ereaderTrainer)[i];
-    #endif
 }
+#endif
 
 void ClearEReaderTrainer(struct BattleTowerEReaderTrainer *ereaderTrainer)
 {

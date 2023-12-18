@@ -414,7 +414,9 @@ static void DoPokeJumpCountdown(void);
 static void Msg_CommunicationStandby(void);
 static void Task_ShowPokemonJumpRecords(u8);
 static void PrintRecordsText(u16, int);
+#ifndef FREE_POKEMON_JUMP
 static void TruncateToFirstWordOnly(u8 *);
+#endif
 
 EWRAM_DATA static struct PokemonJump *sPokemonJump = NULL;
 EWRAM_DATA static struct PokemonJumpGfx *sPokemonJumpGfx = NULL;
@@ -4327,12 +4329,14 @@ static bool32 RecvPacket_MemberStateToMember(struct PokemonJump_Player *player, 
     return TRUE;
 }
 
+#ifndef FREE_POKEMON_JUMP
 static struct PokemonJumpRecords *GetPokeJumpRecords(void)
 {
     #ifndef FREE_POKEMON_JUMP
     return &gSaveBlock2Ptr->pokeJump;
     #endif
 }
+#endif
 
 void ResetPokemonJumpRecords(void)
 {
@@ -4344,6 +4348,8 @@ void ResetPokemonJumpRecords(void)
     records->gamesWithMaxPlayers = 0;
     records->unused2 = 0;
     records->unused1 = 0;
+    #else
+    return;
     #endif
 }
 
@@ -4476,6 +4482,7 @@ static void PrintRecordsText(u16 windowId, int width)
     #endif
 }
 
+#ifndef FREE_POKEMON_JUMP
 static void TruncateToFirstWordOnly(u8 *str)
 {
     for (;*str != EOS; str++)
@@ -4487,3 +4494,4 @@ static void TruncateToFirstWordOnly(u8 *str)
         }
     }
 }
+#endif
