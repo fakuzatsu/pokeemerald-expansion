@@ -34,6 +34,7 @@ extern u8 gChainFishingStreak;
 extern bool8 gIsFishingEncounter;
 
 void DisableWildEncounters(bool8 disabled);
+u8 PickWildMonNature(void);
 bool8 StandardWildEncounter(u16 currMetaTileBehavior, u16 previousMetaTileBehavior);
 bool8 SweetScentWildEncounter(void);
 bool8 DoesCurrentMapHaveFishingMons(void);

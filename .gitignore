@@ -39,4 +39,4 @@ prefabs.json
 *.diff
 *.sym
 *.js
-maker
+src/data/map_group_count.h

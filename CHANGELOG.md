@@ -78,7 +78,7 @@
 
 # Pokeemerald-Expansion Changelog
 
-# Version 1.6.2
+## [Version 1.7.0](docs/changelogs/1.7.0.md) - Feature Release
 
 ## 🌋 *IMPORTANT CHANGES* 🌋
 ### Battle changes

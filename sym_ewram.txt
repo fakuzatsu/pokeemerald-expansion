@@ -1,3 +1,4 @@
+	.include "gflib/malloc.o"
 	.include "src/decompress.o"
 	.include "src/main.o"
 	.include "gflib/malloc.o"
@@ -153,3 +154,4 @@
 	.include "src/dexnav.o"
 	.include "src/battle_controller_player.o"
 	.include "src/day_night.o"
+	.include "src/pokedex_plus_hgss.o"
