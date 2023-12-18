@@ -412,16 +412,16 @@
 #define EFFECT_CORROSIVE_GAS                406
 #define EFFECT_POPULATION_BOMB              407
 #define EFFECT_MORTAL_SPIN                  408
-#define EFFECT_SALT_CURE                    410
-#define EFFECT_CHILLY_RECEPTION             411
-#define EFFECT_MATCHA_GOTCHA                412
-#define EFFECT_SYRUP_BOMB                   413
-#define EFFECT_MAX_MOVE                     414
-#define EFFECT_GLAIVE_RUSH                  415
-#define EFFECT_RAGING_BULL                  416
-#define EFFECT_RAGE_FIST                    417
-#define EFFECT_MEGA_DOUBLE_DMG              418
+#define EFFECT_SALT_CURE                    409
+#define EFFECT_CHILLY_RECEPTION             410
+#define EFFECT_MATCHA_GOTCHA                411
+#define EFFECT_SYRUP_BOMB                   412
+#define EFFECT_MAX_MOVE                     413
+#define EFFECT_GLAIVE_RUSH                  414
+#define EFFECT_RAGING_BULL                  415
+#define EFFECT_RAGE_FIST                    416
+#define EFFECT_MEGA_DOUBLE_DMG              417
 
-#define NUM_BATTLE_MOVE_EFFECTS             419
+#define NUM_BATTLE_MOVE_EFFECTS             418
 
 #endif  // GUARD_CONSTANTS_BATTLE_MOVE_EFFECTS_H
