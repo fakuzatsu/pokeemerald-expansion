@@ -412,7 +412,6 @@
 #define EFFECT_CORROSIVE_GAS                406
 #define EFFECT_POPULATION_BOMB              407
 #define EFFECT_MORTAL_SPIN                  408
-#define EFFECT_GIGATON_HAMMER               409
 #define EFFECT_SALT_CURE                    410
 #define EFFECT_CHILLY_RECEPTION             411
 #define EFFECT_MATCHA_GOTCHA                412

@@ -101,8 +101,6 @@ DOUBLE_BATTLE_TEST("Ultra Burst happens after switching, but before Focus Punch-
 
 SINGLE_BATTLE_TEST("Ultra Burst and Mega Evolution can happen on the same turn")
 {
-    KNOWN_FAILING; // I think this one was broken by expansion. They'll probably fix it soon.
-
     GIVEN {
         PLAYER(SPECIES_NECROZMA_DUSK_MANE) { Item(ITEM_ULTRANECROZIUM_Z); Speed(3); }
         OPPONENT(SPECIES_GARDEVOIR) { Item(ITEM_GARDEVOIRITE); Speed(2); }
