@@ -197,6 +197,14 @@ static void CB2_HandleGTSCode(void)
     SetMainCallback2(CB2_ReturnToField);
 }
 
+void GetPokemonFromStringVarOne(void)
+{
+    int sentToPc;
+    sentToPc = ConvertStringToPokemon(gStringVar1);
+    if (sentToPc == MON_CANT_GIVE)
+        gSpecialVar_Result = 0;
+}
+
 //--------------------------------------------------
 // Helper Functions for Codes
 //--------------------------------------------------

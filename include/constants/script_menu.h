@@ -127,6 +127,9 @@
 #define MULTI_EXPLAIN_OR_TOGGLE            116
 #define MULTI_WHICH_DRAGON_MOVE            117
 #define MULTI_WHICH_FIGHTING_MOVE          118
+#define MULTI_GTS_USE_OR_EXPLAIN           119
+#define MULTI_WONDER_USE_OR_EXPLAIN        120
+#define MULTI_GTS_CODE_OR_TAKE_BACK        121
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

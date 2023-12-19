@@ -548,6 +548,7 @@ gSpecials::
 	def_special IncrementAdoptionSpecials
 	def_special EnterCode
 	def_special EnterGTSCode
+	def_special GetPokemonFromStringVarOne
 	def_special PutPokemonOnGTS
 	def_special DoGoldHyperTraining
 	def_special ScriptMenu_CreateHyperTrainingMultichoice

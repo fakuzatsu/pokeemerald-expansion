@@ -794,6 +794,28 @@ static const struct MenuAction MultichoiceList_SuperpowerOrAuraSphere[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_GTSUseOrExplain[] =
+{
+    {gText_UseGTS},
+    {gText_Info2},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_WonderUseOrExplain[] =
+{
+    {gText_UseWonder},
+    {gText_Info2},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_GTSCodeOrTakeBack[] =
+{
+    {gText_SeeCode},
+    {gText_EnterCode},
+    {gText_TakeBack},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -926,6 +948,9 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_EXPLAIN_OR_TOGGLE]          = MULTICHOICE(MultichoiceList_ExplainOrToggle),
     [MULTI_WHICH_DRAGON_MOVE]          = MULTICHOICE(MultichoiceList_DracoMeteorOrOutrage),
     [MULTI_WHICH_FIGHTING_MOVE]        = MULTICHOICE(MultichoiceList_SuperpowerOrAuraSphere),
+    [MULTI_GTS_USE_OR_EXPLAIN]         = MULTICHOICE(MultichoiceList_GTSUseOrExplain),
+    [MULTI_WONDER_USE_OR_EXPLAIN]      = MULTICHOICE(MultichoiceList_WonderUseOrExplain),
+    [MULTI_GTS_CODE_OR_TAKE_BACK]      = MULTICHOICE(MultichoiceList_GTSCodeOrTakeBack),
 };
 
 const u8 *const gStdStrings[] =

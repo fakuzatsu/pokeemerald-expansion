@@ -515,6 +515,7 @@ MoveTutor_EventScript_DefeatedDragonMaster::
 	case 0, MoveTutor_EventScript_DragonMasterTeachDracoMeteor
 	case 1, MoveTutor_EventScript_DragonMasterTeachOutrage
 	case 2, MoveTutor_EventScript_DragonMasterDeclined
+	case MULTI_B_PRESSED, MoveTutor_EventScript_DragonMasterDeclined
 	end
 
 MoveTutor_EventScript_DragonMasterTeachDracoMeteor::
@@ -571,6 +572,7 @@ MoveTutor_EventScript_DefeatedFightingMaster::
 	case 0, MoveTutor_EventScript_FightingMasterTeachSuperpower
 	case 1, MoveTutor_EventScript_FightingMasterTeachAuraSphere
 	case 2, MoveTutor_EventScript_FightingMasterDeclined
+	case MULTI_B_PRESSED, MoveTutor_EventScript_FightingMasterDeclined
 	end
 
 MoveTutor_EventScript_FightingMasterTeachSuperpower::
@@ -605,7 +607,6 @@ MoveTutor_EventScript_OpenPartyMenu::
 	lock
 	faceplayer
 	return
-
 
 MoveTutor_EventScript_CanOnlyBeLearnedOnce::
 	msgbox MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnce, MSGBOX_YESNO
