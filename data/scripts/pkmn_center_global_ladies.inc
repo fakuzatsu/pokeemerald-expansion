@@ -4,7 +4,7 @@ Common_EventScript_PkmnCenterGTSLady::
 EventScript_PkmnCenterGTSLady_ReturnToStart::
     message gText_GTSLadyDoYouWantToUse
     waitmessage
-    multichoice 16, 6, MULTI_GTS_USE_OR_EXPLAIN, FALSE
+    multichoice 18, 6, MULTI_GTS_USE_OR_EXPLAIN, FALSE
 	switch VAR_RESULT
     case 0, EventScript_PkmnCenterGTSLady_TryUse
     case 1, EventScript_PkmnCenterGTSLady_Explain
@@ -18,7 +18,7 @@ Common_EventScript_PkmnCenterWonderLady::
 EventScript_PkmnCenterWonderLady_ReturnToStart::
     message gText_WonderLadyDoYouWantToUse
     waitmessage
-    multichoice 16, 6, MULTI_WONDER_USE_OR_EXPLAIN, FALSE
+    multichoice 18, 6, MULTI_WONDER_USE_OR_EXPLAIN, FALSE
 	switch VAR_RESULT
     case 0, EventScript_PkmnCenterWonderLady_TryUse
     case 1, EventScript_PkmnCenterWonderLady_Explain
@@ -92,9 +92,7 @@ EventScript_PkmnCenterGTSLady_DoGTS::
     special PutPokemonOnGTS
     msgbox gText_GTSLadyWasDeposited, MSGBOX_DEFAULT
     msgbox gText_GTSLadyHeresCode, MSGBOX_DEFAULT
-    msgbox gText_GTSLadyEnterCodeNow, MSGBOX_YESNO
-    goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterGTSLady_EnterCode
-    goto EventScript_PkmnCenterGlobalLady_DeclineTrade
+    goto EventScript_PkmnCenterGTSLady_ReturnToMultichoice
     end
 
 EventScript_PkmnCenterWonderLady_DoWonder::
@@ -110,12 +108,19 @@ EventScript_PkmnCenterWonderLady_DoWonder::
     goto EventScript_PkmnCenterGlobalLady_FinishTrade
     end
 
+EventScript_PkmnCenterGTSLady_TooFewPokemon::
+    msgbox gText_GTSLadyTooFewPokemon, MSGBOX_DEFAULT
+    goto EventScript_PkmnCenterGlobalLady_DeclineTrade
+    end
+
 EventScript_PkmnCenterGTSLady_AlreadyPutAMon::
     specialvar VAR_RESULT, getSpeciesFromWaldaStruct
     bufferspeciesname STR_VAR_2, VAR_RESULT
-    message gText_GTSLadyAlreadyOnTheGTS
+    msgbox gText_GTSLadyAlreadyOnTheGTS, MSGBOX_DEFAULT
+EventScript_PkmnCenterGTSLady_ReturnToMultichoice::
+    message gText_GTSWhatWouldYouLikeToDo
     waitmessage
-    multichoice 16, 4, MULTI_GTS_CODE_OR_TAKE_BACK, FALSE
+    multichoice 17, 4, MULTI_GTS_CODE_OR_TAKE_BACK, FALSE
 	switch VAR_RESULT
     case 0, EventScript_PkmnCenterGTSLady_SeeCode
     case 1, EventScript_PkmnCenterGTSLady_EnterCode
@@ -126,21 +131,14 @@ EventScript_PkmnCenterGTSLady_AlreadyPutAMon::
 
 EventScript_PkmnCenterGTSLady_SeeCode::
     msgbox gText_GTSLadyHeresCode, MSGBOX_DEFAULT
-    msgbox gText_GTSLadyEnterCodeNow, MSGBOX_YESNO
-    goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterGTSLady_EnterCode
-    goto EventScript_PkmnCenterGlobalLady_DeclineTrade
-    end
-
-EventScript_PkmnCenterGTSLady_TooFewPokemon::
-    msgbox gText_GTSLadyTooFewPokemon, MSGBOX_DEFAULT
-    goto EventScript_PkmnCenterGlobalLady_DeclineTrade
+    goto EventScript_PkmnCenterGTSLady_ReturnToMultichoice
     end
 
 EventScript_PkmnCenterGTSLady_EnterCode::
     bufferstring STR_VAR_2, gText_Blank
     special EnterGTSCode
     waitstate
-    goto_if_eq VAR_RESULT, 0, EventScript_PkmnCenterGlobalLady_FinishTrade
+    goto_if_eq VAR_RESULT, 0, EventScript_PkmnCenterGTSLady_ReturnToMultichoice
     special ResetWaldaWallpaper
     message gText_ConnectingToGlobalNetwork
     waitmessage

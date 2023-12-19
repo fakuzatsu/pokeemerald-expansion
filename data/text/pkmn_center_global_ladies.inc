@@ -57,17 +57,15 @@ gText_GTSLadyWasDeposited::
 
 gText_GTSLadyAlreadyOnTheGTS::
     .string "{STR_VAR_2} is alreading waiting\n"
-    .string "in the GTS system.\p"
+    .string "in the GTS system.$"
+
+gText_GTSWhatWouldYouLikeToDo::
     .string "What would you like to do?$"
 
 gText_GTSLadyHeresCode::
     .string "Here's your GTS connect code:\n"
     .string "{STR_VAR_1}\l"
     .string "Please share it with your partner.$"
-
-gText_GTSLadyEnterCodeNow::
-    .string "Would you like to enter a partner's GTS\n"
-    .string "connect code now?$"
 
 gText_GTSLadyPokemonRecieved::
     .string "Recieved {STR_VAR_2} from the GTS.$"
