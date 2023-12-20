@@ -151,15 +151,15 @@ SINGLE_BATTLE_TEST("Prankster-affected moves can still be bounced back by Dark-t
 {
     GIVEN {
         PLAYER(SPECIES_UMBREON);
-        OPPONENT(SPECIES_VOLBEAT) { Ability(ABILITY_PRANKSTER); }
+        OPPONENT(SPECIES_SABLEYE) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
         TURN { MOVE(player, MOVE_MAGIC_COAT); MOVE(opponent, MOVE_CONFUSE_RAY); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_MAGIC_COAT, player);
-        MESSAGE("Foe Volbeat used Confuse Ray!");
-        MESSAGE("Foe Volbeat's Confuse Ray was bounced back by Magic Coat!");
+        MESSAGE("Foe Sableye used Confuse Ray!");
+        MESSAGE("Foe Sableye's Confuse Ray was bounced back by Magic Coat!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, player);
-        MESSAGE("Foe Volbeat became confused!");
+        MESSAGE("Foe Sableye became confused!");
     }
 }
 

@@ -487,9 +487,9 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI will not switch in a Pokemo
     } SCENE {
         MESSAGE("Foe Kadabra fainted!");
         if (alakazamFirst) {
-            MESSAGE("{PKMN} Trainer LEAF sent out Alakazam!");
+            MESSAGE("{PKMN} Trainer Leaf sent out Alakazam!");
         } else {
-            MESSAGE("{PKMN} Trainer LEAF sent out Blastoise!");
+            MESSAGE("{PKMN} Trainer Leaf sent out Blastoise!");
         }
     }
 }
@@ -507,7 +507,7 @@ AI_SINGLE_BATTLE_TEST("AI switches if Perish Song is about to kill")
             TURN { ; }
             TURN { EXPECT_SWITCH(opponent, 1); }
     } SCENE {
-        MESSAGE("{PKMN} Trainer LEAF sent out Crobat!");
+        MESSAGE("{PKMN} Trainer Leaf sent out Crobat!");
     }
 }
 
@@ -530,9 +530,9 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI will not switch in a Pokemo
     } SCENE {
         MESSAGE("Foe Kadabra fainted!");
         if (alakazamFaster) {
-            MESSAGE("{PKMN} Trainer LEAF sent out Alakazam!");
+            MESSAGE("{PKMN} Trainer Leaf sent out Alakazam!");
         } else {
-            MESSAGE("{PKMN} Trainer LEAF sent out Blastoise!");
+            MESSAGE("{PKMN} Trainer Leaf sent out Blastoise!");
         }
     }
 }
