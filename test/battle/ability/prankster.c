@@ -157,7 +157,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves can still be bounced back by Dark-t
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_MAGIC_COAT, player);
         MESSAGE("Foe Volbeat used Confuse Ray!");
-        MESSAGE("Foe Volbeat's Confuse Ray was bounced back by MAGIC COAT!");
+        MESSAGE("Foe Volbeat's Confuse Ray was bounced back by Magic Coat!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, player);
         MESSAGE("Foe Volbeat became confused!");
     }
