@@ -159,6 +159,7 @@ This test cannot be implimented until I find a way to toggle save flags within a
     PARAMETRIZE { level = sLevelCaps[0]; }
 
     GIVEN {
+        FLAG_SET(FLAG_SYS_HARD_LEVEL_CAP);
         PLAYER(SPECIES_WOBBUFFET) { Level(level); }
         OPPONENT(SPECIES_CATERPIE) { Level(17); HP(1); }
     } WHEN {
@@ -184,6 +185,7 @@ This test cannot be implimented until I find a way to toggle save flags within a
     PARAMETRIZE { level = sSoftLevelCaps[0]; }
 
     GIVEN {
+        FLAG_SET(FLAG_SYS_SOFT_LEVEL_CAP);
         PLAYER(SPECIES_WOBBUFFET) { Level(level); }
         OPPONENT(SPECIES_CATERPIE) { Level(17); HP(1); }
     } WHEN {
