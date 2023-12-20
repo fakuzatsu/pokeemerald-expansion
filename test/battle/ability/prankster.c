@@ -179,7 +179,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves which are reflected by Magic Coat c
         MESSAGE("Sableye used Magic Coat!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_MAGIC_COAT, player);
         MESSAGE("Foe Murkrow used Confuse Ray!");
-        MESSAGE("Foe Murkrow's Confuse Ray was bounced back by MAGIC COAT!");
+        MESSAGE("Foe Murkrow's Confuse Ray was bounced back by Magic Coat!");
         if (sableyeAbility == ABILITY_PRANKSTER) {
             NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, player);
             MESSAGE("It doesn't affect Foe Murkrow…");

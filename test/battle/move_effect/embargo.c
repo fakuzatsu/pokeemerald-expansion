@@ -325,7 +325,7 @@ SINGLE_BATTLE_TEST("Embargo can be reflected by Magic Coat")
         MESSAGE("Wobbuffet used Magic Coat!");
         MESSAGE("Wobbuffet shrouded itself in Magic Coat!");
         MESSAGE("Foe Wobbuffet used Embargo!");
-        MESSAGE("Foe Wobbuffet's Embargo was bounced back by MAGIC COAT!");
+        MESSAGE("Foe Wobbuffet's Embargo was bounced back by Magic Coat!");
         MESSAGE("Foe Wobbuffet can't use items anymore!");
         // Turn 2
         MESSAGE("Foe Wobbuffet used Fling!");
