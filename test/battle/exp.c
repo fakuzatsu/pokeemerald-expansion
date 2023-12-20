@@ -148,3 +148,53 @@ WILD_BATTLE_TEST("Exp Share(held) gives Experience to mons which did not partici
 }
 
 #endif // I_EXP_SHARE_ITEM
+
+TO_DO_BATTLE_TEST("Hard level caps result in 0 exp gain upon reaching the cap");
+/* 
+This test cannot be implimented until I find a way to toggle save flags within a test.
+{
+    u8 level = 0;
+
+    PARAMETRIZE { level = (sLevelCaps[0] - 1); }
+    PARAMETRIZE { level = sLevelCaps[0]; }
+
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Level(level); }
+        OPPONENT(SPECIES_CATERPIE) { Level(17); HP(1); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_TACKLE); }
+    } SCENE {
+        MESSAGE("Wobbuffet used Tackle!");
+        MESSAGE("Wild Caterpie fainted!");
+        EXPERIENCE_BAR(player, captureGainedExp: &results[i].exp);
+    } FINALLY {
+        EXPECT_GT(results[0].exp, results[1].exp);
+        EXPECT_EQ(results[1].exp, 0);
+    }
+}
+*/
+
+TO_DO_BATTLE_TEST("Soft level caps result in 0 exp gain upon reaching the cap");
+/* 
+This test cannot be implimented until I find a way to toggle save flags within a test.
+{
+    u8 level = 0;
+
+    PARAMETRIZE { level = (sSoftLevelCaps[0] - 1); }
+    PARAMETRIZE { level = sSoftLevelCaps[0]; }
+
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Level(level); }
+        OPPONENT(SPECIES_CATERPIE) { Level(17); HP(1); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_TACKLE); }
+    } SCENE {
+        MESSAGE("Wobbuffet used Tackle!");
+        MESSAGE("Wild Caterpie fainted!");
+        EXPERIENCE_BAR(player, captureGainedExp: &results[i].exp);
+    } FINALLY {
+        EXPECT_GT(results[0].exp, results[1].exp);
+        EXPECT_EQ(results[1].exp, 0);
+    }
+}
+*/

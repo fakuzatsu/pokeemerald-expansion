@@ -70,6 +70,7 @@ extern u16 gSpecialVar_MonBoxPos;
 extern u16 gSpecialVar_Unused_0x8014;
 extern const u16 sProgressionFlags[NUM_PROGRESSION_FLAGS];
 extern const u16 sLevelCaps[NUM_LEVEL_CAPS];
+extern const u16 sSoftLevelCaps[NUM_LEVEL_CAPS];
 extern const u16 sHiddenGrottoVars[NUM_GROTTO_VARS];
 
 #endif // GUARD_EVENT_DATA_H
