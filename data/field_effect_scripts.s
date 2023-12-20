@@ -236,7 +236,7 @@ gFieldEffectScript_UseDig::
 	field_eff_end
 
 gFieldEffectScript_SandPile::
-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_SandPile
+	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect0, FldEff_SandPile
 	field_eff_end
 
 gFieldEffectScript_ShortGrass::
