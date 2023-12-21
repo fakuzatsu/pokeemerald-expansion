@@ -149,9 +149,7 @@ WILD_BATTLE_TEST("Exp Share(held) gives Experience to mons which did not partici
 
 #endif // I_EXP_SHARE_ITEM
 
-TO_DO_BATTLE_TEST("Hard level caps result in 0 exp gain upon reaching the cap");
-/* 
-This test cannot be implimented until I find a way to toggle save flags within a test.
+WILD_BATTLE_TEST("Level caps (hard caps) result in 0 exp gain upon reaching the cap", s32 exp)
 {
     u8 level = 0;
 
@@ -159,24 +157,26 @@ This test cannot be implimented until I find a way to toggle save flags within a
     PARAMETRIZE { level = sLevelCaps[0]; }
 
     GIVEN {
+        FLAG_SET(FLAG_SYS_HARD_LEVEL_CAP);
         PLAYER(SPECIES_WOBBUFFET) { Level(level); }
-        OPPONENT(SPECIES_CATERPIE) { Level(17); HP(1); }
+        OPPONENT(SPECIES_CATERPIE) { Level(sLevelCaps[0]); HP(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {
         MESSAGE("Wobbuffet used Tackle!");
         MESSAGE("Wild Caterpie fainted!");
-        EXPERIENCE_BAR(player, captureGainedExp: &results[i].exp);
-    } FINALLY {
-        EXPECT_GT(results[0].exp, results[1].exp);
-        EXPECT_EQ(results[1].exp, 0);
+        if (level == (sSoftLevelCaps[0] -1))
+        {
+            EXPERIENCE_BAR(player);
+        }
+        if (level == sSoftLevelCaps[0])
+        {
+            NOT EXPERIENCE_BAR(player);
+        }
     }
 }
-*/
 
-TO_DO_BATTLE_TEST("Soft level caps result in 0 exp gain upon reaching the cap");
-/* 
-This test cannot be implimented until I find a way to toggle save flags within a test.
+WILD_BATTLE_TEST("Level caps (soft caps) result in 0 exp gain upon reaching the cap", s32 exp)
 {
     u8 level = 0;
 
@@ -184,8 +184,37 @@ This test cannot be implimented until I find a way to toggle save flags within a
     PARAMETRIZE { level = sSoftLevelCaps[0]; }
 
     GIVEN {
+        FLAG_SET(FLAG_SYS_SOFT_LEVEL_CAP);
         PLAYER(SPECIES_WOBBUFFET) { Level(level); }
-        OPPONENT(SPECIES_CATERPIE) { Level(17); HP(1); }
+        OPPONENT(SPECIES_CATERPIE) { Level(sSoftLevelCaps[0]); HP(1); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_TACKLE); }
+    } SCENE {
+        MESSAGE("Wobbuffet used Tackle!");
+        MESSAGE("Wild Caterpie fainted!");
+        if (level == (sSoftLevelCaps[0] -1))
+        {
+            EXPERIENCE_BAR(player);
+        }
+        if (level == sSoftLevelCaps[0])
+        {
+            NOT EXPERIENCE_BAR(player);
+        }
+    }
+}
+
+WILD_BATTLE_TEST("Level caps (soft caps) result in reduced exp as the cap is approached", s32 exp)
+{
+    u8 level = sLevelCaps[0] - 1;
+    u16 flagId = 0;
+
+    PARAMETRIZE { flagId = 0; }
+    PARAMETRIZE { flagId = FLAG_SYS_SOFT_LEVEL_CAP; }
+
+    GIVEN {
+        FLAG_SET(flagId);
+        PLAYER(SPECIES_WOBBUFFET) { Level(level); }
+        OPPONENT(SPECIES_CATERPIE) { Level(level); HP(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {
@@ -194,7 +223,5 @@ This test cannot be implimented until I find a way to toggle save flags within a
         EXPERIENCE_BAR(player, captureGainedExp: &results[i].exp);
     } FINALLY {
         EXPECT_GT(results[0].exp, results[1].exp);
-        EXPECT_EQ(results[1].exp, 0);
     }
 }
-*/
