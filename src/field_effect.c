@@ -291,10 +291,6 @@ bool8 (*const gFieldEffectScriptFuncs[])(u8 **, u32 *) =
     FieldEffectCmd_loadgfx_callnative,
     FieldEffectCmd_loadtiles_callnative,
     FieldEffectCmd_loadfadedpal_callnative,
-    // Added for day and night system
-    FieldEffectCmd_loadpaldaynight,
-    FieldEffectCmd_loadfadedpaldaynight,
-    FieldEffectCmd_loadfadedpaldaynight_callnative,
 };
 
 static const struct OamData sOam_64x64 =
@@ -776,6 +772,11 @@ bool8 FieldEffectCmd_loadfadedpal_callnative(u8 **script, u32 *val)
     return TRUE;
 }
 
+u8 FieldEffectScript_ReadByte(u8 **script)
+{
+    return (*script)[0];
+}
+
 u32 FieldEffectScript_ReadWord(u8 **script)
 {
     return (*script)[0]
@@ -795,16 +796,18 @@ void FieldEffectScript_LoadTiles(u8 **script)
 void FieldEffectScript_LoadFadedPalette(u8 **script)
 {
     struct SpritePalette *palette = (struct SpritePalette *)FieldEffectScript_ReadWord(script);
-    LoadSpritePalette(palette);
-    UpdatePaletteGammaType(IndexOfSpritePaletteTag(palette->tag), GAMMA_NORMAL);
-    UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(palette->tag));
     (*script) += 4;
+    LoadSpritePalette_HandleDayNight(palette, FieldEffectScript_ReadByte(script));
+    (*script)++;
+    UpdatePaletteGammaType(IndexOfSpritePaletteTag(palette->tag), FieldEffectScript_ReadByte(script));
+    UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(palette->tag));
+    (*script)++;
 }
 
 void FieldEffectScript_LoadPalette(u8 **script)
 {
     struct SpritePalette *palette = (struct SpritePalette *)FieldEffectScript_ReadWord(script);
-    LoadSpritePalette(palette);
+    LoadSpritePalette_HandleDayNight(palette, FieldEffectScript_ReadByte(script));
     (*script) += 4;
 }
 
@@ -3947,43 +3950,6 @@ u8 FldEff_CaveDust(void)
 #undef tVelocityY
 #undef tMoveSteps
 #undef tObjEventId
-
-bool8 FieldEffectCmd_loadpaldaynight(u8 **script, u32 *val)
-{
-    (*script)++;
-    FieldEffectScript_LoadPaletteDayNight(script);
-    return TRUE;
-}
-
-bool8 FieldEffectCmd_loadfadedpaldaynight(u8 **script, u32 *val)
-{
-    (*script)++;
-    FieldEffectScript_LoadFadedPaletteDayNight(script);
-    return TRUE;
-}
-
-bool8 FieldEffectCmd_loadfadedpaldaynight_callnative(u8 **script, u32 *val)
-{
-    (*script)++;
-    FieldEffectScript_LoadFadedPaletteDayNight(script);
-    FieldEffectScript_CallNative(script, val);
-    return TRUE;
-}
-
-void FieldEffectScript_LoadFadedPaletteDayNight(u8 **script)
-{
-    struct SpritePalette *palette = (struct SpritePalette *)FieldEffectScript_ReadWord(script);
-    LoadSpritePaletteDayNight(palette);
-    UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(palette->tag));
-    (*script) += 4;
-}
-
-void FieldEffectScript_LoadPaletteDayNight(u8 **script)
-{
-    struct SpritePalette *palette = (struct SpritePalette *)FieldEffectScript_ReadWord(script);
-    LoadSpritePaletteDayNight(palette);
-    (*script) += 4;
-}
 
 static void (*const sUseVsSeekerEffectFuncs[])(struct Task *task) = {
     UseVsSeeker_StopPlayerMovement,

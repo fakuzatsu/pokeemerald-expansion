@@ -1545,7 +1545,7 @@ void FreeAllSpritePalettes(void)
         sSpritePaletteTags[i] = TAG_NONE;
 }
 
-static u8 LoadSpritePalette_HandleDayNight(const struct SpritePalette *palette, bool32 isDayNight)
+u8 LoadSpritePalette_HandleDayNight(const struct SpritePalette *palette, bool32 isDayNight)
 {
     u8 index = IndexOfSpritePaletteTag(palette->tag);
 
