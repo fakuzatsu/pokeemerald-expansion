@@ -870,7 +870,7 @@
     {
       "type": "trigger",
       "x": 12,
-      "y": 67,
+      "y": 66,
       "elevation": 3,
       "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
@@ -879,7 +879,7 @@
     {
       "type": "trigger",
       "x": 13,
-      "y": 68,
+      "y": 67,
       "elevation": 3,
       "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
@@ -888,7 +888,7 @@
     {
       "type": "trigger",
       "x": 14,
-      "y": 69,
+      "y": 67,
       "elevation": 3,
       "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
