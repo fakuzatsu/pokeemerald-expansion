@@ -1,6 +1,7 @@
 #include "global.h"
 #include "constants/songs.h"
 #include "constants/weather.h"
+#include "constants/field_weather.h"
 #include "constants/rgb.h"
 #include "util.h"
 #include "event_object_movement.h"
@@ -21,13 +22,6 @@
 #include "day_night.h"
 
 #define DROUGHT_COLOR_INDEX(color) ((((color) >> 1) & 0xF) | (((color) >> 2) & 0xF0) | (((color) >> 3) & 0xF00))
-
-enum
-{
-    COLOR_MAP_NONE,
-    COLOR_MAP_DARK_CONTRAST,
-    COLOR_MAP_CONTRAST,
-};
 
 struct RGBColor
 {

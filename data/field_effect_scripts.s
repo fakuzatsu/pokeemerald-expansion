@@ -1,6 +1,7 @@
 #include "config/item.h"
 	.include "asm/macros.inc"
 	.include "constants/constants.inc"
+#include "constants/field_weather.h"
 
 	.section script_data, "aw", %progbits
 
@@ -99,7 +100,7 @@ gFieldEffectScript_TallGrass::
 	field_eff_end
 
 gFieldEffectScript_Ripple::
-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect2, TRUE, COLOR_MAP_DARK_CONTRAST, FldEff_Ripple
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, TRUE, COLOR_MAP_DARK_CONTRAST, FldEff_Ripple
 	field_eff_end
 
 gFieldEffectScript_FieldMoveShowMon::
@@ -107,7 +108,7 @@ gFieldEffectScript_FieldMoveShowMon::
 	field_eff_end
 
 gFieldEffectScript_Ash::
-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect2, TRUE, COLOR_MAP_DARK_CONTRAST, FldEff_Ash
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, TRUE, COLOR_MAP_DARK_CONTRAST, FldEff_Ash
 	field_eff_end
 
 gFieldEffectScript_SurfBlob::
@@ -248,7 +249,7 @@ gFieldEffectScript_ShortGrass::
 	field_eff_end
 
 gFieldEffectScript_HotSpringsWater::
-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect2, TRUE, COLOR_MAP_DARK_CONTRAST, FldEff_HotSpringsWater
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, TRUE, COLOR_MAP_DARK_CONTRAST, FldEff_HotSpringsWater
 	field_eff_end
 
 gFieldEffectScript_UseWaterfall::
@@ -277,11 +278,11 @@ gFieldEffectScript_Nop48::
 	field_eff_end
 
 gFieldEffectScript_AshPuff::
-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect3, TRUE, COLOR_MAP_DARK_CONTRAST, FldEff_AshPuff
+	field_eff_loadfadedpal_callnative gSpritePalette_Ash, TRUE, COLOR_MAP_DARK_CONTRAST, FldEff_AshPuff
 	field_eff_end
 
 gFieldEffectScript_AshLaunch::
-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect3, TRUE, COLOR_MAP_DARK_CONTRAST, FldEff_AshLaunch
+	field_eff_loadfadedpal_callnative gSpritePalette_Ash, TRUE, COLOR_MAP_DARK_CONTRAST, FldEff_AshLaunch
 	field_eff_end
 
 gFieldEffectScript_SweetScent::
@@ -297,7 +298,7 @@ gFieldEffectScript_Bubbles::
 	field_eff_end
 
 gFieldEffectScript_Sparkle::
-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect3, TRUE, COLOR_MAP_DARK_CONTRAST, FldEff_Sparkle
+	field_eff_loadfadedpal_callnative gSpritePalette_SmallSparkle, TRUE, COLOR_MAP_DARK_CONTRAST, FldEff_Sparkle
 	field_eff_end
 
 gFieldEffectScript_ShowSecretPowerCave::
@@ -313,7 +314,7 @@ gFieldEffectScript_ShowSecretPowerShrub::
 	field_eff_end
 
 gFieldEffectScript_ShowCutGrass::
-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect3, TRUE, COLOR_MAP_DARK_CONTRAST, FldEff_CutGrass
+	field_eff_loadfadedpal_callnative gSpritePalette_CutGrass, TRUE, COLOR_MAP_DARK_CONTRAST, FldEff_CutGrass
 	field_eff_end
 
 gFieldEffectScript_FieldMoveShowMonInit::
