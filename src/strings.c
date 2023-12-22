@@ -1898,3 +1898,6 @@ const u8 gText_WasAddedToParty[] = _("{STR_VAR_2} was added to\nyour Party.{PAUS
 const u8 gText_WasTransfered[] = _("{STR_VAR_2} was transferred to\nthe PC.{PAUSE_UNTIL_PRESS}");
 const u8 gText_FailedToAddMon[] = _("No space in Party or PC for\n{STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
 const u8 gText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all reset to zero!{PAUSE_UNTIL_PRESS}");
+const u8 gText_ViewIVs[] =            _("IVs");
+const u8 gText_ViewEVs[] =            _("EVs");
+const u8 gText_ViewStats[] =          _("Stats");

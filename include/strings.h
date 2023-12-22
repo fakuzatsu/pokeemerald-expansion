@@ -3111,4 +3111,9 @@ extern const u8 gText_Code2Activated[];
 // Points:
 extern const u8 gText_BasePointsResetToZero[];
 
+// Summary Stats/IVs/EVs:
+extern const u8 gText_ViewIVs[];
+extern const u8 gText_ViewEVs[];
+extern const u8 gText_ViewStats[];
+
 #endif // GUARD_STRINGS_H
