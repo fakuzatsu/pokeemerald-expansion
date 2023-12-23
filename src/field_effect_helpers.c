@@ -15,8 +15,6 @@
 #include "constants/songs.h"
 #include "constants/rgb.h"
 
-#define OBJ_EVENT_PAL_TAG_NONE 0x11FF // duplicate of define in event_object_movement.c
-
 static void UpdateObjectReflectionSprite(struct Sprite *);
 static void LoadObjectReflectionPalette(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 static void UpdateGrassFieldEffectSubpriority(struct Sprite *, u8, u8);
