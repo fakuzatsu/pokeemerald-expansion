@@ -717,3 +717,19 @@ Hidden_Grotto_10_EventScript_Relic_Statue::
 Hidden_Grotto_10_EventScript_Light_Ball::
 	finditem ITEM_LIGHT_BALL
 	end
+
+Hidden_Grotto_14_EventScipt_Lucky_Punch::
+	finditem ITEM_LUCKY_PUNCH
+	end
+
+Hidden_Grotto_15_EventScript_Relic_Statue::
+	finditem ITEM_RELIC_STATUE
+	end
+
+Hidden_Grotto_15_EventScript_Relic_Band::
+	finditem ITEM_RELIC_BAND
+	end
+
+Hidden_Grotto_16_EventScript_Galarica_Wreath::
+	finditem ITEM_GALARICA_WREATH
+	end

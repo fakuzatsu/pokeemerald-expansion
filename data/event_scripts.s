@@ -1204,3 +1204,15 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Grotto11/scripts.inc"
 
 	.include "data/maps/Grotto12/scripts.inc"
+
+	.include "data/maps/Grotto13/scripts.inc"
+
+	.include "data/maps/Grotto14/scripts.inc"
+
+	.include "data/maps/Grotto15/scripts.inc"
+
+	.include "data/maps/Grotto16/scripts.inc"
+
+	.include "data/maps/Grotto17/scripts.inc"
+
+	.include "data/maps/Grotto18/scripts.inc"
