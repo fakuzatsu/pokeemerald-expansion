@@ -90,7 +90,6 @@ static void GetAffineAnimFrame(u8 matrixNum, struct Sprite *sprite, struct Affin
 static void ApplyAffineAnimFrame(u8 matrixNum, struct AffineAnimFrameCmd *frameCmd);
 static u8 IndexOfSpriteTileTag(u16 tag);
 static void AllocSpriteTileRange(u16 tag, u16 start, u16 count);
-static void DoLoadSpritePalette(const u16 *src, u16 paletteOffset, bool32 isDayNight);
 static void UpdateSpriteMatrixAnchorPos(struct Sprite *, s32, s32);
 
 typedef void (*AnimFunc)(struct Sprite *);
@@ -1561,7 +1560,7 @@ u8 LoadSpritePalette_HandleDayNight(const struct SpritePalette *palette, bool32 
     else
     {
         sSpritePaletteTags[index] = palette->tag;
-        DoLoadSpritePalette(palette->data, PLTT_ID(index), isDayNight);
+        LoadPalette_HandleDayNight(palette->data, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP, isDayNight);
         return index;
     }
 }
@@ -1577,11 +1576,6 @@ void LoadSpritePalettes(const struct SpritePalette *palettes)
     for (i = 0; palettes[i].data != NULL; i++)
         if (LoadSpritePalette(&palettes[i]) == 0xFF)
             break;
-}
-
-static void DoLoadSpritePalette(const u16 *src, u16 paletteOffset, bool32 isDayNight)
-{
-    LoadPalette_HandleDayNight(src, OBJ_PLTT_OFFSET + paletteOffset, PLTT_SIZE_4BPP, isDayNight);
 }
 
 u8 AllocSpritePalette(u16 tag)

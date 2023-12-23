@@ -3339,6 +3339,7 @@ bool32 HandleFaintedMonActions(void)
                 && gCurrentTurnActionNumber != gBattlersCount)
             {
                 gAbsentBattlerFlags |= gBitTable[gBattlerFainted];
+                if (gBattleStruct->faintedActionsState != 1)
                 return FALSE;
             }
             break;
@@ -4277,7 +4278,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
         {
             // overworld weather started rain, so just do electric terrain anim
             gFieldStatuses = (STATUS_FIELD_ELECTRIC_TERRAIN | STATUS_FIELD_TERRAIN_PERMANENT);
-            gBattleCommunication[MULTISTRING_CHOOSER] = 2;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_ELECTRIC;
             BattleScriptPushCursorAndCallback(BattleScript_OverworldTerrain);
             effect++;
         }
@@ -4286,7 +4287,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             && !(gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN))
         {
             gFieldStatuses = (STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_TERRAIN_PERMANENT);
-            gBattleCommunication[MULTISTRING_CHOOSER] = 0;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_MISTY;
             BattleScriptPushCursorAndCallback(BattleScript_OverworldTerrain);
             effect++;
         }
@@ -8140,7 +8141,6 @@ u8 IsMonDisobedient(void)
     s32 calc;
     u8 obedienceLevel = 0;
     u8 levelReferenced;
-    int scaledFactor;
 
     if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
         return 0;
@@ -8181,25 +8181,13 @@ u8 IsMonDisobedient(void)
     if (B_OBEDIENCE_MECHANICS >= GEN_8
      && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
         levelReferenced = gBattleMons[gBattlerAttacker].metLevel;
-    else {
-        if (gBattleMons[gBattlerAttacker].friendship > 200) {
-            levelReferenced = gBattleMons[gBattlerAttacker].metLevel;
-        } else {
-            levelReferenced = gBattleMons[gBattlerAttacker].level;
-        }
-    }
+    else
+        levelReferenced = gBattleMons[gBattlerAttacker].level;
 
     if (levelReferenced <= obedienceLevel)
         return 0;
-
-    if (gBattleMons[gBattlerAttacker].friendship <= 100) {
-        scaledFactor = 50 + (gBattleMons[gBattlerAttacker].friendship * 50) / 100;
-    } else {
-        scaledFactor = 100 + ((gBattleMons[gBattlerAttacker].friendship - 100) * 50) / 155;
-    }
-
     rnd = (Random() & 255);
-    calc = (((levelReferenced + obedienceLevel) * 100) / scaledFactor) * rnd >> 8;
+    calc = (levelReferenced + obedienceLevel) * rnd >> 8;
     if (calc < obedienceLevel)
         return 0;
 

@@ -268,12 +268,11 @@ void LoadPalette_HandleDayNight(const void *src, u16 offset, u16 size, bool32 is
     {
         CpuCopy16(src, &sPlttBufferPreDN[offset], size);
         TintPaletteForDayNight(offset, size);
-        CpuCopy16(&gPlttBufferUnfaded[offset], &gPlttBufferFaded[offset], size);
     }
     else
     {
         CpuFill16(RGB_BLACK, &sPlttBufferPreDN[offset], size);
         CpuCopy16(src, &gPlttBufferUnfaded[offset], size);
-        CpuCopy16(src, &gPlttBufferFaded[offset], size);
     }
+    CpuCopy16(&gPlttBufferUnfaded[offset], &gPlttBufferFaded[offset], size);
 }

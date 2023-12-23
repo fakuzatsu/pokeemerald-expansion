@@ -807,8 +807,9 @@ void FieldEffectScript_LoadFadedPalette(u8 **script)
 void FieldEffectScript_LoadPalette(u8 **script)
 {
     struct SpritePalette *palette = (struct SpritePalette *)FieldEffectScript_ReadWord(script);
-    LoadSpritePalette_HandleDayNight(palette, FieldEffectScript_ReadByte(script));
     (*script) += 4;
+    LoadSpritePalette_HandleDayNight(palette, FieldEffectScript_ReadByte(script));
+    (*script)++;
 }
 
 void FieldEffectScript_CallNative(u8 **script, u32 *val)
