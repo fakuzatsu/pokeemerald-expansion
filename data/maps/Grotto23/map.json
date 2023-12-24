@@ -1,7 +1,7 @@
 {
-  "id": "MAP_GROTTO18",
-  "name": "Grotto18",
-  "layout": "LAYOUT_GROTTO4",
+  "id": "MAP_GROTTO23",
+  "name": "Grotto23",
+  "layout": "LAYOUT_GROTTO1",
   "music": "MUS_PETALBURG_WOODS",
   "region_map_section": "MAPSEC_PETALBURG_WOODS",
   "requires_flash": false,
@@ -16,7 +16,20 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
-      "x": 5,
+      "x": 6,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 0,
       "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -24,14 +37,14 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Grotto18_EventScript_HexLady",
-      "flag": "0"
+      "script": "NULL",
+      "flag": "FLAG_ITEM_HIDDEN_GROTTO_23_REAPER_CLOTH"
     }
   ],
   "warp_events": [
     {
-      "x": 5,
-      "y": 12,
+      "x": 6,
+      "y": 17,
       "elevation": 0,
       "dest_map": "MAP_DYNAMIC",
       "dest_warp_id": "0"
@@ -41,6 +54,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 12,
+      "y": 6,
+      "elevation": 0,
+      "item": "ITEM_RELIC_GOLD",
+      "flag": "FLAG_HIDDEN_ITEM_GROTTO_23_RELIC_GOLD"
+    }
   ]
 }

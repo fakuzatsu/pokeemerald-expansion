@@ -1216,3 +1216,13 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Grotto17/scripts.inc"
 
 	.include "data/maps/Grotto18/scripts.inc"
+
+	.include "data/maps/Grotto19/scripts.inc"
+
+	.include "data/maps/Grotto21/scripts.inc"
+
+	.include "data/maps/Grotto22/scripts.inc"
+
+	.include "data/maps/Grotto23/scripts.inc"
+
+	.include "data/maps/Grotto24/scripts.inc"

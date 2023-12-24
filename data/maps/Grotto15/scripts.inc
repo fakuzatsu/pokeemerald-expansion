@@ -3,6 +3,7 @@ Grotto15_MapScripts::
 	.byte 0
 
 Grotto15_OnLoad::
+	call Grotto_EventScript_GetReturnWarp
 	call Grotto_Layout1_CloseBerryTreeArea
 	call Grotto_Layout1_SetEventStage
 	end

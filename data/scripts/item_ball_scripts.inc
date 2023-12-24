@@ -733,3 +733,23 @@ Hidden_Grotto_15_EventScript_Relic_Band::
 Hidden_Grotto_16_EventScript_Galarica_Wreath::
 	finditem ITEM_GALARICA_WREATH
 	end
+
+Hidden_Grotto_21_EventScript_Relic_Crown::
+	finditem ITEM_RELIC_CROWN
+	end
+
+Hidden_Grotto_23_EventScript_Reaper_Cloth::
+	finditem ITEM_REAPER_CLOTH
+	end
+
+Hidden_Grotto_24_EventScript_Relic_Band::
+	finditem ITEM_RELIC_BAND
+	end
+
+Hidden_Grotto_24_EventScript_Relic_Vase::
+	finditem ITEM_RELIC_VASE
+	end
+
+Hidden_Grotto_24_EventScript_Relic_Statue::
+	finditem ITEM_RELIC_STATUE
+	end

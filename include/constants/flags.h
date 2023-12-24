@@ -660,10 +660,10 @@
 #define FLAG_HIDDEN_ITEM_GROTTO_8_RELIC_SILVER               0x268 // Custom Flag
 #define FLAG_HIDDEN_ITEM_GROTTO_13_RELIC_GOLD                0x269 // Custom Flag
 #define FLAG_HIDDEN_ITEM_GROTTO_17_RELIC_GOLD                0x26A // Custom Flag
-#define FLAG_UNUSED_0x26B                                    0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C                                    0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D                                    0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E                                    0x26E // Unused Flag
+#define FLAG_HIDDEN_ITEM_GROTTO_21_RELIC_GOLD                0x26B // Custom Flag
+#define FLAG_HIDDEN_ITEM_GROTTO_22_RELIC_SILVER1             0x26C // Custom Flag
+#define FLAG_HIDDEN_ITEM_GROTTO_22_RELIC_SILVER2             0x26D // Custom Flag
+#define FLAG_HIDDEN_ITEM_GROTTO_23_RELIC_GOLD                0x26E // Custom Flag
 #define FLAG_UNUSED_0x26F                                    0x26F // Unused Flag
 #define FLAG_UNUSED_0x270                                    0x270 // Unused Flag
 #define FLAG_UNUSED_0x271                                    0x271 // Unused Flag
@@ -1237,7 +1237,7 @@
 #define FLAG_ITEM_HIDDEN_GROTTO_10_LIGHT_BALL                       0x4A2 // Custom Flag
 #define FLAG_ITEM_HIDDEN_GROTTO_14_LUCKY_PUNCH                      0x4A3 // Custom Flag
 #define FLAG_ITEM_HIDDEN_GROTTO_16_GALARICA_WREATH                  0x4A4 // Custom Flag
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
+#define FLAG_ITEM_HIDDEN_GROTTO_23_REAPER_CLOTH                     0x4A5 // Custom Flag
 #define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
@@ -1569,11 +1569,11 @@
 #define FLAG_ITEM_GROTTO_15_RELIC_BAND2             (DAILY_FLAGS_START + 0x2E) // Custom Flag
 #define FLAG_ITEM_GROTTO_15_RELIC_STATUE            (DAILY_FLAGS_START + 0x2F) // Custom Flag
 #define FLAG_EVENT_GROTTO_17_HONEDGE                (DAILY_FLAGS_START + 0x30) // Custom Flag
-#define FLAG_UNUSED_0x951                           (DAILY_FLAGS_START + 0x31) // Unused Flag
-#define FLAG_UNUSED_0x952                           (DAILY_FLAGS_START + 0x32) // Unused Flag
-#define FLAG_UNUSED_0x953                           (DAILY_FLAGS_START + 0x33) // Unused Flag
-#define FLAG_UNUSED_0x954                           (DAILY_FLAGS_START + 0x34) // Unused Flag
-#define FLAG_UNUSED_0x955                           (DAILY_FLAGS_START + 0x35) // Unused Flag
+#define FLAG_EVENT_GROTTO_19_BOULDER                (DAILY_FLAGS_START + 0x31) // Custom Flag
+#define FLAG_ITEM_GROTTO_21_RELIC_CROWN             (DAILY_FLAGS_START + 0x32) // Custom Flag
+#define FLAG_EVENT_GROTTO_22_STONJOURNER            (DAILY_FLAGS_START + 0x33) // Custom Flag
+#define FLAG_EVENT_GROTTO_23_HEX_LADY               (DAILY_FLAGS_START + 0x34) // Custom Flag
+#define FLAG_EVENT_GROTTO_24_TREASURE_TROVE         (DAILY_FLAGS_START + 0x35) // Custom Flag
 #define FLAG_UNUSED_0x956                           (DAILY_FLAGS_START + 0x36) // Unused Flag
 #define FLAG_UNUSED_0x957                           (DAILY_FLAGS_START + 0x37) // Unused Flag
 #define FLAG_UNUSED_0x958                           (DAILY_FLAGS_START + 0x38) // Unused Flag

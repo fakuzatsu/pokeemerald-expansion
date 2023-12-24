@@ -1,9 +1,13 @@
 Grotto14_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, Grotto14_OnLoad
+	map_script MAP_SCRIPT_ON_TRANSITION, Grotto14_DoRemoveCoins
 	.byte 0
 
 Grotto14_OnLoad::
 	call Grotto_EventScript_GetReturnWarp
+	end
+
+Grotto14_DoRemoveCoins::
 	goto_if_set FLAG_EVENT_GROTTO_14_COINS, Grotto14_EventScript_RemoveCoins
 	end
 

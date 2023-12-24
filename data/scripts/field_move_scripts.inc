@@ -89,9 +89,18 @@ EventScript_SmashRock::
 	removeobject VAR_LAST_TALKED
 	specialvar VAR_RESULT, TryUpdateRusturfTunnelState
 	goto_if_eq VAR_RESULT, TRUE, EventScript_EndSmash
+	goto_if_eq VAR_TEMP_9, 3, EventScript_RockDropsCoins
 	special RockSmashWildEncounter
 	goto_if_eq VAR_RESULT, FALSE, EventScript_EndSmash
 	waitstate
+	releaseall
+	end
+
+EventScript_RockDropsCoins::
+	msgbox Text_CoinsFellOut, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_RELIC_SILVER
+	giveitem ITEM_RELIC_GOLD
 	releaseall
 	end
 
@@ -112,6 +121,9 @@ EventScript_CancelSmash::
 	closemessage
 	releaseall
 	end
+
+Text_CoinsFellOut:
+	.string "Old coins scattered on the ground.$"
 
 Text_WantToSmash:
 	.string "This rock appears to be breakable.\n"
