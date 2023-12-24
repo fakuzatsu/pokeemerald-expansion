@@ -22427,6 +22427,362 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_GROTTO14",
+          "base_label": "gGrotto140",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_PAWNIARD"
+              },
+              {
+                "min_level": 23,
+                "max_level": 24,
+                "species": "SPECIES_KOMALA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 24,
+                "species": "SPECIES_FARFETCHD_GALARIAN"
+              },
+              {
+                "min_level": 24,
+                "max_level": 25,
+                "species": "SPECIES_GOLETT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_YAMASK_GALARIAN"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_YAMASK_GALARIAN"
+              },
+              {
+                "min_level": 23,
+                "max_level": 24,
+                "species": "SPECIES_GOURGEIST_SMALL"
+              },
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_GOURGEIST_AVERAGE"
+              },
+              {
+                "min_level": 24,
+                "max_level": 25,
+                "species": "SPECIES_GOURGEIST_LARGE"
+              },
+              {
+                "min_level": 24,
+                "max_level": 25,
+                "species": "SPECIES_HONEDGE"
+              },
+              {
+                "min_level": 25,
+                "max_level": 26,
+                "species": "SPECIES_SIRFETCHD"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_GOURGEIST_SUPER"
+              }
+            ]
+          },
+          "hidden_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_GROTTO15",
+          "base_label": "gGrotto150",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_FALINKS"
+              },
+              {
+                "min_level": 23,
+                "max_level": 24,
+                "species": "SPECIES_KOMALA"
+              },
+              {
+                "min_level": 23,
+                "max_level": 24,
+                "species": "SPECIES_FARFETCHD_GALARIAN"
+              },
+              {
+                "min_level": 24,
+                "max_level": 25,
+                "species": "SPECIES_GOLETT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_YAMASK_GALARIAN"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_YAMASK_GALARIAN"
+              },
+              {
+                "min_level": 23,
+                "max_level": 24,
+                "species": "SPECIES_GOURGEIST_SMALL"
+              },
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_GOURGEIST_AVERAGE"
+              },
+              {
+                "min_level": 24,
+                "max_level": 25,
+                "species": "SPECIES_GOURGEIST_LARGE"
+              },
+              {
+                "min_level": 24,
+                "max_level": 25,
+                "species": "SPECIES_HONEDGE"
+              },
+              {
+                "min_level": 25,
+                "max_level": 26,
+                "species": "SPECIES_SIRFETCHD"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_GOURGEIST_SUPER"
+              }
+            ]
+          },
+          "hidden_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_GROTTO16",
+          "base_label": "gGrotto160",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 24,
+                "max_level": 26,
+                "species": "SPECIES_PAWNIARD"
+              },
+              {
+                "min_level": 29,
+                "max_level": 30,
+                "species": "SPECIES_HONEDGE"
+              },
+              {
+                "min_level": 29,
+                "max_level": 30,
+                "species": "SPECIES_YAMASK_GALARIAN"
+              },
+              {
+                "min_level": 29,
+                "max_level": 30,
+                "species": "SPECIES_FARFETCHD_GALARIAN"
+              },
+              {
+                "min_level": 29,
+                "max_level": 30,
+                "species": "SPECIES_GOLETT"
+              },
+              {
+                "min_level": 29,
+                "max_level": 30,
+                "species": "SPECIES_HATENNA"
+              },
+              {
+                "min_level": 31,
+                "max_level": 32,
+                "species": "SPECIES_RUNERIGUS"
+              },
+              {
+                "min_level": 28,
+                "max_level": 30,
+                "species": "SPECIES_HATENNA"
+              },
+              {
+                "min_level": 29,
+                "max_level": 30,
+                "species": "SPECIES_MIMIKYU_DISGUISED"
+              },
+              {
+                "min_level": 30,
+                "max_level": 31,
+                "species": "SPECIES_MIMIKYU_DISGUISED"
+              },
+              {
+                "min_level": 31,
+                "max_level": 32,
+                "species": "SPECIES_SIRFETCHD"
+              },
+              {
+                "min_level": 32,
+                "max_level": 32,
+                "species": "SPECIES_HATTREM"
+              }
+            ]
+          },
+          "hidden_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_GROTTO17",
+          "base_label": "gGrotto170",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 24,
+                "max_level": 26,
+                "species": "SPECIES_FALINKS"
+              },
+              {
+                "min_level": 29,
+                "max_level": 30,
+                "species": "SPECIES_MUNNA"
+              },
+              {
+                "min_level": 29,
+                "max_level": 30,
+                "species": "SPECIES_YAMASK_GALARIAN"
+              },
+              {
+                "min_level": 29,
+                "max_level": 30,
+                "species": "SPECIES_FARFETCHD_GALARIAN"
+              },
+              {
+                "min_level": 29,
+                "max_level": 30,
+                "species": "SPECIES_GOLETT"
+              },
+              {
+                "min_level": 29,
+                "max_level": 30,
+                "species": "SPECIES_HATENNA"
+              },
+              {
+                "min_level": 31,
+                "max_level": 32,
+                "species": "SPECIES_RUNERIGUS"
+              },
+              {
+                "min_level": 28,
+                "max_level": 30,
+                "species": "SPECIES_HATENNA"
+              },
+              {
+                "min_level": 29,
+                "max_level": 30,
+                "species": "SPECIES_MIMIKYU_DISGUISED"
+              },
+              {
+                "min_level": 30,
+                "max_level": 31,
+                "species": "SPECIES_MIMIKYU_DISGUISED"
+              },
+              {
+                "min_level": 31,
+                "max_level": 32,
+                "species": "SPECIES_SIRFETCHD"
+              },
+              {
+                "min_level": 32,
+                "max_level": 32,
+                "species": "SPECIES_HATTREM"
+              }
+            ]
+          },
+          "hidden_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          }
         }
       ]
     },
