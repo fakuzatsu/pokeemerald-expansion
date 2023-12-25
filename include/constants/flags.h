@@ -664,8 +664,8 @@
 #define FLAG_HIDDEN_ITEM_GROTTO_22_RELIC_SILVER1             0x26C // Custom Flag
 #define FLAG_HIDDEN_ITEM_GROTTO_22_RELIC_SILVER2             0x26D // Custom Flag
 #define FLAG_HIDDEN_ITEM_GROTTO_23_RELIC_GOLD                0x26E // Custom Flag
-#define FLAG_UNUSED_0x26F                                    0x26F // Unused Flag
-#define FLAG_UNUSED_0x270                                    0x270 // Unused Flag
+#define FLAG_HIDDEN_ITEM_GROTTO_26_RELIC_GOLD                0x26F // Custom Flag
+#define FLAG_HIDDEN_ITEM_GROTTO_27_LEADERS_CREST             0x270 // Custom Flag
 #define FLAG_UNUSED_0x271                                    0x271 // Unused Flag
 #define FLAG_UNUSED_0x272                                    0x272 // Unused Flag
 #define FLAG_UNUSED_0x273                                    0x273 // Unused Flag
@@ -1238,8 +1238,8 @@
 #define FLAG_ITEM_HIDDEN_GROTTO_14_LUCKY_PUNCH                      0x4A3 // Custom Flag
 #define FLAG_ITEM_HIDDEN_GROTTO_16_GALARICA_WREATH                  0x4A4 // Custom Flag
 #define FLAG_ITEM_HIDDEN_GROTTO_23_REAPER_CLOTH                     0x4A5 // Custom Flag
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
+#define FLAG_ITEM_HIDDEN_GROTTO_25_QUICK_POWDER                     0x4A6 // Custom Flag
+#define FLAG_ITEM_HIDDEN_GROTTO_25_METAL_POWDER                     0x4A7 // Custom Flag
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
 #define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
@@ -1574,9 +1574,11 @@
 #define FLAG_EVENT_GROTTO_22_STONJOURNER            (DAILY_FLAGS_START + 0x33) // Custom Flag
 #define FLAG_EVENT_GROTTO_23_HEX_LADY               (DAILY_FLAGS_START + 0x34) // Custom Flag
 #define FLAG_EVENT_GROTTO_24_TREASURE_TROVE         (DAILY_FLAGS_START + 0x35) // Custom Flag
-#define FLAG_UNUSED_0x956                           (DAILY_FLAGS_START + 0x36) // Unused Flag
-#define FLAG_UNUSED_0x957                           (DAILY_FLAGS_START + 0x37) // Unused Flag
-#define FLAG_UNUSED_0x958                           (DAILY_FLAGS_START + 0x38) // Unused Flag
+#define FLAG_EVENT_GROTTO_27_BISHARP                           (DAILY_FLAGS_START + 0x36) // Custom Flag
+#define FLAG_X_GROTTO_28_                           (DAILY_FLAGS_START + 0x37) // Custom Flag
+#define FLAG_X_GROTTO_29_                           (DAILY_FLAGS_START + 0x38) // Custom Flag
+
+
 #define FLAG_UNUSED_0x959                           (DAILY_FLAGS_START + 0x39) // Unused Flag
 #define FLAG_UNUSED_0x95A                           (DAILY_FLAGS_START + 0x3A) // Unused Flag
 #define FLAG_UNUSED_0x95B                           (DAILY_FLAGS_START + 0x3B) // Unused Flag
