@@ -6,3 +6,7 @@ Grotto28_OnLoad::
 	call Grotto_EventScript_GetReturnWarp
 	call Grotto_Layout4_CloseLeftTreeArea
 	end
+
+Grotto28_EventScript_OldLady::
+	faceplayer
+	end
