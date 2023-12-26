@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Grotto21_EventScript_HexLadyOne",
       "flag": "FLAG_TEMP_1"
     },
     {
@@ -50,7 +50,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Grotto21_EventScript_HexLadyTwo",
       "flag": "FLAG_TEMP_2"
     }
   ],
@@ -71,7 +71,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "1",
-      "script": "NULL"
+      "script": "Grotto21_EventScript_TriggerOne"
     },
     {
       "type": "trigger",
@@ -80,7 +80,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_2",
       "var_value": "1",
-      "script": "NULL"
+      "script": "Grotto21_EventScript_TriggerTwo"
     }
   ],
   "bg_events": [

@@ -9348,6 +9348,30 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_FightingMaster),
     },
 
+    [TRAINER_GROTTO_HEX_LADY] =
+    {
+        .trainerClass = TRAINER_CLASS_HEX_MANIAC,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_HEX_MANIAC,
+        .trainerName = _("Teena"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_HexLady),
+    },
+
+    [TRAINER_GROTTO_HEX_LADY2] =
+    {
+        .trainerClass = TRAINER_CLASS_HEX_MANIAC,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_HEX_MANIAC,
+        .trainerName = _("Teena"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_HexLady2),
+    },
+
     [TRAINER_ROXANNE_2] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,

@@ -10242,6 +10242,44 @@ static const struct TrainerMon sParty_FightingMaster[] = {
     }
 };
 
+static const struct TrainerMon sParty_HexLady[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+    .lvl = 38,
+    .species = SPECIES_GOURGEIST,
+    .heldItem = ITEM_PINK_SCARF,
+    .friendship = 200,
+    .moves = {MOVE_SEED_BOMB, MOVE_SHADOW_BALL, MOVE_SHADOW_SNEAK, MOVE_RETURN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+    .lvl = 38,
+    .species = SPECIES_RUNERIGUS,
+    .heldItem = ITEM_RED_SCARF,
+    .friendship = 200,
+    .moves = {MOVE_EARTHQUAKE, MOVE_BODY_PRESS, MOVE_POLTERGEIST, MOVE_REST}
+    },
+};
+
+static const struct TrainerMon sParty_HexLady2[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 38,
+    .species = SPECIES_MIMIKYU,
+    .heldItem = ITEM_YELLOW_SCARF,
+    .friendship = 200,
+    .moves = {MOVE_PLAY_ROUGH, MOVE_SHADOW_SNEAK, MOVE_SHADOW_CLAW, MOVE_DRAIN_PUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+    .lvl = 40,
+    .species = SPECIES_GENGAR,
+    .heldItem = ITEM_BLUE_SCARF,
+    .friendship = 200,
+    .moves = {MOVE_SHADOW_BALL, MOVE_SLUDGE_WAVE, MOVE_ICY_WIND, MOVE_SUBSTITUTE}
+    },
+};
+
 static const struct TrainerMon sParty_Roxanne2[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
