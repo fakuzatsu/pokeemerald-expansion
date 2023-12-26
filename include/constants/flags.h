@@ -1502,7 +1502,7 @@
 #define FLAG_LORNA_MOVED_TO_SHOP                                    0x925 // Custom Flag
 #define FLAG_LYDIA_MOVED_TO_SHOP                                    0x926 // Custom Flag
 #define FLAG_LISLA_MOVED_TO_SHOP                                    0x927 // Custom Flag
-#define FLAG_HEX_LADY_GIVEN_OLD_SCARF                               0x928 // Custom Flag
+#define FLAG_UNUSED_0x919                                           0x928 // Unused Flag
 #define FLAG_UNUSED_0x91A                                           0x929 // Unused Flag
 #define FLAG_UNUSED_0x91B                                           0x92A // Unused Flag
 #define FLAG_UNUSED_0x91C                                           0x92B // Unused Flag

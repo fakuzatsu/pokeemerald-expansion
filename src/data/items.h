@@ -8930,11 +8930,11 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_OLD_SEA_MAP] =
+    [ITEM_OLD_WORN_SCARF] =
     {
-        .name = _("Old Sea Map"),
+        .name = _("Worn Scarf"),
         .price = 0,
-        .description = sOldSeaMapDesc,
+        .description = sOldWornScarfDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

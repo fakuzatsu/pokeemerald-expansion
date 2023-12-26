@@ -593,13 +593,12 @@ Route119_Text_ScottWayToGoBeSeeingYou:
 	.string "a Bike.\p"
 	.string "You just beat that Trainer, didn't you?\n"
 	.string "It was pretty obvious that you did.\p"
-	.string "The kid looked really upset with\n"
-	.string "a face all red from anger.\p"
+	.string "The kid looked really worked up from a\n"
+	.string "tough battle.\p"
 	.string "I sure seem to run into you often.\n"
 	.string "Are you off to FORTREE Gym next?\p"
 	.string "I expect that you'll do well at the Gym.\n"
 	.string "Well, I'll be seeing you!$"
-
 
 Route119_Text_ScottYouWonAtFortreeGym:
 	.string "… … … … … …\n"

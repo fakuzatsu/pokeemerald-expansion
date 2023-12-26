@@ -3732,10 +3732,10 @@ static const u8 sAuroraTicketDesc[] = _(
     "to board the ship\n"
     "to Birth Island.");
 
-static const u8 sOldSeaMapDesc[] = _(
-    "A faded sea chart\n"
-    "that shows the way\n"
-    "to a certain island.");
+static const u8 sOldWornScarfDesc[] = _(
+    "An old, worn scarf\n"
+    "given to you by the\n"
+    "old grotto lady.");
 
 static const u8 sLetterDesc[] = _(
     "A letter to Steven\n"

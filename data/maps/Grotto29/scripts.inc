@@ -1,4 +1,8 @@
 .set LOCALID_HEXLADY, 1
+.set LOCALID_HEXLADY_1, 2
+.set LOCALID_HEXLADY_2, 3
+.set LOCALID_HEXLADY_3, 4
+.set LOCALID_HEXLADY_4, 5
 
 Grotto29_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, Grotto29_OnLoad
@@ -38,7 +42,7 @@ Grotto29_EventScript_SetLessDark::
 Grotto29_EventScript_HexLady::
 	lock
 	faceplayer
-	goto_if_eq FLAG_EVENT_GROTTO_29_HEX_LADY, Grotto29_EventScript_HexLadyLetsPlayAgainSometime
+	goto_if_set FLAG_EVENT_GROTTO_29_HEX_LADY, Grotto29_EventScript_HexLadyLetsPlayAgainSometime
 	goto_if_set FLAG_TEMP_6, Grotto29_EventScript_HexLadyGotoReward
 	goto_if_set FLAG_SYS_USE_FLASH, Grotto29_EventScript_HexLadyComplainAboutFlash
 	msgbox Grotto29_Text_HexLadyIntroduction, MSGBOX_DEFAULT
@@ -85,6 +89,7 @@ Grotto29_EventScript_HexLadyStartHideAndSeek::
 	msgbox Grotto29_Text_TeeHee, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_TEMP_5
+	removeobject LOCALID_HEXLADY
 	call_if_set FLAG_SYS_USE_FLASH, Grotto29_EventScript_SetDarkness
 	clearflag FLAG_TEMP_1
 	fadescreen FADE_FROM_BLACK
@@ -99,6 +104,7 @@ Grotto29_EventScript_HexLadyFirstFind::
 Grotto29_EventScript_ReturnToFirstFind::
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_TEMP_1
+	removeobject LOCALID_HEXLADY_1
 	call_if_set FLAG_SYS_USE_FLASH, Grotto29_EventScript_SetDarkness
 	clearflag FLAG_TEMP_2
 	fadescreen FADE_FROM_BLACK
@@ -116,6 +122,7 @@ Grotto29_EventScript_HexLadySecondFind::
 	msgbox Grotto29_Text_DoItAgain, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_TEMP_2
+	removeobject LOCALID_HEXLADY_2
 	call_if_set FLAG_SYS_USE_FLASH, Grotto29_EventScript_SetDarkness
 	clearflag FLAG_TEMP_3
 	fadescreen FADE_FROM_BLACK
@@ -128,6 +135,7 @@ Grotto29_EventScript_HexLadyThirdFind::
 	msgbox Grotto29_Text_HexLadyIntroduction, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_TEMP_3
+	removeobject LOCALID_HEXLADY_3
 	call_if_set FLAG_SYS_USE_FLASH, Grotto29_EventScript_SetDarkness
 	clearflag FLAG_TEMP_4
 	fadescreen FADE_FROM_BLACK
@@ -141,8 +149,9 @@ Grotto29_EventScript_HexLadyFourthFind::
 	msgbox Grotto29_Text_FindMeBackWhereWeStarted, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_TEMP_4
+	removeobject LOCALID_HEXLADY_4
 	setflag FLAG_TEMP_6
-	call_if_set FLAG_SYS_USE_FLASH, Grotto29_EventScript_SetLessDark
+	call Grotto29_EventScript_SetLessDark
 	clearflag FLAG_TEMP_5
 	fadescreen FADE_FROM_BLACK
 	release
