@@ -44,15 +44,15 @@ Grotto14_EventScript_HideOtherHalfCoins::
 	setflag FLAG_TEMP_6
 	end
 
-Grotto15_EventScipt_TalkLady::
+Grotto15_EventScipt_TalkHexLady::
 	lock
 	faceplayer
-	goto_if_set FLAG_TEMP_7, Grotto15_EventScipt_TalkLadyFirstTime
+	goto_if_set FLAG_TEMP_7, Grotto15_EventScipt_TalkHexLadyFirstTime
 	msgbox Grotto15_Text_DidYouFindThemAll, MSGBOX_DEFAULT
 	release
 	end
 
-Grotto15_EventScipt_TalkLadyFirstTime::
+Grotto15_EventScipt_TalkHexLadyFirstTime::
 	clearflag FLAG_TEMP_7
 	msgbox Grotto15_Text_CoinsScatteredAround, MSGBOX_DEFAULT
 	release
@@ -60,11 +60,12 @@ Grotto15_EventScipt_TalkLadyFirstTime::
 
 Grotto15_Text_DidYouFindThemAll:
 	.string "So?\p"
-	.string "Did you do it?\n"
-	.string "Did you find the relics?$"
+	.string "Did you find all the treasures\n"
+	.string "I scattered for you?\p"
+	.string "tee-hee.$"
 
 Grotto15_Text_CoinsScatteredAround:
-	.string "Wait.\p"
+	.string "tee-hee.\p"
 	.string "Can't you sense them?\p"
 	.string "Items of old scattered around\n"
 	.string "this grove…$"
