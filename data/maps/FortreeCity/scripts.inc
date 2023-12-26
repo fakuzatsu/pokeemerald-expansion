@@ -286,22 +286,17 @@ FortreeCity_Text_GymSign:
 
 FortreeCity_Text_IsItTrue:
 	.string "Is it true lady Winona?\p"
-	.string "That you have a brand new power?$"
+	.string "That you unlocked a special power\n"
+	.string "from the Pokémon League?$"
 
 FortreeCity_Text_ThatsRight:
 	.string "WINONA: That's right!\p"
-	.string "By the grace of the Pokémon\n"
-	.string "League, we have unlocked the\l"
-	.string "potential of Trainers and\l"
-	.string "Pokémon working in tandem!\p"
-	.string "With these mysterious stones, we can\n"
-	.string "unlock further evolution potential\l"
-	.string "with the trust of our companions!\p"
-	.string "With the power of our bonds we will\n"
-	.string "unleash Mega Evolution!\p"
-	.string "Together!\p"
-	.string "My Bird Pokémon and I will soar\n"
-	.string "to the very heavens!$"
+	.string "With the help of the Pokémon League\n"
+	.string "chairman, my Altaria and I have made\l"
+	.string "a breakthrough in evolution!\p"
+	.string "To draw upon our bonds with Pokémon and\n"
+	.string "soar higher than ever before!\p"
+	.string "That is the power of Mega Evolution!$"
 
 FortreeCity_Text_WowSoCool:
 	.string "That's so cool!$"
@@ -309,7 +304,7 @@ FortreeCity_Text_WowSoCool:
 FortreeCity_Text_RemainEnthused:
 	.string "WINONA: I hope that we can share this\n"
 	.string "power with all Trainers and Pokémon\p"
-	.string "So that we all may soar together!\p"
+	.string "So that we all may fly together!\p"
 	.string "Please look forward to that future!$"
 
 FortreeCity_Text_MegaEvolutionHuh:
@@ -333,7 +328,7 @@ FortreeCity_Text_YouShouldBattleWinona:
 	.string "power compares.\p"
 	.string "In the meanwhile, I will be exploring\n"
 	.string "an interesting phenomena on Route 120.\p"
-	.string "We should meet again on Route 120\n"
-	.string "after you have battled Winona!\p"
+	.string "We should meet again there after you\n"
+	.string "have battled Winona!\p"
 	.string "…Until then {PLAYER}!$"
 

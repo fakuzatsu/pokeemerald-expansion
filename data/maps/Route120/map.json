@@ -497,7 +497,7 @@
       "graphics_id": "OBJ_EVENT_GFX_KECLEON",
       "x": 12,
       "y": 15,
-      "elevation": 3,
+      "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 1,
       "movement_range_y": 1,
