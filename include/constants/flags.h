@@ -1193,7 +1193,7 @@
 #define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
 #define FLAG_ITEM_ROUTE_115_HEAL_POWDER                             0x478
 #define FLAG_UNUSED_0x479                                           0x479 // Unused Flag
-#define FLAG_ITEM_ROUTE_116_TM_66                                  0x47A
+#define FLAG_ITEM_ROUTE_116_TM_66                                   0x47A
 #define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
 #define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C
 #define FLAG_ITEM_ROUTE_121_REVIVE                                  0x47D
@@ -1241,7 +1241,7 @@
 #define FLAG_ITEM_HIDDEN_GROTTO_25_QUICK_POWDER                     0x4A6 // Custom Flag
 #define FLAG_ITEM_HIDDEN_GROTTO_25_METAL_POWDER                     0x4A7 // Custom Flag
 #define FLAG_ITEM_HIDDEN_GROTTO_28_SPELL_TAG                        0x4A8 // Custom Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
+#define FLAG_ITEM_HIDDEN_GROTTO_18_SPELL_TAG                        0x4A9 // Custom Flag
 #define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
 #define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
 #define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag

@@ -23,7 +23,9 @@ Grotto21_EventScript_HideHexLady::
 	setflag FLAG_TEMP_2
 	return
 
-Grotto21_EventScript_SetupTriggers::
+Grotto21_EventScript_SetupTriggers::	
+	cleartrainerflag TRAINER_GROTTO_HEX_LADY
+	cleartrainerflag TRAINER_GROTTO_HEX_LADY2
 	setvar VAR_TEMP_1, 1
 	setvar VAR_TEMP_2, 1
 	end

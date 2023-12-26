@@ -9,5 +9,10 @@ Grotto18_OnLoad::
 Grotto18_EventScript_HexLady::
 	lock
 	faceplayer
+	msgbox Grotto18_Text_DontGetLost, MSGBOX_DEFAULT
 	release
 	end
+
+Grotto18_Text_DontGetLost:
+	.string "Make sure you don't get lost.\p"
+	.string "tee-hee…$"

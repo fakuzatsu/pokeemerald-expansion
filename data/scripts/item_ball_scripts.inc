@@ -734,6 +734,10 @@ Hidden_Grotto_16_EventScript_Galarica_Wreath::
 	finditem ITEM_GALARICA_WREATH
 	end
 
+Hidden_Grotto_18_EventScript_Spell_Tag::
+	finditem ITEM_SPELL_TAG
+	end
+
 Hidden_Grotto_21_EventScript_Relic_Crown::
 	finditem ITEM_RELIC_CROWN
 	end
