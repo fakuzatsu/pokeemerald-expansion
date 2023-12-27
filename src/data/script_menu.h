@@ -952,6 +952,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_GTS_USE_OR_EXPLAIN]         = MULTICHOICE(MultichoiceList_GTSUseOrExplain),
     [MULTI_WONDER_USE_OR_EXPLAIN]      = MULTICHOICE(MultichoiceList_WonderUseOrExplain),
     [MULTI_GTS_CODE_OR_TAKE_BACK]      = MULTICHOICE(MultichoiceList_GTSCodeOrTakeBack),
+    [MULTI_RELIC_EXCHANGE]             = MULTICHOICE(MultichoiceList_Exit),
 };
 
 const u8 *const gStdStrings[] =

@@ -43,7 +43,6 @@ FortreeCity_House7_EventScript_Explain::
 	goto FortreeCity_House7_EventScript_CraftOrExchange
 	end
 
-FortreeCity_House7_EventScript_Exchange::
 FortreeCity_House7_EventScript_Craft::
 	msgbox FortreeCity_House7_Text_HowMuchRelicGold, MSGBOX_DEFAULT
 	checkitem ITEM_RELIC_GOLD, LOWEST_ITEM_PRICE
@@ -267,6 +266,33 @@ FortreeCity_House7_EventScript_TryGiveItemAgain::
 	release
 	end
 
+FortreeCity_House7_EventScript_Exchange::
+	msgbox FortreeCity_House7_Text_WhatToExchange, MSGBOX_DEFAULT
+	ScriptMenu_CreateRelicExchangeMultichoice
+	waitstate
+	goto FortreeCity_House7_EventScript_ExchangeInput
+	end
+
+FortreeCity_House7_EventScript_ExchangeInput::
+	switch VAR_RESULT
+	case 0, FortreeCity_House7_EventScript_ExchangeRelicCopper
+	case 1, FortreeCity_House7_EventScript_ExchangeRelicSilver
+	case 2, FortreeCity_House7_EventScript_ExchangeRelicBand
+	case 3, FortreeCity_House7_EventScript_ExchangeRelicVase
+	case 4, FortreeCity_House7_EventScript_ExchangeRelicStatue
+	case 5, FortreeCity_House7_EventScript_ExchangeRelicCrown
+	case MULTI_B_PRESSED, FortreeCity_House7_EventScript_CancelItemSelect
+	end
+
+FortreeCity_House7_EventScript_ExchangeRelicCopper::
+FortreeCity_House7_EventScript_ExchangeRelicSilver::
+FortreeCity_House7_EventScript_ExchangeRelicBand::
+FortreeCity_House7_EventScript_ExchangeRelicVase::
+FortreeCity_House7_EventScript_ExchangeRelicStatue::
+FortreeCity_House7_EventScript_ExchangeRelicCrown::
+	release
+	end
+
 FortreeCity_House7_Text_RelicTraderIntroduction:
 	.string "Greetings. I am the Relic Craftsman.\p"
 	.string "My family have carried the art of craft\n"
@@ -334,3 +360,7 @@ FortreeCity_House7_Text_NoRoomInBag:
 	.string "You have no space in your bag.\p"
 	.string "Toss something out so I can give\n"
 	.string "this to you.$"
+
+FortreeCity_House7_Text_WhatToExchange:
+	.string "What would you like to give me\n"
+	.string "in exchange for Relic coins?$"
