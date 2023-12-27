@@ -97,8 +97,8 @@
 #define MULTI_FORCED_START_MENU            86
 #define MULTI_FRONTIER_GAMBLER_BET         87
 #define MULTI_TENT                         88
-#define MULTI_UNUSED_SSTIDAL_1             89 // These 4 were replaced by CreateLilycoveSSTidalMultichoice
-#define MULTI_UNUSED_SSTIDAL_2             90 //
+#define MULTI_RELIC_CRAFTER_SELECTION      89 // Reused
+#define MULTI_UNUSED_SSTIDAL_2             90 // These 4 were replaced by CreateLilycoveSSTidalMultichoice
 #define MULTI_UNUSED_SSTIDAL_3             91 //
 #define MULTI_UNUSED_SSTIDAL_4             92 //
 #define MULTI_FOSSIL                       93

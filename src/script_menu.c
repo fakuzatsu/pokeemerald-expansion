@@ -32,6 +32,7 @@ static void InitMultichoiceCheckWrap(bool8 ignoreBPress, u8 count, u8 windowId, 
 static void DrawLinkServicesMultichoiceMenu(u8 multichoiceId);
 static void CreatePCMultichoice(void);
 static void CreateHyperTrainingMultichoice(void);
+static void CreateRelicExchangeMultichoice(void);
 static void CreateLilycoveSSTidalMultichoice(void);
 static bool8 IsPicboxClosed(void);
 static void CreateStartMenuForPokenavTutorial(void);
@@ -468,6 +469,25 @@ static void CreateHyperTrainingMultichoice(void)
     InitMenuInUpperLeftCornerNormal(windowId, numChoices, 0);
     CopyWindowToVram(windowId, COPYWIN_FULL);
     InitMultichoiceCheckWrap(FALSE, numChoices, windowId, MULTI_HYPER_TRAINING);
+}
+
+bool16 ScriptMenu_CreateRelicExchangeMultichoice(void)
+{
+    if (FuncIsActiveTask(Task_HandleMultichoiceInput) == TRUE)
+    {
+        return FALSE;
+    }
+    else
+    {
+        gSpecialVar_Result = 0xFF;
+        CreateRelicExchangeMultichoice();
+        return TRUE;
+    }
+}
+
+static void CreateRelicExchangeMultichoice(void)
+{
+    
 }
 
 void ScriptMenu_DisplayPCStartupPrompt(void)

@@ -3116,4 +3116,15 @@ extern const u8 gText_ViewIVs[];
 extern const u8 gText_ViewEVs[];
 extern const u8 gText_ViewStats[];
 
+// Grotto Trader:
+extern const u8 gText_RelicCraft[];
+extern const u8 gText_RelicExchange[];
+extern const u8 gText_WishingPiece[];
+extern const u8 gText_AbilityShield[];
+extern const u8 gText_ClearAmulet[];
+extern const u8 gText_AuspiciousArmor[];
+extern const u8 gText_MaliciousArmor[];
+extern const u8 gText_RustedShield[];
+extern const u8 gText_RustedSword[];
+
 #endif // GUARD_STRINGS_H

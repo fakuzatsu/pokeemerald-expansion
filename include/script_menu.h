@@ -20,6 +20,7 @@ int DisplayTextAndGetWidth(const u8 *str, int width);
 int ScriptMenu_AdjustLeftCoordFromWidth(int left, int width);
 bool16 ScriptMenu_CreatePCMultichoice(void);
 bool16 ScriptMenu_CreateHyperTrainingMultichoice(void);
+bool16 ScriptMenu_CreateRelicExchangeMultichoice(void);
 void ScriptMenu_DisplayPCStartupPrompt(void);
 
 #endif //GUARD_SCRIPT_MENU_H

@@ -522,6 +522,14 @@ bool8 ScrCmd_checkitem(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_bufferitemcount(struct ScriptContext *ctx)
+{
+    u8 itemId = VarGet(ScriptReadHalfword(ctx));
+
+    gSpecialVar_Result = CheckItemCount(itemId);
+    return FALSE;
+}
+
 bool8 ScrCmd_checkitemtype(struct ScriptContext *ctx)
 {
     u16 itemId = VarGet(ScriptReadHalfword(ctx));

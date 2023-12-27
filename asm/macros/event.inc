@@ -549,6 +549,12 @@
 	.2byte \itemId
 	.endm
 
+	@ Checks the amount of the specified item, and writes that amount to VAR_RESULT.
+	.macro bufferitemcount itemId:req
+	.byte 0xe3
+	.2byte \itemId
+	.endm
+
 	@ Adds quantity of the specified item to the player's PC.
 	.macro addpcitem itemId:req, quantity=1
 	.byte 0x49
