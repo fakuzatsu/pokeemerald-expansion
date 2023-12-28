@@ -1,3 +1,5 @@
+.set LOCALID_TRADER, 1
+
 FortreeCity_House7_MapScripts::
 	.byte 0
 
@@ -185,10 +187,20 @@ FortreeCity_House7_EventScript_ChooseDifferentItem::
 FortreeCity_House7_EventScript_CraftItem::
 	msgbox FortreeCity_House7_Text_IllCraftItemForYou, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_TRADER, Common_Movement_WalkInPlaceFasterUp
+	delay 10
 	fadescreen FADE_TO_BLACK
+	playse SE_SELECT
+	delay 16
+	playse SE_SELECT
+	delay 60
+	playse SE_SELECT
+	delay 16
 	playse SE_SELECT
 	delay 30
 	fadescreen FADE_FROM_BLACK
+	delay 10
+	faceplayer
 	msgbox FortreeCity_House7_Text_WorkIsDone, MSGBOX_DEFAULT
 	call FortreeCity_House7_EventScript_GiveCraftedItem
 	setvar VAR_RELIC_WORKSHOP_STATE, 2
@@ -407,7 +419,7 @@ FortreeCity_House7_Text_WouldYouLikeToExchange:
 	.string "{STR_VAR_1} for {STR_VAR_2} {STR_VAR_3}?$"
 
 FortreeCity_House7_Text_ExchangeComplete:
-	.string "{PLAYER} exchanged {STR_VAR_1}\n"
+	.string "{PLAYER} exchanged {STR_VAR_1} for\n"
 	.string "{STR_VAR_2} Relic {STR_VAR_3}$"
 
 FortreeCity_House7_Text_NothingToExchange:

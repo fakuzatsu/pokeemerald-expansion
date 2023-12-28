@@ -79,6 +79,8 @@
 #define ELEVATOR_WINDOW_HEIGHT 3
 #define ELEVATOR_LIGHT_STAGES  3
 
+#define MAX_RELIC_ITEMS 6
+
 EWRAM_DATA bool8 gBikeCyclingChallenge = FALSE;
 EWRAM_DATA u8 gBikeCollisions = 0;
 static EWRAM_DATA u32 sBikeCyclingTimer = 0;
@@ -145,6 +147,22 @@ static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
 #else
 static void BufferFanClubTrainerName_(u8 whichLinkTrainer, u8 whichNPCTrainer);
 #endif
+
+struct RelicExchangeItem {
+    u16 item;
+    u8  itemAmount;
+    u16 currency;
+    u8  currencyAmount;
+};
+
+static const struct RelicExchangeItem relicItems[MAX_RELIC_ITEMS] = {
+    {ITEM_RELIC_COPPER, 10, ITEM_RELIC_SILVER, 1},
+    {ITEM_RELIC_BAND, 1, ITEM_RELIC_SILVER, 1},
+    {ITEM_RELIC_VASE, 1, ITEM_RELIC_SILVER, 5},
+    {ITEM_RELIC_SILVER, 10, ITEM_RELIC_GOLD, 1},
+    {ITEM_RELIC_STATUE, 1, ITEM_RELIC_GOLD, 1},
+    {ITEM_RELIC_CROWN, 1, ITEM_RELIC_GOLD, 5}
+};
 
 const u16 sHiddenGrottoVars[NUM_GROTTO_VARS] =
 {
@@ -469,32 +487,24 @@ void SetSpDefEvs(void)
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 
-#define CHECK_AND_SET(item, amount, currency, value) \
-    if (CheckBagHasItem(item, amount)) {             \
-        if (index == 0) {                            \
-            VarSet(gSpecialVar_0x8007, amount);      \
-            VarSet(gSpecialVar_0x8008, item);        \
-            VarSet(gSpecialVar_0x8009, currency);    \
-            VarSet(gSpecialVar_0x800A, value);       \
-            return;                                  \
-        }                                            \
-        else {                                       \
-            index--;                                 \
-        }                                            \
-    }
-
-void DoRelicExchangeSelection(void)
-{
+void DoRelicExchangeSelection(void) {
     u8 index = gSpecialVar_Result;
-    
-    CHECK_AND_SET(ITEM_RELIC_COPPER, 10, ITEM_RELIC_SILVER, 1);
-    CHECK_AND_SET(ITEM_RELIC_BAND, 1, ITEM_RELIC_SILVER, 1);
-    CHECK_AND_SET(ITEM_RELIC_VASE, 1, ITEM_RELIC_SILVER, 5);
-    CHECK_AND_SET(ITEM_RELIC_SILVER, 1, ITEM_RELIC_GOLD, 1);
-    CHECK_AND_SET(ITEM_RELIC_STATUE, 1, ITEM_RELIC_GOLD, 1);
-    CHECK_AND_SET(ITEM_RELIC_CROWN, 1, ITEM_RELIC_GOLD, 5);
+    u8 i;
+
+    for (i = 0; i < MAX_RELIC_ITEMS; ++i) {
+        if (CheckBagHasItem(relicItems[i].item, relicItems[i].itemAmount)) {
+            if (index == 0) {
+                gSpecialVar_0x8007 = relicItems[i].itemAmount;
+                gSpecialVar_0x8008 = relicItems[i].item;
+                gSpecialVar_0x8009 = relicItems[i].currency;
+                gSpecialVar_0x800A = relicItems[i].currencyAmount;
+                return;
+            } else {
+                index--;
+            }
+        }
+    }
 }
-#undef CHECK_AND_SET
 
 bool8 CheckRelicsForExchange(void)
 {
