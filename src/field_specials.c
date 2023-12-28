@@ -19,6 +19,7 @@
 #include "field_weather.h"
 #include "graphics.h"
 #include "international_string_util.h"
+#include "item.h"
 #include "item_icon.h"
 #include "link.h"
 #include "load_save.h"
@@ -466,6 +467,46 @@ void SetSpDefEvs(void)
     u8 SpDefEv = gSpecialVar_0x8006;
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_EV, &SpDefEv);
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+#define CHECK_AND_SET(item, amount, currency, value) \
+    if (CheckBagHasItem(item, amount)) {             \
+        if (index == 0) {                            \
+            VarSet(gSpecialVar_0x8007, amount);      \
+            VarSet(gSpecialVar_0x8008, item);        \
+            VarSet(gSpecialVar_0x8009, currency);    \
+            VarSet(gSpecialVar_0x800A, value);       \
+            return;                                  \
+        }                                            \
+        else {                                       \
+            index--;                                 \
+        }                                            \
+    }
+
+void DoRelicExchangeSelection(void)
+{
+    u8 index = gSpecialVar_Result;
+    
+    CHECK_AND_SET(ITEM_RELIC_COPPER, 10, ITEM_RELIC_SILVER, 1);
+    CHECK_AND_SET(ITEM_RELIC_BAND, 1, ITEM_RELIC_SILVER, 1);
+    CHECK_AND_SET(ITEM_RELIC_VASE, 1, ITEM_RELIC_SILVER, 5);
+    CHECK_AND_SET(ITEM_RELIC_SILVER, 1, ITEM_RELIC_GOLD, 1);
+    CHECK_AND_SET(ITEM_RELIC_STATUE, 1, ITEM_RELIC_GOLD, 1);
+    CHECK_AND_SET(ITEM_RELIC_CROWN, 1, ITEM_RELIC_GOLD, 5);
+}
+#undef CHECK_AND_SET
+
+bool8 CheckRelicsForExchange(void)
+{
+    if (CheckBagHasItem(ITEM_RELIC_COPPER, 10)
+    || CheckBagHasItem(ITEM_RELIC_BAND, 1) 
+    || CheckBagHasItem(ITEM_RELIC_VASE, 1) 
+    || CheckBagHasItem(ITEM_RELIC_SILVER, 10) 
+    || CheckBagHasItem(ITEM_RELIC_STATUE, 1) 
+    || CheckBagHasItem(ITEM_RELIC_CROWN, 1))
+        return TRUE;
+    else
+        return FALSE;
 }
 
 void ResetCyclingRoadChallengeData(void)

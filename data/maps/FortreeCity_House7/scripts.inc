@@ -267,6 +267,12 @@ FortreeCity_House7_EventScript_TryGiveItemAgain::
 	end
 
 FortreeCity_House7_EventScript_Exchange::
+	specialvar VAR_RESULT, CheckRelicsForExchange
+	goto_if_eq VAR_RESULT, FALSE, FortreeCity_House7_EventScript_NothingToExchange
+	goto_if_eq VAR_RESULT, TRUE, FortreeCity_House7_EventScript_ExchangeMultichoice
+	end
+
+FortreeCity_House7_EventScript_ExchangeMultichoice::
 	msgbox FortreeCity_House7_Text_WhatToExchange, MSGBOX_DEFAULT
 	special ScriptMenu_CreateRelicExchangeMultichoice
 	waitstate
@@ -275,63 +281,48 @@ FortreeCity_House7_EventScript_Exchange::
 
 FortreeCity_House7_EventScript_ExchangeInput::
 	switch VAR_RESULT
-	case 0, FortreeCity_House7_EventScript_ExchangeRelicCopper
-	case 1, FortreeCity_House7_EventScript_ExchangeRelicBand
-	case 2, FortreeCity_House7_EventScript_ExchangeRelicVase
-	case 3, FortreeCity_House7_EventScript_ExchangeRelicSilver
-	case 4, FortreeCity_House7_EventScript_ExchangeRelicStatue
-	case 5, FortreeCity_House7_EventScript_ExchangeRelicCrown
+	case 0, FortreeCity_House7_EventScript_DoExchange
+	case 1, FortreeCity_House7_EventScript_DoExchange
+	case 2, FortreeCity_House7_EventScript_DoExchange
+	case 3, FortreeCity_House7_EventScript_DoExchange
+	case 4, FortreeCity_House7_EventScript_DoExchange
+	case 5, FortreeCity_House7_EventScript_DoExchange
 	case MULTI_B_PRESSED, FortreeCity_House7_EventScript_CancelItemSelect
 	end
 
-FortreeCity_House7_EventScript_ExchangeRelicCopper::
-	setvar VAR_0x8008, ITEM_RELIC_COPPER
-	setvar VAR_0x800A, 1
-	bufferstring STR_VAR_3, FortreeCity_House7_Text_Silver
-	goto FortreeCity_House7_EventScript_DoExchange
-	end
-
-FortreeCity_House7_EventScript_ExchangeRelicBand::
-	setvar VAR_0x8008, ITEM_RELIC_BAND
-	setvar VAR_0x800A, 1
-	bufferstring STR_VAR_3, FortreeCity_House7_Text_Silver
-	goto FortreeCity_House7_EventScript_DoExchange
-	end
-
-FortreeCity_House7_EventScript_ExchangeRelicVase::
-	setvar VAR_0x8008, ITEM_RELIC_VASE
-	setvar VAR_0x800A, 5
-	bufferstring STR_VAR_3, FortreeCity_House7_Text_Silver
-	goto FortreeCity_House7_EventScript_DoExchange
-	end
-
-FortreeCity_House7_EventScript_ExchangeRelicSilver::
-	setvar VAR_0x8008, ITEM_RELIC_SILVER
-	setvar VAR_0x800A, 1
-	bufferstring STR_VAR_3, FortreeCity_House7_Text_Gold
-	goto FortreeCity_House7_EventScript_DoExchange
-	end
-
-FortreeCity_House7_EventScript_ExchangeRelicStatue::
-	setvar VAR_0x8008, ITEM_RELIC_STATUE
-	setvar VAR_0x800A, 1
-	bufferstring STR_VAR_3, FortreeCity_House7_Text_Gold
-	goto FortreeCity_House7_EventScript_DoExchange
-	end
-
-FortreeCity_House7_EventScript_ExchangeRelicCrown::
-	setvar VAR_0x8008, ITEM_RELIC_CROWN
-	setvar VAR_0x800A, 5
-	bufferstring STR_VAR_3, FortreeCity_House7_Text_Gold
-	goto FortreeCity_House7_EventScript_DoExchange
-	end
-
 FortreeCity_House7_EventScript_DoExchange::
+	special DoRelicExchangeSelection
 	bufferitemname STR_VAR_1, VAR_0x8008
 	buffernumberstring STR_VAR_2, VAR_0x800A
+	call_if_eq VAR_0x8009, ITEM_RELIC_SILVER, FortreeCity_House7_EventScript_BufferSilver
+	call_if_ne VAR_0x8009, ITEM_RELIC_SILVER, FortreeCity_House7_EventScript_BufferGold
 	msgbox FortreeCity_House7_Text_WouldYouLikeToExchange, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FortreeCity_House7_EventScript_CancelItemSelect
+	removeitem VAR_0x8008, VAR_0x8007
+	additem VAR_0x8009, VAR_0x800A
+	msgbox FortreeCity_House7_Text_ExchangeComplete, MSGBOX_DEFAULT
+	specialvar VAR_RESULT, CheckRelicsForExchange
+	goto_if_eq VAR_RESULT, FALSE, FortreeCity_House7_EventScript_NothingMoreToExchange
+	goto_if_eq VAR_RESULT, TRUE, FortreeCity_House7_EventScript_ExchangeMultichoice
+	end
+
+FortreeCity_House7_EventScript_NothingToExchange::
+	msgbox FortreeCity_House7_Text_NothingToExchange
 	release
 	end
+
+FortreeCity_House7_EventScript_NothingMoreToExchange::
+	msgbox FortreeCity_House7_Text_NothingMoreToExchange
+	release
+	end
+
+FortreeCity_House7_EventScript_BufferSilver::
+	bufferstring STR_VAR_3, FortreeCity_House7_Text_Silver
+	return
+
+FortreeCity_House7_EventScript_BufferGold::
+	bufferstring STR_VAR_3, FortreeCity_House7_Text_Gold
+	return
 
 FortreeCity_House7_Text_RelicTraderIntroduction:
 	.string "Greetings. I am the Relic Craftsman.\p"
@@ -414,3 +405,15 @@ FortreeCity_House7_Text_Gold:
 FortreeCity_House7_Text_WouldYouLikeToExchange:
 	.string "Would you like to exchange your\n"
 	.string "{STR_VAR_1} for {STR_VAR_2} {STR_VAR_3}?$"
+
+FortreeCity_House7_Text_ExchangeComplete:
+	.string "{PLAYER} exchanged {STR_VAR_1}\n"
+	.string "{STR_VAR_2} Relic {STR_VAR_3}$"
+
+FortreeCity_House7_Text_NothingToExchange:
+	.string "You have nothing I am interested in.\p"
+	.string "I only exchange Relic Materials.$"
+
+FortreeCity_House7_Text_NothingMoreToExchange:
+	.string "You have nothing further to exchange.\p"
+	.string "Please collect more Relic Materials.$"

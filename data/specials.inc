@@ -569,3 +569,5 @@ gSpecials::
 	def_special VsSeekerResetObjectMovementAfterChargeComplete
 	def_special VsSeekerFreezeObjectsAfterChargeComplete
 	def_special ScriptMenu_CreateRelicExchangeMultichoice
+	def_special DoRelicExchangeSelection
+	def_special CheckRelicsForExchange
