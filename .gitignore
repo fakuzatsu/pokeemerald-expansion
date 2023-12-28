@@ -21,7 +21,6 @@ sound/**/*.bin
 sound/songs/midi/*.s
 tools/agbcc
 *.map
-*.ld
 *.bat
 *.dump
 *.sa*
@@ -53,3 +52,4 @@ overworld/
 *.js
 /.vs
 tools/poryscript
+src/data/map_group_count.h

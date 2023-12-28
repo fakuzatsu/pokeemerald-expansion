@@ -1,3 +1,4 @@
+#include "config/item.h"
 	.include "asm/macros.inc"
 	.include "constants/constants.inc"
 
@@ -76,6 +77,9 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_TracksBug                 @ FLDEFF_TRACKS_BUG
 	.4byte gFieldEffectScript_TracksSpot                @ FLDEFF_TRACKS_SPOT
     .4byte gFieldEffectScript_CaveDust                  @ FLDEFF_CAVE_DUST 
+	.4byte gFldEffScript_UseVsSeeker                    @ FLDEFF_USE_VS_SEEKER
+	.4byte gFldEffScript_XIcon                          @ FLDEFF_X_ICON
+	.4byte gFldEffScript_DoubleExclMarkIcon             @ FLDEFF_DOUBLE_EXCL_MARK_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1:: @ 82DBAE0
 	field_eff_loadfadedpalnotint_callnative gSpritePalette_ArrowEmotionsFieldEffect, FldEff_ExclamationMarkIcon
@@ -364,3 +368,15 @@ gFieldEffectScript_MoveDeoxysRock::
 gFieldEffectScript_CaveDust::
     field_eff_loadfadedpal_callnative gSpritePalette_CaveDust FldEff_CaveDust
     field_eff_end
+
+gFldEffScript_UseVsSeeker::
+	field_eff_callnative FldEff_UseVsSeeker
+	field_eff_end
+
+gFldEffScript_XIcon::
+	field_eff_callnative FldEff_XIcon
+	field_eff_end
+
+gFldEffScript_DoubleExclMarkIcon::
+	field_eff_callnative FldEff_DoubleExclMarkIcon
+	field_eff_end

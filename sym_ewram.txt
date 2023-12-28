@@ -1,3 +1,4 @@
+	.include "gflib/malloc.o"
 	.include "src/decompress.o"
 	.include "src/main.o"
 	.include "gflib/window.o"
@@ -153,3 +154,4 @@
 	.include "src/global_trade_station.o"
 	.include "src/debug.o"
 	.include "src/battle_controller_player.o"
+	.include "src/pokedex_plus_hgss.o"

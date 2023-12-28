@@ -162,17 +162,18 @@ void CB2_TestRunner(void)
         break;
 
     case STATE_ASSIGN_TEST:
-        if (gTestRunnerState.test == __stop_tests)
+        while (1)
         {
-            gTestRunnerState.state = STATE_EXIT;
-            return;
-        }
-
-        if (gTestRunnerState.test->runner != &gAssumptionsRunner
-          && !PrefixMatch(gTestRunnerArgv, gTestRunnerState.test->name))
-        {
-            gTestRunnerState.state = STATE_NEXT_TEST;
-            return;
+            if (gTestRunnerState.test == __stop_tests)
+            {
+                gTestRunnerState.state = STATE_EXIT;
+                return;
+            }
+            if (gTestRunnerState.test->runner != &gAssumptionsRunner
+              && !PrefixMatch(gTestRunnerArgv, gTestRunnerState.test->name))
+                ++gTestRunnerState.test;
+            else
+                break;
         }
 
         MgbaPrintf_(":N%s", gTestRunnerState.test->name);
@@ -530,6 +531,7 @@ static s32 MgbaVPrintf_(const char *fmt, va_list va)
     s32 c, d;
     u32 p;
     const char *s;
+    const u8 *pokeS;
     while (*fmt)
     {
         switch ((c = *fmt++))
@@ -624,8 +626,8 @@ static s32 MgbaVPrintf_(const char *fmt, va_list va)
                     i = MgbaPutchar_(i, c);
                 break;
             case 'S':
-                s = va_arg(va, const u8 *);
-                while ((c = *s++) != EOS)
+                pokeS = va_arg(va, const u8 *);
+                while ((c = *pokeS++) != EOS)
                 {
                     if ((c = gWireless_RSEtoASCIITable[c]) != '\0')
                         i = MgbaPutchar_(i, c);

@@ -1,10 +1,6 @@
 #ifndef GUARD_ALLOC_H
 #define GUARD_ALLOC_H
 
-#define HEAP_SIZE 0x1C000
-#define malloc Alloc
-#define calloc(ct, sz) AllocZeroed((ct) * (sz))
-#define free Free
 
 #define FREE_AND_SET_NULL(ptr)          \
 {                                       \
@@ -45,7 +41,8 @@ struct MemBlock
     u8 data[0];
 };
 
-extern u8 gHeap[];
+#define HEAP_SIZE 0x1C000
+extern u8 gHeap[HEAP_SIZE];
 
 #if TESTING || !defined(NDEBUG)
 

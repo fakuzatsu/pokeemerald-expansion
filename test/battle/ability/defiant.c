@@ -115,3 +115,63 @@ DOUBLE_BATTLE_TEST("Defiant sharply raises opponent's Attack after Intimidate")
         EXPECT_EQ(opponentRight->statStages[STAT_ATK], (abilityRight == ABILITY_DEFIANT) ? DEFAULT_STAT_STAGE + 2 : DEFAULT_STAT_STAGE - 2);
     }
 }
+
+SINGLE_BATTLE_TEST("Defiant activates after Sticky Web lowers Speed")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_MANKEY) { Ability(ABILITY_DEFIANT); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_STICKY_WEB); }
+        TURN { SWITCH(player, 1); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_STICKY_WEB, opponent);
+        // Switch-in - Sticky Web activates
+        MESSAGE("Go! Mankey!");
+        MESSAGE("Mankey was caught in a Sticky Web!");
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
+        MESSAGE("Mankey's Speed fell!");
+        // Defiant activates
+        ABILITY_POPUP(player, ABILITY_DEFIANT);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
+        MESSAGE("Mankey's Attack sharply rose!");
+    }
+}
+
+
+DOUBLE_BATTLE_TEST("Defiant is activated by Cotton Down for non-ally pokemon")
+{
+    GIVEN {
+        PLAYER(SPECIES_MANKEY) { Ability(ABILITY_DEFIANT); }
+        PLAYER(SPECIES_MANKEY) { Ability(ABILITY_DEFIANT); }
+        OPPONENT(SPECIES_ELDEGOSS) { Ability(ABILITY_COTTON_DOWN); }
+        OPPONENT(SPECIES_MANKEY) { Ability(ABILITY_DEFIANT); }
+    } WHEN {
+        TURN { MOVE(playerLeft, MOVE_TACKLE, target: opponentLeft); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, playerLeft);
+        ABILITY_POPUP(opponentLeft, ABILITY_COTTON_DOWN);
+
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, playerLeft);
+        MESSAGE("Mankey's Speed fell!");
+        ABILITY_POPUP(playerLeft, ABILITY_DEFIANT);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, playerLeft);
+        MESSAGE("Mankey's Attack sharply rose!");
+
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, playerRight);
+        MESSAGE("Mankey's Speed fell!");
+        ABILITY_POPUP(playerRight, ABILITY_DEFIANT);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, playerRight);
+        MESSAGE("Mankey's Attack sharply rose!");
+
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentRight);
+        MESSAGE("Foe Mankey's Speed fell!");
+    } THEN {
+        EXPECT_EQ(playerLeft->statStages[STAT_SPEED], DEFAULT_STAT_STAGE - 1);
+        EXPECT_EQ(playerRight->statStages[STAT_SPEED], DEFAULT_STAT_STAGE - 1);
+        EXPECT_EQ(opponentRight->statStages[STAT_SPEED], DEFAULT_STAT_STAGE - 1);
+        EXPECT_EQ(playerLeft->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 2);
+        EXPECT_EQ(playerRight->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 2);
+    }
+}

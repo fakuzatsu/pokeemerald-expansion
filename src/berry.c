@@ -1833,8 +1833,8 @@ bool8 PlayerHasBerries(void)
 // For all berry trees on screen, allow normal growth
 void SetBerryTreesSeen(void)
 {
-    s16 cam_left;
-    s16 cam_top;
+    u16 cam_left;
+    u16 cam_top;
     s16 left;
     s16 top;
     s16 right;
@@ -1850,9 +1850,9 @@ void SetBerryTreesSeen(void)
     {
         if (gObjectEvents[i].active && gObjectEvents[i].movementType == MOVEMENT_TYPE_BERRY_TREE_GROWTH)
         {
-            cam_left = gObjectEvents[i].currentCoords.x;
-            cam_top = gObjectEvents[i].currentCoords.y;
-            if (left <= cam_left && cam_left <= right && top <= cam_top && cam_top <= bottom)
+            s16 x = gObjectEvents[i].currentCoords.x;
+            s16 y = gObjectEvents[i].currentCoords.y;
+            if (left <= x && x <= right && top <= y && y <= bottom)
                 AllowBerryTreeGrowth(gObjectEvents[i].trainerRange_berryTreeId);
         }
     }

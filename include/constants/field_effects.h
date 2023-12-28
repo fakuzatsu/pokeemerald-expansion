@@ -73,6 +73,9 @@
 #define FLDEFF_TRACKS_SPOT               68
 #define FLDEFF_TRACKS_BUG                69
 #define FLDEFF_CAVE_DUST                 70
+#define FLDEFF_USE_VS_SEEKER             71
+#define FLDEFF_X_ICON                    72
+#define FLDEFF_DOUBLE_EXCL_MARK_ICON     73
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1

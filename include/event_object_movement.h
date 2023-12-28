@@ -470,4 +470,7 @@ void SetVirtualObjectSpriteAnim(u8 virtualObjId, u8 animNum);
 bool32 IsVirtualObjectAnimating(u8 virtualObjId);
 bool8 IsElevationMismatchAt(u8 elevation, s16 x, s16 y);
 
+bool8 MovementAction_EmoteX_Step0(struct ObjectEvent *, struct Sprite *);
+bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *, struct Sprite *);
+
 #endif //GUARD_EVENT_OBJECT_MOVEMENT_H
