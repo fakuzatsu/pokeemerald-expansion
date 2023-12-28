@@ -89,6 +89,7 @@ Some tips before proceeding:
 
     >   If the above command does not work, try the above command but replacing `apt` with `apt-get`.
     </details>
+    This will install GCC v10 on Ubuntu 22.04. pokeemerald-expansion works with GCC v10, but remote repositories and the RHH Team use GCC v13 for stricter error-checking. If you want to upgrade from v10 to v13, also follow the devkitpro install instructions.
 
 ### Choosing where to store pokeemerald (WSL1)
 WSL has its own file system that's not natively accessible from Windows, but Windows files *are* accessible from WSL. So you're going to want to store pokeemerald within Windows.
@@ -392,7 +393,7 @@ If this works, then proceed to [Installation](#installation). Otherwise, ask for
 1. If pokeemerald is not already downloaded (some users may prefer to download pokeemerald via a git client like GitHub Desktop), run:
 
     ```bash
-    git clone https://github.com/rh-hideout/pokeemerald-expansion
+    git clone https://github.com/fakuzatsu/verdantemerald
     ```
 
     <details>
@@ -408,6 +409,8 @@ If this works, then proceed to [Installation](#installation). Otherwise, ask for
     >   Where *\<folder where pokeemerald is to be stored>* is the path of the folder [where you chose to store pokeemerald](#Choosing-where-to-store-pokeemerald-WSL1). Then run the `git clone` command again.
     </details>
 
+<details>
+    <summary><i>Depreciated; installing agbcc is optional since 1.7.0</i>.</summary>
 2. Install agbcc into pokeemerald. The commands to run depend on certain conditions. **You should only follow one of the listed instructions**:
 - If agbcc has **not been built before** in the folder where you chose to store pokeemerald, run the following commands to build and install it into pokeemerald:
 
@@ -445,6 +448,7 @@ If this works, then proceed to [Installation](#installation). Otherwise, ask for
     ```bash
     cd ..
     ```
+</details>
 
 Now you're ready to [build **pokeemerald**](#build-pokeemerald)
 ## Build pokeemerald
@@ -610,8 +614,20 @@ make modern DINFO=1
 ```
 Note that this is not necessary for a non-modern build since those are built with debug symbols by default.
 
-# Useful additional tools
+## VSCode and Extensions
 
-* [porymap](https://github.com/huderlem/porymap) for viewing and editing maps
-* [poryscript](https://github.com/huderlem/poryscript) for scripting ([VS Code extension](https://marketplace.visualstudio.com/items?itemName=karathan.poryscript))
-* [Tilemap Studio](https://github.com/Rangi42/tilemap-studio) for viewing and editing tilemaps
+It is recommended to use VSCode to edit and add new files to our decomp, as well as Git.
+
+- [**VSCode**](https://code.visualstudio.com/) - An open source IDE for editing in multiple languages.
+- [**Git**](https://git-scm.com/downloads) - An engine for syncing your directory with ours.
+- [**Portscript**](https://marketplace.visualstudio.com/items?itemName=karathan.poryscript) - An extension for VSCode for decomp file compatibility.
+
+## Additional tools
+
+Tools for editing the decomp in order to add additional features, make changes to the world, impliment story and much more.
+
+- [**Porymap**](https://github.com/huderlem/porymap) - A map editor for the Pokémon generation 3 decompilation projects (pokeruby, pokeemerald, and pokefirered).
+    - And a [**Guide**](https://huderlem.github.io/porymap/)
+- [**Tilemap-Studio**](https://github.com/Rangi42/tilemap-studio) - A tilemap editor for Game Boy, GBC, GBA, NDS, SNES, Genesis, or TG16 projects.
+- [**Poryscript**](https://github.com/huderlem/poryscript) - Poryscript is a higher-level scripting language that compiles into the scripting language used in pokeemerald.
+    - Install by following [these steps](https://github.com/huderlem/poryscript#local-development). Ensuring you [install go](http://golang.org/) and are cloning the repo into the directory which contains your 'Pokeemerald' folder. ***Do not clone into the Pokeemerald folder***

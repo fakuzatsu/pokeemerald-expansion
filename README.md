@@ -1,57 +1,29 @@
-# Verdant Pokeemerald Base
+# Verdant-Emerald Base
 *The Pokeemerald base with Verdant Emerald changes*
 
 A fork of Pokeemerald that breathes extra life into Pokemon Emerald. With new ways to adventure through the game: alternate paths on existing routes, brand new areas with the same Hoenn feel, and new Pokemon encounters never before seen in the region.
 
 ## Installation
 
-1. Follow this guide to download and install the linux subsystem and get Ubuntu working on your Windows machine: https://github.com/pret/pokeemerald/blob/master/INSTALL.md#windows-1011-wsl1
+Follow the steps in [INSTALL.md](https://github.com/fakuzatsu/verdant-emerald/blob/master/INSTALL.md)
 
-> **ONLY FOLLOW UP TO THE INSTALLATION STEPS. DO NOT CLONE POKEEMERALD**
+## Contributing to Verdant-Emerald
 
-2. Instead of cloning the standard pokeemerald, clone our fork:
+If you find a bug in my hack, please let me know by [submitting an issue](https://github.com/fakuzatsu/verdant-emerald/issues).
 
-```
-git clone https://github.com/fakuzatsu/verdantemerald
-```
-
-> Cloning our base should also link your local repo to the remote repo and keep you up to date with our changes. If you would prefer to make your own version of Verdant-Emerald rather than contribute, fork our repo instead.
-
-3. Make sure you are in the root directory and can see our pokeemerald/verdant-emerald file (`ls` to see files in the current directory). Then, run the following:
-
-```
-Based off RHH's pokeemerald-expansion v1.6.2 https://github.com/rh-hideout/pokeemerald-expansion/
-```
-
-## VSCode and Extensions
-
-It is recommended to use VSCode to edit and add new files to our decomp, as well as Git.
-
-- [**VSCode**](https://code.visualstudio.com/) - An open source IDE for editing in multiple languages.
-- [**Git**](https://git-scm.com/downloads) - An engine for syncing your directory with ours.
-- [**Portscript**](https://marketplace.visualstudio.com/items?itemName=karathan.poryscript) - An extension for VSCode for decomp file compatibility.
-
-## Additional tools
-
-Tools for editing the decomp in order to add additional features, make changes to the world, impliment story and much more.
-
-- [**Porymap**](https://github.com/huderlem/porymap) - A map editor for the Pokémon generation 3 decompilation projects (pokeruby, pokeemerald, and pokefirered).
-    - And a [**Guide**](https://huderlem.github.io/porymap/)
-- [**Tilemap-Studio**](https://github.com/Rangi42/tilemap-studio) - A tilemap editor for Game Boy, GBC, GBA, NDS, SNES, Genesis, or TG16 projects.
-- [**Poryscript**](https://github.com/huderlem/poryscript) - Poryscript is a higher-level scripting language that compiles into the scripting language used in pokeemerald.
-    - Install by following [these steps](https://github.com/huderlem/poryscript#local-development). Ensuring you [install go](http://golang.org/) and are cloning the repo into the directory which contains your 'Pokeemerald' folder. ***Do not clone into the Pokeemerald folder***
+Alternatively, if you wish to contribute features to the ROM, [submit an feature request](https://github.com/fakuzatsu/verdant-emerald/issues) and [push your requested feature code](https://github.com/fakuzatsu/verdant-emerald/pulls). Creating the requested feature code will require knowledge of the pokeemerald codebase which I do not have time to teach you.
 
 ## Features of Pokemmerald-Expansion
 
-Verdant-Emerald features the Pokeemerald-Expansion, which contains configurable behaviours for certain gameplay features. Those can be found below.
+Verdant-Emerald features the Pokeemerald-Expansion, which contains configurable behaviours for certain gameplay features. Those can be found below alongside all the features of Pokeemerald-Expansion. please see the [full list of contributors](https://github.com/rh-hideout/pokeemerald-expansion/wiki/Credits).
 
-- Configuration files that allows you to choose generation-specific behaviors. Full contents here:
+- ***Configuration files*** that allows you to choose generation-specific behaviors. Full contents here:
     - [Battle configurations](/include/config/battle.h)
     - [Pokémon configurations](/include/config/pokemon.h)
     - [Item configurations](/include/config/item.h)
     - [Overworld configurations](/include/config/overworld.h)
     - [Debug configurations](/include/config/debug.h)
-- Upgraded battle engine.
+- ***Upgraded battle engine.***
     - Gen5+ damage calculation.
     - 2v2 Wild battles support.
     - 1v2/2v1 battles support.
@@ -74,6 +46,7 @@ Verdant-Emerald features the Pokeemerald-Expansion, which contains configurable 
     - Quick Poké Ball selection in Wild Battles
         - Press `R` to use last selected Poké Ball.
         - Hold `R` to change selection with the D-Pad.
+    - Run option shortcut
     - Faster battle intro
         - Message and animation/cry happens at the same time.
     - Faster HP drain.
@@ -161,7 +134,8 @@ Verdant-Emerald features the Pokeemerald-Expansion, which contains configurable 
 - ***Feature branches incorporated (with permission):***
     - [RHH intro credits](https://github.com/Xhyzi/pokeemerald/tree/rhh-intro-credits) by @Xhyzi.
         - A small signature from all of us to show the collective effort in the project :)
-    - [Overworld debug]() by TheXaman
+    - [Overworld debug](https://github.com/TheXaman/pokeemerald/tree/tx_debug_system) by @TheXaman
+        - May be disabled.
         - Accesible by pressing `R + Start` in the overworld by default.
         - **Additional features**:
             - *Clear Boxes*: cleans every Pokémon from the Boxes.
@@ -188,32 +162,6 @@ There are some mechanics, moves and abilities that are missing and being develop
 
 
 ### [Documentation on features can be found here](https://github.com/rh-hideout/pokeemerald-expansion/wiki)
-
-## If I already have a project based on regular pokeemerald, can I use pokeemerald-expansion?
-Yes! Keep in mind that we keep up with pret's documentation of pokeemerald, which means that if your project a bit old, you might get merge conflicts that you need to solve manually.
-- If you haven't set up a remote, run the command `git remote add RHH https://github.com/rh-hideout/pokeemerald-expansion`.
-- Once you have your remote set up, run the command `git pull RHH master`.
-
-With this, you'll get the latest version of pokeemerald-expansion, plus a couple of bugfixes that haven't been released into the next patch version :)
-
-## **How do I update my version of pokeemerald-expansion?**
-- If you haven't set up a remote, run the command `git remote add RHH https://github.com/rh-hideout/pokeemerald-expansion`.
-- Once you have your remote set up, run the command `git pull RHH expansion/1.6.2`.
-
-### Please consider crediting the entire [list of contributors](https://github.com/rh-hideout/pokeemerald-expansion/wiki/Credits) in your project, as they have all worked hard to develop this project :)
-
-## There's a bug in the project. How do I let you guys know?
-Please submit any issues with the project [here](https://github.com/rh-hideout/pokeemerald-expansion/issues). Make sure that the issue wasn't reported by someone else by searching using the filters.
-
-## Can I contribute even if I'm not a member of ROM Hacking Hideout?
-
-Yes! Contributions are welcome via Pull Requests and they will be reviewed by maintainers. Don't feel discouraged if we take a bit to review your PR, we'll get to it.
-
-## Who maintains the project?
-
-The project was originally started by DizzyEgg alongside other contributors.
-
-The project has now gotten larger and DizzyEgg is now maintaining the project as part of the ROM Hacking Hideout community. Some members of this community are taking on larger roles to help maintain the project.
 
 ## What is the ROM Hacking Hideout?
 
