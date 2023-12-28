@@ -23139,6 +23139,273 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_GROTTO29",
+          "base_label": "gGrotto290",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 39,
+                "max_level": 41,
+                "species": "SPECIES_DOUBLADE"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_RUNERIGUS"
+              },
+              {
+                "min_level": 38,
+                "max_level": 40,
+                "species": "SPECIES_MIMIKYU_DISGUISED"
+              },
+              {
+                "min_level": 40,
+                "max_level": 41,
+                "species": "SPECIES_GOURGEIST_LARGE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 42,
+                "species": "SPECIES_GENGAR"
+              },
+              {
+                "min_level": 41,
+                "max_level": 42,
+                "species": "SPECIES_GOLURK"
+              },
+              {
+                "min_level": 40,
+                "max_level": 41,
+                "species": "SPECIES_MUSHARNA"
+              },
+              {
+                "min_level": 39,
+                "max_level": 40,
+                "species": "SPECIES_GOURGEIST_AVERAGE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 41,
+                "species": "SPECIES_MIMIKYU_DISGUISED"
+              },
+              {
+                "min_level": 42,
+                "max_level": 42,
+                "species": "SPECIES_GOURGEIST_SUPER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 41,
+                "species": "SPECIES_MUSHARNA"
+              },
+              {
+                "min_level": 42,
+                "max_level": 42,
+                "species": "SPECIES_MUSHARNA"
+              }
+            ]
+          },
+          "hidden_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_GROTTO26",
+          "base_label": "gGrotto260",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 39,
+                "max_level": 41,
+                "species": "SPECIES_DOUBLADE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 42,
+                "species": "SPECIES_MUSHARNA"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_WYRDEER"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_STONJOURNER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 42,
+                "species": "SPECIES_GOLURK"
+              },
+              {
+                "min_level": 40,
+                "max_level": 41,
+                "species": "SPECIES_GOLETT"
+              },
+              {
+                "min_level": 42,
+                "max_level": 43,
+                "species": "SPECIES_WYRDEER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 42,
+                "species": "SPECIES_SIRFETCHD"
+              },
+              {
+                "min_level": 42,
+                "max_level": 42,
+                "species": "SPECIES_KLEAVOR"
+              },
+              {
+                "min_level": 39,
+                "max_level": 40,
+                "species": "SPECIES_HONEDGE"
+              },
+              {
+                "min_level": 42,
+                "max_level": 43,
+                "species": "SPECIES_SIRFETCHD"
+              },
+              {
+                "min_level": 43,
+                "max_level": 43,
+                "species": "SPECIES_KLEAVOR"
+              }
+            ]
+          },
+          "hidden_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_GROTTO27",
+          "base_label": "gGrotto270",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 39,
+                "max_level": 41,
+                "species": "SPECIES_DOUBLADE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 42,
+                "species": "SPECIES_MUSHARNA"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_WYRDEER"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_STONJOURNER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 42,
+                "species": "SPECIES_GOLURK"
+              },
+              {
+                "min_level": 40,
+                "max_level": 41,
+                "species": "SPECIES_GOLETT"
+              },
+              {
+                "min_level": 42,
+                "max_level": 43,
+                "species": "SPECIES_WYRDEER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 42,
+                "species": "SPECIES_SIRFETCHD"
+              },
+              {
+                "min_level": 42,
+                "max_level": 42,
+                "species": "SPECIES_KLEAVOR"
+              },
+              {
+                "min_level": 39,
+                "max_level": 40,
+                "species": "SPECIES_HONEDGE"
+              },
+              {
+                "min_level": 42,
+                "max_level": 43,
+                "species": "SPECIES_SIRFETCHD"
+              },
+              {
+                "min_level": 43,
+                "max_level": 43,
+                "species": "SPECIES_KLEAVOR"
+              }
+            ]
+          },
+          "hidden_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          }
         }
       ]
     },
