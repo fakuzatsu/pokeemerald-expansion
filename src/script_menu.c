@@ -487,40 +487,41 @@ bool16 ScriptMenu_CreateRelicExchangeMultichoice(void)
 
 static void CreateRelicExchangeMultichoice(void)
 {
+    u8 x = 8;
+    u8 y = 1;
+    u32 pixelWidth = 0;
+    u8 numChoices = 0;
+    u8 width;
+    u8 windowId;
+
     if (CheckBagHasItem(ITEM_RELIC_BAND, 1)) {
         ++numChoices;
-        CopyItemName(ITEM_RELIC_BAND, gStringVar3);
-        pixelWidth = DisplayTextAndGetWidth(gStringVar3, pixelWidth);
+        pixelWidth = DisplayTextAndGetWidth(gText_RelicBand, pixelWidth);
     }
 
     if (CheckBagHasItem(ITEM_RELIC_VASE, 1)) {
         ++numChoices;
-        CopyItemName(ITEM_RELIC_VASE, gStringVar3);
-        pixelWidth = DisplayTextAndGetWidth(gStringVar3, pixelWidth);
+        pixelWidth = DisplayTextAndGetWidth(gText_RelicVase, pixelWidth);
     }
 
     if (CheckBagHasItem(ITEM_RELIC_CROWN, 1)) {
         ++numChoices;
-        CopyItemName(ITEM_RELIC_CROWN, gStringVar3);
-        pixelWidth = DisplayTextAndGetWidth(gStringVar3, pixelWidth);
+        pixelWidth = DisplayTextAndGetWidth(gText_RelicCrown, pixelWidth);
     }
 
     if (CheckBagHasItem(ITEM_RELIC_STATUE, 1)) {
         ++numChoices;
-        CopyItemName(ITEM_RELIC_STATUE, gStringVar3);
-        pixelWidth = DisplayTextAndGetWidth(gStringVar3, pixelWidth);
+        pixelWidth = DisplayTextAndGetWidth(gText_RelicStatue, pixelWidth);
     }
 
     if (CheckBagHasItem(ITEM_RELIC_COPPER, 10)) {
         ++numChoices;
-        CopyItemName(ITEM_RELIC_COPPER, gStringVar3);
-        pixelWidth = DisplayTextAndGetWidth(gStringVar3, pixelWidth);
+        pixelWidth = DisplayTextAndGetWidth(gText_RelicCopper, pixelWidth);
     }
 
     if (CheckBagHasItem(ITEM_RELIC_SILVER, 10)) {
         ++numChoices;
-        CopyItemName(ITEM_RELIC_SILVER, gStringVar3);
-        pixelWidth = DisplayTextAndGetWidth(gStringVar3, pixelWidth);
+        pixelWidth = DisplayTextAndGetWidth(gText_RelicSilver, pixelWidth);
     }
 
     width = ConvertPixelWidthToTileWidth(pixelWidth);
@@ -528,38 +529,32 @@ static void CreateRelicExchangeMultichoice(void)
     SetStandardWindowBorderStyle(windowId, FALSE);
 
     if (CheckBagHasItem(ITEM_RELIC_COPPER, 10)) {
-        CopyItemName(ITEM_RELIC_COPPER, gStringVar3);
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar3, x, y, TEXT_SKIP_DRAW, NULL);
-        y += 16;
-    }
-
-    if (CheckBagHasItem(ITEM_RELIC_SILVER, 10)) {
-        CopyItemName(ITEM_RELIC_SILVER, gStringVar3);
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar3, x, y, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_RelicCopper, x, y, TEXT_SKIP_DRAW, NULL);
         y += 16;
     }
 
     if (CheckBagHasItem(ITEM_RELIC_BAND, 1)) {
-        CopyItemName(ITEM_RELIC_BAND, gStringVar3);
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar3, x, y, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_RelicBand, x, y, TEXT_SKIP_DRAW, NULL);
         y += 16;
     }
 
     if (CheckBagHasItem(ITEM_RELIC_VASE, 1)) {
-        CopyItemName(ITEM_RELIC_VASE, gStringVar3);
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar3, x, y, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_RelicVase, x, y, TEXT_SKIP_DRAW, NULL);
+        y += 16;
+    }
+
+    if (CheckBagHasItem(ITEM_RELIC_SILVER, 10)) {
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_RelicSilver, x, y, TEXT_SKIP_DRAW, NULL);
         y += 16;
     }
 
     if (CheckBagHasItem(ITEM_RELIC_STATUE, 1)) {
-        CopyItemName(ITEM_RELIC_STATUE, gStringVar3);
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar3, x, y, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_RelicStatue, x, y, TEXT_SKIP_DRAW, NULL);
         y += 16;
     }
 
     if (CheckBagHasItem(ITEM_RELIC_CROWN, 1)) {
-        CopyItemName(ITEM_RELIC_CROWN, gStringVar3);
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar3, x, y, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_RelicCrown, x, y, TEXT_SKIP_DRAW, NULL);
         y += 16;
     }
 

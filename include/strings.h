@@ -3126,5 +3126,11 @@ extern const u8 gText_AuspiciousArmor[];
 extern const u8 gText_MaliciousArmor[];
 extern const u8 gText_RustedShield[];
 extern const u8 gText_RustedSword[];
+extern const u8 gText_RelicCopper[];
+extern const u8 gText_RelicBand[];
+extern const u8 gText_RelicVase[];
+extern const u8 gText_RelicSilver[];
+extern const u8 gText_RelicStatue[];
+extern const u8 gText_RelicCrown[];
 
 #endif // GUARD_STRINGS_H
