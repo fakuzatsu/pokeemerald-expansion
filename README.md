@@ -1,11 +1,15 @@
 # Verdant-Emerald Base
 *The Pokeemerald base with Verdant Emerald changes*
 
-A fork of Pokeemerald that breathes extra life into Pokemon Emerald. With new ways to adventure through the game: alternate paths on existing routes, brand new areas with the same Hoenn feel, and new Pokemon encounters never before seen in the region.
+A fork of pret/pokeemerald that breathes extra life into Pokemon Emerald. With new ways to adventure through the game: alternate paths on existing routes, brand new areas with the same Hoenn feel, and newer Pokemon never before seen in the region, including events for all new legendaries.
 
-## Installation
+### Installation
+## Patch File
+Visit the [Releases page](https://github.com/fakuzatsu/verdant-emerald/releases/) to get the most recent patch file. You can then patch your Pokemon Emerald ROM with our patch file using [ROM Patcher JS](https://www.marcrobledo.com/RomPatcher.js/) or similar.
 
-Follow the steps in [INSTALL.md](https://github.com/fakuzatsu/verdant-emerald/blob/master/INSTALL.md)
+## Manual Build
+
+Follow the steps in [INSTALL.md](https://github.com/fakuzatsu/verdant-emerald/blob/master/INSTALL.md) to setup the source code and build the ROM manually. This will allow you to change [configurations](https://github.com/fakuzatsu/verdant-emerald#features-of-pokemmerald-expansion_) in the code.
 
 ## Contributing to Verdant-Emerald
 
@@ -44,8 +48,8 @@ Verdant-Emerald features the Pokeemerald-Expansion, which contains configurable 
         - Setting Terrains.
     - Mid-turn speed recalculation.
     - Quick Poké Ball selection in Wild Battles
-        - Press `R` to use last selected Poké Ball.
-        - Hold `R` to change selection with the D-Pad.
+        - Press `L` to use last selected Poké Ball.
+        - Hold `L` to change selection with the D-Pad.
     - Run option shortcut
     - Faster battle intro
         - Message and animation/cry happens at the same time.
