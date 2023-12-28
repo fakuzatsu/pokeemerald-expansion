@@ -14462,6 +14462,168 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .metronomeBanned = TRUE,
     },
 
+    [MOVE_HIDDEN_POWER_GROUND] =
+    {
+        #if B_HIDDEN_POWER_DMG >= GEN_6
+            .power = 60,
+        #else
+            .power = 1,
+        #endif
+        .effect = EFFECT_HIT,
+        .type = TYPE_GROUND,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_HIDDEN_POWER_GRASS] =
+    {
+        #if B_HIDDEN_POWER_DMG >= GEN_6
+            .power = 60,
+        #else
+            .power = 1,
+        #endif
+        .effect = EFFECT_HIT,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_HIDDEN_POWER_FIGHTING] =
+    {
+        #if B_HIDDEN_POWER_DMG >= GEN_6
+            .power = 60,
+        #else
+            .power = 1,
+        #endif
+        .effect = EFFECT_HIT,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_HIDDEN_POWER_FIRE] =
+    {
+        #if B_HIDDEN_POWER_DMG >= GEN_6
+            .power = 60,
+        #else
+            .power = 1,
+        #endif
+        .effect = EFFECT_HIT,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_HIDDEN_POWER_ROCK] =
+    {
+        #if B_HIDDEN_POWER_DMG >= GEN_6
+            .power = 60,
+        #else
+            .power = 1,
+        #endif
+        .effect = EFFECT_HIT,
+        .type = TYPE_ROCK,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_HIDDEN_POWER_ELECTRIC] =
+    {
+        #if B_HIDDEN_POWER_DMG >= GEN_6
+            .power = 60,
+        #else
+            .power = 1,
+        #endif
+        .effect = EFFECT_HIT,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_HIDDEN_POWER_ICE] =
+    {
+        #if B_HIDDEN_POWER_DMG >= GEN_6
+            .power = 60,
+        #else
+            .power = 1,
+        #endif
+        .effect = EFFECT_HIT,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_HIDDEN_POWER_WATER] =
+    {
+        #if B_HIDDEN_POWER_DMG >= GEN_6
+            .power = 60,
+        #else
+            .power = 1,
+        #endif
+        .effect = EFFECT_HIT,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_HIDDEN_POWER_FLYING] =
+    {
+        #if B_HIDDEN_POWER_DMG >= GEN_6
+            .power = 60,
+        #else
+            .power = 1,
+        #endif
+        .effect = EFFECT_HIT,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
@@ -15656,168 +15818,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .split = SPLIT_PHYSICAL,
         .argument = MAX_EFFECT_BYPASS_PROTECT, //EFFECT TODO
-    },
-
-    [MOVE_HIDDEN_POWER_GROUND] =
-    {
-        #if B_HIDDEN_POWER_DMG >= GEN_6
-            .power = 60,
-        #else
-            .power = 1,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HIDDEN_POWER_GRASS] =
-    {
-        #if B_HIDDEN_POWER_DMG >= GEN_6
-            .power = 60,
-        #else
-            .power = 1,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HIDDEN_POWER_FIGHTING] =
-    {
-        #if B_HIDDEN_POWER_DMG >= GEN_6
-            .power = 60,
-        #else
-            .power = 1,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HIDDEN_POWER_FIRE] =
-    {
-        #if B_HIDDEN_POWER_DMG >= GEN_6
-            .power = 60,
-        #else
-            .power = 1,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HIDDEN_POWER_ROCK] =
-    {
-        #if B_HIDDEN_POWER_DMG >= GEN_6
-            .power = 60,
-        #else
-            .power = 1,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_ROCK,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HIDDEN_POWER_ELECTRIC] =
-    {
-        #if B_HIDDEN_POWER_DMG >= GEN_6
-            .power = 60,
-        #else
-            .power = 1,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HIDDEN_POWER_ICE] =
-    {
-        #if B_HIDDEN_POWER_DMG >= GEN_6
-            .power = 60,
-        #else
-            .power = 1,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HIDDEN_POWER_WATER] =
-    {
-        #if B_HIDDEN_POWER_DMG >= GEN_6
-            .power = 60,
-        #else
-            .power = 1,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HIDDEN_POWER_FLYING] =
-    {
-        #if B_HIDDEN_POWER_DMG >= GEN_6
-            .power = 60,
-        #else
-            .power = 1,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
     },
 
 };

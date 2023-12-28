@@ -761,7 +761,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     }
     else // Player is the OT
     {
-        u32 i;
+        //u32 i;
 
         value = gSaveBlock2Ptr->playerTrainerId[0]
                   | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
@@ -4822,7 +4822,7 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
 
 u8 CanLearnTeachableMove(u16 species, u16 move)
 {
-    const u8 *learnableMoves;
+    //const u8 *learnableMoves;
     if (species == SPECIES_EGG)
     {
         return FALSE;
@@ -4918,24 +4918,24 @@ u8 GetMoveTutorMoves(struct Pokemon *mon, u16 *moves)
     u16 learnedMoves[4];
     u8 numMoves = 0;
     u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
-    int i, j, k;
+    int i, j;
 
     for (i = 0; i < MAX_MON_MOVES; i++)
         learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
 
     for (i = 0; i < 185; i++)
     {
-        if (gTeachableLearnsets[species][i] == MOVE_UNAVAILABLE)
+        if (gSpeciesInfo[species].teachableLearnset[i] == MOVE_UNAVAILABLE)
             break;
         
-        for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != gTeachableLearnsets[species][i]; j++)
+        for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != gSpeciesInfo[species].teachableLearnset[i]; j++)
         ;
 
-        if(IsMoveTmHm(gTeachableLearnsets[species][i]))
+        if(IsMoveTmHm(gSpeciesInfo[species].teachableLearnset[i]))
             continue;
         
         if (j == MAX_MON_MOVES) {
-            moves[numMoves++] = gTeachableLearnsets[species][i];
+            moves[numMoves++] = gSpeciesInfo[species].teachableLearnset[i];
         }
     }
 
@@ -5001,22 +5001,22 @@ u8 GetNumberOfRelearnableMoves(struct Pokemon *mon)
 u8 CanLearnTutorMoves(struct Pokemon *mon)
 {
     u16 learnedMoves[4];
-    u8 numMoves = 0;
+    //u8 numMoves = 0;
     u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
-    int i, j, k;
+    int i, j;
 
     for (i = 0; i < MAX_MON_MOVES; i++)
         learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
 
     for (i = 0; i < 40; i++)
     {
-        if (gTeachableLearnsets[species][i] == MOVE_UNAVAILABLE)
+        if (gSpeciesInfo[species].teachableLearnset[i] == MOVE_UNAVAILABLE)
             break;
         
-        for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != gTeachableLearnsets[species][i]; j++)
+        for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != gSpeciesInfo[species].teachableLearnset[i]; j++)
             ;
 
-        if(IsMoveTmHm(gTeachableLearnsets[species][i]))
+        if(IsMoveTmHm(gSpeciesInfo[species].teachableLearnset[i]))
             continue;
         
         if (j == MAX_MON_MOVES) {

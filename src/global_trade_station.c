@@ -634,7 +634,7 @@ static int DoPokedexSearchGTS(u8 abcGroup)
             u8 firstLetter;
 
             species = NationalPokedexNumToSpecies(sGTSPokedexView->pokedexList[i].dexNum);
-            firstLetter = gSpeciesNames[species][0];
+            firstLetter = GetSpeciesName(species)[0];
             if (LETTER_IN_RANGE_UPPER(firstLetter, abcGroup) || LETTER_IN_RANGE_LOWER(firstLetter, abcGroup))
             {
                 sGTSPokedexView->pokedexList[resultsCount] = sGTSPokedexView->pokedexList[i];
@@ -790,7 +790,7 @@ static u8 CreateMonNameGTS(u16 num, u8 left, u8 top)
     num = NationalPokedexNumToSpecies(num);
     
     if (num)
-        str = gSpeciesNames[num];
+        str = GetSpeciesName(num);
     else
         str = sText_TenDashes;
     PrintMonDexNumAndNameGTS(sGTSPokedexView->windowid, FONT_NORMAL, str, left, top);
@@ -2261,7 +2261,7 @@ static void Task_GlobalTradeStation(u8 taskId)
         {
             //GetMonData(mon, MON_DATA_NICKNAME, name);
             StringCopy_Nickname(gStringVar1, gPlayerParty[sGTSPokedexView->offerPokemon].box.nickname);
-            StringCopy(gStringVar2, gSpeciesNames[sGTSPokedexView->pokedexList[sGTSPokedexView->selectedPokemon].dexNum]);
+            StringCopy(gStringVar2, GetSpeciesName(sGTSPokedexView->pokedexList[sGTSPokedexView->selectedPokemon].dexNum));
             sGTSPokedexView->cursorRelPos = 0;
             sGTSPokedexView->atTop = 1;
             sGTSPokedexView->atBottom = 0;
@@ -2396,7 +2396,7 @@ static void Task_GlobalTradeStation(u8 taskId)
         {
             //GetMonData(mon, MON_DATA_NICKNAME, name);
             StringCopy_Nickname(gStringVar1, gPlayerParty[sGTSPokedexView->offerPokemon].box.nickname);
-            StringCopy(gStringVar2, gSpeciesNames[sGTSPokedexView->pokedexList[sGTSPokedexView->selectedPokemon].dexNum]);
+            StringCopy(gStringVar2, GetSpeciesName(sGTSPokedexView->pokedexList[sGTSPokedexView->selectedPokemon].dexNum));
             sGTSPokedexView->cursorRelPos = 0;
             sGTSPokedexView->atTop = 1;
             sGTSPokedexView->atBottom = 0;

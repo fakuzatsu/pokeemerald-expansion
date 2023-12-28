@@ -3233,19 +3233,19 @@ static void Task_LoadBagSortOptions(u8 taskId)
 }
 
 #define tSortType data[2]
-static void ItemMenu_SortByName(u8 taskId)
+static void UNUSED ItemMenu_SortByName(u8 taskId)
 {
     gTasks[taskId].tSortType = SORT_ALPHABETICALLY;
     StringCopy(gStringVar1, sSortTypeStrings[SORT_ALPHABETICALLY]);
     gTasks[taskId].func = SortBagItems;
 }
-static void ItemMenu_SortByType(u8 taskId)
+static void UNUSED ItemMenu_SortByType(u8 taskId)
 {
     gTasks[taskId].tSortType = SORT_BY_TYPE;
     StringCopy(gStringVar1, sSortTypeStrings[SORT_BY_TYPE]);
     gTasks[taskId].func = SortBagItems;
 }
-static void ItemMenu_SortByAmount(u8 taskId)
+static void UNUSED ItemMenu_SortByAmount(u8 taskId)
 {
     gTasks[taskId].tSortType = SORT_BY_AMOUNT; //greatest->least
     StringCopy(gStringVar1, sSortTypeStrings[SORT_BY_AMOUNT]);
@@ -3274,7 +3274,7 @@ static void SortBagItems(u8 taskId)
 
 static void Task_SortFinish(u8 taskId)
 {
-    s16* data = gTasks[taskId].data;
+    //s16* data = gTasks[taskId].data;
 
     if (gMain.newKeys & (A_BUTTON | B_BUTTON))
     {
@@ -3287,7 +3287,7 @@ static void SortItemsInBag(u8 pocket, u8 type)
 {
     struct ItemSlot* itemMem;
     u16 itemAmount;
-    s8 (*func)(struct ItemSlot*, struct ItemSlot*);
+    //s8 (*func)(struct ItemSlot*, struct ItemSlot*);
 
     switch (pocket)
     {

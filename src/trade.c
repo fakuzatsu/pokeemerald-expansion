@@ -4398,7 +4398,7 @@ static bool8 AnimateDepositSequenceWireless(void)
     case STATE_START:
         gSprites[sTradeAnim->monSpriteIds[TRADE_PLAYER]].invisible = FALSE;
         gSprites[sTradeAnim->monSpriteIds[TRADE_PLAYER]].x2 = -180;
-        gSprites[sTradeAnim->monSpriteIds[TRADE_PLAYER]].y2 = gMonFrontPicCoords[sTradeAnim->monSpecies[TRADE_PLAYER]].y_offset;
+        gSprites[sTradeAnim->monSpriteIds[TRADE_PLAYER]].y2 = gSpeciesInfo[sTradeAnim->monSpecies[TRADE_PLAYER]].frontPicYOffset;
         VarSet(VAR_DEPOSIT_SPECIES,sTradeAnim->monSpecies[TRADE_PLAYER]);
         sTradeAnim->state++;
         sTradeAnim->cachedMapMusic = GetCurrentMapMusic();

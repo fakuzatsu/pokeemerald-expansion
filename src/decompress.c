@@ -98,7 +98,8 @@ void LoadSpecialPokePic(void *dest, s32 species, u32 personality, bool8 isFrontP
     else if (species == SPECIES_ARBOK && isFrontPic)
     {
         // Arbok from Kanto are different to Arbok from Hoenn.
-        LZ77UnCompWram(gMonFrontPicTable[GetArbokVariant(metGame)].data, dest);
+        //LZ77UnCompWram(gMonFrontPicTable[GetArbokVariant(metGame)].data, dest);
+        LZ77UnCompWram(gSpeciesInfo[GetArbokVariant(metGame)].frontPic, dest);
     }
 
     if (isFrontPic)

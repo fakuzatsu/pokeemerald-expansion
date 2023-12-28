@@ -4255,13 +4255,13 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
     const u8 *description;
     u8 digitCount = (NATIONAL_DEX_COUNT > 999 && IsNationalPokedexEnabled()) ? 4 : 3; 
 
-    natNum = NationalPokedexNumToSpecies(num);
-    natNum = SpeciesToNationalPokedexNum(GET_BASE_SPECIES_ID(natNum));
+    species = NationalPokedexNumToSpecies(num);
+    species = SpeciesToNationalPokedexNum(GET_BASE_SPECIES_ID(species));
 
     if (newEntry)
         PrintInfoScreenText(gText_PokedexRegistration, GetStringCenterAlignXOffset(FONT_NORMAL, gText_PokedexRegistration, DISPLAY_WIDTH), 0);
     if (value == 0)
-        value = NationalToHoennOrder(natNum);
+        value = NationalToHoennOrder(species);
     else
         value = num;
 

@@ -26,7 +26,7 @@
 #include "constants/layouts.h"
 #include "constants/weather.h"
 
-extern const u8 EventScript_SprayWoreOff[];
+extern const u8 EventScript_RepelWoreOff[];
 
 #define MAX_ENCOUNTER_RATE 2880
 
@@ -1073,37 +1073,24 @@ u16 GetLocalWaterMon(void)
 
 bool8 UpdateRepelCounter(void)
 {
-    u16 repelLureVar = VarGet(VAR_REPEL_STEP_COUNT);
-    u16 steps = REPEL_LURE_STEPS(repelLureVar);
-    bool32 isLure = IS_LAST_USED_LURE(repelLureVar);
+    u16 steps;
 
     if (InBattlePike() || InBattlePyramid())
         return FALSE;
     if (InUnionRoom() == TRUE)
         return FALSE;
 
+    steps = VarGet(VAR_REPEL_STEP_COUNT);
+
     if (steps != 0)
     {
         steps--;
-        if (!isLure)
+        VarSet(VAR_REPEL_STEP_COUNT, steps);
+        if (steps == 0)
         {
-            VarSet(VAR_REPEL_STEP_COUNT, steps);
-            if (steps == 0)
-            {
-                ScriptContext_SetupScript(EventScript_SprayWoreOff);
-                return TRUE;
-            }
+            ScriptContext_SetupScript(EventScript_RepelWoreOff);
+            return TRUE;
         }
-        else
-        {
-            VarSet(VAR_REPEL_STEP_COUNT, steps | REPEL_LURE_MASK);
-            if (steps == 0)
-            {
-                ScriptContext_SetupScript(EventScript_SprayWoreOff);
-                return TRUE;
-            }
-        }
-
     }
     return FALSE;
 }

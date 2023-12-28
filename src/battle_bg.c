@@ -1381,9 +1381,17 @@ static u8 GetBattleTerrainOverride(void)
     {
         return BATTLE_TERRAIN_LINK;
     }
-    else if (gBattleTypeFlags & BATTLE_TYPE_RAYQUAZA)
+    else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
-        return BATTLE_TERRAIN_RAYQUAZA;
+        switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+        {
+        case SPECIES_GROUDON:
+            return BATTLE_TERRAIN_MAGMA;
+        case SPECIES_KYOGRE:
+            return BATTLE_TERRAIN_AQUA;
+        case SPECIES_RAYQUAZA:
+            return BATTLE_TERRAIN_RAYQUAZA;
+        }
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {

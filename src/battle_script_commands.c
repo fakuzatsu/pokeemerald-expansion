@@ -1094,6 +1094,37 @@ static const u16 sRarePickupItems[] =
     ITEM_PRISM_SCALE,
 };
 
+#define _ 0
+
+static const struct PickupItem sPickupTable[] =
+{//   Item                      1+  11+  21+  31+  41+  51+  61+  71+  81+  91+   Levels
+    { ITEM_POTION,          {  30,   _,   _,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_ANTIDOTE,        {  10,  30,   _,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_SUPER_POTION,    {  10,  10,  30,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_GREAT_BALL,      {  10,  10,  10,  30,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_REPEL,           {  10,  10,  10,  30,  30,   _,   _,   _,   _,   _, } },
+    { ITEM_ESCAPE_ROPE,     {  10,  10,  10,  10,  30,  30,   _,   _,   _,   _, } },
+    { ITEM_FULL_HEAL,       {  10,  10,  10,  10,  10,  10,  30,   _,   _,   _, } },
+    { ITEM_HYPER_POTION,    {   5,  10,  10,  10,  10,  10,  10,  30,   _,   _, } },
+    { ITEM_ULTRA_BALL,      {   4,   4,  10,  10,  10,  10,  10,  10,  30,   _, } },
+    { ITEM_REVIVE,          {   _,   4,   4,  10,  10,  10,  10,  10,  10,  30, } },
+    { ITEM_RARE_CANDY,      {   _,   _,   4,   4,  10,  10,  10,  10,  10,  10, } },
+    { ITEM_SUN_STONE,       {   _,   _,   _,   4,   4,  10,  10,  10,  10,  10, } },
+    { ITEM_MOON_STONE,      {   _,   _,   _,   _,   4,   4,  10,  10,  10,  10, } },
+    { ITEM_PRISM_SCALE,     {   _,   _,   _,   _,   _,   4,   4,  10,  10,  10, } },
+    { ITEM_FULL_RESTORE,    {   _,   _,   1,   1,   _,   _,   4,   4,  10,  10, } },
+    { ITEM_MAX_REVIVE,      {   _,   _,   _,   _,   _,   _,   _,   4,   4,  10, } },
+    { ITEM_PP_UP,           {   _,   _,   _,   _,   _,   _,   _,   _,   4,   4, } },
+    { ITEM_MAX_ELIXIR,      {   _,   _,   _,   _,   _,   _,   _,   _,   _,   4, } },
+    { ITEM_NUGGET,          {   1,   1,   _,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_KINGS_ROCK,      {   _,   1,   1,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_ETHER,           {   _,   _,   _,   1,   1,   _,   _,   _,   _,   _, } },
+    { ITEM_IRON_BALL,       {   _,   _,   _,   _,   1,   1,   _,   _,   _,   _, } },
+    { ITEM_DESTINY_KNOT,    {   _,   _,   _,   _,   _,   1,   1,   1,   1,   1, } },
+    { ITEM_ELIXER,          {   _,   _,   _,   _,   _,   _,   1,   1,   _,   _, } },
+    { ITEM_LEFTOVERS,       {   _,   _,   _,   _,   _,   _,   _,   _,   1,   1, } },
+};
+
 #undef _
 
 static const u8 sTerrainToType[BATTLE_TERRAIN_COUNT] =

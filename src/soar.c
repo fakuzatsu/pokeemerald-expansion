@@ -52,15 +52,15 @@
 #define MAX_Y Q_8_7(20*8, 0)
 
 static void CB2_LoadSoarGraphics(void);
-static void DoSoarFieldEffectsCB2(void);
+//static void DoSoarFieldEffectsCB2(void);
 static void SoarVBlankCallback(void);
 static void SoarHBlankCallback(void);
 static void CB2_HandleInput(void);
 static void PromptLandCB2(void);
 static void ProcessYesNoCB2(void);
 static void WarpCB2(void);
-static void FadeOutVBlankCallback(void);
-static void CB2_FadeOut(void);
+//static void FadeOutVBlankCallback(void);
+//static void CB2_FadeOut(void);
 static u8 windid;
 static u8 windid2;
 
@@ -178,7 +178,7 @@ static u16 sPrevMapSection;
 static u16 sStartMapSection;
 
 static u8 sEonSpriteId;
-static u8 sShadowSpriteId;
+//static u8 sShadowSpriteId;
 
 static u8 sMirageSpots[3];
 
@@ -405,7 +405,7 @@ static void SoarHBlankCallback(void)
 	const unsigned int bldcntFog = BLDCNT_EFFECT_LIGHTEN | BLDCNT_TGT1_BD | BLDCNT_TGT1_BG2;
 	const unsigned int bldcntDarkFog = BLDCNT_EFFECT_DARKEN | BLDCNT_TGT1_BD | BLDCNT_TGT1_BG2;
 
-	const unsigned int bldcntShadow = BLDCNT_EFFECT_DARKEN | BLDCNT_TGT1_BG2;
+	//const unsigned int bldcntShadow = BLDCNT_EFFECT_DARKEN | BLDCNT_TGT1_BG2;
 	int sinYaw = gSineTable[sPlayerYaw];
 	int cosYaw = gSineTable[sPlayerYaw + 64];
 
@@ -712,7 +712,7 @@ static void WarpCB2(void)
 		Fldeff_FlyLand();
 	}
 }
-
+/*
 static void CB2_FadeOut(void)
 {
 	if (!gPaletteFade.active)
@@ -725,4 +725,4 @@ static void CB2_FadeOut(void)
 		SetHBlankCallback(NULL);
 		SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
 	}
-}
+}*/

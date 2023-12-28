@@ -4570,7 +4570,7 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
         else if (trainerId == TRAINER_FRONTIER_BRAIN)
             textPrinter.currentChar = GetSpeciesName(DOME_MONS[trainerTourneyId][i]);
         else if (trainerId >= FIRST_PWT_TRAINER && trainerId <= LAST_PWT_TRAINER)
-            textPrinter.currentChar = gSpeciesNames[0];//gSpeciesNames[0];
+            textPrinter.currentChar = GetSpeciesName(0);//gSpeciesNames[0];
         else
             textPrinter.currentChar = GetSpeciesName(gFacilityTrainerMons[DOME_MONS[trainerTourneyId][i]].species);
 

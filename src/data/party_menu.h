@@ -1266,7 +1266,7 @@ static const u16 sTMHMMoves[] =
     [ITEM_HM05 - ITEM_TM01] = MOVE_WATERFALL,
     [ITEM_HM06 - ITEM_TM01] = MOVE_ROCK_SMASH,
     [ITEM_HM07 - ITEM_TM01] = MOVE_DIVE,
-}
+};
 
 static const u16 sRotomFormChangeMoves[5] =
 {

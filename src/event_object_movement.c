@@ -1633,7 +1633,7 @@ u8 CreateObjectGraphicsSprite(u16 graphicsId, void (*callback)(struct Sprite *),
     bool8 shiny;
     u8 paletteNum;
 
-    spriteTemplate = malloc(sizeof(struct SpriteTemplate));
+    spriteTemplate = Alloc(sizeof(struct SpriteTemplate));
     if (graphicsId == OBJ_EVENT_GFX_OW_MON && GetFollowerInfo(&species, &form, &shiny)) {
         const struct ObjectEventGraphicsInfo *graphicsInfo = SpeciesToGraphicsInfo(species, form);
         spriteTemplate->tileTag = graphicsInfo->tileTag;
@@ -1648,7 +1648,7 @@ u8 CreateObjectGraphicsSprite(u16 graphicsId, void (*callback)(struct Sprite *),
         CopyObjectGraphicsInfoToSpriteTemplate(graphicsId, callback, spriteTemplate, &subspriteTables);
 
     if (spriteTemplate->paletteTag == OBJ_EVENT_PAL_TAG_DYNAMIC) {
-        const struct CompressedSpritePalette *spritePalette = &(shiny ? gMonShinyPaletteTable : gMonPaletteTable)[species];
+        const struct CompressedSpritePalette *spritePalette = &(shiny ? gFollowMonShinyPaletteTable : gFollowMonPaletteTable)[species];
         paletteNum = LoadDynamicFollowerPalette(species, form, shiny);
         spriteTemplate->paletteTag = spritePalette->tag;
     } else if (spriteTemplate->paletteTag != TAG_NONE)
@@ -2658,7 +2658,7 @@ static void UNUSED LoadObjectEventPaletteSet(u16 *paletteTags)
     u8 i;
 
     for (i = 0; paletteTags[i] != OBJ_EVENT_PAL_TAG_NONE; i++)
-        LoadObjectEventPalette(paletteTags[i]);
+        LoadObjectEventPalette(paletteTags[i], FALSE);
 }
 
 static u8 LoadSpritePaletteIfTagExists(const struct SpritePalette *spritePalette, bool8 shouldTint)

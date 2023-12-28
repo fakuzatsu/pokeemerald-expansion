@@ -15,7 +15,7 @@ extern EWRAM_DATA u16 gPlttBufferPreDN[];
 extern EWRAM_DATA struct PaletteOverride *gPaletteOverrides[];
 
 u8 GetCurrentTimeOfDay(void);
-u8 GetTimeOfDay(s8 hours);
+//u8 GetTimeOfDay(s8 hours);
 void LoadCompressedPaletteDayNight(const void *src, u16 offset, u16 size);
 void LoadPaletteDayNight(const void *src, u16 offset, u16 size);
 void CheckClockForImmediateTimeEvents(void);
