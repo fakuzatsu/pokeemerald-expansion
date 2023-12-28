@@ -3,11 +3,11 @@
 
 A fork of pret/pokeemerald that breathes extra life into Pokemon Emerald. With new ways to adventure through the game: alternate paths on existing routes, brand new areas with the same Hoenn feel, and newer Pokemon never before seen in the region, including events for all new legendaries.
 
-### Installation
-## Patch File
+## Installation
+### Patch File
 Visit the [Releases page](https://github.com/fakuzatsu/verdant-emerald/releases/) to get the most recent patch file. You can then patch your Pokemon Emerald ROM with our patch file using [ROM Patcher JS](https://www.marcrobledo.com/RomPatcher.js/) or similar.
 
-## Manual Build
+### Manual Build
 
 Follow the steps in [INSTALL.md](https://github.com/fakuzatsu/verdant-emerald/blob/master/INSTALL.md) to setup the source code and build the ROM manually. This will allow you to change [configurations](https://github.com/fakuzatsu/verdant-emerald#features-of-pokemmerald-expansion_) in the code.
 
