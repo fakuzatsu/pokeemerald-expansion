@@ -23406,6 +23406,184 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_GROTTO20",
+          "base_label": "gGrotto200",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 31,
+                "max_level": 33,
+                "species": "SPECIES_MUNNA"
+              },
+              {
+                "min_level": 32,
+                "max_level": 34,
+                "species": "SPECIES_HONEDGE"
+              },
+              {
+                "min_level": 31,
+                "max_level": 32,
+                "species": "SPECIES_FARFETCHD_GALARIAN"
+              },
+              {
+                "min_level": 32,
+                "max_level": 34,
+                "species": "SPECIES_RUNERIGUS"
+              },
+              {
+                "min_level": 31,
+                "max_level": 33,
+                "species": "SPECIES_HATENNA"
+              },
+              {
+                "min_level": 31,
+                "max_level": 32,
+                "species": "SPECIES_LIEPARD"
+              },
+              {
+                "min_level": 31,
+                "max_level": 33,
+                "species": "SPECIES_HATENNA"
+              },
+              {
+                "min_level": 31,
+                "max_level": 32,
+                "species": "SPECIES_YAMASK_GALARIAN"
+              },
+              {
+                "min_level": 32,
+                "max_level": 33,
+                "species": "SPECIES_FARFETCHD_GALARIAN"
+              },
+              {
+                "min_level": 32,
+                "max_level": 33,
+                "species": "SPECIES_LIEPARD"
+              },
+              {
+                "min_level": 33,
+                "max_level": 33,
+                "species": "SPECIES_MUSHARNA"
+              },
+              {
+                "min_level": 34,
+                "max_level": 34,
+                "species": "SPECIES_MUSHARNA"
+              }
+            ]
+          },
+          "hidden_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_GROTTO25",
+          "base_label": "gGrotto250",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_DOUBLADE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_WYRDEER"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_STONJOURNER"
+              },
+              {
+                "min_level": 42,
+                "max_level": 43,
+                "species": "SPECIES_GRIMMSNARL"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 42,
+                "max_level": 43,
+                "species": "SPECIES_KLEAVOR"
+              },
+              {
+                "min_level": 41,
+                "max_level": 42,
+                "species": "SPECIES_MORGREM"
+              },
+              {
+                "min_level": 41,
+                "max_level": 42,
+                "species": "SPECIES_SIRFETCHD"
+              },
+              {
+                "min_level": 39,
+                "max_level": 40,
+                "species": "SPECIES_HONEDGE"
+              },
+              {
+                "min_level": 43,
+                "max_level": 44,
+                "species": "SPECIES_URSALUNA"
+              },
+              {
+                "min_level": 42,
+                "max_level": 42,
+                "species": "SPECIES_SIRFETCHD"
+              },
+              {
+                "min_level": 43,
+                "max_level": 43,
+                "species": "SPECIES_KLEAVOR"
+              }
+            ]
+          },
+          "hidden_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          }
         }
       ]
     },

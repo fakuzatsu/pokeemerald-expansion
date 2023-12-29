@@ -4880,6 +4880,16 @@
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Grotto30/border.bin",
       "blockdata_filepath": "data/layouts/Grotto30/map.bin"
+    },
+    {
+      "id": "LAYOUT_GROTTO25",
+      "name": "Grotto25_Layout",
+      "width": 22,
+      "height": 19,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/Grotto25/border.bin",
+      "blockdata_filepath": "data/layouts/Grotto25/map.bin"
     }
   ]
 }
