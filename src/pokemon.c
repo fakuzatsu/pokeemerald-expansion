@@ -2334,6 +2334,15 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_OT_ID:
             retVal = boxMon->otId;
             break;
+        case MON_DATA_YEAR_MET:
+            retVal = boxMon->yearMet;
+            break;
+        case MON_DATA_DAY_MET:
+            retVal = boxMon->dayMet;
+            break;
+        case MON_DATA_MONTH_MET:
+            retVal = boxMon->monthMet;
+            break;
         case MON_DATA_NICKNAME:
         {
             if (boxMon->isBadEgg)
