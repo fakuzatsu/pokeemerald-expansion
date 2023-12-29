@@ -78,6 +78,8 @@
 
 # Pokeemerald-Expansion Changelog
 
+## [Version 1.7.1](docs/changelogs/1.7.1.md) - Bugfix Release
+
 ## [Version 1.7.0](docs/changelogs/1.7.0.md) - Feature Release
 
 ## 🌋 *IMPORTANT CHANGES* 🌋
@@ -203,5 +205,3 @@ https://github.com/rh-hideout/pokeemerald-expansion/compare/expansion/1.6.1...ex
 
 * **Roxanne?:** Roxanne uses a different trainer model in the Desert Cavern. Roxanne animations weren't scoped for Verdant 1.0.
 * **Steven is Light:** When moving across the Fortree Bridge, Steven does not trigger the bridge stepback animation or SE.
-* **Mega Ultra Burst:** When Ultra Burst and Mega Evolution are used on the same turn, only the first effect will play out.
-* **Lost Woods:** When entering or exiting a lost Grotto, the player will always emerge on the left tile.
