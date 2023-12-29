@@ -4864,7 +4864,7 @@
     {
       "id": "LAYOUT_GROTTO20",
       "name": "Grotto20_Layout",
-      "width": 25,
+      "width": 24,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Dewford",
