@@ -25,8 +25,8 @@ static void CB2_HandleGivenCode(void);
 static void CB2_HandleGTSCode(void);
 static void MapPostLoadHook_ReturnToCodeActivation(void);
 static void Task_ReturnToCodeActivation(u8 taskId);
-static u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 nature, u8 abilityNum, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny);
-static void ConvertPokemonToString(u16 species, u8 level, u8 nature, u8 shininess, u8 abilitynum, u8 ball, u8 *ivs);
+static u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 nature, u8 abilityNum, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny, u8 gender);
+static void ConvertPokemonToString(u16 species, u8 level, u32 personality, u8 shininess, u8 abilitynum, u8 ball, u8 *ivs);
 static u8 ConvertStringToPokemon(u8 *string);
 
 //--------------------------------------------------
@@ -59,7 +59,7 @@ static void Task_ActivateCode1(u8 taskId)
     u8 evs[NUM_STATS] = {0, 0, 0, 0, 0, 0};
     u8 ivs[NUM_STATS] = {31, 31, 31, 31, 31, 31};
     u16 moves[4] = {MOVE_LIGHT_OF_RUIN, MOVE_MAGICAL_LEAF, MOVE_SAFEGUARD, MOVE_WISH};
-    int sentToPc = ScriptGiveCustomMon(SPECIES_FLOETTE_ETERNAL_FLOWER, 17, ITEM_NONE, ITEM_CHERISH_BALL, 0, 1, evs, ivs, moves, 0);
+    int sentToPc = ScriptGiveCustomMon(SPECIES_FLOETTE_ETERNAL_FLOWER, 17, ITEM_NONE, ITEM_CHERISH_BALL, 0, 1, evs, ivs, moves, 0, MON_FEMALE);
     StringCopy(gStringVar2, GetSpeciesName(SPECIES_FLOETTE_ETERNAL_FLOWER));
 
     if (sentToPc == MON_GIVEN_TO_PARTY) {
@@ -154,7 +154,7 @@ void PutPokemonOnGTS(void)
 {
     u16 species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
     u8 level = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_LEVEL);
-    u8 nature = GetNatureFromPersonality(GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_PERSONALITY));
+    u32 personality = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_PERSONALITY);
     u8 shininess = 0;
     u8 abilitynum = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ABILITY_NUM);
     u8 ball = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_POKEBALL);
@@ -169,7 +169,7 @@ void PutPokemonOnGTS(void)
     ZeroMonData(&gPlayerParty[gSpecialVar_0x8004]);
     CompactPartySlots();
     CompactPartySprites();
-    ConvertPokemonToString(species, level, nature, shininess, abilitynum, ball, ivs);
+    ConvertPokemonToString(species, level, personality, shininess, abilitynum, ball, ivs);
 
     StringCopy(gSaveBlock1Ptr->waldaPhrase.text, gStringVar1);
     gSaveBlock1Ptr->waldaPhrase.colors[0] = species;
@@ -210,7 +210,7 @@ void GetPokemonFromStringVarOne(void)
 //--------------------------------------------------
 
 //Give Custom Mon by Ghoulslash: https://github.com/ghoulslash/pokeemerald/tree/custom-givemon
-static u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 nature, u8 abilityNum, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny)
+static u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 nature, u8 abilityNum, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny, u8 gender)
 {
     u16 nationalDexNum;
     int sentToPc;
@@ -235,7 +235,8 @@ static u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 natur
         {
             personality = Random32();
             personality = ((((Random() % 8) ^ (HIHALF(otid) ^ LOHALF(otid))) ^ LOHALF(personality)) << 16) | LOHALF(personality);
-        } while (nature != GetNatureFromPersonality(personality));
+        } while (nature != GetNatureFromPersonality(personality)
+            || gender != GetGenderFromSpeciesAndPersonality(species, personality));
 
         CreateMon(&mon, species, level, 32, 1, personality, OT_ID_PRESET, otid);
     }
@@ -329,19 +330,21 @@ static u8 ConvertStringToPokemon(u8 *string) {
     u8 i;
     int sentToPc;
     u8 charIndex = 0;
-    u8 segments[13];
+    u8 segments[14];
     u16 species;
     u8 level;
     u8 nature;
     u8 shininess;
     u8 abilitynum;
     u8 ball;
+    u8 gender;
+    u8 genderID;
     u8 ivs[NUM_STATS] = {0, 0, 0, 0, 0, 0};
     u8 evs[NUM_STATS] = {0, 0, 0, 0, 0, 0};
-    const u8 customCharMap[] = _("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
-    const u8 segmentIndices[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+    const u8 customCharMap[] = _("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?");
+    const u8 segmentIndices[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
-    for (i = 0; i < 13; ++i) {
+    for (i = 0; i < 14; ++i) {
         while (customCharMap[charIndex] != string[segmentIndices[i]]) {
             ++charIndex;
         }
@@ -364,8 +367,22 @@ static u8 ConvertStringToPokemon(u8 *string) {
     shininess = segments[10] % 2;
     abilitynum = segments[11] % 3;
     ball = segments[12] % (LAST_BALL + 1);
+    gender = segments[13];
 
-    sentToPc = ScriptGiveCustomMon(species, level, ITEM_NONE, ball, nature, abilitynum, evs, ivs, 0, shininess);
+    switch (gender) {
+        case 1:
+        genderID = MON_MALE;
+        break;
+        case 2:
+        genderID = MON_FEMALE;
+        break;
+        case 3:
+        default:
+        genderID = MON_GENDERLESS;
+        break;
+    }
+
+    sentToPc = ScriptGiveCustomMon(species, level, ITEM_NONE, ball, nature, abilitynum, evs, ivs, 0, shininess, genderID);
 
     StringCopy(gStringVar2, GetSpeciesName(species));
 
@@ -373,11 +390,26 @@ static u8 ConvertStringToPokemon(u8 *string) {
 }
 
 // Call with StringCopy(gStringVarX, ConvertPokemonToString(species, level, nature, shininess, abilitynum, ball, ivs));
-static void ConvertPokemonToString(u16 species, u8 level, u8 nature, u8 shininess, u8 abilitynum, u8 ball, u8 *ivs) {
+static void ConvertPokemonToString(u16 species, u8 level, u32 personality, u8 shininess, u8 abilitynum, u8 ball, u8 *ivs) {
     u8 i;
-    const u8 customCharMap[] = _("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
-    u8 segments[13];
-    u8 outputString[14];
+    const u8 customCharMap[] = _("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?");
+    u8 segments[14];
+    u8 outputString[15];
+    u8 nature = GetNatureFromPersonality(personality);
+    u8 gender = GetGenderFromSpeciesAndPersonality(species, personality);
+    u8 genderNo = 0;
+
+    switch (gender) {
+        case MON_MALE:
+        genderNo = 1;
+        break;
+        case MON_FEMALE:
+        genderNo = 2;
+        break;
+        case MON_GENDERLESS:
+        genderNo = 3;
+        break;
+    }
 
     // Convert each attribute to the corresponding segment value, seperating species into two
     segments[1] = species & 0x3F;
@@ -394,12 +426,13 @@ static void ConvertPokemonToString(u16 species, u8 level, u8 nature, u8 shinines
     segments[10] = shininess;
     segments[11] = abilitynum;
     segments[12] = ball;
+    segments[13] = genderNo;
 
-    for (i = 0; i < 13; ++i) {
+    for (i = 0; i < 14; ++i) {
         outputString[i] = customCharMap[segments[i] & 0x3F];
     }
 
-    outputString[13] = EOS;
+    outputString[14] = EOS;
 
     StringCopy(gStringVar1, outputString);
 }
