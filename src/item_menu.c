@@ -1994,6 +1994,10 @@ static void ItemMenu_Give(u8 taskId)
     {
         DisplayItemMessage(taskId, FONT_NORMAL, gText_CantWriteMail, HandleErrorMessage);
     }
+    else if (gSpecialVar_ItemId==ITEM_EXP_SHARE && FlagGet(FLAG_GEN_6_EXP_SHARE))
+    {
+        PrintItemCantBeHeld(taskId);
+    }
     else if (!ItemId_GetImportance(gSpecialVar_ItemId))
     {
         if (CalculatePlayerPartyCount() == 0)
