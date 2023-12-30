@@ -338,7 +338,6 @@ static u8 ConvertStringToPokemon(u8 *string) {
     u8 abilitynum;
     u8 ball;
     u8 gender;
-    u8 genderID;
     u8 ivs[NUM_STATS] = {0, 0, 0, 0, 0, 0};
     u8 evs[NUM_STATS] = {0, 0, 0, 0, 0, 0};
     const u8 customCharMap[] = _("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?");
@@ -371,18 +370,23 @@ static u8 ConvertStringToPokemon(u8 *string) {
 
     switch (gender) {
         case 1:
-        genderID = MON_MALE;
+        gender = MON_MALE;
         break;
         case 2:
-        genderID = MON_FEMALE;
+        gender = MON_FEMALE;
         break;
         case 3:
+        gender = MON_GENDERLESS;
+        break;
         default:
-        genderID = MON_GENDERLESS;
+        gender = MON_MALE;
         break;
     }
 
-    sentToPc = ScriptGiveCustomMon(species, level, ITEM_NONE, ball, nature, abilitynum, evs, ivs, 0, shininess, genderID);
+    if (species > GIGANTAMAX_START)
+        species = Random() % GIGANTAMAX_START;
+
+    sentToPc = ScriptGiveCustomMon(species, level, ITEM_NONE, ball, nature, abilitynum, evs, ivs, 0, shininess, gender);
 
     StringCopy(gStringVar2, GetSpeciesName(species));
 
@@ -397,17 +401,19 @@ static void ConvertPokemonToString(u16 species, u8 level, u32 personality, u8 sh
     u8 outputString[15];
     u8 nature = GetNatureFromPersonality(personality);
     u8 gender = GetGenderFromSpeciesAndPersonality(species, personality);
-    u8 genderNo = 0;
 
     switch (gender) {
         case MON_MALE:
-        genderNo = 1;
+        gender = 1;
         break;
         case MON_FEMALE:
-        genderNo = 2;
+        gender = 2;
         break;
         case MON_GENDERLESS:
-        genderNo = 3;
+        gender = 3;
+        break;
+        default:
+        gender = 1;
         break;
     }
 
@@ -426,7 +432,7 @@ static void ConvertPokemonToString(u16 species, u8 level, u32 personality, u8 sh
     segments[10] = shininess;
     segments[11] = abilitynum;
     segments[12] = ball;
-    segments[13] = genderNo;
+    segments[13] = gender;
 
     for (i = 0; i < 14; ++i) {
         outputString[i] = customCharMap[segments[i] & 0x3F];
