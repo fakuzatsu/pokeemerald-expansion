@@ -757,3 +757,15 @@ Hidden_Grotto_24_EventScript_Relic_Vase::
 Hidden_Grotto_24_EventScript_Relic_Statue::
 	finditem ITEM_RELIC_STATUE
 	end
+
+Hidden_Grotto_20_EventScript_Relic_Crown::
+	finditem ITEM_RELIC_CROWN
+	end
+
+Hidden_Grotto_20_EventScript_Soul_Dew::
+	finditem ITEM_SOUL_DEW
+	end
+
+Hidden_Grotto_25_EventScript_Relic_Crown::
+	finditem ITEM_RELIC_CROWN
+	end

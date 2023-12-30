@@ -26,6 +26,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_CutTree",
       "flag": "FLAG_TEMP_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 10,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Hidden_Grotto_20_EventScript_Relic_Crown",
+      "flag": "FLAG_ITEM_GROTTO_20_RELIC_CROWN"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 22,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Hidden_Grotto_20_EventScript_Soul_Dew",
+      "flag": "FLAG_ITEM_HIDDEN_GROTTO_20_SOUL_DEW"
     }
   ],
   "warp_events": [
@@ -41,6 +67,21 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 1,
+      "y": 7,
+      "elevation": 0,
+      "item": "ITEM_RELIC_GOLD",
+      "flag": "FLAG_HIDDEN_ITEM_GROTTO_20_RELIC_GOLD"
+    },
+    {
+      "type": "hidden_item",
+      "x": 20,
+      "y": 13,
+      "elevation": 0,
+      "item": "ITEM_RELIC_SILVER",
+      "flag": "FLAG_HIDDEN_ITEM_GROTTO_20_RELIC_SILVER"
+    }
   ]
 }
