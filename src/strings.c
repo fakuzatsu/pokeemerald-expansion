@@ -1916,3 +1916,5 @@ const u8 gText_RelicVase[] = _("Relic Vase{CLEAR_TO 0x53}5{SHADOW LIGHT_BLUE}S")
 const u8 gText_RelicSilver[] = _("10 Relic Silver{CLEAR_TO 0x52}1{SHADOW LIGHT_RED}G");
 const u8 gText_RelicStatue[] = _("Relic Statue{CLEAR_TO 0x52}1{SHADOW LIGHT_RED}G");
 const u8 gText_RelicCrown[] = _("Relic Crown{CLEAR_TO 0x53}5{SHADOW LIGHT_RED}G");
+const u8 gText_Sword[] = _("Sword");
+const u8 gText_Shield[] = _("Shield");

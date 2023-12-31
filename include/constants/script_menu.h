@@ -98,8 +98,8 @@
 #define MULTI_FRONTIER_GAMBLER_BET         87
 #define MULTI_TENT                         88
 #define MULTI_RELIC_CRAFTER_SELECTION      89 // Reused
-#define MULTI_UNUSED_SSTIDAL_2             90 // These 4 were replaced by CreateLilycoveSSTidalMultichoice
-#define MULTI_UNUSED_SSTIDAL_3             91 //
+#define MULTI_SWORD_OR_SHIELD              90 // Reused
+#define MULTI_UNUSED_SSTIDAL_3             91 // These 4 were replaced by CreateLilycoveSSTidalMultichoice
 #define MULTI_UNUSED_SSTIDAL_4             92 //
 #define MULTI_FOSSIL                       93
 #define MULTI_YESNO                        94

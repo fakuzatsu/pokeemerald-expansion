@@ -474,8 +474,8 @@
 #define FLAG_CAUGHT_RAIKOU                          0x1B6 // Custom Flag
 #define FLAG_UNUSED_0x1B7                           0x1B7 // Unused Flag
 #define FLAG_UNUSED_0x1B8                           0x1B8 // Unused Flag
-#define FLAG_UNUSED_0x1B9                           0x1B9 // Unused Flag
-#define FLAG_UNUSED_0x1BA                           0x1BA // Unused Flag
+#define FLAG_CAUGHT_ZACIAN                          0x1B9 // Custom Flag
+#define FLAG_CAUGHT_ZAMAZENTA                       0x1BA // Custom Flag
 #define FLAG_DEFEATED_REGIROCK                      0x1BB
 #define FLAG_DEFEATED_REGICE                        0x1BC
 #define FLAG_DEFEATED_REGISTEEL                     0x1BD

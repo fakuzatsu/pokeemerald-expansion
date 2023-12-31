@@ -565,10 +565,10 @@ static const struct MenuAction MultichoiceList_RelicCrafterSelection[] =
     {gText_Exit},
 };
 
-static const struct MenuAction MultichoiceList_UnusedSSTidal2[] =
+static const struct MenuAction MultichoiceList_SwordOrShield[] =
 {
-    {gText_SouthernIsland},
-    {gText_FarawayIsland},
+    {gText_Sword},
+    {gText_Shield},
     {gText_Exit},
 };
 
@@ -920,7 +920,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FRONTIER_GAMBLER_BET]       = MULTICHOICE(MultichoiceList_FrontierGamblerBet),
     [MULTI_TENT]                       = MULTICHOICE(MultichoiceList_Tent),
     [MULTI_RELIC_CRAFTER_SELECTION]    = MULTICHOICE(MultichoiceList_RelicCrafterSelection),
-    [MULTI_UNUSED_SSTIDAL_2]           = MULTICHOICE(MultichoiceList_UnusedSSTidal2),
+    [MULTI_SWORD_OR_SHIELD]            = MULTICHOICE(MultichoiceList_SwordOrShield),
     [MULTI_UNUSED_SSTIDAL_3]           = MULTICHOICE(MultichoiceList_UnusedSSTidal3),
     [MULTI_UNUSED_SSTIDAL_4]           = MULTICHOICE(MultichoiceList_UnusedSSTidal4),
     [MULTI_FOSSIL]                     = MULTICHOICE(MultichoiceList_Fossil),
