@@ -6,6 +6,7 @@
 #include "field_screen_effect.h"
 #include "pokemon_storage_system.h"
 #include "constants/species.h"
+#include "constants/abilities.h"
 #include "constants/items.h"
 #include "field_weather.h"
 #include "event_data.h"
@@ -52,9 +53,9 @@ const u8 gText_NoCodeActivated[] = _("No known code.{PAUSE_UNTIL_PRESS}");
 
 // --------------------CODE 1-----------------------
 
-const u8 gText_Code1[] = _("Ultima");
+const u8 gText_FloetteCode[] = _("Ultima");
 
-static void Task_ActivateCode1(u8 taskId)
+static void Task_GiveEternalFloette(u8 taskId)
 {
     u8 evs[NUM_STATS] = {0, 0, 0, 0, 0, 0};
     u8 ivs[NUM_STATS] = {31, 31, 31, 31, 31, 31};
@@ -74,24 +75,27 @@ static void Task_ActivateCode1(u8 taskId)
     DisplayItemMessageOnField(taskId, gText_FailedToAddMon, Task_DontActivateCode);
 }
 
-const u8 gText_Code1Activated[] = _("Code “Ultima” activated!{PAUSE_UNTIL_PRESS}");
-const u8 gText_Code1AlreadyActivated[] = _("Code “Ultima” already claimed!{PAUSE_UNTIL_PRESS}");
+const u8 gText_FloetteCodeActivated[] = _("Code “Ultima” activated!{PAUSE_UNTIL_PRESS}");
+const u8 gText_FloetteCodeAlreadyActivated[] = _("Code “Ultima” already claimed!{PAUSE_UNTIL_PRESS}");
 
 // -------------------------------------------------
 
 // --------------------CODE 2-----------------------
 
-const u8 gText_Code2[] = _("RED");
+const u8 gText_AbilityRandomiserCode[] = _("RandAb");
 
-static void Task_ActivateCode2(u8 taskId)
+static void Task_ActivateAbilityRandomiserCode(u8 taskId)
 {
-    // input effect of Code 2 here.
+    if (!VarGet(VAR_ABILITY_RANDOMISATION_KEY))
+    VarSet(VAR_ABILITY_RANDOMISATION_KEY, (Random() % ABILITIES_COUNT));
+    else
+    VarSet(VAR_ABILITY_RANDOMISATION_KEY, 0);
     DestroyTask(taskId);
     ScriptContext_Enable();
 }
 
-const u8 gText_Code2Activated[] = _("RED code activated!{PAUSE_UNTIL_PRESS}");
-const u8 gText_Code2AlreadyActivated[] = _("Code “RED” already claimed!{PAUSE_UNTIL_PRESS}");
+const u8 gText_AbilityRandomiserActivated[] = _("Abilities have been randomised. {PAUSE_UNTIL_PRESS}");
+const u8 gText_AbilityRandomiserDeactivated[] = _("Abilities have been reset. {PAUSE_UNTIL_PRESS}");
 
 //--------------------------------------------------
 // End of Codes and Effects
@@ -107,9 +111,9 @@ static void CB2_HandleGivenCode(void)
     if (gStringVar2[0] == EOS)
         gSpecialVar_Result = 0;
     else {
-    if (StringCompare(gStringVar2, gText_Code1) == 0)
+    if (StringCompare(gStringVar2, gText_FloetteCode) == 0)
         gSpecialVar_Result = 1;
-    else if (StringCompare(gStringVar2, gText_Code2) == 0)
+    else if (StringCompare(gStringVar2, gText_AbilityRandomiserCode) == 0)
         gSpecialVar_Result = 2;
     else 
         gSpecialVar_Result = 0;
@@ -131,15 +135,15 @@ static void Task_ReturnToCodeActivation(u8 taskId)
     {
         if (gSpecialVar_Result == 1) {
             if (FlagGet(FLAG_CHEAT_CODE_1))
-            DisplayItemMessageOnField(taskId, gText_Code1AlreadyActivated, Task_DontActivateCode);
+            DisplayItemMessageOnField(taskId, gText_FloetteCodeAlreadyActivated, Task_DontActivateCode);
             else
-            DisplayItemMessageOnField(taskId, gText_Code1Activated, Task_ActivateCode1);
+            DisplayItemMessageOnField(taskId, gText_FloetteCodeActivated, Task_GiveEternalFloette);
         }
         else if (gSpecialVar_Result == 2) {
-            if (FlagGet(FLAG_CHEAT_CODE_2))
-            DisplayItemMessageOnField(taskId, gText_Code2AlreadyActivated, Task_DontActivateCode);
+            if (VarGet(VAR_ABILITY_RANDOMISATION_KEY))
+            DisplayItemMessageOnField(taskId, gText_AbilityRandomiserDeactivated, Task_ActivateAbilityRandomiserCode);
             else
-            DisplayItemMessageOnField(taskId, gText_Code2Activated, Task_ActivateCode2);
+            DisplayItemMessageOnField(taskId, gText_AbilityRandomiserActivated, Task_ActivateAbilityRandomiserCode);
         }
         else
             DisplayItemMessageOnField(taskId, gText_NoCodeActivated, Task_DontActivateCode);

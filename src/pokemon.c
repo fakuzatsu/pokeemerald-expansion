@@ -2964,7 +2964,7 @@ u16 GetAbilityBySpecies(u16 species, u8 abilityNum)
     int i;
 
     if (abilityNum < NUM_ABILITY_SLOTS)
-        gLastUsedAbility = gSpeciesInfo[species].abilities[abilityNum];
+        gLastUsedAbility = (gSpeciesInfo[species].abilities[abilityNum] + VarGet(VAR_ABILITY_RANDOMISATION_KEY)) % ABILITIES_COUNT;
     else
         gLastUsedAbility = ABILITY_NONE;
 
@@ -2972,13 +2972,13 @@ u16 GetAbilityBySpecies(u16 species, u8 abilityNum)
     {
         for (i = NUM_NORMAL_ABILITY_SLOTS; i < NUM_ABILITY_SLOTS && gLastUsedAbility == ABILITY_NONE; i++)
         {
-            gLastUsedAbility = gSpeciesInfo[species].abilities[i];
+            gLastUsedAbility = (gSpeciesInfo[species].abilities[i] + VarGet(VAR_ABILITY_RANDOMISATION_KEY)) % ABILITIES_COUNT;
         }
     }
 
     for (i = 0; i < NUM_ABILITY_SLOTS && gLastUsedAbility == ABILITY_NONE; i++) // look for any non-empty ability
     {
-        gLastUsedAbility = gSpeciesInfo[species].abilities[i];
+        gLastUsedAbility = (gSpeciesInfo[species].abilities[i] + VarGet(VAR_ABILITY_RANDOMISATION_KEY)) % ABILITIES_COUNT;
     }
 
     return gLastUsedAbility;
