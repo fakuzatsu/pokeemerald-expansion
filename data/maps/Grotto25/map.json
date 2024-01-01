@@ -48,6 +48,14 @@
       "elevation": 0,
       "item": "ITEM_RELIC_GOLD",
       "flag": "FLAG_HIDDEN_ITEM_GROTTO_25_RELIC_GOLD"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Grotto25_EventScript_Meteorite"
     }
   ]
 }

@@ -1045,9 +1045,9 @@ static const u8 sBlackApricornDesc[] = _(
     "scribable scent.");
 
 static const u8 sWishingPieceDesc[] = _(
-    "Throw into a\n"
-    "{PKMN} Den to attract\n"
-    "Dynamax Pokémon.");
+    "A glowing stone that\n"
+    "seems to be part of\n"
+    "something larger.");
 
 static const u8 sGalaricaTwigDesc[] = _(
     "A twig from a tree\n"

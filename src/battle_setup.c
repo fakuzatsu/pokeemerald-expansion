@@ -626,6 +626,9 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_ZAMAZENTA:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_MEW);
         break;
+    case SPECIES_ETERNATUS:
+        CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL, MUS_VS_MEW);
+        break;
     }
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
