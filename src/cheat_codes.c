@@ -53,7 +53,7 @@ const u8 gText_NoCodeActivated[] = _("No known code.{PAUSE_UNTIL_PRESS}");
 
 // --------------------CODE 1-----------------------
 
-const u8 gText_FloetteCode[] = _("Ultima");
+const u8 gText_FloetteCode[] = _("UltiWep");
 
 static void Task_GiveEternalFloette(u8 taskId)
 {
@@ -75,46 +75,38 @@ static void Task_GiveEternalFloette(u8 taskId)
     DisplayItemMessageOnField(taskId, gText_FailedToAddMon, Task_DontActivateCode);
 }
 
-const u8 gText_FloetteCodeActivated[] = _("Code “Ultima” activated!{PAUSE_UNTIL_PRESS}");
-const u8 gText_FloetteCodeAlreadyActivated[] = _("Code “Ultima” already claimed!{PAUSE_UNTIL_PRESS}");
+const u8 gText_FloetteCodeActivated[] = _("Code “UltiWep” activated!{PAUSE_UNTIL_PRESS}");
+const u8 gText_FloetteCodeAlreadyActivated[] = _("Code “UltiWep” already claimed!{PAUSE_UNTIL_PRESS}");
 
 // -------------------------------------------------
 
 // --------------------CODE 2-----------------------
 
-const u8 gText_AbilityRandomiserCode[] = _("RandAb");
+const u8 gText_ReRandomiseCode[] = _("ReRand");
 
-static void Task_ActivateAbilityRandomiserCode(u8 taskId)
+static void Task_ActivateReRandomiseCode(u8 taskId)
 {
-    if (!VarGet(VAR_ABILITY_RANDOMISATION_KEY))
-    VarSet(VAR_ABILITY_RANDOMISATION_KEY, (Random() % ABILITIES_COUNT));
-    else
-    VarSet(VAR_ABILITY_RANDOMISATION_KEY, 0);
+    VarSet(VAR_RANDOMISER_SEED, (Random() % 99999));
     DestroyTask(taskId);
     ScriptContext_Enable();
 }
 
-const u8 gText_AbilityRandomiserActivated[] = _("Abilities have been randomised. {PAUSE_UNTIL_PRESS}");
-const u8 gText_AbilityRandomiserDeactivated[] = _("Abilities have been reset. {PAUSE_UNTIL_PRESS}");
+const u8 gText_AbilityRandomiserActivated[] = _("Seed has been re-randomised. {PAUSE_UNTIL_PRESS}");
 
 // -------------------------------------------------
 
 // --------------------CODE 3-----------------------
 
-const u8 gText_SpeciesRandomiserCode[] = _("RandWi");
+const u8 gText_AllDexFlagsCode[] = _("DexAll");
 
-static void Task_ActivateSpeciesRandomiserCode(u8 taskId)
+static void Task_ActivateAllDexFlagsCode(u8 taskId)
 {
-    if (!VarGet(VAR_SPECIES_RANDOMISATION_KEY))
-    VarSet(VAR_SPECIES_RANDOMISATION_KEY, (Random() % FORMS_START));
-    else
-    VarSet(VAR_SPECIES_RANDOMISATION_KEY, 0);
+    // Add effect from Debug menu here.
     DestroyTask(taskId);
     ScriptContext_Enable();
 }
 
-const u8 gText_SpeciesRandomiserActivated[] = _("Wild Pokémon have been randomised. {PAUSE_UNTIL_PRESS}");
-const u8 gText_SpeciesRandomiserDeactivated[] = _("Wild Pokémon have been reset. {PAUSE_UNTIL_PRESS}");
+const u8 gText_AllDexFlagsActivated[] = _("All Pokémon marked as caught. {PAUSE_UNTIL_PRESS}");
 
 //--------------------------------------------------
 // End of Codes and Effects
@@ -132,9 +124,9 @@ static void CB2_HandleGivenCode(void)
     else {
     if (StringCompare(gStringVar2, gText_FloetteCode) == 0)
         gSpecialVar_Result = 1;
-    else if (StringCompare(gStringVar2, gText_AbilityRandomiserCode) == 0)
+    else if (StringCompare(gStringVar2, gText_ReRandomiseCode) == 0)
         gSpecialVar_Result = 2;
-    else if (StringCompare(gStringVar2, gText_SpeciesRandomiserCode) == 0)
+    else if (StringCompare(gStringVar2, gText_AllDexFlagsCode) == 0)
         gSpecialVar_Result = 3;
     else 
         gSpecialVar_Result = 0;
@@ -161,16 +153,10 @@ static void Task_ReturnToCodeActivation(u8 taskId)
             DisplayItemMessageOnField(taskId, gText_FloetteCodeActivated, Task_GiveEternalFloette);
         }
         else if (gSpecialVar_Result == 2) {
-            if (VarGet(VAR_ABILITY_RANDOMISATION_KEY))
-            DisplayItemMessageOnField(taskId, gText_AbilityRandomiserDeactivated, Task_ActivateAbilityRandomiserCode);
-            else
-            DisplayItemMessageOnField(taskId, gText_AbilityRandomiserActivated, Task_ActivateAbilityRandomiserCode);
+            DisplayItemMessageOnField(taskId, gText_AbilityRandomiserActivated, Task_ActivateReRandomiseCode);
         }
         else if (gSpecialVar_Result == 3) {
-            if (VarGet(VAR_SPECIES_RANDOMISATION_KEY))
-            DisplayItemMessageOnField(taskId, gText_SpeciesRandomiserDeactivated, Task_ActivateSpeciesRandomiserCode);
-            else
-            DisplayItemMessageOnField(taskId, gText_SpeciesRandomiserActivated, Task_ActivateSpeciesRandomiserCode);
+            DisplayItemMessageOnField(taskId, gText_AllDexFlagsActivated, Task_ActivateAllDexFlagsCode);
         }
         else
             DisplayItemMessageOnField(taskId, gText_NoCodeActivated, Task_DontActivateCode);

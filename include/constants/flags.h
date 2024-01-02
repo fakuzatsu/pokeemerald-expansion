@@ -344,8 +344,8 @@
 #define FLAG_CANDYFACTORY_NPC_ITEM_GIFTED    0x13D // Custom Flag
 #define FLAG_ADOPTION_LADY_USES_NAME         0x13E // Custom Flag
 #define FLAG_ADOPTION_LADY_GIVES_CHARM       0x13F // Custom Flag
-#define FLAG_WONDER_CARD_UNUSED_4            0x140
-#define FLAG_WONDER_CARD_UNUSED_5            0x141
+#define FLAG_SYS_ENCOUNTER_RANDOMISER        0x140 // Custom Flag
+#define FLAG_SYS_ABILITY_RANDOMISER          0x141 // Custom Flag
 #define FLAG_WONDER_CARD_UNUSED_6            0x142
 #define FLAG_WONDER_CARD_UNUSED_7            0x143
 #define FLAG_WONDER_CARD_UNUSED_8            0x144
@@ -358,7 +358,7 @@
 #define FLAG_WONDER_CARD_UNUSED_15           0x14B
 #define FLAG_WONDER_CARD_UNUSED_16           0x14C
 #define FLAG_WONDER_CARD_UNUSED_17           0x14D
-#define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_WONDER_CARD_UNUSED_4)
+#define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_WONDER_CARD_UNUSED_6)
 
 #define FLAG_MIRAGE_TOWER_VISIBLE            0x14E
 #define FLAG_CHOSE_ROOT_FOSSIL               0x14F

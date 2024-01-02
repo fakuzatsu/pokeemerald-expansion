@@ -143,7 +143,7 @@
 #define VAR_ROUTE128_STATE                               0x407B
 #define VAR_ROUTE129_STATE                               0x407C // Unused Var
 #define VAR_SPECIES_RANDOMISATION_KEY                    0x407D // Custom Var
-#define VAR_ABILITY_RANDOMISATION_KEY                    0x407E // Custom Var
+#define VAR_RANDOMISER_SEED                              0x407E // Custom Var
 #define VAR_ETERNATUS_STATE                              0x407F // Custom Var
 #define VAR_RELIC_WORKSHOP_STATE                         0x4080 // Custom Var
 #define VAR_TROPHY_GARDEN_ENCOUNTERS                     0x4081 // Custom Var Trophy Garden Encounters

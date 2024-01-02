@@ -1312,14 +1312,12 @@ u16 PokemonRandomiser(u16 species)
     u32 i;
     u32 rerolls = 2;
     u16 result;
-    u16 randomizationKey = VarGet(VAR_SPECIES_RANDOMISATION_KEY);
+    u16 randomisationKey = VarGet(VAR_RANDOMISER_SEED);
 
-    if (randomizationKey == 0)
-    {
+    if (!FlagGet(FLAG_SYS_ENCOUNTER_RANDOMISER))
         return species;
-    }
 
-    result = ((species ^ randomizationKey) + ((species & randomizationKey) << 5)) % FORMS_START;
+    result = ((species ^ randomisationKey) + ((species & randomisationKey) << 5)) % FORMS_START;
 
     if (gMapHeader.mapType == MAP_TYPE_OCEAN_ROUTE 
     || gMapHeader.mapType == MAP_TYPE_UNDERGROUND
@@ -1353,7 +1351,7 @@ u16 PokemonRandomiser(u16 species)
     }
 
     if ((gSpeciesInfo[result].isLegendary || gSpeciesInfo[result].isMythical || gSpeciesInfo[result].isUltraBeast)
-    && ((randomizationKey & 1) == (gMapHeader.mapLayoutId & 1)))
+    && ((randomisationKey & 1) == (gMapHeader.mapLayoutId & 1)))
         result = (result + (FORMS_START / (i + 2))) % FORMS_START;
 
     return result;

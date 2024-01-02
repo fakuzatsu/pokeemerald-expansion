@@ -300,8 +300,6 @@ static bool32 IsWonderCardFlagIDInValidRange(u16 flagId)
 
 static const u16 sReceivedGiftFlags[] =
 {
-    FLAG_WONDER_CARD_UNUSED_4,
-    FLAG_WONDER_CARD_UNUSED_5,
     FLAG_WONDER_CARD_UNUSED_6,
     FLAG_WONDER_CARD_UNUSED_7,
     FLAG_WONDER_CARD_UNUSED_8,
