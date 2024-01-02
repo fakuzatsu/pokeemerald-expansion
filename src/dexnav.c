@@ -1538,19 +1538,10 @@ static u8 GetEncounterLevelFromMapData(u16 species, u8 environment)
 
         for (i = 0; i < LAND_WILD_COUNT; i++)
         {
-            if (VarGet(VAR_SPECIES_RANDOMISATION_KEY)) {
-                if (((landMonsInfo->wildPokemon[i].species + VarGet(VAR_SPECIES_RANDOMISATION_KEY)) % FORMS_START) == species)
-                {
-                    min = (min < landMonsInfo->wildPokemon[i].minLevel) ? min : landMonsInfo->wildPokemon[i].minLevel;
-                    max = (max > landMonsInfo->wildPokemon[i].maxLevel) ? max : landMonsInfo->wildPokemon[i].maxLevel;
-                }
-            }
-            else {
-                if (landMonsInfo->wildPokemon[i].species == species)
-                {
-                    min = (min < landMonsInfo->wildPokemon[i].minLevel) ? min : landMonsInfo->wildPokemon[i].minLevel;
-                    max = (max > landMonsInfo->wildPokemon[i].maxLevel) ? max : landMonsInfo->wildPokemon[i].maxLevel;
-                }
+            if (PokemonRandomiser(landMonsInfo->wildPokemon[i].species) == species)
+            {
+                min = (min < landMonsInfo->wildPokemon[i].minLevel) ? min : landMonsInfo->wildPokemon[i].minLevel;
+                max = (max > landMonsInfo->wildPokemon[i].maxLevel) ? max : landMonsInfo->wildPokemon[i].maxLevel;
             }
         }
         break;
@@ -1560,19 +1551,10 @@ static u8 GetEncounterLevelFromMapData(u16 species, u8 environment)
 
         for (i = 0; i < WATER_WILD_COUNT; i++)
         {
-            if (VarGet(VAR_SPECIES_RANDOMISATION_KEY)) {
-                if (((waterMonsInfo->wildPokemon[i].species + VarGet(VAR_SPECIES_RANDOMISATION_KEY)) % FORMS_START) == species)
-                {
-                    min = (min < waterMonsInfo->wildPokemon[i].minLevel) ? min : waterMonsInfo->wildPokemon[i].minLevel;
-                    max = (max > waterMonsInfo->wildPokemon[i].maxLevel) ? max : waterMonsInfo->wildPokemon[i].maxLevel;
-                }
-            }
-            else {
-                if (waterMonsInfo->wildPokemon[i].species == species)
-                {
-                    min = (min < waterMonsInfo->wildPokemon[i].minLevel) ? min : waterMonsInfo->wildPokemon[i].minLevel;
-                    max = (max > waterMonsInfo->wildPokemon[i].maxLevel) ? max : waterMonsInfo->wildPokemon[i].maxLevel;
-                }
+            if (PokemonRandomiser(waterMonsInfo->wildPokemon[i].species) == species)
+            {
+                min = (min < waterMonsInfo->wildPokemon[i].minLevel) ? min : waterMonsInfo->wildPokemon[i].minLevel;
+                max = (max > waterMonsInfo->wildPokemon[i].maxLevel) ? max : waterMonsInfo->wildPokemon[i].maxLevel;
             }
         }
         break;
@@ -1582,19 +1564,10 @@ static u8 GetEncounterLevelFromMapData(u16 species, u8 environment)
         
         for (i = 0; i < HIDDEN_WILD_COUNT; i++)
         {
-            if (VarGet(VAR_SPECIES_RANDOMISATION_KEY)) {
-                if (((hiddenMonsInfo->wildPokemon[i].species + VarGet(VAR_SPECIES_RANDOMISATION_KEY)) % FORMS_START) == species)
-                {
-                    min = (min < hiddenMonsInfo->wildPokemon[i].minLevel) ? min : hiddenMonsInfo->wildPokemon[i].minLevel;
-                    max = (max > hiddenMonsInfo->wildPokemon[i].maxLevel) ? max : hiddenMonsInfo->wildPokemon[i].maxLevel;
-                }
-            }
-            else {
-                if (hiddenMonsInfo->wildPokemon[i].species == species)
-                {
-                    min = (min < hiddenMonsInfo->wildPokemon[i].minLevel) ? min : hiddenMonsInfo->wildPokemon[i].minLevel;
-                    max = (max > hiddenMonsInfo->wildPokemon[i].maxLevel) ? max : hiddenMonsInfo->wildPokemon[i].maxLevel;
-                }
+            if (PokemonRandomiser(hiddenMonsInfo->wildPokemon[i].species) == species)
+            {
+                min = (min < hiddenMonsInfo->wildPokemon[i].minLevel) ? min : hiddenMonsInfo->wildPokemon[i].minLevel;
+                max = (max > hiddenMonsInfo->wildPokemon[i].maxLevel) ? max : hiddenMonsInfo->wildPokemon[i].maxLevel;
             }
         }
         
@@ -1768,9 +1741,7 @@ static bool8 CapturedAllLandMons(u16 headerId)
     {        
         for (i = 0; i < LAND_WILD_COUNT; ++i)
         {
-            species = landMonsInfo->wildPokemon[i].species;
-            if (VarGet(VAR_SPECIES_RANDOMISATION_KEY))
-                species += VarGet(VAR_SPECIES_RANDOMISATION_KEY) % FORMS_START;
+            species = PokemonRandomiser(landMonsInfo->wildPokemon[i].species);
             if (species != SPECIES_NONE)
             {
                 if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
@@ -1803,9 +1774,7 @@ static bool8 CapturedAllWaterMons(u16 headerId)
     {
         for (i = 0; i < WATER_WILD_COUNT; ++i)
         {
-            species = waterMonsInfo->wildPokemon[i].species;
-            if (VarGet(VAR_SPECIES_RANDOMISATION_KEY))
-                species += VarGet(VAR_SPECIES_RANDOMISATION_KEY) % FORMS_START;
+            species = PokemonRandomiser(waterMonsInfo->wildPokemon[i].species);
             if (species != SPECIES_NONE)
             {
                 count++;
@@ -1836,9 +1805,7 @@ static bool8 CapturedAllHiddenMons(u16 headerId)
     {
         for (i = 0; i < HIDDEN_WILD_COUNT; ++i)
         {
-            species = hiddenMonsInfo->wildPokemon[i].species;
-            if (VarGet(VAR_SPECIES_RANDOMISATION_KEY))
-                species += VarGet(VAR_SPECIES_RANDOMISATION_KEY) % FORMS_START;
+            species = PokemonRandomiser(hiddenMonsInfo->wildPokemon[i].species);
             if (species != SPECIES_NONE)
             {
                 count++;
@@ -1991,14 +1958,9 @@ static void DexNavLoadEncounterData(void)
     {
         for (i = 0; i < LAND_WILD_COUNT; i++)
         {
-            species = landMonsInfo->wildPokemon[i].species;
-            if (VarGet(VAR_SPECIES_RANDOMISATION_KEY))
-                species += VarGet(VAR_SPECIES_RANDOMISATION_KEY) % FORMS_START;
+            species = PokemonRandomiser(landMonsInfo->wildPokemon[i].species);
             if (species != SPECIES_NONE && !SpeciesInArray(species, 0)) {
-                if (VarGet(VAR_SPECIES_RANDOMISATION_KEY))
-                    sDexNavUiDataPtr->landSpecies[grassIndex++] = (landMonsInfo->wildPokemon[i].species + VarGet(VAR_SPECIES_RANDOMISATION_KEY)) % FORMS_START;
-                else
-                    sDexNavUiDataPtr->landSpecies[grassIndex++] = landMonsInfo->wildPokemon[i].species;
+                    sDexNavUiDataPtr->landSpecies[grassIndex++] = PokemonRandomiser(landMonsInfo->wildPokemon[i].species);
             }
         }
     }
@@ -2008,14 +1970,9 @@ static void DexNavLoadEncounterData(void)
     {
         for (i = 0; i < WATER_WILD_COUNT; i++)
         {
-            species = waterMonsInfo->wildPokemon[i].species;
-            if (VarGet(VAR_SPECIES_RANDOMISATION_KEY))
-                species += VarGet(VAR_SPECIES_RANDOMISATION_KEY) % FORMS_START;
+            species = PokemonRandomiser(waterMonsInfo->wildPokemon[i].species);
             if (species != SPECIES_NONE && !SpeciesInArray(species, 1)) {
-                if (VarGet(VAR_SPECIES_RANDOMISATION_KEY))
-                sDexNavUiDataPtr->waterSpecies[waterIndex++] = (waterMonsInfo->wildPokemon[i].species + VarGet(VAR_SPECIES_RANDOMISATION_KEY)) % FORMS_START;
-                else
-                sDexNavUiDataPtr->waterSpecies[waterIndex++] = waterMonsInfo->wildPokemon[i].species;
+                sDexNavUiDataPtr->waterSpecies[waterIndex++] = PokemonRandomiser(waterMonsInfo->wildPokemon[i].species);
             }
         }
     }
@@ -2025,14 +1982,9 @@ static void DexNavLoadEncounterData(void)
     {
         for (i = 0; i < HIDDEN_WILD_COUNT; i++)
         {
-            species = hiddenMonsInfo->wildPokemon[i].species;
-            if (VarGet(VAR_SPECIES_RANDOMISATION_KEY))
-                species += VarGet(VAR_SPECIES_RANDOMISATION_KEY) % FORMS_START;
+            species = PokemonRandomiser(hiddenMonsInfo->wildPokemon[i].species);
             if (species != SPECIES_NONE && !SpeciesInArray(species, 2)) {
-                if (VarGet(VAR_SPECIES_RANDOMISATION_KEY))
-                sDexNavUiDataPtr->hiddenSpecies[hiddenIndex++] = (hiddenMonsInfo->wildPokemon[i].species + VarGet(VAR_SPECIES_RANDOMISATION_KEY)) % FORMS_START;
-                else
-                sDexNavUiDataPtr->hiddenSpecies[hiddenIndex++] = hiddenMonsInfo->wildPokemon[i].species;
+                sDexNavUiDataPtr->hiddenSpecies[hiddenIndex++] = PokemonRandomiser(hiddenMonsInfo->wildPokemon[i].species);
             }
         }
     }
@@ -2588,9 +2540,7 @@ bool8 TryFindHiddenPokemon(void)
                 index = ChooseHiddenMonIndex();
                 if (index == 0xFF)
                     return FALSE;//no hidden info
-                species = hiddenMonsInfo->wildPokemon[index].species;
-                if (VarGet(VAR_SPECIES_RANDOMISATION_KEY))
-                species += VarGet(VAR_SPECIES_RANDOMISATION_KEY) % FORMS_START;
+                species = PokemonRandomiser(hiddenMonsInfo->wildPokemon[index].species);
                 isHiddenMon = TRUE;
                 environment = ENCOUNTER_TYPE_HIDDEN;
             }
@@ -2608,17 +2558,13 @@ bool8 TryFindHiddenPokemon(void)
                     index = ChooseHiddenMonIndex();
                     if (index == 0xFF)
                         return FALSE;//no hidden info
-                    species = hiddenMonsInfo->wildPokemon[index].species;
-                    if (VarGet(VAR_SPECIES_RANDOMISATION_KEY))
-                        species += VarGet(VAR_SPECIES_RANDOMISATION_KEY) % FORMS_START;
+                    species = PokemonRandomiser(hiddenMonsInfo->wildPokemon[index].species);
                     isHiddenMon = TRUE;
                     environment = ENCOUNTER_TYPE_HIDDEN;
                 }
                 else
                 {
-                    species = gWildMonHeaders[headerId].waterMonsInfo->wildPokemon[ChooseWildMonIndex_WaterRock()].species;
-                    if (VarGet(VAR_SPECIES_RANDOMISATION_KEY))
-                        species += VarGet(VAR_SPECIES_RANDOMISATION_KEY) % FORMS_START;
+                    species = PokemonRandomiser(gWildMonHeaders[headerId].waterMonsInfo->wildPokemon[ChooseWildMonIndex_WaterRock()].species);
                     environment = ENCOUNTER_TYPE_WATER;
 
                 }

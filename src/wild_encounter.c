@@ -19,6 +19,7 @@
 #include "battle_pyramid.h"
 #include "constants/abilities.h"
 #include "constants/game_stat.h"
+#include "constants/map_types.h"
 #include "constants/item.h"
 #include "constants/items.h"
 #include "constants/layouts.h"
@@ -673,10 +674,7 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
         return FALSE;
 
-    if (VarGet(VAR_SPECIES_RANDOMISATION_KEY))
-    CreateWildMon(((wildMonInfo->wildPokemon[wildMonIndex].species + VarGet(VAR_SPECIES_RANDOMISATION_KEY)) % FORMS_START), level);
-    else
-    CreateWildMon((wildMonInfo->wildPokemon[wildMonIndex].species), level);
+    CreateWildMon(PokemonRandomiser(wildMonInfo->wildPokemon[wildMonIndex].species), level);
     return TRUE;
 }
 
@@ -1307,5 +1305,57 @@ u8 ChooseHiddenMonIndex(void)
 bool32 MapHasNoEncounterData(void)
 {
     return (GetCurrentMapWildMonHeaderId() == HEADER_NONE);
+}
+
+u16 PokemonRandomiser(u16 species)
+{
+    u32 i;
+    u32 rerolls = 2;
+    u16 result;
+    u16 randomizationKey = VarGet(VAR_SPECIES_RANDOMISATION_KEY);
+
+    if (randomizationKey == 0)
+    {
+        return species;
+    }
+
+    result = ((species ^ randomizationKey) + ((species & randomizationKey) << 5)) % FORMS_START;
+
+    if (gMapHeader.mapType == MAP_TYPE_OCEAN_ROUTE 
+    || gMapHeader.mapType == MAP_TYPE_UNDERGROUND
+    || gMapHeader.mapType == MAP_TYPE_UNDERWATER)
+        rerolls = 4;
+
+    for (i = 0; i < rerolls; ++i)
+    {
+        if ((gSpeciesInfo[species].types[0] == TYPE_WATER || gSpeciesInfo[species].types[1] == TYPE_WATER) !=
+            (gSpeciesInfo[result].types[0] == TYPE_WATER || gSpeciesInfo[result].types[1] == TYPE_WATER))
+        {
+            result = (result + (FORMS_START / (i + 2))) % FORMS_START;
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    for (i = 0; i < rerolls; ++i)
+    {
+        if (!(gSpeciesInfo[species].types[0] == TYPE_WATER || gSpeciesInfo[species].types[1] == TYPE_WATER) &&
+             (gSpeciesInfo[result].types[0] == TYPE_WATER || gSpeciesInfo[result].types[1] == TYPE_WATER))
+        {
+            result = (result + (FORMS_START / (i + 2))) % FORMS_START;
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    if ((gSpeciesInfo[result].isLegendary || gSpeciesInfo[result].isMythical || gSpeciesInfo[result].isUltraBeast)
+    && ((randomizationKey & 1) == (gMapHeader.mapLayoutId & 1)))
+        result = (result + (FORMS_START / (i + 2))) % FORMS_START;
+
+    return result;
 }
 
