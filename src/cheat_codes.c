@@ -97,6 +97,25 @@ static void Task_ActivateAbilityRandomiserCode(u8 taskId)
 const u8 gText_AbilityRandomiserActivated[] = _("Abilities have been randomised. {PAUSE_UNTIL_PRESS}");
 const u8 gText_AbilityRandomiserDeactivated[] = _("Abilities have been reset. {PAUSE_UNTIL_PRESS}");
 
+// -------------------------------------------------
+
+// --------------------CODE 3-----------------------
+
+const u8 gText_SpeciesRandomiserCode[] = _("RandWi");
+
+static void Task_ActivateSpeciesRandomiserCode(u8 taskId)
+{
+    if (!VarGet(VAR_SPECIES_RANDOMISATION_KEY))
+    VarSet(VAR_SPECIES_RANDOMISATION_KEY, (Random() % FORMS_START));
+    else
+    VarSet(VAR_SPECIES_RANDOMISATION_KEY, 0);
+    DestroyTask(taskId);
+    ScriptContext_Enable();
+}
+
+const u8 gText_SpeciesRandomiserActivated[] = _("Wild Pokémon have been randomised. {PAUSE_UNTIL_PRESS}");
+const u8 gText_SpeciesRandomiserDeactivated[] = _("Wild Pokémon have been reset. {PAUSE_UNTIL_PRESS}");
+
 //--------------------------------------------------
 // End of Codes and Effects
 //--------------------------------------------------
@@ -115,6 +134,8 @@ static void CB2_HandleGivenCode(void)
         gSpecialVar_Result = 1;
     else if (StringCompare(gStringVar2, gText_AbilityRandomiserCode) == 0)
         gSpecialVar_Result = 2;
+    else if (StringCompare(gStringVar2, gText_SpeciesRandomiserCode) == 0)
+        gSpecialVar_Result = 3;
     else 
         gSpecialVar_Result = 0;
     }
@@ -144,6 +165,12 @@ static void Task_ReturnToCodeActivation(u8 taskId)
             DisplayItemMessageOnField(taskId, gText_AbilityRandomiserDeactivated, Task_ActivateAbilityRandomiserCode);
             else
             DisplayItemMessageOnField(taskId, gText_AbilityRandomiserActivated, Task_ActivateAbilityRandomiserCode);
+        }
+        else if (gSpecialVar_Result == 3) {
+            if (VarGet(VAR_SPECIES_RANDOMISATION_KEY))
+            DisplayItemMessageOnField(taskId, gText_SpeciesRandomiserDeactivated, Task_ActivateSpeciesRandomiserCode);
+            else
+            DisplayItemMessageOnField(taskId, gText_SpeciesRandomiserActivated, Task_ActivateSpeciesRandomiserCode);
         }
         else
             DisplayItemMessageOnField(taskId, gText_NoCodeActivated, Task_DontActivateCode);
