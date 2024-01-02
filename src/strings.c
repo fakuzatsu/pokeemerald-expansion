@@ -1918,3 +1918,7 @@ const u8 gText_RelicStatue[] = _("Relic Statue{CLEAR_TO 0x52}1{SHADOW LIGHT_RED}
 const u8 gText_RelicCrown[] = _("Relic Crown{CLEAR_TO 0x53}5{SHADOW LIGHT_RED}G");
 const u8 gText_Sword[] = _("Sword");
 const u8 gText_Shield[] = _("Shield");
+const u8 gText_Encounters[] = _("Encounters");
+const u8 gText_Abilities[] = _("Abilities");
+const u8 gText_SeeSeed[] = _("See Seed");
+const u8 gText_SetSeed[] = _("Set Seed");

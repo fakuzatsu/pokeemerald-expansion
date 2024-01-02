@@ -17,6 +17,7 @@
 #include "strings.h"
 #include "main.h"
 #include "text.h"
+#include "pokedex.h"
 #include "pokemon.h"
 #include "random.h"
 #include "pokeball.h"
@@ -101,7 +102,12 @@ const u8 gText_AllDexFlagsCode[] = _("DexAll");
 
 static void Task_ActivateAllDexFlagsCode(u8 taskId)
 {
-    // Add effect from Debug menu here.
+    u16 i;
+    for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+    {
+        GetSetPokedexFlag(i + 1, FLAG_SET_CAUGHT);
+        GetSetPokedexFlag(i + 1, FLAG_SET_SEEN);
+    }
     DestroyTask(taskId);
     ScriptContext_Enable();
 }

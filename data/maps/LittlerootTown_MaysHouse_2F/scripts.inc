@@ -310,6 +310,14 @@ LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC::
 	releaseall
 	end
 
+LittlerootTown_MaysHouse_2F_EventScript_Notebook::
+	lockall
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, PlayersHouse_2F_EventScript_ItsYourNotebook
+	msgbox PlayersHouse_2F_Text_Notebook, MSGBOX_SIGN
+	releaseall
+	end
+
 LittlerootTown_MaysHouse_2F_EventScript_GameCube::
 	lockall
 	checkplayergender

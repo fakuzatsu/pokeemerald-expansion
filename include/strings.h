@@ -3135,4 +3135,10 @@ extern const u8 gText_RelicCrown[];
 extern const u8 gText_Sword[];
 extern const u8 gText_Shield[];
 
+// Randomisation:
+extern const u8 gText_Encounters[];
+extern const u8 gText_Abilities[];
+extern const u8 gText_SeeSeed[];
+extern const u8 gText_SetSeed[];
+
 #endif // GUARD_STRINGS_H

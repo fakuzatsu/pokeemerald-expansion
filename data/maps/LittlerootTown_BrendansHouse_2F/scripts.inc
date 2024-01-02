@@ -264,12 +264,74 @@ LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC::
 	releaseall
 	end
 
-PlayersHouse_2F_EventScript_Notebook::
+LittlerootTown_BrendansHouse_2F_EventScript_Notebook::
+	lockall
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, PlayersHouse_2F_EventScript_ItsYourNotebook
 	msgbox PlayersHouse_2F_Text_Notebook, MSGBOX_SIGN
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_ItsYourNotebook::
+	message PlayersHouse_2F_Text_ItsYourNotebook
+	waitmessage
+	multichoice 18, 2, MULTI_RANDOMISER_OPTIONS, FALSE
+	switch VAR_RESULT
+	case 0, PlayersHouse_2F_EventScript_ToggleWildRandom
+	case 1, PlayersHouse_2F_EventScript_ToggleAbilityRandom
+	case 2, PlayersHouse_2F_EventScript_SeeRandomiserSeed
+	case 3, PlayersHouse_2F_EventScript_SetRandomiserSeed
+	case 4, PlayersHouse_2F_EventScriptCancelGameCube
+	case MULTI_B_PRESSED, PlayersHouse_2F_EventScriptCancelGameCube
+	end
+
+PlayersHouse_2F_EventScript_ToggleWildRandom::
+    goto_if_unset FLAG_SYS_ENCOUNTER_RANDOMISER, PlayersHouse_2F_EventScript_ToggleWildRandomOn
+    clearflag FLAG_SYS_ENCOUNTER_RANDOMISER
+    playse SE_PC_OFF
+    message PlayersHouse_2F_Text_WildEncountersAreReset
+    waitmessage
+    waitbuttonpress
+    goto PlayersHouse_2F_EventScript_ItsYourNotebook
+    end
+
+PlayersHouse_2F_EventScript_ToggleWildRandomOn::
+    setflag FLAG_SYS_ENCOUNTER_RANDOMISER
+    playse SE_PC_LOGIN
+    message PlayersHouse_2F_Text_WildEncountersAreRandom
+    waitmessage
+    waitbuttonpress
+    goto PlayersHouse_2F_EventScript_ItsYourNotebook
+    end
+
+PlayersHouse_2F_EventScript_ToggleAbilityRandom::
+    goto_if_unset FLAG_SYS_ABILITY_RANDOMISER, PlayersHouse_2F_EventScript_ToggleAbilityRandomOn
+    clearflag FLAG_SYS_ABILITY_RANDOMISER
+    playse SE_PC_OFF
+    message PlayersHouse_2F_Text_AbilitiesAreReset
+    waitmessage
+    waitbuttonpress
+    goto PlayersHouse_2F_EventScript_ItsYourNotebook
+    end
+
+PlayersHouse_2F_EventScript_ToggleAbilityRandomOn::
+    setflag FLAG_SYS_ABILITY_RANDOMISER
+    playse SE_PC_LOGIN
+    message PlayersHouse_2F_Text_AbilitiesAreRandom
+    waitmessage
+    waitbuttonpress
+    goto PlayersHouse_2F_EventScript_ItsYourNotebook
+    end
+
+PlayersHouse_2F_EventScript_SeeRandomiserSeed::
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_SetRandomiserSeed::
+	releaseall
 	end
 
 LittlerootTown_BrendansHouse_2F_EventScript_GameCube::
-	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN
 	lockall
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, PlayersHouse_2F_EventScript_ItsYourGameCube
@@ -318,7 +380,25 @@ PlayersHouse_2F_Text_ItsAGameCube:
 	.string "A Game Boy Advance is connected to\n"
 	.string "serve as the Controller.$"
 
+PlayersHouse_2F_Text_ItsYourNotebook:
+	.string "It's your Diary.\n"
+	.string "Randomise your story?$"
+
 PlayersHouse_2F_Text_ItsYourGameCube:
 	.string "It's your Nintendo GameCube.\p"
 	.string "You have a cheat device connected.\n"
 	.string "Input a cheat code?$"
+
+PlayersHouse_2F_Text_WildEncountersAreReset:
+	.string "Wild Encounters have been reset\n"
+	.string "back to normal.$"
+
+PlayersHouse_2F_Text_WildEncountersAreRandom:
+	.string "Wild Encounters have been randomised.$"
+
+PlayersHouse_2F_Text_AbilitiesAreReset:
+	.string "Abilities have been reset\n"
+	.string "back to normal.$"
+
+PlayersHouse_2F_Text_AbilitiesAreRandom:
+	.string "Abilities have been randomised.$"
