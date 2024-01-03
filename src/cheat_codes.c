@@ -31,6 +31,9 @@ static u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 natur
 static void ConvertPokemonToString(u16 species, u8 level, u32 personality, u8 shininess, u8 abilitynum, u8 ball, u8 *ivs);
 static u8 ConvertStringToPokemon(u8 *string);
 
+const u8 gText_ChangedSeed[] = _("Changed randomiser seed.{PAUSE_UNTIL_PRESS}");
+const u8 gText_InvalidSeed[] = _("Invalid seed.{PAUSE_UNTIL_PRESS}");
+
 //--------------------------------------------------
 // Codes and Effects
 //--------------------------------------------------
@@ -127,6 +130,8 @@ static void CB2_HandleGivenCode(void)
 {
     if (gStringVar2[0] == EOS)
         gSpecialVar_Result = 0;
+    else if (gSpecialVar_0x8004 == 9)
+        gSpecialVar_Result = 99;
     else {
     if (StringCompare(gStringVar2, gText_FloetteCode) == 0)
         gSpecialVar_Result = 1;
@@ -150,9 +155,20 @@ static void MapPostLoadHook_ReturnToCodeActivation(void)
 
 static void Task_ReturnToCodeActivation(u8 taskId)
 {
+    u32 seed;
+
     if (IsWeatherNotFadingIn() == TRUE)
     {
-        if (gSpecialVar_Result == 1) {
+        // First check if piggybacking code to set randomiser seed.
+        if (gSpecialVar_Result == 99) {
+            if (ParseWholeUnsigned(gStringVar2, &seed)) {
+                VarSet(VAR_RANDOMISER_SEED, seed);
+                DisplayItemMessageOnField(taskId, gText_ChangedSeed, Task_DontActivateCode);
+            } else {
+                DisplayItemMessageOnField(taskId, gText_InvalidSeed, Task_DontActivateCode);
+            }
+        }
+        else if (gSpecialVar_Result == 1) {
             if (FlagGet(FLAG_CHEAT_CODE_1))
             DisplayItemMessageOnField(taskId, gText_FloetteCodeAlreadyActivated, Task_DontActivateCode);
             else

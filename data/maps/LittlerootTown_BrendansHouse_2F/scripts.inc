@@ -332,6 +332,10 @@ PlayersHouse_2F_EventScript_SeeRandomiserSeed::
 	end
 
 PlayersHouse_2F_EventScript_SetRandomiserSeed::
+	setvar VAR_0x8004, 9
+	special EnterCode
+	waitstate
+	setvar VAR_0x8004, 0
 	releaseall
 	end
 

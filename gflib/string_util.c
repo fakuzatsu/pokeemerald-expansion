@@ -799,3 +799,23 @@ u8 *StringCopyUppercase(u8 *dest, const u8 *src)
     *dest = EOS;
     return dest;
 }
+
+const u8 *ParseUnsigned(const u8 *string, u32 *n)
+{
+    *n = 0;
+
+    for (; CHAR_0 <= *string && *string <= CHAR_9; string++) {
+        if (*n > (UINT_MAX - (*string - CHAR_0)) / 10) {
+            return NULL;
+        }
+        *n = *n * 10 + (*string - CHAR_0);
+    }
+
+    return string;
+}
+
+bool32 ParseWholeUnsigned(const u8 *string, u32 *n)
+{
+  const u8 *string_ = ParseUnsigned(string, n);
+  return (string != string_) && (*string_ == EOS);
+}
