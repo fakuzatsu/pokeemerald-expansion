@@ -153,12 +153,15 @@ s32 StringCompareN(const u8 *str1, const u8 *str2, u32 n)
 bool8 IsStringLengthAtLeast(const u8 *str, s32 n)
 {
     u8 i;
+    u32 count = 0;
 
-    for (i = 0; i < n; i++)
-        if (str[i] && str[i] != EOS)
-            return TRUE;
+    for (i = 0; i < n; i++) {
+        if (str[i] && str[i] != EOS) {
+            count++;
+        }
+    }
 
-    return FALSE;
+    return count >= n;
 }
 
 u8 *ConvertIntToDecimalStringN(u8 *dest, s32 value, enum StringConvertMode mode, u8 n)

@@ -324,7 +324,11 @@ PlayersHouse_2F_EventScript_ToggleAbilityRandomOn::
     end
 
 PlayersHouse_2F_EventScript_SeeRandomiserSeed::
-	releaseall
+	buffernumberstring STR_VAR_2, VAR_RANDOMISER_SEED
+	message PlayersHouse_2F_Text_YourSeedIs
+	waitmessage
+	waitbuttonpress
+	goto PlayersHouse_2F_EventScript_ItsYourNotebook
 	end
 
 PlayersHouse_2F_EventScript_SetRandomiserSeed::
@@ -402,3 +406,7 @@ PlayersHouse_2F_Text_AbilitiesAreReset:
 
 PlayersHouse_2F_Text_AbilitiesAreRandom:
 	.string "Abilities have been randomised.$"
+
+PlayersHouse_2F_Text_YourSeedIs:
+	.string "Your randomiser seed is:\n"
+	.string "{STR_VAR_2}$"
