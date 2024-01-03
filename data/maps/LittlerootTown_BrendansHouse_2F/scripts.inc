@@ -332,11 +332,20 @@ PlayersHouse_2F_EventScript_SeeRandomiserSeed::
 	end
 
 PlayersHouse_2F_EventScript_SetRandomiserSeed::
+	goto_if_set FLAG_SYS_INVALID_CHALLENGE, PlayersHouse_2F_EventScript_SetRandomiserSeedSkipWarning
+	goto_if_set FLAG_SYS_ENFORCED_HARDMODE, PlayersHouse_2F_EventScript_RandomiserSeedWarning
+PlayersHouse_2F_EventScript_SetRandomiserSeedSkipWarning::
 	setvar VAR_0x8004, 9
 	special EnterCode
 	waitstate
 	setvar VAR_0x8004, 0
 	releaseall
+	end
+
+PlayersHouse_2F_EventScript_RandomiserSeedWarning::
+	msgbox PlayersHouse_2F_Text_SeedWillInvalidateChallenge, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PlayersHouse_2F_EventScript_ItsYourNotebook
+	goto PlayersHouse_2F_EventScript_SetRandomiserSeedSkipWarning
 	end
 
 LittlerootTown_BrendansHouse_2F_EventScript_GameCube::
@@ -414,3 +423,11 @@ PlayersHouse_2F_Text_AbilitiesAreRandom:
 PlayersHouse_2F_Text_YourSeedIs:
 	.string "Your randomiser seed is:\n"
 	.string "{STR_VAR_2}$"
+
+PlayersHouse_2F_Text_SeedWillInvalidateChallenge:
+	.string "WARNING: You are in challenge mode.\p"
+	.string "Setting a seed will not take you out\n"
+	.string "of challenge mode…\p"
+	.string "But it will prevent you from recieving\n"
+	.string "certain challenge mode rewards.\p"
+	.string "Set your own seed anyways?$"

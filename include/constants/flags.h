@@ -338,7 +338,7 @@
 #define FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS    0x139
 
 #define FLAG_UNUSED_0x13A                    0x13A // Unused Flag
-#define FLAG_UNUSED_0x13B                    0x13B // Unused Flag
+#define FLAG_SYS_INVALID_CHALLENGE           0x13B // Custom Flag
 #define FLAG_MET_FRONTIER_WISE_MOVE_TUTOR    0x13C // Custom Flag
 
 #define FLAG_CANDYFACTORY_NPC_ITEM_GIFTED    0x13D // Custom Flag

@@ -163,6 +163,7 @@ static void Task_ReturnToCodeActivation(u8 taskId)
         if (gSpecialVar_Result == 99) {
             if (ParseWholeUnsigned(gStringVar2, &seed)) {
                 VarSet(VAR_RANDOMISER_SEED, seed);
+                FlagSet(FLAG_SYS_INVALID_CHALLENGE);
                 DisplayItemMessageOnField(taskId, gText_ChangedSeed, Task_DontActivateCode);
             } else {
                 DisplayItemMessageOnField(taskId, gText_InvalidSeed, Task_DontActivateCode);

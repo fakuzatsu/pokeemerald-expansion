@@ -99,16 +99,16 @@ InsideOfTruck_Text_ItsYourBag:
 	.string "…Huh?…\p"
 	.string "Looks like there's a card on the floor\n"
 	.string "next to it!\p"
-	.string "The card reads: “Take my challenge?\n"
+	.string "The card reads:\n"
+	.string "“Take my challenge?\l"
 	.string " -Z”\p"
 	.string "…Put the card in your bag?$"
 
 InsideOfTruck_Text_AreYouSure:
 	.string "{PLAYER} turned the card over.\p"
 	.string "The backside reads:\n"
-	.string "“Trainers and Pokémon who see\p"
-	.string "this card will no longer go\n"
-	.string "easy on you.”\p"
+	.string "“Trainers and Pokémon who see this\l"
+	.string "card will no longer go easy on you.”\p"
 	.string "…Put the card in your bag anyways?$"
 
 InsideOfTruck_Text_YouPutItBack:
