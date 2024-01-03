@@ -71,6 +71,11 @@ PlayersHouse_2F_EventScript_WallClock::
 	call_if_eq VAR_RESULT, FEMALE, PlayersHouse_2F_EventScript_MomComesUpstairsFemale
 	playse SE_EXIT
 	removeobject VAR_0x8008
+	waitse
+	delay 4
+	playse SE_M_DETECT
+	call_if_eq VAR_RESULT, MALE, PlayersHouse_2F_EventScript_MaleBookSparkle
+	call_if_eq VAR_RESULT, FEMALE, PlayersHouse_2F_EventScript_FemaleBookSparkle
 	releaseall
 	end
 
@@ -87,6 +92,11 @@ PlayersHouse_2F_EventScript_MomComesUpstairsMale::
 	waitmovement 0
 	return
 
+PlayersHouse_2F_EventScript_MaleBookSparkle::
+	dofieldeffectsparkle 1, 1, 0
+	waitfieldeffect FLDEFF_SPARKLE
+	return
+
 PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
 	setvar VAR_0x8008, LOCALID_MOM_2F
 	addobject VAR_0x8008
@@ -98,6 +108,11 @@ PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
 	closemessage
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsFemale
 	waitmovement 0
+	return
+
+PlayersHouse_2F_EventScript_FemaleBookSparkle::
+	dofieldeffectsparkle 7, 1, 0
+	waitfieldeffect FLDEFF_SPARKLE
 	return
 
 PlayersHouse_2F_EventScript_CheckWallClock::
