@@ -3141,4 +3141,8 @@ extern const u8 gText_Abilities[];
 extern const u8 gText_SeeSeed[];
 extern const u8 gText_SetSeed[];
 
+// Multichoice Colors:
+extern const u8 gText_ToggleRed[];
+extern const u8 gText_ToggleGreen[];
+
 #endif // GUARD_STRINGS_H

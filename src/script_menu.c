@@ -46,6 +46,39 @@ bool8 ScriptMenu_Multichoice(u8 left, u8 top, u8 multichoiceId, bool8 ignoreBPre
     }
     else
     {
+        if (multichoiceId == MULTI_EXPLAIN_OR_TOGGLE)
+        {
+            if (gSpecialVar_0x8004 == 1)
+            {
+                if (FlagGet(FLAG_SYS_SOFT_LEVEL_CAP))
+                StringCopy(gStringVar1, gText_ToggleGreen);
+                else
+                StringCopy(gStringVar1, gText_ToggleRed);
+                StringExpandPlaceholders(gStringVar2, gText_Toggle);
+            }
+            if (gSpecialVar_0x8004 == 2)
+            {
+                if (FlagGet(FLAG_SYS_HARD_LEVEL_CAP))
+                StringCopy(gStringVar1, gText_ToggleGreen);
+                else
+                StringCopy(gStringVar1, gText_ToggleRed);
+                StringExpandPlaceholders(gStringVar2, gText_Toggle);
+            }
+        }
+        if (multichoiceId == MULTI_RANDOMISER_OPTIONS)
+        {
+            if (FlagGet(FLAG_SYS_ENCOUNTER_RANDOMISER))
+            StringCopy(gStringVar1, gText_ToggleGreen);
+            else
+            StringCopy(gStringVar1, gText_ToggleRed);
+            StringExpandPlaceholders(gStringVar2, gText_Encounters);
+        
+            if (FlagGet(FLAG_SYS_ABILITY_RANDOMISER))
+            StringCopy(gStringVar1, gText_ToggleGreen);
+            else
+            StringCopy(gStringVar1, gText_ToggleRed);
+            StringExpandPlaceholders(gStringVar3, gText_Abilities);
+        }
         gSpecialVar_Result = 0xFF;
         DrawMultichoiceMenu(left, top, multichoiceId, ignoreBPress, 0);
         return TRUE;

@@ -81,6 +81,7 @@ Common_EventScript_PkmnCenterBattleMaster_CancelBack::
     end
 
 Common_EventScript_PkmnCenterBattleMaster_SoftLevelCaps::
+    setvar VAR_0x8004, 1
 	message gText_WouldYouLikeMeToDo
 	waitmessage
 	multichoice 21, 6, MULTI_EXPLAIN_OR_TOGGLE, FALSE
@@ -118,6 +119,7 @@ Common_EventScript_PkmnCenterBattleMaster_ExplainSoftCap::
     end
 
 Common_EventScript_PkmnCenterBattleMaster_HardLevelCaps::
+    setvar VAR_0x8004, 2
 	message gText_WouldYouLikeMeToDo
 	waitmessage
 	multichoice 21, 6, MULTI_EXPLAIN_OR_TOGGLE, FALSE

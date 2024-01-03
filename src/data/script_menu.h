@@ -574,8 +574,8 @@ static const struct MenuAction MultichoiceList_SwordOrShield[] =
 
 static const struct MenuAction MultichoiceList_RandomiserOptions[] =
 {
-    {gText_Encounters},
-    {gText_Abilities},
+    {gStringVar2},
+    {gStringVar3},
     {gText_SeeSeed},
     {gText_SetSeed},
     {gText_Exit},
@@ -778,7 +778,7 @@ static const struct MenuAction MultichoiceList_ChooseBottleCap[] =
 
 static const struct MenuAction MultichoiceList_ExplainOrToggle[] =
 {
-    {gText_Toggle},
+    {gStringVar2},
     {gText_Info2},
     {gText_Exit},
 };
