@@ -20,6 +20,7 @@
 #include "text_window.h"
 #include "trainer_pokemon_sprites.h"
 #include "trig.h"
+#include "wild_encounter.h"
 #include "window.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
@@ -352,7 +353,7 @@ u16 GetStarterPokemon(u16 chosenStarterId)
 {
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
-    return sStarterMon[chosenStarterId];
+    return PokemonRandomiser(sStarterMon[chosenStarterId]);
 }
 
 static void VblankCB_StarterChoose(void)

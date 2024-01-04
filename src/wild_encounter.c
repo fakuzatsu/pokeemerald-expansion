@@ -683,8 +683,8 @@ static u16 GenerateFishingWildMon(const struct WildPokemonInfo *wildMonInfo, u8 
     u8 wildMonIndex = ChooseWildMonIndex_Fishing(rod);
     u8 level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, WILD_AREA_FISHING);
 
-    CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
-    return wildMonInfo->wildPokemon[wildMonIndex].species;
+    CreateWildMon(PokemonRandomiser(wildMonInfo->wildPokemon[wildMonIndex].species), level);
+    return PokemonRandomiser(wildMonInfo->wildPokemon[wildMonIndex].species);
 }
 
 static bool8 SetUpMassOutbreakEncounter(u8 flags)
@@ -694,7 +694,7 @@ static bool8 SetUpMassOutbreakEncounter(u8 flags)
     if (flags & WILD_CHECK_REPEL && !IsWildLevelAllowedByRepel(gSaveBlock1Ptr->outbreakPokemonLevel))
         return FALSE;
 
-    CreateWildMon(gSaveBlock1Ptr->outbreakPokemonSpecies, gSaveBlock1Ptr->outbreakPokemonLevel);
+    CreateWildMon(PokemonRandomiser(gSaveBlock1Ptr->outbreakPokemonSpecies), gSaveBlock1Ptr->outbreakPokemonLevel);
     for (i = 0; i < MAX_MON_MOVES; i++)
         SetMonMoveSlot(&gEnemyParty[0], gSaveBlock1Ptr->outbreakPokemonMoves[i], i);
 
@@ -1040,7 +1040,7 @@ void FishingWildEncounter(u8 rod)
         u8 level = ChooseWildMonLevel(&sWildFeebas, 0, WILD_AREA_FISHING);
 
         species = sWildFeebas.species;
-        CreateWildMon(species, level);
+        CreateWildMon(PokemonRandomiser(species), level);
     }
     else
     {
