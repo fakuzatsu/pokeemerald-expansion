@@ -139,6 +139,8 @@ static u32 GetWildAiFlags(void)
     return flags;
 }
 
+#define ADDITIONAL_FLAGS_IF_HARDMODE (AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_SMART_SWITCHING)
+
 void BattleAI_SetupFlags(void)
 {
 #if DEBUG_OVERWORLD_MENU == TRUE
@@ -157,11 +159,19 @@ void BattleAI_SetupFlags(void)
     else if (gBattleTypeFlags & BATTLE_TYPE_FACTORY)
         AI_THINKING_STRUCT->aiFlags = GetAiScriptsInBattleFactory();
     else if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_TRAINER_HILL | BATTLE_TYPE_SECRET_BASE))
-        AI_THINKING_STRUCT->aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT;
-    else if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
-        AI_THINKING_STRUCT->aiFlags = gTrainers[gTrainerBattleOpponent_A].aiFlags | gTrainers[gTrainerBattleOpponent_B].aiFlags;
-    else
-        AI_THINKING_STRUCT->aiFlags = gTrainers[gTrainerBattleOpponent_A].aiFlags;
+        AI_THINKING_STRUCT->aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_SMART_SWITCHING;
+    else if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS) {
+        if (FlagGet(FLAG_SYS_ENFORCED_HARDMODE))
+            AI_THINKING_STRUCT->aiFlags = (gTrainers[gTrainerBattleOpponent_A].aiFlags | gTrainers[gTrainerBattleOpponent_B].aiFlags) | ADDITIONAL_FLAGS_IF_HARDMODE;
+        else
+            AI_THINKING_STRUCT->aiFlags = gTrainers[gTrainerBattleOpponent_A].aiFlags | gTrainers[gTrainerBattleOpponent_B].aiFlags;
+    }
+    else {
+        if (FlagGet(FLAG_SYS_ENFORCED_HARDMODE))
+            AI_THINKING_STRUCT->aiFlags = gTrainers[gTrainerBattleOpponent_A].aiFlags | ADDITIONAL_FLAGS_IF_HARDMODE;
+        else
+            AI_THINKING_STRUCT->aiFlags = gTrainers[gTrainerBattleOpponent_A].aiFlags;
+    }
 
     // check smart wild AI
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_TRAINER)) && IsWildMonSmart())
@@ -170,6 +180,8 @@ void BattleAI_SetupFlags(void)
     if (gBattleTypeFlags & (BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS) || gTrainers[gTrainerBattleOpponent_A].doubleBattle)
         AI_THINKING_STRUCT->aiFlags |= AI_FLAG_DOUBLE_BATTLE; // Act smart in doubles and don't attack your partner.
 }
+
+#undef ADDITIONAL_FLAGS_IF_HARDMODE
 
 // sBattler_AI set in ComputeBattleAiScores
 void BattleAI_SetupAIData(u8 defaultScoreMoves, u32 battler)
