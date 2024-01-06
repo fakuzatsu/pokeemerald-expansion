@@ -17,7 +17,23 @@ LavaridgeTown_HerbShop_Pokemart:
 	.2byte ITEM_ENERGY_ROOT
 	.2byte ITEM_HEAL_POWDER
 	.2byte ITEM_REVIVAL_HERB
+	.2byte ITEM_MENTAL_HERB
+	.2byte ITEM_WHITE_HERB
+	.2byte ITEM_POWER_HERB
+	.2byte ITEM_MIRROR_HERB
 	.2byte ITEM_NONE
+	release
+	end
+
+LavaridgeTown_HerbShop_EventScript_Mints::
+	lock
+	faceplayer
+	setvar VAR_0x8009, 9
+	message LavaridgeTown_HerbShop_Text_WelcomeToHerbShop
+	waitmessage
+	pokemart 0
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	setvar VAR_0x8009, 0
 	release
 	end
 
@@ -43,7 +59,7 @@ LavaridgeTown_HerbShop_EventScript_ExplainCharcoal::
 
 LavaridgeTown_HerbShop_Text_WelcomeToHerbShop:
 	.string "Welcome to the HERB SHOP, home of\n"
-	.string "effective and inexpensive medicine!$"
+	.string "effective medicine!$"
 
 LavaridgeTown_HerbShop_Text_YouveComeToLookAtHerbalMedicine:
 	.string "You've come to look at herbal medicine\n"
