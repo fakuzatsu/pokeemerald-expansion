@@ -15,24 +15,13 @@ Route111_MapScripts::
 	.byte 0
 
 Route111_OnResume:
-	special GetDayOrNight
-	goto_if_eq VAR_RESULT, 1, Route111_OnResume_Night
-	goto_if_eq VAR_RESULT, 0, Route111_OnResume_Day
+	setflag FLAG_TEMP_9
+	call Route111_EventScript_CheckSetSandstorm
 	end
-
-Route111_OnResume_Night:
-	setweather WEATHER_SHADE
-	setflag FLAG_HIDE_TRAINER_NIGHT
-	return
-
-Route111_OnResume_Day:
-	setweather WEATHER_SUNNY
-	return
 
 Route111_OnLoad:
 	call_if_unset FLAG_REGI_DOORS_OPENED, Route111_EventScript_CloseDesertRuins
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 1, Route111_EventScript_ShowTemporaryMirageTower
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	call Route111_EventScript_CheckSetSandstorm
 	end
 
@@ -69,9 +58,9 @@ Route111_OnTransition:
 	call_if_unset FLAG_MIRAGE_TOWER_VISIBLE, Route111_EventScript_SetLayoutNoMirageTower
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 1, Route111_EventScript_SetFallingPlayerGfx
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 2, Route111_EventScript_SetMirageTowerGone
-	call Route111_EventScript_CheckSetSandstorm
 	call GabbyAndTy_EventScript_UpdateLocation
 	goto_if_not_defeated TRAINER_VICKY, Route111_EventScript_SetWinstratesNotDefeated
+	call Route111_EventScript_CheckSetSandstorm
 	end
 
 Route111_EventScript_SetFallingPlayerGfx::
@@ -95,16 +84,25 @@ Route111_EventScript_CheckSetSandstorm::
 	goto_if_gt VAR_TEMP_1, 72, Route111_EventScript_SetSandstorm
 	goto_if_gt VAR_TEMP_0, 2000, Route111_EventScript_EndCheckSetSandstorm
 	goto_if_lt VAR_TEMP_0, 8, Route111_EventScript_EndCheckSetSandstorm
-	doweather
-	return
-
 Route111_EventScript_SetSandstorm::
 	setweather WEATHER_SANDSTORM
+	doweather
+	return
 
 Route111_EventScript_EndCheckSetSandstorm::
 	special GetDayOrNight
 	goto_if_eq VAR_RESULT, 1, Route111_OnResume_Night
+	goto_if_set FLAG_TEMP_9, Route111_OnResume_Day
 	goto_if_eq VAR_RESULT, 0, Route111_OnTransition_Day
+	end
+
+Route111_OnResume_Night:
+	setweather WEATHER_SHADE
+	setflag FLAG_HIDE_TRAINER_NIGHT
+	return
+
+Route111_OnResume_Day:
+	setweather WEATHER_SUNNY
 	return
 
 Route111_OnTransition_Day:

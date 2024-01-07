@@ -10,7 +10,7 @@ LilycoveCity_DepartmentStore_3F_EventScript_ClerkLeft::
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
-
+ 
 	.align 2
 LilycoveCity_DepartmentStore_3F_Pokemart_Vitamins:
 	.2byte ITEM_PROTEIN
@@ -19,6 +19,7 @@ LilycoveCity_DepartmentStore_3F_Pokemart_Vitamins:
 	.2byte ITEM_ZINC
 	.2byte ITEM_CARBOS
 	.2byte ITEM_HP_UP
+	.2byte ITEM_PP_UP
 	.2byte ITEM_NONE
 	release
 	end
@@ -38,6 +39,7 @@ LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters:
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_X_SP_ATK
 	.2byte ITEM_X_ATTACK
+	.2byte ITEM_X_SP_DEF
 	.2byte ITEM_X_DEFENSE
 	.2byte ITEM_DIRE_HIT
 	.2byte ITEM_GUARD_SPEC

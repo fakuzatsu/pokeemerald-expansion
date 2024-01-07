@@ -82,6 +82,7 @@
 #define MAP_VERDANT_ISLE_DEEP            (73 | (0 << 8))
 #define MAP_UNDERWATER_VERDANT_ISLE_DEEP (74 | (0 << 8))
 #define MAP_OUTSET_PATH                  (75 | (0 << 8))
+#define MAP_ROUTE111EAST                 (76 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))

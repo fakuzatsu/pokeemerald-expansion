@@ -4890,6 +4890,16 @@
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Grotto25/border.bin",
       "blockdata_filepath": "data/layouts/Grotto25/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE111EAST",
+      "name": "Route111East_Layout",
+      "width": 44,
+      "height": 58,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/Route111East/border.bin",
+      "blockdata_filepath": "data/layouts/Route111East/map.bin"
     }
   ]
 }
