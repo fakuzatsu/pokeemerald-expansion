@@ -2176,3 +2176,15 @@ static const struct SpriteFrameImage sPicTable_RubySapphireMay[] = {
 static const struct SpriteFrameImage sPicTable_Globe[] = {
     obj_frame_tiles(gObjectEventPic_Globe),
 };
+
+static const struct SpriteFrameImage sPicTable_Kahili[] = {
+    overworld_frame(gObjectEventPic_Kahili, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Kahili, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Kahili, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Kahili, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Kahili, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Kahili, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Kahili, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Kahili, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Kahili, 2, 4, 2),
+};
