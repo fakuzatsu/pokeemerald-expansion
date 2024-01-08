@@ -6300,6 +6300,18 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_WallyVR1),
     },
 
+    [TRAINER_KAHILI] =
+    {
+        .trainerClass = TRAINER_CLASS_LEADER,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_KAHILI,
+        .trainerName = _("Kahili"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_MON_CHOICES,
+        .party = TRAINER_PARTY(sParty_Kahili),
+    },
+
     [TRAINER_BRENDAN_ROUTE_103_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,

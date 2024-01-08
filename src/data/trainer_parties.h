@@ -6887,6 +6887,37 @@ static const struct TrainerMon sParty_WallyVR1[] = {
     }
 };
 
+static const struct TrainerMon sParty_Kahili[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+    .lvl = 20,
+    .species = SPECIES_RUFFLET,
+    .heldItem = ITEM_EVIOLITE,
+    .moves = {MOVE_AERIAL_ACE, MOVE_FACADE, MOVE_BULK_UP, MOVE_ROOST}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+    .lvl = 22,
+    .species = SPECIES_ORICORIO,
+    .heldItem = ITEM_SHARP_BEAK,
+    .moves = {MOVE_REVELATION_DANCE, MOVE_AIR_CUTTER, MOVE_FEATHER_DANCE, MOVE_TAILWIND}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+    .lvl = 22,
+    .species = SPECIES_HAWLUCHA,
+    .heldItem = ITEM_IAPAPA_BERRY,
+    .moves = {MOVE_ACROBATICS, MOVE_LOW_SWEEP, MOVE_BULK_UP, MOVE_ROOST}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+    .lvl = 24,
+    .species = SPECIES_TRUMBEAK,
+    .heldItem = ITEM_SHELL_BELL,
+    .moves = {MOVE_BULLET_SEED, MOVE_BRICK_BREAK, MOVE_BEAK_BLAST, MOVE_U_TURN}
+    }
+};
+
 static const struct TrainerMon sParty_BrendanRoute103Mudkip[] = {
     {
     .lvl = 5,

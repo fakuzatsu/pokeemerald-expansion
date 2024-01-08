@@ -868,11 +868,12 @@
 #define TRAINER_FIGHTING_MASTER             864
 #define TRAINER_GROTTO_HEX_LADY             865
 #define TRAINER_GROTTO_HEX_LADY2            866
+#define TRAINER_KAHILI                      867
 
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      867
+#define TRAINERS_COUNT                      868
 #define MAX_TRAINERS_COUNT                  912
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H
