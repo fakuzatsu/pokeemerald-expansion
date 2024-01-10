@@ -1505,15 +1505,11 @@
 #define FLAG_UNUSED_0x919                                           0x928 // Unused Flag
 #define FLAG_UNUSED_0x91A                                           0x929 // Unused Flag
 #define FLAG_UNUSED_0x91B                                           0x92A // Unused Flag
-#define FLAG_UNUSED_0x91C                                           0x92B // Unused Flag
-#define FLAG_UNUSED_0x91D                                           0x92C // Unused Flag
-#define FLAG_UNUSED_0x91E                                           0x92D // Unused Flag
-#define FLAG_UNUSED_0x91F                                           0x92E // Unused Flag
 
 // Daily Flags
 // These flags are cleared once per day
 // The start and end are byte-aligned because the flags are cleared in byte increments
-#define DAILY_FLAGS_START                           (FLAG_UNUSED_0x91F + (8 - FLAG_UNUSED_0x91F % 8))
+#define DAILY_FLAGS_START                           (FLAG_UNUSED_0x91B + ((8 - (FLAG_UNUSED_0x91B % 8)) % 8))
 #define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
@@ -1580,12 +1576,19 @@
 #define FLAG_ITEM_GROTTO_20_RELIC_CROWN             (DAILY_FLAGS_START + 0x39) // Custom Flag
 #define FLAG_ITEM_GROTTO_25_RELIC_CROWN             (DAILY_FLAGS_START + 0x3A) // Custom Flag
 
+// Daily Trainer flags. These are used for many post-game fights that
+// give good daily rewards.
 #define FLAG_UNUSED_0x95B                           (DAILY_FLAGS_START + 0x3B) // Unused Flag
 #define FLAG_UNUSED_0x95C                           (DAILY_FLAGS_START + 0x3C) // Unused Flag
 #define FLAG_UNUSED_0x95D                           (DAILY_FLAGS_START + 0x3D) // Unused Flag
 #define FLAG_UNUSED_0x95E                           (DAILY_FLAGS_START + 0x3E) // Unused Flag
 #define FLAG_UNUSED_0x95F                           (DAILY_FLAGS_START + 0x3F) // Unused Flag
-#define DAILY_FLAGS_END                             (FLAG_UNUSED_0x95F + (7 - FLAG_UNUSED_0x95F % 8))
+#define FLAG_UNUSED_0x91C                           (DAILY_FLAGS_START + 0x40) // Unused Flag
+#define FLAG_UNUSED_0x91D                           (DAILY_FLAGS_START + 0x41) // Unused Flag
+#define FLAG_UNUSED_0x91E                           (DAILY_FLAGS_START + 0x42) // Unused Flag
+#define FLAG_UNUSED_0x91F                           (DAILY_FLAGS_START + 0x43) // Unused Flag
+
+#define DAILY_FLAGS_END                             (FLAG_UNUSED_0x91F + (7 - FLAG_UNUSED_0x91F % 8))
 #define NUM_DAILY_FLAGS                             (DAILY_FLAGS_END - DAILY_FLAGS_START + 1)
 
 #define FLAGS_COUNT (DAILY_FLAGS_END + 1)
