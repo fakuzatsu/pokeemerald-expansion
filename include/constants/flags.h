@@ -1578,7 +1578,7 @@
 
 // Daily Trainer flags. These are used for many post-game fights that
 // give good daily rewards.
-#define FLAG_UNUSED_0x95B                           (DAILY_FLAGS_START + 0x3B) // Unused Flag
+#define FLAG_KAHILI_POSTGAME_BATTLE                 (DAILY_FLAGS_START + 0x3B) // Custom Flag
 #define FLAG_UNUSED_0x95C                           (DAILY_FLAGS_START + 0x3C) // Unused Flag
 #define FLAG_UNUSED_0x95D                           (DAILY_FLAGS_START + 0x3D) // Unused Flag
 #define FLAG_UNUSED_0x95E                           (DAILY_FLAGS_START + 0x3E) // Unused Flag
