@@ -519,6 +519,108 @@ bool8 CheckRelicsForExchange(void)
         return FALSE;
 }
 
+u16 CheckEvolutionStone(void)
+{
+    u32 rand;
+    u32 species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
+    u32 gender = GetGenderFromSpeciesAndPersonality(species, GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_PERSONALITY));
+
+    if (species == SPECIES_KIRLIA && gender == MON_MALE)
+        return ITEM_DAWN_STONE;
+
+    if (species == SPECIES_SNORUNT && gender == MON_FEMALE)
+        return ITEM_DAWN_STONE;
+
+    // special case for Gloom and Eevee goes here:
+    if (species == SPECIES_GLOOM)
+    {
+        if (Random() % 2 == 0)
+            return ITEM_LEAF_STONE;
+        else
+            return ITEM_SUN_STONE;
+    }
+
+    if (species == SPECIES_EEVEE)
+    {
+        rand = Random() % 5;
+        switch(rand)
+        {
+        case 0:
+            return ITEM_FIRE_STONE;
+        case 1:
+            return ITEM_WATER_STONE;
+        case 2:
+            return ITEM_THUNDER_STONE;
+        case 3:
+            return ITEM_LEAF_STONE;
+        case 4:
+            return ITEM_ICE_STONE;
+        default:
+            return ITEM_WATER_STONE;
+        }
+    }
+
+    switch(species)
+    {
+    case SPECIES_VULPIX:
+    case SPECIES_GROWLITHE:
+    case SPECIES_GROWLITHE_HISUIAN:
+    case SPECIES_PANSEAR:
+    case SPECIES_CAPSAKID:
+        return ITEM_FIRE_STONE;
+    case SPECIES_POLIWHIRL:
+    case SPECIES_SHELLDER:
+    case SPECIES_STARYU:
+    case SPECIES_LOMBRE:
+    case SPECIES_PANPOUR:
+        return ITEM_WATER_STONE;
+    case SPECIES_PIKACHU:
+    case SPECIES_MAGNETON:
+    case SPECIES_NOSEPASS:
+    case SPECIES_EELEKTRIK:
+    case SPECIES_CHARJABUG:
+    case SPECIES_TADBULB:
+        return ITEM_THUNDER_STONE;
+    case SPECIES_WEEPINBELL:
+    case SPECIES_EXEGGCUTE:
+    case SPECIES_VOLTORB_HISUIAN:
+    case SPECIES_NUZLEAF:
+    case SPECIES_PANSAGE:
+        return ITEM_LEAF_STONE;
+    case SPECIES_NIDORINA:
+    case SPECIES_NIDORINO:
+    case SPECIES_CLEFAIRY:
+    case SPECIES_JIGGLYPUFF:
+    case SPECIES_SKITTY:
+    case SPECIES_MUNNA:
+        return ITEM_MOON_STONE;
+    case SPECIES_SUNKERN:
+    case SPECIES_COTTONEE:
+    case SPECIES_PETILIL:
+    case SPECIES_HELIOPTILE:
+        return ITEM_SUN_STONE;
+    case SPECIES_TOGETIC:
+    case SPECIES_ROSELIA:
+    case SPECIES_MINCCINO:
+    case SPECIES_FLOETTE:
+        return ITEM_SHINY_STONE;
+    case SPECIES_MURKROW:
+    case SPECIES_MISDREAVUS:
+    case SPECIES_LAMPENT:
+    case SPECIES_DOUBLADE:
+        return ITEM_DUSK_STONE;
+    case SPECIES_SANDSHREW_ALOLAN:
+    case SPECIES_VULPIX_ALOLAN:
+    case SPECIES_DARUMAKA_GALARIAN:
+    case SPECIES_CRABRAWLER:
+    case SPECIES_CETODDLE:
+        return ITEM_ICE_STONE;
+    default:
+        return ITEM_NONE;
+    }
+
+}
+
 void ResetCyclingRoadChallengeData(void)
 {
     gBikeCyclingChallenge = FALSE;

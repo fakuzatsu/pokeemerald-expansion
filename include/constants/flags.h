@@ -1519,7 +1519,7 @@
 #define FLAG_PETALBURG_WOODS_FOONGUS1               (DAILY_FLAGS_START + 0x6)  // Custom Flag
 #define FLAG_PETALBURG_WOODS_FOONGUS2               (DAILY_FLAGS_START + 0x7)  // Custom Flag
 #define FLAG_PETALBURG_WOODS_FOONGUS3               (DAILY_FLAGS_START + 0x8)  // Custom Flag
-#define FLAG_UNUSED_0x929                           (DAILY_FLAGS_START + 0x9)  // Unused Flag
+#define FLAG_DAILY_GURU_EVOLUTION_STONE             (DAILY_FLAGS_START + 0x9)  // Custom Flag
 #define FLAG_DAILY_PICKED_LOTO_TICKET               (DAILY_FLAGS_START + 0xA)
 #define FLAG_DAILY_ROUTE_114_RECEIVED_BERRY         (DAILY_FLAGS_START + 0xB)
 #define FLAG_DAILY_ROUTE_111_RECEIVED_BERRY         (DAILY_FLAGS_START + 0xC)
