@@ -6918,6 +6918,44 @@ static const struct TrainerMon sParty_Kahili[] = {
     }
 };
 
+static const struct TrainerMon sParty_KahiliPostGame[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 73,
+    .species = SPECIES_ORICORIO,
+    .heldItem = ITEM_SHARP_BEAK,
+    .moves = {MOVE_REVELATION_DANCE, MOVE_TEETER_DANCE, MOVE_AIR_SLASH, MOVE_TAILWIND}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 73,
+    .species = SPECIES_HAWLUCHA,
+    .heldItem = ITEM_IAPAPA_BERRY,
+    .moves = {MOVE_ACROBATICS, MOVE_FLYING_PRESS, MOVE_DUAL_CHOP, MOVE_POISON_JAB}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_BRAVIARY,
+    .heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_CRUSH_CLAW, MOVE_BRAVE_BIRD, MOVE_SUPERPOWER, MOVE_ROOST}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_MANDIBUZZ,
+    .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+    .moves = {MOVE_SNARL, MOVE_AIR_SLASH, MOVE_TOXIC, MOVE_ROOST}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_TOUCANNON,
+    .heldItem = ITEM_FLYINIUM_Z,
+    .moves = {MOVE_BULLET_SEED, MOVE_BRICK_BREAK, MOVE_BEAK_BLAST, MOVE_ROCK_BLAST}
+    }
+};
+
 static const struct TrainerMon sParty_BrendanRoute103Mudkip[] = {
     {
     .lvl = 5,

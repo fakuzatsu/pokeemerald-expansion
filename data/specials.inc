@@ -571,3 +571,4 @@ gSpecials::
 	def_special ScriptMenu_CreateRelicExchangeMultichoice
 	def_special DoRelicExchangeSelection
 	def_special CheckRelicsForExchange
+	def_special CheckEvolutionStone
