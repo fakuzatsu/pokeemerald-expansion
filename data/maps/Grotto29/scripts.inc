@@ -61,6 +61,7 @@ Grotto29_EventScript_HexLadyGotoReward::
 	msgbox Grotto29_Text_NotTooBad, MSGBOX_DEFAULT
 	msgbox Grotto29_Text_TakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_RELIC_CROWN
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_EVENT_GROTTO_29_HEX_LADY
 	release
 	end
@@ -69,6 +70,7 @@ Grotto29_EventScript_HexLadyReluctantReward::
 	msgbox Grotto29_Text_ThatLightWasUnfair, MSGBOX_DEFAULT
 	msgbox Grotto29_Text_TakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_RELIC_CROWN
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_EVENT_GROTTO_29_HEX_LADY
 	release
 	end

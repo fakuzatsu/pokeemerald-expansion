@@ -170,7 +170,6 @@ EverGrandeCity_PokemonLeague_1F_EventScript_GiveBottleCap::
 
 EverGrandeCity_PokemonLeague_1F_EventScript_BagIsFull::
 	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
-	fadedefaultbgm
 	release
 	end
 

@@ -3,6 +3,7 @@ DewfordTown_HolidayHome_MapScripts::
 
 DewfordTown_HolidayHome_EventScript_Kahili::
 	lock
+	goto_if_gt VAR_0x8005, 100, DewfordTown_HolidayHome_EventScript_GiveTemporaryStoredItem
 	goto_if_set FLAG_SYS_GAME_CLEAR, DewfordTown_HolidayHome_EventScript_KahiliPostGame
 	checkitem ITEM_TM51
 	goto_if_eq VAR_RESULT, TRUE, DewfordTown_HolidayHome_EventScript_KahiliAfterBattle
@@ -37,8 +38,16 @@ DewfordTown_HolidayHome_EventScript_KahiliPostGame::
 	msgbox DewfordTown_HolidayHome_Text_KahiliPostBattle, MSGBOX_DEFAULT
 	checkitem ITEM_FLYINIUM_Z
 	goto_if_eq VAR_RESULT, FALSE, DewfordTown_HolidayHome_EventScript_GiveFlyiniumZ
+DewfordTown_HolidayHome_EventScript_GivePrettyFeather::
 	giveitem ITEM_PRETTY_FEATHER
+	goto_if_eq VAR_RESULT, FALSE, DewfordTown_HolidayHome_EventScript_BagFullStorePrettyFeatherTemp
 	msgbox DewfordTown_HolidayHome_Text_KahiliAfterBattle, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_HolidayHome_EventScript_BagFullStorePrettyFeatherTemp::
+	msgbox DewfordTown_HolidayHome_Text_OhYourBagIsFull, MSGBOX_DEFAULT
+	setvar VAR_0x8005, ITEM_PRETTY_FEATHER
 	release
 	end
 
@@ -51,6 +60,18 @@ DewfordTown_HolidayHome_EventScript_GiveFlyiniumZ::
 	giveitem ITEM_FLYINIUM_Z
 	msgbox DewfordTown_HolidayHome_Text_ThatsFlyiniumZ, MSGBOX_DEFAULT
 	release
+	end
+
+DewfordTown_HolidayHome_EventScript_BagFullStoreFlyiniumZTemp::
+	msgbox DewfordTown_HolidayHome_Text_OhYourBagIsFull, MSGBOX_DEFAULT
+	setvar VAR_0x8005, ITEM_FLYINIUM_Z
+	release
+	end
+
+DewfordTown_HolidayHome_EventScript_GiveTemporaryStoredItem::
+	msgbox DewfordTown_HolidayHome_Text_HereTakeThis, MSGBOX_DEFAULT
+	goto_if_eq VAR_0x8005, ITEM_PRETTY_FEATHER, DewfordTown_HolidayHome_EventScript_GivePrettyFeather
+	goto_if_eq VAR_0x8005, ITEM_FLYINIUM_Z, DewfordTown_HolidayHome_EventScript_GiveFlyiniumZ
 	end
 
 DewfordTown_HolidayHome_EventScript_Butler::
@@ -124,3 +145,12 @@ DewfordTown_HolidayHome_Text_HereToAssit:
 	.string "I work for the Hano Estate.\p"
 	.string "I am here to assist Kahili\n"
 	.string "In any matters that suit her.$"
+
+DewfordTown_HolidayHome_Text_OhYourBagIsFull:
+	.string "Oh. Your bag is full.\p"
+	.string "I'll hold onto this while you\n"
+	.string "make some space.$"
+
+DewfordTown_HolidayHome_Text_HereTakeThis:
+	.string "Please take this as thanks for\n"
+	.string "helping me train.$"

@@ -30,24 +30,28 @@ ColdStorage_1F_EventScript_Trubbish::
 
 ColdStorage_1F_EventScript_EscapeRope::
 	giveitem ITEM_ESCAPE_ROPE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	setflag FLAG_CHECKED_COLDSTORAGE_BIN
 	release
 	end
 
 ColdStorage_1F_EventScript_MaxEther::
 	giveitem ITEM_MAX_ETHER
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	setflag FLAG_CHECKED_COLDSTORAGE_BIN
 	release
 	end
 
 ColdStorage_1F_EventScript_Calcium::
 	giveitem ITEM_CALCIUM
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	setflag FLAG_CHECKED_COLDSTORAGE_BIN
 	release
 	end
 
 ColdStorage_1F_EventScript_Iron::
 	giveitem ITEM_IRON
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	setflag FLAG_CHECKED_COLDSTORAGE_BIN
 	release
 	end

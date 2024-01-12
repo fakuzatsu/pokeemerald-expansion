@@ -71,12 +71,21 @@ MauvilleCity_PokemonCenter_1F_EventScript_PokemonDoesntEvolveWithStone::
 	end
 
 MauvilleCity_PokemonCenter_1F_EventScript_PayForEvolutionStone::
+	checkitemspace VAR_0x8008 
+	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_PokemonCenter_1F_EventScript_NoRoomForEvolutionStone
 	removemoney 2000
 	updatemoneybox
 	giveitem VAR_0x8008
 	hidemoneybox
 	msgbox MauvilleCity_PokemonCenter_1F_Text_OhMyPoorXStone, MSGBOX_DEFAULT
 	setflag FLAG_DAILY_GURU_EVOLUTION_STONE
+	release
+	end
+
+MauvilleCity_PokemonCenter_1F_EventScript_NoRoomForEvolutionStone::
+	hidemoneybox
+	msgbox MauvilleCity_PokemonCenter_1F_Text_EvolutionGuruNoSpace, MSGBOX_DEFAULT
+	msgbox MauvilleCity_PokemonCenter_1F_Text_EvolutionGuruForTheBest, MSGBOX_DEFAULT
 	release
 	end
 
@@ -145,4 +154,7 @@ MauvilleCity_PokemonCenter_1F_Text_OhMyPoorXStone:
 	.string "Oh my poor {STR_VAR_2}…\p"
 	.string "I can only bear to part with it\n"
 	.string "knowing it is in good hands.$"
+
+MauvilleCity_PokemonCenter_1F_Text_EvolutionGuruNoSpace:
+	.string "Oh! You have no space for this stone.$"
 
