@@ -34,6 +34,8 @@ Route115_Hide_Audinite::
 
 Route115_Audinite::
 	goto_if_set FLAG_HIDDEN_ITEM_AUDINITE, Route115_End_Audinite
+	checkitemspace ITEM_AUDINITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call Route115_Hide_Audinite
 	special DrawWholeMapView
 	giveitem ITEM_AUDINITE

@@ -12,6 +12,8 @@ MeteorFalls_B1F_2R_Hide_Salamencite::
 
 MeteorFalls_B1F_2R_Salamencite::
 	goto_if_set FLAG_HIDDEN_ITEM_SALAMENCITE, MeteorFalls_B1F_2R_End_Salamencite
+	checkitemspace ITEM_SALAMENCITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call MeteorFalls_B1F_2R_Hide_Salamencite
 	special DrawWholeMapView
 	giveitem ITEM_SALAMENCITE

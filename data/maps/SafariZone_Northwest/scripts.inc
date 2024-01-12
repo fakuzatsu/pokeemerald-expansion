@@ -12,6 +12,8 @@ SafariZone_Northwest_Hide_Pinsirite::
 
 SafariZone_Northwest_Pinsirite::
 	goto_if_set FLAG_HIDDEN_ITEM_PINSIRITE, SafariZone_Northwest_End_Pinsirite
+	checkitemspace ITEM_PINSIRITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call SafariZone_Northwest_Hide_Pinsirite
 	special DrawWholeMapView
 	giveitem ITEM_PINSIRITE

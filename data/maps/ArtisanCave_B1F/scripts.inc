@@ -17,6 +17,8 @@ ArtisanCave_B1F_Hide_Kangaskhanite::
 
 ArtisanCave_B1F_Kangaskhanite::
 	goto_if_set FLAG_HIDDEN_ITEM_KANGASKHANITE, ArtisanCave_B1F_End_Kangaskhanite
+	checkitemspace ITEM_KANGASKHANITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call ArtisanCave_B1F_Hide_Kangaskhanite
 	special DrawWholeMapView
 	giveitem ITEM_KANGASKHANITE

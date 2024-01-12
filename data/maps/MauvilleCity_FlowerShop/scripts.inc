@@ -119,9 +119,11 @@ MauvilleCity_FlowerShop_EventScript_ThankForQuest::
 
 MauvilleCity_FlowerShop_EventScript_QuestComplete::
 	setvar VAR_TEMP_4, 1
-	setvar VAR_MAUVILLE_FLOWER_SHOP_STATE, 5
 	msgbox MauvilleCity_FlowerShop_Text_TakeThisAsThanks, MSGBOX_DEFAULT
+	checkitemspace ITEM_GRACIDEA
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	giveitem ITEM_GRACIDEA
+	setvar VAR_MAUVILLE_FLOWER_SHOP_STATE, 5
 	msgbox MauvilleCity_FlowerShop_Text_HopeToKeepGrowing, MSGBOX_DEFAULT
 	releaseall
 	end

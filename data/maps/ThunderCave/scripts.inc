@@ -18,6 +18,8 @@ ThunderCave_Hide_Sceptilite::
 
 ThunderCave_Sceptilite::
 	goto_if_set FLAG_HIDDEN_ITEM_SCEPTILITE, ThunderCave_End_Sceptilite
+	checkitemspace ITEM_SCEPTILITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call ThunderCave_Hide_Sceptilite
 	special DrawWholeMapView
 	setflag FLAG_HIDDEN_ITEM_SCEPTILITE

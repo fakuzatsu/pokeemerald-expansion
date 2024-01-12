@@ -17,6 +17,8 @@ CaveOfOrigin_UnusedRubySapphireMap2_Hide_CharizarditeY::
 
 CaveOfOrigin_UnusedRubySapphireMap2_CharizarditeX::
 	goto_if_set FLAG_HIDDEN_ITEM_CHARIZARDITE_X, CaveOfOrigin_UnusedRubySapphireMap2_End_CharizarditeX
+	checkitemspace ITEM_CHARIZARDITE_X
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call CaveOfOrigin_UnusedRubySapphireMap2_Hide_CharizarditeX
 	special DrawWholeMapView
 	giveitem ITEM_CHARIZARDITE_X
@@ -27,6 +29,8 @@ CaveOfOrigin_UnusedRubySapphireMap2_End_CharizarditeX::
 
 CaveOfOrigin_UnusedRubySapphireMap2_CharizarditY::
 	goto_if_set FLAG_HIDDEN_ITEM_CHARIZARDITE_Y, CaveOfOrigin_UnusedRubySapphireMap2_End_CharizarditeY
+	checkitemspace ITEM_CHARIZARDITE_Y
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call CaveOfOrigin_UnusedRubySapphireMap2_Hide_CharizarditeY
 	special DrawWholeMapView
 	giveitem ITEM_CHARIZARDITE_Y

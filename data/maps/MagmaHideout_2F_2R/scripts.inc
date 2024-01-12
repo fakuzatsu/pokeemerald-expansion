@@ -12,6 +12,8 @@ MagmaHideout_2F_2R_Hide_Cameruptite::
 
 MagmaHideout_2F_2R_Cameruptite::
 	goto_if_set FLAG_HIDDEN_ITEM_CAMERUPTITE, MagmaHideout_2F_2R_End_Cameruptite
+	checkitemspace ITEM_CAMERUPTITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call MagmaHideout_2F_2R_Hide_Cameruptite
 	special DrawWholeMapView
 	giveitem ITEM_CAMERUPTITE

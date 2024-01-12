@@ -191,6 +191,8 @@ SlateportCity_NameRatersHouse_EventScript_HaventBeatenLeague::
 
 SlateportCity_NameRatersHouse_EventScript_GiveSablenite::
 	msgbox SlateportCity_NameRatersHouse_Text_ImpressiveFortune, MSGBOX_DEFAULT
+	checkitemspace ITEM_SABLENITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	giveitem ITEM_SABLENITE
 	setflag FLAG_HIDDEN_ITEM_SABLENITE
 	msgbox SlateportCity_NameRatersHouse_Text_AnywaysWhereWasI, MSGBOX_DEFAULT

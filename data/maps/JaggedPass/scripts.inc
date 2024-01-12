@@ -40,6 +40,8 @@ JaggedPass_Hide_Tyranitarite::
 
 JaggedPass_Tyranitarite::
 	goto_if_set FLAG_HIDDEN_ITEM_TYRANITARITE, JaggedPass_End_Tyranitarite
+	checkitemspace ITEM_TYRANITARITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call JaggedPass_Hide_Tyranitarite
 	special DrawWholeMapView
 	giveitem ITEM_TYRANITARITE

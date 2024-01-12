@@ -63,6 +63,8 @@ Route120_Hide_Absol::
 
 Route120_Absol::
 	goto_if_set FLAG_HIDDEN_ITEM_ABSOLITE, Route120_End_Absol
+	checkitemspace ITEM_ABSOLITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call Route120_Hide_Absol
 	special DrawWholeMapView
 	giveitem ITEM_ABSOLITE

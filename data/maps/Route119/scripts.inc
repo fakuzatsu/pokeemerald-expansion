@@ -20,6 +20,8 @@ Route119_Hide_Altarianite::
 
 Route119_Altarianite::
 	goto_if_set FLAG_HIDDEN_ITEM_ALTARIANITE, Route119_End_Altarianite
+	checkitemspace ITEM_ALTARIANITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call Route119_Hide_Altarianite
 	special DrawWholeMapView
 	giveitem ITEM_ALTARIANITE

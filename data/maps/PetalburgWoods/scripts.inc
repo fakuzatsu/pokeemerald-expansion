@@ -33,6 +33,8 @@ PetalburgWoods_Hide_Beedrillite::
 
 PetalburgWoods_Beedrillite::
 	goto_if_set FLAG_HIDDEN_ITEM_BEEDRILLITE, PetalburgWoods_End_Beedrillite
+	checkitemspace ITEM_BEEDRILLITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call PetalburgWoods_Hide_Beedrillite
 	special DrawWholeMapView
 	giveitem ITEM_BEEDRILLITE

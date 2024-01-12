@@ -38,6 +38,8 @@ SlateportCity_Hide_Ampharosite::
 
 SlateportCity_Ampharosite::
 	goto_if_set FLAG_HIDDEN_ITEM_AMPHAROSITE, SlateportCity_End_Ampharosite
+	checkitemspace ITEM_AMPHAROSITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call SlateportCity_Hide_Ampharosite
 	special DrawWholeMapView
 	giveitem ITEM_AMPHAROSITE

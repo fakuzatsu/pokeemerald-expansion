@@ -12,6 +12,8 @@ CaveOfOrigin_UnusedRubySapphireMap1_Hide_Abomasite::
 
 CaveOfOrigin_UnusedRubySapphireMap1_Abomasite::
 	goto_if_set FLAG_HIDDEN_ITEM_ABOMASITE, CaveOfOrigin_UnusedRubySapphireMap1_End_Abomasite
+	checkitemspace ITEM_ABOMASITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call CaveOfOrigin_UnusedRubySapphireMap1_Hide_Abomasite
 	special DrawWholeMapView
 	giveitem ITEM_ABOMASITE

@@ -14,6 +14,8 @@ Route124_Hide_Gyaradosite::
 
 Route124_Gyaradosite::
 	goto_if_set FLAG_HIDDEN_ITEM_GYARADOSITE, Route124_End_Gyaradosite
+	checkitemspace ITEM_GYARADOSITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call Route124_Hide_Gyaradosite
 	special DrawWholeMapView
 	giveitem ITEM_GYARADOSITE

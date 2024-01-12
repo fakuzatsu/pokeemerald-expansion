@@ -18,6 +18,8 @@ DesertCavern_1F_Hide_Aerodactylite::
 
 DesertCavern_1F_Aerodactylite::
 	goto_if_set FLAG_HIDDEN_ITEM_AERODACTYLITE, DesertCavern_1F_End_Aerodactylite
+	checkitemspace ITEM_AERODACTYLITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call DesertCavern_1F_Hide_Aerodactylite
 	special DrawWholeMapView
 	giveitem ITEM_AERODACTYLITE

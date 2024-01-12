@@ -12,6 +12,8 @@ GraniteCave_B2F_Hide_Steelixite::
 
 GraniteCave_B2F_Steelixite::
 	goto_if_set FLAG_HIDDEN_ITEM_STEELIXITE, GraniteCave_B2F_End_Steelixite
+	checkitemspace ITEM_STEELIXITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call GraniteCave_B2F_Hide_Steelixite
 	special DrawWholeMapView
 	giveitem ITEM_STEELIXITE

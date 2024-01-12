@@ -24,6 +24,8 @@ AquaHideout_B2F_Hide_Sharpedonite::
 
 AquaHideout_B2F_Sharpedonite::
 	goto_if_set FLAG_HIDDEN_ITEM_SHARPEDONITE, AquaHideout_B2F_End_Sharpedonite
+	checkitemspace ITEM_SHARPEDONITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call AquaHideout_B2F_Hide_Sharpedonite
 	special DrawWholeMapView
 	giveitem ITEM_SHARPEDONITE

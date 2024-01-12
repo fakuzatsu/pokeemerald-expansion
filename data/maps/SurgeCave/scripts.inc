@@ -18,6 +18,8 @@ SurgeCave_Hide_Swampertite::
 
 SurgeCave_Swampertite::
 	goto_if_set FLAG_HIDDEN_ITEM_SWAMPERTITE, SurgeCave_End_Swampertite
+	checkitemspace ITEM_SWAMPERTITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call SurgeCave_Hide_Swampertite
 	special DrawWholeMapView
 	setflag FLAG_HIDDEN_ITEM_SWAMPERTITE

@@ -13,6 +13,8 @@ ShoalCave_LowTideLowerRoom_Hide_Glalitite::
 
 ShoalCave_LowTideLowerRoom_Glalitite::
 	goto_if_set FLAG_HIDDEN_ITEM_GLALITITE, ShoalCave_LowTideLowerRoom_End_Glalitite
+	checkitemspace ITEM_GLALITITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call ShoalCave_LowTideLowerRoom_Hide_Glalitite
 	special DrawWholeMapView
 	giveitem ITEM_GLALITITE

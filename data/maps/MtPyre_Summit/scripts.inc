@@ -21,6 +21,8 @@ MtPyre_Summit_Hide_Banettite::
 
 MtPyre_Summit_Banettite::
 	goto_if_set FLAG_HIDDEN_ITEM_BANETTITE, MtPyre_Summit_End_Banettite
+	checkitemspace ITEM_BANETTITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call MtPyre_Summit_Hide_Banettite
 	special DrawWholeMapView
 	giveitem ITEM_BANETTITE

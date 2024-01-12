@@ -35,6 +35,8 @@ AbandonedShip_Deck_Hide_Blastoisite::
 
 AbandonedShip_Deck_Blastoisite::
 	goto_if_set FLAG_HIDDEN_ITEM_BLASTOISEITE, AbandonedShip_Deck_End_Blastoisite
+	checkitemspace ITEM_BLASTOISINITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call AbandonedShip_Deck_Hide_Blastoisite
 	special DrawWholeMapView
 	giveitem ITEM_BLASTOISINITE

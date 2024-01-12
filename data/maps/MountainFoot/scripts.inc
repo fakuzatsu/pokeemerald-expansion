@@ -20,6 +20,8 @@ MountainFoot_Hide_Alakazite::
 
 MountainFoot_Alakazite::
 	goto_if_set FLAG_HIDDEN_ITEM_ALAKAZITE, MountainFoot_End_Alakazite
+	checkitemspace ITEM_ALAKAZITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call MountainFoot_Hide_Alakazite
 	special DrawWholeMapView
 	giveitem ITEM_ALAKAZITE

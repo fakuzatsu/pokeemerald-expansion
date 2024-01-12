@@ -12,6 +12,8 @@ SafariZone_North_Hide_Heracronite::
 
 SafariZone_North_Heracronite::
 	goto_if_set FLAG_HIDDEN_ITEM_HERACRONITE, SafariZone_North_End_Heracronite
+	checkitemspace ITEM_HERACRONITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call SafariZone_North_Hide_Heracronite
 	special DrawWholeMapView
 	giveitem ITEM_HERACRONITE

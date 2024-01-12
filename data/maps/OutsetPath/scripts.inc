@@ -28,6 +28,8 @@ OutsetPath_Hide_Slowbronite::
 
 OutsetPath_Slowbronite::
 	goto_if_set FLAG_HIDDEN_ITEM_SLOWBRONITE, OutsetPath_End_Slowbronite
+	checkitemspace ITEM_SLOWBRONITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call OutsetPath_Hide_Slowbronite
 	special DrawWholeMapView
 	giveitem ITEM_SLOWBRONITE

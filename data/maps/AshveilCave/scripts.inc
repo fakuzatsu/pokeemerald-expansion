@@ -18,6 +18,8 @@ AshveilCave_Hide_Blazikenite::
 
 AshveilCave_Blazikenite::
 	goto_if_set FLAG_HIDDEN_ITEM_BLAZIKENITE, AshveilCave_End_Blazikenite
+	checkitemspace ITEM_BLAZIKENITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	call AshveilCave_Hide_Blazikenite
 	special DrawWholeMapView
 	setflag FLAG_HIDDEN_ITEM_BLAZIKENITE
