@@ -190,6 +190,7 @@ DesertCavern_1F_EventScript_JawFossil::
 	msgbox DesertCavern_1F_Text_TakeJawFossil, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, DesertCavern_1F_EventScript_LeaveJawFossil
 	giveitem ITEM_JAW_FOSSIL
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	closemessage
 	removeobject LOCALID_FOSSIL_1
 	delay 30
@@ -209,6 +210,7 @@ DesertCavern_1F_EventScript_SailFossil::
 	msgbox DesertCavern_1F_Text_TakeSailFossil, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, DesertCavern_1F_EventScript_LeaveSailFossil
 	giveitem ITEM_SAIL_FOSSIL
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	closemessage
 	removeobject LOCALID_FOSSIL_2
 	delay 30

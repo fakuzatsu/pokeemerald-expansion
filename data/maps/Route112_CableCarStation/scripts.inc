@@ -41,6 +41,8 @@ Route112_CableCarStation_EventScript_Steven::
 	giveitem ITEM_MEGA_RING
 	call EventScript_EnableAllMegaStones
 	msgbox Route112_CableCarStation_Text_StevenAlsoHaveThis, MSGBOX_DEFAULT
+	checkitemspace ITEM_SCEPTILITE
+	goto_if_eq VAR_RESULT, FALSE, Route112_CableCarStation_EventScript_StevenNoSpaceInterupt
 	switch VAR_STARTER_MON
 	case 0, Route112_CableCarStation_EventScript_StevenGiveSceptileite
 	case 1, Route112_CableCarStation_EventScript_StevenGiveBlazikenite
@@ -78,6 +80,12 @@ Route112_CableCarStation_EventScript_StevenAfterMegaStone::
 	removeobject LOCALID_STEVEN
 	playse SE_DOOR
 	releaseall
+	end
+
+Route112_CableCarStation_EventScript_StevenNoSpaceInterupt::
+	msgbox Route112_CableCarStation_Text_OhNoSpaceMegaStone, MSGBOX_DEFAULT
+	setflag FLAG_STARTER_MEGA_STONE_BACKUP
+	goto Route112_CableCarStation_EventScript_StevenAfterMegaStone
 	end
 
 Route112_CableCarStation_EventScript_ExitCableCar::
@@ -205,7 +213,7 @@ Route112_CableCarStation_Text_SorryICantStay:
 	.string "After I beat those goons at the door\n"
 	.string "they ran back towards Fallarbor!\p"
 	.string "… … …\p"
-	.string "… I would hate for COSMO to run into\n"
+	.string "… I would hate for Cosmo to run into\n"
 	.string "more trouble with Team Magma.\p"
 	.string "So I must make sure he remains safe!$"
 
@@ -213,4 +221,10 @@ Route112_CableCarStation_Text_YouAreARemarkableTrainer:
 	.string "I have a feeling Team Magma don't have\n"
 	.string "a chance against you {PLAYER}!\p"
 	.string "…You are a truly remarkable trainer.$"
+
+Route112_CableCarStation_Text_OhNoSpaceMegaStone:
+	.string "Oh…\p"
+	.string "You have no space for this stone.\p"
+	.string "No matter. I will pass it onto\n"
+	.string "Professor Cosmo for you.$"
 
