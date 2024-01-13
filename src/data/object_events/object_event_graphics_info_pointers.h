@@ -489,6 +489,17 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_HOOH] =                     &gObjectEventGraphicsInfo_HoOh,
     [OBJ_EVENT_GFX_GLOBE] =                    &gObjectEventGraphicsInfo_Globe,
     [OBJ_EVENT_GFX_KAHILI] =                   &gObjectEventGraphicsInfo_Kahili,
+    [OBJ_EVENT_GFX_ARTICUNO] =                 &gObjectEventGraphicsInfo_Articuno,
+    [OBJ_EVENT_GFX_MOLTRES] =                  &gObjectEventGraphicsInfo_Moltres,
+    [OBJ_EVENT_GFX_ZAPDOS] =                   &gObjectEventGraphicsInfo_Zapdos,
+    [OBJ_EVENT_GFX_CELEBI] =                   &gObjectEventGraphicsInfo_Celebi,
+    [OBJ_EVENT_GFX_SHAYMIN] =                  &gObjectEventGraphicsInfo_Shaymin,
+    [OBJ_EVENT_GFX_VICTINI] =                  &gObjectEventGraphicsInfo_Victini,
+    [OBJ_EVENT_GFX_BISHARP] =                  &gObjectEventGraphicsInfo_Bisharp,
+    [OBJ_EVENT_GFX_FALINKS] =                  &gObjectEventGraphicsInfo_Falinks,
+    [OBJ_EVENT_GFX_HONEDGE] =                  &gObjectEventGraphicsInfo_Honedge,
+    [OBJ_EVENT_GFX_PAWNIARD] =                 &gObjectEventGraphicsInfo_Pawniard,
+    [OBJ_EVENT_GFX_STONJOURNER] =              &gObjectEventGraphicsInfo_Stonjourner,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

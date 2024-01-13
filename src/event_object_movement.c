@@ -445,6 +445,17 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
     {gObjectEventPal_Globe,                 OBJ_EVENT_PAL_TAG_GLOBE},
     {gObjectEventPal_Kahili,                OBJ_EVENT_PAL_TAG_KAHILI},
+    {gObjectEventPal_Articuno,              OBJ_EVENT_PAL_TAG_ARTICUNO},
+    {gObjectEventPal_Moltres,               OBJ_EVENT_PAL_TAG_MOLTRES},
+    {gObjectEventPal_Zapdos,                OBJ_EVENT_PAL_TAG_ZAPDOS},
+    {gObjectEventPal_Celebi,                OBJ_EVENT_PAL_TAG_CELEBI},
+    {gObjectEventPal_Shaymin,               OBJ_EVENT_PAL_TAG_SHAYMIN},
+    {gObjectEventPal_Victini,               OBJ_EVENT_PAL_TAG_VICTINI},
+    {gObjectEventPal_Bisharp,               OBJ_EVENT_PAL_TAG_BISHARP},
+    {gObjectEventPal_Falinks,               OBJ_EVENT_PAL_TAG_FALINKS},
+    {gObjectEventPal_Honedge,               OBJ_EVENT_PAL_TAG_HONEDGE},
+    {gObjectEventPal_Pawniard,              OBJ_EVENT_PAL_TAG_PAWNIARD},
+    {gObjectEventPal_Stonjourner,           OBJ_EVENT_PAL_TAG_STONJOURNER},
 #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else

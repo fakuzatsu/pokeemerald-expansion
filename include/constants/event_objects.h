@@ -242,6 +242,17 @@
 #define OBJ_EVENT_GFX_HOOH                       238
 #define OBJ_EVENT_GFX_GLOBE                      239
 #define OBJ_EVENT_GFX_KAHILI                     240
+#define OBJ_EVENT_GFX_ARTICUNO                   241
+#define OBJ_EVENT_GFX_MOLTRES                    242
+#define OBJ_EVENT_GFX_ZAPDOS                     243
+#define OBJ_EVENT_GFX_CELEBI                     244
+#define OBJ_EVENT_GFX_SHAYMIN                    245
+#define OBJ_EVENT_GFX_VICTINI                    246
+#define OBJ_EVENT_GFX_BISHARP                    247
+#define OBJ_EVENT_GFX_FALINKS                    248
+#define OBJ_EVENT_GFX_HONEDGE                    249
+#define OBJ_EVENT_GFX_PAWNIARD                   250
+#define OBJ_EVENT_GFX_STONJOURNER                251
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
@@ -252,7 +263,7 @@
 // object graphics that can be removed. If more graphics are needed, anything that
 // stores graphics ids will need to be increased in size. See wiki entry below:
 // https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion
-#define NUM_OBJ_EVENT_GFX                        241
+#define NUM_OBJ_EVENT_GFX                        252
 
 
 // These are dynamic object gfx ids.
@@ -313,6 +324,17 @@
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1122
 #define OBJ_EVENT_PAL_TAG_GLOBE                   0x1123
 #define OBJ_EVENT_PAL_TAG_KAHILI                  0x1124
+#define OBJ_EVENT_PAL_TAG_ARTICUNO                0x1125
+#define OBJ_EVENT_PAL_TAG_MOLTRES                 0x1126
+#define OBJ_EVENT_PAL_TAG_ZAPDOS                  0x1127
+#define OBJ_EVENT_PAL_TAG_CELEBI                  0x1128
+#define OBJ_EVENT_PAL_TAG_SHAYMIN                 0x1129
+#define OBJ_EVENT_PAL_TAG_VICTINI                 0x112A
+#define OBJ_EVENT_PAL_TAG_BISHARP                 0x112B
+#define OBJ_EVENT_PAL_TAG_FALINKS                 0x112C
+#define OBJ_EVENT_PAL_TAG_HONEDGE                 0x112D
+#define OBJ_EVENT_PAL_TAG_PAWNIARD                0x112E
+#define OBJ_EVENT_PAL_TAG_STONJOURNER             0x112F
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #define SHADOW_SIZE_S   0
