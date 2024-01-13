@@ -119,7 +119,7 @@
 #define FLAG_CHEAT_CODE_2                    0x65 // Custom Flag
 #define FLAG_CHEAT_CODE_3                    0x66 // Custom Flag
 #define FLAG_CHEAT_CODE_4                    0x67 // Custom Flag
-#define FLAG_CHEAT_CODE_5                     0x68 // Custom Flag
+#define FLAG_CHEAT_CODE_5                    0x68 // Custom Flag
 
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
@@ -168,7 +168,7 @@
 #define FLAG_MR_BRINEY_SAILING_INTRO         0x93
 #define FLAG_DOCK_REJECTED_DEVON_GOODS       0x94
 #define FLAG_DELIVERED_DEVON_GOODS           0x95
-#define FLAG_RECEIVED_CONTEST_PASS           0x96 // Unused, leftover from R/S
+#define FLAG_LEGENDARY_BIRDS_ENCOUNTERED     0x96 // Custom
 #define FLAG_RECEIVED_CASTFORM               0x97
 #define FLAG_RECEIVED_SUPER_ROD              0x98
 #define FLAG_RUSTBORO_NPC_TRADE_COMPLETED    0x99
@@ -472,8 +472,8 @@
 #define FLAG_CAUGHT_SUICUNE                         0x1B4 // Custom Flag
 #define FLAG_DEFEATED_RAIKOU                        0x1B5 // Custom Flag
 #define FLAG_CAUGHT_RAIKOU                          0x1B6 // Custom Flag
-#define FLAG_UNUSED_0x1B7                           0x1B7 // Unused Flag
-#define FLAG_UNUSED_0x1B8                           0x1B8 // Unused Flag
+#define FLAG_DEFEATED_SHAYMIN                       0x1B7 // Custom Flag
+#define FLAG_CAUGHT_SHAYMIN                         0x1B8 // Custom Flag
 #define FLAG_CAUGHT_ZACIAN                          0x1B9 // Custom Flag
 #define FLAG_CAUGHT_ZAMAZENTA                       0x1BA // Custom Flag
 #define FLAG_DEFEATED_REGIROCK                      0x1BB
@@ -653,7 +653,7 @@
 #define FLAG_HIDDEN_ITEM_NAVEL_ROCK_TOP_SACRED_ASH           0x261
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                0x262
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 0x263
-#define FLAG_UNUSED_0x264                                    0x264 // Unused Flag
+#define FLAG_HIDDEN_ITEM_RUSTURF_CLIFF_SILVER_WING           0x264 // Custom Flag
 #define FLAG_HIDDEN_ITEM_PETALBURG_WOODS_DEEP_RARE_CANDY     0x265 // Custom Flag
 #define FLAG_HIDDEN_ITEM_ACORN_ACRE_TINY_MUSHROOM            0x266 // Custom Flag
 #define FLAG_HIDDEN_ITEM_GROTTO_6_RELIC_COPPER               0x267 // Custom Flag
@@ -1227,8 +1227,8 @@
 #define FLAG_ITEM_ROUTE_119_TM_55                                   0x498 // Custom Flag
 #define FLAG_ITEM_SLATEPORT_FACTORY_TM_63                           0x499 // Custom Flag
 #define FLAG_ITEM_MAGA_HIDEOUT_3F_2R_TM_56                          0x49A // Custom Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
+#define FLAG_ITEM_RUSTURF_TUNNEL_1F_BOTTLE_CAP                      0x49B // Custom Flag
+#define FLAG_ITEM_RUSTURF_CLIFF_PRETTY_FEATHER                      0x49C // Custom Flag
 #define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
 #define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag

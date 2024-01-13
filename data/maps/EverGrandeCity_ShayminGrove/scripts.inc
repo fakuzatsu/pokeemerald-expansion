@@ -1,12 +1,29 @@
 EverGrandeCity_ShayminGrove_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_ShayminGrove_OnResume
+	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_ShayminGrove_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, EverGrandeCity_ShayminGrove_OnResume
 	.byte 0
+
+EverGrandeCity_ShayminGrove_OnTransition:
+	special GetDayOrNight
+	goto_if_eq VAR_RESULT, 1, EverGrandeCity_ShayminGrove_OnResume_Night
+	goto_if_eq VAR_RESULT, 0, EverGrandeCity_ShayminGrove_OnResume_Day
+	goto EverGrandeCity_ShayminGrove_EventScript_TryHideOrShowShaymin
+	end
 
 EverGrandeCity_ShayminGrove_OnResume:
 	special GetDayOrNight
 	goto_if_eq VAR_RESULT, 1, EverGrandeCity_ShayminGrove_OnResume_Night
 	goto_if_eq VAR_RESULT, 0, EverGrandeCity_ShayminGrove_OnResume_Day
+	end
+
+EverGrandeCity_ShayminGrove_EventScript_TryHideOrShowShaymin::
+	goto_if_set FLAG_CAUGHT_SHAYMIN, EverGrandeCity_ShayminGrove_EventScript_HideShaymin
+	goto_if_set FLAG_DEFEATED_SHAYMIN, EverGrandeCity_ShayminGrove_EventScript_HideShaymin
+	clearflag FLAG_TEMP_4
+	end
+
+EverGrandeCity_ShayminGrove_EventScript_HideShaymin::
+	setflag FLAG_TEMP_4
 	end
 
 EverGrandeCity_ShayminGrove_OnResume_Night:
@@ -16,4 +33,41 @@ EverGrandeCity_ShayminGrove_OnResume_Night:
 EverGrandeCity_ShayminGrove_OnResume_Day:
 	setweather WEATHER_SUNNY
 	end
+
+EverGrandeCity_ShayminGrove_EventScript_Shaymin::
+	lock
+	faceplayer
+	message EverGradeCity_ShayminGrove_Text_ShayminCry
+	playmoncry SPECIES_SHAYMIN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	closemessage
+	seteventmon SPECIES_SHAYMIN, 45
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, EverGrandeCity_ShayminGrove_EventScript_ShayminDefeated
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, EverGrandeCity_ShayminGrove_EventScript_PlayerOrShayminRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, EverGrandeCity_ShayminGrove_EventScript_PlayerOrShayminRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, EverGrandeCity_ShayminGrove_EventScript_PlayerOrShayminRan
+	setflag FLAG_CAUGHT_SHAYMIN
+	release
+	end
+
+EverGrandeCity_ShayminGrove_EventScript_ShayminDefeated::
+	setflag FLAG_DEFEATED_SHAYMIN
+	bufferspeciesname STR_VAR_1, SPECIES_SHAYMIN
+	msgbox gText_LegendaryRanAway, MSGBOX_DEFAULT
+	release
+	end
+
+EverGrandeCity_ShayminGrove_EventScript_PlayerOrShayminRan::
+	bufferspeciesname STR_VAR_1, SPECIES_SHAYMIN
+	msgbox gText_LegendaryRanAway, MSGBOX_DEFAULT
+	release
+	end
+
+EverGradeCity_ShayminGrove_Text_ShayminCry:
+	.string "Kyuu uuhn$"
 

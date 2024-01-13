@@ -769,3 +769,11 @@ Hidden_Grotto_20_EventScript_Soul_Dew::
 Hidden_Grotto_25_EventScript_Relic_Crown::
 	finditem ITEM_RELIC_CROWN
 	end
+
+RusturfTunnel_2F_EventScript_BottleCap::
+	finditem ITEM_BOTTLE_CAP
+	end
+
+RusturfCliff_EventScript_PrettyFeather::
+	finditem ITEM_PRETTY_FEATHER
+	end
