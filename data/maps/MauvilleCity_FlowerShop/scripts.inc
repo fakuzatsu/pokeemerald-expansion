@@ -23,7 +23,7 @@ MauvilleCity_FlowerShop_HideLisla::
 	setflag FLAG_TEMP_3
 	return
 
-MauvilleCity_FlowerShop_onTransition::
+MauvilleCity_FlowerShop_onTransition:
 	goto_if_unset FLAG_LORNA_MOVED_TO_SHOP, MauvilleCity_FlowerShop_StopCheck
 	goto_if_unset FLAG_LYDIA_MOVED_TO_SHOP, MauvilleCity_FlowerShop_StopCheck
 	goto_if_unset FLAG_LISLA_MOVED_TO_SHOP, MauvilleCity_FlowerShop_StopCheck

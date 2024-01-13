@@ -1,9 +1,19 @@
 FallarborTown_CozmosHouse_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, FallarborTown_CozmosHouse_OnLoad
 	.byte 0
+
+FallarborTown_CozmosHouse_OnLoad:
+	goto_if_ne VAR_METEOR_FALLS_STATE, 2, FallarborTown_CozmosHouse_EventScript_HideSteven
+	end
+
+FallarborTown_CozmosHouse_EventScript_HideSteven::
+	setflag FLAG_TEMP_5
+	end
 
 FallarborTown_CozmosHouse_EventScript_ProfCozmo::
 	lock
 	faceplayer
+	goto_if_set FLAG_STARTER_MEGA_STONE_BACKUP, FallarborTown_CozmosHouse_EventScript_GiveStarterMegaStone
 	goto_if_set FLAG_RECEIVED_TM_RETURN, FallarborTown_CozmosHouse_EventScript_GaveMeteorite
 	checkitem ITEM_METEORITE
 	goto_if_eq VAR_RESULT, TRUE, FallarborTown_CozmosHouse_EventScript_PlayerHasMeteorite
@@ -45,6 +55,40 @@ FallarborTown_CozmosHouse_EventScript_GaveMeteorite::
 	release
 	end
 
+FallarborTown_CozmosHouse_EventScript_GiveStarterMegaStone::
+	msgbox FallarborTown_CosmosHouse_Text_GiveStarterMegaStone, MSGBOX_DEFAULT
+	switch VAR_STARTER_MON
+	case 0, FallarborTown_CozmosHouse_EventScript_CosmoGiveSceptileite
+	case 1, FallarborTown_CozmosHouse_EventScript_CosmoGiveBlazikenite
+	case 2, FallarborTown_CozmosHouse_EventScript_CosmoGiveSwampertite
+	end
+
+FallarborTown_CozmosHouse_EventScript_CosmoGiveSceptileite::
+	giveitem ITEM_SCEPTILITE
+	goto_if_eq VAR_RESULT, FALSE, FallarborTown_CozmosHouse_EventScript_NoMegaStoneSpaceInterupt
+	clearflag FLAG_STARTER_MEGA_STONE_BACKUP
+	release
+	end
+
+FallarborTown_CozmosHouse_EventScript_CosmoGiveBlazikenite::
+	giveitem ITEM_BLAZIKENITE
+	goto_if_eq VAR_RESULT, FALSE, FallarborTown_CozmosHouse_EventScript_NoMegaStoneSpaceInterupt
+	clearflag FLAG_STARTER_MEGA_STONE_BACKUP
+	release
+	end
+
+FallarborTown_CozmosHouse_EventScript_CosmoGiveSwampertite::
+	giveitem ITEM_SWAMPERTITE
+	goto_if_eq VAR_RESULT, FALSE, FallarborTown_CozmosHouse_EventScript_NoMegaStoneSpaceInterupt
+	clearflag FLAG_STARTER_MEGA_STONE_BACKUP
+	release
+	end
+
+FallarborTown_CozmosHouse_EventScript_NoMegaStoneSpaceInterupt::
+	msgbox FallarborTown_CosmosHouse_Text_NoSpaceMegaStone, MSGBOX_DEFAULT
+	release
+	end
+
 FallarborTown_CozmosHouse_EventScript_CozmosWife::
 	lock
 	faceplayer
@@ -61,6 +105,13 @@ FallarborTown_CozmosHouse_EventScript_CozmoIsSad::
 
 FallarborTown_CozmosHouse_EventScript_CozmoIsHappy::
 	msgbox FallarborTown_CozmosHouse_Text_CozmoIsSoHappy, MSGBOX_DEFAULT
+	release
+	end
+
+FallarborTown_CozmosHouse_EventScript_Steven::
+	lock
+	faceplayer
+	msgbox FallarborTown_CozmosHouse_Text_Steven, MSGBOX_DEFAULT
 	release
 	end
 
@@ -91,7 +142,11 @@ FallarborTown_CozmosHouse_Text_PleaseUseThisTM:
 FallarborTown_CozmosHouse_Text_ReallyGoingToHelpMyResearch:
 	.string "Prof. COZMO: Oh, I can't believe it.\n"
 	.string "This is really, really great!\p"
-	.string "This is really going to help my research!$"
+	.string "This is really going to help my research!\p"
+	.string "That Mega Stone I gave to you was found\n"
+	.string "In a Meteorite just like this one.\p"
+	.string "Perhaps I can unearth another discovery\n"
+	.string "with this Meteorite too$"
 
 FallarborTown_CozmosHouse_Text_CrushedWithDisappointment:
 	.string "Prof. COZMO: Oh, but…\n"
@@ -116,3 +171,20 @@ FallarborTown_CozmosHouse_Text_CozmoIsSoHappy:
 	.string "Look at Prof. COZMO…\n"
 	.string "He's so happy! I think it's cute.$"
 
+FallarborTown_CosmosHouse_Text_GiveStarterMegaStone:
+	.string "Prof. COZMO: Oh hello {PLAYER}.\p"
+	.string "Steven gave me this special stone back\n"
+	.string "for safekeeping.\p"
+	.string "Please take it with my thanks for \n"
+	.string "saving me from Team Magma.$"
+
+FallarborTown_CosmosHouse_Text_NoSpaceMegaStone:
+	.string "Oh… You have no space for this\n"
+	.string "special stone.$"
+
+FallarborTown_CozmosHouse_Text_Steven:
+	.string "Oh, {PLAYER}.\p"
+	.string "Don't worry about Cosmo.\p"
+	.string "I've already chased some Team\n"
+	.string "Magma goons away.\p"
+	.string "You should head up to Mt. Pyre.$"

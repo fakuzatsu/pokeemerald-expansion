@@ -1,4 +1,4 @@
-Grotto_OnLoad::
+Grotto_OnLoad:
     call Grotto_EventScript_GetReturnWarp
     end
 

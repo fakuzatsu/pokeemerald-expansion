@@ -3,13 +3,13 @@ Grotto24_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Grotto24_OnTransition
 	.byte 0
 
-Grotto24_OnLoad::
+Grotto24_OnLoad:
 	call Grotto_EventScript_GetReturnWarp
 	call Grotto_Layout2_SetLeftEventStage
 	call Grotto_Layout2_SetMiddleEventStage
 	end
 
-Grotto24_OnTransition::
+Grotto24_OnTransition:
 	goto_if_set FLAG_EVENT_GROTTO_24_TREASURE_TROVE, Grotto24_EventScript_HideAllTreasure
 	setflag FLAG_EVENT_GROTTO_24_TREASURE_TROVE
 	end

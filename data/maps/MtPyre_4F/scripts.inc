@@ -4,7 +4,7 @@ MtPyre_4F_MapScripts::
 
 @ Seems like the scripts for the 4F and 5F were swapped
 
-MtPyre_5F_OnTransition::
+MtPyre_5F_OnTransition:
 	setvar VAR_DAYNIGHT, 0
 	end
 

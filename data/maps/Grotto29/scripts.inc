@@ -9,14 +9,14 @@ Grotto29_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Grotto29_OnTransition
 	.byte 0
 
-Grotto29_OnLoad::
+Grotto29_OnLoad:
 	call Grotto_EventScript_GetReturnWarp
 	call Grotto_Layout2_SetLeftEventStage
 	call Grotto_Layout2_CloseEntranceLeftPath
 	call Grotto_Layout2_CloseRightPathToTop
 	end
 
-Grotto29_OnTransition::
+Grotto29_OnTransition:
 	call Grotto29_EventScript_SetupHideAndSeek
 	call_if_unset FLAG_EVENT_GROTTO_29_HEX_LADY, Grotto29_EventScript_SetDarkness
 	call_if_set FLAG_EVENT_GROTTO_29_HEX_LADY, Grotto29_EventScript_SetLessDark

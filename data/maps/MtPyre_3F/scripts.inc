@@ -2,7 +2,7 @@ MtPyre_3F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MtPyre_3F_OnTransition
 	.byte 0
 
-MtPyre_3F_OnTransition::
+MtPyre_3F_OnTransition:
 	setvar VAR_DAYNIGHT, 0
 	end
 

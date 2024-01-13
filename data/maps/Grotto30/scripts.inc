@@ -2,7 +2,7 @@ Grotto30_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Grotto30_OnTransition
 	.byte 0
 
-Grotto30_OnTransition::
+Grotto30_OnTransition:
 	call_if_set FLAG_CAUGHT_ZACIAN, Grotto30_RemoveZacian
 	call_if_set FLAG_CAUGHT_ZAMAZENTA, Grotto30_RemoveZamazenta
 	end
