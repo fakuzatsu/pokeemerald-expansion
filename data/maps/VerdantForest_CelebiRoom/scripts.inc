@@ -1,2 +1,114 @@
+.set LOCALID_CELEBI_LEFT, 1
+.set LOCALID_CELEBI_RIGHT, 2
+
 VerdantForest_CelebiRoom_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, VerdantForest_CelebiRoom_OnTransition
 	.byte 0
+
+VerdantForest_CelebiRoom_OnTransition:
+	setflag FLAG_TEMP_4
+	end
+
+VerdantForest_CelebiRoom_EventScript_IlexShrineLeft::
+	setvar VAR_0x8001, 0
+	goto_if_set FLAG_DEFEATED_CELEBI, VerdantForest_CelebiRoom_EventScript_TheShrineLiesDormant
+	goto_if_set FLAG_CAUGHT_CELEBI, VerdantForest_CelebiRoom_EventScript_TheShrineLiesDormant
+	goto VerdantForest_CelebiRoom_EventScript_IlexShrine
+	end
+
+VerdantForest_CelebiRoom_EventScript_IlexShrineRight::
+	setvar VAR_0x8001, 1
+	goto_if_set FLAG_DEFEATED_CELEBI, VerdantForest_CelebiRoom_EventScript_TheShrineLiesDormant
+	goto_if_set FLAG_CAUGHT_CELEBI, VerdantForest_CelebiRoom_EventScript_TheShrineLiesDormant
+	goto VerdantForest_CelebiRoom_EventScript_IlexShrine
+	end
+
+VerdantForest_CelebiRoom_EventScript_TheShrineLiesDormant::
+	lock
+	msgbox VerdantForest_CelebiRoom_Text_TheShrineLiesDormant, MSGBOX_DEFAULT
+	release
+	end
+
+VerdantForest_CelebiRoom_EventScript_IlexShrine::
+	lock
+	delay 10
+	playse SE_M_DETECT
+	call_if_eq VAR_0x8001, 0, VerdantForest_CelebiRoom_EventScript_SparklePlayerOnLeft
+	call_if_eq VAR_0x8001, 1, VerdantForest_CelebiRoom_EventScript_SparklePlayerOnRight
+	delay 20
+	playse SE_ORB
+	fadescreen FADE_TO_WHITE
+	delay 40
+	call_if_eq VAR_0x8001, 0, VerdantForest_CelebiRoom_EventScript_AddCelebiPlayerOnLeft
+	call_if_eq VAR_0x8001, 1, VerdantForest_CelebiRoom_EventScript_AddCelebiPlayerOnRight
+	fadescreen FADE_FROM_WHITE
+	delay 10
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 10
+	call_if_eq VAR_0x8001, 0, VerdantForest_CelebiRoom_EventScript_FaceCelebiPlayerOnLeft
+	call_if_eq VAR_0x8001, 1, VerdantForest_CelebiRoom_EventScript_FaceCelebiPlayerOnRight
+	waitmovement 0
+	delay 10
+	message VerdantForest_CelebiRoom_Text_CelebiCry
+	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
+	waitmoncry
+	closemessage
+	seteventmon SPECIES_CELEBI, 30
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, VerdantForest_CelebiRoom_EventScript_CelebiDefeated
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, VerdantForest_CelebiRoom_EventScript_PlayerOrCelebiRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, VerdantForest_CelebiRoom_EventScript_PlayerOrCelebiRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, VerdantForest_CelebiRoom_EventScript_PlayerOrCelebiRan
+	setflag FLAG_CAUGHT_CELEBI
+	release
+	end
+
+VerdantForest_CelebiRoom_EventScript_SparklePlayerOnLeft::
+	dofieldeffectsparkle 11, 8, 0
+	waitfieldeffect FLDEFF_SPARKLE
+	return
+
+VerdantForest_CelebiRoom_EventScript_SparklePlayerOnRight::
+	dofieldeffectsparkle 10, 8, 0
+	waitfieldeffect FLDEFF_SPARKLE
+	return
+
+VerdantForest_CelebiRoom_EventScript_AddCelebiPlayerOnLeft::
+	addobject LOCALID_CELEBI_RIGHT
+	return
+
+VerdantForest_CelebiRoom_EventScript_AddCelebiPlayerOnRight::
+	addobject LOCALID_CELEBI_LEFT
+	return
+
+VerdantForest_CelebiRoom_EventScript_FaceCelebiPlayerOnLeft::
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	return
+
+VerdantForest_CelebiRoom_EventScript_FaceCelebiPlayerOnRight::
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	return
+
+VerdantForest_CelebiRoom_EventScript_CelebiDefeated::
+	setflag FLAG_DEFEATED_CELEBI
+	bufferspeciesname STR_VAR_1, SPECIES_CELEBI
+	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+	release
+	end
+
+VerdantForest_CelebiRoom_EventScript_PlayerOrCelebiRan::
+	bufferspeciesname STR_VAR_1, SPECIES_CELEBI
+	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+	release
+	end
+
+VerdantForest_CelebiRoom_Text_TheShrineLiesDormant:
+	.string "The shrine lies dormant.$"
+
+VerdantForest_CelebiRoom_Text_CelebiCry:
+	.string "Bi-bii$"

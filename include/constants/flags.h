@@ -350,8 +350,8 @@
 #define FLAG_WONDER_CARD_UNUSED_7            0x143
 #define FLAG_WONDER_CARD_UNUSED_8            0x144
 #define FLAG_WONDER_CARD_UNUSED_9            0x145
-#define FLAG_WONDER_CARD_UNUSED_10           0x146
-#define FLAG_WONDER_CARD_UNUSED_11           0x147
+#define FLAG_DEFEATED_CELEBI                 0x146
+#define FLAG_CAUGHT_CELEBI                   0x147
 #define FLAG_DEFEATED_ARTICUNO               0x148
 #define FLAG_CAUGHT_ARTICUNO                 0x149
 #define FLAG_DEFEATED_ZAPDOS                 0x14A
