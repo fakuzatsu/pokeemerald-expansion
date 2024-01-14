@@ -338,14 +338,14 @@
 #define FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS    0x139
 
 #define FLAG_UNUSED_0x13A                    0x13A // Unused Flag
-#define FLAG_SYS_INVALID_CHALLENGE           0x13B // Custom Flag
+#define FLAG_UNUSED_0x13B                    0x13B // Unused Flag
 #define FLAG_MET_FRONTIER_WISE_MOVE_TUTOR    0x13C // Custom Flag
 
 #define FLAG_CANDYFACTORY_NPC_ITEM_GIFTED    0x13D // Custom Flag
 #define FLAG_ADOPTION_LADY_USES_NAME         0x13E // Custom Flag
 #define FLAG_ADOPTION_LADY_GIVES_CHARM       0x13F // Custom Flag
-#define FLAG_SYS_ENCOUNTER_RANDOMISER        0x140 // Custom Flag
-#define FLAG_SYS_ABILITY_RANDOMISER          0x141 // Custom Flag
+#define FLAG_UNUSED_0x140                    0x140 // Unused Flag
+#define FLAG_UNUSED_0x141                    0x141 // Unused Flag
 #define FLAG_WONDER_CARD_UNUSED_6            0x142
 #define FLAG_WONDER_CARD_UNUSED_7            0x143
 #define FLAG_WONDER_CARD_UNUSED_8            0x144
@@ -1370,20 +1370,36 @@
 #define FLAG_VISITED_DEWFORD_TOWN                                   0x8A1
 #define FLAG_VISITED_LAVARIDGE_TOWN                                 0x8A2
 #define FLAG_VISITED_FALLARBOR_TOWN                                 0x8A3
-#define FLAG_VISITED_VERDANTURF_TOWN                                0x8B3
-#define FLAG_VISITED_PACIFIDLOG_TOWN                                0x8B4
-#define FLAG_VISITED_PETALBURG_CITY                                 0x8B5
-#define FLAG_VISITED_SLATEPORT_CITY                                 0x8B6
-#define FLAG_VISITED_MAUVILLE_CITY                                  0x8B7
-#define FLAG_VISITED_RUSTBORO_CITY                                  0x8B8
-#define FLAG_VISITED_FORTREE_CITY                                   0x8B9
-#define FLAG_VISITED_LILYCOVE_CITY                                  0x8BA
-#define FLAG_VISITED_MOSSDEEP_CITY                                  0x8BB
-#define FLAG_VISITED_SOOTOPOLIS_CITY                                0x8BC
-#define FLAG_VISITED_EVER_GRANDE_CITY                               0x8BD
+#define FLAG_VISITED_VERDANTURF_TOWN                                0x8A4
+#define FLAG_VISITED_PACIFIDLOG_TOWN                                0x8A5
+#define FLAG_VISITED_PETALBURG_CITY                                 0x8A6
+#define FLAG_VISITED_SLATEPORT_CITY                                 0x8A7                                 
+#define FLAG_VISITED_MAUVILLE_CITY                                  0x8A8
+#define FLAG_VISITED_RUSTBORO_CITY                                  0x8A9
+#define FLAG_VISITED_FORTREE_CITY                                   0x8AA
+#define FLAG_VISITED_LILYCOVE_CITY                                  0x8AB
+#define FLAG_VISITED_MOSSDEEP_CITY                                  0x8AC
+#define FLAG_VISITED_SOOTOPOLIS_CITY                                0x8AD
+#define FLAG_VISITED_EVER_GRANDE_CITY                               0x8AE
 
-#define FLAG_IS_CHAMPION                                            0x8BE // Seems to be related to linking
-#define FLAG_NURSE_UNION_ROOM_REMINDER                              0x8BF
+#define FLAG_IS_CHAMPION                                            0x8AF // Seems to be related to linking
+#define FLAG_NURSE_UNION_ROOM_REMINDER                              0x8B0
+
+#define FLAG_SYS_INVALID_CHALLENGE                                  0x8B1 // Custom flag
+#define FLAG_UNUSED_0x8B2                                           0x8B2
+#define FLAG_UNUSED_0x8B3                                           0x8B3
+#define FLAG_UNUSED_0x8B4                                           0x8B4
+#define FLAG_UNUSED_0x8B5                                           0x8B5
+#define FLAG_UNUSED_0x8B6                                           0x8B6
+#define FLAG_UNUSED_0x8B7                                           0x8B7
+#define FLAG_UNUSED_0x8B8                                           0x8B8
+#define FLAG_UNUSED_0x8B9                                           0x8B9
+#define FLAG_UNUSED_0x8BA                                           0x8BA
+#define FLAG_UNUSED_0x8BB                                           0x8BB
+#define FLAG_UNUSED_0x8BC                                           0x8BC
+#define FLAG_UNUSED_0x8BD                                           0x8BD
+#define FLAG_SYS_ABILITY_RANDOMISER                                 0x8BE // Custom flag
+#define FLAG_SYS_ENCOUNTER_RANDOMISER                               0x8BF // Custom flag
 
 // Situation Flags
 #define FLAG_SYS_DEXNAV_SEARCH                                      0x8C0
