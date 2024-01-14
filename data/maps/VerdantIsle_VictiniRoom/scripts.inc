@@ -19,7 +19,7 @@ VerdantIsle_VictiniRoom_EventScript_HideVictini::
 VerdantIsle_VictiniRoom_EventScript_Victini::
 	lock
 	faceplayer
-	message EverGradeCity_VictiniGrove_Text_VictiniCry
+	message VerdantIsle_VictiniRoom_Text_VictiniCry
 	playmoncry SPECIES_VICTINI, CRY_MODE_ENCOUNTER
 	waitmoncry
 	closemessage
@@ -50,6 +50,6 @@ VerdantIsle_VictiniRoom_EventScript_PlayerOrVictiniRan::
 	release
 	end
 
-EverGradeCity_VictiniGrove_Text_VictiniCry:
+VerdantIsle_VictiniRoom_Text_VictiniCry:
 	.string "Ta-ta-ta-tah$"
 

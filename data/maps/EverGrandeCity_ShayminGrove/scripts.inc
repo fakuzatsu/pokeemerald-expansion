@@ -37,7 +37,7 @@ EverGrandeCity_ShayminGrove_OnResume_Day:
 EverGrandeCity_ShayminGrove_EventScript_Shaymin::
 	lock
 	faceplayer
-	message EverGradeCity_ShayminGrove_Text_ShayminCry
+	message EverGrandeCity_ShayminGrove_Text_ShayminCry
 	playmoncry SPECIES_SHAYMIN, CRY_MODE_ENCOUNTER
 	waitmoncry
 	closemessage
@@ -68,6 +68,6 @@ EverGrandeCity_ShayminGrove_EventScript_PlayerOrShayminRan::
 	release
 	end
 
-EverGradeCity_ShayminGrove_Text_ShayminCry:
+EverGrandeCity_ShayminGrove_Text_ShayminCry:
 	.string "Kyuu uuhn$"
 

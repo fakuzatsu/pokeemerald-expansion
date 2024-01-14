@@ -11,5 +11,19 @@ Grotto12_OnLoad:
 	end
 
 Grotto12_EventScript_Falinks::
+	lock
 	faceplayer
+	message Grotto12_Text_FalinksCry
+	playmoncry SPECIES_FALINKS, CRY_MODE_ENCOUNTER
+	waitmoncry
+	closemessage
+	setwildbattle SPECIES_FALINKS, 22
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_EVENT_GROTTO_12_FALINKS
+	release
 	end
+
+Grotto12_Text_FalinksCry:
+	.string "Fa-fa-faliii$"

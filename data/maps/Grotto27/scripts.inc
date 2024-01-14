@@ -10,4 +10,19 @@ Grotto27_OnLoad:
 	end
 
 Grotto27_EventScript_Bisharp::
+	lock
+	faceplayer
+	message Grotto27_Text_BisharpCry
+	playmoncry SPECIES_BISHARP, CRY_MODE_ENCOUNTER
+	waitmoncry
+	closemessage
+	setwildbattle SPECIES_BISHARP, 45
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_EVENT_GROTTO_27_BISHARP
+	release
 	end
+
+Grotto27_Text_BisharpCry:
+	.string "Biiishaaa$"

@@ -10,5 +10,19 @@ Grotto7_OnLoad:
 	end
 
 Grotto7_EventScript_Pawniard::
+	lock
 	faceplayer
+	message Grotto7_Text_PawniardCry
+	playmoncry SPECIES_PAWNIARD, CRY_MODE_ENCOUNTER
+	waitmoncry
+	closemessage
+	setwildbattle SPECIES_PAWNIARD, 15
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_EVENT_GROTTO_7_PAWNIARD
+	release
 	end
+
+Grotto7_Text_PawniardCry:
+	.string "Paaawwiii$"
