@@ -28,7 +28,13 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 23,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_VERDANT_ISLE_VICTINI_ROOM",
+      "dest_warp_id": "1"
+    }
   ],
   "coord_events": [
 

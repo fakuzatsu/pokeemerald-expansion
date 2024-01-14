@@ -1,0 +1,55 @@
+VerdantIsle_VictiniRoom_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, VerdantIsle_VictiniRoom_OnTransition
+	.byte 0
+
+VerdantIsle_VictiniRoom_OnTransition:
+	goto VerdantIsle_VictiniRoom_EventScript_TryHideOrShowVictini
+	end
+
+VerdantIsle_VictiniRoom_EventScript_TryHideOrShowVictini::
+	goto_if_set FLAG_CAUGHT_VICTINI, VerdantIsle_VictiniRoom_EventScript_HideVictini
+	goto_if_set FLAG_DEFEATED_VICTINI, VerdantIsle_VictiniRoom_EventScript_HideVictini
+	clearflag FLAG_TEMP_4
+	end
+
+VerdantIsle_VictiniRoom_EventScript_HideVictini::
+	setflag FLAG_TEMP_4
+	end
+
+VerdantIsle_VictiniRoom_EventScript_Victini::
+	lock
+	faceplayer
+	message EverGradeCity_VictiniGrove_Text_VictiniCry
+	playmoncry SPECIES_VICTINI, CRY_MODE_ENCOUNTER
+	waitmoncry
+	closemessage
+	seteventmon SPECIES_VICTINI, 30
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, VerdantIsle_VictiniRoom_EventScript_VictiniDefeated
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, VerdantIsle_VictiniRoom_EventScript_PlayerOrVictiniRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, VerdantIsle_VictiniRoom_EventScript_PlayerOrVictiniRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, VerdantIsle_VictiniRoom_EventScript_PlayerOrVictiniRan
+	setflag FLAG_CAUGHT_VICTINI
+	release
+	end
+
+VerdantIsle_VictiniRoom_EventScript_VictiniDefeated::
+	setflag FLAG_DEFEATED_VICTINI
+	bufferspeciesname STR_VAR_1, SPECIES_VICTINI
+	msgbox gText_LegendaryRanAway, MSGBOX_DEFAULT
+	release
+	end
+
+VerdantIsle_VictiniRoom_EventScript_PlayerOrVictiniRan::
+	bufferspeciesname STR_VAR_1, SPECIES_VICTINI
+	msgbox gText_LegendaryRanAway, MSGBOX_DEFAULT
+	release
+	end
+
+EverGradeCity_VictiniGrove_Text_VictiniCry:
+	.string "Ta-ta-ta-tah$"
+

@@ -4900,6 +4900,16 @@
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route111East/border.bin",
       "blockdata_filepath": "data/layouts/Route111East/map.bin"
+    },
+    {
+      "id": "LAYOUT_VERDANT_ISLE_VICTINI_ROOM",
+      "name": "VerdantIsle_VictiniRoom_Layout",
+      "width": 7,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/VerdantIsle_VictiniRoom/border.bin",
+      "blockdata_filepath": "data/layouts/VerdantIsle_VictiniRoom/map.bin"
     }
   ]
 }

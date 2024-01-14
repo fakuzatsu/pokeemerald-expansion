@@ -1,0 +1,60 @@
+{
+  "id": "MAP_VERDANT_ISLE_VICTINI_ROOM",
+  "name": "VerdantIsle_VictiniRoom",
+  "layout": "LAYOUT_VERDANT_ISLE_VICTINI_ROOM",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_ROUTE_109",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_VICTINI",
+      "x": 3,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VerdantIsle_VictiniRoom_EventScript_Victini",
+      "flag": "FLAG_TEMP_4"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 2,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_VERDANT_ISLE_DEEP",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_VERDANT_ISLE_DEEP",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_VERDANT_ISLE_DEEP",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

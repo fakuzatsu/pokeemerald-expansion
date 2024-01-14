@@ -463,8 +463,8 @@
 #define FLAG_DEFEATED_DEOXYS                        0x1AC
 #define FLAG_CAUGHT_DEOXYS                          0x1AD // Renamed Flag
 #define FLAG_SHOWN_EON_TICKET                       0x1AE
-#define FLAG_UNUSED_0x1AF                           0x1AF // Unused Flag
-#define FLAG_UNUSED_01B0                            0x1B0 // Unused Flag
+#define FLAG_DEFEATED_VICTINI                       0x1AF // Custom Flag
+#define FLAG_CAUGHT_VICTINI                         0x1B0 // Custom Flag
 #define FLAG_DEFEATED_ENTEI                         0x1B1 // Custom Flag
 #define FLAG_CAUGHT_ENTEI                           0x1B2 // Custom Flag
 #define FLAG_DEFEATED_SUICUNE                       0x1B3 // Custom Flag

@@ -1242,3 +1242,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Grotto25/scripts.inc"
 
 	.include "data/maps/Route111East/scripts.inc"
+
+	.include "data/maps/VerdantIsle_VictiniRoom/scripts.inc"

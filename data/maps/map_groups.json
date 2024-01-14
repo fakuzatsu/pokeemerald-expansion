@@ -671,7 +671,8 @@
     "NavelRock_Bottom",
     "TrainerHill_Elevator",
     "VerdantForest_CelebiRoom",
-    "BattleFrontier_PokemonCenter_B1F"
+    "BattleFrontier_PokemonCenter_B1F",
+    "VerdantIsle_VictiniRoom"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",
