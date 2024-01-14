@@ -1,5 +1,6 @@
 CaveOfOrigin_UnusedRubySapphireMap1_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, CaveOfOrigin_UnusedRubySapphireMap1_OnLoad
+	map_script MAP_SCRIPT_ON_TRANSITION, CaveOfOrigin_UnusedRubySapphireMap1_OnTransition
 	.byte 0
 
 CaveOfOrigin_UnusedRubySapphireMap1_OnLoad:
@@ -9,6 +10,17 @@ CaveOfOrigin_UnusedRubySapphireMap1_OnLoad:
 CaveOfOrigin_UnusedRubySapphireMap1_Hide_Abomasite::
     setmetatile 9, 7, METATILE_Cave_RockFloor, FALSE
     return
+
+CaveOfOrigin_UnusedRubySapphireMap1_OnTransition:
+	goto_if_set FLAG_CAUGHT_ARTICUNO, CaveOfOrigin_UnusedRubySapphireMap1_EventScript_HideArticuno
+	goto_if_set FLAG_DEFEATED_ARTICUNO, CaveOfOrigin_UnusedRubySapphireMap1_EventScript_HideArticuno
+	goto_if_unset FLAG_LEGENDARY_BIRDS_ENCOUNTERED, CaveOfOrigin_UnusedRubySapphireMap1_EventScript_HideArticuno
+	clearflag FLAG_TEMP_9
+	end
+
+CaveOfOrigin_UnusedRubySapphireMap1_EventScript_HideArticuno::
+	setflag FLAG_TEMP_9
+	end
 
 CaveOfOrigin_UnusedRubySapphireMap1_Abomasite::
 	goto_if_set FLAG_HIDDEN_ITEM_ABOMASITE, CaveOfOrigin_UnusedRubySapphireMap1_End_Abomasite
@@ -21,3 +33,40 @@ CaveOfOrigin_UnusedRubySapphireMap1_Abomasite::
 CaveOfOrigin_UnusedRubySapphireMap1_End_Abomasite::
 	release
 	end	
+
+CaveOfOrigin_UnusedRubySapphireMap1_EventScript_Articuno::
+	lock
+	faceplayer
+	message CaveOfOrigin_UnusedRubySapphireMap1_Text_Articuno
+	playmoncry SPECIES_ARTICUNO, CRY_MODE_ENCOUNTER
+	waitmoncry
+	closemessage
+	seteventmon SPECIES_ARTICUNO, 60
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CaveOfOrigin_UnusedRubySapphireMap1_EventScript_ArticunoDefeated
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CaveOfOrigin_UnusedRubySapphireMap1_EventScript_PlayerOrArticunoRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CaveOfOrigin_UnusedRubySapphireMap1_EventScript_PlayerOrArticunoRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CaveOfOrigin_UnusedRubySapphireMap1_EventScript_PlayerOrArticunoRan
+	setflag FLAG_CAUGHT_ARTICUNO
+	release
+	end
+
+CaveOfOrigin_UnusedRubySapphireMap1_EventScript_ArticunoDefeated::
+	setflag FLAG_DEFEATED_ARTICUNO
+	bufferspeciesname STR_VAR_1, SPECIES_ARTICUNO
+	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+	release
+	end
+
+CaveOfOrigin_UnusedRubySapphireMap1_EventScript_PlayerOrArticunoRan::
+	bufferspeciesname STR_VAR_1, SPECIES_ARTICUNO
+	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+	release
+	end
+
+CaveOfOrigin_UnusedRubySapphireMap1_Text_Articuno:
+	.string "Kyyuuu$"

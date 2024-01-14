@@ -50,9 +50,23 @@ Route110_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	call Common_EventScript_SetupRivalOnBikeGfxId
 	call_if_eq VAR_CYCLING_CHALLENGE_STATE, 1, Route110_EventScript_SaveCyclingMusic
+	call_if_set FLAG_CAUGHT_MOLTRES, Route110_EventScript_HideZapdos
+	call_if_set FLAG_DEFEATED_MOLTRES, Route110_EventScript_HideZapdos
+	call_if_unset FLAG_LEGENDARY_BIRDS_ENCOUNTERED, Route110_EventScript_HideZapdos
+	call_if_ne VAR_TEMP_9, 9, Route110_EventScript_ShowZapdos
+	special GetDayOrNight
 	goto_if_eq VAR_RESULT, 1, Route110_OnResume_Night
 	goto_if_eq VAR_RESULT, 0, Route110_OnTransition_Day
 	end
+
+Route110_EventScript_HideZapdos::
+	setflag FLAG_TEMP_9
+	setvar VAR_TEMP_9, 9
+	return
+
+Route110_EventScript_ShowZapdos::
+	clearflag FLAG_TEMP_9
+	return
 
 Route110_OnTransition_Day:
 	setvar VAR_DAYNIGHT, 0
@@ -721,6 +735,40 @@ Route110_EventScript_BirchExit4::
 	waitmovement 0
 	return
 
+Route110_EventScript_Zapdos::
+	lock
+	faceplayer
+	message Route110_Text_Zapdos
+	playmoncry SPECIES_ZAPDOS, CRY_MODE_ENCOUNTER
+	waitmoncry
+	closemessage
+	seteventmon SPECIES_ZAPDOS, 60
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route110_EventScript_ZapdosDefeated
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route110_EventScript_PlayerOrZapdosRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route110_EventScript_PlayerOrZapdosRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, Route110_EventScript_PlayerOrZapdosRan
+	setflag FLAG_CAUGHT_ZAPDOS
+	release
+	end
+
+Route110_EventScript_ZapdosDefeated::
+	setflag FLAG_DEFEATED_ZAPDOS
+	bufferspeciesname STR_VAR_1, SPECIES_ZAPDOS
+	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+	release
+	end
+
+Route110_EventScript_PlayerOrZapdosRan::
+	bufferspeciesname STR_VAR_1, SPECIES_ZAPDOS
+	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+	release
+	end
+
 Route110_Movement_BirchEntrance:
 	walk_down
 	walk_down
@@ -1032,4 +1080,7 @@ Route110_Text_KeepAnEyeOutForRival:
 	.string "… … … … … …\p"
 	.string "Well, I had better get going.\n"
 	.string "See you again, {PLAYER}{KUN}!$"
+
+Route110_Text_Zapdos:
+	.string "Kyyuuu$"
 

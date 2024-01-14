@@ -11,7 +11,21 @@ MtChimney_MapScripts::
 
 MtChimney_OnTransition:
 	setvar VAR_JAGGED_PASS_ASH_WEATHER, 1
+	goto_if_set FLAG_CAUGHT_MOLTRES, MtChimney_EventScript_HideMoltres
+	goto_if_set FLAG_DEFEATED_MOLTRES, MtChimney_EventScript_HideMoltres
+	goto_if_unset FLAG_LEGENDARY_BIRDS_ENCOUNTERED, MtChimney_EventScript_HideMoltres
+	setflag FLAG_HIDE_MT_CHIMNEY_TRAINERS
+	clearflag FLAG_TEMP_9
 	end
+
+MtChimney_EventScript_HideMoltres::
+	call_if_set FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, MtChimney_EventScript_ShowMtChimneyTrainers
+	setflag FLAG_TEMP_9
+	end
+
+MtChimney_EventScript_ShowMtChimneyTrainers::
+	clearflag FLAG_HIDE_MT_CHIMNEY_TRAINERS
+	return
 
 MtChimney_OnResume:
 	setstepcallback STEP_CB_ASH
@@ -528,6 +542,40 @@ MtChimney_EventScript_SawyerRematch::
 	msgbox MtChimney_Text_SawyerPostRematch, MSGBOX_AUTOCLOSE
 	end
 
+MtChimney_EventScript_Moltres::
+	lock
+	faceplayer
+	message MtChimney_Text_Moltres
+	playmoncry SPECIES_MOLTRES, CRY_MODE_ENCOUNTER
+	waitmoncry
+	closemessage
+	seteventmon SPECIES_MOLTRES, 60
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MtChimney_EventScript_MoltresDefeated
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MtChimney_EventScript_PlayerOrMoltresRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, MtChimney_EventScript_PlayerOrMoltresRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, MtChimney_EventScript_PlayerOrMoltresRan
+	setflag FLAG_CAUGHT_MOLTRES
+	release
+	end
+
+MtChimney_EventScript_MoltresDefeated::
+	setflag FLAG_DEFEATED_MOLTRES
+	bufferspeciesname STR_VAR_1, SPECIES_MOLTRES
+	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+	release
+	end
+
+MtChimney_EventScript_PlayerOrMoltresRan::
+	bufferspeciesname STR_VAR_1, SPECIES_MOLTRES
+	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+	release
+	end
+
 MtChimney_Text_MeteoriteWillActivateVolcano:
 	.string "The power contained in the METEORITE…\p"
 	.string "By amplifying its power with this\n"
@@ -825,4 +873,7 @@ MtChimney_Text_SawyerRematchDefeat:
 MtChimney_Text_SawyerPostRematch:
 	.string "Actually, it really is hot here.\n"
 	.string "I'm overdressed for these parts.$"
+
+MtChimney_Text_Moltres:
+	.string "Kyyuuu$"
 

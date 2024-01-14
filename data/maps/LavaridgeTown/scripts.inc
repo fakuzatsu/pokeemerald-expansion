@@ -252,10 +252,6 @@ LavaridgeTown_EventScript_HotSpringsOldWoman2::
 	msgbox LavaridgeTown_Text_HotSpringsClaims, MSGBOX_NPC
 	end
 
-LavaridgeTown_EventScript_ExpertF::
-	msgbox LavaridgeTown_Text_OhYouLikeHotSprings, MSGBOX_NPC
-	end
-
 LavaridgeTown_EventScript_EggWoman::
 	lock
 	faceplayer
@@ -393,11 +389,6 @@ LavaridgeTown_Text_PokemonNippedBackside:
 	.string "So warm and heavenly…\p"
 	.string "Eh? Gyaah! Ouch!\p"
 	.string "A Pokémon nipped my backside!$"
-
-LavaridgeTown_Text_OhYouLikeHotSprings:
-	.string "Oh, you like hot springs, do you?\p"
-	.string "That's surprising for one as young\n"
-	.string "as you.$"
 
 LavaridgeTown_Text_BatheInHotSpringsEveryDay:
 	.string "I bathe in the hot springs every day.\p"

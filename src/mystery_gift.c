@@ -292,27 +292,8 @@ void DisableWonderCardSending(struct WonderCard *card)
 
 static bool32 IsWonderCardFlagIDInValidRange(u16 flagId)
 {
-    if (flagId >= WONDER_CARD_FLAG_OFFSET && flagId < WONDER_CARD_FLAG_OFFSET + NUM_WONDER_CARD_FLAGS)
-        return TRUE;
-
     return FALSE;
 }
-
-static const u16 sReceivedGiftFlags[] =
-{
-    FLAG_WONDER_CARD_UNUSED_6,
-    FLAG_WONDER_CARD_UNUSED_7,
-    FLAG_WONDER_CARD_UNUSED_8,
-    FLAG_WONDER_CARD_UNUSED_9,
-    FLAG_WONDER_CARD_UNUSED_10,
-    FLAG_WONDER_CARD_UNUSED_11,
-    FLAG_WONDER_CARD_UNUSED_12,
-    FLAG_WONDER_CARD_UNUSED_13,
-    FLAG_WONDER_CARD_UNUSED_14,
-    FLAG_WONDER_CARD_UNUSED_15,
-    FLAG_WONDER_CARD_UNUSED_16,
-    FLAG_WONDER_CARD_UNUSED_17,
-};
 
 bool32 IsSavedWonderCardGiftNotReceived(void)
 {
@@ -320,11 +301,7 @@ bool32 IsSavedWonderCardGiftNotReceived(void)
     if (!IsWonderCardFlagIDInValidRange(value))
         return FALSE;
 
-    // If flag is set, player has received gift from this card
-    if (FlagGet(sReceivedGiftFlags[value - WONDER_CARD_FLAG_OFFSET]) == TRUE)
-        return FALSE;
-
-    return TRUE;
+    return FALSE;
 }
 
 static int GetNumStampsInMetadata(const struct WonderCardMetadata *data, int size)

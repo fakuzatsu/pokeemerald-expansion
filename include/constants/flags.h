@@ -352,13 +352,12 @@
 #define FLAG_WONDER_CARD_UNUSED_9            0x145
 #define FLAG_WONDER_CARD_UNUSED_10           0x146
 #define FLAG_WONDER_CARD_UNUSED_11           0x147
-#define FLAG_WONDER_CARD_UNUSED_12           0x148
-#define FLAG_WONDER_CARD_UNUSED_13           0x149
-#define FLAG_WONDER_CARD_UNUSED_14           0x14A
-#define FLAG_WONDER_CARD_UNUSED_15           0x14B
-#define FLAG_WONDER_CARD_UNUSED_16           0x14C
-#define FLAG_WONDER_CARD_UNUSED_17           0x14D
-#define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_WONDER_CARD_UNUSED_6)
+#define FLAG_DEFEATED_ARTICUNO               0x148
+#define FLAG_CAUGHT_ARTICUNO                 0x149
+#define FLAG_DEFEATED_ZAPDOS                 0x14A
+#define FLAG_CAUGHT_ZAPDOS                   0x14B
+#define FLAG_DEFEATED_MOLTRES                0x14C
+#define FLAG_CAUGHT_MOLTRES                  0x14D
 
 #define FLAG_MIRAGE_TOWER_VISIBLE            0x14E
 #define FLAG_CHOSE_ROOT_FOSSIL               0x14F
