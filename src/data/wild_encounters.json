@@ -24248,6 +24248,184 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_RUSTURF_CLIFF",
+          "base_label": "gRusturfCliff0",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_SKARMORY"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_BRAVIARY"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_MANDIBUZZ"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_MANDIBUZZ"
+              },
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_PIDGEOT"
+              },
+              {
+                "min_level": 47,
+                "max_level": 48,
+                "species": "SPECIES_CORVIKNIGHT"
+              },
+              {
+                "min_level": 45,
+                "max_level": 46,
+                "species": "SPECIES_CORVISQUIRE"
+              },
+              {
+                "min_level": 47,
+                "max_level": 48,
+                "species": "SPECIES_PIDGEOT"
+              },
+              {
+                "min_level": 44,
+                "max_level": 46,
+                "species": "SPECIES_PIDGEOTTO"
+              },
+              {
+                "min_level": 44,
+                "max_level": 46,
+                "species": "SPECIES_GLIGAR"
+              },
+              {
+                "min_level": 47,
+                "max_level": 47,
+                "species": "SPECIES_GLISCOR"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_GLISCOR"
+              }
+            ]
+          },
+          "hidden_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 45,
+                "max_level": 46,
+                "species": "SPECIES_DELIBIRD"
+              },
+              {
+                "min_level": 45,
+                "max_level": 46,
+                "species": "SPECIES_EMOLGA"
+              },
+              {
+                "min_level": 46,
+                "max_level": 47,
+                "species": "SPECIES_TALONFLAME"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_AQUA_HIDEOUT_UNUSED_RUBY_MAP3",
+          "base_label": "gAquaHideout_UnusedRubyMap30",
+          "land_mons": {
+            "encounter_rate": 2,
+            "mons": [
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_SKARMORY"
+              },
+              {
+                "min_level": 44,
+                "max_level": 46,
+                "species": "SPECIES_DUGTRIO"
+              },
+              {
+                "min_level": 46,
+                "max_level": 47,
+                "species": "SPECIES_EXCADRILL"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_CORVIKNIGHT"
+              },
+              {
+                "min_level": 45,
+                "max_level": 46,
+                "species": "SPECIES_CORVISQUIRE"
+              },
+              {
+                "min_level": 45,
+                "max_level": 46,
+                "species": "SPECIES_DRILBUR"
+              },
+              {
+                "min_level": 47,
+                "max_level": 48,
+                "species": "SPECIES_EXCADRILL"
+              },
+              {
+                "min_level": 46,
+                "max_level": 47,
+                "species": "SPECIES_GLISCOR"
+              },
+              {
+                "min_level": 47,
+                "max_level": 48,
+                "species": "SPECIES_SKARMORY"
+              },
+              {
+                "min_level": 45,
+                "max_level": 45,
+                "species": "SPECIES_GLIGAR"
+              },
+              {
+                "min_level": 47,
+                "max_level": 47,
+                "species": "SPECIES_GLISCOR"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_GLISCOR"
+              }
+            ]
+          },
+          "hidden_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 45,
+                "max_level": 46,
+                "species": "SPECIES_GALVANTULA"
+              },
+              {
+                "min_level": 45,
+                "max_level": 46,
+                "species": "SPECIES_EMOLGA"
+              },
+              {
+                "min_level": 45,
+                "max_level": 46,
+                "species": "SPECIES_KLEFKI"
+              }
+            ]
+          }
         }
       ]
     },
