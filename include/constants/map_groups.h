@@ -643,6 +643,7 @@
 #define MAP_VERDANT_FOREST_CELEBI_ROOM                      (89 | (26 << 8))
 #define MAP_BATTLE_FRONTIER_POKEMON_CENTER_B1F              (90 | (26 << 8))
 #define MAP_VERDANT_ISLE_VICTINI_ROOM                       (91 | (26 << 8))
+#define MAP_FIERY_CHASM_HEATRAN_ROOM                        (92 | (26 << 8))
 
 // gMapGroup_IndoorRoute104Prototype
 #define MAP_ROUTE104_PROTOTYPE                          (0 | (27 << 8))

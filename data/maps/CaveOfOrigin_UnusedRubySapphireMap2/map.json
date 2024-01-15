@@ -4,13 +4,13 @@
   "layout": "LAYOUT_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP2",
   "music": "MUS_CAVE_OF_ORIGIN",
   "region_map_section": "MAPSEC_CAVE_OF_ORIGIN",
-  "requires_flash": true,
+  "requires_flash": false,
   "weather": "WEATHER_FOG_HORIZONTAL",
   "map_type": "MAP_TYPE_UNDERGROUND",
   "allow_cycling": true,
   "allow_escaping": true,
   "allow_running": true,
-  "show_map_name": true,
+  "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
@@ -40,7 +40,7 @@
       "x": 23,
       "y": 3,
       "elevation": 0,
-      "dest_map": "MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP2",
+      "dest_map": "MAP_FIERY_CHASM_HEATRAN_ROOM",
       "dest_warp_id": "0"
     }
   ],

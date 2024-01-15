@@ -672,7 +672,8 @@
     "TrainerHill_Elevator",
     "VerdantForest_CelebiRoom",
     "BattleFrontier_PokemonCenter_B1F",
-    "VerdantIsle_VictiniRoom"
+    "VerdantIsle_VictiniRoom",
+    "FieryChasm_HeatranRoom"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",

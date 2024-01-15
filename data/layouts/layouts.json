@@ -4910,6 +4910,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/VerdantIsle_VictiniRoom/border.bin",
       "blockdata_filepath": "data/layouts/VerdantIsle_VictiniRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_FIERY_CHASM_HEATRAN_ROOM",
+      "name": "FieryChasm_HeatranRoom_Layout",
+      "width": 21,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/FieryChasm_HeatranRoom/border.bin",
+      "blockdata_filepath": "data/layouts/FieryChasm_HeatranRoom/map.bin"
     }
   ]
 }
