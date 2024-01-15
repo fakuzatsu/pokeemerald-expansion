@@ -30,10 +30,17 @@ Route110_End_Manectite::
 
 Route110_OnResume:
 	special UpdateCyclingRoadState
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, Route110_EventScript_TryRemoveZapdos
 	special GetDayOrNight
 	goto_if_eq VAR_RESULT, 1, Route110_OnResume_Night
 	goto_if_eq VAR_RESULT, 0, Route110_OnResume_Day
 	end
+
+Route110_EventScript_TryRemoveZapdos::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
 
 Route110_OnResume_Night:
 	setvar VAR_DAYNIGHT, 1
@@ -758,14 +765,14 @@ Route110_EventScript_Zapdos::
 
 Route110_EventScript_ZapdosDefeated::
 	setflag FLAG_DEFEATED_ZAPDOS
-	bufferspeciesname STR_VAR_1, SPECIES_ZAPDOS
-	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+	setvar VAR_0x8004, SPECIES_ZAPDOS
+	goto Common_EventScript_LegendaryFlewAway
 	release
 	end
 
 Route110_EventScript_PlayerOrZapdosRan::
-	bufferspeciesname STR_VAR_1, SPECIES_ZAPDOS
-	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+	setvar VAR_0x8004, SPECIES_ZAPDOS
+	goto Common_EventScript_LegendaryFlewAway
 	release
 	end
 

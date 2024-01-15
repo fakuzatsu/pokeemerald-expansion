@@ -1,6 +1,17 @@
 VerdantIsle_VictiniRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, VerdantIsle_VictiniRoom_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, VerdantIsle_VictiniRoom_OnResume
 	.byte 0
+
+VerdantIsle_VictiniRoom_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, VerdantIsle_VictiniRoom_EventScript_TryRemoveVictini
+	end
+
+VerdantIsle_VictiniRoom_EventScript_TryRemoveVictini::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
 
 VerdantIsle_VictiniRoom_OnTransition:
 	goto VerdantIsle_VictiniRoom_EventScript_TryHideOrShowVictini
@@ -39,14 +50,14 @@ VerdantIsle_VictiniRoom_EventScript_Victini::
 
 VerdantIsle_VictiniRoom_EventScript_VictiniDefeated::
 	setflag FLAG_DEFEATED_VICTINI
-	bufferspeciesname STR_VAR_1, SPECIES_VICTINI
-	msgbox gText_LegendaryRanAway, MSGBOX_DEFAULT
+	setvar VAR_0x8004, SPECIES_VICTINI
+	goto Common_EventScript_LegendaryRanAway
 	release
 	end
 
 VerdantIsle_VictiniRoom_EventScript_PlayerOrVictiniRan::
-	bufferspeciesname STR_VAR_1, SPECIES_VICTINI
-	msgbox gText_LegendaryRanAway, MSGBOX_DEFAULT
+	setvar VAR_0x8004, SPECIES_VICTINI
+	goto Common_EventScript_LegendaryRanAway
 	release
 	end
 

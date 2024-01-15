@@ -8,10 +8,17 @@ PetalburgWoods_MapScripts::
 	.byte 0
 
 PetalburgWoods_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, PetalburgWoods_EventScript_TryRemoveFoongus
 	special GetDayOrNight
 	goto_if_eq VAR_RESULT, 1, PetalburgWoods_OnResume_Night
 	goto_if_eq VAR_RESULT, 0, PetalburgWoods_OnResume_Day
 	end
+
+PetalburgWoods_EventScript_TryRemoveFoongus::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
 
 PetalburgWoods_OnResume_Night:
 	setvar VAR_DAYNIGHT, 1

@@ -1,6 +1,17 @@
 Grotto17_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, Grotto17_OnLoad
+	map_script MAP_SCRIPT_ON_RESUME, Grotto17_OnResume
 	.byte 0
+
+Grotto17_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, Grotto17_EventScript_TryRemoveHonedge
+	end
+
+Grotto17_EventScript_TryRemoveHonedge::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
 
 Grotto17_OnLoad:
 	call Grotto_EventScript_GetReturnWarp
@@ -21,7 +32,7 @@ Grotto17_EventScript_Honedge::
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	setflag FLAG_EVENT_GROTTO_17_HONEDGE
-	release
+	goto Common_EventScript_RemoveStaticPokemon
 	end
 
 Grotto17_Text_HonedgeCry:

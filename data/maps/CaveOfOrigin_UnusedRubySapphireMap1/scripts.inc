@@ -1,7 +1,18 @@
 CaveOfOrigin_UnusedRubySapphireMap1_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, CaveOfOrigin_UnusedRubySapphireMap1_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, CaveOfOrigin_UnusedRubySapphireMap1_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, CaveOfOrigin_UnusedRubySapphireMap1_OnResume
 	.byte 0
+
+CaveOfOrigin_UnusedRubySapphireMap1_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, CaveOfOrigin_UnusedRubySapphireMap1_EventScript_TryRemoveArticuno
+	end
+
+CaveOfOrigin_UnusedRubySapphireMap1_EventScript_TryRemoveArticuno::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
 
 CaveOfOrigin_UnusedRubySapphireMap1_OnLoad:
 	call_if_set FLAG_HIDDEN_ITEM_ABOMASITE, CaveOfOrigin_UnusedRubySapphireMap1_Hide_Abomasite
@@ -57,15 +68,13 @@ CaveOfOrigin_UnusedRubySapphireMap1_EventScript_Articuno::
 
 CaveOfOrigin_UnusedRubySapphireMap1_EventScript_ArticunoDefeated::
 	setflag FLAG_DEFEATED_ARTICUNO
-	bufferspeciesname STR_VAR_1, SPECIES_ARTICUNO
-	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
-	release
+	setvar VAR_0x8004, SPECIES_ARTICUNO
+	goto Common_EventScript_LegendaryFlewAway
 	end
 
 CaveOfOrigin_UnusedRubySapphireMap1_EventScript_PlayerOrArticunoRan::
-	bufferspeciesname STR_VAR_1, SPECIES_ARTICUNO
-	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
-	release
+	setvar VAR_0x8004, SPECIES_ARTICUNO
+	goto Common_EventScript_LegendaryFlewAway
 	end
 
 CaveOfOrigin_UnusedRubySapphireMap1_Text_Articuno:

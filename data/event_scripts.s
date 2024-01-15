@@ -1013,6 +1013,15 @@ Common_EventScript_LegendaryFlewAway::
 	release
 	end
 
+Common_EventScript_LegendaryRanAway::
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	bufferspeciesname STR_VAR_1, VAR_0x8004
+	msgbox gText_LegendaryRanAway, MSGBOX_DEFAULT
+	release
+	end
+
 EventScript_VsSeekerChargingDone::
 	special VsSeekerFreezeObjectsAfterChargeComplete
 	waitstate

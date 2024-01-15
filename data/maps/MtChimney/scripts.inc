@@ -29,7 +29,14 @@ MtChimney_EventScript_ShowMtChimneyTrainers::
 
 MtChimney_OnResume:
 	setstepcallback STEP_CB_ASH
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, MtChimney_EventScript_TryRemoveMoltres
 	end
+
+MtChimney_EventScript_TryRemoveMoltres::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
 
 MtChimney_EventScript_Archie::
 	lock
@@ -565,15 +572,13 @@ MtChimney_EventScript_Moltres::
 
 MtChimney_EventScript_MoltresDefeated::
 	setflag FLAG_DEFEATED_MOLTRES
-	bufferspeciesname STR_VAR_1, SPECIES_MOLTRES
-	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
-	release
+	setvar VAR_0x8004, SPECIES_MOLTRES
+	goto Common_EventScript_LegendaryFlewAway
 	end
 
 MtChimney_EventScript_PlayerOrMoltresRan::
-	bufferspeciesname STR_VAR_1, SPECIES_MOLTRES
-	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
-	release
+	setvar VAR_0x8004, SPECIES_MOLTRES
+	goto Common_EventScript_LegendaryFlewAway
 	end
 
 MtChimney_Text_MeteoriteWillActivateVolcano:

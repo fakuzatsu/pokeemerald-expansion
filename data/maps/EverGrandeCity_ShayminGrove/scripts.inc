@@ -11,10 +11,17 @@ EverGrandeCity_ShayminGrove_OnTransition:
 	end
 
 EverGrandeCity_ShayminGrove_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, EverGrandeCity_ShayminGrove_EventScript_TryRemoveShaymin
 	special GetDayOrNight
 	goto_if_eq VAR_RESULT, 1, EverGrandeCity_ShayminGrove_OnResume_Night
 	goto_if_eq VAR_RESULT, 0, EverGrandeCity_ShayminGrove_OnResume_Day
 	end
+
+EverGrandeCity_ShayminGrove_EventScript_TryRemoveShaymin::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
 
 EverGrandeCity_ShayminGrove_EventScript_TryHideOrShowShaymin::
 	goto_if_set FLAG_CAUGHT_SHAYMIN, EverGrandeCity_ShayminGrove_EventScript_HideShaymin
@@ -57,14 +64,14 @@ EverGrandeCity_ShayminGrove_EventScript_Shaymin::
 
 EverGrandeCity_ShayminGrove_EventScript_ShayminDefeated::
 	setflag FLAG_DEFEATED_SHAYMIN
-	bufferspeciesname STR_VAR_1, SPECIES_SHAYMIN
-	msgbox gText_LegendaryRanAway, MSGBOX_DEFAULT
+	setvar VAR_0x8004, SPECIES_SHAYMIN
+	goto Common_EventScript_LegendaryRanAway
 	release
 	end
 
 EverGrandeCity_ShayminGrove_EventScript_PlayerOrShayminRan::
-	bufferspeciesname STR_VAR_1, SPECIES_SHAYMIN
-	msgbox gText_LegendaryRanAway, MSGBOX_DEFAULT
+	setvar VAR_0x8004, SPECIES_SHAYMIN
+	goto Common_EventScript_LegendaryRanAway
 	release
 	end
 

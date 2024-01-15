@@ -3,7 +3,19 @@
 
 VerdantForest_CelebiRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, VerdantForest_CelebiRoom_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, VerdantForest_CelebiRoom_OnResume
 	.byte 0
+
+VerdantForest_CelebiRoom_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, VerdantForest_CelebiRoom_EventScript_TryRemoveCelebi
+	end
+
+VerdantForest_CelebiRoom_EventScript_TryRemoveCelebi::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject LOCALID_CELEBI_LEFT
+	removeobject LOCALID_CELEBI_RIGHT
+	return
 
 VerdantForest_CelebiRoom_OnTransition:
 	setflag FLAG_TEMP_4
@@ -96,14 +108,22 @@ VerdantForest_CelebiRoom_EventScript_FaceCelebiPlayerOnRight::
 
 VerdantForest_CelebiRoom_EventScript_CelebiDefeated::
 	setflag FLAG_DEFEATED_CELEBI
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_CELEBI_LEFT
+	removeobject LOCALID_CELEBI_RIGHT
+	fadescreenswapbuffers FADE_FROM_BLACK
 	bufferspeciesname STR_VAR_1, SPECIES_CELEBI
-	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+	msgbox gText_LegendaryRanAway, MSGBOX_DEFAULT
 	release
 	end
 
 VerdantForest_CelebiRoom_EventScript_PlayerOrCelebiRan::
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_CELEBI_LEFT
+	removeobject LOCALID_CELEBI_RIGHT
+	fadescreenswapbuffers FADE_FROM_BLACK
 	bufferspeciesname STR_VAR_1, SPECIES_CELEBI
-	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+	msgbox gText_LegendaryRanAway, MSGBOX_DEFAULT
 	release
 	end
 
