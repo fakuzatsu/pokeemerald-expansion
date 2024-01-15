@@ -515,7 +515,7 @@
 #define TRAINER_CONOR                       511
 #define TRAINER_EDWIN_1                     512
 #define TRAINER_HECTOR                      513
-#define TRAINER_TABITHA_MOSSDEEP            514
+#define TRAINER_COURTNEY_MOSSDEEP           514
 #define TRAINER_EDWIN_2                     515
 #define TRAINER_EDWIN_3                     516
 #define TRAINER_EDWIN_4                     517
@@ -598,7 +598,7 @@
 #define TRAINER_PAXTON                      594
 #define TRAINER_ISABELLA                    595
 #define TRAINER_GRUNT_WEATHER_INST_5        596
-#define TRAINER_TABITHA_MT_CHIMNEY          597
+#define TRAINER_COURTNEY_MT_CHIMNEY         597
 #define TRAINER_JONATHAN                    598
 #define TRAINER_BRENDAN_RUSTBORO_TORCHIC    599
 #define TRAINER_MAY_RUSTBORO_MUDKIP         600
@@ -733,7 +733,7 @@
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_14      729
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_15      730
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_16      731
-#define TRAINER_TABITHA_MAGMA_HIDEOUT       732
+#define TRAINER_COURTNEY_MAGMA_HIDEOUT      732
 #define TRAINER_DARCY                       733
 #define TRAINER_MAXIE_MOSSDEEP              734
 #define TRAINER_PETE                        735

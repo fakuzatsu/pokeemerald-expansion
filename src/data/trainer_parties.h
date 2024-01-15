@@ -6792,7 +6792,7 @@ static const struct TrainerMon sParty_Hector[] = {
     }
 };
 
-static const struct TrainerMon sParty_TabithaMossdeep[] = {
+static const struct TrainerMon sParty_CourtneyMossdeep[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 36,
@@ -8020,7 +8020,7 @@ static const struct TrainerMon sParty_GruntWeatherInst5[] = {
     }
 };
 
-static const struct TrainerMon sParty_TabithaMtChimney[] = {
+static const struct TrainerMon sParty_CourtneyMtChimney[] = {
     {
     .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
     .lvl = 18,
@@ -9781,7 +9781,7 @@ static const struct TrainerMon sParty_GruntMagmaHideout16[] = {
     }
 };
 
-static const struct TrainerMon sParty_TabithaMagmaHideout[] = {
+static const struct TrainerMon sParty_CourtneyMagmaHideout[] = {
     {
     .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
     .lvl = 26,

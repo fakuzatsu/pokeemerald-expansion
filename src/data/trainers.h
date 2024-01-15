@@ -6228,7 +6228,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Hector),
     },
 
-    [TRAINER_TABITHA_MOSSDEEP] =
+    [TRAINER_COURTNEY_MOSSDEEP] =
     {
         .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -6237,7 +6237,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_TabithaMossdeep),
+        .party = TRAINER_PARTY(sParty_CourtneyMossdeep),
     },
 
     [TRAINER_EDWIN_2] =
@@ -7248,7 +7248,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_GruntWeatherInst5),
     },
 
-    [TRAINER_TABITHA_MT_CHIMNEY] =
+    [TRAINER_COURTNEY_MT_CHIMNEY] =
     {
         .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -7257,7 +7257,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_TabithaMtChimney),
+        .party = TRAINER_PARTY(sParty_CourtneyMtChimney),
     },
 
     [TRAINER_JONATHAN] =
@@ -8892,7 +8892,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout16),
     },
 
-    [TRAINER_TABITHA_MAGMA_HIDEOUT] =
+    [TRAINER_COURTNEY_MAGMA_HIDEOUT] =
     {
         .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8901,7 +8901,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_TabithaMagmaHideout),
+        .party = TRAINER_PARTY(sParty_CourtneyMagmaHideout),
     },
 
     [TRAINER_DARCY] =

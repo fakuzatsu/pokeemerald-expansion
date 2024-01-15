@@ -2,7 +2,7 @@
 .set LOCALID_GRUNT_1, 2
 .set LOCALID_GRUNT_2, 3
 .set LOCALID_GRUNT_3, 4
-.set LOCALID_TABITHA, 5
+.set LOCALID_COURTNEY, 5
 .set LOCALID_MAXIE, 6
 .set LOCALID_GROUDON_SLEEPING, 7
 
@@ -75,7 +75,7 @@ MagmaHideout_4F_EventScript_Maxie::
 	removeobject LOCALID_GRUNT_1
 	removeobject LOCALID_GRUNT_2
 	removeobject LOCALID_GRUNT_3
-	removeobject LOCALID_TABITHA
+	removeobject LOCALID_COURTNEY
 	setflag FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS
 	fadescreen FADE_FROM_BLACK
 	releaseall
@@ -128,9 +128,9 @@ MagmaHideout_4F_EventScript_Grunt13::
 	msgbox MagmaHideout_4F_Text_Grunt13PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-MagmaHideout_4F_EventScript_Tabitha::
-	trainerbattle_single TRAINER_TABITHA_MAGMA_HIDEOUT, MagmaHideout_4F_Text_TabithaIntro, MagmaHideout_4F_Text_TabithaDefeat
-	msgbox MagmaHideout_4F_Text_TabithaPostBattle, MSGBOX_AUTOCLOSE
+MagmaHideout_4F_EventScript_Courtney::
+	trainerbattle_single TRAINER_COURTNEY_MAGMA_HIDEOUT, MagmaHideout_4F_Text_CourtneyIntro, MagmaHideout_4F_Text_CourtneyDefeat
+	msgbox MagmaHideout_4F_Text_CourtneyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MagmaHideout_4F_Text_Grunt11Intro:
@@ -170,7 +170,7 @@ MagmaHideout_4F_Text_Grunt13Defeat:
 MagmaHideout_4F_Text_Grunt13PostBattle:
 	.string "C-come on, one more match…$"
 
-MagmaHideout_4F_Text_TabithaIntro:
+MagmaHideout_4F_Text_CourtneyIntro:
 	.string "COURTNEY: …\n"
 	.string "I knew you would come.\p"
 	.string "…Too bad, though\n"
@@ -180,11 +180,11 @@ MagmaHideout_4F_Text_TabithaIntro:
 	.string "…With you… …I want to… engage.\p"
 	.string "I want to…analyze. Ahahaha.$"
 
-MagmaHideout_4F_Text_TabithaDefeat:
+MagmaHideout_4F_Text_CourtneyDefeat:
 	.string "Hah hah…\n"
 	.string "Uhn… hah hah…$"
 
-MagmaHideout_4F_Text_TabithaPostBattle:
+MagmaHideout_4F_Text_CourtneyPostBattle:
 	.string "COURTNEY: …Change …the world\n"
 	.string "Leader Maxie… … …Mission… …Complete…$"
 

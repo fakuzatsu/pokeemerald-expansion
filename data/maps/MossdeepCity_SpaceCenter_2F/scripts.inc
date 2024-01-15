@@ -6,7 +6,7 @@
 .set LOCALID_GRUNT_6, 5
 .set LOCALID_GRUNT_5, 6
 .set LOCALID_GRUNT_7, 7
-.set LOCALID_TABITHA, 8
+.set LOCALID_COURTNEY, 8
 .set LOCALID_MAXIE, 9
 
 MossdeepCity_SpaceCenter_2F_MapScripts::
@@ -172,7 +172,7 @@ MossdeepCity_SpaceCenter_2F_EventScript_Grunt5::
 	msgbox MossdeepCity_SpaceCenter_2F_Text_Grunt5PostBattle, MSGBOX_NPC
 	end
 
-MossdeepCity_SpaceCenter_2F_EventScript_Tabitha::
+MossdeepCity_SpaceCenter_2F_EventScript_Courtney::
 	lock
 	faceplayer
 	msgbox MossdeepCity_SpaceCenter_2F_Text_WellTakeCareOfYou, MSGBOX_DEFAULT
@@ -266,21 +266,21 @@ MossdeepCity_SpaceCenter_2F_EventScript_DoStevenMultiBattle::
 	frontier_saveparty
 	special LoadPlayerParty
 	switch VAR_RESULT
-	case 1, MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha
+	case 1, MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieCourtney
 	fadescreen FADE_TO_BLACK
 	special SetCB2WhiteOut
 	waitstate
 
-MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha::
+MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieCourtney::
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided, MSGBOX_DEFAULT
 	closemessage
 	delay 20
 	applymovement LOCALID_MAXIE, Common_Movement_WalkInPlaceFasterLeft
-	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_COURTNEY, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	delay 60
 	applymovement LOCALID_MAXIE, Common_Movement_WalkInPlaceFasterUp
-	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_COURTNEY, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	delay 20
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp, MSGBOX_DEFAULT
@@ -295,7 +295,7 @@ MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha::
 	removeobject LOCALID_GRUNT_6
 	removeobject LOCALID_GRUNT_7
 	removeobject LOCALID_GRUNT_5
-	removeobject LOCALID_TABITHA
+	removeobject LOCALID_COURTNEY
 	removeobject LOCALID_MAXIE
 	setobjectxy LOCALID_SCIENTIST, 5, 6
 	turnobject LOCALID_SCIENTIST, DIR_SOUTH
@@ -340,8 +340,8 @@ MossdeepCity_SpaceCenter_2F_EventScript_MaxieTrainer::
 	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_MAXIE_MOSSDEEP, 0, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand
 	end
 
-MossdeepCity_SpaceCenter_2F_EventScript_TabithaTrainer::
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_TABITHA_MOSSDEEP, 0, MossdeepCity_SpaceCenter_Text_TabithaDefeat, MossdeepCity_SpaceCenter_Text_TabithaDefeat
+MossdeepCity_SpaceCenter_2F_EventScript_CourtneyTrainer::
+	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_COURTNEY_MOSSDEEP, 0, MossdeepCity_SpaceCenter_Text_CourtneyDefeat, MossdeepCity_SpaceCenter_Text_CourtneyDefeat
 	end
 
 MossdeepCity_SpaceCenter_2F_EventScript_RivalRayquazaCall::
@@ -480,9 +480,9 @@ MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand:
 	.string "All I want…\n"
 	.string "I just want to expand the land mass…$"
 
-MossdeepCity_SpaceCenter_Text_TabithaDefeat:
+MossdeepCity_SpaceCenter_Text_CourtneyDefeat:
 	.string "COURTNEY: …Again? That's unanticipated\p"
-	.string "…Funny$"
+	.string "…Ahahah$"
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided:
 	.string "MAXIE: We failed to make the volcano\n"

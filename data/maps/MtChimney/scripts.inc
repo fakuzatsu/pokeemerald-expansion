@@ -1,6 +1,6 @@
 .set LOCALID_ARCHIE, 1
 .set LOCALID_MAXIE, 2
-.set LOCALID_TABITHA, 3
+.set LOCALID_COURTNEY, 3
 .set LOCALID_MAGMA_GRUNT_2, 22
 .set LOCALID_MAGMA_GRUNT_1, 29
 
@@ -77,7 +77,7 @@ MtChimney_EventScript_Maxie::
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MAXIE
 	removeobject LOCALID_MAGMA_GRUNT_1
-	removeobject LOCALID_TABITHA
+	removeobject LOCALID_COURTNEY
 	removeobject LOCALID_MAGMA_GRUNT_2
 	setflag FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA
 	fadescreen FADE_FROM_BLACK
@@ -419,9 +419,9 @@ MtChimney_EventScript_BusyAquaGrunt3::
 	msgbox MtChimney_Text_MagmasNameSimilar, MSGBOX_SIGN
 	end
 
-MtChimney_EventScript_Tabitha::
-	trainerbattle_single TRAINER_TABITHA_MT_CHIMNEY, MtChimney_Text_TabithaIntro, MtChimney_Text_TabithaDefeat
-	msgbox MtChimney_Text_TabithaPostBattle, MSGBOX_AUTOCLOSE
+MtChimney_EventScript_Courtney::
+	trainerbattle_single TRAINER_COURTNEY_MT_CHIMNEY, MtChimney_Text_CourtneyIntro, MtChimney_Text_CourtneyDefeat
+	msgbox MtChimney_Text_CourtneyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MtChimney_EventScript_Grunt2::
@@ -631,20 +631,20 @@ MtChimney_Text_MaxieYouHaventSeenLastOfMagma:
 	.string "Even without the METEORITE, if we\n"
 	.string "obtain that ORB… Fufufu…$"
 
-MtChimney_Text_TabithaIntro:
+MtChimney_Text_CourtneyIntro:
 	.string "COURTNEY: …Who are you?\p"
 	.string "You've come all the way here but\n"
 	.string "I can't let you pass…\p"
 	.string "I've delivered the METEORITE\n"
 	.string "from METEOR FALLS to the BOSS.$"
 
-MtChimney_Text_TabithaDefeat:
+MtChimney_Text_CourtneyDefeat:
 	.string "…As anticipated. Unanticipated.\p"
 	.string "You. Target lock… completed.\n"
 	.string "Commencing… experiment.\p"
 	.string "You. Forever. Aha…$"
 
-MtChimney_Text_TabithaPostBattle:
+MtChimney_Text_CourtneyPostBattle:
 	.string "COURTNEY: …\p"
 	.string "My defeat… inconsequential.\n"
 	.string "The BOSS has the METEORITE…$"
