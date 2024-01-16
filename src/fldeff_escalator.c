@@ -20,6 +20,12 @@ static const s16 sEscalatorMetatiles_1F_0[ESCALATOR_STAGES] = {
     METATILE_PokemonCenter_Escalator1F_Tile0_Frame0
 };
 
+static const s16 sEscalatorMetatiles_1F_0Alt[ESCALATOR_STAGES] = {
+    METATILE_PokemonCenter_Escalator1F_Tile0_Frame2Alt,
+    METATILE_PokemonCenter_Escalator1F_Tile0_Frame1Alt,
+    METATILE_PokemonCenter_Escalator1F_Tile0_Frame0Alt
+};
+
 static const s16 sEscalatorMetatiles_1F_1[ESCALATOR_STAGES] = {
     METATILE_PokemonCenter_Escalator1F_Tile1_Frame2,
     METATILE_PokemonCenter_Escalator1F_Tile1_Frame1,
@@ -62,6 +68,7 @@ static const s16 sEscalatorMetatiles_2F_2[ESCALATOR_STAGES] = {
 #define tDrawingEscalator data[3]
 #define tPlayerX          data[4]
 #define tPlayerY          data[5]
+#define tNextMap          data[6]
 
 static void SetEscalatorMetatile(u8 taskId, const s16 *metatileIds, u16 metatileMasks)
 {
@@ -121,6 +128,8 @@ static void Task_DrawEscalator(u8 taskId)
     {
         case 0:
             SetEscalatorMetatile(taskId, sEscalatorMetatiles_1F_0, 0);
+            if (!tGoingUp || (tGoingUp && tPlayerY == 14))
+            SetEscalatorMetatile(taskId, sEscalatorMetatiles_1F_0Alt, 0);
             break;
         case 1:
             SetEscalatorMetatile(taskId, sEscalatorMetatiles_1F_1, 0);
@@ -191,3 +200,4 @@ bool8 IsEscalatorMoving(void)
 #undef tDrawingEscalator
 #undef tPlayerX
 #undef tPlayerY
+#undef tNextMap
