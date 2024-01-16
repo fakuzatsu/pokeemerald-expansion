@@ -106,16 +106,15 @@ const u8 gText_AllDexFlagsCode[] = _("DexAll");
 static void Task_ActivateAllDexFlagsCode(u8 taskId)
 {
     u16 i;
-    for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+    for (i = 0; i < NATIONAL_DEX_ENAMORUS; i++)
     {
-        GetSetPokedexFlag(i + 1, FLAG_SET_CAUGHT);
         GetSetPokedexFlag(i + 1, FLAG_SET_SEEN);
     }
     DestroyTask(taskId);
     ScriptContext_Enable();
 }
 
-const u8 gText_AllDexFlagsActivated[] = _("All Pokémon marked as caught. {PAUSE_UNTIL_PRESS}");
+const u8 gText_AllDexFlagsActivated[] = _("All Pokémon marked as seen. {PAUSE_UNTIL_PRESS}");
 
 //--------------------------------------------------
 // End of Codes and Effects
