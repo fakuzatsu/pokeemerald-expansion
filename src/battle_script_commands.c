@@ -1202,13 +1202,13 @@ const u16 sLevelCaps[NUM_LEVEL_CAPS] =
 { 
 15, //Roxanne
 22, //Brawly
-33, //Wattson
-40, //Flanery
-43, //Norman
-50, //Winona
-58, //Tate & Liza
-68, //Juan
-82, //Elite Four
+31, //Wattson
+36, //Flanery
+38, //Norman
+45, //Winona
+54, //Tate & Liza
+60, //Juan
+70, //Elite Four
 100 //Post game
 };
 
@@ -1216,13 +1216,13 @@ const u16 sSoftLevelCaps[NUM_LEVEL_CAPS] =
 { 
 17, //Roxanne
 24, //Brawly
-35, //Wattson
-42, //Flanery
-46, //Norman
-53, //Winona
-61, //Tate & Liza
-71, //Juan
-85, //Elite Four
+33, //Wattson
+38, //Flanery
+41, //Norman
+48, //Winona
+57, //Tate & Liza
+63, //Juan
+73, //Elite Four
 100 //Post game
 };
 
