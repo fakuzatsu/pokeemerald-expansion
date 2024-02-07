@@ -1032,7 +1032,7 @@
               {
                 "min_level": 10,
                 "max_level": 35,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST_SEA"
               },
               {
                 "min_level": 15,
@@ -1067,7 +1067,7 @@
               {
                 "min_level": 7,
                 "max_level": 13,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST_SEA"
               },
               {
                 "min_level": 12,
@@ -1077,7 +1077,7 @@
               {
                 "min_level": 12,
                 "max_level": 35,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST_SEA"
               },
               {
                 "min_level": 12,
@@ -1087,7 +1087,7 @@
               {
                 "min_level": 27,
                 "max_level": 35,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST_SEA"
               },
               {
                 "min_level": 32,
@@ -1102,7 +1102,7 @@
               {
                 "min_level": 22,
                 "max_level": 30,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST_SEA"
               },
               {
                 "min_level": 42,
@@ -1241,7 +1241,7 @@
               {
                 "min_level": 7,
                 "max_level": 13,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST_SEA"
               },
               {
                 "min_level": 12,
@@ -1251,7 +1251,7 @@
               {
                 "min_level": 12,
                 "max_level": 35,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST_SEA"
               },
               {
                 "min_level": 12,
@@ -1276,7 +1276,7 @@
               {
                 "min_level": 22,
                 "max_level": 30,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST_SEA"
               },
               {
                 "min_level": 42,
@@ -1325,7 +1325,7 @@
               {
                 "min_level": 15,
                 "max_level": 30,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST_SEA"
               },
               {
                 "min_level": 25,
@@ -1365,7 +1365,7 @@
               {
                 "min_level": 12,
                 "max_level": 35,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 27,
@@ -1380,17 +1380,17 @@
               {
                 "min_level": 22,
                 "max_level": 30,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 37,
                 "max_level": 47,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 42,
                 "max_level": 52,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               }
             ]
           }
@@ -3912,7 +3912,7 @@
               {
                 "min_level": 7,
                 "max_level": 8,
-                "species": "SPECIES_PARAS"
+                "species": "SPECIES_WURMPLE"
               },
               {
                 "min_level": 8,
@@ -5183,7 +5183,7 @@
               {
                 "min_level": 15,
                 "max_level": 30,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST_SEA"
               },
               {
                 "min_level": 25,
@@ -5223,7 +5223,7 @@
               {
                 "min_level": 12,
                 "max_level": 35,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 27,
@@ -5238,17 +5238,17 @@
               {
                 "min_level": 22,
                 "max_level": 30,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 37,
                 "max_level": 47,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 42,
                 "max_level": 52,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               }
             ]
           }
@@ -5312,7 +5312,7 @@
               {
                 "min_level": 12,
                 "max_level": 35,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 27,
@@ -5327,17 +5327,17 @@
               {
                 "min_level": 22,
                 "max_level": 30,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 37,
                 "max_level": 47,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 42,
                 "max_level": 52,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               }
             ]
           }
@@ -5411,12 +5411,12 @@
               {
                 "min_level": 32,
                 "max_level": 41,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 22,
                 "max_level": 30,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 37,
@@ -5505,7 +5505,7 @@
               {
                 "min_level": 22,
                 "max_level": 30,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 37,
@@ -5594,7 +5594,7 @@
               {
                 "min_level": 5,
                 "max_level": 40,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST_SEA"
               },
               {
                 "min_level": 10,
@@ -5629,7 +5629,7 @@
               {
                 "min_level": 7,
                 "max_level": 13,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST_SEA"
               },
               {
                 "min_level": 12,
@@ -5639,7 +5639,7 @@
               {
                 "min_level": 12,
                 "max_level": 35,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST_SEA"
               },
               {
                 "min_level": 12,
@@ -5664,7 +5664,7 @@
               {
                 "min_level": 37,
                 "max_level": 47,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST_SEA"
               },
               {
                 "min_level": 42,
@@ -12882,7 +12882,7 @@
               {
                 "min_level": 10,
                 "max_level": 35,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST_SEA"
               },
               {
                 "min_level": 15,
@@ -12927,7 +12927,7 @@
               {
                 "min_level": 12,
                 "max_level": 35,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 27,
@@ -12942,17 +12942,17 @@
               {
                 "min_level": 22,
                 "max_level": 30,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 37,
                 "max_level": 47,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 42,
                 "max_level": 52,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               }
             ]
           }
@@ -20927,7 +20927,7 @@
               {
                 "min_level": 27,
                 "max_level": 35,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 32,
@@ -21101,7 +21101,7 @@
               {
                 "min_level": 27,
                 "max_level": 35,
-                "species": "SPECIES_WISHIWASHI"
+                "species": "SPECIES_WISHIWASHI_SOLO"
               },
               {
                 "min_level": 32,

@@ -703,6 +703,10 @@ static bool8 HandleStartMenuInput(void)
         return TRUE;
     }
 
+    if (!GetSafariZoneFlag() && !InBattlePyramid()) {
+        RemoveExtraStartMenuWindows();
+        ShowCurrentTimeWindow();
+    }
     return FALSE;
 }
 

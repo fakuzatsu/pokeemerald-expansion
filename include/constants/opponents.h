@@ -870,11 +870,16 @@
 #define TRAINER_GROTTO_HEX_LADY2            866
 #define TRAINER_KAHILI                      867
 #define TRAINER_KAHILI_POSTGAME             868
+#define TRAINER_SIDNEY_REMATCH              869
+#define TRAINER_PHOEBE_REMATCH              870
+#define TRAINER_GLACIA_REMATCH              871
+#define TRAINER_DRAKE_REMATCH               872
+#define TRAINER_WALLACE_REMATCH             873
 
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      869
+#define TRAINERS_COUNT                      874
 #define MAX_TRAINERS_COUNT                  912
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

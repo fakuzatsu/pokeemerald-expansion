@@ -100,6 +100,7 @@ static const struct TrainerMon sParty_GruntPetalburgWoods[] = {
 };
 
 static const struct TrainerMon sParty_Marcel[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 32,
@@ -110,9 +111,22 @@ static const struct TrainerMon sParty_Marcel[] = {
     .lvl = 32,
     .species = SPECIES_SHIFTRY,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 32,
+    .species = SPECIES_FLETCHINDER,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 32,
+    .species = SPECIES_MAWILE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Alberto[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 33,
     .species = SPECIES_PELIPPER,
@@ -121,9 +135,20 @@ static const struct TrainerMon sParty_Alberto[] = {
     .lvl = 33,
     .species = SPECIES_XATU,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 33,
+    .species = SPECIES_PELIPPER,
+    },
+    {
+    .lvl = 33,
+    .species = SPECIES_HONCHKROW,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Ed[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 33,
     .species = SPECIES_ZANGOOSE,
@@ -132,6 +157,16 @@ static const struct TrainerMon sParty_Ed[] = {
     .lvl = 33,
     .species = SPECIES_SEVIPER,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 33,
+    .species = SPECIES_PURUGLY,
+    },
+    {
+    .lvl = 33,
+    .species = SPECIES_SKUNTANK,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_GruntSeafloorCavern4[] = {
@@ -142,10 +177,17 @@ static const struct TrainerMon sParty_GruntSeafloorCavern4[] = {
 };
 
 static const struct TrainerMon sParty_Declan[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 37,
     .species = SPECIES_GYARADOS,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 37,
+    .species = SPECIES_WISHIWASHI,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_GruntRusturfTunnel[] = {
@@ -392,6 +434,7 @@ static const struct TrainerMon sParty_Leah[] = {
 };
 
 static const struct TrainerMon sParty_Daisy[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 16,
     .species = SPECIES_SHROOMISH,
@@ -400,6 +443,16 @@ static const struct TrainerMon sParty_Daisy[] = {
     .lvl = 16,
     .species = SPECIES_ROSELIA,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 16,
+    .species = SPECIES_PETILIL,
+    },
+    {
+    .lvl = 16,
+    .species = SPECIES_ROSELIA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Rose1[] = {
@@ -762,12 +815,20 @@ static const struct TrainerMon sParty_Lola5[] = {
 };
 
 static const struct TrainerMon sParty_Ricky1[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 15,
     .species = SPECIES_ZIGZAGOON,
     .moves = {MOVE_SAND_ATTACK, MOVE_HEADBUTT, MOVE_TAIL_WHIP, MOVE_SURF}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 15,
+    .species = SPECIES_SANDYGAST,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Simon[] = {
@@ -865,6 +926,7 @@ static const struct TrainerMon sParty_Berke[] = {
 };
 
 static const struct TrainerMon sParty_Braxton[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 31,
@@ -893,8 +955,40 @@ static const struct TrainerMon sParty_Braxton[] = {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 31,
     .species = SPECIES_SHIFTRY,
-    .moves = {MOVE_GIGA_DRAIN, MOVE_FEINT_ATTACK, MOVE_DOUBLE_TEAM, MOVE_SWAGGER}
+    .moves = {MOVE_GIGA_DRAIN, MOVE_FEINT_ATTACK, MOVE_FAKE_OUT, MOVE_SWAGGER}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 31,
+    .species = SPECIES_TRANQUILL,
+    .moves = {MOVE_FOCUS_ENERGY, MOVE_QUICK_ATTACK, MOVE_WING_ATTACK, MOVE_ENDEAVOR}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 31,
+    .species = SPECIES_TRAPINCH,
+    .moves = {MOVE_BITE, MOVE_DIG, MOVE_FEINT_ATTACK, MOVE_SAND_TOMB}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 31,
+    .species = SPECIES_WAILMER,
+    .moves = {MOVE_ROLLOUT, MOVE_WHIRLPOOL, MOVE_ASTONISH, MOVE_WATER_PULSE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 31,
+    .species = SPECIES_TOXTRICITY,
+    .moves = {MOVE_THUNDERBOLT, MOVE_SUPERSONIC, MOVE_THUNDER_WAVE, MOVE_SONIC_BOOM}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 31,
+    .species = SPECIES_SHIFTRY,
+    .moves = {MOVE_GIGA_DRAIN, MOVE_FEINT_ATTACK, MOVE_FAKE_OUT, MOVE_SWAGGER}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Vincent[] = {
@@ -929,6 +1023,7 @@ static const struct TrainerMon sParty_Leroy[] = {
 };
 
 static const struct TrainerMon sParty_Wilton1[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 19,
@@ -944,6 +1039,23 @@ static const struct TrainerMon sParty_Wilton1[] = {
     .lvl = 19,
     .species = SPECIES_MAKUHITA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 19,
+    .species = SPECIES_LUXIO,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 19,
+    .species = SPECIES_WAILMER,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 19,
+    .species = SPECIES_MIENFOO,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Edgar[] = {
@@ -1158,6 +1270,7 @@ static const struct TrainerMon sParty_Wilton5[] = {
 };
 
 static const struct TrainerMon sParty_Warren[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 36,
@@ -1168,6 +1281,18 @@ static const struct TrainerMon sParty_Warren[] = {
     .lvl = 36,
     .species = SPECIES_LUDICOLO,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 36,
+    .species = SPECIES_BARBARACLE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 36,
+    .species = SPECIES_LUDICOLO,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Mary[] = {
@@ -1235,6 +1360,7 @@ static const struct TrainerMon sParty_Keira[] = {
 };
 
 static const struct TrainerMon sParty_Brooke1[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 19,
@@ -1250,6 +1376,23 @@ static const struct TrainerMon sParty_Brooke1[] = {
     .lvl = 19,
     .species = SPECIES_ROSELIA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 19,
+    .species = SPECIES_DRIFLOON,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 19,
+    .species = SPECIES_NUMEL,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 19,
+    .species = SPECIES_FLOETTE_ORANGE_FLOWER,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Jennifer[] = {
@@ -1370,6 +1513,7 @@ static const struct TrainerMon sParty_Julie[] = {
 };
 
 static const struct TrainerMon sParty_Brooke2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
     .lvl = 29,
@@ -1385,9 +1529,27 @@ static const struct TrainerMon sParty_Brooke2[] = {
     .lvl = 29,
     .species = SPECIES_ROSELIA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
+    .lvl = 29,
+    .species = SPECIES_DRIFLOON,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
+    .lvl = 29,
+    .species = SPECIES_NUMEL,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
+    .lvl = 29,
+    .species = SPECIES_FLORGES_ORANGE_FLOWER,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Brooke3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
     .lvl = 32,
@@ -1403,9 +1565,27 @@ static const struct TrainerMon sParty_Brooke3[] = {
     .lvl = 32,
     .species = SPECIES_ROSELIA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
+    .lvl = 32,
+    .species = SPECIES_DRIFBLIM,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
+    .lvl = 32,
+    .species = SPECIES_NUMEL,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
+    .lvl = 32,
+    .species = SPECIES_FLORGES_ORANGE_FLOWER,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Brooke4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
     .lvl = 35,
@@ -1421,9 +1601,27 @@ static const struct TrainerMon sParty_Brooke4[] = {
     .lvl = 35,
     .species = SPECIES_ROSELIA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
+    .lvl = 35,
+    .species = SPECIES_DRIFBLIM,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
+    .lvl = 35,
+    .species = SPECIES_CAMERUPT,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
+    .lvl = 35,
+    .species = SPECIES_FLORGES_ORANGE_FLOWER,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Brooke5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
     .lvl = 37,
@@ -1439,6 +1637,23 @@ static const struct TrainerMon sParty_Brooke5[] = {
     .lvl = 37,
     .species = SPECIES_ROSELIA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+    .lvl = 37,
+    .species = SPECIES_DRIFBLIM,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+    .lvl = 37,
+    .species = SPECIES_CAMERUPT,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+    .lvl = 37,
+    .species = SPECIES_FLORGES_ORANGE_FLOWER,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Patricia[] = {
@@ -1453,6 +1668,7 @@ static const struct TrainerMon sParty_Patricia[] = {
 };
 
 static const struct TrainerMon sParty_Kindra[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 33,
     .species = SPECIES_DUSKULL,
@@ -1461,6 +1677,16 @@ static const struct TrainerMon sParty_Kindra[] = {
     .lvl = 33,
     .species = SPECIES_SHUPPET,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 33,
+    .species = SPECIES_MIMIKYU,
+    },
+    {
+    .lvl = 33,
+    .species = SPECIES_SHUPPET,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Tammy[] = {
@@ -2057,10 +2283,17 @@ static const struct TrainerMon sParty_Steve5[] = {
 };
 
 static const struct TrainerMon sParty_Luis[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 29,
     .species = SPECIES_CARVANHA,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 29,
+    .species = SPECIES_FRILLISH,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Dominik[] = {
@@ -2071,6 +2304,7 @@ static const struct TrainerMon sParty_Dominik[] = {
 };
 
 static const struct TrainerMon sParty_Douglas[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 27,
@@ -2081,9 +2315,22 @@ static const struct TrainerMon sParty_Douglas[] = {
     .lvl = 27,
     .species = SPECIES_TENTACOOL,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 27,
+    .species = SPECIES_STARYU,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 27,
+    .species = SPECIES_TENTACOOL,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Darrin[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 27,
@@ -2099,6 +2346,23 @@ static const struct TrainerMon sParty_Darrin[] = {
     .lvl = 27,
     .species = SPECIES_TENTACOOL,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 27,
+    .species = SPECIES_BASCULIN_BLUE_STRIPED,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 27,
+    .species = SPECIES_WINGULL,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 27,
+    .species = SPECIES_TENTACOOL,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Tony1[] = {
@@ -2109,17 +2373,31 @@ static const struct TrainerMon sParty_Tony1[] = {
 };
 
 static const struct TrainerMon sParty_Jerome[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 29,
     .species = SPECIES_TENTACRUEL,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 29,
+    .species = SPECIES_FRILLISH,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Matthew[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 29,
     .species = SPECIES_CARVANHA,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 29,
+    .species = SPECIES_SHELLOS_WEST_SEA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_David[] = {
@@ -2134,6 +2412,7 @@ static const struct TrainerMon sParty_David[] = {
 };
 
 static const struct TrainerMon sParty_Spencer[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 36,
     .species = SPECIES_TENTACOOL,
@@ -2142,20 +2421,44 @@ static const struct TrainerMon sParty_Spencer[] = {
     .lvl = 36,
     .species = SPECIES_WINGULL,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 36,
+    .species = SPECIES_SHELLOS_EAST_SEA,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_WINGULL,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Roland[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 37,
     .species = SPECIES_CARVANHA,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 37,
+    .species = SPECIES_SWANNA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Nolen[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 37,
     .species = SPECIES_TENTACRUEL,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 37,
+    .species = SPECIES_GASTRODON_EAST_SEA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Stan[] = {
@@ -2173,6 +2476,7 @@ static const struct TrainerMon sParty_Barry[] = {
 };
 
 static const struct TrainerMon sParty_Dean[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 34,
     .species = SPECIES_CARVANHA,
@@ -2185,6 +2489,20 @@ static const struct TrainerMon sParty_Dean[] = {
     .lvl = 34,
     .species = SPECIES_CARVANHA,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 34,
+    .species = SPECIES_CARVANHA,
+    },
+    {
+    .lvl = 34,
+    .species = SPECIES_WINGULL,
+    },
+    {
+    .lvl = 34,
+    .species = SPECIES_WISHIWASHI,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Rodney[] = {
@@ -2202,6 +2520,7 @@ static const struct TrainerMon sParty_Richard[] = {
 };
 
 static const struct TrainerMon sParty_Herman[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 36,
     .species = SPECIES_WINGULL,
@@ -2210,9 +2529,20 @@ static const struct TrainerMon sParty_Herman[] = {
     .lvl = 36,
     .species = SPECIES_TENTACRUEL,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 36,
+    .species = SPECIES_MANTINE,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_TENTACRUEL,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Santiago[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 36,
     .species = SPECIES_TENTACRUEL,
@@ -2221,6 +2551,16 @@ static const struct TrainerMon sParty_Santiago[] = {
     .lvl = 36,
     .species = SPECIES_WAILMER,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 36,
+    .species = SPECIES_TENTACRUEL,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_WISHIWASHI,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Gilbert[] = {
@@ -2231,10 +2571,17 @@ static const struct TrainerMon sParty_Gilbert[] = {
 };
 
 static const struct TrainerMon sParty_Franklin[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 37,
     .species = SPECIES_SEALEO,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 37,
+    .species = SPECIES_LUMINEON,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Kevin[] = {
@@ -2267,6 +2614,7 @@ static const struct TrainerMon sParty_Dudley[] = {
 };
 
 static const struct TrainerMon sParty_Chad[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 36,
     .species = SPECIES_TENTACOOL,
@@ -2275,6 +2623,16 @@ static const struct TrainerMon sParty_Chad[] = {
     .lvl = 36,
     .species = SPECIES_WAILMER,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 36,
+    .species = SPECIES_ALOMOMOLA,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_WAILMER,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Tony2[] = {
@@ -2349,11 +2707,19 @@ static const struct TrainerMon sParty_Hitoshi[] = {
 };
 
 static const struct TrainerMon sParty_Kiyo[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 37,
     .species = SPECIES_HARIYAMA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 37,
+    .species = SPECIES_PANGORO,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Koichi[] = {
@@ -2370,22 +2736,39 @@ static const struct TrainerMon sParty_Koichi[] = {
 };
 
 static const struct TrainerMon sParty_Nob1[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 22,
     .species = SPECIES_MACHOP,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 22,
+    .species = SPECIES_CROAGUNK,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Nob2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
     .lvl = 30,
     .species = SPECIES_MACHOKE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
+    .lvl = 30,
+    .species = SPECIES_TOXICROAK,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Nob3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
     .lvl = 32,
@@ -2396,9 +2779,22 @@ static const struct TrainerMon sParty_Nob3[] = {
     .lvl = 32,
     .species = SPECIES_MACHOKE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
+    .lvl = 32,
+    .species = SPECIES_TOXICROAK,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
+    .lvl = 32,
+    .species = SPECIES_MACHOKE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Nob4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
     .lvl = 34,
@@ -2414,9 +2810,22 @@ static const struct TrainerMon sParty_Nob4[] = {
     .lvl = 34,
     .species = SPECIES_MACHOKE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
+    .lvl = 35,
+    .species = SPECIES_TOXICROAK,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
+    .lvl = 35,
+    .species = SPECIES_MACHOKE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Nob5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
     .lvl = 36,
@@ -2441,6 +2850,19 @@ static const struct TrainerMon sParty_Nob5[] = {
     .species = SPECIES_MACHAMP,
     .heldItem = ITEM_BLACK_BELT
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+    .lvl = 36,
+    .species = SPECIES_TOXICROAK,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+    .lvl = 36,
+    .species = SPECIES_MACHAMP,
+    .heldItem = ITEM_BLACK_BELT
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Yuji[] = {
@@ -2558,6 +2980,7 @@ static const struct TrainerMon sParty_Fernando1[] = {
 };
 
 static const struct TrainerMon sParty_Dalton1[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 17,
     .species = SPECIES_MAGNEMITE,
@@ -2566,9 +2989,20 @@ static const struct TrainerMon sParty_Dalton1[] = {
     .lvl = 17,
     .species = SPECIES_WHISMUR,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 17,
+    .species = SPECIES_YAMPER,
+    },
+    {
+    .lvl = 17,
+    .species = SPECIES_TOXEL,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Dalton2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 28,
@@ -2584,9 +3018,27 @@ static const struct TrainerMon sParty_Dalton2[] = {
     .lvl = 28,
     .species = SPECIES_MAGNEMITE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 28,
+    .species = SPECIES_MAGNEMITE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 28,
+    .species = SPECIES_TOXEL,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 28,
+    .species = SPECIES_WHISMUR,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Dalton3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
     .lvl = 31,
@@ -2602,9 +3054,27 @@ static const struct TrainerMon sParty_Dalton3[] = {
     .lvl = 31,
     .species = SPECIES_MAGNEMITE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 31,
+    .species = SPECIES_MAGNEMITE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 31,
+    .species = SPECIES_TOXTRICITY,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 31,
+    .species = SPECIES_LOUDRED,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Dalton4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
     .lvl = 34,
@@ -2618,11 +3088,29 @@ static const struct TrainerMon sParty_Dalton4[] = {
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
     .lvl = 34,
-    .species = SPECIES_MAGNETON,
+    .species = SPECIES_LOUDRED,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 34,
+    .species = SPECIES_MAGNETON,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 34,
+    .species = SPECIES_TOXTRICITY,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 34,
+    .species = SPECIES_LOUDRED,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Dalton5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 37,
@@ -2638,6 +3126,23 @@ static const struct TrainerMon sParty_Dalton5[] = {
     .lvl = 37,
     .species = SPECIES_MAGNETON,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 37,
+    .species = SPECIES_MAGNETON,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 37,
+    .species = SPECIES_TOXTRICITY,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 37,
+    .species = SPECIES_EXPLOUD,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Cole[] = {
@@ -2770,14 +3275,27 @@ static const struct TrainerMon sParty_Bernie5[] = {
 };
 
 static const struct TrainerMon sParty_Drew[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 26,
     .species = SPECIES_SANDSHREW,
     .moves = {MOVE_DIG, MOVE_SAND_ATTACK, MOVE_POISON_STING, MOVE_SLASH}
     }
+    #else // CANON_MODE
+    {
+    .lvl = 25,
+    .species = SPECIES_YAMASK,
+    },
+    {
+    .lvl = 25,
+    .species = SPECIES_SANDSHREW,
+    .moves = {MOVE_DIG, MOVE_SAND_ATTACK, MOVE_POISON_STING, MOVE_SLASH}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Beau[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 24,
     .species = SPECIES_BALTOY,
@@ -2793,6 +3311,22 @@ static const struct TrainerMon sParty_Beau[] = {
     .species = SPECIES_BALTOY,
     .moves = {MOVE_RAPID_SPIN, MOVE_MUD_SLAP, MOVE_PSYBEAM, MOVE_ROCK_TOMB}
     }
+    #else // CANON_MODE
+    {
+    .lvl = 24,
+    .species = SPECIES_DWEBBLE,
+    },
+    {
+    .lvl = 24,
+    .species = SPECIES_SANDSHREW,
+    .moves = {MOVE_POISON_STING, MOVE_SAND_ATTACK, MOVE_SCRATCH, MOVE_DIG}
+    },
+    {
+    .lvl = 24,
+    .species = SPECIES_BALTOY,
+    .moves = {MOVE_RAPID_SPIN, MOVE_MUD_SLAP, MOVE_PSYBEAM, MOVE_ROCK_TOMB}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Larry[] = {
@@ -2832,10 +3366,17 @@ static const struct TrainerMon sParty_Ethan1[] = {
 };
 
 static const struct TrainerMon sParty_Autumn[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 24,
     .species = SPECIES_SHROOMISH,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 24,
+    .species = SPECIES_STEENEE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Travis[] = {
@@ -2908,11 +3449,19 @@ static const struct TrainerMon sParty_Ethan5[] = {
 };
 
 static const struct TrainerMon sParty_Brent[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 29,
     .species = SPECIES_SURSKIT,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 29,
+    .species = SPECIES_MASQUERAIN,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Donald[] = {
@@ -3072,11 +3621,18 @@ static const struct TrainerMon sParty_Jeffrey5[] = {
 };
 
 static const struct TrainerMon sParty_Edward[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 17,
     .species = SPECIES_ABRA,
     .moves = {MOVE_HIDDEN_POWER, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     }
+    #else // CANON_MODE
+    {
+    .lvl = 17,
+    .species = SPECIES_HATENNA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Preston[] = {
@@ -3255,6 +3811,7 @@ static const struct TrainerMon sParty_Alexis[] = {
 };
 
 static const struct TrainerMon sParty_Jacki1[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 33,
     .species = SPECIES_KADABRA,
@@ -3263,9 +3820,20 @@ static const struct TrainerMon sParty_Jacki1[] = {
     .lvl = 33,
     .species = SPECIES_LUNATONE,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 33,
+    .species = SPECIES_HATTREM,
+    },
+    {
+    .lvl = 33,
+    .species = SPECIES_KADABRA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Jacki2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 37,
@@ -3276,9 +3844,22 @@ static const struct TrainerMon sParty_Jacki2[] = {
     .lvl = 37,
     .species = SPECIES_LUNATONE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 37,
+    .species = SPECIES_HATTREM,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 37,
+    .species = SPECIES_KADABRA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Jacki3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
     .lvl = 40,
@@ -3289,9 +3870,22 @@ static const struct TrainerMon sParty_Jacki3[] = {
     .lvl = 40,
     .species = SPECIES_LUNATONE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 40,
+    .species = SPECIES_HATTREM,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 40,
+    .species = SPECIES_KADABRA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Jacki4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
     .lvl = 44,
@@ -3302,9 +3896,22 @@ static const struct TrainerMon sParty_Jacki4[] = {
     .lvl = 44,
     .species = SPECIES_LUNATONE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 44,
+    .species = SPECIES_HATTREM,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 44,
+    .species = SPECIES_ALAKAZAM,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Jacki5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 47,
@@ -3315,13 +3922,32 @@ static const struct TrainerMon sParty_Jacki5[] = {
     .lvl = 47,
     .species = SPECIES_ALAKAZAM,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 47,
+    .species = SPECIES_HATTERENE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 47,
+    .species = SPECIES_ALAKAZAM,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Walter1[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 32,
     .species = SPECIES_MANECTRIC,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 32,
+    .species = SPECIES_BOUFFALANT,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Micah[] = {
@@ -3343,14 +3969,23 @@ static const struct TrainerMon sParty_Thomas[] = {
 };
 
 static const struct TrainerMon sParty_Walter2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 37,
     .species = SPECIES_MANECTRIC,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 37,
+    .species = SPECIES_BOUFFALANT,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Walter3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
     .lvl = 39,
@@ -3363,9 +3998,23 @@ static const struct TrainerMon sParty_Walter3[] = {
     .species = SPECIES_MANECTRIC,
     .moves = {MOVE_QUICK_ATTACK, MOVE_SPARK, MOVE_ODOR_SLEUTH, MOVE_ROAR}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 39,
+    .species = SPECIES_LINOONE,
+    .moves = {MOVE_HEADBUTT, MOVE_SAND_ATTACK, MOVE_ODOR_SLEUTH, MOVE_FURY_SWIPES}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 39,
+    .species = SPECIES_BOUFFALANT,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Walter4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
     .lvl = 42,
@@ -3378,9 +4027,23 @@ static const struct TrainerMon sParty_Walter4[] = {
     .species = SPECIES_MANECTRIC,
     .moves = {MOVE_QUICK_ATTACK, MOVE_SPARK, MOVE_ODOR_SLEUTH, MOVE_NONE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 42,
+    .species = SPECIES_LINOONE,
+    .moves = {MOVE_HEADBUTT, MOVE_SAND_ATTACK, MOVE_ODOR_SLEUTH, MOVE_FURY_SWIPES}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 42,
+    .species = SPECIES_BOUFFALANT,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Walter5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 45,
@@ -3399,6 +4062,24 @@ static const struct TrainerMon sParty_Walter5[] = {
     .species = SPECIES_MANECTRIC,
     .moves = {MOVE_QUICK_ATTACK, MOVE_SPARK, MOVE_ODOR_SLEUTH, MOVE_ROAR}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 45,
+    .species = SPECIES_LINOONE,
+    .moves = {MOVE_HEADBUTT, MOVE_SAND_ATTACK, MOVE_ODOR_SLEUTH, MOVE_FURY_SWIPES}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 45,
+    .species = SPECIES_DIGGERSBY,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 45,
+    .species = SPECIES_BOUFFALANT,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Sidney[] = {
@@ -3415,7 +4096,7 @@ static const struct TrainerMon sParty_Sidney[] = {
     .lvl = 66,
     .species = SPECIES_SHIFTRY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_TORMENT, MOVE_DOUBLE_TEAM, MOVE_SWAGGER, MOVE_EXTRASENSORY}
+    .moves = {MOVE_TORMENT, MOVE_FAKE_OUT, MOVE_SWAGGER, MOVE_EXTRASENSORY}
     },
     {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
@@ -3435,7 +4116,7 @@ static const struct TrainerMon sParty_Sidney[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 69,
     .species = SPECIES_ABSOL,
-    .heldItem = ITEM_SITRUS_BERRY,
+    .heldItem = ITEM_ABSOLITE,
     .moves = {MOVE_AERIAL_ACE, MOVE_ROCK_SLIDE, MOVE_SWORDS_DANCE, MOVE_SLASH}
     }
     #else // CANON_MODE
@@ -3451,7 +4132,7 @@ static const struct TrainerMon sParty_Sidney[] = {
     .lvl = 66,
     .species = SPECIES_SHIFTRY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_TORMENT, MOVE_DOUBLE_TEAM, MOVE_SWAGGER, MOVE_EXTRASENSORY}
+    .moves = {MOVE_TORMENT, MOVE_FAKE_OUT, MOVE_SWAGGER, MOVE_EXTRASENSORY}
     },
     {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
@@ -3471,7 +4152,7 @@ static const struct TrainerMon sParty_Sidney[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 69,
     .species = SPECIES_ABSOL,
-    .heldItem = ITEM_SITRUS_BERRY,
+    .heldItem = ITEM_ABSOLITE,
     .moves = {MOVE_AERIAL_ACE, MOVE_ROCK_SLIDE, MOVE_SWORDS_DANCE, MOVE_SLASH}
     }
     #endif // CANON_MODE
@@ -3498,21 +4179,21 @@ static const struct TrainerMon sParty_Phoebe[] = {
     .lvl = 67,
     .species = SPECIES_SABLEYE,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SHADOW_BALL, MOVE_DOUBLE_TEAM, MOVE_NIGHT_SHADE, MOVE_FEINT_ATTACK}
+    .moves = {MOVE_SHADOW_BALL, MOVE_FAKE_OUT, MOVE_NIGHT_SHADE, MOVE_FEINT_ATTACK}
     },
     {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
     .lvl = 69,
-    .species = SPECIES_BANETTE,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SHADOW_BALL, MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_FACADE}
+    .species = SPECIES_DUSCLOPS,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_SHADOW_BALL, MOVE_ICE_BEAM, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 69,
-    .species = SPECIES_DUSCLOPS,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_SHADOW_BALL, MOVE_ICE_BEAM, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE}
+    .species = SPECIES_BANETTE,
+    .heldItem = ITEM_BANETTITE,
+    .moves = {MOVE_SHADOW_BALL, MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_FACADE}
     }
     #else // CANON_MODE
     {
@@ -3525,30 +4206,30 @@ static const struct TrainerMon sParty_Phoebe[] = {
     {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
     .lvl = 67,
-    .species = SPECIES_BANETTE,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SHADOW_BALL, MOVE_GRUDGE, MOVE_WILL_O_WISP, MOVE_FEINT_ATTACK}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
-    .lvl = 67,
     .species = SPECIES_SABLEYE,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SHADOW_BALL, MOVE_DOUBLE_TEAM, MOVE_NIGHT_SHADE, MOVE_FEINT_ATTACK}
+    .moves = {MOVE_SHADOW_BALL, MOVE_FAKE_OUT, MOVE_NIGHT_SHADE, MOVE_FEINT_ATTACK}
     },
     {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
-    .lvl = 69,
+    .lvl = 68,
     .species = SPECIES_CHANDELURE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HEX, MOVE_FLAMETHROWER, MOVE_ENERGY_BALL, MOVE_DARK_PULSE}
     },
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 69,
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 68,
     .species = SPECIES_DUSKNOIR,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_SHADOW_BALL, MOVE_ICE_BEAM, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 69,
+    .species = SPECIES_BANETTE,
+    .heldItem = ITEM_BANETTITE,
+    .moves = {MOVE_SHADOW_BALL, MOVE_GRUDGE, MOVE_WILL_O_WISP, MOVE_FEINT_ATTACK}
     }
     #endif // CANON_MODE
 };
@@ -3579,16 +4260,16 @@ static const struct TrainerMon sParty_Glacia[] = {
     {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
     .lvl = 69,
-    .species = SPECIES_GLALIE,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SHADOW_BALL, MOVE_EXPLOSION, MOVE_HAIL, MOVE_ICE_BEAM}
+    .species = SPECIES_WALREIN,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_SURF, MOVE_BODY_SLAM, MOVE_ICE_BEAM, MOVE_SHEER_COLD}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 70,
-    .species = SPECIES_WALREIN,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_SURF, MOVE_BODY_SLAM, MOVE_ICE_BEAM, MOVE_SHEER_COLD}
+    .species = SPECIES_GLALIE,
+    .heldItem = ITEM_GLALITITE,
+    .moves = {MOVE_SHADOW_BALL, MOVE_EXPLOSION, MOVE_HAIL, MOVE_ICE_BEAM}
     }
     #else // CANON_MODE
     {
@@ -3601,31 +4282,31 @@ static const struct TrainerMon sParty_Glacia[] = {
     {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
     .lvl = 67,
-    .species = SPECIES_GLALIE,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_LIGHT_SCREEN, MOVE_CRUNCH, MOVE_EXPLOSION, MOVE_ICE_BEAM}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
-    .lvl = 67,
     .species = SPECIES_BEARTIC,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_ICICLE_CRASH, MOVE_SLASH, MOVE_SHADOW_CLAW, MOVE_HAIL}
     },
     {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
-    .lvl = 69,
+    .lvl = 67,
     .species = SPECIES_FROSLASS,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_DRAINING_KISS, MOVE_BLIZZARD, MOVE_HAIL, MOVE_SHADOW_BALL}
     },
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 70,
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 69,
     .species = SPECIES_WALREIN,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_SURF, MOVE_BODY_SLAM, MOVE_ICE_BEAM, MOVE_SHEER_COLD}
-    }
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 70,
+    .species = SPECIES_GLALIE,
+    .heldItem = ITEM_GLALITITE,
+    .moves = {MOVE_LIGHT_SCREEN, MOVE_CRUNCH, MOVE_EXPLOSION, MOVE_ICE_BEAM}
+    },
     #endif // CANON_MODE
 };
 
@@ -3663,7 +4344,7 @@ static const struct TrainerMon sParty_Drake[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 70,
     .species = SPECIES_SALAMENCE,
-    .heldItem = ITEM_SITRUS_BERRY,
+    .heldItem = ITEM_SALAMENCITE,
     .moves = {MOVE_FLAMETHROWER, MOVE_DRAGON_CLAW, MOVE_ROCK_SLIDE, MOVE_CRUNCH}
     }
     #else // CANON_MODE
@@ -3699,8 +4380,340 @@ static const struct TrainerMon sParty_Drake[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 70,
     .species = SPECIES_SALAMENCE,
-    .heldItem = ITEM_SITRUS_BERRY,
+    .heldItem = ITEM_SALAMENCITE,
     .moves = {MOVE_FLAMETHROWER, MOVE_DRAGON_CLAW, MOVE_ROCK_SLIDE, MOVE_CRUNCH}
+    }
+    #endif // CANON_MODE
+};
+
+static const struct TrainerMon sParty_SidneyRematch[] = {
+    #ifdef CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_MIGHTYENA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ROAR, MOVE_DOUBLE_EDGE, MOVE_SAND_ATTACK, MOVE_CRUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_SHIFTRY,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_TORMENT, MOVE_FAKE_OUT, MOVE_SWAGGER, MOVE_EXTRASENSORY}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_CACTURNE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_LEECH_SEED, MOVE_FEINT_ATTACK, MOVE_NEEDLE_ARM, MOVE_COTTON_SPORE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_CRAWDAUNT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SURF, MOVE_SWORDS_DANCE, MOVE_STRENGTH, MOVE_FACADE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_ABSOL,
+    .heldItem = ITEM_ABSOLITE,
+    .moves = {MOVE_AERIAL_ACE, MOVE_ROCK_SLIDE, MOVE_SWORDS_DANCE, MOVE_SLASH}
+    }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_SCRAFTY,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CRUNCH, MOVE_BRICK_BREAK, MOVE_POISON_JAB, MOVE_DRAGON_CLAW}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_SHIFTRY,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FEINT_ATTACK, MOVE_FAKE_OUT, MOVE_EXTRASENSORY, MOVE_LEAF_BLADE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_ZOROARK,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_NASTY_PLOT, MOVE_FOCUS_BLAST, MOVE_DARK_PULSE, MOVE_FLAMETHROWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_BISHARP,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_KNOCK_OFF, MOVE_IRON_HEAD, MOVE_SUCKER_PUNCH, MOVE_LOW_KICK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_HYDREIGON,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_DRACO_METEOR, MOVE_DARK_PULSE, MOVE_FLAMETHROWER, MOVE_ROOST}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_ABSOL,
+    .heldItem = ITEM_ABSOLITE,
+    .moves = {MOVE_AERIAL_ACE, MOVE_ROCK_SLIDE, MOVE_SWORDS_DANCE, MOVE_SLASH}
+    }
+    #endif // CANON_MODE
+};
+
+static const struct TrainerMon sParty_PhoebeRematch[] = {
+    #ifdef CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_DUSCLOPS,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SHADOW_PUNCH, MOVE_CONFUSE_RAY, MOVE_CURSE, MOVE_PROTECT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_SABLEYE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SHADOW_BALL, MOVE_FAKE_OUT, MOVE_NIGHT_SHADE, MOVE_FEINT_ATTACK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_BANETTE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SHADOW_BALL, MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_FACADE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_DUSCLOPS,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_SHADOW_BALL, MOVE_ICE_BEAM, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_BANETTE,
+    .heldItem = ITEM_BANETTITE,
+    .moves = {MOVE_SHADOW_BALL, MOVE_GRUDGE, MOVE_WILL_O_WISP, MOVE_FEINT_ATTACK}
+    },
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_DRIFBLIM,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HEX, MOVE_WILL_O_WISP, MOVE_STRENGTH_SAP, MOVE_AIR_SLASH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_SABLEYE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SHADOW_CLAW, MOVE_FOUL_PLAY, MOVE_POWER_GEM, MOVE_FAKE_OUT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_CHANDELURE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HEX, MOVE_FLAMETHROWER, MOVE_WILL_O_WISP, MOVE_DARK_PULSE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_DUSKNOIR,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_HEX, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH, MOVE_THUNDER_PUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_DHELMISE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ANCHOR_SHOT, MOVE_RAPID_SPIN, MOVE_POLTERGEIST, MOVE_SYNTHESIS}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_BANETTE,
+    .heldItem = ITEM_BANETTITE,
+    .moves = {MOVE_POLTERGEIST, MOVE_GUNK_SHOT, MOVE_WILL_O_WISP, MOVE_ENCORE}
+    }
+    #endif // CANON_MODE
+};
+
+static const struct TrainerMon sParty_GlaciaRematch[] = {
+    #ifdef CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_SEALEO,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ENCORE, MOVE_BODY_SLAM, MOVE_HAIL, MOVE_ICE_BALL}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_GLALIE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_LIGHT_SCREEN, MOVE_CRUNCH, MOVE_ICY_WIND, MOVE_ICE_BEAM}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_SEALEO,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ATTRACT, MOVE_DOUBLE_EDGE, MOVE_HAIL, MOVE_BLIZZARD}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_WALREIN,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_SURF, MOVE_BODY_SLAM, MOVE_ICE_BEAM, MOVE_SHEER_COLD}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_GLALIE,
+    .heldItem = ITEM_GLALITITE,
+    .moves = {MOVE_SHADOW_BALL, MOVE_EXPLOSION, MOVE_HAIL, MOVE_ICE_BEAM}
+    }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_MAMOSWINE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ICE_SHARD, MOVE_EARTHQUAKE, MOVE_ICICLE_CRASH, MOVE_STEALTH_ROCK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_ABOMASNOW,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BLIZZARD, MOVE_WOOD_HAMMER, MOVE_ICE_SHARD, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_WEAVILE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_TRIPLE_AXEL, MOVE_ICE_SHARD, MOVE_KNOCK_OFF, MOVE_LOW_KICK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_FROSLASS,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_DRAINING_KISS, MOVE_BLIZZARD, MOVE_SPIKES, MOVE_SHADOW_BALL}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_WALREIN,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_SURF, MOVE_SUPER_FANG, MOVE_BLIZZARD, MOVE_ROAR}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_GLALIE,
+    .heldItem = ITEM_GLALITITE,
+    .moves = {MOVE_DOUBLE_EDGE, MOVE_ICE_SHARD, MOVE_EXPLOSION, MOVE_FREEZE_DRY}
+    },
+    #endif // CANON_MODE
+};
+
+static const struct TrainerMon sParty_DrakeRematch[] = {
+    #ifdef CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_SHELGON,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ROCK_TOMB, MOVE_DRAGON_CLAW, MOVE_PROTECT, MOVE_DOUBLE_EDGE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_ALTARIA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_DOUBLE_EDGE, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE, MOVE_AERIAL_ACE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_KINGDRA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SMOKESCREEN, MOVE_DRAGON_DANCE, MOVE_SURF, MOVE_BODY_SLAM}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_FLYGON,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FLAMETHROWER, MOVE_CRUNCH, MOVE_DRAGON_BREATH, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_SALAMENCE,
+    .heldItem = ITEM_SALAMENCITE,
+    .moves = {MOVE_FLAMETHROWER, MOVE_DRAGON_CLAW, MOVE_ROCK_SLIDE, MOVE_CRUNCH}
+    }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_DRAGALGE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_DRAGON_PULSE, MOVE_HYDRO_PUMP, MOVE_SLUDGE_WAVE, MOVE_THUNDERBOLT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_ALTARIA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_MOONBLAST, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE, MOVE_AERIAL_ACE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_KINGDRA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_DRACO_METEOR, MOVE_YAWN, MOVE_SURF, MOVE_ICE_BEAM}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_FLYGON,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FLAMETHROWER, MOVE_BOOMBURST, MOVE_DRAGON_PULSE, MOVE_SCREECH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
+    .lvl = 75,
+    .species = SPECIES_DRAGAPULT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_DRAGON_DANCE, MOVE_DRAGON_DARTS, MOVE_PHANTOM_FORCE, MOVE_FLAMETHROWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_SALAMENCE,
+    .heldItem = ITEM_SALAMENCITE,
+    .moves = {MOVE_THUNDER_FANG, MOVE_DRAGON_RUSH, MOVE_ZEN_HEADBUTT, MOVE_CRUNCH}
     }
     #endif // CANON_MODE
 };
@@ -4518,6 +5531,7 @@ static const struct TrainerMon sParty_Karen5[] = {
 };
 
 static const struct TrainerMon sParty_KateAndJoy[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 33,
     .species = SPECIES_SPINDA,
@@ -4528,9 +5542,20 @@ static const struct TrainerMon sParty_KateAndJoy[] = {
     .species = SPECIES_SLAKING,
     .moves = {MOVE_FOCUS_PUNCH, MOVE_YAWN, MOVE_SLACK_OFF, MOVE_FEINT_ATTACK}
     }
+    #else // CANON_MODE
+    {
+    .lvl = 33,
+    .species = SPECIES_FLOATZEL,
+    },
+    {
+    .lvl = 33,
+    .species = SPECIES_LOPUNNY,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_AnnaAndMeg1[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 17,
     .species = SPECIES_ZIGZAGOON,
@@ -4541,9 +5566,22 @@ static const struct TrainerMon sParty_AnnaAndMeg1[] = {
     .species = SPECIES_MAKUHITA,
     .moves = {MOVE_TACKLE, MOVE_FOCUS_ENERGY, MOVE_ARM_THRUST, MOVE_NONE}
     }
+    #else // CANON_MODE
+    {
+    .lvl = 17,
+    .species = SPECIES_GOTHORITA,
+    .moves = {MOVE_GROWL, MOVE_TAIL_WHIP, MOVE_HEADBUTT, MOVE_ODOR_SLEUTH}
+    },
+    {
+    .lvl = 19,
+    .species = SPECIES_MAKUHITA,
+    .moves = {MOVE_TACKLE, MOVE_FOCUS_ENERGY, MOVE_ARM_THRUST, MOVE_NONE}
+    }
+    #endif // CANON_MODE   
 };
 
 static const struct TrainerMon sParty_AnnaAndMeg2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 31,
@@ -4556,12 +5594,27 @@ static const struct TrainerMon sParty_AnnaAndMeg2[] = {
     .species = SPECIES_MAKUHITA,
     .moves = {MOVE_TACKLE, MOVE_FOCUS_ENERGY, MOVE_ARM_THRUST, MOVE_NONE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 31,
+    .species = SPECIES_GOTHORITA,
+    .moves = {MOVE_GROWL, MOVE_TAIL_WHIP, MOVE_HEADBUTT, MOVE_ODOR_SLEUTH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 33,
+    .species = SPECIES_MAKUHITA,
+    .moves = {MOVE_TACKLE, MOVE_FOCUS_ENERGY, MOVE_ARM_THRUST, MOVE_NONE}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_AnnaAndMeg3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
-    .lvl = 34,
+    .lvl = 35,
     .species = SPECIES_ZIGZAGOON,
     .moves = {MOVE_GROWL, MOVE_TAIL_WHIP, MOVE_HEADBUTT, MOVE_ODOR_SLEUTH}
     },
@@ -4571,12 +5624,27 @@ static const struct TrainerMon sParty_AnnaAndMeg3[] = {
     .species = SPECIES_MAKUHITA,
     .moves = {MOVE_TACKLE, MOVE_FOCUS_ENERGY, MOVE_ARM_THRUST, MOVE_NONE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 35,
+    .species = SPECIES_GOTHORITA,
+    .moves = {MOVE_GROWL, MOVE_TAIL_WHIP, MOVE_HEADBUTT, MOVE_ODOR_SLEUTH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 36,
+    .species = SPECIES_MAKUHITA,
+    .moves = {MOVE_TACKLE, MOVE_FOCUS_ENERGY, MOVE_ARM_THRUST, MOVE_NONE}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_AnnaAndMeg4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
-    .lvl = 37,
+    .lvl = 39,
     .species = SPECIES_LINOONE,
     .moves = {MOVE_GROWL, MOVE_TAIL_WHIP, MOVE_HEADBUTT, MOVE_ODOR_SLEUTH}
     },
@@ -4586,12 +5654,27 @@ static const struct TrainerMon sParty_AnnaAndMeg4[] = {
     .species = SPECIES_MAKUHITA,
     .moves = {MOVE_TACKLE, MOVE_FOCUS_ENERGY, MOVE_ARM_THRUST, MOVE_NONE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 39,
+    .species = SPECIES_GOTHORITA,
+    .moves = {MOVE_GROWL, MOVE_TAIL_WHIP, MOVE_HEADBUTT, MOVE_ODOR_SLEUTH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 39,
+    .species = SPECIES_MAKUHITA,
+    .moves = {MOVE_TACKLE, MOVE_FOCUS_ENERGY, MOVE_ARM_THRUST, MOVE_NONE}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_AnnaAndMeg5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
-    .lvl = 39,
+    .lvl = 41,
     .species = SPECIES_LINOONE,
     .moves = {MOVE_GROWL, MOVE_TAIL_WHIP, MOVE_HEADBUTT, MOVE_ODOR_SLEUTH}
     },
@@ -4601,6 +5684,20 @@ static const struct TrainerMon sParty_AnnaAndMeg5[] = {
     .species = SPECIES_HARIYAMA,
     .moves = {MOVE_TACKLE, MOVE_FOCUS_ENERGY, MOVE_ARM_THRUST, MOVE_NONE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 41,
+    .species = SPECIES_GOTHITELLE,
+    .moves = {MOVE_GROWL, MOVE_TAIL_WHIP, MOVE_HEADBUTT, MOVE_ODOR_SLEUTH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 41,
+    .species = SPECIES_HARIYAMA,
+    .moves = {MOVE_TACKLE, MOVE_FOCUS_ENERGY, MOVE_ARM_THRUST, MOVE_NONE}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Victor[] = {
@@ -4927,10 +6024,17 @@ static const struct TrainerMon sParty_Shelby5[] = {
 };
 
 static const struct TrainerMon sParty_Calvin1[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 6,
     .species = SPECIES_POOCHYENA,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 6,
+    .species = SPECIES_ROOKIDEE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Billy[] = {
@@ -4980,10 +6084,17 @@ static const struct TrainerMon sParty_Tommy[] = {
 };
 
 static const struct TrainerMon sParty_Joey[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 10,
     .species = SPECIES_MACHOP,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 10,
+    .species = SPECIES_HELIOPTILE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Ben[] = {
@@ -5061,28 +6172,51 @@ static const struct TrainerMon sParty_Katelynn[] = {
 };
 
 static const struct TrainerMon sParty_Jaylen[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 22,
     .species = SPECIES_TRAPINCH,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 22,
+    .species = SPECIES_SALANDIT,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Dillon[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 22,
     .species = SPECIES_ARON,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 22,
+    .species = SPECIES_SANDYGAST,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Calvin2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 30,
     .species = SPECIES_MIGHTYENA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 30,
+    .species = SPECIES_CORVISQUIRE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Calvin3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
     .lvl = 31,
@@ -5093,9 +6227,22 @@ static const struct TrainerMon sParty_Calvin3[] = {
     .lvl = 33,
     .species = SPECIES_MIGHTYENA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 31,
+    .species = SPECIES_MIGHTYENA,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 33,
+    .species = SPECIES_CORVISQUIRE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Calvin4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
     .lvl = 34,
@@ -5111,9 +6258,27 @@ static const struct TrainerMon sParty_Calvin4[] = {
     .lvl = 36,
     .species = SPECIES_MIGHTYENA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 34,
+    .species = SPECIES_SWELLOW,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 32,
+    .species = SPECIES_CORVISQUIRE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 36,
+    .species = SPECIES_MIGHTYENA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Calvin5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 37,
@@ -5129,6 +6294,23 @@ static const struct TrainerMon sParty_Calvin5[] = {
     .lvl = 39,
     .species = SPECIES_MIGHTYENA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 37,
+    .species = SPECIES_SWELLOW,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 38,
+    .species = SPECIES_CORVIKNIGHT,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 39,
+    .species = SPECIES_MIGHTYENA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Eddie[] = {
@@ -5185,7 +6367,7 @@ static const struct TrainerMon sParty_Wallace[] = {
     .lvl = 68,
     .species = SPECIES_LUDICOLO,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_GIGA_DRAIN, MOVE_SURF, MOVE_LEECH_SEED, MOVE_DOUBLE_TEAM}
+    .moves = {MOVE_GIGA_DRAIN, MOVE_SURF, MOVE_LEECH_SEED, MOVE_ICE_BEAM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -5219,9 +6401,9 @@ static const struct TrainerMon sParty_Wallace[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 68,
-    .species = SPECIES_DARMANITAN_GALARIAN,
+    .species = SPECIES_CLOYSTER,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_ICICLE_CRASH, MOVE_FLARE_BLITZ, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE}
+    .moves = {MOVE_ICICLE_SPEAR, MOVE_RAZOR_SHELL, MOVE_ICE_SPINNER, MOVE_RAPID_SPIN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -5254,7 +6436,98 @@ static const struct TrainerMon sParty_Wallace[] = {
     #endif // CANON_MODE
 };
 
+static const struct TrainerMon sParty_WallaceRematch[] = {
+    #ifdef CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_WAILORD,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_SPOUT, MOVE_DOUBLE_EDGE, MOVE_BLIZZARD}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_TENTACRUEL,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_TOXIC, MOVE_HYDRO_PUMP, MOVE_SLUDGE_BOMB, MOVE_ICE_BEAM}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_LUDICOLO,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_GIGA_DRAIN, MOVE_SURF, MOVE_LEECH_SEED, MOVE_ICE_BEAM}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_WHISCASH,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_EARTHQUAKE, MOVE_SURF, MOVE_AMNESIA, MOVE_HYPER_BEAM}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_GYARADOS,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_HYPER_BEAM, MOVE_SURF}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_MILOTIC,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_RECOVER, MOVE_SURF, MOVE_ICE_BEAM, MOVE_TOXIC}
+    }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_SLOWKING,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CHILLY_RECEPTION, MOVE_SLACK_OFF, MOVE_THUNDER_WAVE, MOVE_SCALD}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_CLOYSTER,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ICICLE_SPEAR, MOVE_RAZOR_SHELL, MOVE_ICE_SPINNER, MOVE_RAPID_SPIN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_WALREIN,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BODY_SLAM, MOVE_SURF, MOVE_BLIZZARD, MOVE_AURORA_BEAM}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_WHISCASH,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_EARTH_POWER, MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_STONE_EDGE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_GYARADOS,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_WATERFALL}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_MILOTIC,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_RECOVER, MOVE_SURF, MOVE_AURORA_BEAM, MOVE_BLIZZARD}
+    }
+    #endif // CANON_MODE
+};
+
 static const struct TrainerMon sParty_Andrew[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 5,
     .species = SPECIES_MAGIKARP,
@@ -5267,6 +6540,20 @@ static const struct TrainerMon sParty_Andrew[] = {
     .lvl = 17,
     .species = SPECIES_MAGIKARP,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 5,
+    .species = SPECIES_MAGIKARP,
+    },
+    {
+    .lvl = 11,
+    .species = SPECIES_WISHIWASHI,
+    },
+    {
+    .lvl = 17,
+    .species = SPECIES_CLAUNCHER,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Ivan[] = {
@@ -5315,14 +6602,23 @@ static const struct TrainerMon sParty_Elliot1[] = {
 };
 
 static const struct TrainerMon sParty_Ned[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 12,
     .species = SPECIES_TENTACOOL,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 12,
+    .species = SPECIES_SHELLOS_WEST_SEA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Dale[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 12,
     .species = SPECIES_TENTACOOL,
@@ -5339,6 +6635,24 @@ static const struct TrainerMon sParty_Dale[] = {
     .lvl = 16,
     .species = SPECIES_WAILMER,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 12,
+    .species = SPECIES_WISHIWASHI,
+    },
+    {
+    .lvl = 16,
+    .species = SPECIES_WAILMER,
+    },
+    {
+    .lvl = 12,
+    .species = SPECIES_TENTACOOL,
+    },
+    {
+    .lvl = 16,
+    .species = SPECIES_WAILMER,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Nolan[] = {
@@ -5349,6 +6663,7 @@ static const struct TrainerMon sParty_Nolan[] = {
 };
 
 static const struct TrainerMon sParty_Barny[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 28,
     .species = SPECIES_TENTACOOL,
@@ -5357,13 +6672,30 @@ static const struct TrainerMon sParty_Barny[] = {
     .lvl = 28,
     .species = SPECIES_CARVANHA,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 28,
+    .species = SPECIES_BASCULIN_RED_STRIPED,
+    },
+    {
+    .lvl = 28,
+    .species = SPECIES_CARVANHA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Wade[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 18,
     .species = SPECIES_TENTACOOL,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 18,
+    .species = SPECIES_BASCULIN_RED_STRIPED,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Carter[] = {
@@ -5467,6 +6799,7 @@ static const struct TrainerMon sParty_Elliot5[] = {
 };
 
 static const struct TrainerMon sParty_Ronald[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 22,
     .species = SPECIES_MAGIKARP,
@@ -5491,9 +6824,28 @@ static const struct TrainerMon sParty_Ronald[] = {
     .lvl = 38,
     .species = SPECIES_GYARADOS,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 23,
+    .species = SPECIES_MAGIKARP,
+    },
+    {
+    .lvl = 27,
+    .species = SPECIES_GYARADOS,
+    },
+    {
+    .lvl = 30,
+    .species = SPECIES_WISHIWASHI,
+    },
+    {
+    .lvl = 34,
+    .species = SPECIES_GYARADOS,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Jacob[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
     .lvl = 7,
@@ -5509,9 +6861,27 @@ static const struct TrainerMon sParty_Jacob[] = {
     .lvl = 16,
     .species = SPECIES_MAGNEMITE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 7,
+    .species = SPECIES_VOLTORB,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 7,
+    .species = SPECIES_SHINX,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+    .lvl = 16,
+    .species = SPECIES_MAGNEMITE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Anthony[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 16,
     .species = SPECIES_MAGNEMITE,
@@ -5520,6 +6890,16 @@ static const struct TrainerMon sParty_Anthony[] = {
     .lvl = 16,
     .species = SPECIES_MAGNEMITE,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 16,
+    .species = SPECIES_PACHIRISU,
+    },
+    {
+    .lvl = 16,
+    .species = SPECIES_MAGNEMITE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Benjamin1[] = {
@@ -5562,13 +6942,21 @@ static const struct TrainerMon sParty_Benjamin5[] = {
 };
 
 static const struct TrainerMon sParty_Abigail1[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 18,
     .species = SPECIES_MAGNEMITE,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 18,
+    .species = SPECIES_YAMPER,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Jasmine[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
     .lvl = 16,
@@ -5583,38 +6971,86 @@ static const struct TrainerMon sParty_Jasmine[] = {
     .lvl = 7,
     .species = SPECIES_VOLTORB,
     }
+    #else // CANON_MODE
+        {
+    .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
+    .lvl = 16,
+    .species = SPECIES_MAGNEMITE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
+    .lvl = 16,
+    .species = SPECIES_MAGNEMITE,
+    },
+    {
+    .lvl = 7,
+    .species = SPECIES_TOXEL,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Abigail2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 31,
     .species = SPECIES_MAGNEMITE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 31,
+    .species = SPECIES_YAMPER,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Abigail3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
     .lvl = 34,
     .species = SPECIES_MAGNEMITE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 34,
+    .species = SPECIES_BOLTUND,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Abigail4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
     .lvl = 37,
     .species = SPECIES_MAGNETON,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 37,
+    .species = SPECIES_BOLTUND,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Abigail5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 40,
     .species = SPECIES_MAGNETON,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 40,
+    .species = SPECIES_BOLTUND,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Dylan1[] = {
@@ -5657,45 +7093,85 @@ static const struct TrainerMon sParty_Dylan5[] = {
 };
 
 static const struct TrainerMon sParty_Maria1[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 19,
     .species = SPECIES_DODUO,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 19,
+    .species = SPECIES_FURFROU,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Maria2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 31,
     .species = SPECIES_DODUO,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 31,
+    .species = SPECIES_FURFROU,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Maria3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
     .lvl = 34,
     .species = SPECIES_DODUO,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 34,
+    .species = SPECIES_FURFROU,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Maria4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
     .lvl = 37,
     .species = SPECIES_DODRIO,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 37,
+    .species = SPECIES_FURFROU,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Maria5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 40,
     .species = SPECIES_DODRIO,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 40,
+    .species = SPECIES_FURFROU,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Camden[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 36,
     .species = SPECIES_STARYU,
@@ -5704,6 +7180,16 @@ static const struct TrainerMon sParty_Camden[] = {
     .lvl = 36,
     .species = SPECIES_STARYU,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 36,
+    .species = SPECIES_STARYU,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_SWANNA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Demetrius[] = {
@@ -5736,6 +7222,7 @@ static const struct TrainerMon sParty_Pablo1[] = {
 };
 
 static const struct TrainerMon sParty_Chase[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 29,
     .species = SPECIES_WINGULL,
@@ -5745,6 +7232,17 @@ static const struct TrainerMon sParty_Chase[] = {
     .lvl = 37,
     .species = SPECIES_STARYU,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 29,
+    .species = SPECIES_WINGULL,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
+    .lvl = 37,
+    .species = SPECIES_GASTRODON_EAST_SEA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Isaiah2[] = {
@@ -5787,6 +7285,7 @@ static const struct TrainerMon sParty_Isobel[] = {
 };
 
 static const struct TrainerMon sParty_Donny[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 29,
     .species = SPECIES_WINGULL,
@@ -5796,6 +7295,17 @@ static const struct TrainerMon sParty_Donny[] = {
     .lvl = 37,
     .species = SPECIES_STARYU,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 29,
+    .species = SPECIES_MAREANIE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(19, 19, 19, 19, 19, 19),
+    .lvl = 37,
+    .species = SPECIES_STARYU,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Talia[] = {
@@ -5813,6 +7323,7 @@ static const struct TrainerMon sParty_Katelyn1[] = {
 };
 
 static const struct TrainerMon sParty_Allison[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 30,
     .species = SPECIES_WINGULL,
@@ -5822,6 +7333,17 @@ static const struct TrainerMon sParty_Allison[] = {
     .lvl = 36,
     .species = SPECIES_STARYU,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 30,
+    .species = SPECIES_WINGULL,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(29, 29, 29, 29, 29, 29),
+    .lvl = 36,
+    .species = SPECIES_CRAMORANT,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Katelyn2[] = {
@@ -5944,13 +7466,21 @@ static const struct TrainerMon sParty_Aaron[] = {
 };
 
 static const struct TrainerMon sParty_Perry[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 29,
     .species = SPECIES_WINGULL,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 29,
+    .species = SPECIES_CRAMORANT,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Hugh[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 28,
     .species = SPECIES_WINGULL,
@@ -5959,6 +7489,16 @@ static const struct TrainerMon sParty_Hugh[] = {
     .lvl = 28,
     .species = SPECIES_TROPIUS,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 28,
+    .species = SPECIES_ROOKIDEE,
+    },
+    {
+    .lvl = 28,
+    .species = SPECIES_TROPIUS,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Phil[] = {
@@ -5995,6 +7535,7 @@ static const struct TrainerMon sParty_Humberto[] = {
 };
 
 static const struct TrainerMon sParty_Presley[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 36,
     .species = SPECIES_TROPIUS,
@@ -6003,6 +7544,16 @@ static const struct TrainerMon sParty_Presley[] = {
     .lvl = 36,
     .species = SPECIES_XATU,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 36,
+    .species = SPECIES_TRANQUILL,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_XATU,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Edwardo[] = {
@@ -6019,6 +7570,7 @@ static const struct TrainerMon sParty_Edwardo[] = {
 };
 
 static const struct TrainerMon sParty_Colin[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 31,
     .species = SPECIES_WINGULL,
@@ -6027,6 +7579,16 @@ static const struct TrainerMon sParty_Colin[] = {
     .lvl = 31,
     .species = SPECIES_NATU,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 31,
+    .species = SPECIES_STARAVIA,
+    },
+    {
+    .lvl = 31,
+    .species = SPECIES_NATU,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Robert1[] = {
@@ -6128,20 +7690,35 @@ static const struct TrainerMon sParty_Alex[] = {
 };
 
 static const struct TrainerMon sParty_Beck[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 37,
     .species = SPECIES_TROPIUS,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 37,
+    .species = SPECIES_TOUCANNON,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Yasu[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 29,
     .species = SPECIES_NINJASK,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 29,
+    .species = SPECIES_ACCELGOR,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Takashi[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 28,
     .species = SPECIES_NINJASK,
@@ -6150,6 +7727,16 @@ static const struct TrainerMon sParty_Takashi[] = {
     .lvl = 28,
     .species = SPECIES_KOFFING,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 28,
+    .species = SPECIES_NINJASK,
+    },
+    {
+    .lvl = 28,
+    .species = SPECIES_SALANDIT,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Dianne[] = {
@@ -6425,6 +8012,7 @@ static const struct TrainerMon sParty_Madeline1[] = {
 };
 
 static const struct TrainerMon sParty_Clarissa[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 31,
     .species = SPECIES_ROSELIA,
@@ -6433,6 +8021,16 @@ static const struct TrainerMon sParty_Clarissa[] = {
     .lvl = 31,
     .species = SPECIES_WAILMER,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 31,
+    .species = SPECIES_ROSELIA,
+    },
+    {
+    .lvl = 31,
+    .species = SPECIES_LILLIGANT,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Angelica[] = {
@@ -6493,6 +8091,7 @@ static const struct TrainerMon sParty_Madeline5[] = {
 };
 
 static const struct TrainerMon sParty_Beverly[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 28,
     .species = SPECIES_WINGULL,
@@ -6501,6 +8100,16 @@ static const struct TrainerMon sParty_Beverly[] = {
     .lvl = 28,
     .species = SPECIES_WAILMER,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 28,
+    .species = SPECIES_SHELLOS_WEST_SEA,
+    },
+    {
+    .lvl = 28,
+    .species = SPECIES_WAILMER,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Imani[] = {
@@ -6511,13 +8120,21 @@ static const struct TrainerMon sParty_Imani[] = {
 };
 
 static const struct TrainerMon sParty_Kyla[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 29,
     .species = SPECIES_WAILMER,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 29,
+    .species = SPECIES_BASCULIN_BLUE_STRIPED
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Denise[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 28,
     .species = SPECIES_WINGULL,
@@ -6526,13 +8143,30 @@ static const struct TrainerMon sParty_Denise[] = {
     .lvl = 28,
     .species = SPECIES_GOLDEEN,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 28,
+    .species = SPECIES_DUCKLETT,
+    },
+    {
+    .lvl = 28,
+    .species = SPECIES_GOLDEEN,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Beth[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 29,
     .species = SPECIES_GOLDEEN,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 29,
+    .species = SPECIES_MANTYKE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Tara[] = {
@@ -6554,6 +8188,7 @@ static const struct TrainerMon sParty_Missy[] = {
 };
 
 static const struct TrainerMon sParty_Alice[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 27,
     .species = SPECIES_GOLDEEN,
@@ -6566,6 +8201,20 @@ static const struct TrainerMon sParty_Alice[] = {
     .lvl = 27,
     .species = SPECIES_GOLDEEN,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 27,
+    .species = SPECIES_DUCKLETT,
+    },
+    {
+    .lvl = 27,
+    .species = SPECIES_WINGULL,
+    },
+    {
+    .lvl = 27,
+    .species = SPECIES_GOLDEEN,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Jenny1[] = {
@@ -6590,10 +8239,17 @@ static const struct TrainerMon sParty_Tanya[] = {
 };
 
 static const struct TrainerMon sParty_Sharon[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 37,
     .species = SPECIES_SEAKING,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 37,
+    .species = SPECIES_BRUXISH,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Nikki[] = {
@@ -6608,13 +8264,21 @@ static const struct TrainerMon sParty_Nikki[] = {
 };
 
 static const struct TrainerMon sParty_Brenda[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 37,
     .species = SPECIES_GOLDEEN,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 37,
+    .species = SPECIES_BRUXISH,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Katie[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 36,
     .species = SPECIES_GOLDEEN,
@@ -6623,6 +8287,16 @@ static const struct TrainerMon sParty_Katie[] = {
     .lvl = 36,
     .species = SPECIES_SPHEAL,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 36,
+    .species = SPECIES_MANTYKE,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_SPHEAL,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Susie[] = {
@@ -6633,10 +8307,17 @@ static const struct TrainerMon sParty_Susie[] = {
 };
 
 static const struct TrainerMon sParty_Kara[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 37,
     .species = SPECIES_SEAKING,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 37,
+    .species = SPECIES_ALOMOMOLA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Dana[] = {
@@ -6647,6 +8328,7 @@ static const struct TrainerMon sParty_Dana[] = {
 };
 
 static const struct TrainerMon sParty_Sienna[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 36,
     .species = SPECIES_LUVDISC,
@@ -6655,6 +8337,16 @@ static const struct TrainerMon sParty_Sienna[] = {
     .lvl = 36,
     .species = SPECIES_LUVDISC,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 36,
+    .species = SPECIES_LUVDISC,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_ALOMOMOLA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Debra[] = {
@@ -6687,6 +8379,7 @@ static const struct TrainerMon sParty_Kaylee[] = {
 };
 
 static const struct TrainerMon sParty_Laurel[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 36,
     .species = SPECIES_LUVDISC,
@@ -6695,6 +8388,16 @@ static const struct TrainerMon sParty_Laurel[] = {
     .lvl = 36,
     .species = SPECIES_LUVDISC,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 36,
+    .species = SPECIES_LUVDISC,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_ALOMOMOLA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Carlee[] = {
@@ -6758,6 +8461,7 @@ static const struct TrainerMon sParty_Heidi[] = {
 };
 
 static const struct TrainerMon sParty_Becky[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 25,
     .species = SPECIES_SANDSHREW,
@@ -6768,9 +8472,20 @@ static const struct TrainerMon sParty_Becky[] = {
     .species = SPECIES_MARILL,
     .moves = {MOVE_ROLLOUT, MOVE_BUBBLE_BEAM, MOVE_TAIL_WHIP, MOVE_DEFENSE_CURL}
     }
+    #else // CANON_MODE
+    {
+    .lvl = 25,
+    .species = SPECIES_HIPPOPOTAS,
+    },
+    {
+    .lvl = 25,
+    .species = SPECIES_MARACTUS,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Carol[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 19,
     .species = SPECIES_TAILLOW,
@@ -6779,9 +8494,20 @@ static const struct TrainerMon sParty_Carol[] = {
     .lvl = 19,
     .species = SPECIES_LOMBRE,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 19,
+    .species = SPECIES_FLETCHINDER,
+    },
+    {
+    .lvl = 19,
+    .species = SPECIES_CACNEA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Nancy[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 20,
     .species = SPECIES_MARILL,
@@ -6790,6 +8516,16 @@ static const struct TrainerMon sParty_Nancy[] = {
     .lvl = 20,
     .species = SPECIES_LOMBRE,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 20,
+    .species = SPECIES_WHIMSICOTT,
+    },
+    {
+    .lvl = 20,
+    .species = SPECIES_LOMBRE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Martha[] = {
@@ -6827,6 +8563,7 @@ static const struct TrainerMon sParty_Cedric[] = {
 };
 
 static const struct TrainerMon sParty_Irene[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 19,
     .species = SPECIES_SHROOMISH,
@@ -6835,6 +8572,16 @@ static const struct TrainerMon sParty_Irene[] = {
     .lvl = 19,
     .species = SPECIES_MARILL,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 19,
+    .species = SPECIES_HIPPOPOTAS,
+    },
+    {
+    .lvl = 19,
+    .species = SPECIES_MARILL,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Diana2[] = {
@@ -7023,6 +8770,7 @@ static const struct TrainerMon sParty_AmyAndLiv6[] = {
 };
 
 static const struct TrainerMon sParty_Huey[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 14,
@@ -7033,6 +8781,18 @@ static const struct TrainerMon sParty_Huey[] = {
     .lvl = 14,
     .species = SPECIES_MACHOP,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 14,
+    .species = SPECIES_WINGULL,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 14,
+    .species = SPECIES_TIMBURR,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Edmond[] = {
@@ -7241,6 +9001,7 @@ static const struct TrainerMon sParty_Kayley[] = {
 };
 
 static const struct TrainerMon sParty_Auron[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 36,
     .species = SPECIES_MANECTRIC,
@@ -7249,9 +9010,20 @@ static const struct TrainerMon sParty_Auron[] = {
     .lvl = 36,
     .species = SPECIES_MACHAMP,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 36,
+    .species = SPECIES_HONCHKROW,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_MISMAGIUS,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Kelvin[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
     .lvl = 36,
@@ -7262,9 +9034,22 @@ static const struct TrainerMon sParty_Kelvin[] = {
     .lvl = 36,
     .species = SPECIES_SPHEAL,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+    .lvl = 36,
+    .species = SPECIES_GURDURR,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
+    .lvl = 36,
+    .species = SPECIES_SPHEAL,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Marley[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 37,
@@ -7272,6 +9057,13 @@ static const struct TrainerMon sParty_Marley[] = {
     .heldItem = ITEM_NONE,
     .moves = {MOVE_BITE, MOVE_ROAR, MOVE_THUNDER_WAVE, MOVE_THUNDERBOLT}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 37,
+    .species = SPECIES_ARAQUANID,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Reyna[] = {
@@ -7288,10 +9080,17 @@ static const struct TrainerMon sParty_Reyna[] = {
 };
 
 static const struct TrainerMon sParty_Hudson[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 37,
     .species = SPECIES_WAILMER,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 37,
+    .species = SPECIES_GASTRODON_EAST_SEA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Conor[] = {
@@ -7419,7 +9218,7 @@ static const struct TrainerMon sParty_WallyVR1[] = {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
     .lvl = 60,
     .species = SPECIES_GARDEVOIR,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT}
+    .moves = {MOVE_MOONBLAST, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT}
     }
 };
 
@@ -8402,6 +10201,7 @@ static const struct TrainerMon sParty_Jackson1[] = {
 };
 
 static const struct TrainerMon sParty_Lorenzo[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
     .lvl = 31,
@@ -8417,6 +10217,18 @@ static const struct TrainerMon sParty_Lorenzo[] = {
     .lvl = 31,
     .species = SPECIES_LOMBRE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .lvl = 30,
+    .species = SPECIES_SHINX,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .lvl = 32,
+    .species = SPECIES_LUXIO,
+    },
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Sebastian[] = {
@@ -8465,6 +10277,7 @@ static const struct TrainerMon sParty_Jackson5[] = {
 };
 
 static const struct TrainerMon sParty_Catherine1[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
     .lvl = 29,
@@ -8475,9 +10288,22 @@ static const struct TrainerMon sParty_Catherine1[] = {
     .lvl = 29,
     .species = SPECIES_ROSELIA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .lvl = 29,
+    .species = SPECIES_STEENEE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .lvl = 29,
+    .species = SPECIES_LEAVANNY,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Jenna[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
     .lvl = 31,
@@ -8493,6 +10319,18 @@ static const struct TrainerMon sParty_Jenna[] = {
     .lvl = 31,
     .species = SPECIES_NUZLEAF,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .lvl = 30,
+    .species = SPECIES_AIPOM,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .lvl = 32,
+    .species = SPECIES_AMBIPOM,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Sophia[] = {
@@ -8706,10 +10544,17 @@ static const struct TrainerMon sParty_Athena[] = {
 };
 
 static const struct TrainerMon sParty_Harrison[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 38,
     .species = SPECIES_TENTACRUEL,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 38,
+    .species = SPECIES_JELLICENT,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_GruntMtChimney2[] = {
@@ -8865,6 +10710,7 @@ static const struct TrainerMon sParty_BrendanRustboroMudkip[] = {
 };
 
 static const struct TrainerMon sParty_Paxton[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 36,
     .species = SPECIES_SWELLOW,
@@ -8873,6 +10719,16 @@ static const struct TrainerMon sParty_Paxton[] = {
     .lvl = 36,
     .species = SPECIES_BRELOOM,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 36,
+    .species = SPECIES_FEAROW,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_GRAPPLOCT,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Isabella[] = {
@@ -8917,6 +10773,7 @@ static const struct TrainerMon sParty_CourtneyMtChimney[] = {
 };
 
 static const struct TrainerMon sParty_Jonathan[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 36,
     .species = SPECIES_KECLEON,
@@ -8925,6 +10782,16 @@ static const struct TrainerMon sParty_Jonathan[] = {
     .lvl = 36,
     .species = SPECIES_LOUDRED,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 36,
+    .species = SPECIES_KECLEON,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_BOUFFALANT,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_BrendanRustboroTorchic[] = {
@@ -9008,6 +10875,7 @@ static const struct TrainerMon sParty_MaxieMtChimney[] = {
 };
 
 static const struct TrainerMon sParty_Tiana[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 4,
     .species = SPECIES_ZIGZAGOON,
@@ -9016,9 +10884,20 @@ static const struct TrainerMon sParty_Tiana[] = {
     .lvl = 5,
     .species = SPECIES_SHROOMISH,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 4,
+    .species = SPECIES_BUNEARY,
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_SHROOMISH,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Haley1[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 6,
     .species = SPECIES_LOTAD,
@@ -9027,6 +10906,16 @@ static const struct TrainerMon sParty_Haley1[] = {
     .lvl = 7,
     .species = SPECIES_SHROOMISH,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 6,
+    .species = SPECIES_LOTAD,
+    },
+    {
+    .lvl = 7,
+    .species = SPECIES_COTTONEE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Janice[] = {
@@ -9163,6 +11052,16 @@ static const struct TrainerMon sParty_Crissy[] = {
 };
 
 static const struct TrainerMon sParty_Lara[] = {
+    #ifdef CANON_MODE
+    {
+    .lvl = 5,
+    .species = SPECIES_SHROOMISH,
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_SEEDOT,
+    }
+    #else // CANON_MODE
     {
     .lvl = 5,
     .species = SPECIES_COTTONEE,
@@ -9171,6 +11070,7 @@ static const struct TrainerMon sParty_Lara[] = {
     .lvl = 5,
     .species = SPECIES_FLABEBE,
     }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Yose[] = {
@@ -9196,6 +11096,7 @@ static const struct TrainerMon sParty_Rick[] = {
 };
 
 static const struct TrainerMon sParty_Lyle[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 3,
     .species = SPECIES_WURMPLE,
@@ -9212,6 +11113,24 @@ static const struct TrainerMon sParty_Lyle[] = {
     .lvl = 3,
     .species = SPECIES_WURMPLE,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 3,
+    .species = SPECIES_WURMPLE,
+    },
+    {
+    .lvl = 3,
+    .species = SPECIES_SCATTERBUG,
+    },
+    {
+    .lvl = 3,
+    .species = SPECIES_WURMPLE,
+    },
+    {
+    .lvl = 3,
+    .species = SPECIES_SCATTERBUG,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Jose[] = {
@@ -9228,6 +11147,7 @@ static const struct TrainerMon sParty_Jose[] = {
 };
 
 static const struct TrainerMon sParty_Doug[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 31,
     .species = SPECIES_NINCADA,
@@ -9236,9 +11156,20 @@ static const struct TrainerMon sParty_Doug[] = {
     .lvl = 31,
     .species = SPECIES_NINJASK,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 31,
+    .species = SPECIES_SWADLOON,
+    },
+    {
+    .lvl = 31,
+    .species = SPECIES_LEAVANNY,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Greg[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 28,
     .species = SPECIES_VOLBEAT,
@@ -9247,6 +11178,16 @@ static const struct TrainerMon sParty_Greg[] = {
     .lvl = 28,
     .species = SPECIES_ILLUMISE,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 28,
+    .species = SPECIES_WORMADAM_PLANT_CLOAK,
+    },
+    {
+    .lvl = 28,
+    .species = SPECIES_MOTHIM,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Kent[] = {
@@ -9330,6 +11271,7 @@ static const struct TrainerMon sParty_James5[] = {
 };
 
 static const struct TrainerMon sParty_Brice[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 19,
     .species = SPECIES_NUMEL,
@@ -9338,6 +11280,16 @@ static const struct TrainerMon sParty_Brice[] = {
     .lvl = 19,
     .species = SPECIES_MACHOP,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 19,
+    .species = SPECIES_LITLEO,
+    },
+    {
+    .lvl = 19,
+    .species = SPECIES_MACHOP,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Trent1[] = {
@@ -9356,6 +11308,7 @@ static const struct TrainerMon sParty_Trent1[] = {
 };
 
 static const struct TrainerMon sParty_Lenny[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 20,
     .species = SPECIES_GEODUDE,
@@ -9364,9 +11317,20 @@ static const struct TrainerMon sParty_Lenny[] = {
     .lvl = 20,
     .species = SPECIES_MACHOP,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 20,
+    .species = SPECIES_CARBINK,
+    },
+    {
+    .lvl = 20,
+    .species = SPECIES_MACHOP,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Lucas1[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 21,
     .species = SPECIES_GEODUDE,
@@ -9375,6 +11339,16 @@ static const struct TrainerMon sParty_Lucas1[] = {
     .lvl = 22,
     .species = SPECIES_NUMEL,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 21,
+    .species = SPECIES_CARKOL,
+    },
+    {
+    .lvl = 22,
+    .species = SPECIES_NUMEL,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Alan[] = {
@@ -9393,13 +11367,21 @@ static const struct TrainerMon sParty_Alan[] = {
 };
 
 static const struct TrainerMon sParty_Clark[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 9,
     .species = SPECIES_GEODUDE,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 9,
+    .species = SPECIES_DRILBUR,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Eric[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 23,
     .species = SPECIES_GEODUDE,
@@ -9408,6 +11390,16 @@ static const struct TrainerMon sParty_Eric[] = {
     .lvl = 23,
     .species = SPECIES_BALTOY,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 23,
+    .species = SPECIES_GLIGAR,
+    },
+    {
+    .lvl = 23,
+    .species = SPECIES_BALTOY,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Lucas2[] = {
@@ -9700,7 +11692,7 @@ static const struct TrainerMon sParty_Keigo[] = {
     {
     .lvl = 31,
     .species = SPECIES_NINJASK,
-    .moves = {MOVE_SAND_ATTACK, MOVE_DOUBLE_TEAM, MOVE_FURY_CUTTER, MOVE_SWORDS_DANCE}
+    .moves = {MOVE_SAND_ATTACK, MOVE_FAKE_OUT, MOVE_FURY_CUTTER, MOVE_SWORDS_DANCE}
     }
 };
 
@@ -9808,7 +11800,7 @@ static const struct TrainerMon sParty_WallyVR2[] = {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
     .lvl = 52,
     .species = SPECIES_GARDEVOIR,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT}
+    .moves = {MOVE_MOONBLAST, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT}
     }
 };
 
@@ -9841,7 +11833,7 @@ static const struct TrainerMon sParty_WallyVR3[] = {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
     .lvl = 55,
     .species = SPECIES_GARDEVOIR,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT}
+    .moves = {MOVE_MOONBLAST, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT}
     }
 };
 
@@ -9874,7 +11866,7 @@ static const struct TrainerMon sParty_WallyVR4[] = {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
     .lvl = 58,
     .species = SPECIES_GARDEVOIR,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT}
+    .moves = {MOVE_MOONBLAST, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT}
     }
 };
 
@@ -9907,7 +11899,7 @@ static const struct TrainerMon sParty_WallyVR5[] = {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
     .lvl = 61,
     .species = SPECIES_GARDEVOIR,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT}
+    .moves = {MOVE_MOONBLAST, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT}
     }
 };
 
@@ -10050,6 +12042,7 @@ static const struct TrainerMon sParty_MayLilycoveTorchic[] = {
 };
 
 static const struct TrainerMon sParty_Jonah[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 33,
     .species = SPECIES_WAILMER,
@@ -10062,9 +12055,24 @@ static const struct TrainerMon sParty_Jonah[] = {
     .lvl = 35,
     .species = SPECIES_SHARPEDO,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 33,
+    .species = SPECIES_WAILMER,
+    },
+    {
+    .lvl = 34,
+    .species = SPECIES_GASTRODON_EAST_SEA,
+    },
+    {
+    .lvl = 35,
+    .species = SPECIES_SHARPEDO,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Henry[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 34,
     .species = SPECIES_CARVANHA,
@@ -10073,6 +12081,16 @@ static const struct TrainerMon sParty_Henry[] = {
     .lvl = 37,
     .species = SPECIES_TENTACRUEL,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 34,
+    .species = SPECIES_BARRASKEWDA,
+    },
+    {
+    .lvl = 37,
+    .species = SPECIES_TENTACRUEL,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Roger[] = {
@@ -10117,10 +12135,17 @@ static const struct TrainerMon sParty_Ruben[] = {
 };
 
 static const struct TrainerMon sParty_Koji1[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 37,
     .species = SPECIES_MACHOKE,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 37,
+    .species = SPECIES_TOXICROAK,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Wayne[] = {
@@ -10139,6 +12164,7 @@ static const struct TrainerMon sParty_Wayne[] = {
 };
 
 static const struct TrainerMon sParty_Aidan[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 35,
     .species = SPECIES_SWELLOW,
@@ -10147,6 +12173,16 @@ static const struct TrainerMon sParty_Aidan[] = {
     .lvl = 35,
     .species = SPECIES_SKARMORY,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 35,
+    .species = SPECIES_TOUCANNON,
+    },
+    {
+    .lvl = 35,
+    .species = SPECIES_SKARMORY,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Reed[] = {
@@ -10168,6 +12204,7 @@ static const struct TrainerMon sParty_Tisha[] = {
 };
 
 static const struct TrainerMon sParty_ToriAndTia[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 22,
     .species = SPECIES_SPINDA,
@@ -10176,9 +12213,20 @@ static const struct TrainerMon sParty_ToriAndTia[] = {
     .lvl = 22,
     .species = SPECIES_SPINDA,
     }
+    #else // CANON_MODE
+        {
+    .lvl = 22,
+    .species = SPECIES_LOTAD,
+    },
+    {
+    .lvl = 22,
+    .species = SPECIES_TYMPOLE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_KimAndIris[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 35,
     .species = SPECIES_SWABLU,
@@ -10189,9 +12237,20 @@ static const struct TrainerMon sParty_KimAndIris[] = {
     .species = SPECIES_NUMEL,
     .moves = {MOVE_FLAMETHROWER, MOVE_TAKE_DOWN, MOVE_REST, MOVE_EARTHQUAKE}
     }
+    #else // CANON_MODE
+    {
+    .lvl = 35,
+    .species = SPECIES_ORICORIO_BAILE,
+    },
+    {
+    .lvl = 38,
+    .species = SPECIES_ORICORIO_POM_POM,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_TyraAndIvy[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 20,
     .species = SPECIES_ROSELIA,
@@ -10202,6 +12261,16 @@ static const struct TrainerMon sParty_TyraAndIvy[] = {
     .species = SPECIES_GRAVELER,
     .moves = {MOVE_DEFENSE_CURL, MOVE_ROLLOUT, MOVE_MUD_SPORT, MOVE_ROCK_THROW}
     }
+    #else // CANON_MODE
+    {
+    .lvl = 20,
+    .species = SPECIES_STEENEE,
+    },
+    {
+    .lvl = 23,
+    .species = SPECIES_CLEFAIRY,
+    }
+    #endif // CANON_MODE 
 };
 
 static const struct TrainerMon sParty_MelAndPaul[] = {
@@ -10293,6 +12362,7 @@ static const struct TrainerMon sParty_JohnAndJay5[] = {
 };
 
 static const struct TrainerMon sParty_ReliAndIan[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 38,
     .species = SPECIES_AZUMARILL,
@@ -10301,6 +12371,16 @@ static const struct TrainerMon sParty_ReliAndIan[] = {
     .lvl = 36,
     .species = SPECIES_WINGULL,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 38,
+    .species = SPECIES_AZUMARILL,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_LUMINEON,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_LilaAndRoy1[] = {
@@ -10359,6 +12439,7 @@ static const struct TrainerMon sParty_LilaAndRoy5[] = {
 };
 
 static const struct TrainerMon sParty_LisaAndRay[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 30,
     .species = SPECIES_GOLDEEN,
@@ -10367,6 +12448,16 @@ static const struct TrainerMon sParty_LisaAndRay[] = {
     .lvl = 28,
     .species = SPECIES_TENTACOOL,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 30,
+    .species = SPECIES_GOLDEEN,
+    },
+    {
+    .lvl = 28,
+    .species = SPECIES_FRILLISH,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Chris[] = {
@@ -10453,6 +12544,7 @@ static const struct TrainerMon sParty_Kaleb[] = {
 };
 
 static const struct TrainerMon sParty_Joseph[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 16,
     .species = SPECIES_ELECTRIKE,
@@ -10461,6 +12553,16 @@ static const struct TrainerMon sParty_Joseph[] = {
     .lvl = 16,
     .species = SPECIES_VOLTORB,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 16,
+    .species = SPECIES_ELEKID,
+    },
+    {
+    .lvl = 16,
+    .species = SPECIES_VOLTORB,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Alyssa[] = {
@@ -10494,17 +12596,31 @@ static const struct TrainerMon sParty_Tyron[] = {
 };
 
 static const struct TrainerMon sParty_Celina[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 20,
     .species = SPECIES_ROSELIA,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 20,
+    .species = SPECIES_CHERRIM,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Bianca[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 20,
     .species = SPECIES_SHROOMISH,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 20,
+    .species = SPECIES_MARACTUS,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Hayden[] = {
@@ -10570,17 +12686,31 @@ static const struct TrainerMon sParty_Angelina[] = {
 };
 
 static const struct TrainerMon sParty_Kai[] = {
+    #ifdef CANON_MODE
+    {
+    .lvl = 22,
+    .species = SPECIES_ARROKUDA,
+    }
+    #else // CANON_MODE
     {
     .lvl = 22,
     .species = SPECIES_BARBOACH,
     }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Charlotte[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 22,
     .species = SPECIES_NUZLEAF,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 22,
+    .species = SPECIES_MASQUERAIN,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Deandre[] = {
@@ -10823,6 +12953,7 @@ static const struct TrainerMon sParty_Andres1[] = {
 };
 
 static const struct TrainerMon sParty_Josue[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
     .lvl = 28,
@@ -10833,6 +12964,18 @@ static const struct TrainerMon sParty_Josue[] = {
     .lvl = 28,
     .species = SPECIES_WINGULL,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .lvl = 28,
+    .species = SPECIES_CRAMORANT,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .lvl = 28,
+    .species = SPECIES_WINGULL,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Camron[] = {
@@ -10858,6 +13001,7 @@ static const struct TrainerMon sParty_Cory1[] = {
 };
 
 static const struct TrainerMon sParty_Carolina[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
     .lvl = 27,
@@ -10873,6 +13017,23 @@ static const struct TrainerMon sParty_Carolina[] = {
     .lvl = 27,
     .species = SPECIES_MANECTRIC,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .lvl = 27,
+    .species = SPECIES_RAICHU_ALOLAN,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .lvl = 27,
+    .species = SPECIES_SWELLOW,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .lvl = 27,
+    .species = SPECIES_MANECTRIC,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Elijah[] = {
@@ -10898,6 +13059,7 @@ static const struct TrainerMon sParty_Celia[] = {
 };
 
 static const struct TrainerMon sParty_Bryan[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 25,
     .species = SPECIES_SANDSHREW,
@@ -10906,6 +13068,16 @@ static const struct TrainerMon sParty_Bryan[] = {
     .lvl = 25,
     .species = SPECIES_SANDSLASH,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 25,
+    .species = SPECIES_YAMASK,
+    },
+    {
+    .lvl = 25,
+    .species = SPECIES_SANDSLASH,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Branden[] = {
@@ -10920,6 +13092,7 @@ static const struct TrainerMon sParty_Branden[] = {
 };
 
 static const struct TrainerMon sParty_Bryant[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 20,
     .species = SPECIES_NUMEL,
@@ -10928,9 +13101,20 @@ static const struct TrainerMon sParty_Bryant[] = {
     .lvl = 20,
     .species = SPECIES_SLUGMA,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 20,
+    .species = SPECIES_DARUMAKA,
+    },
+    {
+    .lvl = 20,
+    .species = SPECIES_SLUGMA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Shayla[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 20,
     .species = SPECIES_SHROOMISH,
@@ -10939,9 +13123,20 @@ static const struct TrainerMon sParty_Shayla[] = {
     .lvl = 20,
     .species = SPECIES_ROSELIA,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 20,
+    .species = SPECIES_FOONGUS,
+    },
+    {
+    .lvl = 20,
+    .species = SPECIES_ROSELIA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Kyra[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 29,
     .species = SPECIES_DODUO,
@@ -10950,9 +13145,20 @@ static const struct TrainerMon sParty_Kyra[] = {
     .lvl = 29,
     .species = SPECIES_DODRIO,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 29,
+    .species = SPECIES_DODUO,
+    },
+    {
+    .lvl = 29,
+    .species = SPECIES_LOPUNNY,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Jaiden[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 29,
     .species = SPECIES_NINJASK,
@@ -10961,9 +13167,20 @@ static const struct TrainerMon sParty_Jaiden[] = {
     .lvl = 29,
     .species = SPECIES_GULPIN,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 29,
+    .species = SPECIES_NINJASK,
+    },
+    {
+    .lvl = 29,
+    .species = SPECIES_ACCELGOR,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Alix[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 29,
     .species = SPECIES_KADABRA,
@@ -10972,6 +13189,16 @@ static const struct TrainerMon sParty_Alix[] = {
     .lvl = 29,
     .species = SPECIES_KIRLIA,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 29,
+    .species = SPECIES_GOTHORITA,
+    },
+    {
+    .lvl = 29,
+    .species = SPECIES_KIRLIA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Helene[] = {
@@ -10986,6 +13213,7 @@ static const struct TrainerMon sParty_Helene[] = {
 };
 
 static const struct TrainerMon sParty_Marlene[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 20,
     .species = SPECIES_MEDITITE,
@@ -10994,6 +13222,16 @@ static const struct TrainerMon sParty_Marlene[] = {
     .lvl = 20,
     .species = SPECIES_SPOINK,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 20,
+    .species = SPECIES_HATENNA,
+    },
+    {
+    .lvl = 20,
+    .species = SPECIES_SPOINK,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Devan[] = {
@@ -11019,10 +13257,17 @@ static const struct TrainerMon sParty_Johnson[] = {
 };
 
 static const struct TrainerMon sParty_Melina[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 19,
     .species = SPECIES_DODUO,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 19,
+    .species = SPECIES_CRAMORANT,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Brandi[] = {
@@ -11040,6 +13285,7 @@ static const struct TrainerMon sParty_Aisha[] = {
 };
 
 static const struct TrainerMon sParty_Makayla[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 36,
     .species = SPECIES_ROSELIA,
@@ -11048,6 +13294,16 @@ static const struct TrainerMon sParty_Makayla[] = {
     .lvl = 36,
     .species = SPECIES_MEDICHAM,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 36,
+    .species = SPECIES_TSAREENA,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_MEDICHAM,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Fabian[] = {
@@ -11058,6 +13314,7 @@ static const struct TrainerMon sParty_Fabian[] = {
 };
 
 static const struct TrainerMon sParty_Dayton[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 28,
     .species = SPECIES_SLUGMA,
@@ -11066,25 +13323,52 @@ static const struct TrainerMon sParty_Dayton[] = {
     .lvl = 28,
     .species = SPECIES_NUMEL,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 28,
+    .species = SPECIES_SIZZLIPEDE,
+    },
+    {
+    .lvl = 28,
+    .species = SPECIES_NUMEL,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Rachel[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 29,
     .species = SPECIES_GOLDEEN,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 29,
+    .species = SPECIES_SHELLOS_WEST_SEA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Leonel[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 33,
     .species = SPECIES_MANECTRIC,
     .moves = {MOVE_THUNDER, MOVE_QUICK_ATTACK, MOVE_THUNDER_WAVE, MOVE_NONE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 33,
+    .species = SPECIES_SWANNA,
+    .moves = {MOVE_RAIN_DANCE, MOVE_FEATHER_DANCE, MOVE_AIR_SLASH, MOVE_CHILLING_WATER}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Callie[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 31,
     .species = SPECIES_MEDITITE,
@@ -11093,6 +13377,16 @@ static const struct TrainerMon sParty_Callie[] = {
     .lvl = 31,
     .species = SPECIES_MAKUHITA,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 31,
+    .species = SPECIES_THROH,
+    },
+    {
+    .lvl = 31,
+    .species = SPECIES_SAWK,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Cale[] = {
@@ -11107,6 +13401,7 @@ static const struct TrainerMon sParty_Cale[] = {
 };
 
 static const struct TrainerMon sParty_Myles[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 28,
@@ -11137,9 +13432,42 @@ static const struct TrainerMon sParty_Myles[] = {
     .lvl = 28,
     .species = SPECIES_NUMEL,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 28,
+    .species = SPECIES_MAKUHITA,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 28,
+    .species = SPECIES_STARLY,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 28,
+    .species = SPECIES_TROPIUS,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 28,
+    .species = SPECIES_SHINX,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 28,
+    .species = SPECIES_ELECTRIKE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 28,
+    .species = SPECIES_NUMEL,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Pat[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 28,
@@ -11170,6 +13498,38 @@ static const struct TrainerMon sParty_Pat[] = {
     .lvl = 28,
     .species = SPECIES_GULPIN,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 28,
+    .species = SPECIES_POOCHYENA,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 28,
+    .species = SPECIES_BUIZEL,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 28,
+    .species = SPECIES_ELECTRIKE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 28,
+    .species = SPECIES_MINCCINO,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 28,
+    .species = SPECIES_SANDSHREW,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 28,
+    .species = SPECIES_GULPIN,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Cristin1[] = {
@@ -11312,631 +13672,1352 @@ static const struct TrainerMon sParty_HexLady2[] = {
 };
 
 static const struct TrainerMon sParty_Roxanne2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 35,
+    .lvl = 50,
     .species = SPECIES_GOLEM,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_PROTECT, MOVE_ROLLOUT, MOVE_MAGNITUDE, MOVE_EXPLOSION}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 38,
+    .lvl = 50,
     .species = SPECIES_KABUTO,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_SWORDS_DANCE, MOVE_ICE_BEAM, MOVE_SURF, MOVE_ROCK_SLIDE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 38,
+    .lvl = 50,
     .species = SPECIES_ONIX,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_IRON_TAIL, MOVE_EXPLOSION, MOVE_ROAR, MOVE_ROCK_SLIDE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 40,
+    .lvl = 50,
     .species = SPECIES_NOSEPASS,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
+    .moves = {MOVE_THUNDER_WAVE, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_AGGRON,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_STEALTH_ROCK, MOVE_HEAVY_SLAM, MOVE_HEAD_SMASH, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_LYCANROC_DUSK,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_PSYCHIC_FANGS, MOVE_STONE_EDGE, MOVE_FIRE_FANG, MOVE_ACCELEROCK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_CARRACOSTA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SHELL_SMASH, MOVE_STONE_EDGE, MOVE_HYDRO_PUMP, MOVE_SUPERPOWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_CRADILY,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ROCK_BLAST, MOVE_STEALTH_ROCK, MOVE_TOXIC, MOVE_RECOVER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_PROBOPASS,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SMACK_DOWN, MOVE_EARTH_POWER, MOVE_VOLT_SWITCH, MOVE_FLASH_CANNON}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_AERODACTYL,
+    .heldItem = ITEM_AERODACTYLITE,
+    .moves = {MOVE_STONE_EDGE, MOVE_EARTHQUAKE, MOVE_ICE_FANG, MOVE_ROOST}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Roxanne3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 40,
+    .lvl = 58,
     .species = SPECIES_OMANYTE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_PROTECT, MOVE_ICE_BEAM, MOVE_ROCK_SLIDE, MOVE_SURF}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 40,
+    .lvl = 58,
     .species = SPECIES_GOLEM,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_PROTECT, MOVE_ROLLOUT, MOVE_MAGNITUDE, MOVE_EXPLOSION}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 44,
+    .lvl = 58,
     .species = SPECIES_KABUTOPS,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_SWORDS_DANCE, MOVE_ICE_BEAM, MOVE_SURF, MOVE_ROCK_SLIDE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 44,
+    .lvl = 58,
     .species = SPECIES_ONIX,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_IRON_TAIL, MOVE_EXPLOSION, MOVE_ROAR, MOVE_ROCK_SLIDE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 46,
+    .lvl = 58,
     .species = SPECIES_NOSEPASS,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
+    .moves = {MOVE_THUNDER_WAVE, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_AGGRON,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_STEALTH_ROCK, MOVE_HEAVY_SLAM, MOVE_HEAD_SMASH, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_LYCANROC_DUSK,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_PSYCHIC_FANGS, MOVE_STONE_EDGE, MOVE_FIRE_FANG, MOVE_ACCELEROCK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_CARRACOSTA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SHELL_SMASH, MOVE_STONE_EDGE, MOVE_HYDRO_PUMP, MOVE_SUPERPOWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_CRADILY,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ROCK_BLAST, MOVE_STEALTH_ROCK, MOVE_TOXIC, MOVE_RECOVER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_PROBOPASS,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SMACK_DOWN, MOVE_EARTH_POWER, MOVE_VOLT_SWITCH, MOVE_FLASH_CANNON}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_AERODACTYL,
+    .heldItem = ITEM_AERODACTYLITE,
+    .moves = {MOVE_STONE_EDGE, MOVE_EARTHQUAKE, MOVE_ICE_FANG, MOVE_ROOST}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Roxanne4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 46,
+    .lvl = 66,
     .species = SPECIES_OMASTAR,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_PROTECT, MOVE_ICE_BEAM, MOVE_ROCK_SLIDE, MOVE_SURF}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 46,
+    .lvl = 66,
     .species = SPECIES_GOLEM,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_PROTECT, MOVE_ROLLOUT, MOVE_EARTHQUAKE, MOVE_EXPLOSION}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
+    .lvl = 66,
     .species = SPECIES_KABUTOPS,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_SWORDS_DANCE, MOVE_ICE_BEAM, MOVE_SURF, MOVE_ROCK_SLIDE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
+    .lvl = 66,
     .species = SPECIES_ONIX,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_IRON_TAIL, MOVE_EXPLOSION, MOVE_ROAR, MOVE_ROCK_SLIDE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 51,
+    .lvl = 66,
     .species = SPECIES_NOSEPASS,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
+    .moves = {MOVE_THUNDER_WAVE, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_AGGRON,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_STEALTH_ROCK, MOVE_HEAVY_SLAM, MOVE_HEAD_SMASH, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_LYCANROC_DUSK,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_PSYCHIC_FANGS, MOVE_STONE_EDGE, MOVE_FIRE_FANG, MOVE_ACCELEROCK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_CARRACOSTA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SHELL_SMASH, MOVE_STONE_EDGE, MOVE_HYDRO_PUMP, MOVE_SUPERPOWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_CRADILY,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ROCK_BLAST, MOVE_STEALTH_ROCK, MOVE_TOXIC, MOVE_RECOVER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_PROBOPASS,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SMACK_DOWN, MOVE_EARTH_POWER, MOVE_VOLT_SWITCH, MOVE_FLASH_CANNON}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_AERODACTYL,
+    .heldItem = ITEM_AERODACTYLITE,
+    .moves = {MOVE_STONE_EDGE, MOVE_EARTHQUAKE, MOVE_ICE_FANG, MOVE_ROOST}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Roxanne5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 51,
+    .lvl = 74,
     .species = SPECIES_AERODACTYL,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_ROCK_SLIDE, MOVE_HYPER_BEAM, MOVE_SUPERSONIC, MOVE_PROTECT}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 51,
+    .lvl = 74,
     .species = SPECIES_GOLEM,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_FOCUS_PUNCH, MOVE_ROLLOUT, MOVE_EARTHQUAKE, MOVE_EXPLOSION}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 51,
+    .lvl = 74,
     .species = SPECIES_OMASTAR,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_PROTECT, MOVE_ICE_BEAM, MOVE_ROCK_SLIDE, MOVE_SURF}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 54,
+    .lvl = 74,
     .species = SPECIES_KABUTOPS,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_SWORDS_DANCE, MOVE_ICE_BEAM, MOVE_SURF, MOVE_ROCK_SLIDE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 54,
+    .lvl = 74,
     .species = SPECIES_STEELIX,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_IRON_TAIL, MOVE_EXPLOSION, MOVE_ROAR, MOVE_ROCK_SLIDE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 56,
+    .lvl = 74,
     .species = SPECIES_NOSEPASS,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
+    .moves = {MOVE_THUNDER_WAVE, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_AGGRON,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_STEALTH_ROCK, MOVE_HEAVY_SLAM, MOVE_HEAD_SMASH, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_LYCANROC_DUSK,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_PSYCHIC_FANGS, MOVE_STONE_EDGE, MOVE_FIRE_FANG, MOVE_ACCELEROCK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_CARRACOSTA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SHELL_SMASH, MOVE_STONE_EDGE, MOVE_HYDRO_PUMP, MOVE_SUPERPOWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_CRADILY,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ROCK_BLAST, MOVE_STEALTH_ROCK, MOVE_TOXIC, MOVE_RECOVER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_PROBOPASS,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SMACK_DOWN, MOVE_EARTH_POWER, MOVE_VOLT_SWITCH, MOVE_FLASH_CANNON}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_AERODACTYL,
+    .heldItem = ITEM_AERODACTYLITE,
+    .moves = {MOVE_STONE_EDGE, MOVE_EARTHQUAKE, MOVE_ICE_FANG, MOVE_ROOST}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Brawly2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 36,
+    .lvl = 50,
     .species = SPECIES_MACHAMP,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_KARATE_CHOP, MOVE_ROCK_SLIDE, MOVE_FOCUS_PUNCH, MOVE_BULK_UP}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 36,
+    .lvl = 50,
     .species = SPECIES_MEDITITE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_PSYCHIC, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_FOCUS_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 38,
+    .lvl = 50,
     .species = SPECIES_HITMONTOP,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_PURSUIT, MOVE_COUNTER, MOVE_PROTECT, MOVE_TRIPLE_KICK}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 40,
+    .lvl = 50,
     .species = SPECIES_HARIYAMA,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_FAKE_OUT, MOVE_FOCUS_PUNCH, MOVE_BELLY_DRUM, MOVE_EARTHQUAKE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_MACHAMP,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CLOSE_COMBAT, MOVE_KNOCK_OFF, MOVE_FACADE, MOVE_BULLET_PUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_HARIYAMA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BULK_UP, MOVE_DRAIN_PUNCH, MOVE_HEAVY_SLAM, MOVE_ZEN_HEADBUTT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_GRAPPLOCT,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_OCTOLOCK, MOVE_DRAIN_PUNCH, MOVE_ICE_PUNCH, MOVE_SUBSTITUTE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_BRELOOM,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SPORE, MOVE_MACH_PUNCH, MOVE_BULLET_SEED, MOVE_ROCK_TOMB}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_MIENSHAO,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HIGH_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_U_TURN, MOVE_FAKE_OUT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_MEDICHAM,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_HIGH_JUMP_KICK, MOVE_ICE_PUNCH, MOVE_ZEN_HEADBUTT, MOVE_THUNDER_PUNCH}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Brawly3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 41,
+    .lvl = 58,
     .species = SPECIES_MACHAMP,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_KARATE_CHOP, MOVE_ROCK_SLIDE, MOVE_FOCUS_PUNCH, MOVE_BULK_UP}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 41,
+    .lvl = 58,
     .species = SPECIES_MEDICHAM,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_PSYCHIC, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_FOCUS_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 44,
+    .lvl = 58,
     .species = SPECIES_HITMONTOP,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_PURSUIT, MOVE_COUNTER, MOVE_PROTECT, MOVE_TRIPLE_KICK}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 46,
+    .lvl = 58,
     .species = SPECIES_HARIYAMA,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_FAKE_OUT, MOVE_FOCUS_PUNCH, MOVE_BELLY_DRUM, MOVE_EARTHQUAKE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_MACHAMP,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CLOSE_COMBAT, MOVE_KNOCK_OFF, MOVE_FACADE, MOVE_BULLET_PUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_HARIYAMA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BULK_UP, MOVE_DRAIN_PUNCH, MOVE_HEAVY_SLAM, MOVE_ZEN_HEADBUTT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_GRAPPLOCT,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_OCTOLOCK, MOVE_DRAIN_PUNCH, MOVE_ICE_PUNCH, MOVE_SUBSTITUTE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_BRELOOM,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SPORE, MOVE_MACH_PUNCH, MOVE_BULLET_SEED, MOVE_ROCK_TOMB}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_MIENSHAO,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HIGH_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_U_TURN, MOVE_FAKE_OUT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_MEDICHAM,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_HIGH_JUMP_KICK, MOVE_ICE_PUNCH, MOVE_ZEN_HEADBUTT, MOVE_THUNDER_PUNCH}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Brawly4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 44,
+    .lvl = 66,
     .species = SPECIES_HITMONCHAN,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_SKY_UPPERCUT, MOVE_PROTECT, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 47,
+    .lvl = 66,
     .species = SPECIES_MACHAMP,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_KARATE_CHOP, MOVE_ROCK_SLIDE, MOVE_FOCUS_PUNCH, MOVE_BULK_UP}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 47,
+    .lvl = 66,
     .species = SPECIES_MEDICHAM,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_FOCUS_PUNCH, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_PSYCHIC}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
+    .lvl = 66,
     .species = SPECIES_HITMONTOP,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_PURSUIT, MOVE_COUNTER, MOVE_PROTECT, MOVE_TRIPLE_KICK}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 51,
+    .lvl = 66,
     .species = SPECIES_HARIYAMA,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_FAKE_OUT, MOVE_FOCUS_PUNCH, MOVE_BELLY_DRUM, MOVE_EARTHQUAKE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_MACHAMP,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CLOSE_COMBAT, MOVE_KNOCK_OFF, MOVE_FACADE, MOVE_BULLET_PUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_HARIYAMA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BULK_UP, MOVE_DRAIN_PUNCH, MOVE_HEAVY_SLAM, MOVE_ZEN_HEADBUTT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_GRAPPLOCT,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_OCTOLOCK, MOVE_DRAIN_PUNCH, MOVE_ICE_PUNCH, MOVE_SUBSTITUTE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_BRELOOM,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SPORE, MOVE_MACH_PUNCH, MOVE_BULLET_SEED, MOVE_ROCK_TOMB}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_MIENSHAO,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HIGH_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_U_TURN, MOVE_FAKE_OUT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_MEDICHAM,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_HIGH_JUMP_KICK, MOVE_ICE_PUNCH, MOVE_ZEN_HEADBUTT, MOVE_THUNDER_PUNCH}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Brawly5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
+    .lvl = 74,
     .species = SPECIES_HITMONLEE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_MEGA_KICK, MOVE_FOCUS_PUNCH, MOVE_EARTHQUAKE, MOVE_BULK_UP}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
+    .lvl = 74,
     .species = SPECIES_HITMONCHAN,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_SKY_UPPERCUT, MOVE_PROTECT, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 52,
+    .lvl = 74,
     .species = SPECIES_MACHAMP,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_CROSS_CHOP, MOVE_ROCK_SLIDE, MOVE_FOCUS_PUNCH, MOVE_BULK_UP}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 52,
+    .lvl = 74,
     .species = SPECIES_MEDICHAM,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_FOCUS_PUNCH, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_PSYCHIC}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 54,
+    .lvl = 74,
     .species = SPECIES_HITMONTOP,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_PURSUIT, MOVE_COUNTER, MOVE_PROTECT, MOVE_TRIPLE_KICK}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 56,
+    .lvl = 74,
     .species = SPECIES_HARIYAMA,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_FAKE_OUT, MOVE_FOCUS_PUNCH, MOVE_BELLY_DRUM, MOVE_EARTHQUAKE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_MACHAMP,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CLOSE_COMBAT, MOVE_KNOCK_OFF, MOVE_FACADE, MOVE_BULLET_PUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_HARIYAMA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BULK_UP, MOVE_DRAIN_PUNCH, MOVE_HEAVY_SLAM, MOVE_ZEN_HEADBUTT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_GRAPPLOCT,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_OCTOLOCK, MOVE_DRAIN_PUNCH, MOVE_ICE_PUNCH, MOVE_SUBSTITUTE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_BRELOOM,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SPORE, MOVE_MACH_PUNCH, MOVE_BULLET_SEED, MOVE_ROCK_TOMB}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_MIENSHAO,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HIGH_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_U_TURN, MOVE_FAKE_OUT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_MEDICHAM,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_HIGH_JUMP_KICK, MOVE_ICE_PUNCH, MOVE_ZEN_HEADBUTT, MOVE_THUNDER_PUNCH}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Wattson2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 39,
+    .lvl = 50,
     .species = SPECIES_MAREEP,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_THUNDER, MOVE_PROTECT, MOVE_THUNDER_WAVE, MOVE_LIGHT_SCREEN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 39,
+    .lvl = 50,
     .species = SPECIES_ELECTRODE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_ROLLOUT, MOVE_THUNDER, MOVE_EXPLOSION, MOVE_RAIN_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 41,
+    .lvl = 50,
     .species = SPECIES_MAGNETON,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_SUPERSONIC, MOVE_PROTECT, MOVE_THUNDER, MOVE_RAIN_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 44,
+    .lvl = 50,
     .species = SPECIES_MANECTRIC,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_BITE, MOVE_THUNDER_WAVE, MOVE_THUNDER, MOVE_PROTECT}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_BOLTUND,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_THUNDER_FANG, MOVE_FIRE_FANG, MOVE_VOLT_SWITCH, MOVE_CRUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_RAICHU,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_NASTY_PLOT, MOVE_THUNDERBOLT, MOVE_FOCUS_BLAST, MOVE_SURF}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_MAGNEZONE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_VOLT_SWITCH, MOVE_THUNDERBOLT, MOVE_FLASH_CANNON, MOVE_MIRROR_COAT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_ELECTRODE_HISUIAN,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_VOLT_SWITCH, MOVE_THUNDERBOLT, MOVE_GIGA_DRAIN, MOVE_FOUL_PLAY}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_ELECTIVIRE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_WILD_CHARGE, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH, MOVE_CROSS_CHOP}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_MANECTRIC,
+    .heldItem = ITEM_MANECTITE,
+    .moves = {MOVE_VOLT_SWITCH, MOVE_THUNDERBOLT, MOVE_FLAMETHROWER, MOVE_HYPER_VOICE}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Wattson3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 42,
+    .lvl = 58,
     .species = SPECIES_PIKACHU,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_THUNDER, MOVE_SLAM, MOVE_RAIN_DANCE, MOVE_SHOCK_WAVE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 45,
+    .lvl = 58,
     .species = SPECIES_FLAAFFY,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_THUNDER, MOVE_PROTECT, MOVE_THUNDER_WAVE, MOVE_LIGHT_SCREEN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 45,
+    .lvl = 58,
     .species = SPECIES_ELECTRODE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_ROLLOUT, MOVE_THUNDER, MOVE_EXPLOSION, MOVE_RAIN_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 47,
+    .lvl = 58,
     .species = SPECIES_MAGNETON,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_SUPERSONIC, MOVE_PROTECT, MOVE_THUNDER, MOVE_RAIN_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
+    .lvl = 58,
     .species = SPECIES_MANECTRIC,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_BITE, MOVE_THUNDER_WAVE, MOVE_THUNDER, MOVE_PROTECT}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_BOLTUND,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_THUNDER_FANG, MOVE_FIRE_FANG, MOVE_VOLT_SWITCH, MOVE_CRUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_RAICHU,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_NASTY_PLOT, MOVE_THUNDERBOLT, MOVE_FOCUS_BLAST, MOVE_SURF}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_MAGNEZONE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_VOLT_SWITCH, MOVE_THUNDERBOLT, MOVE_FLASH_CANNON, MOVE_MIRROR_COAT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_ELECTRODE_HISUIAN,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_VOLT_SWITCH, MOVE_THUNDERBOLT, MOVE_GIGA_DRAIN, MOVE_FOUL_PLAY}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_ELECTIVIRE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_WILD_CHARGE, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH, MOVE_CROSS_CHOP}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_MANECTRIC,
+    .heldItem = ITEM_MANECTITE,
+    .moves = {MOVE_VOLT_SWITCH, MOVE_THUNDERBOLT, MOVE_FLAMETHROWER, MOVE_HYPER_VOICE}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Wattson4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 48,
+    .lvl = 66,
     .species = SPECIES_RAICHU,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_THUNDER, MOVE_SLAM, MOVE_RAIN_DANCE, MOVE_PROTECT}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
+    .lvl = 66,
     .species = SPECIES_AMPHAROS,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_THUNDER, MOVE_PROTECT, MOVE_THUNDER_WAVE, MOVE_LIGHT_SCREEN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
+    .lvl = 66,
     .species = SPECIES_ELECTRODE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_ROLLOUT, MOVE_THUNDER, MOVE_EXPLOSION, MOVE_RAIN_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 52,
+    .lvl = 66,
     .species = SPECIES_MAGNETON,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_SUPERSONIC, MOVE_PROTECT, MOVE_THUNDER, MOVE_RAIN_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 54,
+    .lvl = 66,
     .species = SPECIES_MANECTRIC,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_BITE, MOVE_THUNDER_WAVE, MOVE_THUNDER, MOVE_PROTECT}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_BOLTUND,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_THUNDER_FANG, MOVE_FIRE_FANG, MOVE_VOLT_SWITCH, MOVE_CRUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_RAICHU,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_NASTY_PLOT, MOVE_THUNDERBOLT, MOVE_FOCUS_BLAST, MOVE_SURF}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_MAGNEZONE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_VOLT_SWITCH, MOVE_THUNDERBOLT, MOVE_FLASH_CANNON, MOVE_MIRROR_COAT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_ELECTRODE_HISUIAN,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_VOLT_SWITCH, MOVE_THUNDERBOLT, MOVE_GIGA_DRAIN, MOVE_FOUL_PLAY}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_ELECTIVIRE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_WILD_CHARGE, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH, MOVE_CROSS_CHOP}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_MANECTRIC,
+    .heldItem = ITEM_MANECTITE,
+    .moves = {MOVE_VOLT_SWITCH, MOVE_THUNDERBOLT, MOVE_FLAMETHROWER, MOVE_HYPER_VOICE}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Wattson5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 54,
+    .lvl = 74,
     .species = SPECIES_ELECTABUZZ,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_SWIFT, MOVE_FOCUS_PUNCH, MOVE_THUNDER_PUNCH, MOVE_LIGHT_SCREEN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 55,
+    .lvl = 74,
     .species = SPECIES_RAICHU,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_THUNDER, MOVE_SLAM, MOVE_RAIN_DANCE, MOVE_PROTECT}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 55,
+    .lvl = 74,
     .species = SPECIES_AMPHAROS,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_THUNDER, MOVE_PROTECT, MOVE_THUNDER_WAVE, MOVE_LIGHT_SCREEN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 57,
+    .lvl = 74,
     .species = SPECIES_ELECTRODE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_ROLLOUT, MOVE_THUNDER, MOVE_EXPLOSION, MOVE_RAIN_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 57,
+    .lvl = 74,
     .species = SPECIES_MAGNETON,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_SUPERSONIC, MOVE_PROTECT, MOVE_THUNDER, MOVE_RAIN_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 60,
+    .lvl = 74,
     .species = SPECIES_MANECTRIC,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_BITE, MOVE_THUNDER_WAVE, MOVE_THUNDER, MOVE_PROTECT}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_BOLTUND,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_THUNDER_FANG, MOVE_FIRE_FANG, MOVE_VOLT_SWITCH, MOVE_CRUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_RAICHU,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_NASTY_PLOT, MOVE_THUNDERBOLT, MOVE_FOCUS_BLAST, MOVE_SURF}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_MAGNEZONE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_VOLT_SWITCH, MOVE_THUNDERBOLT, MOVE_FLASH_CANNON, MOVE_MIRROR_COAT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_ELECTRODE_HISUIAN,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_VOLT_SWITCH, MOVE_THUNDERBOLT, MOVE_GIGA_DRAIN, MOVE_FOUL_PLAY}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_ELECTIVIRE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_WILD_CHARGE, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH, MOVE_CROSS_CHOP}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_MANECTRIC,
+    .heldItem = ITEM_MANECTITE,
+    .moves = {MOVE_VOLT_SWITCH, MOVE_THUNDERBOLT, MOVE_FLAMETHROWER, MOVE_HYPER_VOICE}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Flannery2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 41,
+    .lvl = 50,
     .species = SPECIES_MAGCARGO,
     .heldItem = ITEM_WHITE_HERB,
     .moves = {MOVE_OVERHEAT, MOVE_ATTRACT, MOVE_LIGHT_SCREEN, MOVE_ROCK_SLIDE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 39,
+    .lvl = 50,
     .species = SPECIES_PONYTA,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_FLAMETHROWER, MOVE_ATTRACT, MOVE_SOLAR_BEAM, MOVE_BOUNCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 41,
+    .lvl = 50,
     .species = SPECIES_CAMERUPT,
     .heldItem = ITEM_WHITE_HERB,
     .moves = {MOVE_OVERHEAT, MOVE_SUNNY_DAY, MOVE_EARTHQUAKE, MOVE_ATTRACT}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 44,
+    .lvl = 50,
     .species = SPECIES_TORKOAL,
     .heldItem = ITEM_WHITE_HERB,
     .moves = {MOVE_OVERHEAT, MOVE_SUNNY_DAY, MOVE_EXPLOSION, MOVE_ATTRACT}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_TORKOAL,
+    .heldItem = ITEM_HEAT_ROCK,
+    .moves = {MOVE_STEALTH_ROCK, MOVE_LAVA_PLUME, MOVE_RAPID_SPIN, MOVE_TOXIC}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_MAGMORTAR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FIRE_BLAST, MOVE_FOCUS_BLAST, MOVE_THUNDERBOLT, MOVE_SCORCHING_SANDS}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_TALONFLAME,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BRAVE_BIRD, MOVE_FLARE_BLITZ, MOVE_ROOST, MOVE_U_TURN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_DARMANITAN,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FLARE_BLITZ, MOVE_U_TURN, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_CENTISKORCH,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FIRE_LASH, MOVE_LEECH_LIFE, MOVE_POWER_WHIP, MOVE_KNOCK_OFF}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_HOUNDOOM,
+    .heldItem = ITEM_HOUNDOOMINITE,
+    .moves = {MOVE_NASTY_PLOT, MOVE_FIRE_BLAST, MOVE_DARK_PULSE, MOVE_SLUDGE_BOMB}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Flannery3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 45,
+    .lvl = 58,
     .species = SPECIES_GROWLITHE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HELPING_HAND, MOVE_FLAMETHROWER, MOVE_ROAR, MOVE_SUNNY_DAY}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 47,
+    .lvl = 58,
     .species = SPECIES_MAGCARGO,
     .heldItem = ITEM_WHITE_HERB,
     .moves = {MOVE_OVERHEAT, MOVE_ATTRACT, MOVE_LIGHT_SCREEN, MOVE_ROCK_SLIDE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 45,
+    .lvl = 58,
     .species = SPECIES_PONYTA,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_FLAMETHROWER, MOVE_ATTRACT, MOVE_SOLAR_BEAM, MOVE_BOUNCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 47,
+    .lvl = 58,
     .species = SPECIES_CAMERUPT,
     .heldItem = ITEM_WHITE_HERB,
     .moves = {MOVE_OVERHEAT, MOVE_SUNNY_DAY, MOVE_EARTHQUAKE, MOVE_ATTRACT}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
+    .lvl = 58,
     .species = SPECIES_TORKOAL,
     .heldItem = ITEM_WHITE_HERB,
     .moves = {MOVE_OVERHEAT, MOVE_SUNNY_DAY, MOVE_EXPLOSION, MOVE_ATTRACT}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_TORKOAL,
+    .heldItem = ITEM_HEAT_ROCK,
+    .moves = {MOVE_STEALTH_ROCK, MOVE_LAVA_PLUME, MOVE_RAPID_SPIN, MOVE_TOXIC}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_MAGMORTAR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FIRE_BLAST, MOVE_FOCUS_BLAST, MOVE_THUNDERBOLT, MOVE_SCORCHING_SANDS}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_TALONFLAME,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BRAVE_BIRD, MOVE_FLARE_BLITZ, MOVE_ROOST, MOVE_U_TURN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_DARMANITAN,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FLARE_BLITZ, MOVE_U_TURN, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_CENTISKORCH,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FIRE_LASH, MOVE_LEECH_LIFE, MOVE_POWER_WHIP, MOVE_KNOCK_OFF}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_HOUNDOOM,
+    .heldItem = ITEM_HOUNDOOMINITE,
+    .moves = {MOVE_NASTY_PLOT, MOVE_FIRE_BLAST, MOVE_DARK_PULSE, MOVE_SLUDGE_BOMB}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Flannery4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
+    .lvl = 66,
     .species = SPECIES_HOUNDOUR,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_ROAR, MOVE_SOLAR_BEAM, MOVE_TAUNT, MOVE_SUNNY_DAY}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
+    .lvl = 66,
     .species = SPECIES_GROWLITHE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HELPING_HAND, MOVE_FLAMETHROWER, MOVE_SUNNY_DAY, MOVE_ROAR}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 52,
+    .lvl = 66,
     .species = SPECIES_MAGCARGO,
     .heldItem = ITEM_WHITE_HERB,
     .moves = {MOVE_OVERHEAT, MOVE_ATTRACT, MOVE_LIGHT_SCREEN, MOVE_ROCK_SLIDE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
+    .lvl = 66,
     .species = SPECIES_RAPIDASH,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_FLAMETHROWER, MOVE_ATTRACT, MOVE_SOLAR_BEAM, MOVE_BOUNCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 52,
+    .lvl = 66,
     .species = SPECIES_CAMERUPT,
     .heldItem = ITEM_WHITE_HERB,
     .moves = {MOVE_OVERHEAT, MOVE_SUNNY_DAY, MOVE_EARTHQUAKE, MOVE_ATTRACT}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 54,
+    .lvl = 66,
     .species = SPECIES_TORKOAL,
     .heldItem = ITEM_WHITE_HERB,
     .moves = {MOVE_OVERHEAT, MOVE_SUNNY_DAY, MOVE_EXPLOSION, MOVE_ATTRACT}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_TORKOAL,
+    .heldItem = ITEM_HEAT_ROCK,
+    .moves = {MOVE_STEALTH_ROCK, MOVE_LAVA_PLUME, MOVE_RAPID_SPIN, MOVE_TOXIC}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_MAGMORTAR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FIRE_BLAST, MOVE_FOCUS_BLAST, MOVE_THUNDERBOLT, MOVE_SCORCHING_SANDS}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_TALONFLAME,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BRAVE_BIRD, MOVE_FLARE_BLITZ, MOVE_ROOST, MOVE_U_TURN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_DARMANITAN,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FLARE_BLITZ, MOVE_U_TURN, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_CENTISKORCH,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FIRE_LASH, MOVE_LEECH_LIFE, MOVE_POWER_WHIP, MOVE_KNOCK_OFF}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_HOUNDOOM,
+    .heldItem = ITEM_HOUNDOOMINITE,
+    .moves = {MOVE_NASTY_PLOT, MOVE_FIRE_BLAST, MOVE_DARK_PULSE, MOVE_SLUDGE_BOMB}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Flannery5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 55,
+    .lvl = 74,
     .species = SPECIES_ARCANINE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HELPING_HAND, MOVE_FLAMETHROWER, MOVE_SUNNY_DAY, MOVE_ROAR}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 57,
+    .lvl = 74,
     .species = SPECIES_MAGCARGO,
     .heldItem = ITEM_WHITE_HERB,
     .moves = {MOVE_OVERHEAT, MOVE_ATTRACT, MOVE_LIGHT_SCREEN, MOVE_ROCK_SLIDE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 55,
+    .lvl = 74,
     .species = SPECIES_HOUNDOOM,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_ROAR, MOVE_SOLAR_BEAM, MOVE_TAUNT, MOVE_SUNNY_DAY}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 55,
+    .lvl = 74,
     .species = SPECIES_RAPIDASH,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_FLAMETHROWER, MOVE_ATTRACT, MOVE_SOLAR_BEAM, MOVE_BOUNCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 57,
+    .lvl = 74,
     .species = SPECIES_CAMERUPT,
     .heldItem = ITEM_WHITE_HERB,
     .moves = {MOVE_OVERHEAT, MOVE_SUNNY_DAY, MOVE_EARTHQUAKE, MOVE_ATTRACT}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 60,
+    .lvl = 74,
     .species = SPECIES_TORKOAL,
     .heldItem = ITEM_WHITE_HERB,
     .moves = {MOVE_OVERHEAT, MOVE_SUNNY_DAY, MOVE_EXPLOSION, MOVE_ATTRACT}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_TORKOAL,
+    .heldItem = ITEM_HEAT_ROCK,
+    .moves = {MOVE_STEALTH_ROCK, MOVE_LAVA_PLUME, MOVE_RAPID_SPIN, MOVE_TOXIC}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_MAGMORTAR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FIRE_BLAST, MOVE_FOCUS_BLAST, MOVE_THUNDERBOLT, MOVE_SCORCHING_SANDS}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_TALONFLAME,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BRAVE_BIRD, MOVE_FLARE_BLITZ, MOVE_ROOST, MOVE_U_TURN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_DARMANITAN,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FLARE_BLITZ, MOVE_U_TURN, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_CENTISKORCH,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FIRE_LASH, MOVE_LEECH_LIFE, MOVE_POWER_WHIP, MOVE_KNOCK_OFF}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_HOUNDOOM,
+    .heldItem = ITEM_HOUNDOOMINITE,
+    .moves = {MOVE_NASTY_PLOT, MOVE_FIRE_BLAST, MOVE_DARK_PULSE, MOVE_SLUDGE_BOMB}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Norman2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 46,
+    .lvl = 50,
     .species = SPECIES_CHANSEY,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_LIGHT_SCREEN, MOVE_SING, MOVE_SKILL_SWAP, MOVE_FOCUS_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 46,
+    .lvl = 50,
     .species = SPECIES_SLAKING,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_BLIZZARD, MOVE_SHADOW_BALL, MOVE_DOUBLE_EDGE, MOVE_FIRE_BLAST}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 47,
+    .lvl = 50,
     .species = SPECIES_SPINDA,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_TEETER_DANCE, MOVE_SKILL_SWAP, MOVE_FACADE, MOVE_HYPNOSIS}
@@ -11948,154 +15029,334 @@ static const struct TrainerMon sParty_Norman2[] = {
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_HYPER_BEAM, MOVE_FLAMETHROWER, MOVE_THUNDERBOLT, MOVE_SHADOW_BALL}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_SAWSBUCK,
+    .heldItem = ITEM_CHOICE_SCARF,
+    .moves = {MOVE_DOUBLE_EDGE, MOVE_HORN_LEECH, MOVE_HIGH_JUMP_KICK, MOVE_HEADBUTT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_BEWEAR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_DOUBLE_EDGE, MOVE_SUPERPOWER, MOVE_SHADOW_CLAW}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_BOUFFALANT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HEAD_CHARGE, MOVE_EARTHQUAKE, MOVE_SUBSTITUTE, MOVE_THROAT_CHOP}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_STARAPTOR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BRAVE_BIRD, MOVE_DOUBLE_EDGE, MOVE_CLOSE_COMBAT, MOVE_FINAL_GAMBIT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_SLAKING,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_RETALIATE, MOVE_SUCKER_PUNCH, MOVE_EARTHQUAKE, MOVE_FIRE_BLAST}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_KANGASKHAN,
+    .heldItem = ITEM_KANGASKHANITE,
+    .moves = {MOVE_DOUBLE_EDGE, MOVE_EARTHQUAKE, MOVE_FAKE_OUT, MOVE_BODY_SLAM}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Norman3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 51,
+    .lvl = 58,
     .species = SPECIES_SLAKING,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_BLIZZARD, MOVE_SHADOW_BALL, MOVE_DOUBLE_EDGE, MOVE_FIRE_BLAST}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 51,
+    .lvl = 58,
     .species = SPECIES_CHANSEY,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_LIGHT_SCREEN, MOVE_SING, MOVE_SKILL_SWAP, MOVE_FOCUS_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
+    .lvl = 58,
     .species = SPECIES_KANGASKHAN,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_FAKE_OUT, MOVE_DIZZY_PUNCH, MOVE_ENDURE, MOVE_REVERSAL}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 52,
+    .lvl = 58,
     .species = SPECIES_SPINDA,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_TEETER_DANCE, MOVE_SKILL_SWAP, MOVE_FACADE, MOVE_HYPNOSIS}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 54,
+    .lvl = 58,
     .species = SPECIES_SLAKING,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_HYPER_BEAM, MOVE_FLAMETHROWER, MOVE_THUNDERBOLT, MOVE_SHADOW_BALL}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_SAWSBUCK,
+    .heldItem = ITEM_CHOICE_SCARF,
+    .moves = {MOVE_DOUBLE_EDGE, MOVE_HORN_LEECH, MOVE_HIGH_JUMP_KICK, MOVE_HEADBUTT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_BEWEAR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_DOUBLE_EDGE, MOVE_SUPERPOWER, MOVE_SHADOW_CLAW}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_BOUFFALANT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HEAD_CHARGE, MOVE_EARTHQUAKE, MOVE_SUBSTITUTE, MOVE_THROAT_CHOP}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_STARAPTOR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BRAVE_BIRD, MOVE_DOUBLE_EDGE, MOVE_CLOSE_COMBAT, MOVE_FINAL_GAMBIT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_SLAKING,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_RETALIATE, MOVE_SUCKER_PUNCH, MOVE_EARTHQUAKE, MOVE_FIRE_BLAST}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_KANGASKHAN,
+    .heldItem = ITEM_KANGASKHANITE,
+    .moves = {MOVE_DOUBLE_EDGE, MOVE_EARTHQUAKE, MOVE_FAKE_OUT, MOVE_BODY_SLAM}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Norman4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 56,
+    .lvl = 66,
     .species = SPECIES_SLAKING,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_BLIZZARD, MOVE_SHADOW_BALL, MOVE_DOUBLE_EDGE, MOVE_FIRE_BLAST}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 56,
+    .lvl = 66,
     .species = SPECIES_BLISSEY,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_LIGHT_SCREEN, MOVE_SING, MOVE_SKILL_SWAP, MOVE_FOCUS_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 54,
+    .lvl = 66,
     .species = SPECIES_KANGASKHAN,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_FAKE_OUT, MOVE_DIZZY_PUNCH, MOVE_ENDURE, MOVE_REVERSAL}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 57,
+    .lvl = 66,
     .species = SPECIES_SPINDA,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_TEETER_DANCE, MOVE_SKILL_SWAP, MOVE_FACADE, MOVE_HYPNOSIS}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 60,
+    .lvl = 66,
     .species = SPECIES_SLAKING,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_HYPER_BEAM, MOVE_FLAMETHROWER, MOVE_THUNDERBOLT, MOVE_SHADOW_BALL}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_SAWSBUCK,
+    .heldItem = ITEM_CHOICE_SCARF,
+    .moves = {MOVE_DOUBLE_EDGE, MOVE_HORN_LEECH, MOVE_HIGH_JUMP_KICK, MOVE_HEADBUTT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_BEWEAR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_DOUBLE_EDGE, MOVE_SUPERPOWER, MOVE_SHADOW_CLAW}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_BOUFFALANT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HEAD_CHARGE, MOVE_EARTHQUAKE, MOVE_SUBSTITUTE, MOVE_THROAT_CHOP}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_STARAPTOR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BRAVE_BIRD, MOVE_DOUBLE_EDGE, MOVE_CLOSE_COMBAT, MOVE_FINAL_GAMBIT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_SLAKING,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_RETALIATE, MOVE_SUCKER_PUNCH, MOVE_EARTHQUAKE, MOVE_FIRE_BLAST}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_KANGASKHAN,
+    .heldItem = ITEM_KANGASKHANITE,
+    .moves = {MOVE_DOUBLE_EDGE, MOVE_EARTHQUAKE, MOVE_FAKE_OUT, MOVE_BODY_SLAM}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Norman5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 61,
+    .lvl = 74,
     .species = SPECIES_SLAKING,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_BLIZZARD, MOVE_SHADOW_BALL, MOVE_DOUBLE_EDGE, MOVE_FIRE_BLAST}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 61,
+    .lvl = 74,
     .species = SPECIES_BLISSEY,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_PROTECT, MOVE_SING, MOVE_SKILL_SWAP, MOVE_FOCUS_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 60,
+    .lvl = 74,
     .species = SPECIES_KANGASKHAN,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_FAKE_OUT, MOVE_DIZZY_PUNCH, MOVE_ENDURE, MOVE_REVERSAL}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 61,
+    .lvl = 74,
     .species = SPECIES_TAUROS,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_TAKE_DOWN, MOVE_PROTECT, MOVE_FIRE_BLAST, MOVE_EARTHQUAKE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 62,
+    .lvl = 74,
     .species = SPECIES_SPINDA,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_TEETER_DANCE, MOVE_SKILL_SWAP, MOVE_FACADE, MOVE_HYPNOSIS}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 64,
+    .lvl = 74,
     .species = SPECIES_SLAKING,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_HYPER_BEAM, MOVE_FLAMETHROWER, MOVE_THUNDERBOLT, MOVE_SHADOW_BALL}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_SAWSBUCK,
+    .heldItem = ITEM_CHOICE_SCARF,
+    .moves = {MOVE_DOUBLE_EDGE, MOVE_HORN_LEECH, MOVE_HIGH_JUMP_KICK, MOVE_HEADBUTT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_BEWEAR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_DOUBLE_EDGE, MOVE_SUPERPOWER, MOVE_SHADOW_CLAW}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_BOUFFALANT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HEAD_CHARGE, MOVE_EARTHQUAKE, MOVE_SUBSTITUTE, MOVE_THROAT_CHOP}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_STARAPTOR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BRAVE_BIRD, MOVE_DOUBLE_EDGE, MOVE_CLOSE_COMBAT, MOVE_FINAL_GAMBIT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_SLAKING,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_RETALIATE, MOVE_SUCKER_PUNCH, MOVE_EARTHQUAKE, MOVE_FIRE_BLAST}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_KANGASKHAN,
+    .heldItem = ITEM_KANGASKHANITE,
+    .moves = {MOVE_DOUBLE_EDGE, MOVE_EARTHQUAKE, MOVE_FAKE_OUT, MOVE_BODY_SLAM}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Winona2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 44,
+    .lvl = 50,
     .species = SPECIES_DRATINI,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_THUNDER_WAVE, MOVE_THUNDERBOLT, MOVE_PROTECT, MOVE_ICE_BEAM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 41,
+    .lvl = 50,
     .species = SPECIES_TROPIUS,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_SUNNY_DAY, MOVE_AERIAL_ACE, MOVE_SOLAR_BEAM, MOVE_EARTHQUAKE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 45,
+    .lvl = 50,
     .species = SPECIES_PELIPPER,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_SURF, MOVE_SUPERSONIC, MOVE_PROTECT, MOVE_AERIAL_ACE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 47,
+    .lvl = 50,
     .species = SPECIES_SKARMORY,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_WHIRLWIND, MOVE_SPIKES, MOVE_STEEL_WING, MOVE_AERIAL_ACE}
@@ -12107,108 +15368,63 @@ static const struct TrainerMon sParty_Winona2[] = {
     .heldItem = ITEM_CHESTO_BERRY,
     .moves = {MOVE_AERIAL_ACE, MOVE_REST, MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_MURKROW,
+    .heldItem = ITEM_EJECT_BUTTON,
+    .moves = {MOVE_TAILWIND, MOVE_DARK_PULSE, MOVE_HURRICANE, MOVE_HEAT_WAVE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_PELIPPER,
+    .heldItem = ITEM_DAMP_ROCK,
+    .moves = {MOVE_SCALD, MOVE_U_TURN, MOVE_ROOST, MOVE_DEFOG}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_CROBAT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SUPER_FANG, MOVE_BRAVE_BIRD, MOVE_U_TURN, MOVE_TOXIC}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_CORVIKNIGHT,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_BODY_PRESS, MOVE_IRON_HEAD, MOVE_IRON_DEFENSE, MOVE_BRAVE_BIRD}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_SKARMORY,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_COUNTER, MOVE_BODY_PRESS, MOVE_ROCK_SLIDE, MOVE_DOUBLE_EDGE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 50,
+    .species = SPECIES_ALTARIA,
+    .heldItem = ITEM_ALTARIANITE,
+    .moves = {MOVE_FIRE_BLAST, MOVE_HYPER_VOICE, MOVE_ROOST, MOVE_DRAGON_PULSE}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Winona3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 47,
+    .lvl = 58,
     .species = SPECIES_HOOTHOOT,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HYPNOSIS, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_DREAM_EATER}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 47,
-    .species = SPECIES_TROPIUS,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SUNNY_DAY, MOVE_AERIAL_ACE, MOVE_SOLAR_BEAM, MOVE_EARTHQUAKE}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
-    .species = SPECIES_DRAGONAIR,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_THUNDER_WAVE, MOVE_THUNDERBOLT, MOVE_PROTECT, MOVE_ICE_BEAM}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
-    .species = SPECIES_PELIPPER,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SURF, MOVE_SUPERSONIC, MOVE_PROTECT, MOVE_AERIAL_ACE}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 52,
-    .species = SPECIES_SKARMORY,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_WHIRLWIND, MOVE_SPIKES, MOVE_STEEL_WING, MOVE_AERIAL_ACE}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 54,
-    .species = SPECIES_ALTARIA,
-    .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_AERIAL_ACE, MOVE_REST, MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE}
-    }
-};
-
-static const struct TrainerMon sParty_Winona4[] = {
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 52,
-    .species = SPECIES_NOCTOWL,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_HYPNOSIS, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_DREAM_EATER}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 53,
-    .species = SPECIES_TROPIUS,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SUNNY_DAY, MOVE_AERIAL_ACE, MOVE_SOLAR_BEAM, MOVE_EARTHQUAKE}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 54,
-    .species = SPECIES_DRAGONAIR,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_THUNDER_WAVE, MOVE_THUNDERBOLT, MOVE_PROTECT, MOVE_ICE_BEAM}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 55,
-    .species = SPECIES_PELIPPER,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SURF, MOVE_SUPERSONIC, MOVE_PROTECT, MOVE_AERIAL_ACE}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 57,
-    .species = SPECIES_SKARMORY,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_WHIRLWIND, MOVE_SPIKES, MOVE_STEEL_WING, MOVE_AERIAL_ACE}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 60,
-    .species = SPECIES_ALTARIA,
-    .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_AERIAL_ACE, MOVE_REST, MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE}
-    }
-};
-
-static const struct TrainerMon sParty_Winona5[] = {
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 57,
-    .species = SPECIES_NOCTOWL,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_HYPNOSIS, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_DREAM_EATER}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 58,
     .species = SPECIES_TROPIUS,
     .heldItem = ITEM_NONE,
@@ -12216,166 +15432,436 @@ static const struct TrainerMon sParty_Winona5[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 60,
+    .lvl = 58,
+    .species = SPECIES_DRAGONAIR,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_THUNDER_WAVE, MOVE_THUNDERBOLT, MOVE_PROTECT, MOVE_ICE_BEAM}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
     .species = SPECIES_PELIPPER,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_SURF, MOVE_SUPERSONIC, MOVE_PROTECT, MOVE_AERIAL_ACE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 60,
+    .lvl = 58,
+    .species = SPECIES_SKARMORY,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_WHIRLWIND, MOVE_SPIKES, MOVE_STEEL_WING, MOVE_AERIAL_ACE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_ALTARIA,
+    .heldItem = ITEM_CHESTO_BERRY,
+    .moves = {MOVE_AERIAL_ACE, MOVE_REST, MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE}
+    }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_MURKROW,
+    .heldItem = ITEM_EJECT_BUTTON,
+    .moves = {MOVE_TAILWIND, MOVE_DARK_PULSE, MOVE_HURRICANE, MOVE_HEAT_WAVE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_PELIPPER,
+    .heldItem = ITEM_DAMP_ROCK,
+    .moves = {MOVE_SCALD, MOVE_U_TURN, MOVE_ROOST, MOVE_DEFOG}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_CROBAT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SUPER_FANG, MOVE_BRAVE_BIRD, MOVE_U_TURN, MOVE_TOXIC}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_CORVIKNIGHT,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_BODY_PRESS, MOVE_IRON_HEAD, MOVE_IRON_DEFENSE, MOVE_BRAVE_BIRD}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_SKARMORY,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_COUNTER, MOVE_BODY_PRESS, MOVE_ROCK_SLIDE, MOVE_DOUBLE_EDGE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_ALTARIA,
+    .heldItem = ITEM_ALTARIANITE,
+    .moves = {MOVE_FIRE_BLAST, MOVE_HYPER_VOICE, MOVE_ROOST, MOVE_DRAGON_PULSE}
+    }
+    #endif // CANON_MODE
+};
+
+static const struct TrainerMon sParty_Winona4[] = {
+    #ifdef CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_NOCTOWL,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HYPNOSIS, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_DREAM_EATER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_TROPIUS,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SUNNY_DAY, MOVE_AERIAL_ACE, MOVE_SOLAR_BEAM, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_DRAGONAIR,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_THUNDER_WAVE, MOVE_THUNDERBOLT, MOVE_PROTECT, MOVE_ICE_BEAM}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_PELIPPER,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SURF, MOVE_SUPERSONIC, MOVE_PROTECT, MOVE_AERIAL_ACE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_SKARMORY,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_WHIRLWIND, MOVE_SPIKES, MOVE_STEEL_WING, MOVE_AERIAL_ACE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_ALTARIA,
+    .heldItem = ITEM_CHESTO_BERRY,
+    .moves = {MOVE_AERIAL_ACE, MOVE_REST, MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE}
+    }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_MURKROW,
+    .heldItem = ITEM_EJECT_BUTTON,
+    .moves = {MOVE_TAILWIND, MOVE_DARK_PULSE, MOVE_HURRICANE, MOVE_HEAT_WAVE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_PELIPPER,
+    .heldItem = ITEM_DAMP_ROCK,
+    .moves = {MOVE_SCALD, MOVE_U_TURN, MOVE_ROOST, MOVE_DEFOG}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_CROBAT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SUPER_FANG, MOVE_BRAVE_BIRD, MOVE_U_TURN, MOVE_TOXIC}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_CORVIKNIGHT,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_BODY_PRESS, MOVE_IRON_HEAD, MOVE_IRON_DEFENSE, MOVE_BRAVE_BIRD}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_SKARMORY,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_COUNTER, MOVE_BODY_PRESS, MOVE_ROCK_SLIDE, MOVE_DOUBLE_EDGE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 66,
+    .species = SPECIES_ALTARIA,
+    .heldItem = ITEM_ALTARIANITE,
+    .moves = {MOVE_FIRE_BLAST, MOVE_HYPER_VOICE, MOVE_ROOST, MOVE_DRAGON_PULSE}
+    }
+    #endif // CANON_MODE
+};
+
+static const struct TrainerMon sParty_Winona5[] = {
+    #ifdef CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_NOCTOWL,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HYPNOSIS, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_DREAM_EATER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_TROPIUS,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SUNNY_DAY, MOVE_AERIAL_ACE, MOVE_SOLAR_BEAM, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_PELIPPER,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SURF, MOVE_SUPERSONIC, MOVE_PROTECT, MOVE_AERIAL_ACE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
     .species = SPECIES_DRAGONITE,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_HYPER_BEAM, MOVE_THUNDERBOLT, MOVE_EARTHQUAKE, MOVE_ICE_BEAM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 62,
+    .lvl = 74,
     .species = SPECIES_SKARMORY,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_WHIRLWIND, MOVE_SPIKES, MOVE_STEEL_WING, MOVE_AERIAL_ACE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 64,
+    .lvl = 74,
     .species = SPECIES_ALTARIA,
     .heldItem = ITEM_CHESTO_BERRY,
     .moves = {MOVE_SKY_ATTACK, MOVE_REST, MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_MURKROW,
+    .heldItem = ITEM_EJECT_BUTTON,
+    .moves = {MOVE_TAILWIND, MOVE_DARK_PULSE, MOVE_HURRICANE, MOVE_HEAT_WAVE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_PELIPPER,
+    .heldItem = ITEM_DAMP_ROCK,
+    .moves = {MOVE_SCALD, MOVE_U_TURN, MOVE_ROOST, MOVE_DEFOG}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_CROBAT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SUPER_FANG, MOVE_BRAVE_BIRD, MOVE_U_TURN, MOVE_TOXIC}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_CORVIKNIGHT,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_BODY_PRESS, MOVE_IRON_HEAD, MOVE_IRON_DEFENSE, MOVE_BRAVE_BIRD}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_SKARMORY,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_COUNTER, MOVE_BODY_PRESS, MOVE_ROCK_SLIDE, MOVE_DOUBLE_EDGE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_ALTARIA,
+    .heldItem = ITEM_ALTARIANITE,
+    .moves = {MOVE_FIRE_BLAST, MOVE_HYPER_VOICE, MOVE_ROOST, MOVE_DRAGON_PULSE}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_TateAndLiza2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 52,
+    .lvl = 58,
     .species = SPECIES_SLOWPOKE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_YAWN, MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_PROTECT}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 53,
+    .lvl = 58,
     .species = SPECIES_CLAYDOL,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_EARTHQUAKE, MOVE_ANCIENT_POWER, MOVE_PSYCHIC, MOVE_LIGHT_SCREEN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 53,
+    .lvl = 58,
     .species = SPECIES_XATU,
     .heldItem = ITEM_CHESTO_BERRY,
     .moves = {MOVE_PSYCHIC, MOVE_REST, MOVE_CONFUSE_RAY, MOVE_CALM_MIND}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 54,
+    .lvl = 58,
     .species = SPECIES_LUNATONE,
     .heldItem = ITEM_CHESTO_BERRY,
     .moves = {MOVE_EARTHQUAKE, MOVE_PSYCHIC, MOVE_REST, MOVE_CALM_MIND}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 54,
+    .lvl = 58,
     .species = SPECIES_SOLROCK,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_PSYCHIC, MOVE_FLAMETHROWER}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_CLAYDOL,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_RAPID_SPIN, MOVE_STEALTH_ROCK, MOVE_PSYCHIC, MOVE_EARTH_POWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_BRONZONG,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_GYRO_BALL, MOVE_STEALTH_ROCK, MOVE_PSYWAVE, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_REUNICLUS,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CALM_MIND, MOVE_PSYSHOCK, MOVE_FOCUS_BLAST, MOVE_RECOVER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_GOTHITELLE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CONFIDE, MOVE_CHARM, MOVE_THUNDERBOLT, MOVE_PSYCHIC}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_GARDEVOIR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_MOONBLAST, MOVE_PSYCHIC, MOVE_MYSTICAL_FIRE, MOVE_HEALING_WISH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_GALLADE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_CLOSE_COMBAT, MOVE_ZEN_HEADBUTT, MOVE_KNOCK_OFF}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_TateAndLiza3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 57,
+    .lvl = 64,
     .species = SPECIES_DROWZEE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_HEADBUTT, MOVE_PROTECT}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 57,
+    .lvl = 64,
     .species = SPECIES_SLOWPOKE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_YAWN, MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_PROTECT}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 58,
+    .lvl = 64,
     .species = SPECIES_CLAYDOL,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_EARTHQUAKE, MOVE_EXPLOSION, MOVE_PSYCHIC, MOVE_LIGHT_SCREEN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 58,
+    .lvl = 64,
     .species = SPECIES_XATU,
     .heldItem = ITEM_CHESTO_BERRY,
     .moves = {MOVE_PSYCHIC, MOVE_REST, MOVE_CONFUSE_RAY, MOVE_CALM_MIND}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 60,
+    .lvl = 64,
     .species = SPECIES_LUNATONE,
     .heldItem = ITEM_CHESTO_BERRY,
     .moves = {MOVE_EARTHQUAKE, MOVE_PSYCHIC, MOVE_REST, MOVE_CALM_MIND}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 60,
+    .lvl = 64,
     .species = SPECIES_SOLROCK,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_PSYCHIC, MOVE_FLAMETHROWER}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 64,
+    .species = SPECIES_CLAYDOL,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_RAPID_SPIN, MOVE_STEALTH_ROCK, MOVE_PSYCHIC, MOVE_EARTH_POWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 64,
+    .species = SPECIES_BRONZONG,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_GYRO_BALL, MOVE_STEALTH_ROCK, MOVE_PSYWAVE, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 64,
+    .species = SPECIES_REUNICLUS,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CALM_MIND, MOVE_PSYSHOCK, MOVE_FOCUS_BLAST, MOVE_RECOVER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 64,
+    .species = SPECIES_GOTHITELLE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CONFIDE, MOVE_CHARM, MOVE_THUNDERBOLT, MOVE_PSYCHIC}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 64,
+    .species = SPECIES_GARDEVOIR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_MOONBLAST, MOVE_PSYCHIC, MOVE_MYSTICAL_FIRE, MOVE_HEALING_WISH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 64,
+    .species = SPECIES_GALLADE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_CLOSE_COMBAT, MOVE_ZEN_HEADBUTT, MOVE_KNOCK_OFF}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_TateAndLiza4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 62,
-    .species = SPECIES_HYPNO,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_HEADBUTT, MOVE_PROTECT}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 63,
-    .species = SPECIES_CLAYDOL,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_EARTHQUAKE, MOVE_EXPLOSION, MOVE_PSYCHIC, MOVE_LIGHT_SCREEN}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 62,
-    .species = SPECIES_SLOWPOKE,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_YAWN, MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_PROTECT}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 63,
-    .species = SPECIES_XATU,
-    .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_PSYCHIC, MOVE_REST, MOVE_CONFUSE_RAY, MOVE_CALM_MIND}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 64,
-    .species = SPECIES_LUNATONE,
-    .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_EARTHQUAKE, MOVE_PSYCHIC, MOVE_REST, MOVE_CALM_MIND}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 64,
-    .species = SPECIES_SOLROCK,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_PSYCHIC, MOVE_FLAMETHROWER}
-    }
-};
-
-static const struct TrainerMon sParty_TateAndLiza5[] = {
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 67,
+    .lvl = 68,
     .species = SPECIES_HYPNO,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_HEADBUTT, MOVE_PROTECT}
@@ -12389,198 +15875,512 @@ static const struct TrainerMon sParty_TateAndLiza5[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 67,
+    .lvl = 68,
+    .species = SPECIES_SLOWPOKE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_YAWN, MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_PROTECT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_XATU,
+    .heldItem = ITEM_CHESTO_BERRY,
+    .moves = {MOVE_PSYCHIC, MOVE_REST, MOVE_CONFUSE_RAY, MOVE_CALM_MIND}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_LUNATONE,
+    .heldItem = ITEM_CHESTO_BERRY,
+    .moves = {MOVE_EARTHQUAKE, MOVE_PSYCHIC, MOVE_REST, MOVE_CALM_MIND}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_SOLROCK,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_PSYCHIC, MOVE_FLAMETHROWER}
+    }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_CLAYDOL,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_RAPID_SPIN, MOVE_STEALTH_ROCK, MOVE_PSYCHIC, MOVE_EARTH_POWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_BRONZONG,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_GYRO_BALL, MOVE_STEALTH_ROCK, MOVE_PSYWAVE, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_REUNICLUS,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CALM_MIND, MOVE_PSYSHOCK, MOVE_FOCUS_BLAST, MOVE_RECOVER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_GOTHITELLE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CONFIDE, MOVE_CHARM, MOVE_THUNDERBOLT, MOVE_PSYCHIC}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_GARDEVOIR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_MOONBLAST, MOVE_PSYCHIC, MOVE_MYSTICAL_FIRE, MOVE_HEALING_WISH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_GALLADE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_CLOSE_COMBAT, MOVE_ZEN_HEADBUTT, MOVE_KNOCK_OFF}
+    }
+    #endif // CANON_MODE
+};
+
+static const struct TrainerMon sParty_TateAndLiza5[] = {
+    #ifdef CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_HYPNO,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_HEADBUTT, MOVE_PROTECT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_CLAYDOL,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_EARTHQUAKE, MOVE_EXPLOSION, MOVE_PSYCHIC, MOVE_LIGHT_SCREEN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
     .species = SPECIES_SLOWKING,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_YAWN, MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_PROTECT}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 68,
+    .lvl = 74,
     .species = SPECIES_XATU,
     .heldItem = ITEM_CHESTO_BERRY,
     .moves = {MOVE_PSYCHIC, MOVE_REST, MOVE_CONFUSE_RAY, MOVE_CALM_MIND}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 69,
+    .lvl = 74,
     .species = SPECIES_LUNATONE,
     .heldItem = ITEM_CHESTO_BERRY,
     .moves = {MOVE_EARTHQUAKE, MOVE_PSYCHIC, MOVE_REST, MOVE_CALM_MIND}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 69,
+    .lvl = 74,
     .species = SPECIES_SOLROCK,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_PSYCHIC, MOVE_FLAMETHROWER}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_CLAYDOL,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_RAPID_SPIN, MOVE_STEALTH_ROCK, MOVE_PSYCHIC, MOVE_EARTH_POWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_BRONZONG,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_GYRO_BALL, MOVE_STEALTH_ROCK, MOVE_PSYWAVE, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_REUNICLUS,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CALM_MIND, MOVE_PSYSHOCK, MOVE_FOCUS_BLAST, MOVE_RECOVER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_GOTHITELLE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CONFIDE, MOVE_CHARM, MOVE_THUNDERBOLT, MOVE_PSYCHIC}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_GARDEVOIR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_MOONBLAST, MOVE_PSYCHIC, MOVE_MYSTICAL_FIRE, MOVE_HEALING_WISH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_GALLADE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_CLOSE_COMBAT, MOVE_ZEN_HEADBUTT, MOVE_KNOCK_OFF}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Juan2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
+    .lvl = 58,
     .species = SPECIES_POLIWAG,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HYPNOSIS, MOVE_RAIN_DANCE, MOVE_PROTECT, MOVE_HYDRO_PUMP}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 50,
+    .lvl = 58,
     .species = SPECIES_WHISCASH,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_PULSE, MOVE_DOUBLE_TEAM, MOVE_FISSURE}
+    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_PULSE, MOVE_BOUNCE, MOVE_FISSURE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 52,
+    .lvl = 58,
     .species = SPECIES_WALREIN,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_WATER_PULSE, MOVE_BODY_SLAM, MOVE_PROTECT, MOVE_ICE_BEAM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 52,
+    .lvl = 58,
     .species = SPECIES_CRAWDAUNT,
     .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_REST, MOVE_CRABHAMMER, MOVE_TAUNT, MOVE_DOUBLE_TEAM}
+    .moves = {MOVE_REST, MOVE_CRABHAMMER, MOVE_TAUNT, MOVE_AQUA_JET}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 55,
+    .lvl = 58,
     .species = SPECIES_KINGDRA,
     .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_WATER_PULSE, MOVE_DOUBLE_TEAM, MOVE_ICE_BEAM, MOVE_REST}
+    .moves = {MOVE_WATER_PULSE, MOVE_DRACO_METEOR, MOVE_ICE_BEAM, MOVE_REST}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_WALREIN,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ROAR, MOVE_ICE_BEAM, MOVE_SUPER_FANG, MOVE_SURF}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_KINGDRA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HYDRO_PUMP, MOVE_DRACO_METEOR, MOVE_ICE_BEAM, MOVE_SCALD}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_BASCULEGION,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_WAVE_CRASH, MOVE_AGILITY, MOVE_PSYCHIC_FANGS, MOVE_FLIP_TURN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_CRAWDAUNT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_KNOCK_OFF, MOVE_CRABHAMMER, MOVE_AQUA_JET, MOVE_CRUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_TOXAPEX,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BANEFUL_BUNKER, MOVE_RECOVER, MOVE_SCALD, MOVE_SLUDGE_BOMB}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 58,
+    .species = SPECIES_GYARADOS,
+    .heldItem = ITEM_GYARADOSITE,
+    .moves = {MOVE_WATERFALL, MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_DRAGON_DANCE}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Juan3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 54,
+    .lvl = 64,
     .species = SPECIES_POLIWHIRL,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HYPNOSIS, MOVE_RAIN_DANCE, MOVE_PROTECT, MOVE_HYDRO_PUMP}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 55,
+    .lvl = 64,
     .species = SPECIES_WHISCASH,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_PULSE, MOVE_DOUBLE_TEAM, MOVE_FISSURE}
+    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_PULSE, MOVE_BOUNCE, MOVE_FISSURE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 57,
+    .lvl = 64,
     .species = SPECIES_WALREIN,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_WATER_PULSE, MOVE_BODY_SLAM, MOVE_PROTECT, MOVE_ICE_BEAM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 57,
+    .lvl = 64,
     .species = SPECIES_CRAWDAUNT,
     .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_REST, MOVE_GUILLOTINE, MOVE_TAUNT, MOVE_DOUBLE_TEAM}
+    .moves = {MOVE_REST, MOVE_GUILLOTINE, MOVE_TAUNT, MOVE_AQUA_JET}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 60,
+    .lvl = 64,
     .species = SPECIES_KINGDRA,
     .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_WATER_PULSE, MOVE_DOUBLE_TEAM, MOVE_ICE_BEAM, MOVE_REST}
+    .moves = {MOVE_WATER_PULSE, MOVE_DRACO_METEOR, MOVE_ICE_BEAM, MOVE_REST}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 64,
+    .species = SPECIES_WALREIN,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ROAR, MOVE_ICE_BEAM, MOVE_SUPER_FANG, MOVE_SURF}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 64,
+    .species = SPECIES_KINGDRA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HYDRO_PUMP, MOVE_DRACO_METEOR, MOVE_ICE_BEAM, MOVE_SCALD}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 64,
+    .species = SPECIES_BASCULEGION,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_WAVE_CRASH, MOVE_AGILITY, MOVE_PSYCHIC_FANGS, MOVE_FLIP_TURN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 64,
+    .species = SPECIES_CRAWDAUNT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_KNOCK_OFF, MOVE_CRABHAMMER, MOVE_AQUA_JET, MOVE_CRUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 64,
+    .species = SPECIES_TOXAPEX,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BANEFUL_BUNKER, MOVE_RECOVER, MOVE_SCALD, MOVE_SLUDGE_BOMB}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 64,
+    .species = SPECIES_GYARADOS,
+    .heldItem = ITEM_GYARADOSITE,
+    .moves = {MOVE_WATERFALL, MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_DRAGON_DANCE}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Juan4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 60,
+    .lvl = 68,
     .species = SPECIES_LAPRAS,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HYDRO_PUMP, MOVE_PERISH_SONG, MOVE_ICE_BEAM, MOVE_CONFUSE_RAY}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 62,
+    .lvl = 68,
     .species = SPECIES_WHISCASH,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_PULSE, MOVE_DOUBLE_TEAM, MOVE_FISSURE}
+    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_PULSE, MOVE_BOUNCE, MOVE_FISSURE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 60,
+    .lvl = 68,
     .species = SPECIES_POLIWHIRL,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HYPNOSIS, MOVE_RAIN_DANCE, MOVE_PROTECT, MOVE_HYDRO_PUMP}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 62,
+    .lvl = 68,
     .species = SPECIES_WALREIN,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_WATER_PULSE, MOVE_BODY_SLAM, MOVE_PROTECT, MOVE_ICE_BEAM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 62,
+    .lvl = 68,
     .species = SPECIES_CRAWDAUNT,
     .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_REST, MOVE_GUILLOTINE, MOVE_TAUNT, MOVE_DOUBLE_TEAM}
+    .moves = {MOVE_REST, MOVE_GUILLOTINE, MOVE_TAUNT, MOVE_AQUA_JET}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 65,
+    .lvl = 68,
     .species = SPECIES_KINGDRA,
     .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_WATER_PULSE, MOVE_DOUBLE_TEAM, MOVE_ICE_BEAM, MOVE_REST}
+    .moves = {MOVE_WATER_PULSE, MOVE_DRACO_METEOR, MOVE_ICE_BEAM, MOVE_REST}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_WALREIN,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ROAR, MOVE_ICE_BEAM, MOVE_SUPER_FANG, MOVE_SURF}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_KINGDRA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HYDRO_PUMP, MOVE_DRACO_METEOR, MOVE_ICE_BEAM, MOVE_SCALD}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_BASCULEGION,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_WAVE_CRASH, MOVE_AGILITY, MOVE_PSYCHIC_FANGS, MOVE_FLIP_TURN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_CRAWDAUNT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_KNOCK_OFF, MOVE_CRABHAMMER, MOVE_AQUA_JET, MOVE_CRUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_TOXAPEX,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BANEFUL_BUNKER, MOVE_RECOVER, MOVE_SCALD, MOVE_SLUDGE_BOMB}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_GYARADOS,
+    .heldItem = ITEM_GYARADOSITE,
+    .moves = {MOVE_WATERFALL, MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_DRAGON_DANCE}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Juan5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 65,
+    .lvl = 74,
     .species = SPECIES_LAPRAS,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HYDRO_PUMP, MOVE_PERISH_SONG, MOVE_ICE_BEAM, MOVE_CONFUSE_RAY}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 67,
+    .lvl = 74,
     .species = SPECIES_WHISCASH,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_PULSE, MOVE_DOUBLE_TEAM, MOVE_FISSURE}
+    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_PULSE, MOVE_BOUNCE, MOVE_FISSURE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 65,
+    .lvl = 74,
     .species = SPECIES_POLITOED,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HYPNOSIS, MOVE_RAIN_DANCE, MOVE_HYDRO_PUMP, MOVE_PERISH_SONG}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 67,
+    .lvl = 74,
     .species = SPECIES_WALREIN,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_WATER_PULSE, MOVE_BODY_SLAM, MOVE_PROTECT, MOVE_SHEER_COLD}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 67,
+    .lvl = 74,
     .species = SPECIES_CRAWDAUNT,
     .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_REST, MOVE_GUILLOTINE, MOVE_TAUNT, MOVE_DOUBLE_TEAM}
+    .moves = {MOVE_REST, MOVE_GUILLOTINE, MOVE_TAUNT, MOVE_AQUA_JET}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 70,
+    .lvl = 74,
     .species = SPECIES_KINGDRA,
     .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_WATER_PULSE, MOVE_DOUBLE_TEAM, MOVE_ICE_BEAM, MOVE_REST}
+    .moves = {MOVE_WATER_PULSE, MOVE_DRACO_METEOR, MOVE_ICE_BEAM, MOVE_REST}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_WALREIN,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ROAR, MOVE_ICE_BEAM, MOVE_SUPER_FANG, MOVE_SURF}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_KINGDRA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HYDRO_PUMP, MOVE_DRACO_METEOR, MOVE_ICE_BEAM, MOVE_SCALD}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_BASCULEGION,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_WAVE_CRASH, MOVE_AGILITY, MOVE_PSYCHIC_FANGS, MOVE_FLIP_TURN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_CRAWDAUNT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_KNOCK_OFF, MOVE_CRABHAMMER, MOVE_AQUA_JET, MOVE_CRUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_TOXAPEX,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BANEFUL_BUNKER, MOVE_RECOVER, MOVE_SCALD, MOVE_SLUDGE_BOMB}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_GYARADOS,
+    .heldItem = ITEM_GYARADOSITE,
+    .moves = {MOVE_WATERFALL, MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_DRAGON_DANCE}
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Angelo[] = {
@@ -12778,6 +16578,7 @@ static const struct TrainerMon sParty_Andres5[] = {
 };
 
 static const struct TrainerMon sParty_Cory2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 33,
@@ -12793,6 +16594,23 @@ static const struct TrainerMon sParty_Cory2[] = {
     .lvl = 33,
     .species = SPECIES_TENTACOOL,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 33,
+    .species = SPECIES_CRAMORANT,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 33,
+    .species = SPECIES_MACHOP,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 33,
+    .species = SPECIES_TENTACOOL,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Cory3[] = {
@@ -12917,6 +16735,7 @@ static const struct TrainerMon sParty_Pablo5[] = {
 };
 
 static const struct TrainerMon sParty_Koji2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 40,
@@ -12927,9 +16746,22 @@ static const struct TrainerMon sParty_Koji2[] = {
     .lvl = 40,
     .species = SPECIES_MACHOKE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 40,
+    .species = SPECIES_TOXICROAK,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 40,
+    .species = SPECIES_MACHOKE,
+    },
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Koji3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
     .lvl = 42,
@@ -12945,9 +16777,27 @@ static const struct TrainerMon sParty_Koji3[] = {
     .lvl = 42,
     .species = SPECIES_MACHOKE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 42,
+    .species = SPECIES_TOXICROAK,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 42,
+    .species = SPECIES_MAKUHITA,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
+    .lvl = 42,
+    .species = SPECIES_MACHOKE,
+    },
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Koji4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
     .lvl = 45,
@@ -12963,9 +16813,27 @@ static const struct TrainerMon sParty_Koji4[] = {
     .lvl = 45,
     .species = SPECIES_MACHOKE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 45,
+    .species = SPECIES_TOXICROAK,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 45,
+    .species = SPECIES_MAKUHITA,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 45,
+    .species = SPECIES_MACHOKE,
+    },
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Koji5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 47,
@@ -12981,6 +16849,23 @@ static const struct TrainerMon sParty_Koji5[] = {
     .lvl = 47,
     .species = SPECIES_MACHAMP,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 47,
+    .species = SPECIES_TOXICROAK,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 47,
+    .species = SPECIES_MAKUHITA,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 47,
+    .species = SPECIES_MACHOKE,
+    },
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Cristin2[] = {

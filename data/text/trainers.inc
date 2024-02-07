@@ -2207,8 +2207,8 @@ Route116_Text_ClarkPostBattle:
 	.string "To a Hiker, mountains are roads!$"
 
 Route116_Text_JoeyIntro:
-	.string "My Pokémon rule!\n"
-	.string "Check them out!$"
+	.string "I got a rare Pokémon!\n"
+	.string "Check it out!$"
 
 Route116_Text_JoeyDefeat:
 	.string "Ouch! A scrape!\n"
