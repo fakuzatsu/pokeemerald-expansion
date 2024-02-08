@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpokedex_site=self.webpackChunkpokedex_site||[]).push([[9392],{6312:e=>{e.exports=JSON.parse('{"label":"hola","permalink":"/verdant-emerald/blog/tags/hola","allTagsPath":"/verdant-emerald/blog/tags","count":1,"unlisted":false}')}}]);

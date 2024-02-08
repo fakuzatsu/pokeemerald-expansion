@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpokedex_site=self.webpackChunkpokedex_site||[]).push([[1261],{9040:e=>{e.exports=JSON.parse('{"label":"facebook","permalink":"/verdant-emerald/pokedex-site/blog/tags/facebook","allTagsPath":"/verdant-emerald/pokedex-site/blog/tags","count":1,"unlisted":false}')}}]);
