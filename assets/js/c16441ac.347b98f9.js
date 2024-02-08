@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpokedex_site=self.webpackChunkpokedex_site||[]).push([[2024],{2080:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"default"}')}}]);

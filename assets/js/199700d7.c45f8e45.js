@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpokedex_site=self.webpackChunkpokedex_site||[]).push([[736],{1320:e=>{e.exports=JSON.parse('{"label":"docusaurus","permalink":"/verdant-emerald/pokedex-site/blog/tags/docusaurus","allTagsPath":"/verdant-emerald/pokedex-site/blog/tags","count":4,"unlisted":false}')}}]);
