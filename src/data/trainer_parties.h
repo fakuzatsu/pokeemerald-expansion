@@ -343,10 +343,17 @@ static const struct TrainerMon sParty_Matt[] = {
 };
 
 static const struct TrainerMon sParty_Zander[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 34,
     .species = SPECIES_HARIYAMA,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 34,
+    .species = SPECIES_PANGORO,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_ShellyWeatherInstitute[] = {
@@ -1701,34 +1708,63 @@ static const struct TrainerMon sParty_Tammy[] = {
 };
 
 static const struct TrainerMon sParty_Valerie1[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 35,
     .species = SPECIES_SABLEYE,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 35,
+    .species = SPECIES_POLTEAGEIST,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Tasha[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
     .lvl = 35,
     .species = SPECIES_SHUPPET,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .lvl = 35,
+    .species = SPECIES_MIMIKYU,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Valerie2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
-    .lvl = 34,
+    .lvl = 35,
     .species = SPECIES_SABLEYE,
     },
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
-    .lvl = 34,
+    .lvl = 35,
     .species = SPECIES_SPOINK,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 35,
+    .species = SPECIES_POLTEAGEIST,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 35,
+    .species = SPECIES_LAMPENT,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Valerie3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
     .lvl = 38,
@@ -1739,9 +1775,22 @@ static const struct TrainerMon sParty_Valerie3[] = {
     .lvl = 38,
     .species = SPECIES_SABLEYE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 38,
+    .species = SPECIES_POLTEAGEIST,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
+    .lvl = 38,
+    .species = SPECIES_CHANDELURE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Valerie4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
     .lvl = 44,
@@ -1752,9 +1801,22 @@ static const struct TrainerMon sParty_Valerie4[] = {
     .lvl = 44,
     .species = SPECIES_SABLEYE,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 44,
+    .species = SPECIES_POLTEAGEIST,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
+    .lvl = 44,
+    .species = SPECIES_CHANDELURE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Valerie5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 46,
@@ -1770,6 +1832,23 @@ static const struct TrainerMon sParty_Valerie5[] = {
     .lvl = 46,
     .species = SPECIES_GRUMPIG,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 46,
+    .species = SPECIES_POLTEAGEIST,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 46,
+    .species = SPECIES_CHANDELURE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 46,
+    .species = SPECIES_AEGISLASH,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Cindy1[] = {
@@ -2222,10 +2301,17 @@ static const struct TrainerMon sParty_Thalia1[] = {
 };
 
 static const struct TrainerMon sParty_Mark[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 34,
     .species = SPECIES_RHYHORN,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 34,
+    .species = SPECIES_TOGETIC,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_GruntMtChimney1[] = {
@@ -2887,11 +2973,19 @@ static const struct TrainerMon sParty_Daisuke[] = {
 };
 
 static const struct TrainerMon sParty_Atsushi[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 35,
     .species = SPECIES_HARIYAMA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 35,
+    .species = SPECIES_MIENSHAO,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Kirk[] = {
@@ -3668,6 +3762,7 @@ static const struct TrainerMon sParty_Blake[] = {
 };
 
 static const struct TrainerMon sParty_William[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 29,
     .species = SPECIES_RALTS,
@@ -3680,6 +3775,20 @@ static const struct TrainerMon sParty_William[] = {
     .lvl = 29,
     .species = SPECIES_KIRLIA,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 29,
+    .species = SPECIES_MUNNA,
+    },
+    {
+    .lvl = 29,
+    .species = SPECIES_GOTHORITA,
+    },
+    {
+    .lvl = 29,
+    .species = SPECIES_KIRLIA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Joshua[] = {
@@ -3785,6 +3894,7 @@ static const struct TrainerMon sParty_Maura[] = {
 };
 
 static const struct TrainerMon sParty_Kayla[] = {
+    #ifdef CANON_MODE
     {
     .lvl = 29,
     .species = SPECIES_WOBBUFFET,
@@ -3797,6 +3907,20 @@ static const struct TrainerMon sParty_Kayla[] = {
     .lvl = 29,
     .species = SPECIES_KADABRA,
     }
+    #else // CANON_MODE
+    {
+    .lvl = 29,
+    .species = SPECIES_WOBBUFFET,
+    },
+    {
+    .lvl = 29,
+    .species = SPECIES_HATENNA,
+    },
+    {
+    .lvl = 29,
+    .species = SPECIES_MUNNA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Alexis[] = {
@@ -7379,6 +7503,7 @@ static const struct TrainerMon sParty_Katelyn5[] = {
 };
 
 static const struct TrainerMon sParty_Nicolas1[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 40,
@@ -7389,9 +7514,22 @@ static const struct TrainerMon sParty_Nicolas1[] = {
     .lvl = 40,
     .species = SPECIES_ALTARIA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 40,
+    .species = SPECIES_FRAXURE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .lvl = 40,
+    .species = SPECIES_ALTARIA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Nicolas2[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
     .lvl = 45,
@@ -7402,9 +7540,22 @@ static const struct TrainerMon sParty_Nicolas2[] = {
     .lvl = 45,
     .species = SPECIES_ALTARIA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
+    .lvl = 45,
+    .species = SPECIES_FRAXURE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
+    .lvl = 45,
+    .species = SPECIES_ALTARIA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Nicolas3[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
     .lvl = 48,
@@ -7415,9 +7566,22 @@ static const struct TrainerMon sParty_Nicolas3[] = {
     .lvl = 48,
     .species = SPECIES_ALTARIA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
+    .lvl = 48,
+    .species = SPECIES_HAXORUS,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
+    .lvl = 48,
+    .species = SPECIES_ALTARIA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Nicolas4[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
     .lvl = 50,
@@ -7433,9 +7597,27 @@ static const struct TrainerMon sParty_Nicolas4[] = {
     .lvl = 50,
     .species = SPECIES_ALTARIA,
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
+    .lvl = 48,
+    .species = SPECIES_SHELGON,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
+    .lvl = 50,
+    .species = SPECIES_HAXORUS,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
+    .lvl = 50,
+    .species = SPECIES_ALTARIA,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Nicolas5[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
     .lvl = 53,
@@ -7454,6 +7636,23 @@ static const struct TrainerMon sParty_Nicolas5[] = {
     .species = SPECIES_SHELGON,
     .heldItem = ITEM_DRAGON_FANG
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+    .lvl = 53,
+    .species = SPECIES_HAXORUS,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+    .lvl = 53,
+    .species = SPECIES_ALTARIA,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
+    .lvl = 53,
+    .species = SPECIES_SALAMENCE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Aaron[] = {
@@ -11074,6 +11273,16 @@ static const struct TrainerMon sParty_Lara[] = {
 };
 
 static const struct TrainerMon sParty_Yose[] = {
+    #ifdef CANON_MODE
+    {
+    .lvl = 20,
+    .species = SPECIES_DODRIO,
+    },
+    {
+    .lvl = 20,
+    .species = SPECIES_TAUROS,
+    }
+    #else // CANON_MODE
     {
     .lvl = 20,
     .species = SPECIES_DODRIO,
@@ -11082,6 +11291,7 @@ static const struct TrainerMon sParty_Yose[] = {
     .lvl = 20,
     .species = SPECIES_BOUFFALANT,
     }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_Rick[] = {
@@ -12287,6 +12497,7 @@ static const struct TrainerMon sParty_MelAndPaul[] = {
 };
 
 static const struct TrainerMon sParty_JohnAndJay1[] = {
+    #ifdef CANON_MODE
     {
     .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
     .lvl = 42,
@@ -12299,6 +12510,18 @@ static const struct TrainerMon sParty_JohnAndJay1[] = {
     .species = SPECIES_HARIYAMA,
     .moves = {MOVE_FOCUS_PUNCH, MOVE_ROCK_TOMB, MOVE_REST, MOVE_BELLY_DRUM}
     }
+    #else // CANON_MODE
+    {
+    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+    .lvl = 42,
+    .species = SPECIES_GARDEVOIR,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+    .lvl = 42,
+    .species = SPECIES_GALLADE,
+    }
+    #endif // CANON_MODE
 };
 
 static const struct TrainerMon sParty_JohnAndJay2[] = {
