@@ -398,6 +398,10 @@ GraniteCave_B1F_EventScript_ItemPokeBall::
 	finditem ITEM_POKE_BALL
 	end
 
+GraniteCave_B1F_EventScript_ItemTM69::
+	finditem ITEM_TM69	
+	end
+
 GraniteCave_B2F_EventScript_ItemRepel::
 	finditem ITEM_REPEL
 	end
@@ -430,8 +434,8 @@ MeteorFalls_1F_1R_EventScript_ItemMoonStone::
 	finditem ITEM_MOON_STONE
 	end
 
-MeteorFalls_1F_1R_EventScript_ItemPPUP::
-	finditem ITEM_PP_UP
+MeteorFalls_1F_1R_EventScript_ItemTM75::
+	finditem ITEM_TM75
 	end
 
 MeteorFalls_B1F_2R_EventScript_ItemTMDragonClaw::
@@ -642,8 +646,8 @@ VictoryRoad_1F_EventScript_ItemMaxElixir::
 	finditem ITEM_MAX_ELIXIR
 	end
 
-VictoryRoad_1F_EventScript_ItemPPUp::
-	finditem ITEM_PP_UP
+VictoryRoad_1F_EventScript_ItemTM52::
+	finditem ITEM_TM52
 	end
 
 VictoryRoad_B1F_EventScript_ItemTMPsychic::
@@ -654,8 +658,8 @@ VictoryRoad_B1F_EventScript_ItemFullRestore::
 	finditem ITEM_FULL_RESTORE
 	end
 
-VictoryRoad_B2F_EventScript_ItemFullHeal::
-	finditem ITEM_FULL_HEAL
+VictoryRoad_B2F_EventScript_ItemTM65::
+	finditem ITEM_TM65
 	end
 
 ArtisanCave_B1F_EventScript_ItemHPUp::
@@ -776,4 +780,8 @@ RusturfTunnel_2F_EventScript_BottleCap::
 
 RusturfCliff_EventScript_PrettyFeather::
 	finditem ITEM_PRETTY_FEATHER
+	end
+
+Route131_Underwater_EventScript_TM70::
+	finditem ITEM_TM70
 	end

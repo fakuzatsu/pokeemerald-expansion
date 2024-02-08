@@ -1093,7 +1093,7 @@
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_IRON_TAIL                   0x414
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_FULL_HEAL                      0x415
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_MOON_STONE                     0x416
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_PP_UP                          0x417
+#define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_75                          0x417
 #define FLAG_ITEM_RUSTURF_TUNNEL_POKE_BALL                          0x418
 #define FLAG_ITEM_RUSTURF_TUNNEL_MAX_ETHER                          0x419
 #define FLAG_ITEM_GRANITE_CAVE_1F_ESCAPE_ROPE                       0x41A
@@ -1131,10 +1131,10 @@
 #define FLAG_ITEM_SHOAL_CAVE_INNER_ROOM_RARE_CANDY                  0x43A
 #define FLAG_ITEM_SHOAL_CAVE_STAIRS_ROOM_ICE_HEAL                   0x43B
 #define FLAG_ITEM_VICTORY_ROAD_1F_MAX_ELIXIR                        0x43C
-#define FLAG_ITEM_VICTORY_ROAD_1F_PP_UP                             0x43D
+#define FLAG_ITEM_VICTORY_ROAD_1F_TM_52                             0x43D
 #define FLAG_ITEM_VICTORY_ROAD_B1F_TM_PSYCHIC                       0x43E
 #define FLAG_ITEM_VICTORY_ROAD_B1F_FULL_RESTORE                     0x43F
-#define FLAG_ITEM_VICTORY_ROAD_B2F_FULL_HEAL                        0x440
+#define FLAG_ITEM_VICTORY_ROAD_B2F_TM_65                            0x440
 #define FLAG_ITEM_MT_PYRE_6F_TM_SHADOW_BALL                         0x441
 #define FLAG_ITEM_SEAFLOOR_CAVERN_ROOM_9_TM_EARTHQUAKE              0x442
 #define FLAG_ITEM_FIERY_PATH_TM_TOXIC                               0x443
@@ -1179,10 +1179,10 @@
 #define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                            0x46A
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE                 0x46B
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_NUGGET                           0x46C
-#define FLAG_ITEM_MOSSDEEP_STEVENS_HOUSE_HM08                       0x46D // Unused Flag, leftover from R/S. HM08 is given to the player directly in Emerald
+#define FLAG_ITEM_GRANITE_CAVE_B1F_TM_69                            0x46D // Repurposed Flag
 #define FLAG_ITEM_ROUTE_119_NUGGET                                  0x46E
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
-#define FLAG_UNUSED_0x470                                           0x470 // Unused Flag
+#define FLAG_ITEM_ROUTE_103_UNDERWATER_TM_70                        0x470 // Unused Flag
 #define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
 #define FLAG_UNUSED_0x472                                           0x472 // Unused Flag
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
