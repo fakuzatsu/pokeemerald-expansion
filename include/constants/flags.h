@@ -1397,7 +1397,7 @@
 #define FLAG_UNUSED_0x8BA                                           0x8BA
 #define FLAG_UNUSED_0x8BB                                           0x8BB
 #define FLAG_UNUSED_0x8BC                                           0x8BC
-#define FLAG_UNUSED_0x8BD                                           0x8BD
+#define FLAG_SYS_TRAINER_RANDOMISER                                 0x8BD // Custom flag
 #define FLAG_SYS_ABILITY_RANDOMISER                                 0x8BE // Custom flag
 #define FLAG_SYS_ENCOUNTER_RANDOMISER                               0x8BF // Custom flag
 

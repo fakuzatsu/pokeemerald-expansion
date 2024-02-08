@@ -150,7 +150,7 @@ void ResetMenuAndMonGlobals(void)
 
 void SetRandomiserSeed(void)
 {
-    VarSet(VAR_RANDOMISER_SEED, (Random() % 99999));
+    VarSet(VAR_RANDOMISER_SEED, Random());
 }
 
 void NewGameInitData(void)

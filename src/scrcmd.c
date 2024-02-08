@@ -48,6 +48,7 @@
 #include "trainer_see.h"
 #include "tv.h"
 #include "window.h"
+#include "wild_encounter.h"
 #include "constants/event_objects.h"
 #include "day_night.h"
 
@@ -1888,12 +1889,12 @@ bool8 ScrCmd_setwildbattle(struct ScriptContext *ctx)
 
     if(species2 == SPECIES_NONE)
     {
-        CreateScriptedWildMon(species, level, item);
+        CreateScriptedWildMon(PokemonRandomiser(species), level, item);
         sIsScriptedWildDouble = FALSE;
     }
     else
     {
-        CreateScriptedDoubleWildMon(species, level, item, species2, level2, item2);
+        CreateScriptedDoubleWildMon(PokemonRandomiser(species), level, item, PokemonRandomiser(species2), level2, item2);
         sIsScriptedWildDouble = TRUE;
     }
 

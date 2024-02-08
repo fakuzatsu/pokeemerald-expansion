@@ -90,7 +90,7 @@ const u8 gText_ReRandomiseCode[] = _("ReRand");
 
 static void Task_ActivateReRandomiseCode(u8 taskId)
 {
-    VarSet(VAR_RANDOMISER_SEED, (Random() % 99999));
+    VarSet(VAR_RANDOMISER_SEED, Random());
     DestroyTask(taskId);
     ScriptContext_Enable();
 }
