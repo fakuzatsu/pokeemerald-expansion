@@ -8,8 +8,10 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Verdant Emerald is build on the [Pokeemerald-Expansion](https://github.com/rh-hideout/pokeemerald-expansion).
+        Verdant Emerald is build on the Pokeemerald-Expansion repo (details in docs).
+
         Featuring all Pokémon, Moves, Abilities, Items, and Battle Gimmicks from Generation 1 to 8 (Z-Moves, Megas, Terrains, etc.).
+
         All have been distributed through the Hoenn region with great care taken to improve your playthrough.
       </>
     ),
@@ -20,8 +22,11 @@ const FeatureList = [
     description: (
       <>
         Verdant Emerald features plenty of new and expanded maps, providing new ways to explore the region.
+
         Encounter familiar trainers throughout your journey and engage in exciting new events to unlock special Pokémon, Items, Features, etc.
+
         Engage in quests to unlock your favourite legendaries, throughout and after the main story.
+
       </>
     ),
   },
@@ -31,8 +36,11 @@ const FeatureList = [
     description: (
       <>
         Verdant Emerald has been absolutely packed with Quality of Life changes that let you engage in the content you care about, and skip anything you don't.
+
         Change your gameplay experience entirely with Level Caps/Challenges/Randomisation.
+
         See your EVs/IVs, Nature stat-changes, use the Move Tutor from the Party menu and way, way more.
+
       </>
     ),
   },
