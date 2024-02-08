@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpokedex_site=self.webpackChunkpokedex_site||[]).push([[4304],{3564:(e,s,r)=>{r.r(s),r.d(s,{default:()=>n});r(1504);var c=r(5456),t=r(5756),u=r(5864),a=r(5464),d=r(9012),k=r(7624);function n(e){return(0,k.jsx)(t.cr,{className:(0,c.c)(u.W.wrapper.docsPages),children:(0,k.jsx)(d.c,{children:(0,a.k)(e.route.routes)})})}}}]);
