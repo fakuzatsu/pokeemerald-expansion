@@ -16,22 +16,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Navigate to pokedex-site
-        run: cd pokedex-site
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+          cache-dependency-path: pokedex-site/package-lock.json
 
-      - name: Setup Node.js
-        run: |
-          node_version=14
-          node_cache_dir="$RUNNER_TOOL_CACHE/Node/$node_version/x64"
-          
-          if [ ! -d "$node_cache_dir" ]; then
-            echo "Installing Node.js $node_version"
-            mkdir -p "$node_cache_dir"
-            curl -L "https://nodejs.org/dist/v$node_version/node-v$node_version-linux-x64.tar.gz" | tar xz -C "$node_cache_dir" --strip-components=1
-          fi
-          
-          export PATH="$node_cache_dir/bin:$PATH"
-          npm ci
-
-      - name: Build website
-        run: npm run build
+      - run: npm ci
+      - run: npm test
