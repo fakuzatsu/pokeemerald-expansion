@@ -17,25 +17,30 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 14
-          cache: npm
-          cache-dependency-path: '**/pokedex-site/package-lock.json'
+      - name: Navigate to pokedex-site
+        run: cd pokedex-site
 
-      - name: Install dependencies
-        run: npm ci
-        working-directory: pokedex-site
+      - name: Setup Node.js
+        run: |
+          node_version=14
+          node_cache_dir="$RUNNER_TOOL_CACHE/Node/$node_version/x64"
+          
+          if [ ! -d "$node_cache_dir" ]; then
+            echo "Installing Node.js $node_version"
+            mkdir -p "$node_cache_dir"
+            curl -L "https://nodejs.org/dist/v$node_version/node-v$node_version-linux-x64.tar.gz" | tar xz -C "$node_cache_dir" --strip-components=1
+          fi
+          
+          export PATH="$node_cache_dir/bin:$PATH"
+          npm ci
 
       - name: Build website
         run: npm run build
-        working-directory: pokedex-site
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./pokedex-site/build
+          publish_dir: ./build
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
