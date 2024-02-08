@@ -16,7 +16,7 @@ const config = {
 
   // Set the production url of your site here
   url: 'https://fakuzatsu.github.io',
-  baseUrl: '/verdant-emerald/pokedex-site/',
+  baseUrl: '/verdant-emerald/',
 
   // GitHub pages deployment config.
   organizationName: 'fakuzatsu', // Usually your GitHub org/user name.
