@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - master
-    # Review gh actions docs if you want to further define triggers, paths, etc
-    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 
 permissions:
   contents: write
@@ -14,13 +12,13 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: pokedex-site  # Set the correct working directory for the entire job
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Navigate to pokedex-site
+        run: cd pokedex-site
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -34,13 +32,10 @@ jobs:
       - name: Build website
         run: npm run build
 
-      # Popular action to deploy to GitHub Pages:
-      # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # Build output to publish to the `gh-pages` branch:
           publish_dir: ./build
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com

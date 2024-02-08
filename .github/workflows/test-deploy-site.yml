@@ -11,13 +11,13 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: pokedex-site  # Set the correct working directory for the entire job
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Navigate to pokedex-site
+        run: cd pokedex-site
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
