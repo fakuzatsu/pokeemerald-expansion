@@ -2,46 +2,49 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Verdant Emerald
 
-Let's discover **Docusaurus in less than 5 minutes**.
+A fork of [pret/pokeemerald](https://github.com/pret/pokeemerald) that breathes extra life into Pokémon Emerald. With new ways to adventure through the game: alternate paths on existing routes, brand new areas with the same Hoenn feel, and newer Pokémon -never before seen in the region, including events for all new legendaries.
 
-## Getting Started
+These docs serve to provide information all the added features and changes. I am constantly expanding this site, so hopefully you will be able to find everything you need to know about Verdant Emerald here.
 
-Get started by **creating a new site**.
+Enjoy the hack! :)
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## Pokédex
 
-### What you'll need
+The Pokédex contains all information relevant to the Pokémon in the hack (contains all Pokémon from gen 1 - 8). Including:
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+- Stats
+- Encounter Location
+- Evolution Method
+- All balance and QoL changes included
 
-## Generate a new site
+## Trainers
 
-Generate a new Docusaurus site using the **classic template**.
+The Trainer glossary contains all information about the trainers across the region. Including:
 
-The classic template will automatically be added to your project after you run the command:
+- Party Pokémon
+- Encounter Location
+- Trainer Behaviour
+- Items (if any)
 
-```bash
-npm init docusaurus@latest pokdex-site classic
-```
+## Difficulty and Challenges
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+To find out more about the balance of Verdant Emerald and how to customise your adventure, visit the difficulty and challenges page to see your options. Including:
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+- Difficulty Philosophy
+- Experience Caps
+- Hardcore (Challenge Mode)
+- Randomiser options
 
-## Start your site
+## Gameplay Features
 
-Run the development server:
+To see details of all of all major gameplay features, visit the gameplay features page. Including:
 
-```bash
-cd pokedex-site
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+- Day/Night Cycle
+- Global Trade Service
+- ORAS DexNav
+- ORAS Key Item Wheel
+- Hidden Grottos
+- Nature Mints/Bottlecaps
+- and More...

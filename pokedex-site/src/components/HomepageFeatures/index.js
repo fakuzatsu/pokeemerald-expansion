@@ -4,32 +4,35 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Emerald Expanded',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Verdant Emerald is build on the [Pokeemerald-Expansion](https://github.com/rh-hideout/pokeemerald-expansion).
+        Featuring all Pokémon, Moves, Abilities, Items, and Battle Gimmicks from Generation 1 to 8 (Z-Moves, Megas, Terrains, etc.).
+        All have been distributed through the Hoenn region with great care taken to improve your playthrough.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'More Story, More Gameplay',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Verdant Emerald features plenty of new and expanded maps, providing new ways to explore the region.
+        Encounter familiar trainers throughout your journey and engage in exciting new events to unlock special Pokémon, Items, Features, etc.
+        Engage in quests to unlock your favourite legendaries, throughout and after the main story.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'QoL, QoL, QoL Galore',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Verdant Emerald has been absolutely packed with Quality of Life changes that let you engage in the content you care about, and skip anything you don't.
+        Change your gameplay experience entirely with Level Caps/Challenges/Randomisation.
+        See your EVs/IVs, Nature stat-changes, use the Move Tutor from the Party menu and way, way more.
       </>
     ),
   },

@@ -14,20 +14,17 @@ const config = {
   tagline: 'With extra Verdance~',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
+  // Production url of site.
   url: 'https://fakuzatsu.github.io',
   baseUrl: '/verdant-emerald/',
 
   // GitHub pages deployment config.
-  organizationName: 'fakuzatsu', // Usually your GitHub org/user name.
-  projectName: 'verdant-emerald', // Usually your repo name.
+  organizationName: 'fakuzatsu',
+  projectName: 'verdant-emerald',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -40,17 +37,9 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -65,7 +54,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Verdant Emerald',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -79,7 +68,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/fakuzatsu/verdant-emerald',
             label: 'GitHub',
             position: 'right',
           },
@@ -92,7 +81,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Index',
                 to: '/docs/intro',
               },
             ],
@@ -101,16 +90,12 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Verdant Emerald Discord',
+                href: 'https://fakuzatsu.github.io/verdant-emerald/',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'RHH Discord',
+                href: 'https://discord.gg/6CzjAG6GZk',
               },
             ],
           },
@@ -123,12 +108,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/fakuzatsu/verdant-emerald',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Fakuzatsu. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
