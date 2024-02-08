@@ -23,8 +23,13 @@ jobs:
           cache: 'npm'
           cache-dependency-path: pokedex-site/package-lock.json
 
-      - run: npm ci
-      - run: npm test
+      - name: Install dependencies
+        working-directory: pokedex-site
+        run: npm ci
+
+      - name: Build website
+        working-directory: pokedex-site
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
