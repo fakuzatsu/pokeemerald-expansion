@@ -275,13 +275,14 @@ LittlerootTown_BrendansHouse_2F_EventScript_Notebook::
 PlayersHouse_2F_EventScript_ItsYourNotebook::
 	message PlayersHouse_2F_Text_ItsYourNotebook
 	waitmessage
-	multichoice 18, 2, MULTI_RANDOMISER_OPTIONS, FALSE
+	multichoice 18, 0, MULTI_RANDOMISER_OPTIONS, FALSE
 	switch VAR_RESULT
 	case 0, PlayersHouse_2F_EventScript_ToggleWildRandom
 	case 1, PlayersHouse_2F_EventScript_ToggleAbilityRandom
-	case 2, PlayersHouse_2F_EventScript_SeeRandomiserSeed
-	case 3, PlayersHouse_2F_EventScript_SetRandomiserSeed
-	case 4, PlayersHouse_2F_EventScriptCancelGameCube
+	case 2, PlayersHouse_2F_EventScript_ToggleTrainerRandom
+	case 3, PlayersHouse_2F_EventScript_SeeRandomiserSeed
+	case 4, PlayersHouse_2F_EventScript_SetRandomiserSeed
+	case 5, PlayersHouse_2F_EventScriptCancelGameCube
 	case MULTI_B_PRESSED, PlayersHouse_2F_EventScriptCancelGameCube
 	end
 
@@ -318,6 +319,25 @@ PlayersHouse_2F_EventScript_ToggleAbilityRandomOn::
     setflag FLAG_SYS_ABILITY_RANDOMISER
     playse SE_PC_LOGIN
     message PlayersHouse_2F_Text_AbilitiesAreRandom
+    waitmessage
+    waitbuttonpress
+    goto PlayersHouse_2F_EventScript_ItsYourNotebook
+    end
+
+PlayersHouse_2F_EventScript_ToggleTrainerRandom::
+    goto_if_unset FLAG_SYS_TRAINER_RANDOMISER, PlayersHouse_2F_EventScript_ToggleTrainerRandomOn
+    clearflag FLAG_SYS_TRAINER_RANDOMISER
+    playse SE_PC_OFF
+    message PlayersHouse_2F_Text_TrainersAreReset
+    waitmessage
+    waitbuttonpress
+    goto PlayersHouse_2F_EventScript_ItsYourNotebook
+    end
+
+PlayersHouse_2F_EventScript_ToggleTrainerRandomOn::
+    setflag FLAG_SYS_TRAINER_RANDOMISER
+    playse SE_PC_LOGIN
+    message PlayersHouse_2F_Text_TrainersAreRandom
     waitmessage
     waitbuttonpress
     goto PlayersHouse_2F_EventScript_ItsYourNotebook
@@ -419,6 +439,13 @@ PlayersHouse_2F_Text_AbilitiesAreReset:
 
 PlayersHouse_2F_Text_AbilitiesAreRandom:
 	.string "Abilities have been randomised.$"
+
+PlayersHouse_2F_Text_TrainersAreReset:
+	.string "Trainers have been reset\n"
+	.string "back to normal.$"
+
+PlayersHouse_2F_Text_TrainersAreRandom:
+	.string "Trainers have been randomised.$"
 
 PlayersHouse_2F_Text_YourSeedIs:
 	.string "Your randomiser seed is:\n"

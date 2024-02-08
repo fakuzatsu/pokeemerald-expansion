@@ -3139,6 +3139,7 @@ extern const u8 gText_Shield[];
 // Randomisation:
 extern const u8 gText_Encounters[];
 extern const u8 gText_Abilities[];
+extern const u8 gText_Trainers[];
 extern const u8 gText_SeeSeed[];
 extern const u8 gText_SetSeed[];
 

@@ -1921,6 +1921,7 @@ const u8 gText_Sword[] = _("Sword");
 const u8 gText_Shield[] = _("Shield");
 const u8 gText_Encounters[] = _("{STR_VAR_1}Encounters");
 const u8 gText_Abilities[] = _("{STR_VAR_1}Abilities");
+const u8 gText_Trainers[] = _("{STR_VAR_1}Trainers");
 const u8 gText_SeeSeed[] = _("See Seed");
 const u8 gText_SetSeed[] = _("Set Seed");
 const u8 gText_ToggleRed[] = _("{COLOR RED}");

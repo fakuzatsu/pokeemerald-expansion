@@ -78,6 +78,12 @@ bool8 ScriptMenu_Multichoice(u8 left, u8 top, u8 multichoiceId, bool8 ignoreBPre
             else
             StringCopy(gStringVar1, gText_ToggleRed);
             StringExpandPlaceholders(gStringVar3, gText_Abilities);
+
+            if (FlagGet(FLAG_SYS_TRAINER_RANDOMISER))
+            StringCopy(gStringVar1, gText_ToggleGreen);
+            else
+            StringCopy(gStringVar1, gText_ToggleRed);
+            StringExpandPlaceholders(gStringVar4, gText_Trainers);
         }
         gSpecialVar_Result = 0xFF;
         DrawMultichoiceMenu(left, top, multichoiceId, ignoreBPress, 0);

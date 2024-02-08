@@ -576,6 +576,7 @@ static const struct MenuAction MultichoiceList_RandomiserOptions[] =
 {
     {gStringVar2},
     {gStringVar3},
+    {gStringVar4},
     {gText_SeeSeed},
     {gText_SetSeed},
     {gText_Exit},
