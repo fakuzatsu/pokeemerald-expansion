@@ -64,9 +64,9 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'Updates', position: 'left'},
           {
             href: 'https://github.com/fakuzatsu/verdant-emerald',
             label: 'GitHub',
@@ -82,6 +82,10 @@ const config = {
             items: [
               {
                 label: 'Index',
+                to: '/docs/intro',
+              },
+              {
+                label: 'Pokedex',
                 to: '/docs/intro',
               },
             ],
