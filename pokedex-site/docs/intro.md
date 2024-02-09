@@ -28,7 +28,7 @@ The Trainer glossary contains all information about the trainers across the regi
 - Trainer Behaviour
 - Items (if any)
 
-## Difficulty and Challenges
+## [Difficulty and Challenges](https://fakuzatsu.github.io/verdant-emerald/docs/difficulty)
 
 To find out more about the balance of Verdant Emerald and how to customise your adventure, visit the difficulty and challenges page to see your options. Including:
 

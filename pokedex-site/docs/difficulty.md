@@ -4,7 +4,7 @@
 
 All Pokémon have been balanced to bring up the preformance of weaker mons. Nerfs have been avoided as much as possible as not to change the aspects you like about your favourite Pokémon.
 
-The goal of all balance changes is to make all Pokémon fun to use in one way or another. Often by granting them tools they wouldn't have had prior. In terms of strength, both Smogon and the predicted landscape of Verdant Emerald were considered.
+The goal of all balance changes is to make all Pokémon fun to use in one way or another. Often by granting them tools they wouldn't have had prior. In terms of strength, both Smogon and the predicted landscape of Verdant Emerald were considered to try bring every Pokémon up to a reasonable balance.
 
 While some Pokémon may remain weak, they should present enough of a niche to be useable over alternatives if you want to do so, and all should function just fine in a casual playthrough.
 
@@ -15,11 +15,11 @@ The following aspects of Pokémon have been changed:
 - Learnsets
 - Types (sparingly)
 
-Pokémon have not been given new forms (such as Megas) or gimmicks (such as Items). Although existing ones have been balanced.
+Pokémon have not been given new forms (such as Megas) or gimmicks (such as Z-Moves). Although existing ones have been balanced.
 
 There are no custom Moves or Abilities added. All Move and Ability changes are selected from Vanilla Gen 1-8.
 
-:::notice
+:::warning
 
 A version of the patch without Pokémon balance changes is available on the releases page.
 
@@ -37,7 +37,7 @@ Significant trainers such as Gym leaders, Elite Four, your Rival, and Magma/Aqua
 
 All Trainer party changes are designed in a way they should make sense in the context of the new region.
 
-:::notice
+:::warning
 
 A version of the patch with Vanilla Trainer parties is available on the releases page.
 
@@ -61,7 +61,7 @@ Hard Level Caps act as an increased difficulty mode for people who like a challe
 
 Hard Level Caps do not have an Exp reduction curve. They go from 100% to 0% immediately.
 
-:::notice
+:::tip
 
 An Infinite Rare Candy can be aquired early in the game to skip grinding. Exp caps will prevent you from over levelling when using this Rare Candy, so go wild.
 
@@ -97,7 +97,7 @@ You can also view your Randomiser Seed in your Diary, as well as change the acti
 
 By doing so, you can use the same Seed as a friend to play with the same Random Encounters/Abilities/Trainers (if toggled on), or set challenges for a community with difficult seeds, etc.
 
-:::notice
+:::danger
 
 Setting a custom seed will invalidate a Challenge Mode run, preventing you from unlocking the special reward at the end of the game.
 
