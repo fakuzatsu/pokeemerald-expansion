@@ -6384,6 +6384,30 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_KahiliPostGame),
     },
 
+    [TRAINER_BRUNO] =
+    {
+        .trainerClass = TRAINER_CLASS_LEADER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BRUNO,
+        .trainerName = _("Bruno"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_MON_CHOICES,
+        .party = TRAINER_PARTY(sParty_Bruno),
+    },
+
+    [TRAINER_BRUNO_POSTGAME] =
+    {
+        .trainerClass = TRAINER_CLASS_LEADER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BRUNO,
+        .trainerName = _("Bruno"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_ACE_POKEMON,
+        .party = TRAINER_PARTY(sParty_BrunoPostGame),
+    },
+
     [TRAINER_BRENDAN_ROUTE_103_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,

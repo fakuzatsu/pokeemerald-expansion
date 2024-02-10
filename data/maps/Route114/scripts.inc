@@ -203,6 +203,80 @@ Route114_EventScript_Kai::
 	msgbox Route114_Text_KaiPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route114_EventScript_Bruno::
+	lock
+	goto_if_gt VAR_0x8005, 100, Route114_EventScript_GiveTemporaryStoredItem
+	goto_if_set FLAG_SYS_GAME_CLEAR, Route114_EventScript_BrunoPostGame
+	checkitem ITEM_TM60
+	goto_if_eq VAR_RESULT, TRUE, Route114_EventScript_BrunoAfterBattle
+	msgbox Route114_Text_BrunoIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route114_EventScript_RefuseBruno
+	trainerbattle_no_intro TRAINER_BRUNO, Route114_Text_BrunoDefeat
+Route114_EventScript_GiveDrainPunch::
+	msgbox Route114_Text_BrunoPostBattle, MSGBOX_DEFAULT
+	giveitem ITEM_TM60
+	msgbox Route114_Text_ThatTMContainsDrainPunch, MSGBOX_DEFAULT
+	release
+	end
+
+Route114_EventScript_BrunoAfterBattle::
+	msgbox Route114_Text_BrunoAfterBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route114_EventScript_RefuseBruno::
+	msgbox Route114_Text_RefuseBruno, MSGBOX_DEFAULT
+	release
+	end
+
+Route114_EventScript_BrunoPostGame::
+	goto_if_set FLAG_BRUNO_POSTGAME_BATTLE, Route114_EventScript_BrunoAfterBattle
+	msgbox Route114_Text_BrunoPostGame, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route114_EventScript_RefuseBrunoPostGame
+	trainerbattle_no_intro TRAINER_BRUNO_POSTGAME, Route114_Text_BrunoPostGameDefeat
+	setflag FLAG_BRUNO_POSTGAME_BATTLE
+	checkitem ITEM_TM60
+	goto_if_eq VAR_RESULT, FALSE, Route114_EventScript_GiveDrainPunch
+	msgbox Route114_Text_BrunoPostBattle, MSGBOX_DEFAULT
+	checkitem ITEM_FIGHTINIUM_Z
+	goto_if_eq VAR_RESULT, FALSE, Route114_EventScript_GiveFightiniumZ
+Route114_EventScript_GiveNugget::
+	giveitem ITEM_NUGGET
+	goto_if_eq VAR_RESULT, FALSE, Route114_EventScript_BagFullStoreNuggetTemp
+	msgbox Route114_Text_BrunoAfterBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route114_EventScript_BagFullStoreNuggetTemp::
+	msgbox Route114_Text_OhYourBagIsFull, MSGBOX_DEFAULT
+	setvar VAR_0x8005, ITEM_NUGGET
+	release
+	end
+
+Route114_EventScript_RefuseBrunoPostGame::
+	msgbox Route114_Text_RefuseBrunoPostGame, MSGBOX_DEFAULT
+	release
+	end
+
+Route114_EventScript_GiveFightiniumZ::
+	giveitem ITEM_FIGHTINIUM_Z
+	goto_if_eq VAR_RESULT, FALSE, Route114_EventScript_BagFullStoreFightiniumZTemp
+	msgbox Route114_Text_ThatsFightiniumZ, MSGBOX_DEFAULT
+	release
+	end
+
+Route114_EventScript_BagFullStoreFightiniumZTemp::
+	msgbox Route114_Text_OhYourBagIsFull, MSGBOX_DEFAULT
+	setvar VAR_0x8005, ITEM_FIGHTINIUM_Z
+	release
+	end
+
+Route114_EventScript_GiveTemporaryStoredItem::
+	msgbox Route114_Text_HereTakeThis, MSGBOX_DEFAULT
+	goto_if_eq VAR_0x8005, ITEM_PRETTY_FEATHER, Route114_EventScript_GiveNugget
+	goto_if_eq VAR_0x8005, ITEM_FLYINIUM_Z, Route114_EventScript_GiveFightiniumZ
+	end
+
 Route114_Text_AllMyMonDoesIsRoarTakeThis:
 	.string "All my Pokémon does is ROAR…\n"
 	.string "No one dares to come near me…\p"
@@ -227,3 +301,66 @@ Route114_Text_FossilManiacsHouseSign:
 Route114_Text_LanettesHouse:
 	.string "Lanette's HOUSE$"
 
+Route114_Text_BrunoIntro:
+	.string "I am Bruno. As one of the elites of\n"
+	.string "the Kanto and Johto regions, I must\l"
+	.string "always train rigorously.\p"
+	.string "Even when I travel to train my pupils,\n"
+	.string "I remain vigilant with my own training.\p"
+	.string "So what was it? Did you want to be\n"
+	.string "ground down by our superior power?$"
+
+Route114_Text_BrunoDefeat:
+	.string "Why?! …How could we lose?$"
+
+Route114_Text_BrunoPostBattle:
+	.string "Having lost, I have no right to say\n"
+	.string "anything more.\p"
+	.string "Take this.$"
+
+Route114_Text_ThatTMContainsDrainPunch:
+	.string "That TM contains the move Drain Punch.\p"
+	.string "A powerful hook that steals fortitude\n"
+	.string "from your opponent.$"
+
+Route114_Text_BrunoAfterBattle:
+	.string "Having lost, I have no right to say\n"
+	.string "anything more.$"
+
+Route114_Text_RefuseBruno:
+	.string "Through rigorous training, you too\n"
+	.string "can become stronger.\p"
+	.string "Come back when you think you have\n"
+	.string "reached your limit, and I will show\l"
+	.string "you how to go further.$"
+
+Route114_Text_BrunoPostGame:
+	.string "So you've come…\p"
+	.string "You who have defeated the Hoenn Elites\n"
+	.string "show me the depths of your power so\l"
+	.string "that we might both become stronger.$"
+
+Route114_Text_BrunoPostGameDefeat:
+	.string "… … …\p"
+	.string "…How could we lose?$"
+
+Route114_Text_RefuseBrunoPostGame:
+	.string "You must understand the real power of\n"
+	.string "the Indigo Elites!\p"
+	.string "…But you can't build yourself stronger\n"
+	.string "without first being ground down.\p"
+	.string "Come back when you are ready to learn\n"
+	.string "how that feels.$"
+
+Route114_Text_ThatsFightiniumZ:
+	.string "That stone you now hold…\p"
+	.string "With it, a Pokémon can unleash a killer\n"
+	.string "blow, likely to knock out its opponent.$"
+
+Route114_Text_OhYourBagIsFull:
+	.string "… … …\p"
+	.string "Seems you need to make some space\n"
+	.string "in your bag.$"
+
+Route114_Text_HereTakeThis:
+	.string "Here take this.$"

@@ -253,6 +253,7 @@
 #define OBJ_EVENT_GFX_HONEDGE                    249
 #define OBJ_EVENT_GFX_PAWNIARD                   250
 #define OBJ_EVENT_GFX_STONJOURNER                251
+#define OBJ_EVENT_GFX_BRUNO                      252
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
@@ -263,7 +264,7 @@
 // object graphics that can be removed. If more graphics are needed, anything that
 // stores graphics ids will need to be increased in size. See wiki entry below:
 // https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion
-#define NUM_OBJ_EVENT_GFX                        252
+#define NUM_OBJ_EVENT_GFX                        253
 
 
 // These are dynamic object gfx ids.
@@ -336,6 +337,7 @@
 #define OBJ_EVENT_PAL_TAG_PAWNIARD                0x112E
 #define OBJ_EVENT_PAL_TAG_STONJOURNER             0x112F
 #define OBJ_EVENT_PAL_TAG_FLANNERY                0x1130
+#define OBJ_EVENT_PAL_TAG_BRUNO                   0x1131
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #define SHADOW_SIZE_S   0

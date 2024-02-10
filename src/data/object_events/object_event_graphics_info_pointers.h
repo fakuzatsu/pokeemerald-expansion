@@ -500,6 +500,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_HONEDGE] =                  &gObjectEventGraphicsInfo_Honedge,
     [OBJ_EVENT_GFX_PAWNIARD] =                 &gObjectEventGraphicsInfo_Pawniard,
     [OBJ_EVENT_GFX_STONJOURNER] =              &gObjectEventGraphicsInfo_Stonjourner,
+    [OBJ_EVENT_GFX_BRUNO] =                    &gObjectEventGraphicsInfo_Bruno,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

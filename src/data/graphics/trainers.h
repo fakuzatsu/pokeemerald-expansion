@@ -214,6 +214,9 @@ const u32 gTrainerPalette_Wally[] = INCBIN_U32("graphics/trainers/palettes/wally
 const u32 gTrainerFrontPic_Kahili[] = INCBIN_U32("graphics/trainers/front_pics/kahili.4bpp.lz");
 const u32 gTrainerPalette_Kahili[] = INCBIN_U32("graphics/trainers/front_pics/kahili.gbapal.lz");
 
+const u32 gTrainerFrontPic_Bruno[] = INCBIN_U32("graphics/trainers/front_pics/bruno.4bpp.lz");
+const u32 gTrainerPalette_Bruno[] = INCBIN_U32("graphics/trainers/front_pics/bruno.gbapal.lz");
+
 const u32 gTrainerFrontPic_Brendan[] = INCBIN_U32("graphics/trainers/front_pics/brendan.4bpp.lz");
 const u32 gTrainerPalette_Brendan[] = INCBIN_U32("graphics/trainers/palettes/brendan.gbapal.lz");
 

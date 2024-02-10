@@ -58,6 +58,7 @@ DewfordTown_HolidayHome_EventScript_RefuseKahiliPostGame::
 
 DewfordTown_HolidayHome_EventScript_GiveFlyiniumZ::
 	giveitem ITEM_FLYINIUM_Z
+	goto_if_eq VAR_RESULT, FALSE, DewfordTown_HolidayHome_EventScript_BagFullStoreFlyiniumZTemp
 	msgbox DewfordTown_HolidayHome_Text_ThatsFlyiniumZ, MSGBOX_DEFAULT
 	release
 	end

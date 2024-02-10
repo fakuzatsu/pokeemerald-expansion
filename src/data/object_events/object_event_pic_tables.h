@@ -2189,6 +2189,18 @@ static const struct SpriteFrameImage sPicTable_Kahili[] = {
     overworld_frame(gObjectEventPic_Kahili, 2, 4, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_Bruno[] = {
+    overworld_frame(gObjectEventPic_Bruno, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Bruno, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Bruno, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Bruno, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Bruno, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Bruno, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Bruno, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Bruno, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Bruno, 2, 4, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_Articuno[] = {
     overworld_frame(gObjectEventPic_Articuno, 4, 4, 0),
     overworld_frame(gObjectEventPic_Articuno, 4, 4, 1),

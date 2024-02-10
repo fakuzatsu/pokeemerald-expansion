@@ -1594,9 +1594,9 @@
 // Daily Trainer flags. These are used for many post-game fights that
 // give good daily rewards.
 #define FLAG_KAHILI_POSTGAME_BATTLE                 (DAILY_FLAGS_START + 0x3B) // Custom Flag
-#define FLAG_UNUSED_0x95C                           (DAILY_FLAGS_START + 0x3C) // Unused Flag
-#define FLAG_UNUSED_0x95D                           (DAILY_FLAGS_START + 0x3D) // Unused Flag
-#define FLAG_UNUSED_0x95E                           (DAILY_FLAGS_START + 0x3E) // Unused Flag
+#define FLAG_BRUNO_POSTGAME_BATTLE                  (DAILY_FLAGS_START + 0x3C) // Custom Flag
+#define FLAG_VIOLA_POSTGAME_BATTLE                  (DAILY_FLAGS_START + 0x3D) // Custom Flag
+#define FLAG_COLRESS_POSTGAME_BATTLE                (DAILY_FLAGS_START + 0x3E) // Custom Flag
 #define FLAG_UNUSED_0x95F                           (DAILY_FLAGS_START + 0x3F) // Unused Flag
 #define FLAG_UNUSED_0x91C                           (DAILY_FLAGS_START + 0x40) // Unused Flag
 #define FLAG_UNUSED_0x91D                           (DAILY_FLAGS_START + 0x41) // Unused Flag
