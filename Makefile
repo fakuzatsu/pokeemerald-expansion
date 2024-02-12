@@ -70,7 +70,7 @@ else
   CPP := $(PREFIX)cpp
 endif
 
-ROM_NAME := verdant-emerald_agbcc.gba
+ROM_NAME := verdant-emerald-agbcc.gba
 ELF_NAME := $(ROM_NAME:.gba=.elf)
 MAP_NAME := $(ROM_NAME:.gba=.map)
 PATCH_NAME := $(ROM_NAME:.gba=.bps)
