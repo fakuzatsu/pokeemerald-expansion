@@ -70,14 +70,16 @@ else
   CPP := $(PREFIX)cpp
 endif
 
-ROM_NAME := pokeemerald_agbcc.gba
+ROM_NAME := verdant-emerald_agbcc.gba
 ELF_NAME := $(ROM_NAME:.gba=.elf)
 MAP_NAME := $(ROM_NAME:.gba=.map)
+PATCH_NAME := $(ROM_NAME:.gba=.bps)
 OBJ_DIR_NAME := build/emerald
 
-MODERN_ROM_NAME := pokeemerald.gba
+MODERN_ROM_NAME := verdant-emerald.gba
 MODERN_ELF_NAME := $(MODERN_ROM_NAME:.gba=.elf)
 MODERN_MAP_NAME := $(MODERN_ROM_NAME:.gba=.map)
+MODERN_PATCH_NAME := $(MODERN_ROM_NAME:.gba=.bps)
 MODERN_OBJ_DIR_NAME := build/modern
 
 SHELL := /bin/bash -o pipefail
@@ -187,7 +189,7 @@ MAKEFLAGS += --no-print-directory
 # Secondary expansion is required for dependency variables in object rules.
 .SECONDEXPANSION:
 
-.PHONY: all rom clean compare tidy tools check-tools mostlyclean clean-tools clean-check-tools $(TOOLDIRS) $(CHECKTOOLDIRS) libagbsyscall agbcc modern tidymodern tidynonmodern check
+.PHONY: all rom clean compare tidy tools check-tools mostlyclean clean-tools clean-check-tools $(TOOLDIRS) $(CHECKTOOLDIRS) libagbsyscall agbcc modern tidymodern tidynonmodern patch clean-emerald emerald check
 
 infoshell = $(foreach line, $(shell $1 | sed "s/ /__SPACE__/g"), $(info $(subst __SPACE__, ,$(line))))
 
@@ -195,7 +197,7 @@ infoshell = $(foreach line, $(shell $1 | sed "s/ /__SPACE__/g"), $(info $(subst 
 # Disable dependency scanning for clean/tidy/tools
 # Use a separate minimal makefile for speed
 # Since we don't need to reload most of this makefile
-ifeq (,$(filter-out all rom compare agbcc modern check libagbsyscall syms $(TESTELF),$(MAKECMDGOALS)))
+ifeq (,$(filter-out all rom compare agbcc modern check libagbsyscall syms emerald patch $(TESTELF),$(MAKECMDGOALS)))
 $(call infoshell, $(MAKE) -f make_tools.mk)
 else
 NODEP ?= 1
@@ -207,7 +209,7 @@ ifeq (,$(MAKECMDGOALS))
 else
   # clean, tidy, tools, check-tools, mostlyclean, clean-tools, clean-check-tools, $(TOOLDIRS), $(CHECKTOOLDIRS), tidymodern, tidynonmodern, tidycheck don't even build the ROM
   # libagbsyscall does its own thing
-  ifeq (,$(filter-out clean tidy tools mostlyclean clean-tools $(TOOLDIRS) clean-check-tools $(CHECKTOOLDIRS) tidymodern tidynonmodern tidycheck libagbsyscall,$(MAKECMDGOALS)))
+  ifeq (,$(filter-out clean tidy tools mostlyclean clean-tools $(TOOLDIRS) clean-check-tools $(CHECKTOOLDIRS) tidymodern tidynonmodern tidycheck libagbsyscall clean-emerald,$(MAKECMDGOALS)))
     SCAN_DEPS ?= 0
   else
     SCAN_DEPS ?= 1
@@ -276,13 +278,17 @@ endif
 # For contributors to make sure a change didn't affect the contents of the ROM.
 compare: all
 
-clean: mostlyclean clean-tools clean-check-tools
+clean: mostlyclean clean-tools clean-check-tools clean-emerald
 
 clean-tools:
 	@$(foreach tooldir,$(TOOLDIRS),$(MAKE) clean -C $(tooldir);)
 
 clean-check-tools:
 	@$(foreach tooldir,$(CHECKTOOLDIRS),$(MAKE) clean -C $(tooldir);)
+
+clean-emerald:
+	@$(MAKE) clean -C tools/pokeemerald
+	rm -f pokeemerald.gba
 
 mostlyclean: tidynonmodern tidymodern tidycheck
 	find sound -iname '*.bin' -exec rm {} +
@@ -293,6 +299,8 @@ mostlyclean: tidynonmodern tidymodern tidycheck
 	find $(DATA_ASM_SUBDIR)/maps \( -iname 'connections.inc' -o -iname 'events.inc' -o -iname 'header.inc' \) -exec rm {} +
 	rm -f $(AUTO_GEN_TARGETS)
 	@$(MAKE) clean -C libagbsyscall
+	rm -rf tools/flips/obj
+	rm -f tools/flips/flips
 
 tidy: tidynonmodern tidymodern tidycheck
 
@@ -307,6 +315,13 @@ tidymodern:
 tidycheck:
 	rm -f $(TESTELF) $(HEADLESSELF)
 	rm -rf $(TEST_OBJ_DIR_NAME)
+
+emerald: tools/pokeemerald/tools/agbcc
+	@$(MAKE) -C tools/pokeemerald
+	cp tools/pokeemerald/pokeemerald.gba ./
+
+tools/flips/flips:
+	cd tools/flips; ./make.sh
 
 ifneq ($(MODERN),0)
 $(C_BUILDDIR)/berry_crush.o: override CFLAGS += -Wno-address-of-packed-member
@@ -493,6 +508,13 @@ $(ROM): $(ELF)
 agbcc: all
 
 modern: all
+
+patch: all emerald tools/flips/flips
+ifeq ($(MODERN),0)
+	tools/flips/flips --manifest=patch.xml pokeemerald.gba $(ROM_NAME) $(PATCH_NAME)
+else
+	tools/flips/flips --manifest=patch.xml pokeemerald.gba $(MODERN_ROM_NAME) $(MODERN_PATCH_NAME)
+endif
 
 LD_SCRIPT_TEST := ld_script_test.ld
 
