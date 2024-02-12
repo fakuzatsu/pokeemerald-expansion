@@ -316,7 +316,7 @@ tidycheck:
 	rm -f $(TESTELF) $(HEADLESSELF)
 	rm -rf $(TEST_OBJ_DIR_NAME)
 
-emerald: tools/pokeemerald/tools/agbcc
+emerald:
 	@$(MAKE) -C tools/pokeemerald
 	cp tools/pokeemerald/pokeemerald.gba ./
 
