@@ -25,12 +25,6 @@ jobs:
         with:
           path: agbcc
           repository: pret/agbcc
-        
-      - name: Checkout poryscript
-        uses: actions/checkout@v2
-        with:
-          path: poryscript
-          repository: huderlem/poryscript
 
       - name: Install binutils
         run: |
@@ -49,7 +43,7 @@ jobs:
 
       - name: Patch
         env:
-          MODERN: 0
+          MODERN: 1
           COMPARE: 0
         run: make -j${nproc} patch
 
@@ -57,4 +51,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: verdant-emerald.bps
-          path: verdant-emerald-agbcc.bps
+          path: verdant-emerald.bps

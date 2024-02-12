@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -9,6 +10,22 @@ import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
+  const [latestReleaseUrl, setLatestReleaseUrl] = useState('');
+
+  useEffect(() => {
+    async function fetchLatestRelease() {
+      try {
+        const response = await fetch('https://api.github.com/repos/fakuzatsu/verdant-emerald/releases/latest');
+        const data = await response.json();
+        const downloadUrl = data.assets[0].browser_download_url; // Assuming you want to use the first asset's download URL
+        setLatestReleaseUrl(downloadUrl);
+      } catch (error) {
+        console.error('Error fetching latest release:', error);
+      }
+    }
+
+    fetchLatestRelease();
+  }, []);
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -17,11 +34,13 @@ function HomepageHeader() {
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
-          <Link
+          <a
             className="button button--secondary button--lg"
-            to="/docs/intro">
+            href={latestReleaseUrl}
+            target="_blank"
+            rel="noopener noreferrer">
             Download Patch
-          </Link>
+          </a>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
