@@ -318,7 +318,7 @@ tidycheck:
 
 emerald:
 	@$(MAKE) -C tools/pokeemerald
-	cp tools/pokeemerald/pokeemerald.gba ./
+	cp tools/pokeemerald/pokeemerald_modern.gba ./
 
 tools/flips/flips:
 	cd tools/flips; ./make.sh
