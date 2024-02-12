@@ -513,7 +513,7 @@ patch: all emerald tools/flips/flips
 ifeq ($(MODERN),0)
 	tools/flips/flips --manifest=patch.xml pokeemerald.gba $(ROM_NAME) $(PATCH_NAME)
 else
-	tools/flips/flips --manifest=patch.xml pokeemerald.gba $(MODERN_ROM_NAME) $(MODERN_PATCH_NAME)
+	tools/flips/flips --manifest=patch.xml pokeemerald_modern.gba $(MODERN_ROM_NAME) $(MODERN_PATCH_NAME)
 endif
 
 LD_SCRIPT_TEST := ld_script_test.ld
