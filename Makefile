@@ -70,7 +70,7 @@ else
   CPP := $(PREFIX)cpp
 endif
 
-ROM_NAME := verdant-emerald_agbcc.gba
+ROM_NAME := verdant-emerald-agbcc.gba
 ELF_NAME := $(ROM_NAME:.gba=.elf)
 MAP_NAME := $(ROM_NAME:.gba=.map)
 PATCH_NAME := $(ROM_NAME:.gba=.bps)
@@ -318,7 +318,7 @@ tidycheck:
 
 emerald:
 	@$(MAKE) -C tools/pokeemerald
-	cp tools/pokeemerald/pokeemerald.gba ./
+	cp tools/pokeemerald/pokeemerald_modern.gba ./
 
 tools/flips/flips:
 	cd tools/flips; ./make.sh
@@ -513,7 +513,7 @@ patch: all emerald tools/flips/flips
 ifeq ($(MODERN),0)
 	tools/flips/flips --manifest=patch.xml pokeemerald.gba $(ROM_NAME) $(PATCH_NAME)
 else
-	tools/flips/flips --manifest=patch.xml pokeemerald.gba $(MODERN_ROM_NAME) $(MODERN_PATCH_NAME)
+	tools/flips/flips --manifest=patch.xml pokeemerald_modern.gba $(MODERN_ROM_NAME) $(MODERN_PATCH_NAME)
 endif
 
 LD_SCRIPT_TEST := ld_script_test.ld
