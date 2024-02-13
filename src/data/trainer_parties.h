@@ -9573,6 +9573,78 @@ static const struct TrainerMon sParty_BrunoPostGame[] = {
     }
 };
 
+static const struct TrainerMon sParty_PhoebeMtPyre[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+    .lvl = 58,
+    .species = SPECIES_SABLEYE,
+    .heldItem = ITEM_NONE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+    .lvl = 58,
+    .species = SPECIES_BANETTE,
+    .heldItem = ITEM_NONE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+    .lvl = 59,
+    .species = SPECIES_ZOROARK_HISUIAN,
+    .heldItem = ITEM_NONE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+    .lvl = 59,
+    .species = SPECIES_SHEDINJA,
+    .heldItem = ITEM_NONE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
+    .lvl = 60,
+    .species = SPECIES_DUSCLOPS,
+    .heldItem = ITEM_NONE,
+    }
+};
+
+static const struct TrainerMon sParty_PhoebesGrandma[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_BANETTE,
+    .heldItem = ITEM_NONE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 74,
+    .species = SPECIES_ZOROARK_HISUIAN,
+    .heldItem = ITEM_NONE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_SHEDINJA,
+    .heldItem = ITEM_NONE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 75,
+    .species = SPECIES_CHANDELURE,
+    .heldItem = ITEM_NONE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 76,
+    .species = SPECIES_DUSCLOPS,
+    .heldItem = ITEM_EVIOLITE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 76,
+    .species = SPECIES_SPIRITOMB,
+    .heldItem = ITEM_NONE,
+    }
+};
+
 static const struct TrainerMon sParty_BrendanRoute103Mudkip[] = {
     {
     .lvl = 5,

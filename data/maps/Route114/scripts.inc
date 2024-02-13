@@ -273,8 +273,8 @@ Route114_EventScript_BagFullStoreFightiniumZTemp::
 
 Route114_EventScript_GiveTemporaryStoredItem::
 	msgbox Route114_Text_HereTakeThis, MSGBOX_DEFAULT
-	goto_if_eq VAR_0x8005, ITEM_PRETTY_FEATHER, Route114_EventScript_GiveNugget
-	goto_if_eq VAR_0x8005, ITEM_FLYINIUM_Z, Route114_EventScript_GiveFightiniumZ
+	goto_if_eq VAR_0x8005, ITEM_NUGGET, Route114_EventScript_GiveNugget
+	goto_if_eq VAR_0x8005, ITEM_FIGHTINIUM_Z, Route114_EventScript_GiveFightiniumZ
 	end
 
 Route114_Text_AllMyMonDoesIsRoarTakeThis:

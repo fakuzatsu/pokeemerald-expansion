@@ -1597,7 +1597,7 @@
 #define FLAG_BRUNO_POSTGAME_BATTLE                  (DAILY_FLAGS_START + 0x3C) // Custom Flag
 #define FLAG_VIOLA_POSTGAME_BATTLE                  (DAILY_FLAGS_START + 0x3D) // Custom Flag
 #define FLAG_COLRESS_POSTGAME_BATTLE                (DAILY_FLAGS_START + 0x3E) // Custom Flag
-#define FLAG_UNUSED_0x95F                           (DAILY_FLAGS_START + 0x3F) // Unused Flag
+#define FLAG_PHOEBES_GRANDMA_BATTLE                 (DAILY_FLAGS_START + 0x3F) // Custom Flag
 #define FLAG_UNUSED_0x91C                           (DAILY_FLAGS_START + 0x40) // Unused Flag
 #define FLAG_UNUSED_0x91D                           (DAILY_FLAGS_START + 0x41) // Unused Flag
 #define FLAG_UNUSED_0x91E                           (DAILY_FLAGS_START + 0x42) // Unused Flag
@@ -1624,5 +1624,8 @@
 #define FLAG_TEMP_REGICE_PUZZLE_STARTED             FLAG_TEMP_2
 #define FLAG_TEMP_REGICE_PUZZLE_FAILED              FLAG_TEMP_3
 #define FLAG_TEMP_HIDE_MIRAGE_ISLAND_BERRY_TREE     FLAG_TEMP_11
+
+// Dual-use flag
+#define FLAG_HIDE_PHOEBES_GRANDMA                   FLAG_DAILY_ROUTE_111_RECEIVED_BERRY
 
 #endif // GUARD_CONSTANTS_FLAGS_H

@@ -6362,7 +6362,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_KAHILI] =
     {
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_KAHILI,
         .trainerName = _("Kahili"),
@@ -6374,7 +6374,7 @@ const struct Trainer gTrainers[] = {
     
     [TRAINER_KAHILI_POSTGAME] =
     {
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_KAHILI,
         .trainerName = _("Kahili"),
@@ -6386,7 +6386,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_BRUNO] =
     {
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_BRUNO,
         .trainerName = _("Bruno"),
@@ -6398,7 +6398,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_BRUNO_POSTGAME] =
     {
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_BRUNO,
         .trainerName = _("Bruno"),
@@ -6406,6 +6406,30 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_ACE_POKEMON,
         .party = TRAINER_PARTY(sParty_BrunoPostGame),
+    },
+
+    [TRAINER_PHOEBE_MT_PYRE] = 
+    {
+        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_ELITE_FOUR_PHOEBE,
+        .trainerName = _("Phoebe"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_MON_CHOICES,
+        .party = TRAINER_PARTY(sParty_PhoebeMtPyre),
+    },
+
+    [TRAINER_PHOEBES_GRANDMA] = 
+    {
+        .trainerClass = TRAINER_CLASS_EXPERT,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_EXPERT_F,
+        .trainerName = _("Grandma"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_ACE_POKEMON,
+        .party = TRAINER_PARTY(sParty_PhoebesGrandma),
     },
 
     [TRAINER_BRENDAN_ROUTE_103_MUDKIP] =

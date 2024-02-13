@@ -877,11 +877,13 @@
 #define TRAINER_WALLACE_REMATCH             873
 #define TRAINER_BRUNO                       874
 #define TRAINER_BRUNO_POSTGAME              875
+#define TRAINER_PHOEBE_MT_PYRE              876
+#define TRAINER_PHOEBES_GRANDMA             877
 
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      876
+#define TRAINERS_COUNT                      878
 #define MAX_TRAINERS_COUNT                  912
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H
