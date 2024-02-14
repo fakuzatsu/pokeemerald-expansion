@@ -58,8 +58,8 @@ MtPyre_6F_EventScript_Phoebe::
 	goto_if_eq VAR_RESULT, NO, MtPyre_6F_EventScript_RefusePhoebe
 	trainerbattle_no_intro TRAINER_PHOEBE_MT_PYRE, MtPyre_6F_Text_PhoebeDefeat
 	msgbox MtPyre_6F_Text_PhoebePostBattle, MSGBOX_DEFAULT
-	giveitem ITEM_TM60
-	msgbox MtPyre_6F_Text_ThatTMContainsDrainPunch, MSGBOX_DEFAULT
+	giveitem ITEM_TM76
+	msgbox MtPyre_6F_Text_ThatTMContainsHex, MSGBOX_DEFAULT
 	release
 	end
 
@@ -125,20 +125,85 @@ MtPyre_6F_EventScript_GiveTemporaryStoredItem::
 	end
 
 MtPyre_6F_Text_PhoebeIntro:
+	.string "Hey there! I'm Phoebe!\p"
+	.string "As Elite Four, I have a duty to\n"
+	.string "protect people…"
+	.string "That's why I usually train here to\n"
+	.string "become stronger.\p"
+	.string "Today I had just planned to come\n"
+	.string "see my grandma here.\p"
+	.string "Though…\p"
+	.string "A small battle couldn't hurt. So\n"
+	.string "how about it?$"
+
 MtPyre_6F_Text_PhoebeDefeat:
+	.string "Woah! How unexpected.$"
+
 MtPyre_6F_Text_PhoebePostBattle:
-MtPyre_6F_Text_ThatTMContainsDrainPunch:
+	.string "Ehehehe, this makes me so happy.\p"
+	.string "Looks like I have a new training\n"
+	.string "partner now.\p"
+	.string "Here, you should have this!$"
+
+MtPyre_6F_Text_ThatTMContainsHex:
+	.string "That TM contains Hex.\p"
+	.string "It's a ghostly move that deals\n"
+	.string "extra damage if the opponent is\l"
+	.string "suffering from a status effect.\p"
+	.string "See you again at the Pokémon\n"
+	.string "League, ok?$"
+
 MtPyre_6F_Text_RefusePhoebe:
+	.string "Well… see you again sometime!$"
+
 MtPyre_6F_Text_PhoebesGrandmaPreOrb:
+	.string "That commotion I sense on the peak\n"
+	.string "above us…\p"
+	.string "If I were still in my prime…\p"
+	.string "Well, I'd have struck down those\n"
+	.string "villains myself.\p"
+	.string "…All I can right now is await my\n"
+	.string "grandaughter…$"
+
 MtPyre_6F_Text_PhoebesGrandmaIntro:
+	.string "After that commotion on the peak\n"
+	.string "I began to train again.\p"
+	.string "I cannot allow villainy to occur\n"
+	.string "here in this place of rest.\p"
+	.string "As such, would you care for a\n"
+	.string "battle young one?$"
+
 MtPyre_6F_Text_PhoebesGrandmaDefeat:
+	.string "Such incredible power!$"
+
 MtPyre_6F_Text_PhoebesGrandmaPostBattle:
+	.string "So long as there are trainers like\n"
+	.string "you and my grandaughter, I know that\l"
+	.string "good will always triumph.\p"
+	.string "Please, take this for easing an old\n"
+	.string "woman's heart.$"
+
 MtPyre_6F_Text_PhoebesGrandmaAfterBattle:
-MtPyre_6F_Text_OhYourBagIsFull:
+	.string "Please come visit again sometime.$"
+
 MtPyre_6F_Text_RefusePhoebesGrandma:
+	.string "So be it.$"
+
+MtPyre_6F_Text_OhYourBagIsFull:
+	.string "Oh? Seems your bag is full.\p"
+	.string "I'll hold onto this for you\n"
+	.string "for now.$"
+
 MtPyre_6F_Text_ThatsGhostiumZ:
+	.string "That crystal came with my from a\n"
+	.string "faraway land.\p"
+	.string "It unlocks a special technique within\n"
+	.string "ghost Pokémon that has aided me well.\p"
+	.string "Fighting you though, I get a feeling\n"
+	.string "I don't need it any longer.$"
+
 MtPyre_6F_Text_HereTakeThis:
-	.string "Placeholder.$"
+	.string "Here, take this.$"
 
 MtPyre_6F_Text_ValerieIntro:
 	.string "When I'm here…\n"
