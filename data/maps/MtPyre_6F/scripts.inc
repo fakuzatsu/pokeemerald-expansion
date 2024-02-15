@@ -60,6 +60,12 @@ MtPyre_6F_EventScript_Phoebe::
 	msgbox MtPyre_6F_Text_PhoebePostBattle, MSGBOX_DEFAULT
 	giveitem ITEM_TM76
 	msgbox MtPyre_6F_Text_ThatTMContainsHex, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	delay 24
+	removeobject VAR_LAST_TALKED
+	playse SE_DOOR
+	delay 8
+	fadescreen FADE_FROM_BLACK
 	release
 	end
 

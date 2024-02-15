@@ -82,8 +82,8 @@ VerdanturfTown_EventScript_WandasHouseSign::
 	msgbox VerdanturfTown_Text_WandasHouse, MSGBOX_SIGN
 	end
 
-VerdanturfTown_EventScript_BattleTentSign::
-	msgbox VerdanturfTown_Text_BattleTentSign, MSGBOX_SIGN
+VerdanturfTown_EventScript_ContestHallSign::
+	msgbox VerdanturfTown_Text_ContestHallSign, MSGBOX_SIGN
 	end
 
 VerdanturfTown_EventScript_RusturfTunnelSign::
@@ -142,9 +142,9 @@ VerdanturfTown_Text_TownSign:
 VerdanturfTown_Text_WandasHouse:
 	.string "WANDA's HOUSE$"
 
-VerdanturfTown_Text_BattleTentSign:
-	.string "Battle TENT VERDANTURF SITE\n"
-	.string "“Feast Your Eyes on Battles!”$"
+VerdanturfTown_Text_ContestHallSign:
+	.string "Pokémon Contest Hall\n"
+	.string "“The gathering place for TRAINERS!”$"
 
 VerdanturfTown_Text_RusturfTunnelSign:
 	.string "RUSTURF TUNNEL\n"

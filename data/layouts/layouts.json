@@ -1044,7 +1044,7 @@
     {
       "id": "LAYOUT_LILYCOVE_CITY_CONTEST_LOBBY",
       "name": "LilycoveCity_ContestLobby_Layout",
-      "width": 31,
+      "width": 27,
       "height": 12,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Contest",
@@ -3834,10 +3834,10 @@
     {
       "id": "LAYOUT_BATTLE_TENT_LOBBY",
       "name": "BattleTentLobby_Layout",
-      "width": 13,
+      "width": 18,
       "height": 10,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_BattleTent",
+      "secondary_tileset": "gTileset_Contest",
       "border_filepath": "data/layouts/BattleTentLobby/border.bin",
       "blockdata_filepath": "data/layouts/BattleTentLobby/map.bin"
     },
