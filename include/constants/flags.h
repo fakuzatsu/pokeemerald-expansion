@@ -492,7 +492,7 @@
 #define FLAG_CAUGHT_LATIAS_OR_LATIOS                0x1C9
 #define FLAG_CAUGHT_MEW                             0x1CA
 #define FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE  0x1CB
-#define FLAG_MET_SCOTT_IN_VERDANTURF                0x1CC // Unused Now
+#define FLAG_CONTEST_IS_VERDANTURF                  0x1CC // Custom Flag
 #define FLAG_MET_SCOTT_IN_FALLARBOR                 0x1CD
 #define FLAG_MET_SCOTT_IN_LILYCOVE                  0x1CE
 #define FLAG_MET_SCOTT_IN_EVERGRANDE                0x1CF

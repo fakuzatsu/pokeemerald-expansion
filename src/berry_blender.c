@@ -73,7 +73,8 @@ enum {
     BLENDER_LASSIE,
     BLENDER_MASTER,
     BLENDER_DUDE,
-    BLENDER_MISS
+    BLENDER_MISS,
+    BLENDER_LADY
 };
 
 #define BLENDER_MAX_PLAYERS MAX_LINK_PLAYERS
@@ -271,6 +272,7 @@ static const u8 sText_Lassie[] = _("LASSIE");
 static const u8 sText_Master[] = _("Master");
 static const u8 sText_Dude[] = _("DUDE");
 static const u8 sText_Miss[] = _("MISS");
+static const u8 sText_Lady[] = _("LADY");
 
 static const u8 *const sBlenderOpponentsNames[] =
 {
@@ -279,7 +281,8 @@ static const u8 *const sBlenderOpponentsNames[] =
     [BLENDER_LASSIE] = sText_Lassie,
     [BLENDER_MASTER] = sText_Master,
     [BLENDER_DUDE]   = sText_Dude,
-    [BLENDER_MISS]   = sText_Miss
+    [BLENDER_MISS]   = sText_Miss,
+    [BLENDER_LADY]   = sText_Lady
 };
 
 static const u8 sText_PressAToStart[] = _("Press the A Button to start.");
@@ -1233,7 +1236,9 @@ static void InitLocalPlayers(u8 opponentsNum)
         sBerryBlender->numPlayers = 2;
         StringCopy(gLinkPlayers[0].name, gSaveBlock2Ptr->playerName);
 
-        if (!FlagGet(FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER))
+        if (FlagGet(FLAG_CONTEST_IS_VERDANTURF))
+            StringCopy(gLinkPlayers[1].name, sBlenderOpponentsNames[BLENDER_LADY]);
+        else if (!FlagGet(FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER))
             StringCopy(gLinkPlayers[1].name, sBlenderOpponentsNames[BLENDER_MASTER]);
         else
             StringCopy(gLinkPlayers[1].name, sBlenderOpponentsNames[BLENDER_MISTER]);

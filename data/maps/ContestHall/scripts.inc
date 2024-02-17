@@ -410,27 +410,42 @@ ContestHall_EventScript_SetExitWarp::
 	return
 
 ContestHall_EventScript_SetExitWarpNormalContest::
-	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 14, 4
+	goto_if_set FLAG_CONTEST_IS_VERDANTURF, ContestHall_EventScript_SetExitWarpVerdanturf
+	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 12, 4
 	waitstate
 	end
 
 ContestHall_EventScript_SetExitWarpSuperContest::
-	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 14, 4
+	goto_if_set FLAG_CONTEST_IS_VERDANTURF, ContestHall_EventScript_SetExitWarpVerdanturf
+	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 12, 4
 	waitstate
 	end
 
 ContestHall_EventScript_SetExitWarpHyperContest::
-	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 14, 4
+	goto_if_set FLAG_CONTEST_IS_VERDANTURF, ContestHall_EventScript_SetExitWarpVerdanturf
+	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 12, 4
 	waitstate
 	end
 
 ContestHall_EventScript_SetExitWarpMasterContest::
-	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 14, 4
+	goto_if_set FLAG_CONTEST_IS_VERDANTURF, ContestHall_EventScript_SetExitWarpVerdanturf
+	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 12, 4
 	waitstate
 	end
 
 ContestHall_EventScript_SetExitWarpLinkContest::
-	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 15, 4
+	goto_if_set FLAG_CONTEST_IS_VERDANTURF, ContestHall_EventScript_SetExitWarpVerdanturfLink
+	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 13, 4
+	waitstate
+	end
+
+ContestHall_EventScript_SetExitWarpVerdanturf::
+	warp MAP_VERDANTURF_TOWN_BATTLE_TENT_LOBBY, 7, 4
+	waitstate
+	end
+
+ContestHall_EventScript_SetExitWarpVerdanturfLink::
+	warp MAP_VERDANTURF_TOWN_BATTLE_TENT_LOBBY, 8, 4
 	waitstate
 	end
 

@@ -171,7 +171,8 @@
     "VerdanturfTown_WandasHouse",
     "VerdanturfTown_FriendshipRatersHouse",
     "VerdanturfTown_House",
-    "VerdanturfTown_PokemonCenter_B1F"
+    "VerdanturfTown_PokemonCenter_B1F",
+    "VerdanturfTown_ContestHall"
   ],
   "gMapGroup_IndoorPacifidlog": [
     "PacifidlogTown_PokemonCenter_1F",

@@ -142,6 +142,7 @@
 #define MAP_VERDANTURF_TOWN_FRIENDSHIP_RATERS_HOUSE (7 | (6 << 8))
 #define MAP_VERDANTURF_TOWN_HOUSE                   (8 | (6 << 8))
 #define MAP_VERDANTURF_TOWN_POKEMON_CENTER_B1F      (9 | (6 << 8))
+#define MAP_VERDANTURF_TOWN_CONTEST_HALL            (10 | (6 << 8))
 
 // gMapGroup_IndoorPacifidlog
 #define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F  (0 | (7 << 8))

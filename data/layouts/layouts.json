@@ -4920,6 +4920,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/FieryChasm_HeatranRoom/border.bin",
       "blockdata_filepath": "data/layouts/FieryChasm_HeatranRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_VERDANTURF_TOWN_CONTEST_HALL",
+      "name": "VerdanturfTown_ContestHall_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Contest",
+      "border_filepath": "data/layouts/VerdanturfTown_ContestHall/border.bin",
+      "blockdata_filepath": "data/layouts/VerdanturfTown_ContestHall/map.bin"
     }
   ]
 }

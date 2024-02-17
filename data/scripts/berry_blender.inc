@@ -1,6 +1,7 @@
 @ Note: local IDs shared with scripts.inc for LilycoveCity_ContestLobby
 .set LOCALID_MAN, 3
 .set LOCALID_BOY, 9
+.set LOCALID_LADY, 3
 .set LOCALID_TWIN, 10
 .set LOCALID_POKEFAN_F, 15
 .set LOCALID_EXPERT_M, 16
@@ -12,12 +13,20 @@ BerryBlender_Text_WantToMakePokeblocks:
 	.string "Oh? Did you want to make some {POKEBLOCK}S\n"
 	.string "with this old-timer?$"
 
+BerryBlender_Text_OhYouWantToMakePokeblocks:
+	.string "Oh? You want to make {POKEBLOCK}S\n"
+	.string "together?$"
+
 BerryBlender_Text_Excellent:
 	.string "Excellent!$"
 
 BerryBlender_Text_MadeOldTimerSad:
 	.string "Oh…\n"
 	.string "You've made this old-timer sad…$"
+
+BerryBlender_Text_OhThatsAShame:
+	.string "Oh… uh…\n"
+	.string "That's a shame…$"
 
 BerryBlender_Text_KnowHowToMakePokeblocks:
 	.string "Do you know how to make a {POKEBLOCK}?$"
@@ -253,8 +262,23 @@ BerryBlender_EventScript_BerryBlender1::
 	goto BerryBlender_EventScript_DeclineBlender1
 	end
 
+BerryBlender_EventScript_BerryBlenderVerdanturf::
+	lockall
+	setvar NUM_OPPONENTS, 1
+	applymovement LOCALID_LADY, BerryBlender_Movement_BlendLeaderWalkInPlace
+	waitmovement 0
+	msgbox BerryBlender_Text_OhYouWantToMakePokeblocks, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, BerryBlender_EventScript_TryUseBerryBlender1
+	goto BerryBlender_EventScript_DeclineBlenderVerdanturf
+	end
+
 BerryBlender_EventScript_DeclineBlender1:
 	msgbox BerryBlender_Text_MadeOldTimerSad, MSGBOX_DEFAULT
+	releaseall
+	end
+
+BerryBlender_EventScript_DeclineBlenderVerdanturf:
+	msgbox BerryBlender_Text_OhThatsAShame, MSGBOX_DEFAULT
 	releaseall
 	end
 

@@ -1255,3 +1255,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/VerdantIsle_VictiniRoom/scripts.inc"
 
 	.include "data/maps/FieryChasm_HeatranRoom/scripts.inc"
+
+	.include "data/maps/VerdanturfTown_ContestHall/scripts.inc"

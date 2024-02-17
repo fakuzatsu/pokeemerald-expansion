@@ -112,6 +112,7 @@ LilycoveCity_ContestLobby_EventScript_ChooseContestMon::
 	end
 
 LilycoveCity_ContestLobby_EventScript_ChooseContestRank::
+	goto_if_set FLAG_CONTEST_IS_VERDANTURF, VerdanturfTown_ContestLobby_EventScript_ChooseContestRank
 	message LilycoveCity_ContestLobby_Text_EnterWhichRank
 	waitmessage
 	multichoice 0, 0, MULTI_CONTEST_RANK, FALSE
@@ -121,6 +122,17 @@ LilycoveCity_ContestLobby_EventScript_ChooseContestRank::
 	case 2, LilycoveCity_ContestLobby_EventScript_EnterHyperRank
 	case 3, LilycoveCity_ContestLobby_EventScript_EnterMasterRank
 	case 4, LilycoveCity_ContestLobby_EventScript_CancelEnterContest
+	case MULTI_B_PRESSED, LilycoveCity_ContestLobby_EventScript_CancelEnterContest
+	end
+
+VerdanturfTown_ContestLobby_EventScript_ChooseContestRank::
+	message LilycoveCity_ContestLobby_Text_EnterWhichRank
+	waitmessage
+	multichoice 0, 0, MULTI_CONTEST_RANK_LESS, FALSE
+	switch VAR_RESULT
+	case 0, LilycoveCity_ContestLobby_EventScript_EnterNormalRank
+	case 1, LilycoveCity_ContestLobby_EventScript_EnterSuperRank
+	case 2, LilycoveCity_ContestLobby_EventScript_CancelEnterContest
 	case MULTI_B_PRESSED, LilycoveCity_ContestLobby_EventScript_CancelEnterContest
 	end
 

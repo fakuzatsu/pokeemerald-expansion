@@ -12,9 +12,14 @@ LilycoveCity_ContestLobby_MapScripts::
 @ Some scripts for this room are split into data/scripts/contest_hall and data/scripts/berry_blender
 
 LilycoveCity_ContestLobby_OnTransition:
+	call LilycoveCity_ContestLobby_EventScript_SetContestAsLilycove
 	call LilycoveCity_ContestLobby_EventScript_TryShowContestReporter
 	call LilycoveCity_ContestLobby_EventScript_TryShowBlendMaster
 	end
+
+LilycoveCity_ContestLobby_EventScript_SetContestAsLilycove::
+	clearflag FLAG_CONTEST_IS_VERDANTURF
+	return
 
 LilycoveCity_ContestLobby_EventScript_TryShowBlendMaster::
 	getpokenewsactive POKENEWS_BLENDMASTER
@@ -408,14 +413,14 @@ LilycoveCity_ContestLobby_EventScript_LeadToContestHall::
 	applymovement LOCALID_RECEPTIONIST, LilycoveCity_ContestLobby_Movement_ReceptionistApproachCounter
 	waitmovement 0
 	playse SE_BRIDGE_WALK
-	setmetatile 12, 2, METATILE_Contest_WallShadow, TRUE
-	setmetatile 12, 3, METATILE_Contest_FloorShadow, TRUE
+	call_if_unset FLAG_CONTEST_IS_VERDANTURF, LilycoveCity_ContestLobby_EventScript_DoShadows
+	call_if_set FLAG_CONTEST_IS_VERDANTURF, VerdanturfTown_ContestLobby_EventScript_DoShadows
 	special DrawWholeMapView
 	applymovement LOCALID_RECEPTIONIST, LilycoveCity_ContestLobby_Movement_ReceptionistExitCounter
 	waitmovement 0
 	playse SE_BRIDGE_WALK
-	setmetatile 12, 2, METATILE_Contest_CounterFlap_Top, TRUE
-	setmetatile 12, 3, METATILE_Contest_CounterFlap_Bottom, TRUE
+	call_if_unset FLAG_CONTEST_IS_VERDANTURF, LilycoveCity_ContestLobby_EventScript_DoCounter
+	call_if_set FLAG_CONTEST_IS_VERDANTURF, VerdanturfTown_ContestLobby_EventScript_DoCounter
 	special DrawWholeMapView
 	delay 20
 	applymovement LOCALID_RECEPTIONIST, LilycoveCity_ContestLobby_Movement_ReceptionistFacePlayer
@@ -428,6 +433,26 @@ LilycoveCity_ContestLobby_EventScript_LeadToContestHall::
 	applymovement OBJ_EVENT_ID_PLAYER, LilycoveCity_ContestLobby_Movement_PlayerWalkToContestHall
 	waitmovement 0
 	releaseall
+	return
+
+LilycoveCity_ContestLobby_EventScript_DoShadows::
+	setmetatile 10, 2, METATILE_Contest_WallShadow, TRUE
+	setmetatile 10, 3, METATILE_Contest_FloorShadow, TRUE
+	return
+
+VerdanturfTown_ContestLobby_EventScript_DoShadows::
+	setmetatile 5, 2, METATILE_Contest_WallShadow, TRUE
+	setmetatile 5, 3, METATILE_Contest_FloorShadow, TRUE
+	return
+
+LilycoveCity_ContestLobby_EventScript_DoCounter::
+	setmetatile 10, 2, METATILE_Contest_CounterFlap_Top, TRUE
+	setmetatile 10, 3, METATILE_Contest_CounterFlap_Bottom, TRUE
+	return
+
+VerdanturfTown_ContestLobby_EventScript_DoCounter::
+	setmetatile 5, 2, METATILE_Contest_CounterFlap_Top, TRUE
+	setmetatile 5, 3, METATILE_Contest_CounterFlap_Bottom, TRUE
 	return
 
 LilycoveCity_ContestLobby_Movement_PlayerWalkToContestHall:
@@ -899,14 +924,14 @@ LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall::
 	applymovement LOCALID_LINK_RECEPTIONIST, LilycoveCity_ContestLobby_Movement_LinkReceptionistApproachCounter
 	waitmovement 0
 	playse SE_BRIDGE_WALK
-	setmetatile 17, 2, METATILE_Contest_WallShadow, TRUE
-	setmetatile 17, 3, METATILE_Contest_FloorShadow, TRUE
+	call_if_unset FLAG_CONTEST_IS_VERDANTURF, LilycoveCity_ContestLobby_EventScript_DoLinkShadows
+	call_if_set FLAG_CONTEST_IS_VERDANTURF, VerdanturfTown_ContestLobby_EventScript_DoLinkShadows
 	special DrawWholeMapView
 	applymovement LOCALID_LINK_RECEPTIONIST, LilycoveCity_ContestLobby_Movement_LinkReceptionistExitCounter
 	waitmovement 0
 	playse SE_BRIDGE_WALK
-	setmetatile 17, 2, METATILE_Contest_CounterFlap_Top, TRUE
-	setmetatile 17, 3, METATILE_Contest_CounterFlap_Bottom, TRUE
+	call_if_unset FLAG_CONTEST_IS_VERDANTURF, LilycoveCity_ContestLobby_EventScript_DoLinkCounter
+	call_if_set FLAG_CONTEST_IS_VERDANTURF, VerdanturfTown_ContestLobby_EventScript_DoLinkCounter
 	special DrawWholeMapView
 	delay 20
 	applymovement LOCALID_LINK_RECEPTIONIST, LilycoveCity_ContestLobby_Movement_LinkReceptionistFacePlayer
@@ -922,6 +947,26 @@ LilycoveCity_ContestLobby_EventScript_LeadToLinkContestHall::
 	applymovement OBJ_EVENT_ID_PLAYER, LilycoveCity_ContestLobby_Movement_PlayerWalkToLinkContestHall
 	waitmovement 0
 	release
+	return
+
+LilycoveCity_ContestLobby_EventScript_DoLinkShadows::
+	setmetatile 15, 2, METATILE_Contest_WallShadow, TRUE
+	setmetatile 15, 3, METATILE_Contest_FloorShadow, TRUE
+	return
+
+VerdanturfTown_ContestLobby_EventScript_DoLinkShadows::
+	setmetatile 10, 2, METATILE_Contest_WallShadow, TRUE
+	setmetatile 10, 3, METATILE_Contest_FloorShadow, TRUE
+	return
+
+LilycoveCity_ContestLobby_EventScript_DoLinkCounter::
+	setmetatile 15, 2, METATILE_Contest_CounterFlap_Top, TRUE
+	setmetatile 15, 3, METATILE_Contest_CounterFlap_Bottom, TRUE
+	return
+
+VerdanturfTown_ContestLobby_EventScript_DoLinkCounter::
+	setmetatile 10, 2, METATILE_Contest_CounterFlap_Top, TRUE
+	setmetatile 10, 3, METATILE_Contest_CounterFlap_Bottom, TRUE
 	return
 
 LilycoveCity_ContestLobby_Movement_PlayerWalkToLinkContestHall:

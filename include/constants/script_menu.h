@@ -131,6 +131,7 @@
 #define MULTI_WONDER_USE_OR_EXPLAIN        120
 #define MULTI_GTS_CODE_OR_TAKE_BACK        121
 #define MULTI_RELIC_EXCHANGE               122
+#define MULTI_CONTEST_RANK_LESS            123
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

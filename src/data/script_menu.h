@@ -825,6 +825,13 @@ static const struct MenuAction MultichoiceList_Exit[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_ContestRankLess[] =
+{
+    {gText_NormalRank},
+    {gText_SuperRank},
+    {gText_Exit},
+};
+
 struct MultichoiceListStruct
 {
     const struct MenuAction *list;
@@ -956,6 +963,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_WONDER_USE_OR_EXPLAIN]      = MULTICHOICE(MultichoiceList_WonderUseOrExplain),
     [MULTI_GTS_CODE_OR_TAKE_BACK]      = MULTICHOICE(MultichoiceList_GTSCodeOrTakeBack),
     [MULTI_RELIC_EXCHANGE]             = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_CONTEST_RANK_LESS]          = MULTICHOICE(MultichoiceList_ContestRankLess),
 };
 
 const u8 *const gStdStrings[] =

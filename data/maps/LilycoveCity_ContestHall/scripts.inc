@@ -323,6 +323,78 @@ LilycoveCity_ContestHall_EventScript_CuteContestAudience3::
 	release
 	end
 
+LilycoveCity_ContestHall_EventScript_ToughContestMC::
+	lock
+	faceplayer
+	msgbox LilycoveCity_ContestHall_Text_InTheMiddleOfContest, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LilycoveCity_ContestHall_EventScript_ToughContestJudge::
+	lock
+	faceplayer
+	msgbox LilycoveCity_ContestHall_Text_SuchPowerfulToughAppeals, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LilycoveCity_ContestHall_EventScript_ToughContestant1::
+	lock
+	faceplayer
+	msgbox LilycoveCity_ContestHall_Text_ToughContestant1, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LilycoveCity_ContestHall_EventScript_ToughContestant2::
+	lock
+	faceplayer
+	msgbox LilycoveCity_ContestHall_Text_ToughContestant2, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LilycoveCity_ContestHall_EventScript_ToughContestant3::
+	lock
+	faceplayer
+	msgbox LilycoveCity_ContestHall_Text_ToughContestant3, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LilycoveCity_ContestHall_EventScript_ToughContestant4::
+	lock
+	faceplayer
+	msgbox LilycoveCity_ContestHall_Text_ToughContestant4, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LilycoveCity_ContestHall_EventScript_ToughContestAudience1::
+	lock
+	faceplayer
+	msgbox LilycoveCity_ContestHall_Text_ToughContestAudience1, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+LilycoveCity_ContestHall_EventScript_ToughContestAudience2::
+	lock
+	faceplayer
+	msgbox LilycoveCity_ContestHall_Text_ToughContestAudience2, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LilycoveCity_ContestHall_EventScript_ToughContestAudience3::
+	lock
+	faceplayer
+	msgbox LilycoveCity_ContestHall_Text_ToughContestAudience3, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 LilycoveCity_ContestHall_EventScript_BeautyStageSign::
 	msgbox LilycoveCity_ContestHall_Text_BeautyContestStage, MSGBOX_SIGN
 	end
@@ -333,6 +405,14 @@ LilycoveCity_ContestHall_EventScript_CuteStageSign::
 
 LilycoveCity_ContestHall_EventScript_SmartStageSign::
 	msgbox LilycoveCity_ContestHall_Text_SmartContestStage, MSGBOX_SIGN
+	end
+
+LilycoveCity_ContestHall_EventScript_CoolStageSign::
+	msgbox LilycoveCity_ContestHall_Text_CoolContestStage, MSGBOX_SIGN
+	end
+
+LilycoveCity_ContestHall_EventScript_ToughContestStage::
+	msgbox LilycoveCity_ContestHall_Text_ToughContestStage, MSGBOX_SIGN
 	end
 
 LilycoveCity_ContestHall_Text_TodayWonSmartnessContest:
@@ -524,6 +604,48 @@ LilycoveCity_ContestHall_Text_WantCuteMonOfMyOwn:
 	.string "they make we want to get my own!\p"
 	.string "I'm going to go catch some!$"
 
+LilycoveCity_ContestHall_Text_SuchPowerfulToughAppeals:
+	.string "These are certainly some tough\n"
+	.string "looking Pokémon!\p"
+	.string "My goodness, what a powerful\n"
+	.string "Focus Punch!$"
+
+LilycoveCity_ContestHall_Text_ToughContestant1:
+	.string "Me and my Miltank are going to\n"
+	.string "absolutely rock this show!$"
+
+LilycoveCity_ContestHall_Text_ToughContestant2:
+	.string "We didn't prepare any tough moves\n"
+	.string "like the rest of the contestants.\p"
+	.string "We're out of our depth!$"
+
+LilycoveCity_ContestHall_Text_ToughContestant3:
+	.string "Contests are all about being flashy!\p"
+	.string "Go Machamp! Focus Punch!$"
+
+LilycoveCity_ContestHall_Text_ToughContestant4:
+	.string "I fed my Pokémon all of the Orange\n"
+	.string "{POKEBLOCK}S I could get my hands on.\p"
+	.string "We're sure to earn the favor of the\n"
+	.string "audience.$"
+
+LilycoveCity_ContestHall_Text_ToughContestAudience1:
+	.string "Round one of the contest is all about\n"
+	.string "general appeal.\p"
+	.string "The more tough your Pokémon looks, the\n"
+	.string "more points you earn!\p"
+	.string "In the second round you get to show off\n"
+	.string "your moves to the judge.$"
+
+LilycoveCity_ContestHall_Text_ToughContestAudience2:
+	.string "Tough contests are definitely the one\n"
+	.string "for me!$"
+
+LilycoveCity_ContestHall_Text_ToughContestAudience3:
+	.string "That ace trainer there…\p"
+	.string "His Pokémon has such a sheen to it.\n"
+	.string "I can hardly look away!$"
+
 LilycoveCity_ContestHall_Text_BeautyContestStage:
 	.string "Beauty Contest Stage\n"
 	.string "BE ALLURED BY BEAUTIFUL Pokémon!$"
@@ -536,3 +658,10 @@ LilycoveCity_ContestHall_Text_SmartContestStage:
 	.string "SMARTNESS Contest Stage\n"
 	.string "BE IMPRESSED BY SMART Pokémon!$"
 
+LilycoveCity_ContestHall_Text_CoolContestStage:
+	.string "COOL Contest Stage\n"
+	.string "BE AMAZED BY COOL Pokémon!$"
+
+LilycoveCity_ContestHall_Text_ToughContestStage:
+	.string "TOUGH Contest Stage\n"
+	.string "BE BLOWN AWAY BE TOUGH Pokémon!$"
