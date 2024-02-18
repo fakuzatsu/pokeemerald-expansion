@@ -11,6 +11,7 @@ LittlerootTown_BrendansHouse_2F_OnTransition:
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 4, PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet
 	call SecretBase_EventScript_SetDecorationFlags
 	setvar VAR_SECRET_BASE_INITIALIZED, 0
+	call_if_eq VAR_WALDA_QUEST_STATE, 1, LittlerootTown_BrendansHouse_2F_EventScript_TrySetReadyForDarkrai
 	end
 
 LittlerootTown_BrendansHouse_2F_EventScript_CheckShouldUpdateBrendanPos::
@@ -37,6 +38,15 @@ LittlerootTown_BrendansHouse_2F_EventScript_CheckSetReadyToMeetBrendan::
 
 LittlerootTown_BrendansHouse_2F_EventScript_SetReadyToMeetBrendan::
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 2
+	return
+
+LittlerootTown_BrendansHouse_2F_EventScript_TrySetReadyForDarkrai::
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, LittlerootTown_BrendansHouse_2F_EventScript_SetReadyForDarkrai
+	return
+
+LittlerootTown_BrendansHouse_2F_EventScript_SetReadyForDarkrai::
+	setvar VAR_TEMP_7, 1
 	return
 
 LittlerootTown_BrendansHouse_2F_OnWarp:
@@ -386,6 +396,47 @@ PlayersHouse_2F_EventScriptCancelGameCube::
 	releaseall
 	end
 
+PlayersHouse_2F_EventScript_DarkraiEvent::
+	lock
+	msgbox PlayersHouse_2F_Text_GoToSleep, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, PlayersHouse_2F_EventScript_DarkraiEncounter
+	release
+	end
+
+PlayersHouse_2F_EventScript_DarkraiEncounter::
+	delay 8
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown
+	delay 8
+	fadescreen FADE_TO_BLACK
+	delay 30
+	setflag FLAG_BAG_DISABLED
+	setflag FLAG_CATCHING_DISABLED
+	message PlayersHouse_2F_Text_DarkraiCry
+	playmoncry SPECIES_DARKRAI, CRY_MODE_ENCOUNTER
+	waitmoncry
+	closemessage
+	seteventmon SPECIES_DARKRAI, 50
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PlayersHouse_2F_EventScript_DarkraiDefeated
+	goto PlayersHouse_2F_EventScript_EscapedDarkrai
+	end
+
+PlayersHouse_2F_EventScript_DarkraiDefeated::
+	clearflag FLAG_BAG_DISABLED
+	clearflag FLAG_CATCHING_DISABLED
+	msgbox PlayersHouse_2F_Text_DispelledDarkrai, MSGBOX_DEFAULT
+	release
+	end
+
+PlayersHouse_2F_EventScript_EscapedDarkrai::
+	clearflag FLAG_BAG_DISABLED
+	clearflag FLAG_CATCHING_DISABLED
+	msgbox PlayersHouse_2F_Text_EscapedFromDarkrai, MSGBOX_DEFAULT
+	release
+	end
+
 PlayersHouse_2F_Text_ClockIsStopped:
 	.string "The clock is stopped…\p"
 	.string "Better set it and start it!$"
@@ -458,3 +509,15 @@ PlayersHouse_2F_Text_SeedWillInvalidateChallenge:
 	.string "But it will prevent you from recieving\n"
 	.string "certain challenge mode rewards.\p"
 	.string "Set your own seed anyways?$"
+
+PlayersHouse_2F_Text_GoToSleep:
+	.string "Go to sleep?$"
+
+PlayersHouse_2F_Text_DarkraiCry:
+	.string "Raaiiiii$"
+
+PlayersHouse_2F_Text_DispelledDarkrai:
+	.string "{PLAYER} dispelled the Nightmare.$"
+
+PlayersHouse_2F_Text_EscapedFromDarkrai:
+	.string "{PLAYER} escaped from the Nightmare.$"

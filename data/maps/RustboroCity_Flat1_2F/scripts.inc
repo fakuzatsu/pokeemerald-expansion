@@ -39,12 +39,12 @@ RustboroCity_Flat1_2F_Text_ComingUpWithMealsIsHard:
 	.string "It's trying to make a meal for my\n"
 	.string "daughter that will help make her\l"
 	.string "feel better…\p"
-	.string "But nothing works…$"
+	.string "Nothing works…$"
 
 RustboroCity_Flat1_2F_Text_MyPoorDaughter:
 	.string "Oh my poor daughter…\p"
 	.string "She barely gets a wink of sleep\n"
-	.string "at night so she's always tired.\p"
+	.string "at night, so she's always tired.\p"
 	.string "…We spoke with a doctor but they\n"
 	.string "said that her nightmares must be\l"
 	.string "the work of a Pokémon…$"

@@ -9579,30 +9579,35 @@ static const struct TrainerMon sParty_PhoebeMtPyre[] = {
     .lvl = 58,
     .species = SPECIES_SABLEYE,
     .heldItem = ITEM_NONE,
+    .moves = {MOVE_SHADOW_BALL, MOVE_FAKE_OUT, MOVE_NIGHT_SHADE, MOVE_FEINT_ATTACK}
     },
     {
     .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
     .lvl = 58,
     .species = SPECIES_BANETTE,
     .heldItem = ITEM_NONE,
+    .moves = {MOVE_SHADOW_BALL, MOVE_GRUDGE, MOVE_WILL_O_WISP, MOVE_FEINT_ATTACK}
     },
     {
     .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
     .lvl = 59,
     .species = SPECIES_ZOROARK_HISUIAN,
     .heldItem = ITEM_NONE,
+    .moves = {MOVE_SHADOW_BALL, MOVE_FOCUS_BLAST, MOVE_FLAMETHROWER, MOVE_TRICK}
     },
     {
     .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
     .lvl = 59,
     .species = SPECIES_SHEDINJA,
     .heldItem = ITEM_NONE,
+    .moves = {MOVE_PROTECT, MOVE_WILL_O_WISP, MOVE_SHADOW_SNEAK, MOVE_POLTERGEIST}
     },
     {
     .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
     .lvl = 60,
     .species = SPECIES_DUSCLOPS,
     .heldItem = ITEM_NONE,
+    .moves = {MOVE_SHADOW_BALL, MOVE_ICE_BEAM, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE}
     }
 };
 
@@ -9612,36 +9617,42 @@ static const struct TrainerMon sParty_PhoebesGrandma[] = {
     .lvl = 74,
     .species = SPECIES_BANETTE,
     .heldItem = ITEM_NONE,
+    .moves = {MOVE_POLTERGEIST, MOVE_DESTINY_BOND, MOVE_SHADOW_SNEAK, MOVE_WILL_O_WISP}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 74,
     .species = SPECIES_ZOROARK_HISUIAN,
     .heldItem = ITEM_NONE,
+    .moves = {MOVE_SHADOW_BALL, MOVE_FOCUS_BLAST, MOVE_FLAMETHROWER, MOVE_TRICK}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 75,
     .species = SPECIES_SHEDINJA,
     .heldItem = ITEM_NONE,
+    .moves = {MOVE_PROTECT, MOVE_WILL_O_WISP, MOVE_SHADOW_SNEAK, MOVE_POLTERGEIST}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 75,
     .species = SPECIES_CHANDELURE,
     .heldItem = ITEM_NONE,
+    .moves = {MOVE_FIRE_BLAST, MOVE_SHADOW_BALL, MOVE_ENERGY_BALL, MOVE_TRICK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 76,
+    .species = SPECIES_SPIRITOMB,
+    .heldItem = ITEM_SPOOKY_PLATE,
+    .moves = {MOVE_CALM_MIND, MOVE_DARK_PULSE, MOVE_PSYCHIC, MOVE_WILL_O_WISP}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 76,
     .species = SPECIES_DUSCLOPS,
     .heldItem = ITEM_EVIOLITE,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 76,
-    .species = SPECIES_SPIRITOMB,
-    .heldItem = ITEM_NONE,
+    .moves = {MOVE_NIGHT_SHADE, MOVE_WILL_O_WISP, MOVE_REST, MOVE_SLEEP_TALK}
     }
 };
 

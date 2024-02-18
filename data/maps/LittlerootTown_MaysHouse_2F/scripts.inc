@@ -11,6 +11,7 @@ LittlerootTown_MaysHouse_2F_OnTransition:
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 4, PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet
 	call SecretBase_EventScript_SetDecorationFlags
 	setvar VAR_SECRET_BASE_INITIALIZED, 0
+	call_if_eq VAR_WALDA_QUEST_STATE, 1, LittlerootTown_MaysHouse_2F_EventScript_TrySetReadyForDarkrai
 	end
 
 LittlerootTown_MaysHouse_2F_EventScript_CheckShouldUpdateMayPos::
@@ -36,6 +37,15 @@ LittlerootTown_MaysHouse_2F_EventScript_CheckSetReadyToMeetMay::
 
 LittlerootTown_MaysHouse_2F_EventScript_SetReadyToMeetMay::
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 2
+	return
+
+LittlerootTown_MaysHouse_2F_EventScript_TrySetReadyForDarkrai::
+	checkplayergender
+	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_MaysHouse_2F_EventScript_SetReadyForDarkrai
+	return
+
+LittlerootTown_MaysHouse_2F_EventScript_SetReadyForDarkrai::
+	setvar VAR_TEMP_7, 1
 	return
 
 LittlerootTown_MaysHouse_2F_OnWarp:
