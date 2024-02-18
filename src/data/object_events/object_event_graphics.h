@@ -404,6 +404,12 @@ const u32 gObjectEventPic_Pawniard[] = INCBIN_U32("graphics/object_events/pics/p
 const u16 gObjectEventPal_Pawniard[] = INCBIN_U16("graphics/object_events/palettes/pawniard.gbapal");
 const u32 gObjectEventPic_Stonjourner[] = INCBIN_U32("graphics/object_events/pics/pokemon/stonjourner.4bpp");
 const u16 gObjectEventPal_Stonjourner[] = INCBIN_U16("graphics/object_events/palettes/stonjourner.gbapal");
+const u32 gObjectEventPic_Darkrai [] = INCBIN_U32("graphics/object_events/pics/pokemon/darkrai.4bpp");
+const u16 gObjectEventPal_Darkrai [] = INCBIN_U16("graphics/object_events/palettes/darkrai.gbapal");
+const u32 gObjectEventPic_Cresselia [] = INCBIN_U32("graphics/object_events/pics/pokemon/cresselia.4bpp");
+const u16 gObjectEventPal_Cresselia [] = INCBIN_U16("graphics/object_events/palettes/cresselia.gbapal");
+const u32 gObjectEventPic_Heatran [] = INCBIN_U32("graphics/object_events/pics/pokemon/heatran.4bpp");
+const u16 gObjectEventPal_Heatran [] = INCBIN_U16("graphics/object_events/palettes/heatran.gbapal");
 
 const u32 gFieldEffectObjectPic_CaveDust[] = INCBIN_U32("graphics/field_effects/pics/cave_dust.4bpp");
 const u16 gFieldEffectObjectPalette_CaveDust[] = INCBIN_U16("graphics/field_effects/palettes/cave_dust.gbapal");
