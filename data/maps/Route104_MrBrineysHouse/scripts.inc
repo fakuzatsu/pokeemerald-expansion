@@ -28,6 +28,9 @@ Route104_MrBrineysHouse_EventScript_Briney::
 	call_if_unset FLAG_MR_BRINEY_SAILING_INTRO, Route104_MrBrineysHouse_EventScript_SailingIntro
 	goto_if_unset FLAG_DELIVERED_STEVEN_LETTER, Route104_MrBrineysHouse_EventScript_SailBothDeliveries
 	goto_if_unset FLAG_DELIVERED_DEVON_GOODS, Route104_MrBrineysHouse_EventScript_SailDeliverPackage
+	goto_if_set FLAG_TEMP_7, Route104_MrBrineysHouse_EventScript_WhereAreWeBound2
+	goto_if_eq VAR_WALDA_QUEST_STATE, 2, Route104_MrBrineysHouse_EventScript_StrangePhoto
+	goto_if_ge VAR_WALDA_QUEST_STATE, 2, Route104_MrBrineysHouse_EventScript_WhereAreWeBound2
 	goto Route104_MrBrineysHouse_EventScript_WhereAreWeBound
 	end
 
@@ -46,6 +49,17 @@ Route104_MrBrineysHouse_EventScript_WhereAreWeBound::
 	switch VAR_RESULT
 	case 0, Route104_MrBrineysHouse_EventScript_SailToDewford
 	case 1, Route104_MrBrineysHouse_EventScript_DeclineSailing
+	case MULTI_B_PRESSED, Route104_MrBrineysHouse_EventScript_DeclineSailing
+	end
+
+Route104_MrBrineysHouse_EventScript_WhereAreWeBound2::
+	message Route104_MrBrineysHouse_Text_WhereAreWeBound
+	waitmessage
+	multichoicedefault 20, 6, MULTI_BRINEY_OFF_DEWFORD_NEWMOON, 2, FALSE
+	switch VAR_RESULT
+	case 0, Route104_MrBrineysHouse_EventScript_SailToDewford
+	case 1, Route104_MrBrineysHouse_EventScript_SailToNewMoonIsland
+	case 2, Route104_MrBrineysHouse_EventScript_DeclineSailing
 	case MULTI_B_PRESSED, Route104_MrBrineysHouse_EventScript_DeclineSailing
 	end
 
@@ -79,6 +93,25 @@ Route104_MrBrineysHouse_EventScript_SailToDewford::
 	setflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
 	setflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
 	setvar VAR_RUSTBORO_CITY_STATE, 8
+	setvar VAR_ROUTE104_STATE, 2
+	setflag FLAG_HIDE_RUSTBORO_CITY_RIVAL
+	setflag FLAG_HIDE_ROUTE_104_RIVAL
+	warp MAP_ROUTE104, 13, 51
+	waitstate
+	releaseall
+	end
+
+Route104_MrBrineysHouse_EventScript_StrangePhoto::
+	setflag FLAG_TEMP_7
+	msgbox Route104_MrBrineysHouse_Text_WhatsThisStrangePhoto, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route104_MrBrineysHouse_EventScript_DeclineSailing
+	goto Route104_MrBrineysHouse_EventScript_SailToNewMoonIsland
+	end
+
+Route104_MrBrineysHouse_EventScript_SailToNewMoonIsland::
+	msgbox Route104_MrBrineysHouse_Text_SetSailForNewMoonIsland, MSGBOX_DEFAULT
+	setvar VAR_BOARD_BRINEY_BOAT_STATE, 3
+	clearflag FLAG_HIDE_ROUTE_104_MR_BRINEY
 	setvar VAR_ROUTE104_STATE, 2
 	setflag FLAG_HIDE_RUSTBORO_CITY_RIVAL
 	setflag FLAG_HIDE_ROUTE_104_RIVAL
@@ -159,3 +192,17 @@ Route104_MrBrineysHouse_Text_TellMeWheneverYouWantToSail:
 Route104_MrBrineysHouse_Text_Peeko:
 	.string "PEEKO: Pii piihyoro!$"
 
+Route104_MrBrineysHouse_Text_WhatsThisStrangePhoto:
+	.string "MR. BRINEY: What's that?\p"
+	.string "You're asking about this strange\n"
+	.string "photograph, hm?\p"
+	.string "Hmhm…\p"
+	.string "I think I recognise that island…\p"
+	.string "It's not far off the coast of\n"
+	.string "Petalburg.\p"
+	.string "Would you like to go there now?$"
+
+Route104_MrBrineysHouse_Text_SetSailForNewMoonIsland:
+	.string "MR. BRINEY: Let us depart then!\p"
+	.string "Anchors aweigh!\n"
+	.string "PEEKO, we're setting sail, my darling!$"

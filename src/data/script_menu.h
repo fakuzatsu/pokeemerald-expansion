@@ -76,6 +76,13 @@ static const struct MenuAction MultichoiceList_BrineyOffDewford[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_BrineyOffDewfordNewMoon[] =
+{
+    {gText_Dewford},
+    {gText_NewMoonIsland},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_ViewedPaintings[] =
 {
     {gText_SawIt},
@@ -855,7 +862,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_BIKE]                       = MULTICHOICE(MultichoiceList_Bike),
     [MULTI_STATUS_INFO]                = MULTICHOICE(MultichoiceList_StatusInfo),
     [MULTI_BRINEY_OFF_DEWFORD]         = MULTICHOICE(MultichoiceList_BrineyOffDewford),
-    [MULTI_UNUSED_15]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_BRINEY_OFF_DEWFORD_NEWMOON] = MULTICHOICE(MultichoiceList_BrineyOffDewfordNewMoon),
     [MULTI_VIEWED_PAINTINGS]           = MULTICHOICE(MultichoiceList_ViewedPaintings),
     [MULTI_YESNOINFO]                  = MULTICHOICE(MultichoiceList_YesNoInfo),
     [MULTI_BATTLE_MODE]                = MULTICHOICE(MultichoiceList_BattleMode),

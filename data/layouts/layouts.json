@@ -4930,6 +4930,16 @@
       "secondary_tileset": "gTileset_Contest",
       "border_filepath": "data/layouts/VerdanturfTown_ContestHall/border.bin",
       "blockdata_filepath": "data/layouts/VerdanturfTown_ContestHall/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_MOON_ISLAND_EXTERIOR",
+      "name": "NewMoonIsland_Exterior_Layout",
+      "width": 34,
+      "height": 25,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/NewMoonIsland_Exterior/border.bin",
+      "blockdata_filepath": "data/layouts/NewMoonIsland_Exterior/map.bin"
     }
   ]
 }

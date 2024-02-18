@@ -27,6 +27,7 @@ Route104_OnResume_Day:
 
 Route104_OnFrame:
 	map_script_2 VAR_BOARD_BRINEY_BOAT_STATE, 1, Route104_EventScript_StartSailToDewford
+	map_script_2 VAR_BOARD_BRINEY_BOAT_STATE, 3, Route104_EventScript_StartSailToDewford
 	.2byte 0
 
 Route104_EventScript_StartSailToDewford::
@@ -382,6 +383,7 @@ Route104_EventScript_SailToDewford::
 	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_PlayerBoardBoat
 	waitmovement 0
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE104
+	goto_if_eq VAR_BOARD_BRINEY_BOAT_STATE, 3, Route104_EventScript_SailToNewMoonIsland
 	call Common_EventScript_PlayBrineysBoatMusic
 	goto_if_set FLAG_ENABLE_NORMAN_MATCH_CALL, Route104_EventScript_SailToDewfordNoCall
 	goto_if_unset FLAG_ENABLE_NORMAN_MATCH_CALL, Route104_EventScript_SailToDewfordDadCalls
@@ -411,6 +413,19 @@ Route104_EventScript_SailToDewfordDadCalls::
 	waitmovement LOCALID_BOAT_R104, MAP_ROUTE104
 	waitmovement 0
 	goto Route104_EventScript_ArriveInDewford
+
+Route104_EventScript_SailToNewMoonIsland::
+	delay 20
+	fadescreen FADE_TO_BLACK
+	delay 20
+	msgbox Route104_Text_HoldOnTight, MSGBOX_DEFAULT
+	delay 20
+	setflag FLAG_SYS_REMOVE_WARP_FADE
+	setvar VAR_BOARD_BRINEY_BOAT_STATE, 0
+	warp MAP_NEW_MOON_ISLAND_EXTERIOR, 25, 21
+	waitstate
+	releaseall
+	end
 
 Route104_EventScript_ArriveInDewford::
 	delay 50
@@ -1197,3 +1212,8 @@ Route104_Text_BrendanPostBattle:
 	.string "making Pokémon battle.\p"
 	.string "Like MR. BRINEY, it's important to\n"
 	.string "become friends with your Pokémon.$"
+
+Route104_Text_HoldOnTight:
+	.string "Hold on tight!\p"
+	.string "The waters can get rough in\n"
+	.string "these parts.$"
