@@ -350,6 +350,7 @@ const u8 gBattleBackgroundNames[][30] =
     [MAP_BATTLE_SCENE_GROUDON]  = _("GROUDON                 "),
     [MAP_BATTLE_SCENE_KYOGRE]   = _("KYOGRE                  "),
     [MAP_BATTLE_SCENE_RAYQUAZA] = _("RAYQUAZA                "),
+    [MAP_BATTLE_SCENE_NIGHTMARE] = _("NIGHTMARE               "),
 };
 const u8 gBattleBackgroundTerrainNames[][26] =
 {
@@ -904,6 +905,11 @@ static void LoadBattleBg(u8 battleBgType, u8 battleTerrain)
         LZDecompressVram(gBattleTerrainTilemap_Rayquaza, (void*)(BG_SCREEN_ADDR(26)));
         LoadCompressedPalette(gBattleTerrainPalette_Rayquaza, 0x20, 0x60);
         break;
+    case MAP_BATTLE_SCENE_NIGHTMARE:
+        LZDecompressVram(gBattleTerrainTiles_Building, (void*)(BG_CHAR_ADDR(2)));
+        LZDecompressVram(gBattleTerrainTilemap_Building, (void*)(BG_SCREEN_ADDR(26)));
+        LoadCompressedPalette(gBattleTerrainPalette_Nightmare, 0x20, 0x60);
+        break;
     }
 }
 static void PrintBattleBgName(u8 taskId)
@@ -934,7 +940,7 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
         else
         {
             if (data->battleTerrain == BATTLE_TERRAIN_GRASS)
-                data->battleBgType = MAP_BATTLE_SCENE_RAYQUAZA;
+                data->battleBgType = MAP_BATTLE_SCENE_NIGHTMARE;
             else
                 data->battleTerrain -= 1;
         }
@@ -949,7 +955,7 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
             data->battleTerrain = BATTLE_TERRAIN_PLAIN;
         }
     }
-    else if (data->battleBgType == MAP_BATTLE_SCENE_RAYQUAZA)
+    else if (data->battleBgType == MAP_BATTLE_SCENE_NIGHTMARE)
     {
         if (increment)
         {

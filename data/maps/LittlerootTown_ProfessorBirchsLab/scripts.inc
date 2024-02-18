@@ -695,6 +695,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Birch::
 	lock
 	faceplayer
 	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon
+	goto_if_set FLAG_TEMP_7, LittlerootTown_ProfessorBirchsLab_EventScript_SkipDarkraiText
+	goto_if_eq VAR_WALDA_QUEST_STATE, 1, LittlerootTown_ProfessorBirchsLab_EventScript_BirchDarkraiText
+LittlerootTown_ProfessorBirchsLab_EventScript_SkipDarkraiText::
 	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_GrassyPatchWaiting
 	goto_if_unset FLAG_HAS_MATCH_CALL, LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
 	goto_if_unset FLAG_ENABLE_PROF_BIRCH_MATCH_CALL, EventScript_RegisterProfBirch
@@ -703,6 +706,12 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Birch::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_BirchDarkraiText::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_APokemonCalledDarkraiHuh, MSGBOX_DEFAULT
+	setflag FLAG_TEMP_7
 	release
 	end
 
@@ -1159,6 +1168,15 @@ LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon:
 	.string "only found in another region!\p"
 	.string "You can have any one of these\n"
 	.string "three Pokémon!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_APokemonCalledDarkraiHuh:
+	.string "Prof. Birch: You want to know about\n"
+	.string "a Pokémon called Darkrai, hm?\p"
+	.string "I can't say I've ever heard about a\n"
+	.string "Pokémon that prevents sleep.\p"
+	.string "Does hearing it's name cause its\n"
+	.string "powers to take hold?\p"
+	.string "How fascinating.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_YoullTakeCyndaquil:
 	.string "Prof. Birch: The FIRE Pokémon\n"
