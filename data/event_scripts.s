@@ -1259,3 +1259,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/VerdanturfTown_ContestHall/scripts.inc"
 
 	.include "data/maps/NewMoonIsland_Exterior/scripts.inc"
+
+	.include "data/maps/NewMoonIsland_Interior/scripts.inc"

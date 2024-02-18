@@ -42,12 +42,96 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_NEW_MOON_ISLAND_INTERIOR",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_NEW_MOON_ISLAND_INTERIOR",
+      "dest_warp_id": "1"
+    }
   ],
   "coord_events": [
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 21,
+      "y": 20,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NewMoonIsland_Exterior_EventScript_CantUseSurf"
+    },
+    {
+      "type": "sign",
+      "x": 21,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NewMoonIsland_Exterior_EventScript_CantUseSurf"
+    },
+    {
+      "type": "sign",
+      "x": 22,
+      "y": 22,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NewMoonIsland_Exterior_EventScript_CantUseSurf"
+    },
+    {
+      "type": "sign",
+      "x": 23,
+      "y": 22,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NewMoonIsland_Exterior_EventScript_CantUseSurf"
+    },
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 23,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NewMoonIsland_Exterior_EventScript_CantUseSurf"
+    },
+    {
+      "type": "sign",
+      "x": 26,
+      "y": 23,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NewMoonIsland_Exterior_EventScript_CantUseSurf"
+    },
+    {
+      "type": "sign",
+      "x": 27,
+      "y": 22,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NewMoonIsland_Exterior_EventScript_CantUseSurf"
+    },
+    {
+      "type": "sign",
+      "x": 27,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NewMoonIsland_Exterior_EventScript_CantUseSurf"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 20,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NewMoonIsland_Exterior_EventScript_CantUseSurf"
+    }
   ]
 }

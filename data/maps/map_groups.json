@@ -675,7 +675,8 @@
     "BattleFrontier_PokemonCenter_B1F",
     "VerdantIsle_VictiniRoom",
     "FieryChasm_HeatranRoom",
-    "NewMoonIsland_Exterior"
+    "NewMoonIsland_Exterior",
+    "NewMoonIsland_Interior"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",

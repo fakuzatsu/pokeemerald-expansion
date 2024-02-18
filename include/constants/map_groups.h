@@ -646,6 +646,7 @@
 #define MAP_VERDANT_ISLE_VICTINI_ROOM                       (91 | (26 << 8))
 #define MAP_FIERY_CHASM_HEATRAN_ROOM                        (92 | (26 << 8))
 #define MAP_NEW_MOON_ISLAND_EXTERIOR                        (93 | (26 << 8))
+#define MAP_NEW_MOON_ISLAND_INTERIOR                        (94 | (26 << 8))
 
 // gMapGroup_IndoorRoute104Prototype
 #define MAP_ROUTE104_PROTOTYPE                          (0 | (27 << 8))

@@ -4940,6 +4940,26 @@
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/NewMoonIsland_Exterior/border.bin",
       "blockdata_filepath": "data/layouts/NewMoonIsland_Exterior/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_MOON_ISLAND_INTERIOR",
+      "name": "NewMoonIsland_Interior_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/NewMoonIsland_Interior/border.bin",
+      "blockdata_filepath": "data/layouts/NewMoonIsland_Interior/map.bin"
+    },
+    {
+      "id": "LAYOUT_FULL_MOON_ISLAND_INTERIOR",
+      "name": "FullMoonIsland_Interior_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/FullMoonIsland_Interior/border.bin",
+      "blockdata_filepath": "data/layouts/FullMoonIsland_Interior/map.bin"
     }
   ]
 }

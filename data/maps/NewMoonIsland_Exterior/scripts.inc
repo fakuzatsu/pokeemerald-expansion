@@ -84,6 +84,20 @@ NewMoonIsland_Exterior_EventScript_DoSailToPetalburg::
 	releaseall
 	end
 
+NewMoonIsland_Exterior_EventScript_CantUseSurf::
+	lock
+	checkpartymove MOVE_SURF
+	goto_if_eq VAR_RESULT, PARTY_SIZE, NewMoonIsland_Exterior_EventScript_EndUseSurf
+	bufferpartymonnick STR_VAR_1, VAR_RESULT
+	msgbox NewMoonIsland_Exterior_Text_CantUseSurf, MSGBOX_DEFAULT
+	release
+	end
+
+NewMoonIsland_Exterior_EventScript_EndUseSurf:
+	msgbox NewMoonIsland_Exterior_Text_CantSurf, MSGBOX_DEFAULT
+	release
+	end
+
 NewMoonIsland_Exterior_Movement_BrineyEnterBoat:
 	walk_down
 	step_end
@@ -118,3 +132,11 @@ NewMoonIsland_Exterior_Text_PetalburgWereSettingSail:
 
 NewMoonIsland_Exterior_Text_BackToPetalburg:
 	.string "Hold on tight.$"
+
+NewMoonIsland_Exterior_Text_CantUseSurf:
+	.string "The water here is too rough for\n"
+	.string "{STR_VAR_1} to surf.$"
+
+NewMoonIsland_Exterior_Text_CantSurf:
+	.string "The water here is too rough to\n"
+	.string "surf on.$"
