@@ -3727,15 +3727,15 @@ static const u8 sMysticTicketDesc[] = _(
     "to board the ship\n"
     "to Navel Rock.");
 
-static const u8 sAuroraTicketDesc[] = _(
-    "A ticket required\n"
-    "to board the ship\n"
-    "to Birth Island.");
+static const u8 sTatteredPhotoDesc[] = _(
+    "An old worn photo\n"
+    "depicting an island\n"
+    "with a cresent pool.");
 
 static const u8 sOldWornScarfDesc[] = _(
     "An old, worn scarf\n"
     "given to you by the\n"
-    "old grotto lady.");
+    "kind grotto lady.");
 
 static const u8 sLetterDesc[] = _(
     "A letter to Steven\n"

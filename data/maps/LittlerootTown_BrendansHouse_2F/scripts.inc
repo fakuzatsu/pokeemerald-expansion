@@ -406,8 +406,12 @@ PlayersHouse_2F_EventScript_DarkraiEvent::
 PlayersHouse_2F_EventScript_DarkraiEncounter::
 	delay 8
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown
-	delay 8
+	delay 30
 	fadescreen FADE_TO_BLACK
+	delay 60
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, PlayersHouse_2F_EventScript_ConjureDarkraiMale
+	call_if_eq VAR_RESULT, FEMALE, PlayersHouse_2F_EventScript_ConjureDarkraiFemale
 	delay 30
 	setflag FLAG_BAG_DISABLED
 	setflag FLAG_CATCHING_DISABLED
@@ -423,12 +427,43 @@ PlayersHouse_2F_EventScript_DarkraiEncounter::
 	goto PlayersHouse_2F_EventScript_EscapedDarkrai
 	end
 
+PlayersHouse_2F_EventScript_ConjureDarkraiMale::
+	createvobject OBJ_EVENT_GFX_DARKRAI, 7, 1, 3
+	return
+
+PlayersHouse_2F_EventScript_ConjureDarkraiFemale::
+	createvobject OBJ_EVENT_GFX_DARKRAI, 7, 7, 3
+	return
+
 PlayersHouse_2F_EventScript_DarkraiDefeated::
 	clearflag FLAG_BAG_DISABLED
 	clearflag FLAG_CATCHING_DISABLED
+	setvar VAR_WALDA_QUEST_STATE, 2
 	msgbox PlayersHouse_2F_Text_DispelledDarkrai, MSGBOX_DEFAULT
+	delay 40
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, PlayersHouse_2F_EventScript_DoSparkleMale
+	call_if_eq VAR_RESULT, FEMALE, PlayersHouse_2F_EventScript_DoSparkleFemale
+	msgbox PlayersHouse_2F_Text_FoundAPhotograph, MSGBOX_DEFAULT
+	giveitem ITEM_TATTERED_PHOTO
 	release
 	end
+
+PlayersHouse_2F_EventScript_DoSparkleMale::
+	playse SE_M_DETECT
+	dofieldeffectsparkle 2, 4, 0
+	waitfieldeffect FLDEFF_SPARKLE
+	delay 8
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight
+	return
+
+PlayersHouse_2F_EventScript_DoSparkleFemale::
+	playse SE_M_DETECT
+	dofieldeffectsparkle 6, 4, 0
+	waitfieldeffect FLDEFF_SPARKLE
+	delay 20
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceLeft
+	return
 
 PlayersHouse_2F_EventScript_EscapedDarkrai::
 	clearflag FLAG_BAG_DISABLED
@@ -518,6 +553,12 @@ PlayersHouse_2F_Text_DarkraiCry:
 
 PlayersHouse_2F_Text_DispelledDarkrai:
 	.string "{PLAYER} dispelled the Nightmare.$"
+
+PlayersHouse_2F_Text_FoundAPhotograph:
+	.string "A tattered photograph was left at the\n"
+	.string "foot of the bed.\p"
+	.string "It depicts a small island with a crescent\n"
+	.string "shaped pool of water at its center.$"
 
 PlayersHouse_2F_Text_EscapedFromDarkrai:
 	.string "{PLAYER} escaped from the Nightmare.$"

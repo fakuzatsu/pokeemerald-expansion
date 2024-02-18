@@ -8919,11 +8919,11 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_AURORA_TICKET] =
+    [ITEM_TATTERED_PHOTO] =
     {
-        .name = _("Aurora Ticket"),
+        .name = _("Old Photo"),
         .price = 0,
-        .description = sAuroraTicketDesc,
+        .description = sTatteredPhotoDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
