@@ -30,7 +30,7 @@ Route104_MrBrineysHouse_EventScript_Briney::
 	goto_if_unset FLAG_DELIVERED_DEVON_GOODS, Route104_MrBrineysHouse_EventScript_SailDeliverPackage
 	goto_if_set FLAG_TEMP_7, Route104_MrBrineysHouse_EventScript_WhereAreWeBound2
 	goto_if_eq VAR_WALDA_QUEST_STATE, 2, Route104_MrBrineysHouse_EventScript_StrangePhoto
-	goto_if_ge VAR_WALDA_QUEST_STATE, 2, Route104_MrBrineysHouse_EventScript_WhereAreWeBound2
+	goto_if_gt VAR_WALDA_QUEST_STATE, 2, Route104_MrBrineysHouse_EventScript_WhereAreWeBound2
 	goto Route104_MrBrineysHouse_EventScript_WhereAreWeBound
 	end
 
