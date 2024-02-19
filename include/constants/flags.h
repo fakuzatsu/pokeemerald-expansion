@@ -344,12 +344,12 @@
 #define FLAG_CANDYFACTORY_NPC_ITEM_GIFTED    0x13D // Custom Flag
 #define FLAG_ADOPTION_LADY_USES_NAME         0x13E // Custom Flag
 #define FLAG_ADOPTION_LADY_GIVES_CHARM       0x13F // Custom Flag
-#define FLAG_UNUSED_0x140                    0x140 // Unused Flag
-#define FLAG_UNUSED_0x141                    0x141 // Unused Flag
-#define FLAG_WONDER_CARD_UNUSED_6            0x142
-#define FLAG_WONDER_CARD_UNUSED_7            0x143
-#define FLAG_WONDER_CARD_UNUSED_8            0x144
-#define FLAG_WONDER_CARD_UNUSED_9            0x145
+#define FLAG_DEFEATED_CRESSELIA              0x140 // Custom Flag
+#define FLAG_CAUGHT_CRESSELIA                0x141 // Custom Flag
+#define FLAG_DEFEATED_DARKRAI                0x142 // Custom Flag
+#define FLAG_CAUGHT_DARKRAI                  0x143 // Custom Flag
+#define FLAG_DEFEATED_HEATRAN                0x144 // Custom Flag
+#define FLAG_CAUGHT_HEATRAN                  0x145 // Custom Flag
 #define FLAG_DEFEATED_CELEBI                 0x146
 #define FLAG_CAUGHT_CELEBI                   0x147
 #define FLAG_DEFEATED_ARTICUNO               0x148
