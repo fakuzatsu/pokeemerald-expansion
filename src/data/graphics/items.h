@@ -1871,8 +1871,8 @@ const u32 gItemIconPalette_SSTicket[] = INCBIN_U32("graphics/items/icon_palettes
 const u32 gItemIcon_EonTicket[] = INCBIN_U32("graphics/items/icons/eon_ticket.4bpp.lz");
 const u32 gItemIconPalette_EonTicket[] = INCBIN_U32("graphics/items/icon_palettes/eon_ticket.gbapal.lz");
 
-const u32 gItemIcon_MysticTicket[] = INCBIN_U32("graphics/items/icons/mystic_ticket.4bpp.lz");
-const u32 gItemIconPalette_MysticTicket[] = INCBIN_U32("graphics/items/icon_palettes/mystic_ticket.gbapal.lz");
+const u32 gItemIcon_LunarFeather[] = INCBIN_U32("graphics/items/icons/lunar_feather.4bpp.lz");
+const u32 gItemIconPalette_LunarFeather[] = INCBIN_U32("graphics/items/icon_palettes/lunar_feather.gbapal.lz");
 
 const u32 gItemIcon_TatteredPhoto[] = INCBIN_U32("graphics/items/icons/tattered_photo.4bpp.lz");
 const u32 gItemIcon_OldWornScarf[] = INCBIN_U32("graphics/items/icons/old_worn_scarf.4bpp.lz");

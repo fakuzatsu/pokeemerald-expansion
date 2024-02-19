@@ -3722,7 +3722,7 @@ static const u8 sEonTicketDesc[] = _(
     "ferry to a distant\n"
     "southern island.");
 
-static const u8 sMysticTicketDesc[] = _(
+static const u8 sLunarFeatherDesc[] = _(
     "A ticket required\n"
     "to board the ship\n"
     "to Navel Rock.");

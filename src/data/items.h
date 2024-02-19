@@ -8908,11 +8908,11 @@ const struct Item gItems[] =
         .secondaryId = 1,
     },
 
-    [ITEM_MYSTIC_TICKET] =
+    [ITEM_LUNAR_FEATHER] =
     {
-        .name = _("Mystic Ticket"),
+        .name = _("Lunar Feather"),
         .price = 0,
-        .description = sMysticTicketDesc,
+        .description = sLunarFeatherDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

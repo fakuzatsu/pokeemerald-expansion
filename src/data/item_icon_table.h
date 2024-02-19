@@ -774,7 +774,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     // Story Key Items
     [ITEM_SS_TICKET] = {gItemIcon_SSTicket, gItemIconPalette_SSTicket},
     [ITEM_EON_TICKET] = {gItemIcon_EonTicket, gItemIconPalette_EonTicket},
-    [ITEM_MYSTIC_TICKET] = {gItemIcon_MysticTicket, gItemIconPalette_MysticTicket},
+    [ITEM_LUNAR_FEATHER] = {gItemIcon_LunarFeather, gItemIconPalette_LunarFeather},
     [ITEM_TATTERED_PHOTO] = {gItemIcon_TatteredPhoto, gItemIconPalette_OldSeaMap},
     [ITEM_OLD_WORN_SCARF] = {gItemIcon_OldWornScarf, gItemIconPalette_OldSeaMap},
     [ITEM_LETTER] = {gItemIcon_Letter, gItemIconPalette_LavaCookieAndLetter},
