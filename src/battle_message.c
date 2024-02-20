@@ -451,6 +451,7 @@ static const u8 sText_SpAttack[] = _("Sp. Atk");
 static const u8 sText_SpDefense[] = _("Sp. Def");
 static const u8 sText_Accuracy[] = _("accuracy");
 static const u8 sText_Evasiveness[] = _("evasiveness");
+static const u8 sText_PlayerGotBP[] = _("{B_PLAYER_NAME} got {B_BUFF1} BP\nfor winning!\p");
 
 const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
 {
@@ -1538,6 +1539,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_ULTRABURSTCOMPLETED - BATTLESTRINGS_TABLE_START] = sText_UltraBurstCompleted,
     [STRINGID_TEAMGAINEDEXP - BATTLESTRINGS_TABLE_START] = sText_TeamGainedEXP,
     [STRINGID_TARGETCOVEREDINSTICKYCANDYSYRUP - BATTLESTRINGS_TABLE_START] = sText_TargetCoveredInStickyCandySyrup,
+    [STRINGID_PLAYERGOTBP - BATTLESTRINGS_TABLE_START] = sText_PlayerGotBP,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

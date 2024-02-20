@@ -6526,12 +6526,19 @@ BattleScript_LocalBattleWonLoseTexts::
 	waitstate
 	printstring STRINGID_TRAINER2LOSETEXT
 BattleScript_LocalBattleWonReward::
+	jumpifbyte CMP_GREATER_THAN, gSpecialVar_BattlePointReward, 0, BattleScript_LocalBattleWonBP
 	getmoneyreward
 	printstring STRINGID_PLAYERGOTMONEY
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_PayDayMoneyAndPickUpItems::
 	givepaydaymoney
 	pickup
+	end2
+
+BattleScript_LocalBattleWonBP::
+	getmoneyreward
+	printstring STRINGID_PLAYERGOTBP
+	waitmessage B_WAIT_TIME_LONG
 	end2
 
 BattleScript_LocalBattleLost::
