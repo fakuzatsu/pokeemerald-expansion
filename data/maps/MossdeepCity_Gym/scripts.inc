@@ -2,6 +2,7 @@ MossdeepCity_Gym_MapScripts::
 	.byte 0
 
 MossdeepCity_Gym_EventScript_TateAndLiza::
+	setvar VAR_MUGSHOT_ID, MUGSHOT_TATELIZA
 	trainerbattle_double TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaIntro, MossdeepCity_Gym_Text_TateAndLizaDefeat, MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons, MossdeepCity_Gym_EventScript_TateAndLizaDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_Gym_EventScript_TateAndLizaRematch

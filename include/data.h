@@ -64,8 +64,9 @@ struct Trainer
     /*0x12*/ u8 trainerPic;
     /*0x13*/ u8 trainerName[TRAINER_NAME_LENGTH + 1];
     /*0x1E*/ bool8 doubleBattle:1;
-             u8 padding:7;
+             u8 transition:7;
     /*0x1F*/ u8 partySize;
+             u8 hasCustomTransition:1;
 };
 
 #define TRAINER_ENCOUNTER_MUSIC(trainer)((gTrainers[trainer].encounterMusic_gender & 0x7F))
