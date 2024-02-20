@@ -57,7 +57,7 @@ MossdeepCity_Gym_EventScript_GiveCalmMind::
 	return
 
 MossdeepCity_Gym_EventScript_TateAndLizaRematch::
-	setvar VAR_BATTLE_POINT_REWARD, 5
+	call_if_set FLAG_SYS_FRONTIER_PASS, EventScript_SetBattlePointReward
 	trainerbattle_rematch_double TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaPreRematch, MossdeepCity_Gym_Text_TateAndLizaRematchDefeat, MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons
 	msgbox MossdeepCity_Gym_Text_TateAndLizaPostRematch, MSGBOX_AUTOCLOSE
 	end

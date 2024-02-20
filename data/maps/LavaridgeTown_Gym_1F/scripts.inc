@@ -99,7 +99,7 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat::
 	return
 
 LavaridgeTown_Gym_1F_EventScript_FlanneryRematch::
-	setvar VAR_BATTLE_POINT_REWARD, 5
+	call_if_set FLAG_SYS_FRONTIER_PASS, EventScript_SetBattlePointReward
 	trainerbattle_rematch_double TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat, LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons
 	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostRematch, MSGBOX_AUTOCLOSE
 	end

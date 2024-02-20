@@ -65,7 +65,7 @@ FortreeCity_Gym_EventScript_GiveAerialAce::
 	return
 
 FortreeCity_Gym_EventScript_WinonaRematch::
-	setvar VAR_BATTLE_POINT_REWARD, 5
+	call_if_set FLAG_SYS_FRONTIER_PASS, EventScript_SetBattlePointReward
 	trainerbattle_rematch_double TRAINER_WINONA_1, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_Text_WinonaRematchNeedTwoMons
 	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
 	end

@@ -145,7 +145,7 @@ MauvilleCity_Gym_EventScript_CompletedNewMauville::
 	end
 
 MauvilleCity_Gym_EventScript_WattsonRematch::
-	setvar VAR_BATTLE_POINT_REWARD, 5
+	call_if_set FLAG_SYS_FRONTIER_PASS, EventScript_SetBattlePointReward
 	trainerbattle_rematch_double TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons
 	msgbox MauvilleCity_Gym_Text_WattsonPostRematch, MSGBOX_AUTOCLOSE
 	end
