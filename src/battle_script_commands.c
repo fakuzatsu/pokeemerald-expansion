@@ -7482,15 +7482,27 @@ static void Cmd_getmoneyreward(void)
 {
     CMD_ARGS();
 
-    u32 money;
+    u32 money = 0;
     u8 sPartyLevel = 1;
 
     if (gBattleOutcome == B_OUTCOME_WON)
     {
-        money = GetTrainerMoneyToGive(gTrainerBattleOpponent_A);
-        if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
-            money += GetTrainerMoneyToGive(gTrainerBattleOpponent_B);
-        AddMoney(&gSaveBlock1Ptr->money, money);
+        if (VarGet(VAR_BATTLE_POINT_REWARD))
+        {
+            gSpecialVar_0x8004 = gSpecialVar_BattlePointReward;
+            GiveFrontierBattlePoints();
+            PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff1, 2, gSpecialVar_0x8004);
+            gSpecialVar_BattlePointReward = 0;
+        }
+        else
+        {
+            money = GetTrainerMoneyToGive(gTrainerBattleOpponent_A);
+            if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
+                money += GetTrainerMoneyToGive(gTrainerBattleOpponent_B);
+            AddMoney(&gSaveBlock1Ptr->money, money);
+
+            PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff1, 5, money);
+        }
     }
     else
     {
@@ -7511,9 +7523,10 @@ static void Cmd_getmoneyreward(void)
         }
         money = sWhiteOutBadgeMoney[count] * sPartyLevel;
         RemoveMoney(&gSaveBlock1Ptr->money, money);
+
+        PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff1, 5, money);
     }
 
-    PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff1, 5, money);
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 

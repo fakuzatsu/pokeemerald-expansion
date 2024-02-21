@@ -129,3 +129,7 @@ Std_MsgboxAutoclose::
 	waitbuttonpress
 	release
 	return
+
+EventScript_SetBattlePointReward::
+	setvar VAR_BATTLE_POINT_REWARD, 5
+	return

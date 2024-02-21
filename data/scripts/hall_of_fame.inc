@@ -39,6 +39,9 @@ EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries::
 	clearflag FLAG_DEFEATED_ENTEI
 	clearflag FLAG_DEFEATED_SUICUNE
 	clearflag FLAG_DEFEATED_SHAYMIN
+	clearflag FLAG_DEFEATED_CRESSELIA
+	clearflag FLAG_DEFEATED_DARKRAI
+	clearflag FLAG_DEFEATED_HEATRAN
 	return
 
 EverGrandeCity_HallOfFame_EventScript_SetDesertUnderpassCommentReady::
