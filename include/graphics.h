@@ -163,12 +163,12 @@ extern const u32 gTrainerFrontPic_RubySapphireBrendan[];
 extern const u32 gTrainerFrontPic_RubySapphireMay[];
 
 extern const u32 gTrainerPalette_Hiker[];
-extern const u32 gTrainerPalette_AquaGruntM[];
+extern const u32 gTrainerPalette_AquaGrunt[];
 extern const u32 gTrainerPalette_PokemonBreederF[];
 extern const u32 gTrainerPalette_CoolTrainerM[];
 extern const u32 gTrainerPalette_BirdKeeper[];
 extern const u32 gTrainerPalette_Collector[];
-extern const u32 gTrainerPalette_AquaGruntF[];
+extern const u32 gTrainerPalette_AquaGrunt[];
 extern const u32 gTrainerPalette_SwimmerM[];
 extern const u32 gTrainerPalette_MagmaGruntM[];
 extern const u32 gTrainerPalette_ExpertM[];

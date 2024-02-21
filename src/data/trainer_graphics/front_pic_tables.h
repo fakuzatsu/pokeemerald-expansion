@@ -203,12 +203,12 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
 const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
 {
     TRAINER_PAL(HIKER, gTrainerPalette_Hiker),
-    TRAINER_PAL(AQUA_GRUNT_M, gTrainerPalette_AquaGruntM),
+    TRAINER_PAL(AQUA_GRUNT_M, gTrainerPalette_AquaGrunt),
     TRAINER_PAL(POKEMON_BREEDER_F, gTrainerPalette_PokemonBreederF),
     TRAINER_PAL(COOLTRAINER_M, gTrainerPalette_CoolTrainerM),
     TRAINER_PAL(BIRD_KEEPER, gTrainerPalette_BirdKeeper),
     TRAINER_PAL(COLLECTOR, gTrainerPalette_Collector),
-    TRAINER_PAL(AQUA_GRUNT_F, gTrainerPalette_AquaGruntF),
+    TRAINER_PAL(AQUA_GRUNT_F, gTrainerPalette_AquaGrunt),
     TRAINER_PAL(SWIMMER_M, gTrainerPalette_SwimmerM),
     TRAINER_PAL(MAGMA_GRUNT_M, gTrainerPalette_MagmaGruntM),
     TRAINER_PAL(EXPERT_M, gTrainerPalette_ExpertM),
