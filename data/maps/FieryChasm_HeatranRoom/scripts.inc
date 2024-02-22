@@ -1,2 +1,65 @@
 FieryChasm_HeatranRoom_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, FieryChasm_HeatranRoom_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, FieryChasm_HeatranRoom_OnResume
 	.byte 0
+
+FieryChasm_HeatranRoom_OnTransition:
+	goto FieryChasm_HeatranRoom_EventScript_TryHideOrShowHeatran
+	end
+
+FieryChasm_HeatranRoom_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, FieryChasm_HeatranRoom_EventScript_TryRemoveHeatran
+	end
+
+FieryChasm_HeatranRoom_EventScript_TryRemoveHeatran::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
+
+FieryChasm_HeatranRoom_EventScript_TryHideOrShowHeatran::
+	goto_if_set FLAG_CAUGHT_HEATRAN, FieryChasm_HeatranRoom_EventScript_HideHeatran
+	goto_if_set FLAG_DEFEATED_HEATRAN, FieryChasm_HeatranRoom_EventScript_HideHeatran
+	clearflag FLAG_TEMP_4
+	end
+
+FieryChasm_HeatranRoom_EventScript_HideHeatran::
+	setflag FLAG_TEMP_4
+	end
+
+FieryChasm_HeatranRoom_EventScript_Heatran::
+	lock
+	faceplayer
+	message FieryChasm_HeatranRoom_Text_HeatranCry
+	playmoncry SPECIES_HEATRAN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	closemessage
+	seteventmon SPECIES_HEATRAN, 60
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, FieryChasm_HeatranRoom_EventScript_HeatranDefeated
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, FieryChasm_HeatranRoom_EventScript_PlayerOrHeatranRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, FieryChasm_HeatranRoom_EventScript_PlayerOrHeatranRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, FieryChasm_HeatranRoom_EventScript_PlayerOrHeatranRan
+	setflag FLAG_CAUGHT_HEATRAN
+	release
+	end
+
+FieryChasm_HeatranRoom_EventScript_HeatranDefeated::
+	setflag FLAG_DEFEATED_HEATRAN
+	setvar VAR_0x8004, SPECIES_HEATRAN
+	goto Common_EventScript_LegendaryRanAway
+	release
+	end
+
+FieryChasm_HeatranRoom_EventScript_PlayerOrHeatranRan::
+	setvar VAR_0x8004, SPECIES_HEATRAN
+	goto Common_EventScript_LegendaryRanAway
+	release
+	end
+
+FieryChasm_HeatranRoom_Text_HeatranCry:
+	.string "Kyuu uuhn$"
