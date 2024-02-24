@@ -40,7 +40,7 @@ Route116_TunnelersRestHouse_Text_WeHadToStopBoring:
 
 Route116_TunnelersRestHouse_Text_ManDiggingHisWayToVerdanturf:
 	.string "There's a man digging his way to\n"
-	.string "VERDANTURF all by his lonesome.\l"
+	.string "Verdanturf all by his lonesome.\l"
 	.string "He's desperate to get through.\p"
 	.string "He says that if he digs little by little\n"
 	.string "without using machines, he won't\l"

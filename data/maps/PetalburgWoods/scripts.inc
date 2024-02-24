@@ -496,7 +496,7 @@ PetalburgWoods_Text_ThatWasAwfullyClose:
 PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro:
 	.string "Didn't that Team Aqua thug say\n"
 	.string "they were after something in\l"
-	.string "RUSTBORO, too?$"
+	.string "Rustboro, too?$"
 
 PetalburgWoods_Text_ICantBeWastingTime:
 	.string "Uh-oh! It's a crisis!\n"

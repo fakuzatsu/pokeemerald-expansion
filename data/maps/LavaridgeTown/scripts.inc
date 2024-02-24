@@ -329,7 +329,7 @@ LavaridgeTown_Text_BrendanNiceBadgesTakeThis:
 LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
 	.string "Brendan: Keep those with you if you're\n"
 	.string "planning on going into that desert near\l"
-	.string "ROUTE 111.\p"
+	.string "Route 111.\p"
 	.string "There should be some Pokémon that\n"
 	.string "are exclusively desert-dwellers.\l"
 	.string "You might look around for those.\p"
@@ -409,12 +409,12 @@ LavaridgeTown_Text_HotSpringsClaims:
 	.string "money…$"
 
 LavaridgeTown_Text_TownSign:
-	.string "LAVARIDGE TOWN\p"
+	.string "Lavaridge Town\p"
 	.string "“Pokémon CENTER Hot SPRINGS\n"
 	.string "An excellent place for relaxing!”$"
 
 LavaridgeTown_Text_GymSign:
-	.string "LAVARIDGE TOWN Pokémon Gym\n"
+	.string "Lavaridge Town Pokémon Gym\n"
 	.string "Leader: FLANNERY\l"
 	.string "“One with a fiery passion that burns!”$"
 

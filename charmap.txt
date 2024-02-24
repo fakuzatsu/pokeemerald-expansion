@@ -413,7 +413,7 @@ B_DEF_TEAM2 = FD 3B
 @ FD 3C - preiously gActiveBattler
 @ FD 3D - preiously gActiveBattler without Illusion Check
 
-@ indicates the end of a town/city name (before " TOWN" or " CITY")
+@ indicates the end of a town/city name (before " Town" or " City")
 NAME_END = FC 00
 
 @ special 0xF7 character

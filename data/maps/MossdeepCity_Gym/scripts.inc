@@ -475,10 +475,10 @@ MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons:
 	.string "bring some more Pokémon.$"
 
 MossdeepCity_Gym_Text_GymStatue:
-	.string "MOSSDEEP CITY Pokémon Gym$"
+	.string "Mossdeep City Pokémon Gym$"
 
 MossdeepCity_Gym_Text_GymStatueCertified:
-	.string "MOSSDEEP CITY Pokémon Gym\p"
+	.string "Mossdeep City Pokémon Gym\p"
 	.string "LIZA And TATE's CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 

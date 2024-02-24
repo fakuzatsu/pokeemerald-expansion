@@ -299,7 +299,7 @@ DewfordTown_Gym_EventScript_GymStatue::
 DewfordTown_Gym_Text_GymGuideAdvice:
 	.string "Hey, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
-	.string "DEWFORD's Gym Leader BRAWLY commands\n"
+	.string "Dewford's Gym Leader BRAWLY commands\n"
 	.string "FIGHTING-type Pokémon.\p"
 	.string "Going against him with Normal-type\n"
 	.string "Pokémon is asking for trouble.\p"
@@ -395,7 +395,7 @@ DewfordTown_Gym_Text_CristianPostBattle:
 
 DewfordTown_Gym_Text_BrawlyIntro:
 	.string "I'm BRAWLY!\n"
-	.string "DEWFORD's Gym Leader!\p"
+	.string "Dewford's Gym Leader!\p"
 	.string "I've been churned in the rough waves\n"
 	.string "of these parts, and I've grown tough\l"
 	.string "in the pitch-black cave!\p"
@@ -438,10 +438,10 @@ DewfordTown_Gym_Text_BrawlyPostBattle:
 	.string "among TRAINERS one day!$"
 
 DewfordTown_Gym_Text_GymStatue:
-	.string "DEWFORD TOWN Pokémon Gym$"
+	.string "Dewford Town Pokémon Gym$"
 
 DewfordTown_Gym_Text_GymStatueCertified:
-	.string "DEWFORD TOWN Pokémon Gym\p"
+	.string "Dewford Town Pokémon Gym\p"
 	.string "BRAWLY's CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 

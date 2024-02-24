@@ -227,10 +227,10 @@ RustboroCity_Gym_Text_RoxannePostBattle:
 	.string "learn many things.$"
 
 RustboroCity_Gym_Text_GymStatue:
-	.string "RUSTBORO CITY Pokémon Gym$"
+	.string "Rustboro City Pokémon Gym$"
 
 RustboroCity_Gym_Text_GymStatueCertified:
-	.string "RUSTBORO CITY Pokémon Gym\p"
+	.string "Rustboro City Pokémon Gym\p"
 	.string "ROXANNE's CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 

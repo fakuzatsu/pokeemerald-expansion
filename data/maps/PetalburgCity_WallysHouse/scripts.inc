@@ -128,7 +128,7 @@ PetalburgCity_WallysHouse_Text_WallyWasReallyHappy:
 PetalburgCity_WallysHouse_Text_WallyLeftWithoutTelling:
 	.string "I want you to keep this a secret\n"
 	.string "from my husband…\p"
-	.string "But our WALLY left VERDANTURF TOWN\n"
+	.string "But our WALLY left VERDANTURF Town\n"
 	.string "without telling anyone.\p"
 	.string "You know, WALLY is frail, but\n"
 	.string "he's surprisingly strong-willed.\p"

@@ -207,7 +207,7 @@ MauvilleCity_FlowerShop_Text_WelcomeToShop:
 	.string "Sorry! I'm still setting up!\p"
 	.string "I'm trying to make this place\n"
 	.string "just as nice as the SHOP on\l"
-	.string "ROUTE 104!\p"
+	.string "Route 104!\p"
 	.string "But whenever I try to grow any\n"
 	.string "Berries, they turn …strange.\p"
 	.string "I still need money to set\n"

@@ -39,7 +39,7 @@ sText_MysteryGiftVisitingTrainerArrived:
 	.string "Thank you for using the Mystery\n"
 	.string "Gift System.\p"
 	.string "A Trainer has arrived in\n"
-	.string "SOOTOPOLIS CITY looking for you.\p"
+	.string "Sootopolis City looking for you.\p"
 	.string "We hope you will enjoy\n"
 	.string "battling the visiting Trainer.\p"
 	.string "You may invite other TRAINERS by\n"

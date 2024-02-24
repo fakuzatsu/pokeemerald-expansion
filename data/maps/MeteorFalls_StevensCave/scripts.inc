@@ -117,7 +117,7 @@ MeteorFalls_StevensCave_Text_SoYouFacedIt:
 	.string "the peak of the mountain?\p"
 	.string "You truly are remarkable.\p"
 	.string "The Pokémon itself reminds me of\n"
-	.string "MOSSDEEP SPACE CENTER.\p"
+	.string "Mossdeep SPACE CENTER.\p"
 	.string "Where battled together, a short\n"
 	.string "while ago.\p"
 	.string "Perhaps they would be interested\n"
