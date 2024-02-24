@@ -12,7 +12,7 @@ SINGLE_BATTLE_TEST("Mega Pokemon take double damage from Light of Ruin", s16 dam
     PARAMETRIZE { megaEvolved = FALSE; }
     PARAMETRIZE { megaEvolved = TRUE; }
     GIVEN {
-        PLAYER(SPECIES_VENUSAUR) { Item(ITEM_VENUSAURITE); }
+        PLAYER(SPECIES_BEEDRILL) { Item(ITEM_BEEDRILLITE); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, megaEvolve: megaEvolved); MOVE(opponent, MOVE_LIGHT_OF_RUIN); }
