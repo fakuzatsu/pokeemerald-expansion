@@ -50,6 +50,7 @@
 #include "strings.h"
 #include "string_util.h"
 #include "task.h"
+#include "trainer_card.h"
 #include "pokemon_summary_screen.h"
 #include "wild_encounter.h"
 #include "constants/abilities.h"
@@ -424,6 +425,7 @@ extern const u8 Debug_FlagsNotSetBattleConfigMessage[];
 extern const u8 Debug_FlagsAndVarNotSetBattleConfigMessage[];
 extern const u8 Debug_EventScript_Script_1[];
 extern const u8 Debug_EventScript_Script_2[];
+extern const u8 Debug_EventScript_Script_2Alt[];
 extern const u8 Debug_EventScript_Script_3[];
 extern const u8 Debug_EventScript_Script_4[];
 extern const u8 Debug_EventScript_Script_5[];
@@ -469,7 +471,7 @@ static const u8 sDebugText_Sound[] =            _("Sound…{CLEAR_TO 110}{RIGHT_
 static const u8 sDebugText_Cancel[] =           _("Cancel");
 // Script menu
 static const u8 sDebugText_Util_Script_1[] =               _("Change Time");
-static const u8 sDebugText_Util_Script_2[] =               _("Script 2");
+static const u8 sDebugText_Util_Script_2[] =               _("Add Star");
 static const u8 sDebugText_Util_Script_3[] =               _("Script 3");
 static const u8 sDebugText_Util_Script_4[] =               _("Script 4");
 static const u8 sDebugText_Util_Script_5[] =               _("Script 5");
@@ -2236,7 +2238,11 @@ static void DebugAction_Util_Script_1(u8 taskId)
 
 static void DebugAction_Util_Script_2(u8 taskId)
 {
+    bool8 success = IncrementTrainerCardStars();
+    if (success)
     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_2);
+    else
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_2Alt);
 }
 
 static void DebugAction_Util_Script_3(u8 taskId)
