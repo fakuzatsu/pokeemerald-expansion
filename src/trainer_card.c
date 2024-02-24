@@ -698,7 +698,7 @@ static u8 GetRubyTrainerStars(struct TrainerCard *trainerCard)
 
 bool8 IncrementTrainerCardStars(void)
 {
-    u16 i;
+    u32 i, j;
         if (!GetGameStat(GAME_STAT_ENTERED_HOF))
         {
             IncrementGameStat(GAME_STAT_ENTERED_HOF);
@@ -708,10 +708,11 @@ bool8 IncrementTrainerCardStars(void)
         }
         else if(!HasAllHoennMons())
         {
-            for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+            for (i = 0; i < HOENN_DEX_COUNT -1; i++)
             {
-                GetSetPokedexFlag(i + 1, FLAG_SET_CAUGHT);
-                GetSetPokedexFlag(i + 1, FLAG_SET_SEEN);
+                j = HoennToNationalOrder(i + 1);
+                GetSetPokedexFlag(j, FLAG_SET_CAUGHT);
+                GetSetPokedexFlag(j, FLAG_SET_SEEN);
             }
             return TRUE;
         }
