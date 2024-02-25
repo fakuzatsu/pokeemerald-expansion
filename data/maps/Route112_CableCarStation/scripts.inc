@@ -30,6 +30,9 @@ Route112_CableCarStation_OnFrame:
 Route112_CableCarStation_EventScript_Steven::
 	lockall
 	delay 30
+	setflag FLAG_HIDE_METEORFALLS_STEVEN
+	setflag FLAG_HIDE_METEOR_FALLS_1F_1R_COZMO
+	clearflag FLAG_HIDE_FALLARBOR_HOUSE_PROF_COZMO
 	playse SE_PIN
 	applymovement LOCALID_STEVEN, Common_Movement_ExclamationMark
 	waitmovement 0
