@@ -82,5 +82,6 @@
 
 // Verdant settings
 //#define CANON_MODE      // if defined, opponent's will use their canon (pre-Verdant-changed) teams. Comment out for the intended Verdant experience.
+//#define NO_BALANCE      // if defined, Pokémon balance changes are not included into the ROM. Comment out for the intended Verdant experience.
 
 #endif // GUARD_CONFIG_H

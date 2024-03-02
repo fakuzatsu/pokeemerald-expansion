@@ -591,6 +591,9 @@ const u16 gEggMoves[] = {
         MOVE_ROCK_CLIMB,
         MOVE_ENDURE,
         MOVE_AUTOTOMIZE,
+        #ifndef NO_BALANCE
+        MOVE_RAPID_SPIN,
+        #endif
         MOVE_WIDE_GUARD),
 #if P_ALOLAN_FORMS
     egg_moves(GEODUDE_ALOLAN,
@@ -603,6 +606,9 @@ const u16 gEggMoves[] = {
         MOVE_MAGNET_RISE,
         MOVE_ROCK_CLIMB,
         MOVE_SCREECH,
+        #ifndef NO_BALANCE
+        MOVE_RAPID_SPIN,
+        #endif
         MOVE_WIDE_GUARD),
 #endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_GEODUDE
@@ -1122,6 +1128,9 @@ const u16 gEggMoves[] = {
         MOVE_DYNAMIC_PUNCH,
         MOVE_FEINT,
         MOVE_HAMMER_ARM,
+        #ifndef NO_BALANCE
+        MOVE_MACH_PUNCH,
+        #endif
         MOVE_FOCUS_PUNCH),
 #endif //P_GEN_2_CROSS_EVOS
 #endif //P_FAMILY_ELECTABUZZ
@@ -1256,6 +1265,9 @@ const u16 gEggMoves[] = {
         MOVE_ASSURANCE,
         MOVE_ROOST,
         MOVE_TAILWIND,
+        #ifndef NO_BALANCE
+        MOVE_HEAD_SMASH,
+        #endif
         MOVE_WIDE_GUARD),
 #endif //P_FAMILY_AERODACTYL
 
@@ -1775,6 +1787,9 @@ const u16 gEggMoves[] = {
         MOVE_FOCUS_PUNCH,
         MOVE_DOUBLE_EDGE,
         MOVE_MIMIC,
+        #ifndef NO_BALANCE
+        MOVE_CURSE,
+        #endif
         MOVE_FAKE_TEARS),
 #endif //P_FAMILY_SNUBBULL
 
@@ -2101,6 +2116,9 @@ const u16 gEggMoves[] = {
         MOVE_RAZOR_WIND,
         MOVE_BULLET_SEED,
         MOVE_NATURAL_GIFT,
+        #ifndef NO_BALANCE
+        MOVE_DRAGON_DANCE,
+        #endif
         MOVE_GRASSY_TERRAIN),
 #endif //P_FAMILY_TREECKO
 
@@ -2179,6 +2197,14 @@ const u16 gEggMoves[] = {
         MOVE_KNOCK_OFF),
 #endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_ZIGZAGOON
+
+#ifndef NO_BALANCE
+#if P_FAMILY_WURMPLE
+    egg_moves(WURMPLE,
+    MOVE_AIR_SLASH,
+    MOVE_ELECTROWEB),
+#endif //P_FAMILY_WURMPLE
+#endif //NO_BALANCE
 
 #if P_FAMILY_LOTAD
     egg_moves(LOTAD,
@@ -2473,6 +2499,9 @@ const u16 gEggMoves[] = {
         MOVE_LUCKY_CHANT,
         MOVE_CHARM,
         MOVE_FAKE_TEARS,
+        #ifndef NO_BALANCE
+        MOVE_EXTREME_SPEED,
+        #endif
         MOVE_TEARFUL_LOOK),
 #endif //P_FAMILY_PLUSLE
 
@@ -2485,6 +2514,9 @@ const u16 gEggMoves[] = {
         MOVE_LUCKY_CHANT,
         MOVE_CHARM,
         MOVE_FAKE_TEARS,
+        #ifndef NO_BALANCE
+        MOVE_EXTREME_SPEED,
+        #endif
         MOVE_TEARFUL_LOOK),
 #endif //P_FAMILY_MINUN
 
@@ -2554,6 +2586,9 @@ const u16 gEggMoves[] = {
         MOVE_DESTINY_BOND,
         MOVE_MUD_SLAP,
         MOVE_GUNK_SHOT,
+        #ifndef NO_BALANCE
+        MOVE_BELCH,
+        #endif
         MOVE_VENOM_DRENCH),
 #endif //P_FAMILY_GULPIN
 
@@ -2632,6 +2667,9 @@ const u16 gEggMoves[] = {
         MOVE_WHIRLWIND,
         MOVE_LUCKY_CHANT,
         MOVE_ENDURE,
+        #ifndef NO_BALANCE
+        MOVE_MEMENTO,
+        #endif
         MOVE_SIMPLE_BEAM),
 #endif //P_FAMILY_SPOINK
 
@@ -3134,6 +3172,10 @@ const u16 gEggMoves[] = {
         MOVE_SIGNAL_BEAM,
         MOVE_HELPING_HAND,
         MOVE_EERIE_IMPULSE,
+        #ifndef NO_BALANCE
+        MOVE_NUZZLE,
+        MOVE_ZIPPY_ZAP,
+        #endif
         MOVE_FAKE_TEARS),
 #endif //P_FAMILY_SHINX
 
@@ -3166,6 +3208,9 @@ const u16 gEggMoves[] = {
         MOVE_COUNTER,
         MOVE_STEALTH_ROCK,
         MOVE_WIDE_GUARD,
+        #ifndef NO_BALANCE
+        MOVE_SLACK_OFF,
+        #endif
         MOVE_GUARD_SPLIT),
 #endif //P_FAMILY_SHIELDON
 
@@ -3203,6 +3248,9 @@ const u16 gEggMoves[] = {
         MOVE_SWITCHEROO,
         MOVE_TAIL_SLAP,
         MOVE_SOAK,
+        #ifndef NO_BALANCE
+        MOVE_TAIL_SLAP,
+        #endif
         MOVE_HELPING_HAND),
 #endif //P_FAMILY_BUIZEL
 
@@ -3310,6 +3358,9 @@ const u16 gEggMoves[] = {
         MOVE_IRON_TAIL,
         MOVE_FOUL_PLAY,
         MOVE_FLAME_BURST,
+        #ifndef NO_BALANCE
+        MOVE_STUFF_CHEEKS,
+        #endif
         MOVE_PLAY_ROUGH),
 #endif //P_FAMILY_STUNKY
 
@@ -3389,6 +3440,9 @@ const u16 gEggMoves[] = {
         MOVE_SAND_TOMB,
         MOVE_REVENGE,
         MOVE_SLEEP_TALK,
+        #ifndef NO_BALANCE
+        MOVE_HIGH_HORSEPOWER,
+        #endif
         MOVE_WHIRLWIND),
 #endif //P_FAMILY_HIPPOPOTAS
 
@@ -3424,6 +3478,9 @@ const u16 gEggMoves[] = {
         MOVE_COUNTER,
         MOVE_DRAIN_PUNCH,
         MOVE_ACUPRESSURE,
+        #ifndef NO_BALANCE
+        MOVE_AURA_SPHERE,
+        #endif
         MOVE_QUICK_GUARD),
 #endif //P_FAMILY_CROAGUNK
 
@@ -3528,6 +3585,9 @@ const u16 gEggMoves[] = {
         MOVE_REVENGE,
         MOVE_FLAIL,
         MOVE_TEARFUL_LOOK,
+        #ifndef NO_BALANCE
+        MOVE_MEGA_KICK,
+        #endif
         MOVE_BULLET_SEED),
 #endif //P_FAMILY_PATRAT
 
@@ -3816,6 +3876,9 @@ const u16 gEggMoves[] = {
         MOVE_COUNTER,
         MOVE_MEAN_LOOK,
         MOVE_ME_FIRST,
+        #ifndef NO_BALANCE
+        MOVE_DRAGON_DANCE,
+        #endif
         MOVE_POWER_TRIP),
 #endif //P_FAMILY_SANDILE
 
@@ -3855,6 +3918,9 @@ const u16 gEggMoves[] = {
         MOVE_WOOD_HAMMER,
         MOVE_SPIKES,
         MOVE_GRASS_WHISTLE,
+        #ifndef NO_BALANCE
+        MOVE_HYDRO_PUMP,
+        #endif
         MOVE_GRASSY_TERRAIN),
 #endif //P_FAMILY_MARACTUS
 
@@ -4502,6 +4568,9 @@ const u16 gEggMoves[] = {
         MOVE_PLAY_ROUGH,
         MOVE_HAZE,
         MOVE_ACID_ARMOR,
+        #ifndef NO_BALANCE
+        MOVE_RECOVER,
+        #endif
         MOVE_VENOM_DRENCH),
 #endif //P_FAMILY_SKRELP
 
@@ -4595,6 +4664,10 @@ const u16 gEggMoves[] = {
         MOVE_DISABLE,
         MOVE_BESTOW,
         MOVE_DESTINY_BOND,
+        #ifndef NO_BALANCE
+        MOVE_MOONBLAST,
+        MOVE_HEX,
+        #endif
         MOVE_CURSE),
 #endif //P_FAMILY_PUMPKABOO
 
@@ -4632,6 +4705,9 @@ const u16 gEggMoves[] = {
         MOVE_FAKE_OUT,
         MOVE_REVENGE,
         MOVE_HEAT_WAVE,
+        #ifndef NO_BALANCE
+        MOVE_PARTING_SHOT,
+        #endif
         MOVE_POWER_TRIP),
 #endif //P_FAMILY_LITTEN
 
@@ -4684,6 +4760,9 @@ const u16 gEggMoves[] = {
         MOVE_PLUCK,
         MOVE_TAILWIND,
         MOVE_SAFEGUARD,
+        #ifndef NO_BALANCE
+        MOVE_QUIVER_DANCE,
+        #endif
         MOVE_CAPTIVATE),
 #endif //P_FAMILY_ORICORIO
 
@@ -4757,6 +4836,10 @@ const u16 gEggMoves[] = {
         MOVE_POISON_POWDER,
         MOVE_STUN_SPORE,
         MOVE_GROWTH,
+        #ifndef NO_BALANCE
+        MOVE_SPORE,
+        MOVE_WEATHER_BALL,
+        #endif
         MOVE_LEECH_SEED),
 #endif //P_FAMILY_MORELULL
 
@@ -4787,6 +4870,9 @@ const u16 gEggMoves[] = {
         MOVE_PLAY_ROUGH,
         MOVE_FEINT,
         MOVE_CHARM,
+        #ifndef NO_BALANCE
+        MOVE_ACROBATICS,
+        #endif
         MOVE_ACUPRESSURE),
 #endif //P_FAMILY_BOUNSWEET
 
@@ -4878,6 +4964,9 @@ const u16 gEggMoves[] = {
         MOVE_GRUDGE,
         MOVE_DESTINY_BOND,
         MOVE_CURSE,
+        #ifndef NO_BALANCE
+        MOVE_PLAY_ROUGH,
+        #endif
         MOVE_NIGHTMARE),
 #endif //P_FAMILY_MIMIKYU
 
@@ -4951,6 +5040,9 @@ const u16 gEggMoves[] = {
         MOVE_DEFOG,
         MOVE_ROCK_SMASH,
         MOVE_SPITE,
+        #ifndef NO_BALANCE
+        MOVE_BODY_PRESS,
+        #endif
         MOVE_ROOST),
 #endif //P_FAMILY_ROOKIDEE
 
@@ -4984,6 +5076,9 @@ const u16 gEggMoves[] = {
     egg_moves(WOOLOO,
         MOVE_STOMP,
         MOVE_SWAGGER,
+        #ifndef NO_BALANCE
+        MOVE_POWER_TRIP,
+        #endif
         MOVE_COUNTER),
 #endif //P_FAMILY_WOOLOO
 
@@ -5000,6 +5095,9 @@ const u16 gEggMoves[] = {
         MOVE_SAND_ATTACK,
         MOVE_FLAME_CHARGE,
         MOVE_DISCHARGE,
+        #ifndef NO_BALANCE
+        MOVE_ICE_FANG,
+        #endif
         MOVE_HOWL),
 #endif //P_FAMILY_YAMPER
 
@@ -5056,6 +5154,9 @@ const u16 gEggMoves[] = {
         MOVE_KNOCK_OFF,
         MOVE_STRUGGLE_BUG,
         MOVE_ROLLOUT,
+        #ifndef NO_BALANCE
+        MOVE_MORNING_SUN,
+        #endif
         MOVE_DEFENSE_CURL),
 #endif //P_FAMILY_SIZZLIPEDE
 
@@ -5066,6 +5167,10 @@ const u16 gEggMoves[] = {
         MOVE_SUCKER_PUNCH,
         MOVE_CIRCLE_THROW,
         MOVE_SEISMIC_TOSS,
+        #ifndef NO_BALANCE
+        MOVE_AQUA_JET,
+        MOVE_MACH_PUNCH,
+        #endif
         MOVE_POWER_UP_PUNCH),
 #endif //P_FAMILY_CLOBBOPUS
 
