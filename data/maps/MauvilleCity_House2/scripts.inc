@@ -43,7 +43,7 @@ MauvilleCity_House2_EventScript_DeclineTrade::
 
 MauvilleCity_House2_Text_BuyHarborMailAtSlateport:
 	.string "If I had a Bike, it'd be easy to cycle to\n"
-	.string "SLATEPORT for some shopping.\p"
+	.string "Slateport for some shopping.\p"
 	.string "I'd be able to buy HARBOR Mail at the\n"
 	.string "Pokémon MART in SLATEPORT…$"
 

@@ -377,6 +377,6 @@ Route103_Text_ShortcutToOldale:
 	.string "Fufufu, that's useful, isn't it?$"
 
 Route103_Text_RouteSign:
-	.string "ROUTE 103\n"
+	.string "Route 103\n"
 	.string "{DOWN_ARROW} OLDALE TOWN$"
 

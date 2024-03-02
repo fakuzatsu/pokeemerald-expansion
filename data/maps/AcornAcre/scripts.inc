@@ -29,6 +29,6 @@ AcornAcre_EventScript_RouteSignAcornAcre::
 	end
 
 AcornAcre_Text_RouteSignAcornAcre:
-	.string "ROUTE 102\n"
+	.string "Route 102\n"
 	.string "{UP_ARROW} ACORN ACRE$"
 

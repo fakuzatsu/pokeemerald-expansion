@@ -43,7 +43,7 @@ PacifidlogTown_EventScript_TownSign::
 
 PacifidlogTown_Text_FastRunningCurrent:
 	.string "The sea between PACIFIDLOG and\n"
-	.string "SLATEPORT has a fast-running tide.\p"
+	.string "Slateport has a fast-running tide.\p"
 	.string "If you decide to SURF, you could end\n"
 	.string "up swept away somewhere else.$"
 
@@ -62,7 +62,7 @@ PacifidlogTown_Text_SkyPillarTooScary:
 	.string "that suits me fine.$"
 
 PacifidlogTown_Text_TownSign:
-	.string "PACIFIDLOG TOWN\p"
+	.string "Pacifidlog Town\p"
 	.string "“Where the morning sun smiles upon\n"
 	.string "the waters.”$"
 

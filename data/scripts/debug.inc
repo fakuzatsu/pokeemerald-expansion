@@ -100,6 +100,11 @@ Debug_EventScript_Script_1::
 	end
 
 Debug_EventScript_Script_2::
+	msgbox Text_AddedAStar_Debug, MSGBOX_SIGN
+	end
+
+Debug_EventScript_Script_2Alt::
+	msgbox Text_AlreadyMax_Debug, MSGBOX_SIGN
 	end
 
 Debug_EventScript_Script_3::
@@ -209,6 +214,12 @@ DebugText_DaycarePokemonNotCompatible:
 
 Text_ChangedTime_Debug:
 	.string "{PLAYER} changed the time.$"
+
+Text_AddedAStar_Debug:
+	.string "Added a star to your trainer card.$"
+
+Text_AlreadyMax_Debug:
+	.string "Already at max stars.$"
 	
 Debug_ShowExpansionVersion::
 	callnative BufferExpansionVersion

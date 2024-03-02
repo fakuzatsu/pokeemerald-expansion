@@ -221,7 +221,7 @@ FortreeCity_Text_SawGiganticPokemonInSky:
 	.string "No one believes me, but I saw this\n"
 	.string "gigantic Pokémon in the sky.\p"
 	.string "It seemed to squirm as it flew toward\n"
-	.string "ROUTE 131.\p"
+	.string "Route 131.\p"
 	.string "By the way… Sniff…\n"
 	.string "Um… You, uh…smell singed.\p"
 	.string "Were you at a volcano or something?$"
@@ -274,12 +274,12 @@ FortreeCity_Text_UsedDevonScopePokemonFled:
 	.string "The startled Pokémon fled!$"
 
 FortreeCity_Text_CitySign:
-	.string "FORTREE CITY\n"
+	.string "Fortree City\n"
 	.string "“The treetop city that frolics with\l"
 	.string "nature.”$"
 
 FortreeCity_Text_GymSign:
-	.string "FORTREE CITY Pokémon Gym\n"
+	.string "Fortree City Pokémon Gym\n"
 	.string "Leader: WINONA\p"
 	.string "“The bird user taking flight into\n"
 	.string "the world.”$"

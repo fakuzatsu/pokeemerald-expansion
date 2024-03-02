@@ -190,7 +190,7 @@ MoveTutor_Text_DynamicPunchTaught:
 
 MoveTutor_Text_DoubleEdgeTeach:
 	.string "Sigh…\p"
-	.string "SOOTOPOLIS's Gym Leader is really\n"
+	.string "Sootopolis's Gym Leader is really\n"
 	.string "lovably admirable.\p"
 	.string "But that also means I have many\n"
 	.string "rivals for his attention.\p"

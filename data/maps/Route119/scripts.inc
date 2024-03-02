@@ -557,7 +557,7 @@ Route119_Text_MayExplainFly:
 	.string "the Gym BADGE from FORTREE CITY.\l"
 	.string "That's important, so don't forget.\p"
 	.string "You should FLY home and visit\n"
-	.string "LITTLEROOT for a change.\p"
+	.string "Littleroot for a change.\p"
 	.string "I bet your mom's worried about you,\n"
 	.string "{PLAYER}{KUN}.\p"
 	.string "Well, let's meet again somewhere!$"
@@ -648,7 +648,7 @@ Route119_Text_CanYourMonMakeSecretBase:
 	.string "Secret Base?$"
 
 Route119_Text_RouteSignFortree:
-	.string "ROUTE 119\n"
+	.string "Route 119\n"
 	.string "{RIGHT_ARROW} FORTREE CITY$"
 
 Route119_Text_WeatherInstitute:

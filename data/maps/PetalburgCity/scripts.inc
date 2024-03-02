@@ -726,7 +726,7 @@ PetalburgCity_EventScript_GymBoy::
 
 PetalburgCity_Text_WhereIsWally:
 	.string "Where has our WALLY gone?\p"
-	.string "We have to leave for VERDANTURF TOWN\n"
+	.string "We have to leave for VERDANTURF Town\n"
 	.string "very soon…$"
 
 PetalburgCity_Text_AreYouRookieTrainer:
@@ -758,12 +758,12 @@ PetalburgCity_Text_FullPartyExplanation:
 	.string "But none of my Pokémon know SURF...$"
 
 PetalburgCity_Text_GymSign:
-	.string "PETALBURG CITY Pokémon Gym\n"
+	.string "Petalburg City Pokémon Gym\n"
 	.string "Leader: NORMAN\l"
 	.string "“A man in pursuit of power!”$"
 
 PetalburgCity_Text_CitySign:
-	.string "PETALBURG CITY\n"
+	.string "Petalburg City\n"
 	.string "“Where people mingle with nature.”$"
 
 PetalburgCity_Text_WallyHouseSign:

@@ -1230,7 +1230,7 @@ gTVTodaysRivalTrainerText06::
 	.string "and ahead of our rivals!$"
 
 TrendWatcher_Text_Intro::
-	.string "DEWFORD TREND-WATCHER NETWORK!\p"
+	.string "Dewford TREND-WATCHER NETWORK!\p"
 	.string "MC: Wassup?\n"
 	.string "We'll keep it real with the latest on\l"
 	.string "what's hip and happening in DEWFORD.\p"

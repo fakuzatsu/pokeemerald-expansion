@@ -517,7 +517,7 @@ Route109_Text_BrineySailToDewfordQuestion:
 	.string "MR. BRINEY: I thought you're supposed\n"
 	.string "to deliver the DEVON GOODS.\p"
 	.string "Would you like to sail back to\n"
-	.string "DEWFORD, then?$"
+	.string "Dewford, then?$"
 
 Route109_Text_BrineyDewfordItIs:
 	.string "MR. BRINEY: DEWFORD it is, then!\p"
@@ -530,7 +530,7 @@ Route109_Text_BrineyDeliverDevonGoods:
 
 DewfordTown_Text_BrineyLandedInSlateport:
 	.string "MR. BRINEY: Ahoy! We've made land in\n"
-	.string "SLATEPORT!\p"
+	.string "Slateport!\p"
 	.string "You just go on and tell me whenever\n"
 	.string "you want to set sail again!$"
 

@@ -11,7 +11,12 @@ MeteorFalls_1F_1R_MapScripts::
 
 MeteorFalls_1F_1R_OnLoad:
 	call_if_set FLAG_SYS_GAME_CLEAR, MeteorFalls_1F_1R_EventScript_OpenStevensCave
+	call_if_unset FLAG_HIDE_METEORFALLS_STEVEN, MeteorFalls_1F_1R_EventScript_MoveStevenToCozmo
 	end
+
+MeteorFalls_1F_1R_EventScript_MoveStevenToCozmo::
+	setobjectxyperm LOCALID_STEVEN, 12, 20
+	return
 
 MeteorFalls_1F_1R_EventScript_OpenStevensCave::
 	setmetatile 4, 1, METATILE_MeteorFalls_CaveEntrance_Top, TRUE
@@ -137,6 +142,7 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	removeobject LOCALID_ARCHIE
 	removeobject LOCALID_AQUA_GRUNT_1
 	removeobject LOCALID_AQUA_GRUNT_2
+	setobjectxyperm LOCALID_STEVEN, 12, 20
 	clearflag FLAG_HIDE_METEORFALLS_STEVEN
 	setflag FLAG_HIDE_ROUTE_112_TEAM_MAGMA
 	setflag FLAG_MET_ARCHIE_METEOR_FALLS

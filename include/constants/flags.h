@@ -1386,7 +1386,7 @@
 #define FLAG_NURSE_UNION_ROOM_REMINDER                              0x8B0
 
 #define FLAG_SYS_INVALID_CHALLENGE                                  0x8B1 // Custom flag
-#define FLAG_UNUSED_0x8B2                                           0x8B2
+#define FLAG_MERGED_CHALLENGE_CARD                                  0x8B2 // Custom flag
 #define FLAG_UNUSED_0x8B3                                           0x8B3
 #define FLAG_UNUSED_0x8B4                                           0x8B4
 #define FLAG_UNUSED_0x8B5                                           0x8B5

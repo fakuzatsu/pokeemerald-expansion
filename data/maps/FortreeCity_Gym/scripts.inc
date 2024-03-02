@@ -139,7 +139,7 @@ FortreeCity_Gym_EventScript_GymStatue::
 FortreeCity_Gym_Text_GymGuideAdvice:
 	.string "Yo, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
-	.string "FORTREE Gym Leader WINONA is\n"
+	.string "Fortree Gym Leader WINONA is\n"
 	.string "a master of FLYING-type Pokémon.\p"
 	.string "She's waiting at the back of this Gym,\n"
 	.string "behind the rotating doors.\p"
@@ -204,7 +204,7 @@ FortreeCity_Gym_Text_AshleyDefeat:
 
 FortreeCity_Gym_Text_AshleyPostBattle:
 	.string "Thanks to WINONA, the people of\n"
-	.string "FORTREE can live without fear.$"
+	.string "Fortree can live without fear.$"
 
 FortreeCity_Gym_Text_HumbertoIntro:
 	.string "When WINONA takes to battle, her face\n"
@@ -279,10 +279,10 @@ FortreeCity_Gym_Text_WinonaPostBattle:
 	.string "devoted to Bird Pokémon.$"
 
 FortreeCity_Gym_Text_GymStatue:
-	.string "FORTREE CITY Pokémon Gym$"
+	.string "Fortree City Pokémon Gym$"
 
 FortreeCity_Gym_Text_GymStatueCertified:
-	.string "FORTREE CITY Pokémon Gym\p"
+	.string "Fortree City Pokémon Gym\p"
 	.string "WINONA's CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 

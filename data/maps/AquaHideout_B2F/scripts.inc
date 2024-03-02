@@ -135,7 +135,7 @@ AquaHideout_B2F_Text_MattPostBattle:
 	.string "some cave under the sea!\p"
 	.string "If you're going to give chase, you'd\n"
 	.string "better search the big, wide sea beyond\l"
-	.string "LILYCOVE.\p"
+	.string "Lilycove.\p"
 	.string "But will you find it then?\n"
 	.string "Hehehe!$"
 

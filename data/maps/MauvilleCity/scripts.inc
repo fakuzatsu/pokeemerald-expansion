@@ -614,7 +614,7 @@ MauvilleCity_Text_WattsonNeedFavorTakeKey:
 	.string "That's a good thing, wahahahaha!\p"
 	.string "Fine! I've decided!\n"
 	.string "I need a favor, {PLAYER}{KUN}!\p"
-	.string "MAUVILLE CITY has an underground\n"
+	.string "Mauville City has an underground\n"
 	.string "sector called NEW MAUVILLE.\p"
 	.string "{PLAYER}{KUN}, I'd like you to go there and\n"
 	.string "switch off the GENERATOR.\p"
@@ -666,11 +666,11 @@ MauvilleCity_Text_PokemonCanJumpYouOnBike:
 	.string "wild Pokémon could jump you.$"
 
 MauvilleCity_Text_CitySign:
-	.string "MAUVILLE CITY\n"
+	.string "Mauville City\n"
 	.string "“The bright and shiny city of fun!”$"
 
 MauvilleCity_Text_GymSign:
-	.string "MAUVILLE CITY Pokémon Gym\n"
+	.string "Mauville City Pokémon Gym\n"
 	.string "Leader: WATTSON\l"
 	.string "“The cheerfully electrifying man!”$"
 
@@ -681,7 +681,7 @@ MauvilleCity_Text_BikeShopSign:
 
 MauvilleCity_Text_GameCornerSign:
 	.string "“The play spot for all!”\n"
-	.string "MAUVILLE GAME CORNER$"
+	.string "Mauville GAME CORNER$"
 
 MauvilleCity_Text_ExplainTV:
 	.string "Hi, do you check out TV at all?\p"

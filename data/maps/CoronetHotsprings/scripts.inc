@@ -32,7 +32,28 @@ CoronetHotsprings_OnResume_Day:
 CoronetHotsprings_EventScript_Flavia::
 	lock
 	faceplayer
+	goto_if_set FLAG_BADGE04_GET, CoronetHotsprings_EventScript_GiveHoundoomiteOrEnd
 	msgbox CoronetHotsprings_Text_Flavia, MSGBOX_DEFAULT
+	release
+	end
+
+CoronetHotsprings_EventScript_GiveHoundoomiteOrEnd::
+	goto_if_unset FLAG_HIDDEN_ITEM_HOUNDOOMINITE, CoronetHotsprings_EventScript_GiveHoundoomite
+	msgbox CoronetHotsprings_Text_ThanksForHelpingHerOut, MSGBOX_DEFAULT
+	release
+	end
+
+CoronetHotsprings_EventScript_GiveHoundoomite::
+	msgbox CoronetHotsprings_Text_OhYouBeatFlannery, MSGBOX_DEFAULT
+	giveitem ITEM_HOUNDOOMINITE
+	goto_if_eq VAR_RESULT, CoronetHotsprings_EventScript_NotEnoughSpace
+	msgbox CoronetHotsprings_Text_ThanksForHelpingHerOut, MSGBOX_DEFAULT
+	setflag FLAG_HIDDEN_ITEM_HOUNDOOMINITE
+	release
+	end
+
+CoronetHotsprings_EventScript_NotEnoughSpace::
+	msgbox CoronetHotsprings_Text_YoullNeedToMakeSpace, MSGBOX_DEFAULT
 	release
 	end
 
@@ -49,6 +70,24 @@ CoronetHotsprings_Text_Flavia:
 	.string "older sister!\p"
 	.string "She's the new gym leader now\n"
 	.string "that gramps is retired!$"
+
+CoronetHotsprings_Text_OhYouBeatFlannery:
+	.string "Oh hey! That badge means you beat\n"
+	.string "my sister Flannery.\p"
+	.string "You must be one tough Lava Cookie.\p"
+	.string "Here's something from me too.$"
+
+CoronetHotsprings_Text_YoullNeedToMakeSpace:
+	.string "Oh, but you'll need to make space\n"
+	.string "in your bag if you want it.$"
+
+CoronetHotsprings_Text_ThanksForHelpingHerOut:
+	.string "I know my sister…\p"
+	.string "She's a total hothead and she takes\n"
+	.string "things way too seriously.\p"
+	.string "I bet a fight with a trainer like\n"
+	.string "you straightened her out a bit?\p"
+	.string "Thanks for that.$"
 
 CoronetHotsprings_Text_SometimesPokemon:
 	.string "Hihi!\p"

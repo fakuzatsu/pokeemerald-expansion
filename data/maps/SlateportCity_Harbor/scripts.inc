@@ -411,7 +411,7 @@ SlateportCity_Harbor_Text_SailAnotherTime:
 	.string "Please sail with us another time!$"
 
 SlateportCity_Harbor_Text_LilycoveItIs:
-	.string "LILYCOVE CITY it is, then!$"
+	.string "Lilycove City it is, then!$"
 
 SlateportCity_Harbor_Text_BattleFrontierItIs:
 	.string "Battle Frontier it is, then!$"
@@ -482,7 +482,7 @@ SlateportCity_Harbor_Text_TeamAquaLeftNeedDive:
 	.string "You would need a Pokémon that knows\n"
 	.string "how to DIVE…\p"
 	.string "Perhaps if you went out to\n"
-	.string "MOSSDEEP CITY…\p"
+	.string "Mossdeep City…\p"
 	.string "A lot of divers live out there, so\n"
 	.string "someone might teach you…$"
 
@@ -492,7 +492,7 @@ SlateportCity_Harbor_Text_NeedDiveToCatchSub:
 	.string "You would need a Pokémon that knows\n"
 	.string "how to DIVE…\p"
 	.string "Perhaps if you went out to\n"
-	.string "MOSSDEEP CITY…\p"
+	.string "Mossdeep City…\p"
 	.string "A lot of divers live out there, so\n"
 	.string "someone might teach you…$"
 

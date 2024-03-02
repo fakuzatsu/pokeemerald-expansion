@@ -307,7 +307,7 @@ Route128_Text_StevenWholeWorldWillDrown:
 	.string "from above SOOTOPOLIS…\p"
 	.string "What in the world is taking place there?\p"
 	.string "There's no point arguing here…\n"
-	.string "SOOTOPOLIS might provide answers…$"
+	.string "Sootopolis might provide answers…$"
 
 Route128_Text_StevenImGoingToSootopolis:
 	.string "{PLAYER}{KUN}…\n"

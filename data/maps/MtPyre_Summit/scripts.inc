@@ -193,6 +193,7 @@ MtPyre_Summit_EventScript_OldLady::
 MtPyre_Summit_EventScript_OldLadyOrbsReturned::
 	msgbox MtPyre_Summit_Text_ThoseTwoMenReturnedOrbs, MSGBOX_DEFAULT
 	setflag FLAG_RETURNED_RED_OR_BLUE_ORB
+	goto_if_unset FLAG_HIDDEN_ITEM_GENGARITE, MtPyre_Summit_EventScript_GiveGengarite
 	release
 	end
 
@@ -202,7 +203,21 @@ MtPyre_Summit_EventScript_OldLadyLegendariesAwake::
 	end
 
 MtPyre_Summit_EventScript_OldLadyAfterOrbsReturned::
+	goto_if_unset FLAG_HIDDEN_ITEM_GENGARITE, MtPyre_Summit_EventScript_GiveGengarite
 	msgbox MtPyre_Summit_Text_SuperAncientPokemonTaughtUs, MSGBOX_DEFAULT
+	release
+	end
+
+MtPyre_Summit_EventScript_GiveGengarite::
+	msgbox MtPyre_Summit_Text_PleaseTakeThis, MSGBOX_DEFAULT
+	giveitem ITEM_GENGARITE
+	goto_if_eq VAR_RESULT, MtPyre_Summit_EventScript_NoSpaceForGengarite
+	setflag FLAG_HIDDEN_ITEM_GENGARITE
+	release
+	end
+
+MtPyre_Summit_EventScript_NoSpaceForGengarite::
+	msgbox MtPyre_Summit_Text_OhButYouHaveNoRoom, MSGBOX_DEFAULT
 	release
 	end
 
@@ -566,6 +581,16 @@ MtPyre_Summit_Text_ThoseTwoMenReturnedOrbs:
 	.string "Those men…\n"
 	.string "Perhaps they are not so evil after all…$"
 
+MtPyre_Summit_Text_PleaseTakeThis:
+	.string "Please, for the role you played in\n"
+	.string "returning the orbs…\p"
+	.string "Take this.$"
+
+MtPyre_Summit_Text_OhButYouHaveNoRoom:
+	.string "Oh…\p"
+	.string "But you will have to make some\n"
+	.string "room in your bag first.$"
+
 MtPyre_Summit_Text_SuperAncientPokemonTaughtUs:
 	.string "The embodiments of the land, sea,\n"
 	.string "and the sky…\p"
@@ -621,7 +646,7 @@ MtPyre_Summit_Text_HearTheNewLegendOfHoenn:
 	.string "It is my role to pass on the legends\n"
 	.string "of HOENN to future generations.\p"
 	.string "And the crisis that just ended in\n"
-	.string "SOOTOPOLIS rewrote a legend…\p"
+	.string "Sootopolis rewrote a legend…\p"
 	.string "Have you the time to hear the new\n"
 	.string "legend of HOENN?$"
 

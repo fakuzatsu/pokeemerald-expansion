@@ -2345,9 +2345,9 @@ MatchCall_Text_May1::
 MatchCall_Text_May2::
 	.string "May: Hi, {PLAYER}{KUN}!\p"
 	.string "You know how little towns like\n"
-	.string "PETALBURG and DEWFORD have GYMS?\p"
+	.string "Petalburg and DEWFORD have GYMS?\p"
 	.string "For some reason, the big port of\n"
-	.string "SLATEPORT doesn't have a Gym.\p"
+	.string "Slateport doesn't have a Gym.\p"
 	.string "When they finally build a Gym there,\n"
 	.string "I should apply to be the Leader.$"
 
@@ -2471,9 +2471,9 @@ MatchCall_Text_Brendan1::
 MatchCall_Text_Brendan2::
 	.string "Brendan: Hey, {PLAYER}!\p"
 	.string "I don't get how little towns like\n"
-	.string "PETALBURG and DEWFORD have GYMS.\p"
+	.string "Petalburg and DEWFORD have GYMS.\p"
 	.string "I mean, not when the big port of\n"
-	.string "SLATEPORT doesn't have a Gym.\p"
+	.string "Slateport doesn't have a Gym.\p"
 	.string "When they finally build a Gym there,\n"
 	.string "I should apply to be the Leader.$"
 
@@ -2493,7 +2493,7 @@ MatchCall_Text_Brendan4::
 	.string "Brendan: This voice… {PLAYER}?\p"
 	.string "They gave RUSTURF TUNNEL its name\n"
 	.string "because it joins RUSTBORO and\l"
-	.string "VERDANTURF.\p"
+	.string "Verdanturf.\p"
 	.string "Did you know that?$"
 
 MatchCall_Text_Brendan5::
@@ -2601,7 +2601,7 @@ MatchCall_Text_Wally2::
 MatchCall_Text_Wally3::
 	.string "WALLY: Oh, {PLAYER}!\p"
 	.string "I… I left my uncle's place in\n"
-	.string "VERDANTURF without telling anyone.\p"
+	.string "Verdanturf without telling anyone.\p"
 	.string "I wonder if he's furious with me…\p"
 	.string "{PLAYER}, you understand how\n"
 	.string "I feel, don't you?$"

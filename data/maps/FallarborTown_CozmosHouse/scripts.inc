@@ -14,6 +14,8 @@ FallarborTown_CozmosHouse_EventScript_ProfCozmo::
 	lock
 	faceplayer
 	goto_if_set FLAG_STARTER_MEGA_STONE_BACKUP, FallarborTown_CozmosHouse_EventScript_GiveStarterMegaStone
+	call_if_unset FLAG_HIDDEN_ITEM_GALLADITE, FallarborTown_CozmosHouse_EventScript_TryGiveGalladite
+	call_if_unset FLAG_HIDDEN_ITEM_GARDEVOURITE, FallarborTown_CozmosHouse_EventScript_TryGiveGardevourite
 	goto_if_set FLAG_RECEIVED_TM_RETURN, FallarborTown_CozmosHouse_EventScript_GaveMeteorite
 	checkitem ITEM_METEORITE
 	goto_if_eq VAR_RESULT, TRUE, FallarborTown_CozmosHouse_EventScript_PlayerHasMeteorite
@@ -84,6 +86,32 @@ FallarborTown_CozmosHouse_EventScript_CosmoGiveSwampertite::
 	release
 	end
 
+FallarborTown_CozmosHouse_EventScript_TryGiveGalladite::
+	goto_if_set FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, FallarborTown_CozmosHouse_EventScript_GiveGalladite
+	return
+
+FallarborTown_CozmosHouse_EventScript_GiveGalladite::
+	msgbox FallarborTown_CozmosHouse_Text_HeardAboutMtPyre, MSGBOX_DEFAULT
+	giveitem ITEM_GALLADITE
+	goto_if_eq VAR_RESULT, FALSE, FallarborTown_CozmosHouse_EventScript_NoMegaStoneSpaceInterupt
+	setflag FLAG_HIDDEN_ITEM_GALLADITE
+	msgbox FallarborTown_CozmosHouse_Text_HopeYouCanPutItToUse, MSGBOX_DEFAULT
+	release
+	end
+
+FallarborTown_CozmosHouse_EventScript_TryGiveGardevourite::
+	goto_if_set FLAG_HIDE_ROUTE_119_TEAM_AQUA, FallarborTown_CozmosHouse_EventScript_GiveGardevourite
+	return
+
+FallarborTown_CozmosHouse_EventScript_GiveGardevourite::
+	msgbox FallarborTown_CozmosHouse_Text_HeardAboutWeatherInst, MSGBOX_DEFAULT
+	giveitem ITEM_GARDEVOIRITE
+	goto_if_eq VAR_RESULT, FALSE, FallarborTown_CozmosHouse_EventScript_NoMegaStoneSpaceInterupt
+	setflag FLAG_HIDDEN_ITEM_GARDEVOURITE
+	msgbox FallarborTown_CozmosHouse_Text_HopeYouCanPutItToUse, MSGBOX_DEFAULT
+	release
+	end
+
 FallarborTown_CozmosHouse_EventScript_NoMegaStoneSpaceInterupt::
 	msgbox FallarborTown_CosmosHouse_Text_NoSpaceMegaStone, MSGBOX_DEFAULT
 	release
@@ -116,31 +144,31 @@ FallarborTown_CozmosHouse_EventScript_Steven::
 	end
 
 FallarborTown_CozmosHouse_Text_MeteoriteWillNeverBeMineNow:
-	.string "Prof. COZMO: Oh…\n"
+	.string "Prof. Cozmo: Oh…\n"
 	.string "I never should have let myself be\l"
 	.string "conned into telling Team Magma where\l"
-	.string "you can find METEORITES…\p"
-	.string "That METEORITE from METEOR FALLS…\n"
+	.string "you can find Meteorites…\p"
+	.string "That Meteorite from METEOR FALLS…\n"
 	.string "It's never going to be mine now…$"
 
 FallarborTown_CozmosHouse_Text_IsThatMeteoriteMayIHaveIt:
-	.string "Oh!\n"
+	.string "Prof. Cozmo: Oh!\n"
 	.string "Hah?\p"
 	.string "That item…\p"
 	.string "Could it be?\p"
-	.string "Is it the METEORITE that Team Magma\n"
+	.string "Is it the Meteorite that Team Magma\n"
 	.string "took from METEOR FALLS?\p"
 	.string "Please, may I have it?\p"
 	.string "I'm not asking for it for free.\n"
 	.string "How about in exchange for this TM?$"
 
 FallarborTown_CozmosHouse_Text_PleaseUseThisTM:
-	.string "Prof. COZMO: This TM, it represents\n"
+	.string "Prof. Cozmo: This TM, it represents\n"
 	.string "my feeling of gratitude.\l"
 	.string "Please use it!$"
 
 FallarborTown_CozmosHouse_Text_ReallyGoingToHelpMyResearch:
-	.string "Prof. COZMO: Oh, I can't believe it.\n"
+	.string "Prof. Cozmo: Oh, I can't believe it.\n"
 	.string "This is really, really great!\p"
 	.string "This is really going to help my research!\p"
 	.string "That Mega Stone I gave to you was found\n"
@@ -149,42 +177,64 @@ FallarborTown_CozmosHouse_Text_ReallyGoingToHelpMyResearch:
 	.string "with this Meteorite too$"
 
 FallarborTown_CozmosHouse_Text_CrushedWithDisappointment:
-	.string "Prof. COZMO: Oh, but…\n"
+	.string "Prof. Cozmo: Oh, but…\n"
 	.string "I'm crushed with disappointment…$"
 
 FallarborTown_CozmosHouse_Text_MayIHaveMeteorite:
-	.string "Prof. COZMO: Please, may I have that\n"
-	.string "METEORITE?\p"
+	.string "Prof. Cozmo: Please, may I have that\n"
+	.string "Meteorite?\p"
 	.string "I'm not asking for it for free.\n"
 	.string "How about in exchange for this TM?$"
 
 FallarborTown_CozmosHouse_Text_CozmoWentToMeteorFalls:
-	.string "Prof. COZMO went off to METEOR FALLS\n"
+	.string "Prof. Cozmo went off to METEOR FALLS\n"
 	.string "on ROUTE 114 with some people from\l"
 	.string "Team Magma.$"
 
 FallarborTown_CozmosHouse_Text_FeelSorryForCozmo:
-	.string "Poor Prof. COZMO…\n"
+	.string "Poor Prof. Cozmo\n"
 	.string "He's so depressed… I feel sorry for him.$"
 
 FallarborTown_CozmosHouse_Text_CozmoIsSoHappy:
-	.string "Look at Prof. COZMO…\n"
+	.string "Look at Prof. Cozmo\n"
 	.string "He's so happy! I think it's cute.$"
 
 FallarborTown_CosmosHouse_Text_GiveStarterMegaStone:
-	.string "Prof. COZMO: Oh hello {PLAYER}.\p"
+	.string "Prof. Cozmo: Oh hello {PLAYER}.\p"
 	.string "Steven gave me this special stone back\n"
 	.string "for safekeeping.\p"
 	.string "Please take it with my thanks for \n"
 	.string "saving me from Team Magma.$"
 
 FallarborTown_CosmosHouse_Text_NoSpaceMegaStone:
-	.string "Oh… You have no space for this\n"
-	.string "special stone.$"
+	.string "Prof. Cozmo: Oh… You have no space\n"
+	.string "for this special stone.$"
 
 FallarborTown_CozmosHouse_Text_Steven:
-	.string "Oh, {PLAYER}.\p"
+	.string "Steven: Oh, {PLAYER}.\p"
 	.string "Don't worry about Cosmo.\p"
 	.string "I've already chased some Team\n"
 	.string "Magma goons away.\p"
 	.string "You should head up to Mt. Pyre.$"
+
+FallarborTown_CozmosHouse_Text_HeardAboutMtPyre:
+	.string "Prof. Cozmo: Hello {PLAYER}!\p"
+	.string "I heard about what you did at Mt. Pyre…\p"
+	.string "Clearing off that evil team Magma.\p"
+	.string "I knew I was right to trust you!\p"
+	.string "Please, I want you to have another of\n"
+	.string "special stones that I've found.\p"
+
+FallarborTown_CozmosHouse_Text_HeardAboutWeatherInst:
+	.string "Prof. Cozmo: {PLAYER}!\n"
+	.string "Greetings!\p"
+	.string "I heard tale of you taking out Team\n"
+	.string "Aqua at the Weather Institute.\p"
+	.string "I have some good friends doing research\n"
+	.string "there!\p"
+	.string "Please take this as my thanks!\n"
+	.string "It's another of those stones.$"
+
+FallarborTown_CozmosHouse_Text_HopeYouCanPutItToUse:
+	.string "Prof. Cozmo: I hope you can put it to\n"
+	.string "good use!$"

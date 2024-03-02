@@ -488,7 +488,7 @@ Route105_Text_DominikDefeated:
 Route105_Text_DominikPostBattle:
 	.string "Why is the sea blue?\p"
 	.string "I learned about that at the MUSEUM in\n"
-	.string "SLATEPORT, but I forgot.$"
+	.string "Slateport, but I forgot.$"
 
 Route105_Text_BeverlyIntro:
 	.string "My body feels lighter in the water.\n"
@@ -670,7 +670,7 @@ Route107_Text_TonyRematchPostBattle:
 
 Route107_Text_DeniseIntro:
 	.string "Do you know a little town called\n"
-	.string "DEWFORD?$"
+	.string "Dewford?$"
 
 Route107_Text_DeniseDefeated:
 	.string "I hate this!$"
@@ -3965,7 +3965,7 @@ Route126_Text_DeanDefeat:
 
 Route126_Text_DeanPostBattle:
 	.string "I can't find the entrance to\n"
-	.string "SOOTOPOLIS. Where could it be?$"
+	.string "Sootopolis. Where could it be?$"
 
 Route126_Text_NikkiIntro:
 	.string "Ufufufufu!\n"
@@ -4195,7 +4195,7 @@ Route128_Text_IsaiahRematchDefeat:
 	.string "I've yet to taste my first victory…$"
 
 Route128_Text_IsaiahPostRematch:
-	.string "I'll eventually reach Ever GRANDE CITY\n"
+	.string "I'll eventually reach Ever GRANDE City\n"
 	.string "where I can eventually win…$"
 
 Route128_Text_KatelynIntro:

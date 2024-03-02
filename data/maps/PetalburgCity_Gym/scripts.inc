@@ -1553,10 +1553,10 @@ PetalburgCity_Gym_Text_EnterGymLeadersRoom:
 	.string "Do you want to go through?$"
 
 PetalburgCity_Gym_Text_GymStatue:
-	.string "PETALBURG CITY Pokémon Gym$"
+	.string "Petalburg City Pokémon Gym$"
 
 PetalburgCity_Gym_Text_GymStatueCertified:
-	.string "PETALBURG CITY Pokémon Gym\p"
+	.string "Petalburg City Pokémon Gym\p"
 	.string "NORMAN's CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 

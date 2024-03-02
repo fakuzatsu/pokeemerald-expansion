@@ -344,7 +344,7 @@ MauvilleCity_Gym_Text_AngeloDefeat:
 	.string "My eyes are frazzled…$"
 
 MauvilleCity_Gym_Text_AngeloPostBattle:
-	.string "MAUVILLE Gym's WATTSON has a shiny\n"
+	.string "Mauville Gym's WATTSON has a shiny\n"
 	.string "forehead. It makes me happy!$"
 
 MauvilleCity_Gym_Text_WattsonIntro:
@@ -358,7 +358,7 @@ MauvilleCity_Gym_Text_WattsonIntro:
 	.string "Wahahahah!\n"
 	.string "Now, that is amusing!\p"
 	.string "Then, I, WATTSON, the Leader of\n"
-	.string "MAUVILLE Gym, shall electrify you!$"
+	.string "Mauville Gym, shall electrify you!$"
 
 MauvilleCity_Gym_Text_WattsonDefeat:
 	.string "Wahahahah!\n"
@@ -399,10 +399,10 @@ MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor:
 	.string "Go forth and endeavor, youngster!$"
 
 MauvilleCity_Gym_Text_GymStatue:
-	.string "MAUVILLE CITY Pokémon Gym$"
+	.string "Mauville City Pokémon Gym$"
 
 MauvilleCity_Gym_Text_GymStatueCertified:
-	.string "MAUVILLE CITY Pokémon Gym\p"
+	.string "Mauville City Pokémon Gym\p"
 	.string "WATTSON's CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
