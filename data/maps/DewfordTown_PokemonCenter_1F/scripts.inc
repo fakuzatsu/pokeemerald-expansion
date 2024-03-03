@@ -66,26 +66,26 @@ DewfordTown_PokemonCenter_1F_EventScript_Man::
 	end
 
 DewfordTown_PokemonCenter_1F_Text_WouldYouLikeToBattle:
-	.string "Ahoy! I be marooned here after I\n"
+	.string "Ahoy! I'm marooned here after I\n"
 	.string "grounded me' ship on a rock over\l"
 	.string "on Route 107.\p"
-	.string "There be little to do here\n"
+	.string "There's little to do here\n"
 	.string "compared to Slateport.\p"
 	.string "Yarrgh!\n"
 	.string "I'm itching for a battle.\p"
-	.string "How about it? If ye beat me, I'll\n"
-	.string "teach ye a special power.$"
+	.string "How about it? If ye' beat me, I'll\n"
+	.string "teach ye' a special power.$"
 
 DewfordTown_PokemonCenter_1F_Text_ExplainPower::
-	.string "That power I've given ye…\p"
+	.string "That power I've given ye'…\p"
 	.string "Ye'll be able to teach Pokémon\n"
 	.string "moves they had forgotten.\p"
 	.string "Yarrgh!\p"
-	.string "No need to find ye a Pokémon center,\n"
-	.string "just interact with ye squad.\p"
+	.string "No need to find a Pokémon center,\n"
+	.string "just interact with ye' squad.\p"
 	.string "… … …\p"
-	.string "Just bear ye in mind, that Pokémon\n"
-	.string "can't relearn TMs moves.$"
+	.string "Just bear in mind that Pokémon\n"
+	.string "can't relearn moves from TMs.$"
 
 DewfordTown_PokemonCenter_1F_Text_OhMaybeNextTime::
 	.string "Yarrgh!\p"
@@ -97,22 +97,21 @@ DewfordTown_PokemonCenter_1F_Text_TeachIntro::
 
 VerdantIsle_Text_TeachDefeat::
 	.string "Ohohoh.\p"
-	.string "There's more to ye than meet the\n"
+	.string "There's more to ye' than meet the\n"
 	.string "eye, ain't there?$"
 
 DewfordTown_PokemonCenter_1F_Text_BeatMeFairAndSquare::
-	.string "Well ye beat me fair and square.\p"
-	.string "As promised. I'll share me power\n"
-	.string "with ye.\p"
-	.string "So what ye do is…$"
+	.string "Well ye' beat me fair and square.\p"
+	.string "As promised. I'll share me' power\n"
+	.string "with ye'…$"
 
 DewfordTown_PokemonCenter_1F_EventScript_YouCanTeachPokemon::
 	.string "{PLAYER} can now teach Pokémon\n"
 	.string "forgotten moves.$"
 
 DewfordTown_PokemonCenter_1F_Text_NowBackToWaiting::
-	.string "Well ye gave me a good time.\p"
-	.string "Back to me waiting I suppose…$"
+	.string "Well ye' gave me a good time.\p"
+	.string "Back to me' waiting I suppose…$"
 
 DewfordTown_PokemonCenter_1F_Text_StoneCavern:
 	.string "There's a stone cavern at the edge\n"
