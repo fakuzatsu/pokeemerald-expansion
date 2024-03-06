@@ -3367,9 +3367,9 @@ static const u8 sTM67Desc[] = _( // Custom
     "greater damage");
 
 static const u8 sTM68Desc[] = _( // Custom
-    "A wild charge, using\n"
-    "every bit of power.\n"
-    "Must rest next turn.");
+    "With the full weight\n"
+    "of their body, the\n"
+    "user slams the foe.");
 
 static const u8 sTM69Desc[] = _( // Custom
     "By polishing it's\n"
