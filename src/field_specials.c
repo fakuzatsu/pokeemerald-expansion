@@ -542,7 +542,12 @@ u16 CheckEvolutionStone(void)
 
     if (species == SPECIES_EEVEE)
     {
+        #ifndef NO_EVO_CHANGES
+        rand = Random() % 8;
+        #else
         rand = Random() % 5;
+        #endif
+
         switch(rand)
         {
         case 0:
@@ -555,6 +560,14 @@ u16 CheckEvolutionStone(void)
             return ITEM_LEAF_STONE;
         case 4:
             return ITEM_ICE_STONE;
+        #ifndef NO_EVO_CHANGES
+        case 5:
+            return ITEM_SUN_STONE;
+        case 6:
+            return ITEM_MOON_STONE;
+        case 7:
+            return ITEM_SHINY_STONE;
+        #endif // NO_EVO_CHANGES
         default:
             return ITEM_WATER_STONE;
         }

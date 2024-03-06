@@ -2021,7 +2021,11 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         ICON(Pancham, 1),
         .footprint = gMonFootprint_Pancham,
         LEARNSETS(Pancham),
+        #ifdef NO_EVO_CHANGES
         .evolutions = EVOLUTION({EVO_LEVEL_DARK_TYPE_MON_IN_PARTY, 32, SPECIES_PANGORO}),
+        #else
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_PANGORO}),
+        #endif
     },
 
     [SPECIES_PANGORO] =

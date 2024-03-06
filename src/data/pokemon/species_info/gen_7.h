@@ -1019,8 +1019,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         ICON(Charjabug, 1),
         .footprint = gMonFootprint_Charjabug,
         LEARNSETS(Charjabug),
-        .evolutions = EVOLUTION({EVO_MAPSEC, MAPSEC_NEW_MAUVILLE, SPECIES_VIKAVOLT},
-                                {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VIKAVOLT}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VIKAVOLT}),
     },
 
     [SPECIES_VIKAVOLT] =
@@ -1141,8 +1140,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         ICON(Crabrawler, 2),
         .footprint = gMonFootprint_Crabrawler,
         LEARNSETS(Crabrawler),
-        .evolutions = EVOLUTION({EVO_SPECIFIC_MAP, MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM, SPECIES_CRABOMINABLE},
-                                {EVO_ITEM, ITEM_ICE_STONE, SPECIES_CRABOMINABLE}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_ICE_STONE, SPECIES_CRABOMINABLE}),
     },
 
     [SPECIES_CRABOMINABLE] =

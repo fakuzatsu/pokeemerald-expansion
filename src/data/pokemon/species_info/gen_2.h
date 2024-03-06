@@ -3880,8 +3880,13 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         ICON(Gligar, 0),
         .footprint = gMonFootprint_Gligar,
         LEARNSETS(Gligar),
+        #ifdef NO_EVO_CHANGES
         .evolutions = EVOLUTION({EVO_ITEM_HOLD_NIGHT, ITEM_RAZOR_FANG, SPECIES_GLISCOR},
                                 {EVO_ITEM_NIGHT, ITEM_RAZOR_FANG, SPECIES_GLISCOR}),
+        #else
+        .evolutions = EVOLUTION({EVO_ITEM_HOLD, ITEM_RAZOR_FANG, SPECIES_GLISCOR},
+                                {EVO_ITEM, ITEM_RAZOR_FANG, SPECIES_GLISCOR}),
+        #endif
     },
 
 #if P_GEN_4_CROSS_EVOS
@@ -4448,8 +4453,13 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         PALETTES(Sneasel),
         ICON(Sneasel, 0),
         LEARNSETS(Sneasel),
+        #ifdef NO_EVO_CHANGES
         .evolutions = EVOLUTION({EVO_ITEM_HOLD_NIGHT, ITEM_RAZOR_CLAW, SPECIES_WEAVILE},
                                 {EVO_ITEM_NIGHT, ITEM_RAZOR_CLAW, SPECIES_WEAVILE}),
+        #else
+        .evolutions = EVOLUTION({EVO_ITEM_HOLD, ITEM_RAZOR_CLAW, SPECIES_WEAVILE},
+                                {EVO_ITEM, ITEM_RAZOR_CLAW, SPECIES_WEAVILE}),
+        #endif
     },
 
 #if P_GEN_4_CROSS_EVOS
@@ -4540,8 +4550,13 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         ICON(SneaselHisuian, 2),
         LEARNSETS(SneaselHisuian),
         .isHisuianForm = TRUE,
+        #ifdef NO_EVO_CHANGES
         .evolutions = EVOLUTION({EVO_ITEM_HOLD_DAY, ITEM_RAZOR_CLAW, SPECIES_SNEASLER},
                                 {EVO_ITEM_DAY, ITEM_RAZOR_CLAW, SPECIES_SNEASLER}),
+        #else
+        .evolutions = EVOLUTION({EVO_ITEM_HOLD, ITEM_RAZOR_CLAW, SPECIES_SNEASLER},
+                                {EVO_ITEM, ITEM_RAZOR_CLAW, SPECIES_SNEASLER}),
+        #endif
     },
 
     [SPECIES_SNEASLER] =
@@ -4717,8 +4732,13 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         ICON(Ursaring, 2),
         .footprint = gMonFootprint_Ursaring,
         LEARNSETS(Ursaring),
+        #ifdef NO_EVO_CHANGES
         .evolutions = EVOLUTION({EVO_ITEM_NIGHT, ITEM_PEAT_BLOCK, SPECIES_URSALUNA},
                                 {EVO_NONE, 0, SPECIES_URSALUNA_BLOODMOON}),
+        #else
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_PEAT_BLOCK, SPECIES_URSALUNA},
+                                {EVO_NONE, 0, SPECIES_URSALUNA_BLOODMOON}),
+        #endif
     },
 
 #if P_GEN_8_CROSS_EVOS
@@ -5534,7 +5554,12 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         ICON(Mantyke, 0),
         .footprint = gMonFootprint_Mantyke,
         LEARNSETS(Mantyke),
+        #ifdef NO_EVO_CHANGES
         .evolutions = EVOLUTION({EVO_SPECIFIC_MON_IN_PARTY, SPECIES_REMORAID, SPECIES_MANTINE}),
+        #else
+        .evolutions = EVOLUTION({EVO_SPECIFIC_MON_IN_PARTY, SPECIES_REMORAID, SPECIES_MANTINE},
+                                {EVO_FRIENDSHIP, 0, SPECIES_MANTINE}),
+        #endif
     },
 #endif //P_GEN_4_CROSS_EVOS
 
