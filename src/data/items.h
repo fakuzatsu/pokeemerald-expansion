@@ -7952,7 +7952,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_PAYBACK,
+        .secondaryId = MOVE_PAYBACK, // Needs adding to learnsets
     },
 
     [ITEM_TM67] =
@@ -7976,7 +7976,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_GIGA_IMPACT,
+        .secondaryId = MOVE_GIGA_IMPACT, //
     },
 
     [ITEM_TM69] =
