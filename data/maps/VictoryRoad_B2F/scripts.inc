@@ -1,5 +1,26 @@
 VictoryRoad_B2F_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, VictoryRoad_B2F_OnLoad
 	.byte 0
+
+VictoryRoad_B2F_OnLoad:
+	call_if_set FLAG_HIDDEN_ITEM_MEDICHAMITE, VictoryRoad_B2F_Hide_Medichamite
+	end
+
+VictoryRoad_B2F_Hide_Medichamite::
+    setmetatile 34, 18, METATILE_General_Grass, FALSE
+    return
+
+VictoryRoad_B2F_Medichamite::
+	goto_if_set FLAG_HIDDEN_ITEM_MEDICHAMITE, VictoryRoad_B2F_End_Medichamite
+	checkitemspace ITEM_MEDICHAMITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	call VictoryRoad_B2F_Hide_Medichamite
+	special DrawWholeMapView
+	giveitem ITEM_MEDICHAMITE
+	setflag FLAG_HIDDEN_ITEM_MEDICHAMITE
+VictoryRoad_B2F_End_Medichamite::
+	release
+	end	
 
 VictoryRoad_B2F_EventScript_Vito::
 	trainerbattle_single TRAINER_VITO, VictoryRoad_B2F_Text_VitoIntro, VictoryRoad_B2F_Text_VitoDefeat

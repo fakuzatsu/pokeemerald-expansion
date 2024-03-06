@@ -34,6 +34,7 @@ EverGrandeCity_HallOfFame_EventScript_EnterHallOfFame::
 	applymovement LOCALID_WALLACE, Common_Movement_WalkInPlaceFasterRight
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
+	call_if_set FLAG_SYS_GAME_CLEAR, EverGrandeCity_HallOfFame_EventScript_TryGiveMetagrossite
 	msgbox EverGrandeCity_HallOfFame_Text_LetsRecordYouAndYourPartnersNames, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_WALLACE, Common_Movement_WalkInPlaceFasterUp
@@ -49,6 +50,20 @@ EverGrandeCity_HallOfFame_EventScript_EnterHallOfFame::
 	goto_if_eq VAR_RESULT, MALE, EverGrandeCity_HallOfFame_EventScript_GameClearMale
 	goto_if_eq VAR_RESULT, FEMALE, EverGrandeCity_HallOfFame_EventScript_GameClearFemale
 	end
+
+EverGrandeCity_HallOfFame_EventScript_TryGiveMetagrossite::
+	call_if_unset FLAG_HIDDEN_ITEM_METAGROSSITE, EverGrandeCity_HallOfFame_EventScript_GiveMetagrossite
+	return
+
+EverGrandeCity_HallOfFame_EventScript_GiveMetagrossite::
+	msgbox EverGrandeCity_HallOfFlame_Text_TakeMetagrossite, MSGBOX_DEFAULT
+	giveitem ITEM_METAGROSSITE
+	call_if_eq VAR_RESULT, TRUE, EverGrandeCity_HallOfFame_EventScript_SetMetagrossiteFlag
+	return
+
+EverGrandeCity_HallOfFame_EventScript_SetMetagrossiteFlag::
+	setflag FLAG_HIDDEN_ITEM_METAGROSSITE
+	return
 
 EverGrandeCity_HallOfFame_EventScript_GameClearMale::
 	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
@@ -84,16 +99,20 @@ EverGrandeCity_HallOfFame_Movement_WalkIntoHallOfFame2:
 	step_end
 
 EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions:
-	.string "WALLACE: This room…\p"
+	.string "Wallace: This room…\p"
 	.string "This is where we keep records of\n"
 	.string "Pokémon that prevailed through\l"
 	.string "harsh battles.\p"
-	.string "It is here that the LEAGUE CHAMPIONS\n"
+	.string "It is here that the League Champions\n"
 	.string "are honored.$"
 
 EverGrandeCity_HallOfFame_Text_LetsRecordYouAndYourPartnersNames:
-	.string "WALLACE: Come on, let's record your\n"
+	.string "Wallace: Come on, let's record your\n"
 	.string "name as a Trainer who triumphed over\l"
-	.string "the Pokémon LEAGUE, and the names of\l"
+	.string "the Pokémon League, and the names of\l"
 	.string "the partners who battled with you.$"
 
+EverGrandeCity_HallOfFlame_Text_TakeMetagrossite:
+	.string "Wallace: As an additional reward for\n"
+	.string "fighting the League at our strongest,\l"
+	.string "please also take this.$"

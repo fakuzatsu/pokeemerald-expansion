@@ -9,6 +9,26 @@ SafariZone_South_OnFrame:
 	map_script_2 VAR_SAFARI_ZONE_STATE, 2, SafariZone_South_EventScript_EnterSafariZone
 	.2byte 0
 
+SafariZone_NorthEast_On_Load:
+	call_if_set FLAG_HIDDEN_ITEM_PIDGEOTITE, SafariZone_NorthEast_Hide_Pidgeotite
+	end
+
+SafariZone_NorthEast_Hide_Pidgeotite::
+    setmetatile 34, 18, METATILE_General_Grass, FALSE
+    return
+
+SafariZone_NorthEast_Pidgeotite::
+	goto_if_set FLAG_HIDDEN_ITEM_PIDGEOTITE, SafariZone_NorthEast_End_Pidgeotite
+	checkitemspace ITEM_PIDGEOTITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	call SafariZone_NorthEast_Hide_Pidgeotite
+	special DrawWholeMapView
+	giveitem ITEM_PIDGEOTITE
+	setflag FLAG_HIDDEN_ITEM_PIDGEOTITE
+SafariZone_NorthEast_End_Pidgeotite::
+	release
+	end	
+
 SafariZone_South_EventScript_EnterSafariZone::
 	lockall
 	applymovement OBJ_EVENT_ID_PLAYER, SafariZone_South_Movement_PlayerEnter

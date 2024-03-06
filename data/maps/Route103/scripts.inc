@@ -31,10 +31,27 @@ Route103_OnTransition:
 	end
 
 Route103_OnLoad:
+	call_if_set FLAG_HIDDEN_ITEM_LOPUNNITE, Route103_Hide_Lopunnite
 	call Grotto_EventScript_GetGrottoWarp
 	goto_if_eq VAR_HIDDEN_GROTTO_ROUTE_103, 0, Route103_EventScript_CloseGrotto
 	call_if_set FLAG_SYS_GAME_CLEAR, Route103_EventScript_OpenAlteringCave
 	end
+
+Route103_Hide_Lopunnite::
+    setmetatile 34, 18, METATILE_General_Grass, FALSE
+    return
+
+Route103_Lopunnite::
+	goto_if_set FLAG_HIDDEN_ITEM_LOPUNNITE, Route103_End_Lopunnite
+	checkitemspace ITEM_LOPUNNITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	call Route103_Hide_Lopunnite
+	special DrawWholeMapView
+	giveitem ITEM_LOPUNNITE
+	setflag FLAG_HIDDEN_ITEM_LOPUNNITE
+Route103_End_Lopunnite::
+	release
+	end	
 
 Route103_EventScript_CloseGrotto::
 	setmetatile 9, 2, METATILE_General_Grass, FALSE

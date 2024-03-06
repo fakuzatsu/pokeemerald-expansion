@@ -77,7 +77,24 @@ MossdeepCity_EventScript_Girl::
 	end
 
 MossdeepCity_EventScript_Woman::
-	msgbox MossdeepCity_Text_SpecialSpaceCenterRock, MSGBOX_NPC
+	lock
+	goto_if_set FLAG_BADGE07_GET, MossdeepCity_EventScript_TryGiveMawilite
+	msgbox MossdeepCity_Text_SpecialSpaceCenterRock, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_EventScript_TryGiveMawilite::
+	goto_if_unset FLAG_HIDDEN_ITEM_MAWILLITE, MossdeepCity_EventScript_GiveMawilite
+	msgbox MossdeepCity_Text_SpecialSpaceCenterRock, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_EventScript_GiveMawilite::
+	msgbox MossdeepCity_Text_StoneFellOffTheRock, MSGBOX_DEFAULT
+	giveitem ITEM_MAWILITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	setflag FLAG_HIDDEN_ITEM_MAWILLITE
+	release
 	end
 
 MossdeepCity_EventScript_WhiteRock::
@@ -522,6 +539,13 @@ MossdeepCity_Text_SpecialSpaceCenterRock:
 	.string "Do you wish upon a star?\p"
 	.string "I use a wish tag to make it happen.\n"
 	.string "That's what I do.$"
+
+MossdeepCity_Text_StoneFellOffTheRock:
+	.string "Uh…\p"
+	.string "This stone just fell off the Space\n"
+	.string "Center's special rock.\p"
+	.string "I know, strange huh?\p"
+	.string "You should definitely take this.$"
 
 MossdeepCity_Text_ItsAWhiteRock:
 	.string "It's a white rock.$"

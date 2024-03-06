@@ -3656,7 +3656,6 @@ static const u16 sMachopTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_FOCUS_BLAST,
     MOVE_POISON_JAB,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 
@@ -3706,7 +3705,6 @@ static const u16 sMachokeTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_FOCUS_BLAST,
     MOVE_POISON_JAB,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 
@@ -3758,7 +3756,6 @@ static const u16 sMachampTeachableLearnset[] = {
     MOVE_FOCUS_BLAST,
     MOVE_STONE_EDGE,
     MOVE_POISON_JAB,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_MACHOP
@@ -7148,7 +7145,6 @@ static const u16 sStaryuTeachableLearnset[] = {
     MOVE_BRINE,
     MOVE_GYRO_BALL,
     MOVE_DAZZLING_GLEAM,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 
@@ -7196,7 +7192,6 @@ static const u16 sStarmieTeachableLearnset[] = {
     MOVE_AVALANCHE,
     MOVE_GYRO_BALL,
     MOVE_DAZZLING_GLEAM,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_STARYU
@@ -14460,7 +14455,6 @@ static const u16 sTorchicTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_WILL_O_WISP,
     MOVE_SHADOW_CLAW,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 
@@ -14512,7 +14506,6 @@ static const u16 sCombuskenTeachableLearnset[] = {
     MOVE_WILL_O_WISP,
     MOVE_SHADOW_CLAW,
     MOVE_POISON_JAB,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 
@@ -14570,7 +14563,6 @@ static const u16 sBlazikenTeachableLearnset[] = {
     MOVE_SHADOW_CLAW,
     MOVE_POISON_JAB,
     MOVE_U_TURN,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_TORCHIC
@@ -26669,7 +26661,6 @@ static const u16 sBasculegionTeachableLearnset[] = {
     MOVE_OUTRAGE,
     MOVE_HYPER_BEAM,
     MOVE_DOUBLE_EDGE,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 #endif //P_HISUIAN_FORMS
@@ -28565,7 +28556,6 @@ static const u16 sAlomomolaTeachableLearnset[] = {
     MOVE_SNORE,
     MOVE_SUBSTITUTE,
     MOVE_SWAGGER,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_ALOMOMOLA
@@ -32628,7 +32618,6 @@ static const u16 sTyruntTeachableLearnset[] = {
     MOVE_DRAGON_PULSE,
     MOVE_ROCK_POLISH,
     MOVE_DARK_PULSE,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 
@@ -32665,7 +32654,6 @@ static const u16 sTyrantrumTeachableLearnset[] = {
     MOVE_DRAGON_PULSE,
     MOVE_ROCK_POLISH,
     MOVE_DARK_PULSE,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_TYRUNT
@@ -33134,7 +33122,6 @@ static const u16 sPhantumpTeachableLearnset[] = {
     MOVE_DARK_PULSE,
     MOVE_POISON_JAB,
     MOVE_HEX,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 
@@ -33180,7 +33167,6 @@ static const u16 sTrevenantTeachableLearnset[] = {
     MOVE_X_SCISSOR,
     MOVE_POISON_JAB,
     MOVE_HEX,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_PHANTUMP
@@ -34566,7 +34552,6 @@ static const u16 sLycanrocDuskTeachableLearnset[] = {
     MOVE_TOXIC,
     MOVE_STONE_EDGE,
     MOVE_ROCK_POLISH,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_ROCKRUFF
@@ -35095,7 +35080,6 @@ static const u16 sSteeneeTeachableLearnset[] = {
     MOVE_SWAGGER,
     MOVE_ENERGY_BALL,
     MOVE_DAZZLING_GLEAM,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 
@@ -35158,7 +35142,6 @@ static const u16 sComfeyTeachableLearnset[] = {
     MOVE_ENERGY_BALL,
     MOVE_U_TURN,
     MOVE_DAZZLING_GLEAM,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_COMFEY
@@ -35393,7 +35376,6 @@ static const u16 sPyukumukuTeachableLearnset[] = {
     MOVE_SLEEP_TALK,
     MOVE_SUBSTITUTE,
     MOVE_SWAGGER,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_PYUKUMUKU
@@ -38191,7 +38173,6 @@ static const u16 sMorpekoTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_DARK_PULSE,
-    // Alter balance change document to reflect
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_MORPEKO
