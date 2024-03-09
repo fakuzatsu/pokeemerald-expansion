@@ -4,6 +4,7 @@ VerdantForest_Deep_MapScripts::
 	.byte 0
 
 VerdantForest_Deep_OnResume:
+	setflag FLAG_LANDMARK_ANCIENT_SHRINE
 	special GetDayOrNight
 	goto_if_eq VAR_RESULT, 1, VerdantForest_Deep_OnResume_Night
 	goto_if_eq VAR_RESULT, 0, VerdantForest_Deep_OnResume_Day

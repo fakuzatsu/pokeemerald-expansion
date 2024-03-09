@@ -3,7 +3,7 @@
   "name": "VerdantForest_Deep",
   "layout": "LAYOUT_VERDANT_FOREST_DEEP",
   "music": "MUS_ROUTE122",
-  "region_map_section": "MAPSEC_ROUTE_123",
+  "region_map_section": "MAPSEC_ANCIENT_SHRINE",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_ROUTE",

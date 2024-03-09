@@ -3,7 +3,7 @@
   "name": "VerdantIsle_Deep",
   "layout": "LAYOUT_VERDANT_ISLE_DEEP",
   "music": "MUS_ROUTE104",
-  "region_map_section": "MAPSEC_ROUTE_109",
+  "region_map_section": "MAPSEC_LOST_LIGHTHOUSE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",

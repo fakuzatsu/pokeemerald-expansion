@@ -214,7 +214,16 @@
 #define MAPSEC_ALTERING_CAVE                0xD2
 #define MAPSEC_NAVEL_ROCK                   0xD3
 #define MAPSEC_TRAINER_HILL                 0xD4
-#define MAPSEC_NONE                         0xD5
+#define MAPSEC_COLD_STORAGE                 0xD5
+#define MAPSEC_THUNDER_CAVE                 0xD6
+#define MAPSEC_ASHVEIL_CAVE                 0xD7
+#define MAPSEC_SURGE_CAVE                   0xD8
+#define MAPSEC_ANCIENT_SHRINE               0xD9
+#define MAPSEC_LOST_LIGHTHOUSE              0xDA
+#define MAPSEC_OUTSET_PATH                  0xDB
+#define MAPSEC_MOON_ISLAND                  0xDC
+#define MAPSEC_VERDANT_CLIFF                0xDD
+#define MAPSEC_NONE                         0xDE
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE

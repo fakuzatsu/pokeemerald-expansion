@@ -3,7 +3,7 @@
   "name": "SurgeCave",
   "layout": "LAYOUT_SURGE_CAVE",
   "music": "MUS_RG_SEVII_CAVE",
-  "region_map_section": "MAPSEC_ROUTE_124",
+  "region_map_section": "MAPSEC_SURGE_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

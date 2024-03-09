@@ -159,6 +159,13 @@ static const u16 sRegionMap_SpecialPlaceLocations[][2] =
     {MAPSEC_ALTERING_CAVE,              MAPSEC_ROUTE_103},
     {MAPSEC_ARTISAN_CAVE,               MAPSEC_ROUTE_103},
     {MAPSEC_ABANDONED_SHIP,             MAPSEC_ROUTE_108},
+    {MAPSEC_COLD_STORAGE,               MAPSEC_SLATEPORT_CITY},
+    {MAPSEC_THUNDER_CAVE,               MAPSEC_ROUTE_119},
+    {MAPSEC_ASHVEIL_CAVE,               MAPSEC_ROUTE_113},
+    {MAPSEC_SURGE_CAVE,                 MAPSEC_ROUTE_124},
+    {MAPSEC_BIRTH_ISLAND,               MAPSEC_ROUTE_114},
+    {MAPSEC_COLD_STORAGE,               MAPSEC_SLATEPORT_CITY},
+    {MAPSEC_VERDANT_CLIFF,              MAPSEC_ROUTE_116},
     {MAPSEC_NONE,                       MAPSEC_NONE}
 };
 
@@ -275,8 +282,7 @@ static const union AnimCmd *const sRegionMapPlayerIconAnimTable[] =
 // Event islands that don't appear on map. (Southern Island does)
 static const u8 sMapSecIdsOffMap[] =
 {
-    MAPSEC_BIRTH_ISLAND,
-    MAPSEC_FARAWAY_ISLAND,
+    MAPSEC_MOON_ISLAND,
     MAPSEC_NAVEL_ROCK
 };
 
@@ -1214,6 +1220,14 @@ static u8 GetMapsecType(u16 mapSecId)
         return FlagGet(FLAG_LANDMARK_BATTLE_FRONTIER) ? MAPSECTYPE_BATTLE_FRONTIER : MAPSECTYPE_NONE;
     case MAPSEC_SOUTHERN_ISLAND:
         return FlagGet(FLAG_LANDMARK_SOUTHERN_ISLAND) ? MAPSECTYPE_ROUTE : MAPSECTYPE_NONE;
+    case MAPSEC_FARAWAY_ISLAND:
+        return FlagGet(FLAG_LANDMARK_FARAWAY_ISLAND) ? MAPSECTYPE_ROUTE : MAPSECTYPE_NONE;
+    case MAPSEC_LOST_LIGHTHOUSE:
+        return FlagGet(FLAG_LANDMARK_LOST_LIGHTHOUSE) ? MAPSECTYPE_ROUTE : MAPSECTYPE_NONE;
+    case MAPSEC_ANCIENT_SHRINE:
+        return FlagGet(FLAG_LANDMARK_ANCIENT_SHRINE) ? MAPSECTYPE_ROUTE : MAPSECTYPE_NONE;
+    case MAPSEC_OUTSET_PATH:
+        return FlagGet(FLAG_LANDMARK_OUTSET_PATH) ? MAPSECTYPE_ROUTE : MAPSECTYPE_NONE;
     default:
         return MAPSECTYPE_ROUTE;
     }

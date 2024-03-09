@@ -3,7 +3,7 @@
   "name": "AshveilCave",
   "layout": "LAYOUT_ASHVEIL_CAVE",
   "music": "MUS_RG_SEVII_CAVE",
-  "region_map_section": "MAPSEC_ROUTE_113",
+  "region_map_section": "MAPSEC_ASHVEIL_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

@@ -5,6 +5,7 @@ OutsetPath_MapScripts::
 	.byte 0
 
 OutsetPath_OnResume:
+	setflag FLAG_LANDMARK_OUTSET_PATH
 	special GetDayOrNight
 	goto_if_eq VAR_RESULT, 1, OutsetPath_OnResume_Night
 	goto_if_eq VAR_RESULT, 0, OutsetPath_OnResume_Day

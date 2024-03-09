@@ -338,7 +338,7 @@
 #define FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS    0x139
 
 #define FLAG_UNUSED_0x13A                    0x13A // Unused Flag
-#define FLAG_UNUSED_0x13B                    0x13B // Unused Flag
+#define FLAG_LANDMARK_OUTSET_PATH            0x13B // Custom Flag
 #define FLAG_MET_FRONTIER_WISE_MOVE_TUTOR    0x13C // Custom Flag
 
 #define FLAG_CANDYFACTORY_NPC_ITEM_GIFTED    0x13D // Custom Flag
@@ -1517,14 +1517,14 @@
 #define FLAG_LORNA_MOVED_TO_SHOP                                    0x925 // Custom Flag
 #define FLAG_LYDIA_MOVED_TO_SHOP                                    0x926 // Custom Flag
 #define FLAG_LISLA_MOVED_TO_SHOP                                    0x927 // Custom Flag
-#define FLAG_UNUSED_0x919                                           0x928 // Unused Flag
-#define FLAG_UNUSED_0x91A                                           0x929 // Unused Flag
-#define FLAG_UNUSED_0x91B                                           0x92A // Unused Flag
+#define FLAG_LANDMARK_FARAWAY_ISLAND                                0x928 // Custom Flag
+#define FLAG_LANDMARK_LOST_LIGHTHOUSE                               0x929 // Custom Flag
+#define FLAG_LANDMARK_ANCIENT_SHRINE                                0x92A // Custom Flag
 
 // Daily Flags
 // These flags are cleared once per day
 // The start and end are byte-aligned because the flags are cleared in byte increments
-#define DAILY_FLAGS_START                           (FLAG_UNUSED_0x91B + ((8 - (FLAG_UNUSED_0x91B % 8)) % 8))
+#define DAILY_FLAGS_START                           (FLAG_LANDMARK_ANCIENT_SHRINE + ((8 - (FLAG_LANDMARK_ANCIENT_SHRINE % 8)) % 8))
 #define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)

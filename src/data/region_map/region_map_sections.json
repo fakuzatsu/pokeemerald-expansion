@@ -1609,7 +1609,7 @@
     },
     {
       "map_section": "MAPSEC_BIRTH_ISLAND",
-      "name": "Birth Island",
+      "name": "Birth Landing",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1617,9 +1617,9 @@
     },
     {
       "map_section": "MAPSEC_FARAWAY_ISLAND",
-      "name": "Faraway Island",
-      "x": 0,
-      "y": 0,
+      "name": "Faraway Forest",
+      "x": 1,
+      "y": 8,
       "width": 1,
       "height": 1
     },
@@ -1708,6 +1708,78 @@
       "name": "Trainer Hill",
       "x": 8,
       "y": 4,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_COLD_STORAGE",
+      "name": "Cold Storage",
+      "x": 8,
+      "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_THUNDER_CAVE",
+      "name": "Thunder Cave",
+      "x": 11,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ASHVEIL_CAVE",
+      "name": "Ashveil Cave",
+      "x": 5,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_SURGE_CAVE",
+      "name": "Surge Cave",
+      "x": 21,
+      "y": 5,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ANCIENT_SHRINE",
+      "name": "Ancient Shrine",
+      "x": 14,
+      "y": 6,
+      "width": 5,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_LOST_LIGHTHOUSE",
+      "name": "Lost Lighthouse",
+      "x": 9,
+      "y": 14,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_OUTSET_PATH",
+      "name": "Outset Path",
+      "x": 4,
+      "y": 12,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MOON_ISLAND",
+      "name": "Moon Island",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_VERDANT_CLIFF",
+      "name": "Verdant Cliff",
+      "x": 4,
+      "y": 5,
       "width": 1,
       "height": 1
     }
