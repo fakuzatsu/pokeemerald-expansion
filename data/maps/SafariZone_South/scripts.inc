@@ -14,7 +14,7 @@ SafariZone_NorthEast_On_Load:
 	end
 
 SafariZone_NorthEast_Hide_Pidgeotite::
-    setmetatile 34, 18, METATILE_General_Grass, FALSE
+    setmetatile 8, 17, METATILE_General_Grass, FALSE
     return
 
 SafariZone_NorthEast_Pidgeotite::

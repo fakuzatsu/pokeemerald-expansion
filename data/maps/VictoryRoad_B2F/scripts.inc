@@ -7,7 +7,7 @@ VictoryRoad_B2F_OnLoad:
 	end
 
 VictoryRoad_B2F_Hide_Medichamite::
-    setmetatile 34, 18, METATILE_General_Grass, FALSE
+    setmetatile 42, 19, METATILE_General_Grass, FALSE
     return
 
 VictoryRoad_B2F_Medichamite::

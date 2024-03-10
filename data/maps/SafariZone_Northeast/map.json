@@ -165,6 +165,14 @@
       "elevation": 3,
       "item": "ITEM_ZINC",
       "flag": "FLAG_HIDDEN_ITEM_SAFARI_ZONE_NORTH_EAST_ZINC"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SafariZone_NorthEast_Pidgeotite"
     }
   ]
 }
