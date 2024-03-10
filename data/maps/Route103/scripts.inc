@@ -136,13 +136,31 @@ Route103_EventScript_StartBrendanBattleMudkip::
 
 Route103_EventScript_AfterMayBattle::
 	msgbox Route103_Text_MayTimeToHeadBack, MSGBOX_DEFAULT
+	call Route103_EventScript_ShowOffHiddenGrotto
+	msgbox Route103_Text_WeShouldHeadBack, MSGBOX_DEFAULT
 	goto Route103_EventScript_RivalExit
 	end
 
 Route103_EventScript_AfterBrendanBattle::
 	msgbox Route103_Text_BrendanTimeToHeadBack, MSGBOX_DEFAULT
+	call Route103_EventScript_ShowOffHiddenGrotto
+	msgbox Route103_Text_WeShouldHeadBack, MSGBOX_DEFAULT
 	goto Route103_EventScript_RivalExit
 	end
+
+Route103_EventScript_ShowOffHiddenGrotto::
+	delay 10
+	playse SE_PIN
+	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox Route103_Text_OhPlayerIalmostForgot, MSGBOX_DEFAULT
+	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox Route103_Text_SeeTheseDenseTrees, MSGBOX_DEFAULT
+	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox Route103_Text_HiddenGrottosHavePokemon, MSGBOX_DEFAULT
+	return
 
 Route103_EventScript_RivalExit::
 	closemessage
@@ -355,9 +373,7 @@ Route103_Text_MayTimeToHeadBack:
 	.string "I mean, you just got that Pokémon,\n"
 	.string "but it already likes you.\p"
 	.string "You might be able to befriend any\n"
-	.string "kind of Pokémon easily.\p"
-	.string "Well, it's time to head back to\n"
-	.string "the LAB.$"
+	.string "kind of Pokémon easily.$"
 
 Route103_Text_BrendanRoute103Pokemon:
 	.string "Brendan: Okay, so it's this one and\n"
@@ -380,9 +396,29 @@ Route103_Text_BrendanTimeToHeadBack:
 	.string "out for you now.\p"
 	.string "Look, your Pokémon already likes you,\n"
 	.string "even though you just got it.\p"
-	.string "{PLAYER}, I get the feeling that you\n"
-	.string "could befriend any Pokémon with ease.\p"
-	.string "We should head back to the LAB.$"
+	.string "I get the feeling that you\n"
+	.string "could befriend any Pokémon with ease.$"
+
+Route103_Text_OhPlayerIalmostForgot:
+	.string "Oh {PLAYER}!…\n"
+	.string "I almost forgot.$"
+
+Route103_Text_SeeTheseDenseTrees:
+	.string "Do you see this dark path through the\n"
+	.string "trees here?\p"
+	.string "Dad calls this a Hidden Grotto.$"
+
+Route103_Text_HiddenGrottosHavePokemon:
+	.string "You never know where a Hidden Grotto\n"
+	.string "leads when you enter one.\p"
+	.string "Dad is worried I'll get lost, so he\n"
+	.string "doesn't let me go in, even though\l"
+	.string "there are lots of rare Pokémon.\p"
+	.string "Maybe your Mom will let you go into\n"
+	.string "a Hidden Grotto though.$"
+
+Route103_Text_WeShouldHeadBack:
+	.string "Well… we should head back to the LAB.$"
 
 Route103_Text_ShouldHaveBroughtPotion:
 	.string "My Pokémon is staggeringly tired…\n"
