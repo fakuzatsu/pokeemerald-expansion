@@ -245,7 +245,8 @@
     "RustboroCity_Flat2_2F",
     "RustboroCity_Flat2_3F",
     "RustboroCity_House3",
-    "RustboroCity_PokemonCenter_B1F"
+    "RustboroCity_PokemonCenter_B1F",
+    "RustboroCity_House4"
   ],
   "gMapGroup_IndoorFortree": [
     "FortreeCity_House1",
