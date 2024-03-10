@@ -90,6 +90,14 @@ VerdanturfTown_EventScript_RusturfTunnelSign::
 	msgbox VerdanturfTown_Text_RusturfTunnelSign, MSGBOX_SIGN
 	end
 
+VerdanturfTown_EventScript_PreventMapNamePopup::
+	setflag FLAG_HIDE_MAP_NAME_POPUP
+	end
+
+VerdanturfTown_EventScript_AllowMapNamePopup::
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	return
+
 VerdanturfTown_Text_ManTryingToDigTunnel:
 	.string "My papa told me.\p"
 	.string "He says this tunnel is full of\n"

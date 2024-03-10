@@ -38,7 +38,7 @@ Route103_OnLoad:
 	end
 
 Route103_Hide_Lopunnite::
-    setmetatile 34, 18, METATILE_General_Grass, FALSE
+    setmetatile 5, 3, METATILE_General_Grass, FALSE
     return
 
 Route103_Lopunnite::
