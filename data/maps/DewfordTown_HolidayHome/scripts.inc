@@ -9,12 +9,18 @@ DewfordTown_HolidayHome_EventScript_Kahili::
 	goto_if_eq VAR_RESULT, TRUE, DewfordTown_HolidayHome_EventScript_KahiliAfterBattle
 	msgbox DewfordTown_HolidayHome_Text_KahiliIntro, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, DewfordTown_HolidayHome_EventScript_RefuseKahili
+	goto_if_set FLAG_BADGE03_GET, DewfordTown_HolidayHome_EventScript_AltKahili
 	trainerbattle_no_intro TRAINER_KAHILI, DewfordTown_HolidayHome_Text_KahiliDefeat
 DewfordTown_HolidayHome_EventScript_GiveRoost::
 	msgbox DewfordTown_HolidayHome_Text_KahiliPostBattle, MSGBOX_DEFAULT
 	giveitem ITEM_TM51
 	msgbox DewfordTown_HolidayHome_Text_ThatTMContainsRoost, MSGBOX_DEFAULT
 	release
+	end
+
+DewfordTown_HolidayHome_EventScript_AltKahili::
+	trainerbattle_no_intro TRAINER_KAHILI_ALT, DewfordTown_HolidayHome_Text_KahiliDefeat
+	goto DewfordTown_HolidayHome_EventScript_GiveRoost
 	end
 
 DewfordTown_HolidayHome_EventScript_KahiliAfterBattle::

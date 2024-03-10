@@ -99,7 +99,7 @@
   "warp_events": [
     {
       "x": 3,
-      "y": 2,
+      "y": 1,
       "elevation": 0,
       "dest_map": "MAP_DEWFORD_TOWN_HALL",
       "dest_warp_id": "0"
@@ -171,8 +171,8 @@
     },
     {
       "type": "sign",
-      "x": 2,
-      "y": 3,
+      "x": 1,
+      "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "DewfordTown_EventScript_HallSign"
