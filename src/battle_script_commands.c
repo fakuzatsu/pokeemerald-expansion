@@ -14518,7 +14518,11 @@ u16 GetSecretPowerMoveEffect(void)
             break;
         case BATTLE_TERRAIN_MOUNTAIN:
             if (B_SECRET_POWER_EFFECT >= GEN_5)
+            #ifdef CANON_ACCURACY
                 moveEffect = MOVE_EFFECT_ACC_MINUS_1;
+            #else
+                moveEffect = MOVE_EFFECT_ATK_MINUS_1;
+            #endif
             else if (B_SECRET_POWER_EFFECT >= GEN_4)
                 moveEffect = MOVE_EFFECT_FLINCH;
             else
@@ -14531,7 +14535,11 @@ u16 GetSecretPowerMoveEffect(void)
             moveEffect = MOVE_EFFECT_SLEEP;
             break;
         case BATTLE_TERRAIN_SAND:
-            moveEffect = MOVE_EFFECT_ACC_MINUS_1;
+            #ifdef CANON_ACCURACY
+                moveEffect = MOVE_EFFECT_ACC_MINUS_1;
+            #else
+                moveEffect = MOVE_EFFECT_ATK_MINUS_1;
+            #endif
             break;
         case BATTLE_TERRAIN_WATER:
             moveEffect = MOVE_EFFECT_ATK_MINUS_1;

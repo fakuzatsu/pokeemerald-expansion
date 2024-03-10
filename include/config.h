@@ -83,6 +83,7 @@
 // Verdant settings
 //#define CANON_MODE      // if defined, opponent's will use their canon (pre-Verdant-changed) teams. Comment out for the intended Verdant experience.
 //#define NO_BALANCE      // if defined, Pokémon balance changes are not included into the ROM. Comment out for the intended Verdant experience.
+//#define CANON_ACCURACY  // if defined, moves that usually reduce accuracy are allowed to do so. Comment out for removal of accuracy reducing moves.
 //#define NO_EVO_CHANGES  // if defined, simplifies many evos. Many day/night components removed, complex evos changed to just standard level-up, etc.
 
 #endif // GUARD_CONFIG_H

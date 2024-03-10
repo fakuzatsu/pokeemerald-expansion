@@ -495,7 +495,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SAND_ATTACK] =
     {
+        #ifdef CANON_ACCURACY
         .effect = EFFECT_ACCURACY_DOWN,
+        #else
+        .effect = EFFECT_ATTACK_DOWN,
+        #endif
         .power = 0,
         .type = TYPE_GROUND,
         .accuracy = 100,
@@ -1901,7 +1905,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SMOKESCREEN] =
     {
+        #ifdef CANON_ACCURACY
         .effect = EFFECT_ACCURACY_DOWN,
+        #else
+        .effect = EFFECT_ATTACK_DOWN,
+        #endif
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 100,
@@ -2364,7 +2372,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_KINESIS] =
     {
+        #ifdef CANON_ACCURACY
         .effect = EFFECT_ACCURACY_DOWN,
+        #else
+        .effect = EFFECT_SPECIAL_ATTACK_DOWN,
+        #endif
         .power = 0,
         .type = TYPE_PSYCHIC,
         .accuracy = 80,
@@ -2634,7 +2646,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         #else
             .accuracy = 70,
         #endif
+        #ifdef CANON_ACCURACY
         .effect = EFFECT_ACCURACY_DOWN,
+        #else
+        .effect = EFFECT_ATTACK_DOWN,
+        #endif
         .power = 0,
         .type = TYPE_NORMAL,
         .pp = 20,
@@ -3384,7 +3400,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_MUD_SLAP] =
     {
+        #ifdef CANON_ACCURACY
         .effect = EFFECT_ACCURACY_DOWN_HIT,
+        #else
+        .effect = EFFECT_ATTACK_DOWN_HIT,
+        #endif
         .power = 20,
         .type = TYPE_GROUND,
         .accuracy = 100,
@@ -3399,7 +3419,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_OCTAZOOKA] =
     {
+        #ifdef CANON_ACCURACY
         .effect = EFFECT_ACCURACY_DOWN_HIT,
+        #else
+        .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
+        #endif
         .power = 65,
         .type = TYPE_WATER,
         .accuracy = 85,
@@ -5899,7 +5923,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         #else
             .power = 95,
         #endif
+        #ifdef CANON_ACCURACY
         .effect = EFFECT_ACCURACY_DOWN_HIT,
+        #else
+        .effect = EFFECT_ATTACK_DOWN_HIT,
+        #endif
         .type = TYPE_WATER,
         .accuracy = 85,
         .pp = 10,
@@ -7554,7 +7582,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_MUD_BOMB] =
     {
+        #ifdef CANON_ACCURACY
         .effect = EFFECT_ACCURACY_DOWN_HIT,
+        #else
+        .effect = EFFECT_ATTACK_DOWN_HIT,
+        #endif
         .power = 65,
         .type = TYPE_GROUND,
         .accuracy = 85,
@@ -7602,7 +7634,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_MIRROR_SHOT] =
     {
+        #ifdef CANON_ACCURACY
         .effect = EFFECT_ACCURACY_DOWN_HIT,
+        #else
+        .effect = EFFECT_ATTACK_DOWN_HIT,
+        #endif
         .power = 65,
         .type = TYPE_STEEL,
         .accuracy = 85,
@@ -9397,7 +9433,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_LEAF_TORNADO] =
     {
+        #ifdef CANON_ACCURACY
         .effect = EFFECT_ACCURACY_DOWN_HIT,
+        #else
+        .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
+        #endif
         .power = 65,
         .type = TYPE_GRASS,
         .accuracy = 90,
@@ -9447,7 +9487,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_NIGHT_DAZE] =
     {
+        #ifdef CANON_ACCURACY
         .effect = EFFECT_ACCURACY_DOWN_HIT,
+        #else
+        .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
+        #endif
         .power = 85,
         .type = TYPE_DARK,
         .accuracy = 95,
