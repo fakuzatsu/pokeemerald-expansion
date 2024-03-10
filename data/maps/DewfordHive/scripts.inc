@@ -21,10 +21,16 @@ DewfordHive_OnResume_Day:
 
 DewfordHive_EventScript_CluelessBugcatcher::
 	lock
+	goto_if_unset FLAG_HIDE_METEOR_FALLS_1F_1R_COZMO, DewfordHive_EventScript_NeedMetalCoatPreMegas
 	goto_if_set FLAG_HIDDEN_ITEM_SCIZORITE, DewfordHive_EventScript_GivenMetalCoat
 	msgbox DewfordHive_Text_NeedAMetalCoat, MSGBOX_DEFAULT
 	checkitem ITEM_METAL_COAT
 	goto_if_eq VAR_RESULT, TRUE, DewfordHive_EventScript_PlayerHasMetalCoat
+	release
+	end
+
+DewfordHive_EventScript_NeedMetalCoatPreMegas::
+	msgbox DewfordHive_Text_NeedAMetalCoat, MSGBOX_DEFAULT
 	release
 	end
 
