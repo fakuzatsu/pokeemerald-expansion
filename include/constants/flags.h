@@ -1228,7 +1228,7 @@
 #define FLAG_ITEM_MAGA_HIDEOUT_3F_2R_TM_56                          0x49A // Custom Flag
 #define FLAG_ITEM_RUSTURF_TUNNEL_1F_BOTTLE_CAP                      0x49B // Custom Flag
 #define FLAG_ITEM_RUSTURF_CLIFF_PRETTY_FEATHER                      0x49C // Custom Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
+#define FLAG_ITEM_ROUTE_103_UNDERWATER_TM_70                        0x49D // Custom Flag
 #define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
 #define FLAG_ITEM_HIDDEN_GROTTO_4_LEEK                              0x4A0 // Custom Flag
