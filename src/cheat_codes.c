@@ -125,6 +125,8 @@ static void Task_ToggleStunkyModeCode(u8 taskId)
         FlagClear(FLAG_CHEAT_CODE_2);
     else
         FlagSet(FLAG_CHEAT_CODE_2);
+    DestroyTask(taskId);
+    ScriptContext_Enable();
 }
 
 const u8 sText_StunkyModeActivated[] = _("Stunky mode activated! {PAUSE_UNTIL_PRESS}");
