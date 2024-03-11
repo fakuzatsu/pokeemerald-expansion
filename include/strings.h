@@ -3106,9 +3106,6 @@ extern const u8 gText_Code2[];
 extern const u8 gText_WasAddedToParty[];
 extern const u8 gText_WasTransfered[];
 extern const u8 gText_FailedToAddMon[];
-extern const u8 gText_NoCodeActivated[];
-extern const u8 gText_Code1Activated[];
-extern const u8 gText_Code2Activated[];
 
 // Points:
 extern const u8 gText_BasePointsResetToZero[];

@@ -31,9 +31,6 @@ static u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 natur
 static void ConvertPokemonToString(u16 species, u8 level, u32 personality, u8 shininess, u8 abilitynum, u8 ball, u8 *ivs);
 static u8 ConvertStringToPokemon(u8 *string);
 
-const u8 gText_ChangedSeed[] = _("Changed randomiser seed.{PAUSE_UNTIL_PRESS}");
-const u8 gText_InvalidSeed[] = _("Invalid seed.{PAUSE_UNTIL_PRESS}");
-
 //--------------------------------------------------
 // Codes and Effects
 //--------------------------------------------------
@@ -41,7 +38,7 @@ const u8 gText_InvalidSeed[] = _("Invalid seed.{PAUSE_UNTIL_PRESS}");
 // -------------------TEMPLATE----------------------
 
 // Activation Code:
-const u8 gText_Code0[] = _("None");
+const u8 sText_Code0[] = _("None");
 
 // Code Execution:
 static void Task_DontActivateCode(u8 taskId)
@@ -51,13 +48,13 @@ static void Task_DontActivateCode(u8 taskId)
 }
 
 // Response:
-const u8 gText_NoCodeActivated[] = _("No known code.{PAUSE_UNTIL_PRESS}");
+const u8 sText_NoCodeActivated[] = _("No known code.{PAUSE_UNTIL_PRESS}");
 
 // -------------------------------------------------
 
 // --------------------CODE 1-----------------------
 
-const u8 gText_FloetteCode[] = _("UltiWep");
+const u8 sText_FloetteCode[] = _("UltiWep");
 
 static void Task_GiveEternalFloette(u8 taskId)
 {
@@ -68,25 +65,25 @@ static void Task_GiveEternalFloette(u8 taskId)
     StringCopy(gStringVar2, GetSpeciesName(SPECIES_FLOETTE_ETERNAL_FLOWER));
 
     if (sentToPc == MON_GIVEN_TO_PARTY) {
-    DisplayItemMessageOnField(taskId, gText_WasAddedToParty, Task_DontActivateCode);
-    FlagSet(FLAG_CHEAT_CODE_1);
+        DisplayItemMessageOnField(taskId, gText_WasAddedToParty, Task_DontActivateCode);
+        FlagSet(FLAG_CHEAT_CODE_1);
     }
     else if (sentToPc == MON_GIVEN_TO_PC) {
-    DisplayItemMessageOnField(taskId, gText_WasTransfered, Task_DontActivateCode);
-    FlagSet(FLAG_CHEAT_CODE_1);
+        DisplayItemMessageOnField(taskId, gText_WasTransfered, Task_DontActivateCode);
+        FlagSet(FLAG_CHEAT_CODE_1);
     }
     else
-    DisplayItemMessageOnField(taskId, gText_FailedToAddMon, Task_DontActivateCode);
+        DisplayItemMessageOnField(taskId, gText_FailedToAddMon, Task_DontActivateCode);
 }
 
-const u8 gText_FloetteCodeActivated[] = _("Code “UltiWep” activated!{PAUSE_UNTIL_PRESS}");
-const u8 gText_FloetteCodeAlreadyActivated[] = _("Code “UltiWep” already claimed!{PAUSE_UNTIL_PRESS}");
+const u8 sText_FloetteCodeActivated[] = _("Code “UltiWep” activated!{PAUSE_UNTIL_PRESS}");
+const u8 sText_FloetteCodeAlreadyActivated[] = _("Code “UltiWep” already claimed!{PAUSE_UNTIL_PRESS}");
 
 // -------------------------------------------------
 
 // --------------------CODE 2-----------------------
 
-const u8 gText_ReRandomiseCode[] = _("ReRand");
+const u8 sText_ReRandomiseCode[] = _("ReRand");
 
 static void Task_ActivateReRandomiseCode(u8 taskId)
 {
@@ -95,13 +92,13 @@ static void Task_ActivateReRandomiseCode(u8 taskId)
     ScriptContext_Enable();
 }
 
-const u8 gText_AbilityRandomiserActivated[] = _("Seed has been re-randomised. {PAUSE_UNTIL_PRESS}");
+const u8 sText_AbilityRandomiserActivated[] = _("Seed has been re-randomised. {PAUSE_UNTIL_PRESS}");
 
 // -------------------------------------------------
 
 // --------------------CODE 3-----------------------
 
-const u8 gText_AllDexFlagsCode[] = _("DexAll");
+const u8 sText_AllDexFlagsCode[] = _("DexAll");
 
 static void Task_ActivateAllDexFlagsCode(u8 taskId)
 {
@@ -114,7 +111,24 @@ static void Task_ActivateAllDexFlagsCode(u8 taskId)
     ScriptContext_Enable();
 }
 
-const u8 gText_AllDexFlagsActivated[] = _("All Pokémon marked as seen. {PAUSE_UNTIL_PRESS}");
+const u8 sText_AllDexFlagsActivated[] = _("All Pokémon marked as seen. {PAUSE_UNTIL_PRESS}");
+
+// -------------------------------------------------
+
+// --------------------CODE 4-----------------------
+
+const u8 sText_StunkyModeCode[] = _("Smellie");
+
+static void Task_ToggleStunkyModeCode(u8 taskId)
+{
+    if (FlagGet(FLAG_CHEAT_CODE_2))
+        FlagClear(FLAG_CHEAT_CODE_2);
+    else
+        FlagSet(FLAG_CHEAT_CODE_2);
+}
+
+const u8 sText_StunkyModeActivated[] = _("Stunky mode activated! {PAUSE_UNTIL_PRESS}");
+const u8 sText_StunkyModeDectivated[] = _("Stunky mode deactivated. {PAUSE_UNTIL_PRESS}");
 
 //--------------------------------------------------
 // End of Codes and Effects
@@ -132,12 +146,14 @@ static void CB2_HandleGivenCode(void)
     else if (gSpecialVar_0x8004 == 9)
         gSpecialVar_Result = 99;
     else {
-    if (StringCompare(gStringVar2, gText_FloetteCode) == 0)
+    if (StringCompare(gStringVar2, sText_FloetteCode) == 0)
         gSpecialVar_Result = 1;
-    else if (StringCompare(gStringVar2, gText_ReRandomiseCode) == 0)
+    else if (StringCompare(gStringVar2, sText_ReRandomiseCode) == 0)
         gSpecialVar_Result = 2;
-    else if (StringCompare(gStringVar2, gText_AllDexFlagsCode) == 0)
+    else if (StringCompare(gStringVar2, sText_AllDexFlagsCode) == 0)
         gSpecialVar_Result = 3;
+    else if (StringCompare(gStringVar2, sText_StunkyModeCode) == 0)
+        gSpecialVar_Result = 4;
     else 
         gSpecialVar_Result = 0;
     }
@@ -152,6 +168,9 @@ static void MapPostLoadHook_ReturnToCodeActivation(void)
     CreateTask(Task_ReturnToCodeActivation, 8);
 }
 
+const u8 sText_ChangedSeed[] = _("Changed randomiser seed.{PAUSE_UNTIL_PRESS}");
+const u8 sText_InvalidSeed[] = _("Invalid seed.{PAUSE_UNTIL_PRESS}");
+
 static void Task_ReturnToCodeActivation(u8 taskId)
 {
     u32 seed;
@@ -163,25 +182,31 @@ static void Task_ReturnToCodeActivation(u8 taskId)
             if (ParseWholeUnsigned(gStringVar2, &seed)) {
                 VarSet(VAR_RANDOMISER_SEED, seed);
                 FlagSet(FLAG_SYS_INVALID_CHALLENGE);
-                DisplayItemMessageOnField(taskId, gText_ChangedSeed, Task_DontActivateCode);
+                DisplayItemMessageOnField(taskId, sText_ChangedSeed, Task_DontActivateCode);
             } else {
-                DisplayItemMessageOnField(taskId, gText_InvalidSeed, Task_DontActivateCode);
+                DisplayItemMessageOnField(taskId, sText_InvalidSeed, Task_DontActivateCode);
             }
         }
         else if (gSpecialVar_Result == 1) {
             if (FlagGet(FLAG_CHEAT_CODE_1))
-            DisplayItemMessageOnField(taskId, gText_FloetteCodeAlreadyActivated, Task_DontActivateCode);
+                DisplayItemMessageOnField(taskId, sText_FloetteCodeAlreadyActivated, Task_DontActivateCode);
             else
-            DisplayItemMessageOnField(taskId, gText_FloetteCodeActivated, Task_GiveEternalFloette);
+                DisplayItemMessageOnField(taskId, sText_FloetteCodeActivated, Task_GiveEternalFloette);
         }
         else if (gSpecialVar_Result == 2) {
-            DisplayItemMessageOnField(taskId, gText_AbilityRandomiserActivated, Task_ActivateReRandomiseCode);
+            DisplayItemMessageOnField(taskId, sText_AbilityRandomiserActivated, Task_ActivateReRandomiseCode);
         }
         else if (gSpecialVar_Result == 3) {
-            DisplayItemMessageOnField(taskId, gText_AllDexFlagsActivated, Task_ActivateAllDexFlagsCode);
+            DisplayItemMessageOnField(taskId, sText_AllDexFlagsActivated, Task_ActivateAllDexFlagsCode);
+        }
+        else if (gSpecialVar_Result == 4) {
+            if (FlagGet(FLAG_CHEAT_CODE_2))
+                DisplayItemMessageOnField(taskId, sText_StunkyModeDectivated, Task_ToggleStunkyModeCode);
+            else
+                DisplayItemMessageOnField(taskId, sText_StunkyModeActivated, Task_ToggleStunkyModeCode);
         }
         else
-            DisplayItemMessageOnField(taskId, gText_NoCodeActivated, Task_DontActivateCode);
+            DisplayItemMessageOnField(taskId, sText_NoCodeActivated, Task_DontActivateCode);
     }
 }
 
