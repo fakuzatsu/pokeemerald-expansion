@@ -559,6 +559,8 @@ static const u8 sMugshotsTrainerPicIDsTable[MUGSHOTS_COUNT] =
     [MUGSHOT_WINONA]   = TRAINER_PIC_LEADER_WINONA,
     [MUGSHOT_TATELIZA] = TRAINER_PIC_LEADER_TATE_AND_LIZA,
     [MUGSHOT_JUAN]     = TRAINER_PIC_LEADER_JUAN,
+    [MUGSHOT_KAHILI]   = TRAINER_PIC_KAHILI,
+    [MUGSHOT_BRUNO]    = TRAINER_PIC_BRUNO,
 };
 static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
 {
@@ -575,6 +577,8 @@ static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
     [MUGSHOT_WINONA]   = {0x200, 0x200},
     [MUGSHOT_TATELIZA] = {0x200, 0x200},
     [MUGSHOT_JUAN]     = {0x200, 0x200},
+    [MUGSHOT_KAHILI]   = {0x200, 0x200},
+    [MUGSHOT_BRUNO]    = {0x200, 0x200},
 };
 static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
 {
@@ -591,6 +595,8 @@ static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
     [MUGSHOT_WINONA]   = { 0,  0},
     [MUGSHOT_TATELIZA] = { 0,  0},
     [MUGSHOT_JUAN]     = { 0,  0},
+    [MUGSHOT_KAHILI]   = { 0,  0},
+    [MUGSHOT_BRUNO]    = { 0,  0},
 };
 
 static const TransitionSpriteCallback sMugshotTrainerPicFuncs[] =
@@ -935,7 +941,9 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =
     [MUGSHOT_NORMAN]   = sMugshotPal_Champion,
     [MUGSHOT_WINONA]   = sMugshotPal_Glacia,
     [MUGSHOT_TATELIZA] = sMugshotPal_Phoebe,
-    [MUGSHOT_JUAN]     = sMugshotPal_Glacia
+    [MUGSHOT_JUAN]     = sMugshotPal_Glacia,
+    [MUGSHOT_KAHILI]   = sMugshotPal_Glacia,
+    [MUGSHOT_BRUNO]    = sMugshotPal_Sidney
 };
 
 static const u16 *const sPlayerMugshotsPals[GENDER_COUNT] =

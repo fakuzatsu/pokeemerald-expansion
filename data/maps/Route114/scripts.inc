@@ -205,6 +205,7 @@ Route114_EventScript_Kai::
 
 Route114_EventScript_Bruno::
 	lock
+	setvar VAR_MUGSHOT_ID, MUGSHOT_BRUNO
 	goto_if_gt VAR_0x8005, 100, Route114_EventScript_GiveTemporaryStoredItem
 	goto_if_set FLAG_SYS_GAME_CLEAR, Route114_EventScript_BrunoPostGame
 	checkitem ITEM_TM60

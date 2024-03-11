@@ -14,7 +14,9 @@
 #define MUGSHOT_WINONA      10
 #define MUGSHOT_TATELIZA    11
 #define MUGSHOT_JUAN        12
+#define MUGSHOT_KAHILI      13
+#define MUGSHOT_BRUNO       14
 
-#define MUGSHOTS_COUNT      13
+#define MUGSHOTS_COUNT      15
 
 #endif //GUARD_CONSTANTS_BATTLE_TRANSITION_H

@@ -4853,7 +4853,7 @@ static const struct TrainerMon sParty_Roxanne1[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
-    .lvl = 14,
+    .lvl = 15,
     .species = SPECIES_GEODUDE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_TACKLE, MOVE_DEFENSE_CURL, MOVE_ROCK_THROW, MOVE_ROCK_TOMB}
@@ -14147,9 +14147,9 @@ static const struct TrainerMon sParty_Roxanne2[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 50,
-    .species = SPECIES_AGGRON,
+    .species = SPECIES_GOLEM_ALOLAN,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_STEALTH_ROCK, MOVE_HEAVY_SLAM, MOVE_HEAD_SMASH, MOVE_EARTHQUAKE}
+    .moves = {MOVE_STEALTH_ROCK, MOVE_HEAVY_SLAM, MOVE_WILD_CHARGE, MOVE_EARTHQUAKE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -14230,9 +14230,9 @@ static const struct TrainerMon sParty_Roxanne3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 58,
-    .species = SPECIES_AGGRON,
+    .species = SPECIES_GOLEM_ALOLAN,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_STEALTH_ROCK, MOVE_HEAVY_SLAM, MOVE_HEAD_SMASH, MOVE_EARTHQUAKE}
+    .moves = {MOVE_STEALTH_ROCK, MOVE_HEAVY_SLAM, MOVE_WILD_CHARGE, MOVE_EARTHQUAKE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -14313,9 +14313,9 @@ static const struct TrainerMon sParty_Roxanne4[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 66,
-    .species = SPECIES_AGGRON,
+    .species = SPECIES_GOLEM_ALOLAN,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_STEALTH_ROCK, MOVE_HEAVY_SLAM, MOVE_HEAD_SMASH, MOVE_EARTHQUAKE}
+    .moves = {MOVE_STEALTH_ROCK, MOVE_HEAVY_SLAM, MOVE_WILD_CHARGE, MOVE_EARTHQUAKE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -14403,9 +14403,9 @@ static const struct TrainerMon sParty_Roxanne5[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 74,
-    .species = SPECIES_AGGRON,
+    .species = SPECIES_GOLEM_ALOLAN,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_STEALTH_ROCK, MOVE_HEAVY_SLAM, MOVE_HEAD_SMASH, MOVE_EARTHQUAKE}
+    .moves = {MOVE_STEALTH_ROCK, MOVE_HEAVY_SLAM, MOVE_WILD_CHARGE, MOVE_EARTHQUAKE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

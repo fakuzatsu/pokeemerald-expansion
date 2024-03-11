@@ -911,13 +911,15 @@ u8 GetTrainerBattleTransition(void)
     {
         if (gTrainerBattleOpponent_A == TRAINER_SIDNEY)
             return B_TRANSITION_SIDNEY;
-        if (gTrainerBattleOpponent_A == TRAINER_PHOEBE)
+        if (gTrainerBattleOpponent_A == TRAINER_PHOEBE || TRAINER_PHOEBE_MT_PYRE)
             return B_TRANSITION_PHOEBE;
         if (gTrainerBattleOpponent_A == TRAINER_GLACIA)
             return B_TRANSITION_GLACIA;
         if (gTrainerBattleOpponent_A == TRAINER_DRAKE)
             return B_TRANSITION_DRAKE;
-        return B_TRANSITION_CHAMPION;
+        if (gTrainerBattleOpponent_A == TRAINER_WALLACE)
+            return B_TRANSITION_CHAMPION;
+        return B_TRANSITION_MUGSHOT;
     }
 
     if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_CHAMPION)

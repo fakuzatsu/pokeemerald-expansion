@@ -3,6 +3,7 @@ DewfordTown_HolidayHome_MapScripts::
 
 DewfordTown_HolidayHome_EventScript_Kahili::
 	lock
+	setvar VAR_MUGSHOT_ID, MUGSHOT_KAHILI
 	goto_if_gt VAR_0x8005, 100, DewfordTown_HolidayHome_EventScript_GiveTemporaryStoredItem
 	goto_if_set FLAG_SYS_GAME_CLEAR, DewfordTown_HolidayHome_EventScript_KahiliPostGame
 	checkitem ITEM_TM51
