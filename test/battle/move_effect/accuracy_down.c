@@ -3,9 +3,14 @@
 
 ASSUMPTIONS
 {
+    #ifdef CANON_ACCURACY
     ASSUME(gBattleMoves[MOVE_SAND_ATTACK].effect == EFFECT_ACCURACY_DOWN);
+    #else
+    ASSUME(gBattleMoves[MOVE_SAND_ATTACK].effect == EFFECT_ATTACK_DOWN);
+    #endif
 }
 
+#ifdef CANON_ACCURACY
 SINGLE_BATTLE_TEST("Sand Attack lowers Accuracy")
 {
     ASSUME(gBattleMoves[MOVE_SCRATCH].accuracy == 100);
@@ -22,3 +27,4 @@ SINGLE_BATTLE_TEST("Sand Attack lowers Accuracy")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, opponent);
     }
 }
+#endif
