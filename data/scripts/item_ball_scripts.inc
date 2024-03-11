@@ -70,8 +70,16 @@ Route111_EventScript_ItemElixir::
 	finditem ITEM_ELIXIR
 	end
 
+Route111_EventScript_SmoothRock::
+	finditem ITEM_SMOOTH_ROCK
+	end
+
 Route112_EventScript_ItemNugget::
 	finditem ITEM_NUGGET
+	end
+
+Route112_EventScript_Magmarizer::
+	finditem ITEM_MAGMARIZER
 	end
 
 Route113_EventScript_ItemMaxEther::
@@ -84,6 +92,14 @@ Route113_EventScript_ItemSuperRepel::
 
 Route113_EventScript_ItemHyperPotion::
 	finditem ITEM_HYPER_POTION
+	end
+
+Route113_EventScript_ItemHeatRock::
+	finditem ITEM_HEAT_ROCK
+	end
+
+Route113_EventScript_CrackedPot::
+	finditem ITEM_CRACKED_POT
 	end
 
 Route114_EventScript_ItemRareCandy::
@@ -132,6 +148,10 @@ Route116_EventScript_ItemRepel::
 
 Route116_EventScript_ItemHPUp::
 	finditem ITEM_HP_UP
+	end
+
+Route116_EventScript_Protector::
+	finditem ITEM_PROTECTOR
 	end
 
 Route117_EventScript_ItemGreatBall::
@@ -358,8 +378,16 @@ MauvilleCity_EventScript_ItemXSpeed::
 	finditem ITEM_X_SPEED
 	end
 
+MauvilleCity_EventScript_Electirizer::
+	finditem ITEM_ELECTIRIZER
+	end
+
 RustboroCity_EventScript_ItemXDefend::
 	finditem ITEM_X_DEFENSE
+	end
+
+RustboroCity_EventScript_FluffyTail::
+	finditem ITEM_FLUFFY_TAIL
 	end
 
 LilycoveCity_EventScript_ItemMaxRepel::
@@ -610,12 +638,20 @@ Route110_TrickHousePuzzle1_EventScript_ItemOrangeMail::
 	finditem ITEM_ORANGE_MAIL
 	end
 
+Route110_TrickHousePuzzle1_EventScript_ItemLeafStone::
+	finditem ITEM_LEAF_STONE
+	end
+
 Route110_TrickHousePuzzle2_EventScript_ItemHarborMail::
 	finditem ITEM_HARBOR_MAIL
 	end
 
 Route110_TrickHousePuzzle2_EventScript_ItemWaveMail::
 	finditem ITEM_WAVE_MAIL
+	end
+
+Route110_TrickHousePuzzle2_EventScript_ItemIceStone::
+	finditem ITEM_ICE_STONE
 	end
 
 Route110_TrickHousePuzzle3_EventScript_ItemShadowMail::
@@ -626,16 +662,36 @@ Route110_TrickHousePuzzle3_EventScript_ItemWoodMail::
 	finditem ITEM_WOOD_MAIL
 	end
 
+Route110_TrickHousePuzzle3_EventScript_DuskStone::
+	finditem ITEM_DUSK_STONE
+	end
+
 Route110_TrickHousePuzzle4_EventScript_ItemMechMail::
 	finditem ITEM_MECH_MAIL
+	end
+
+Route110_TrickHousePuzzle4_EventScript_ItemSunStone::
+	finditem ITEM_SUN_STONE
+	end
+
+Route110_TrickHousePuzzle5_EventScript_ItemMoonStone::
+	finditem ITEM_MOON_STONE
 	end
 
 Route110_TrickHousePuzzle6_EventScript_ItemGlitterMail::
 	finditem ITEM_GLITTER_MAIL
 	end
 
+Route110_TrickHousePuzzle6_EventScript_ItemShinyStone::
+	finditem ITEM_SHINY_STONE
+	end
+
 Route110_TrickHousePuzzle7_EventScript_ItemTropicMail::
 	finditem ITEM_TROPIC_MAIL
+	end
+
+Route110_TrickHousePuzzle7_EventScript_ItemDawnStone::
+	finditem ITEM_DAWN_STONE
 	end
 
 Route110_TrickHousePuzzle8_EventScript_ItemBeadMail::

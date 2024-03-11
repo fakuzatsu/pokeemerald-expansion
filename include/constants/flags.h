@@ -668,8 +668,8 @@
 #define FLAG_HIDDEN_ITEM_GROTTO_20_RELIC_GOLD                0x271 // Custom Flag
 #define FLAG_HIDDEN_ITEM_GROTTO_20_RELIC_SILVER              0x272 // Custom Flag
 #define FLAG_HIDDEN_ITEM_GROTTO_25_RELIC_GOLD                0x273 // Custom Flag
-#define FLAG_UNUSED_0x274                                    0x274 // Unused Flag
-#define FLAG_UNUSED_0x275                                    0x275 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ROUTE_117_IRON_BALL                 0x274 // Custom Flag
+#define FLAG_HIDDEN_ITEM_COLD_STORAGE_BLACK_SLUDGE           0x275 // Custom Flag
 #define FLAG_UNUSED_0x276                                    0x276 // Unused Flag
 #define FLAG_UNUSED_0x277                                    0x277 // Unused Flag
 #define FLAG_UNUSED_0x278                                    0x278 // Unused Flag
@@ -1171,10 +1171,10 @@
 #define FLAG_ITEM_NEW_MAUVILLE_FULL_HEAL                            0x462
 #define FLAG_ITEM_NEW_MAUVILLE_PARALYZE_HEAL                        0x463
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_MASTER_BALL                      0x464
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MASTER_BALL                 0x465 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MAX_ELIXIR                  0x466 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B2F_NEST_BALL                   0x467 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_UNUSED_0x468                                           0x468 // Unused Flag
+#define FLAG_ITEM_ROUTE_111_SMOOTH_ROCK                             0x465 // Custom Flag
+#define FLAG_ITEM_RUSTBORO_CITY_FLUFFY_TAIL                         0x466 // Custom Flag
+#define FLAG_ITEM_MAUVILLE_CITY_ELECTIRIZER                         0x467 // Custom Flag
+#define FLAG_ITEM_ROUTE_112_MAGMARIZER                              0x468 // Cusotm Flag
 #define FLAG_ITEM_MT_PYRE_2F_ULTRA_BALL                             0x469
 #define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                            0x46A
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE                 0x46B
@@ -1182,16 +1182,16 @@
 #define FLAG_ITEM_GRANITE_CAVE_B1F_TM_69                            0x46D // Repurposed Flag
 #define FLAG_ITEM_ROUTE_119_NUGGET                                  0x46E
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
-#define FLAG_ITEM_ROUTE_103_UNDERWATER_TM_70                        0x470 // Unused Flag
+#define FLAG_ITEM_ROUTE113_HEAT_ROCK                                0x470 // Custom Flag
 #define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
-#define FLAG_UNUSED_0x472                                           0x472 // Unused Flag
+#define FLAG_ITEM_ROUTE113_CRACKED_POT                              0x472 // Custom Flag
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
 #define FLAG_ITEM_ROUTE_109_POTION                                  0x474
 #define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475
 #define FLAG_ITEM_ROUTE_111_ELIXIR                                  0x476
 #define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
 #define FLAG_ITEM_ROUTE_115_HEAL_POWDER                             0x478
-#define FLAG_UNUSED_0x479                                           0x479 // Unused Flag
+#define FLAG_ITEM_ROUTE_116_PROTECTOR                               0x479 // Custom Flag
 #define FLAG_ITEM_ROUTE_116_TM_66                                   0x47A
 #define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
 #define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C
@@ -1242,13 +1242,13 @@
 #define FLAG_ITEM_HIDDEN_GROTTO_28_SPELL_TAG                        0x4A8 // Custom Flag
 #define FLAG_ITEM_HIDDEN_GROTTO_18_SPELL_TAG                        0x4A9 // Custom Flag
 #define FLAG_ITEM_HIDDEN_GROTTO_20_SOUL_DEW                         0x4AA // Custom Flag
-#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
-#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
-#define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
-#define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_1_LEAF_STONE                   0x4AB // Custom Flag
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_2_ICE_STONE                    0x4AC // Custom Flag
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_DUSK_STONE                   0x4AD // Custom Flag
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_4_SUN_STONE                    0x4AE // Custom Flag
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_5_MOON_STONE                   0x4AF // Custom Flag
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_6_SHINY_STONE                  0x4B0 // Custom Flag
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_7_DAWN_STONE                   0x4B1 // Custom Flag
 #define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
 #define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
 #define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag

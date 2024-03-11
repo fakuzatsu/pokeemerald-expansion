@@ -41,6 +41,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 23,
+      "y": 4,
+      "elevation": 0,
+      "item": "ITEM_IRON_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_117_IRON_BALL"
+    }
   ]
 }
