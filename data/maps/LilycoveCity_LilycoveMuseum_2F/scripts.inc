@@ -105,7 +105,23 @@ LilycoveCity_LilycoveMuseum_2F_EventScript_Curator::
 	end
 
 LilycoveCity_LilycoveMuseum_2F_EventScript_AddedPainting::
-	msgbox LilycoveCity_LilycoveMuseum_2F_Text_ThanksAddedNewPainting, MSGBOX_NPC
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_ThanksAddedNewPainting, MSGBOX_DEFAULT
+	goto_if_unset FLAG_HIDDEN_ITEM_DIANCITE, LilycoveCity_LilycoveMuseum_2F_EventScript_GiveDiancite
+	end
+
+LilycoveCity_LilycoveMuseum_2F_EventScript_GiveDiancite::
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_TakeThisAsThanks, MSGBOX_DEFAULT
+	giveitem ITEM_DIANCITE
+	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_LilycoveMuseum_2F_EventScript_NoRoomForItem
+	setflag FLAG_HIDDEN_ITEM_DIANCITE
+	releaseall
+	end
+
+LilycoveCity_LilycoveMuseum_2F_EventScript_NoRoomForItem::
+	call Common_EventScript_BagIsFull
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_KeepThisForYou, MSGBOX_DEFAULT
+	closemessage
+	releaseall
 	end
 
 LilycoveCity_LilycoveMuseum_2F_EventScript_ThankPlayer::
@@ -258,6 +274,10 @@ LilycoveCity_LilycoveMuseum_2F_Text_ThanksAddedNewPainting:
 	.string "I've heard it depicts your Pokémon.\n"
 	.string "Truly magnificent!\p"
 	.string "Thank you so very, very much!$"
+
+LilycoveCity_LilycoveMuseum_2F_Text_TakeThisAsThanks:
+	.string "Please take this magnificent stone,\n"
+	.string "with my regards for your work.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_ItsYouPlayer:
 	.string "Ah! It's you!\n"
