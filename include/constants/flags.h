@@ -1184,7 +1184,7 @@
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
 #define FLAG_ITEM_ROUTE113_HEAT_ROCK                                0x470 // Custom Flag
 #define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
-#define FLAG_ITEM_ROUTE113_CRACKED_POT                              0x472 // Custom Flag
+#define FLAG_ITEM_ROUTE113_CHIPPED_POT                              0x472 // Custom Flag
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
 #define FLAG_ITEM_ROUTE_109_POTION                                  0x474
 #define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475

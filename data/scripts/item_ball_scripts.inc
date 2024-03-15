@@ -98,8 +98,8 @@ Route113_EventScript_ItemHeatRock::
 	finditem ITEM_HEAT_ROCK
 	end
 
-Route113_EventScript_CrackedPot::
-	finditem ITEM_CRACKED_POT
+Route113_EventScript_ChippedPot::
+	finditem ITEM_CHIPPED_POT
 	end
 
 Route114_EventScript_ItemRareCandy::
