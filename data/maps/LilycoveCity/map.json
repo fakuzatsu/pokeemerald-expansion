@@ -410,6 +410,13 @@
       "elevation": 0,
       "dest_map": "MAP_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 15,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_LILYCOVE_CITY_HOUSE5",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -519,6 +526,14 @@
       "elevation": 0,
       "item": "ITEM_POKE_BALL",
       "flag": "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_POKE_BALL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 19,
+      "y": 20,
+      "elevation": 0,
+      "item": "ITEM_PEARL",
+      "flag": "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_PEARL"
     }
   ]
 }

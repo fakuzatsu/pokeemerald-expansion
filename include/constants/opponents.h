@@ -880,11 +880,19 @@
 #define TRAINER_PHOEBE_MT_PYRE              876
 #define TRAINER_PHOEBES_GRANDMA             877
 #define TRAINER_KAHILI_ALT                  878
+#define TRAINER_COURTNEY_POSTGAME           879
+#define TRAINER_SHELLY_POSTGAME             890
+#define TRAINER_VIOLA                       891
+#define TRAINER_VIOLA_POSTGAME              892
+#define TRAINER_COLRESS                     893
+#define TRAINER_COLRESS_POSTGAME            894
+#define TRAINER_RILEY_DP                    895
+#define TRAINER_CYNTHIA                     896
 
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      879
+#define TRAINERS_COUNT                      897
 #define MAX_TRAINERS_COUNT                  912
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

@@ -670,7 +670,7 @@
 #define FLAG_HIDDEN_ITEM_GROTTO_25_RELIC_GOLD                0x273 // Custom Flag
 #define FLAG_HIDDEN_ITEM_ROUTE_117_IRON_BALL                 0x274 // Custom Flag
 #define FLAG_HIDDEN_ITEM_COLD_STORAGE_BLACK_SLUDGE           0x275 // Custom Flag
-#define FLAG_UNUSED_0x276                                    0x276 // Unused Flag
+#define FLAG_HIDDEN_ITEM_LILYCOVE_CITY_PEARL                 0x276 // Custom Flag
 #define FLAG_UNUSED_0x277                                    0x277 // Unused Flag
 #define FLAG_UNUSED_0x278                                    0x278 // Unused Flag
 #define FLAG_UNUSED_0x279                                    0x279 // Unused Flag
@@ -773,7 +773,7 @@
 #define FLAG_HIDE_PETALBURG_CITY_WALLY                              0x2D6
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_INVISIBLE_NINJA_BOY   0x2D7
 #define FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM                         0x2D8
-#define FLAG_UNUSED_0x2D9                                           0x2D9 // Unused Flag
+#define FLAG_HIDE_POST_GAME_ADMINS                                  0x2D9 // Custom Flag
 #define FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER                     0x2DA
 #define FLAG_HIDE_RUSTBORO_CITY_AQUA_GRUNT                          0x2DB
 #define FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1                    0x2DC

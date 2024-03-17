@@ -4859,7 +4859,7 @@ static const struct TrainerMon sParty_Roxanne1[] = {
     .moves = {MOVE_TACKLE, MOVE_DEFENSE_CURL, MOVE_ROCK_THROW, MOVE_ROCK_TOMB}
     },
     {
-    .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
+    .iv = TRAINER_PARTY_IVS(16, 16, 16, 16, 16, 16),
     .lvl = 15,
     .species = SPECIES_NOSEPASS,
     .heldItem = ITEM_ORAN_BERRY,
@@ -4881,7 +4881,7 @@ static const struct TrainerMon sParty_Roxanne1[] = {
     .moves = {MOVE_TACKLE, MOVE_LEER, MOVE_ROCK_THROW, MOVE_BITE}
     },
     {
-    .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
+    .iv = TRAINER_PARTY_IVS(16, 16, 16, 16, 16, 16),
     .lvl = 15,
     .species = SPECIES_NOSEPASS,
     .heldItem = ITEM_ORAN_BERRY,
@@ -9707,6 +9707,82 @@ static const struct TrainerMon sParty_PhoebesGrandma[] = {
     .heldItem = ITEM_EVIOLITE,
     .moves = {MOVE_NIGHT_SHADE, MOVE_WILL_O_WISP, MOVE_REST, MOVE_SLEEP_TALK}
     }
+};
+
+static const struct TrainerMon sParty_CourtneyPostgame[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_WEEZING,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SLUDGE_BOMB, MOVE_WILL_O_WISP, MOVE_PAIN_SPLIT, MOVE_FLAMETHROWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_NINETALES,
+    .heldItem = ITEM_HEAT_ROCK,
+    .moves = {MOVE_FLAMETHROWER, MOVE_WILL_O_WISP, MOVE_SOLAR_BEAM, MOVE_EXTRASENSORY}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 69,
+    .species = SPECIES_SALAZZLE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FIRE_BLAST, MOVE_SLUDGE_WAVE, MOVE_KNOCK_OFF, MOVE_PROTECT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 69,
+    .species = SPECIES_MIGHTYENA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CRUNCH, MOVE_PLAY_ROUGH, MOVE_FIRE_FANG, MOVE_PROTECT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 70,
+    .species = SPECIES_CAMERUPT,
+    .heldItem = ITEM_FIRIUM_Z,
+    .moves = {MOVE_FIRE_SPIN, MOVE_EARTH_POWER, MOVE_ERUPTION, MOVE_YAWN}
+    }
+};
+
+static const struct TrainerMon sParty_ShellyPostgame[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_MUK,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SLEEP_TALK, MOVE_REST, MOVE_POISON_JAB, MOVE_TOXIC_SPIKES}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 68,
+    .species = SPECIES_TOXAPEX,
+    .heldItem = ITEM_BLACK_SLUDGE,
+    .moves = {MOVE_SCALD, MOVE_RECOVER, MOVE_BANEFUL_BUNKER, MOVE_TOXIC_SPIKES}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 69,
+    .species = SPECIES_DREDNAW,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_STONE_EDGE, MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_PROTECT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 69,
+    .species = SPECIES_MIGHTYENA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CRUNCH, MOVE_PLAY_ROUGH, MOVE_PROTECT, MOVE_ROAR}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 70,
+    .species = SPECIES_SHARPEDO,
+    .heldItem = ITEM_WATERIUM_Z,
+    .moves = {MOVE_CRUNCH, MOVE_ICE_FANG, MOVE_LIQUIDATION, MOVE_PROTECT}
+    },
 };
 
 static const struct TrainerMon sParty_BrendanRoute103Mudkip[] = {

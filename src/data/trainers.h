@@ -6464,6 +6464,30 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_PhoebesGrandma),
     },
 
+    [TRAINER_COURTNEY_POSTGAME] =
+    {
+        .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_MAGMA_ADMIN,
+        .trainerName = _("Courtney"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_MON_CHOICES,
+        .party = TRAINER_PARTY(sParty_CourtneyPostgame),   
+    },
+
+    [TRAINER_SHELLY_POSTGAME] =
+    {
+        .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
+        .trainerPic = TRAINER_PIC_AQUA_ADMIN_F,
+        .trainerName = _("Shelly"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_MON_CHOICES,
+        .party = TRAINER_PARTY(sParty_ShellyPostgame),
+    },
+
     [TRAINER_BRENDAN_ROUTE_103_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,

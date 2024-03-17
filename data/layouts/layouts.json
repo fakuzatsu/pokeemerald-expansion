@@ -4970,6 +4970,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/RustboroCity_House4/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_House4/map.bin"
+    },
+    {
+      "id": "LAYOUT_LILYCOVE_CITY_HOUSE5",
+      "name": "LilycoveCity_House5_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/LilycoveCity_House5/border.bin",
+      "blockdata_filepath": "data/layouts/LilycoveCity_House5/map.bin"
     }
   ]
 }

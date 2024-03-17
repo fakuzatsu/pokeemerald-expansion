@@ -1264,3 +1264,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/NewMoonIsland_Interior/scripts.inc"
 
 	.include "data/maps/RustboroCity_House4/scripts.inc"
+
+	.include "data/maps/LilycoveCity_House5/scripts.inc"
