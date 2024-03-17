@@ -903,7 +903,7 @@ extern const u8 BattleFrontier_Lounge7_Text_SnoreDesc[];
 extern const u8 BattleFrontier_Lounge7_Text_MudSlapDesc[];
 extern const u8 BattleFrontier_Lounge7_Text_PluckDesc[];
 extern const u8 BattleFrontier_Lounge7_Text_IcyWindDesc[];
-extern const u8 BattleFrontier_Lounge7_Text_EndureDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_FlipTurnDesc[];
 extern const u8 BattleFrontier_Lounge7_Text_PsychUpDesc[];
 extern const u8 BattleFrontier_Lounge7_Text_IcePunchDesc[];
 extern const u8 BattleFrontier_Lounge7_Text_ThunderPunchDesc[];

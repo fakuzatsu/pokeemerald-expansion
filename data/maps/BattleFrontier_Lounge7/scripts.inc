@@ -156,7 +156,7 @@ BattleFrontier_Lounge7_EventScript_ChooseRightTutorMove::
 	case 2, BattleFrontier_Lounge7_EventScript_MudSlap
 	case 3, BattleFrontier_Lounge7_EventScript_Pluck
 	case 4, BattleFrontier_Lounge7_EventScript_IcyWind
-	case 5, BattleFrontier_Lounge7_EventScript_Endure
+	case 5, BattleFrontier_Lounge7_EventScript_FlipTurn
 	case 6, BattleFrontier_Lounge7_EventScript_PsychUp
 	case 7, BattleFrontier_Lounge7_EventScript_IcePunch
 	case 8, BattleFrontier_Lounge7_EventScript_ThunderPunch
@@ -180,7 +180,7 @@ BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove::
 	case 2, BattleFrontier_Lounge7_EventScript_MudSlap
 	case 3, BattleFrontier_Lounge7_EventScript_Pluck
 	case 4, BattleFrontier_Lounge7_EventScript_IcyWind
-	case 5, BattleFrontier_Lounge7_EventScript_Endure
+	case 5, BattleFrontier_Lounge7_EventScript_FlipTurn
 	case 6, BattleFrontier_Lounge7_EventScript_PsychUp
 	case 7, BattleFrontier_Lounge7_EventScript_IcePunch
 	case 8, BattleFrontier_Lounge7_EventScript_ThunderPunch
@@ -219,9 +219,9 @@ BattleFrontier_Lounge7_EventScript_IcyWind::
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
-BattleFrontier_Lounge7_EventScript_Endure::
+BattleFrontier_Lounge7_EventScript_FlipTurn::
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_ENDURE
+	setvar VAR_0x8005, MOVE_FLIP_TURN
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
@@ -617,10 +617,10 @@ BattleFrontier_Lounge7_Text_IcyWindDesc::
 	.string "that lowers the\n"
 	.string "foe's Speed.$"
 
-BattleFrontier_Lounge7_Text_EndureDesc::
-	.string "Endures any at-\n"
-	.string "tack for 1 turn,\n"
-	.string "leaving 1HP.$"
+BattleFrontier_Lounge7_Text_FlipTurnDesc::
+	.string "Flip Turns out of\n"
+	.string "battle after make-\n"
+	.string "ing an attack.$"
 
 BattleFrontier_Lounge7_Text_PsychUpDesc::
 	.string "Copies the foe's\n"
