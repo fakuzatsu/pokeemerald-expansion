@@ -743,7 +743,7 @@
 #define FLAG_OBTAINED_SAIL_FOSSIL                                   0x2B8 // Custom Flag
 #define FLAG_OBTAINED_JAW_FOSSIL                                    0x2B9 // Custom Flag
 #define FLAG_MET_DESERT_CAVERN_ROXANNE                              0x2BA // Custom Flag 
-#define FLAG_UNUSED_0x2BB                                           0x2BB // Unused Flag
+#define FLAG_PLAYER_OWNS_RESORT                                     0x2BB // Custom Flag
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
 #define FLAG_HIDE_APPRENTICE                                        0x2BD
 #define FLAG_HIDE_POKEMON_CENTER_2F_MYSTERY_GIFT_MAN                0x2BE

@@ -155,7 +155,7 @@
       "id": "LAYOUT_PACIFIDLOG_TOWN",
       "name": "PacifidlogTown_Layout",
       "width": 20,
-      "height": 40,
+      "height": 35,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/PacifidlogTown/border.bin",
@@ -4980,6 +4980,36 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/LilycoveCity_House5/border.bin",
       "blockdata_filepath": "data/layouts/LilycoveCity_House5/map.bin"
+    },
+    {
+      "id": "LAYOUT_PACIFIDLOG_TOWN_RESORT",
+      "name": "PacifidlogTown_Resort_Layout",
+      "width": 20,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/PacifidlogTown_Resort/border.bin",
+      "blockdata_filepath": "data/layouts/PacifidlogTown_Resort/map.bin"
+    },
+    {
+      "id": "LAYOUT_PACIFIDLOG_TOWN_RESORT_EDGE",
+      "name": "PacifidlogTown_ResortEdge_Layout",
+      "width": 7,
+      "height": 8,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/PacifidlogTown_ResortEdge/border.bin",
+      "blockdata_filepath": "data/layouts/PacifidlogTown_ResortEdge/map.bin"
+    },
+    {
+      "id": "LAYOUT_PACIFIDLOG_TOWN_RESORT_1",
+      "name": "PacifidlogTown_Resort_1_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PacifidlogTown_Resort_1/border.bin",
+      "blockdata_filepath": "data/layouts/PacifidlogTown_Resort_1/map.bin"
     }
   ]
 }

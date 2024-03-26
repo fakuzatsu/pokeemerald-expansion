@@ -83,6 +83,8 @@
 #define MAP_UNDERWATER_VERDANT_ISLE_DEEP (74 | (0 << 8))
 #define MAP_OUTSET_PATH                  (75 | (0 << 8))
 #define MAP_ROUTE111EAST                 (76 | (0 << 8))
+#define MAP_PACIFIDLOG_TOWN_RESORT       (77 | (0 << 8))
+#define MAP_PACIFIDLOG_TOWN_RESORT_EDGE  (78 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
@@ -153,6 +155,7 @@
 #define MAP_PACIFIDLOG_TOWN_HOUSE4             (5 | (7 << 8))
 #define MAP_PACIFIDLOG_TOWN_HOUSE5             (6 | (7 << 8))
 #define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_B1F (7 | (7 << 8))
+#define MAP_PACIFIDLOG_TOWN_RESORT_1           (8 | (7 << 8))
 
 // gMapGroup_IndoorPetalburg
 #define MAP_PETALBURG_CITY_WALLYS_HOUSE       (0 | (8 << 8))

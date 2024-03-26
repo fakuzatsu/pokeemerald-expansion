@@ -561,7 +561,13 @@ void InitSecretBaseDecorationSprites(void)
     u8 numDecorations;
 
     objectEventId = 0;
-    if (!CurMapIsSecretBase())
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(PACIFIDLOG_TOWN_RESORT_1) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(PACIFIDLOG_TOWN_RESORT_1))
+    {
+        decorations = gSaveBlock1Ptr->resortRoomDecorations;
+        decorationPositions = gSaveBlock1Ptr->resortRoomDecorationPositions;
+        numDecorations = DECOR_MAX_PLAYERS_HOUSE;
+    }
+    else if (!CurMapIsSecretBase())
     {
         decorations = gSaveBlock1Ptr->playerRoomDecorations;
         decorationPositions = gSaveBlock1Ptr->playerRoomDecorationPositions;

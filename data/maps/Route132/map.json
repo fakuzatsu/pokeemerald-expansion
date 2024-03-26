@@ -20,7 +20,12 @@
     },
     {
       "map": "MAP_PACIFIDLOG_TOWN",
-      "offset": 0,
+      "offset": 5,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_PACIFIDLOG_TOWN_RESORT",
+      "offset": -9,
       "direction": "right"
     }
   ],

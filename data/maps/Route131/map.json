@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_PACIFIDLOG_TOWN",
-      "offset": 0,
+      "offset": 5,
       "direction": "left"
     },
     {
@@ -27,6 +27,11 @@
       "map": "MAP_UNDERWATER_ROUTE131",
       "offset": 0,
       "direction": "dive"
+    },
+    {
+      "map": "MAP_PACIFIDLOG_TOWN_RESORT",
+      "offset": -9,
+      "direction": "left"
     }
   ],
   "object_events": [

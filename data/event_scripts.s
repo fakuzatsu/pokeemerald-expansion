@@ -1266,3 +1266,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/RustboroCity_House4/scripts.inc"
 
 	.include "data/maps/LilycoveCity_House5/scripts.inc"
+
+	.include "data/maps/PacifidlogTown_Resort/scripts.inc"
+
+	.include "data/maps/PacifidlogTown_ResortEdge/scripts.inc"
+
+	.include "data/maps/PacifidlogTown_Resort_1/scripts.inc"

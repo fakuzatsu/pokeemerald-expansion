@@ -486,17 +486,32 @@ static void PlayerPC_Mailbox(u8 taskId)
 
 static void PlayerPC_Decoration(u8 taskId)
 {
-    DoPlayerRoomDecorationMenu(taskId);
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(PACIFIDLOG_TOWN_RESORT_1) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(PACIFIDLOG_TOWN_RESORT_1)) 
+    {
+        DoResortRoomDecorationMenu(taskId);
+    }
+    else
+    {
+        DoPlayerRoomDecorationMenu(taskId);
+    }
 }
 
 static void PlayerPC_TurnOff(u8 taskId)
 {
     if (sTopMenuNumOptions == NUM_BEDROOM_PC_OPTIONS) // Flimsy way to determine if Bedroom PC is in use
     {
-        if (gSaveBlock2Ptr->playerGender == MALE)
-            ScriptContext_SetupScript(LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC);
-        else
-            ScriptContext_SetupScript(LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC);
+        // Even flimsier way to determine if the Resort PC is in use
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(PACIFIDLOG_TOWN_RESORT_1) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(PACIFIDLOG_TOWN_RESORT_1)) 
+        {
+            ScriptContext_SetupScript(Pacifidlog_Resort_1_EventScript_TurnOffPC);
+        } 
+        else 
+        {
+            if (gSaveBlock2Ptr->playerGender == MALE)
+                ScriptContext_SetupScript(LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC);
+            else
+                ScriptContext_SetupScript(LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC);
+        }
     }
     else
     {

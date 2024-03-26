@@ -112,7 +112,9 @@
     "VerdantIsle_Deep",
     "Underwater_VerdantIsle_Deep",
     "OutsetPath",
-    "Route111East"
+    "Route111East",
+    "PacifidlogTown_Resort",
+    "PacifidlogTown_ResortEdge"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -182,7 +184,8 @@
     "PacifidlogTown_House3",
     "PacifidlogTown_House4",
     "PacifidlogTown_House5",
-    "PacifidlogTown_PokemonCenter_B1F"
+    "PacifidlogTown_PokemonCenter_B1F",
+    "PacifidlogTown_Resort_1"
   ],
   "gMapGroup_IndoorPetalburg": [
     "PetalburgCity_WallysHouse",
