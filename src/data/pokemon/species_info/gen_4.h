@@ -2607,7 +2607,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         #endif
         .types = { TYPE_NORMAL, TYPE_NORMAL },
         .expYield = 168,
-        .abilities = { ABILITY_CUTE_CHARM, ABILITY_KLUTZ, ABILITY_LIMBER },
+        .abilities = { ABILITY_KLUTZ, ABILITY_CUTE_CHARM, ABILITY_LIMBER },
         .cryId = CRY_LOPUNNY,
         .height = 12,
         .weight = 333,
