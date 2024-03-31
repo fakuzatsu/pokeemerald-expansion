@@ -52,6 +52,10 @@ struct Decoration
     const u16 *tiles;
 };
 
+#define SECRET_BASE    0
+#define PLAYER_ROOM    1
+#define RESORT_ROOM    2
+
 extern const struct Decoration gDecorations[];
 extern u8 *gCurDecorationItems;
 extern u8 gCurDecorationIndex;
@@ -60,6 +64,7 @@ void InitDecorationContextItems(void);
 void DoSecretBaseDecorationMenu(u8 taskId);
 void ShowDecorationOnMap(u16 mapX, u16 mapY, u16 decor);
 void DoPlayerRoomDecorationMenu(u8 taskId);
+void DoResortRoomDecorationMenu(u8 taskId);
 void ShowDecorationCategoriesWindow(u8 taskId);
 void CopyDecorationCategoryName(u8 *dest, u8 decorCat);
 bool8 IsSelectedDecorInThePC(void);

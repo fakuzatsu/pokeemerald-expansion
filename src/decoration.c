@@ -92,7 +92,7 @@ struct DecorationPCContext
     u8 *items;
     u8 *pos;
     u8 size;
-    u8 isPlayerRoom;
+    u8 isRoom;
 };
 
 enum Windows
@@ -109,6 +109,7 @@ EWRAM_DATA static u8 sDecorationActionsCursorPos = 0;
 EWRAM_DATA static u8 sNumOwnedDecorationsInCurCategory = 0;
 EWRAM_DATA static u8 sSecretBaseItemsIndicesBuffer[DECOR_MAX_SECRET_BASE] = {};
 EWRAM_DATA static u8 sPlayerRoomItemsIndicesBuffer[DECOR_MAX_PLAYERS_HOUSE] = {};
+EWRAM_DATA static u8 sResortRoomItemsIndiciesBuffer[DECOR_MAX_PLAYERS_HOUSE] = {};
 EWRAM_DATA static u16 sDecorationsCursorPos = 0;
 EWRAM_DATA static u16 sDecorationsScrollOffset = 0;
 EWRAM_DATA u8 gCurDecorationIndex = 0;
@@ -154,6 +155,7 @@ static void PrintDecorationItemDescription(s32 itemIndex);
 static void RemoveDecorationItemsOtherWindows(void);
 static bool8 IsDecorationIndexInSecretBase(u8 idx);
 static bool8 IsDecorationIndexInPlayersRoom(u8 idx);
+static bool8 IsDecorationIndexInResortRoom(u8 idx);
 static void IdentifyOwnedDecorationsCurrentlyInUse(u8 taskId);
 static void InitDecorationItemsWindow(u8 taskId);
 static void ShowDecorationCategorySummaryWindow(u8 category);
@@ -517,16 +519,22 @@ void InitDecorationContextItems(void)
     if (sCurDecorationCategory < DECORCAT_COUNT)
         gCurDecorationItems = gDecorationInventories[sCurDecorationCategory].items;
 
-    if (sDecorationContext.isPlayerRoom == FALSE)
+    if (sDecorationContext.isRoom == SECRET_BASE)
     {
         sDecorationContext.items = gSaveBlock1Ptr->secretBases[0].decorations;
         sDecorationContext.pos = gSaveBlock1Ptr->secretBases[0].decorationPositions;
     }
 
-    if (sDecorationContext.isPlayerRoom == TRUE)
+    if (sDecorationContext.isRoom == PLAYER_ROOM)
     {
         sDecorationContext.items = gSaveBlock1Ptr->playerRoomDecorations;
         sDecorationContext.pos = gSaveBlock1Ptr->playerRoomDecorationPositions;
+    }
+
+    if (sDecorationContext.isRoom == RESORT_ROOM) 
+    {
+        sDecorationContext.items = gSaveBlock1Ptr->resortRoomDecorations;
+        sDecorationContext.pos = gSaveBlock1Ptr->resortRoomDecorationPositions;
     }
 }
 
@@ -584,7 +592,7 @@ void DoSecretBaseDecorationMenu(u8 taskId)
     sDecorationContext.items = gSaveBlock1Ptr->secretBases[0].decorations;
     sDecorationContext.pos = gSaveBlock1Ptr->secretBases[0].decorationPositions;
     sDecorationContext.size = DECOR_MAX_SECRET_BASE;
-    sDecorationContext.isPlayerRoom = FALSE;
+    sDecorationContext.isRoom = SECRET_BASE;
     gTasks[taskId].func = HandleDecorationActionsMenuInput;
 }
 
@@ -594,8 +602,18 @@ void DoPlayerRoomDecorationMenu(u8 taskId)
     sDecorationContext.items = gSaveBlock1Ptr->playerRoomDecorations;
     sDecorationContext.pos = gSaveBlock1Ptr->playerRoomDecorationPositions;
     sDecorationContext.size = DECOR_MAX_PLAYERS_HOUSE;
-    sDecorationContext.isPlayerRoom = TRUE;
+    sDecorationContext.isRoom = PLAYER_ROOM;
     gTasks[taskId].func = HandleDecorationActionsMenuInput;
+}
+
+void DoResortRoomDecorationMenu(u8 taskId)
+{
+    InitDecorationActionsWindow();
+    sDecorationContext.items = gSaveBlock1Ptr->resortRoomDecorations;
+    sDecorationContext.pos = gSaveBlock1Ptr->resortRoomDecorationPositions;
+    sDecorationContext.size = DECOR_MAX_PLAYERS_HOUSE;
+    sDecorationContext.isRoom = RESORT_ROOM;
+    gTasks[taskId].func = HandleDecorationActionsMenuInput;  
 }
 
 static void HandleDecorationActionsMenuInput(u8 taskId)
@@ -678,7 +696,7 @@ static void DecorationMenuAction_Toss(u8 taskId)
 static void DecorationMenuAction_Cancel(u8 taskId)
 {
     RemoveDecorationWindow(WINDOW_MAIN_MENU);
-    if (!sDecorationContext.isPlayerRoom)
+    if (sDecorationContext.isRoom == SECRET_BASE)
     {
         ScriptContext_SetupScript(SecretBase_EventScript_PCCancel);
         DestroyTask(taskId);
@@ -724,9 +742,10 @@ static void PrintDecorationCategoryMenuItems(u8 taskId)
     u8 i;
     s16 *data = gTasks[taskId].data;
     u8 windowId = sDecorMenuWindowIds[WINDOW_DECORATION_CATEGORIES];
-    bool8 isPlayerRoom = sDecorationContext.isPlayerRoom;
+    bool8 isWhichRoom = sDecorationContext.isRoom;
     bool8 shouldDisable = FALSE;
-    if (isPlayerRoom == TRUE && tDecorationMenuCommand == DECOR_MENU_PLACE)
+    if ((isWhichRoom == PLAYER_ROOM || isWhichRoom == RESORT_ROOM) 
+     && tDecorationMenuCommand == DECOR_MENU_PLACE)
         shouldDisable = TRUE;
 
     for (i = 0; i < DECORCAT_COUNT; i++)
@@ -886,7 +905,9 @@ static void PrintDecorationItemMenuItems(u8 taskId)
     u16 i;
 
     data = gTasks[taskId].data;
-    if ((sCurDecorationCategory < DECORCAT_DOLL || sCurDecorationCategory > DECORCAT_CUSHION) && sDecorationContext.isPlayerRoom == TRUE && tDecorationMenuCommand == DECOR_MENU_PLACE)
+    if ((sCurDecorationCategory < DECORCAT_DOLL || sCurDecorationCategory > DECORCAT_CUSHION) 
+     && (sDecorationContext.isRoom == PLAYER_ROOM || sDecorationContext.isRoom == RESORT_ROOM)
+     && tDecorationMenuCommand == DECOR_MENU_PLACE)
         ColorMenuItemString(gStringVar1, TRUE);
     else
         ColorMenuItemString(gStringVar1, FALSE);
@@ -929,6 +950,8 @@ static void DecorationItemsMenu_PrintDecorationInUse(u8 windowId, u32 itemIndex,
         if (IsDecorationIndexInSecretBase(itemIndex + 1) == TRUE)
             BlitMenuInfoIcon(windowId, MENU_INFO_ICON_BALL_RED, 92, y + 2);
         else if (IsDecorationIndexInPlayersRoom(itemIndex + 1) == TRUE)
+            BlitMenuInfoIcon(windowId, MENU_INFO_ICON_BALL_BLUE, 92, y + 2);
+        else if (IsDecorationIndexInResortRoom(itemIndex + 1) == TRUE)
             BlitMenuInfoIcon(windowId, MENU_INFO_ICON_BALL_BLUE, 92, y + 2);
     }
 }
@@ -1067,6 +1090,18 @@ static bool8 IsDecorationIndexInPlayersRoom(u8 idx)
     return FALSE;
 }
 
+static bool8 IsDecorationIndexInResortRoom(u8 idx)
+{
+    u8 i;
+    for (i = 0; i < ARRAY_COUNT(sResortRoomItemsIndiciesBuffer); i++)
+    {
+        if (sResortRoomItemsIndiciesBuffer[i] == idx)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
 static void IdentifyOwnedDecorationsCurrentlyInUseInternal(u8 taskId)
 {
     u16 i, j, k;
@@ -1075,6 +1110,7 @@ static void IdentifyOwnedDecorationsCurrentlyInUseInternal(u8 taskId)
     count = 0;
     memset(sSecretBaseItemsIndicesBuffer, 0, sizeof(sSecretBaseItemsIndicesBuffer));
     memset(sPlayerRoomItemsIndicesBuffer, 0, sizeof(sPlayerRoomItemsIndicesBuffer));
+    memset(sResortRoomItemsIndiciesBuffer, 0, sizeof(sResortRoomItemsIndiciesBuffer));
 
     for (i = 0; i < ARRAY_COUNT(sSecretBaseItemsIndicesBuffer); i++)
     {
@@ -1118,6 +1154,27 @@ static void IdentifyOwnedDecorationsCurrentlyInUseInternal(u8 taskId)
             }
         }
     }
+
+    count = 0;
+    for (i = 0; i < ARRAY_COUNT(sResortRoomItemsIndiciesBuffer); i++)
+    {
+        if (gSaveBlock1Ptr->resortRoomDecorations[i] != DECOR_NONE)
+        {
+            for (j = 0; j < gDecorationInventories[sCurDecorationCategory].size; j++)
+            {
+                if (gCurDecorationItems[j] == gSaveBlock1Ptr->resortRoomDecorations[i] && IsDecorationIndexInSecretBase(j + 1) != TRUE)
+                {
+                    for (k = 0; k < count && sResortRoomItemsIndiciesBuffer[k] != j + 1; k++);
+                    if (k == count)
+                    {
+                        sResortRoomItemsIndiciesBuffer[count] = j + 1;
+                        count++;
+                        break;
+                    }
+                }
+            }
+        }
+    }
 }
 
 static void IdentifyOwnedDecorationsCurrentlyInUse(u8 taskId)
@@ -1135,6 +1192,12 @@ bool8 IsSelectedDecorInThePC(void)
 
         if (i < ARRAY_COUNT(sPlayerRoomItemsIndicesBuffer)
          && sPlayerRoomItemsIndicesBuffer[i] == sDecorationsScrollOffset + sDecorationsCursorPos + 1)
+        {
+            return FALSE;
+        }
+    
+        if (i < ARRAY_COUNT(sResortRoomItemsIndiciesBuffer)
+         && sResortRoomItemsIndiciesBuffer[i] == sDecorationsScrollOffset + sDecorationsCursorPos + 1)
         {
             return FALSE;
         }
@@ -1324,7 +1387,8 @@ static bool8 HasDecorationSpace(void)
 
 static void DecorationItemsMenuAction_AttemptPlace(u8 taskId)
 {
-    if (sDecorationContext.isPlayerRoom == TRUE && sCurDecorationCategory != DECORCAT_DOLL && sCurDecorationCategory != DECORCAT_CUSHION)
+    if ((sDecorationContext.isRoom == PLAYER_ROOM || sDecorationContext.isRoom == RESORT_ROOM) 
+     && sCurDecorationCategory != DECORCAT_DOLL && sCurDecorationCategory != DECORCAT_CUSHION)
     {
         StringExpandPlaceholders(gStringVar4, gText_CantPlaceInRoom);
         DisplayItemMessageOnField(taskId, gStringVar4, ReturnToDecorationItemsAfterInvalidSelection);
@@ -1340,7 +1404,7 @@ static void DecorationItemsMenuAction_AttemptPlace(u8 taskId)
         else
         {
             ConvertIntToDecimalStringN(gStringVar1, sDecorationContext.size, STR_CONV_MODE_RIGHT_ALIGN, 2);
-            if (sDecorationContext.isPlayerRoom == FALSE) {
+            if (sDecorationContext.isRoom == SECRET_BASE) {
                 StringExpandPlaceholders(gStringVar4, gText_NoMoreDecorations);
             }
             else
@@ -1684,7 +1748,7 @@ static void PlaceDecoration_(u8 taskId)
         }
     }
 
-    if (!sDecorationContext.isPlayerRoom)
+    if (sDecorationContext.isRoom == SECRET_BASE)
     {
         for (i = 0; i < DECOR_MAX_SECRET_BASE; i++)
         {
@@ -1695,13 +1759,24 @@ static void PlaceDecoration_(u8 taskId)
             }
         }
     }
-    else
+    else if (sDecorationContext.isRoom == PLAYER_ROOM)
     {
         for (i = 0; i < DECOR_MAX_PLAYERS_HOUSE; i++)
         {
             if (sPlayerRoomItemsIndicesBuffer[i] == DECOR_NONE)
             {
                 sPlayerRoomItemsIndicesBuffer[i] = gCurDecorationIndex + 1;
+                break;
+            }
+        }
+    }
+    else //if (sDecorationContext.isRoom == RESORT_ROOM)
+    {
+        for (i = 0; i < DECOR_MAX_PLAYERS_HOUSE; i++)
+        {
+            if (sResortRoomItemsIndiciesBuffer[i] == DECOR_NONE)
+            {
+                sResortRoomItemsIndiciesBuffer[i] = gCurDecorationIndex + 1;
                 break;
             }
         }
