@@ -204,7 +204,7 @@ extern const struct SpritePalette gSpritePalette_ArrowEmotionsFieldEffect;
 u8 CreateWarpArrowSprite(void)
 {
     u8 spriteId;
-    struct Sprite *sprite;
+    //struct Sprite *sprite;
 
     LoadFieldEffectPalette_(FLDEFFOBJ_ARROW, FALSE);
     spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_ARROW], 0, 0, 0x52);

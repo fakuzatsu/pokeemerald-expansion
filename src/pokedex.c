@@ -2435,7 +2435,7 @@ static void CreateMonDexNum(u16 entryNum, u8 left, u8 top, u16 unused)
     u8 text[7];
     u16 dexNum, offset = 2;
 
-    memcpy(text, sText_No000, ARRAY_COUNT(text));
+    //memcpy(text, sText_No000, ARRAY_COUNT(text));
     dexNum = NationalPokedexNumToSpecies(sPokedexView->pokedexList[entryNum].dexNum);
     dexNum = SpeciesToNationalPokedexNum(GET_BASE_SPECIES_ID(dexNum));
     if (sPokedexView->dexMode == DEX_MODE_HOENN)

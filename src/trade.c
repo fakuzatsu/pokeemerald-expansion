@@ -3895,7 +3895,7 @@ static bool8 DoTradeAnim_Cable(void)
 #define tCounter           data[1]
 #define tSignalComingBack  data[2]
 
-static bool8 DoTradeAnim_Wireless(void)
+static bool8 UNUSED DoTradeAnim_Wireless(void)
 {
     u16 evoTarget;
 
@@ -4391,7 +4391,7 @@ static bool8 DoTradeAnim_Wireless(void)
 
 static bool8 AnimateDepositSequenceWireless(void)
 {
-    u16 evoTarget;
+   // u16 evoTarget;
 
     switch (sTradeAnim->state)
     {

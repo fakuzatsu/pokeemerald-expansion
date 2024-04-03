@@ -1747,10 +1747,10 @@ static void PopulateSpeciesFromTrainerLocation(int matchCallId, u8 *destStr)
     int numSpecies;
     u8 slot;
     int i = 0;
-    u8 timeOfDay;
+    //u8 timeOfDay;
     
     RtcCalcLocalTime();
-    timeOfDay = GetCurrentTimeOfDay();
+    //timeOfDay = GetCurrentTimeOfDay();
 
     if (gWildMonHeaders[i].mapGroup != MAP_GROUP(UNDEFINED)) // ??? This check is nonsense.
     {

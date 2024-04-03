@@ -72,7 +72,7 @@ static void PokeballGlowEffect_WaitForSound(struct Sprite *);
 static void PokeballGlowEffect_Idle(struct Sprite *);
 static void SpriteCB_PokeballGlow(struct Sprite *);
 
-static void FieldCallback_UseFly(void);
+//static void FieldCallback_UseFly(void);
 static void FieldCallback_Fly_2(void);
 static void Task_UseFly(u8);
 static void FieldCallback_FlyIntoMap(void);

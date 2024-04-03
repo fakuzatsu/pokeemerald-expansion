@@ -1631,7 +1631,7 @@ u8 CreateObjectGraphicsSprite(u16 graphicsId, void (*callback)(struct Sprite *),
     u16 species;
     u8 form;
     bool8 shiny;
-    u8 paletteNum;
+    //u8 paletteNum;
 
     spriteTemplate = Alloc(sizeof(struct SpriteTemplate));
     if (graphicsId == OBJ_EVENT_GFX_OW_MON && GetFollowerInfo(&species, &form, &shiny)) {
@@ -1649,7 +1649,7 @@ u8 CreateObjectGraphicsSprite(u16 graphicsId, void (*callback)(struct Sprite *),
 
     if (spriteTemplate->paletteTag == OBJ_EVENT_PAL_TAG_DYNAMIC) {
         const struct CompressedSpritePalette *spritePalette = &(shiny ? gFollowMonShinyPaletteTable : gFollowMonPaletteTable)[species];
-        paletteNum = LoadDynamicFollowerPalette(species, form, shiny);
+        //paletteNum = LoadDynamicFollowerPalette(species, form, shiny);
         spriteTemplate->paletteTag = spritePalette->tag;
     } else if (spriteTemplate->paletteTag != TAG_NONE)
         LoadObjectEventPalette(spriteTemplate->paletteTag, FALSE);
@@ -2002,6 +2002,7 @@ static u8 RandomWeightedIndex(u8 *weights, u8 length) {
     if (random_value <= cum_weight)
       return i;
   }
+  return 0;
 }
 
 // Pool of "unconditional" follower messages TODO: Should this be elsewhere ?
@@ -2705,7 +2706,7 @@ static u8 FindObjectEventPaletteIndexByTag(u16 tag)
     return 0xFF;
 }
 
-static void _PatchObjectPalette(u16 tag, u8 slot)
+static void UNUSED _PatchObjectPalette(u16 tag, u8 slot)
 {
     PatchObjectPalette(tag, slot);
 }
@@ -5087,7 +5088,7 @@ bool8 MovementType_FollowPlayer_Moving(struct ObjectEvent *objectEvent, struct S
 
 bool8 FollowablePlayerMovement_Idle(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 playerDirection, bool8 tileCallback(u8))
 {
-    u8 direction;
+    //u8 direction;
     if (!objectEvent->singleMovementActive) { // walk in place
 
       if(sprite->oam.mosaic == FALSE){
@@ -5633,7 +5634,7 @@ bool8 ScrFunc_IsFollowerFieldMoveUser(struct ScriptContext *ctx) {
     if (follower && obj && !obj->invisible) {
         u16 followIndex = ((u32)follower - (u32)gPlayerParty) / sizeof(struct Pokemon);
         *var = userIndex == followIndex;
-    } else
+    }
     return FALSE;
 }
 
@@ -9138,10 +9139,10 @@ static void DoTracksGroundEffect_SlitherTracks(struct ObjectEvent *objEvent, str
 	//  each byte in that row is for the next direction of the bike in the order
 	//  of down, up, left, right.
 	static const u8 slitherTracks_Transitions[4][4] = {
-		1, 2, 7, 8,
-		1, 2, 6, 5,
-		5, 8, 3, 4,
-		6, 7, 3, 4,
+		{1, 2, 7, 8},
+		{1, 2, 6, 5},
+		{5, 8, 3, 4},
+		{6, 7, 3, 4},
 	};
 
 	if (objEvent->currentCoords.x != objEvent->previousCoords.x || objEvent->currentCoords.y != objEvent->previousCoords.y)
@@ -9269,7 +9270,7 @@ static void (*const sGroundEffectFuncs[])(struct ObjectEvent *objEvent, struct S
     GroundEffect_Seaweed                // GROUND_EFFECT_FLAG_SEAWEED
 };
 
-static void GroundEffect_Shadow(struct ObjectEvent *objEvent, struct Sprite *sprite) {
+static void UNUSED GroundEffect_Shadow(struct ObjectEvent *objEvent, struct Sprite *sprite) {
   SetUpShadow(objEvent, sprite);
 }
 

@@ -587,7 +587,7 @@ static const struct SearchOptionText sDexSearchNameOptions[] =
     {},
 };
 
-static void PrintSearchText(const u8 *str, u32 x, u32 y)
+static void UNUSED PrintSearchText(const u8 *str, u32 x, u32 y)
 {
     u8 color[3];
 
@@ -597,7 +597,7 @@ static void PrintSearchText(const u8 *str, u32 x, u32 y)
     AddTextPrinterParameterized4(0, FONT_NORMAL, x, y, 0, 0, color, TEXT_SKIP_DRAW, str);
 }
 
-static void PrintArrow(u32 x, u32 y)
+static void UNUSED PrintArrow(u32 x, u32 y)
 {
     u8 color[3];
 
@@ -705,7 +705,7 @@ static void ResetPokedexViewGTS(struct GTSPokedexView *pokedexView)
 static void CreatePokedexListGTS()
 {
     //u32 vars[3]; //I have no idea why three regular variables are stored in an array, but whatever.
-    u32 temp_dexCount;
+    //u32 temp_dexCount;
     u32 temp_isHoennDex;
     u32 temp_dexNum;
     s32 i;
@@ -713,7 +713,7 @@ static void CreatePokedexListGTS()
     sGTSPokedexView->pokemonListCount = 0;
 
 
-    temp_dexCount = NATIONAL_DEX_COUNT;
+    //temp_dexCount = NATIONAL_DEX_COUNT;
     temp_isHoennDex = FALSE;
 
     //sGTSPokedexView->pokemonListCount = 0;
@@ -802,7 +802,7 @@ static void CreateMonListEntryGTS(u8 position, u16 b)
 {
     s16 entryNum;
     u16 i;
-    u16 vOffset;
+    //u16 vOffset;
 
 
     switch (position)
@@ -928,7 +928,7 @@ static void CreateMonListEntryGTS(u8 position, u16 b)
 
 static bool8 UpdateDexListScroll(u8 direction, u8 monMoveIncrement, u8 scrollTimerMax)
 {
-    u16 i;
+    //u16 i;
     u8 step;
 
     if (sGTSPokedexView->scrollTimer)
@@ -960,7 +960,7 @@ static u16 TryDoPokedexScrollGTS(u16 selectedMon)
     u8 scrollTimer;
     u8 scrollMonIncrement;
     u8 i;
-    u16 startingPos;
+    //u16 startingPos;
     u8 scrollDir = 0;
 
     if (JOY_NEW(DPAD_UP) && (sGTSPokedexView->cursorRelPos != 0))
@@ -988,7 +988,7 @@ static u16 TryDoPokedexScrollGTS(u16 selectedMon)
     }
     else if (JOY_NEW(DPAD_LEFT) && (selectedMon > 0))
     {
-        startingPos = selectedMon;
+        //startingPos = selectedMon;
 
         for (i = 0; i < 7; i++)
             selectedMon = GetNextPositionGTS(1, selectedMon, 0, sGTSPokedexView->pokemonListCount - 1);
@@ -996,7 +996,7 @@ static u16 TryDoPokedexScrollGTS(u16 selectedMon)
     }
     else if (JOY_NEW(DPAD_RIGHT) && (selectedMon < sGTSPokedexView->pokemonListCount - 1))
     {
-        startingPos = selectedMon;
+        //startingPos = selectedMon;
         for (i = 0; i < 7; i++)
             selectedMon = GetNextPositionGTS(0, selectedMon, 0, sGTSPokedexView->pokemonListCount - 1);
         PlaySE(SE_DEX_PAGE);
@@ -1055,7 +1055,7 @@ static u16 GetNextPositionGTS(u8 direction, u16 position, u16 min, u16 max)
     return position;
 }
 
-static u16 GetPokemonSpriteToDisplay(u16 species)
+static u16 UNUSED GetPokemonSpriteToDisplay(u16 species)
 {
     if (species >= NATIONAL_DEX_COUNT || sGTSPokedexView->pokedexList[species].dexNum == 0xFFFF)
         return 0xFFFF;
@@ -1240,8 +1240,8 @@ static u16 TryDoGTSSpriteScroll(u16 selectedMon, u16 ignored)
 {
     u8 scrollTimer;
     u8 scrollMonIncrement;
-    u8 i;
-    u16 startingPos;
+    //u8 i;
+    //u16 startingPos;
     u8 scrollDir = 0;
 
     if (JOY_NEW(DPAD_LEFT) && (selectedMon > 0))
@@ -1529,7 +1529,8 @@ bool32 PrintGTSMenuMessage(u8 *textState, const u8 *str)
         if (({JOY_NEW(A_BUTTON);}))
             (*textState)++;
         if (({JOY_NEW(B_BUTTON);}))
-            (*textState)==3;
+            //(*textState)==3;
+            return TRUE;
         break;
     case 2:
         DrawDownArrow(1, DOWN_ARROW_X, DOWN_ARROW_Y, 1, TRUE, &sDownArrowCounterAndYCoordIdx[0], &sDownArrowCounterAndYCoordIdx[1]);
@@ -1559,7 +1560,7 @@ static void ShowDownArrow(void)
 }
 
 // Unused
-static bool32 HideDownArrowAndWaitButton(u8 * textState)
+static bool32 UNUSED HideDownArrowAndWaitButton(u8 * textState)
 {
     switch (*textState)
     {
@@ -1683,7 +1684,7 @@ s8 DoGTSYesNo(u8 * textState, u16 * windowId, bool8 yesNoBoxPlacement, const u8 
 // Handle the "Receive/Send/Toss" menu that appears when selecting Wonder Card/News
 static s32 HandleGiftSelectMenu(u8 * textState, u16 * windowId, bool32 cannotToss, bool32 cannotSend)
 {
-    struct WindowTemplate windowTemplate;
+    //struct WindowTemplate windowTemplate;
     s32 input;
 
     switch (*textState)
@@ -1703,7 +1704,7 @@ static s32 HandleGiftSelectMenu(u8 * textState, u16 * windowId, bool32 cannotTos
         (*textState)++;
         break;
     case 1:
-        windowTemplate = sWindowTemplate_YesNoBox;
+        //windowTemplate = sWindowTemplate_YesNoBox;
         if (cannotSend)
         {
             if (!cannotToss)
@@ -2015,7 +2016,7 @@ static const u8 * GetServerResultMessage(bool32 * wonderSuccess, bool8 sourceIsF
     return result;
 }
 
-static bool32 PrintServerResultMessage(u8 * state, u16 * timer, bool8 sourceIsFriend, u32 msgId)
+static bool32 UNUSED PrintServerResultMessage(u8 * state, u16 * timer, bool8 sourceIsFriend, u32 msgId)
 {
     bool32 wonderSuccess;
     const u8 * str = GetServerResultMessage(&wonderSuccess, sourceIsFriend, msgId);

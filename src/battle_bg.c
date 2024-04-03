@@ -849,7 +849,7 @@ static void LoadBattleTerrainGfx(u16 terrain)
     LoadCompressedPalette(sBattleTerrainTable[terrain].palette[GetCurrentTimeOfDay()], 0x20, 0x60);
 }
 
-static void LoadBattleTerrainEntryGfx(u16 terrain)
+static void UNUSED LoadBattleTerrainEntryGfx(u16 terrain)
 {
     if (terrain >= NELEMS(sBattleTerrainTable))
         terrain = BATTLE_TERRAIN_PLAIN;

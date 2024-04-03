@@ -1038,7 +1038,7 @@ void TintPalette_CustomTone(u16 *palette, u16 count, u16 rTone, u16 gTone, u16 b
 void TintPalette_CustomToneWithCopy(const u16 *src, u16 *dest, u16 count, u16 rTone, u16 gTone, u16 bTone, bool8 excludeZeroes)
 {
     s32 r, g, b, i;
-    u32 gray;
+    //u32 gray;
 
     for (i = 0; i < count; i++, src++, dest++)
     {

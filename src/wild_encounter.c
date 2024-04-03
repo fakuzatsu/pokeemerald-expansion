@@ -473,12 +473,12 @@ void CreateWildMon(u16 species, u8 level)
 
 static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 area, u8 flags)
 {
-    u8 timeOfDay;
+    //u8 timeOfDay;
     u8 wildMonIndex = 0;
     u8 level;
 
     RtcCalcLocalTime();
-    timeOfDay = GetCurrentTimeOfDay();
+    //timeOfDay = GetCurrentTimeOfDay();
 
     switch (area)
     {
@@ -531,12 +531,12 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
 
 static u16 GenerateFishingWildMon(const struct WildPokemonInfo *wildMonInfo, u8 rod)
 {
-    u8 timeOfDay;
+    //u8 timeOfDay;
     u8 wildMonIndex;
     u8 level;
 
     RtcCalcLocalTime();
-    timeOfDay = GetCurrentTimeOfDay();
+    //timeOfDay = GetCurrentTimeOfDay();
 
     wildMonIndex = ChooseWildMonIndex_Fishing(rod);
     level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, WILD_AREA_FISHING);
@@ -976,14 +976,14 @@ void FishingWildEncounter(u8 rod)
 u16 GetLocalWildMon(bool8 *isWaterMon)
 {
     u16 headerId;
-    u8 timeOfDay;
-    u16 species;
+    //u8 timeOfDay;
+    //u16 species;
 
     const struct WildPokemonInfo *landMonsInfo;
     const struct WildPokemonInfo *waterMonsInfo;
 
     RtcCalcLocalTime();
-    timeOfDay = GetCurrentTimeOfDay();
+    //timeOfDay = GetCurrentTimeOfDay();
 
     *isWaterMon = FALSE;
     headerId = GetCurrentMapWildMonHeaderId();
@@ -1043,10 +1043,10 @@ u16 GetLocalWildMon(bool8 *isWaterMon)
 u16 GetLocalWaterMon(void)
 {
     u16 headerId = GetCurrentMapWildMonHeaderId();
-    u8 timeOfDay;
+    //u8 timeOfDay;
     
     RtcCalcLocalTime();
-    timeOfDay = GetCurrentTimeOfDay();
+    //timeOfDay = GetCurrentTimeOfDay();
 
     if (headerId != HEADER_NONE)
     {

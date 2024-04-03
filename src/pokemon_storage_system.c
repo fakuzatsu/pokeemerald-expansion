@@ -432,12 +432,12 @@ struct PokemonStorageSystemData
     u16 scrollUnused4; // Never read
     u16 scrollUnused5; // Never read
     u16 scrollUnused6; // Never read
-    s8 displayMonHPEV[3];
-    s8 displayMonAtkEV[3];
-    s8 displayMonDefEV[3];
-    s8 displayMonSpdEV[3];
-    s8 displayMonSpAtkEV[3];
-    s8 displayMonSpDefEV[3];
+    u8 displayMonHPEV[3];
+    u8 displayMonAtkEV[3];
+    u8 displayMonDefEV[3];
+    u8 displayMonSpdEV[3];
+    u8 displayMonSpAtkEV[3];
+    u8 displayMonSpDefEV[3];
     u8 filler1[4];
     u8 boxTitleTiles[1024];
     u8 boxTitleCycleId;
@@ -690,7 +690,7 @@ static bool8 IsMonBeingMoved(void);
 static void TryRefreshDisplayMon(void);
 static void ReshowDisplayMon(void);
 static void SetDisplayMonData(void *, u8);
-static void SetDisplayMonEVIV(void *, u8);
+//static void SetDisplayMonEVIV(void *, u8);
 
 // Moving multiple Pokémon at once
 static void MultiMove_Free(void);

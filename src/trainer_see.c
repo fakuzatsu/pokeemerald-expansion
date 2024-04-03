@@ -861,7 +861,7 @@ void TryPrepareSecondApproachingTrainer(void)
 
 u8 FldEff_ExclamationMarkIcon(void)
 {
-    u8 spriteId, paletteNum;
+    u8 spriteId;//, paletteNum;
 
     LoadObjectEventPalette(FLDEFF_PAL_TAG_ARROW, TRUE); //LoadObjectEventPalette(OBJ_EVENT_PAL_TAG_BRENDAN)
     spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x52);

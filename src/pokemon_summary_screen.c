@@ -3012,8 +3012,8 @@ static void PrintPageNamesAndStats(void)
 
 static void UpdateStatColToWindow(void)
 {
-    int stringXPos;
-    int iconXPos;
+    //int stringXPos;
+    //int iconXPos;
     int statsXPos;
 
     statsXPos = 6 + GetStringCenterAlignXOffset(FONT_NORMAL, gText_Attack3, 42);
