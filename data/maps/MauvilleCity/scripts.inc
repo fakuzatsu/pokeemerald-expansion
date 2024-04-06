@@ -78,6 +78,10 @@ MauvilleCity_EventScript_GameCornerSign::
 	msgbox MauvilleCity_Text_GameCornerSign, MSGBOX_SIGN
 	end
 
+MauvilleCity_EventScript_FlowerShopSign::
+	msgbox MauvilleCity_Text_FlowerShopSign, MSGBOX_SIGN
+	end
+
 MauvilleCity_EventScript_SchoolKidM::
 	lock
 	faceplayer
@@ -682,6 +686,10 @@ MauvilleCity_Text_BikeShopSign:
 MauvilleCity_Text_GameCornerSign:
 	.string "“The play spot for all!”\n"
 	.string "Mauville GAME CORNER$"
+
+MauvilleCity_Text_FlowerShopSign:
+	.string "A spec of green in the city!\n"
+	.string "Mauville Flower Shop$"
 
 MauvilleCity_Text_ExplainTV:
 	.string "Hi, do you check out TV at all?\p"

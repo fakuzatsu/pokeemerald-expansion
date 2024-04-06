@@ -89,6 +89,10 @@ MauvilleCity_PokemonCenter_1F_EventScript_NoRoomForEvolutionStone::
 	release
 	end
 
+MauvilleCity_PokemonCenter_1F_EventScript_Kirlia::
+	msgbox MauvilleCity_PokemonCenter_1F_Text_Kirlia, MSGBOX_NPC
+	end
+
 MauvilleCity_PokemonCenter_1F_EventScript_Woman::
 	msgbox MauvilleCity_PokemonCenter_1F_Text_MyDataUpdatedFromRecordCorner, MSGBOX_NPC
 	end
@@ -158,3 +162,5 @@ MauvilleCity_PokemonCenter_1F_Text_OhMyPoorXStone:
 MauvilleCity_PokemonCenter_1F_Text_EvolutionGuruNoSpace:
 	.string "Oh! You have no space for this stone.$"
 
+MauvilleCity_PokemonCenter_1F_Text_Kirlia:
+	.string "Kirliiii$"
