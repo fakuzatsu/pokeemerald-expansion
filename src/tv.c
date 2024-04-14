@@ -197,31 +197,49 @@ static const struct {
     {
         .species = SPECIES_LILLIPUP,
         .moves = {MOVE_LEER, MOVE_WORK_UP, MOVE_TACKLE},
-        .level = 3,
+        .level = 5,
         .location = MAP_NUM(ROUTE102)
+    },
+    {
+        .species = SPECIES_PATRAT,
+        .moves = {MOVE_LEER, MOVE_BITE, MOVE_FLAIL},
+        .level = 5,
+        .location = MAP_NUM(ROUTE101)
+    },
+    {
+        .species = SPECIES_YUNGOOS,
+        .moves = {MOVE_LEER, MOVE_PAYBACK, MOVE_TACKLE},
+        .level = 5,
+        .location = MAP_NUM(ROUTE104)
     },
     {
         .species = SPECIES_JANGMO_O,
         .moves = {MOVE_DRAGON_TAIL, MOVE_HEADBUTT, MOVE_SCREECH, MOVE_ROCK_SLIDE},
-        .level = 23,
+        .level = 20,
         .location = MAP_NUM(MOUNTAIN_FOOT)
     },
     {
         .species = SPECIES_SLOWPOKE,
         .moves = {MOVE_HAPPY_HOUR, MOVE_WATER_PULSE, MOVE_CONFUSION, MOVE_YAWN},
-        .level = 28,
+        .level = 32,
         .location = MAP_NUM(LILYCOVE_CITY)
     },
     {
         .species = SPECIES_MUNCHLAX,
         .moves = {MOVE_BELLY_DRUM, MOVE_YAWN, MOVE_HOLD_BACK},
-        .level = 8,
+        .level = 10,
         .location = MAP_NUM(SLATEPORT_CITY)
+    },
+    {
+        .species = SPECIES_LARVITAR,
+        .moves = {MOVE_ROCK_SLIDE, MOVE_STOMPING_TANTRUM, MOVE_FOCUS_ENERGY},
+        .level = 20,
+        .location = MAP_NUM(ROUTE113)
     },
     {
         .species = SPECIES_DREEPY,
         .moves = {MOVE_DRAGON_TAIL, MOVE_INFESTATION, MOVE_QUICK_ATTACK, MOVE_ASTONISH},
-        .level = 28,
+        .level = 30,
         .location = MAP_NUM(ROUTE119)
     }
 };
