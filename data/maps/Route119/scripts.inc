@@ -9,24 +9,24 @@ Route119_MapScripts::
 	.byte 0
 
 Route119_OnLoad:
-	call_if_set FLAG_HIDDEN_ITEM_ALTARIANITE, Route119_Hide_Altarianite
+	call_if_set FLAG_HIDDEN_ITEM_VENUSAURITE, Route119_Hide_Venusaurite
 	call Grotto_EventScript_GetGrottoWarp
 	goto_if_eq VAR_HIDDEN_GROTTO_ROUTE_119, 0, Route119_EventScript_CloseGrotto
 	end
 
-Route119_Hide_Altarianite::
+Route119_Hide_Venusaurite::
     setmetatile 9, 18, METATILE_General_Grass, FALSE
     return
 
-Route119_Altarianite::
-	goto_if_set FLAG_HIDDEN_ITEM_ALTARIANITE, Route119_End_Altarianite
-	checkitemspace ITEM_ALTARIANITE
+Route119_Venusaurite::
+	goto_if_set FLAG_HIDDEN_ITEM_VENUSAURITE, Route119_End_Venusaurite
+	checkitemspace ITEM_VENUSAURITE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
-	call Route119_Hide_Altarianite
+	call Route119_Hide_Venusaurite
 	special DrawWholeMapView
-	giveitem ITEM_ALTARIANITE
-	setflag FLAG_HIDDEN_ITEM_ALTARIANITE
-Route119_End_Altarianite::
+	giveitem ITEM_VENUSAURITE
+	setflag FLAG_HIDDEN_ITEM_VENUSAURITE
+Route119_End_Venusaurite::
 	release
 	end	
 

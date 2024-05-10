@@ -1,7 +1,28 @@
 Route119East_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route119East_OnResume
 	map_script MAP_SCRIPT_ON_RESUME, Route119East_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route119East_OnLoad
 	.byte 0
+
+Route119East_OnLoad:
+	call_if_set FLAG_HIDDEN_ITEM_ALTARIANITE, Route119East_Hide_Altarianite
+	end
+
+Route119East_Hide_Altarianite::
+    setmetatile 24, 51, METATILE_General_Grass, FALSE
+    return
+
+Route119East_Altarianite::
+	goto_if_set FLAG_HIDDEN_ITEM_ALTARIANITE, Route119East_End_Altarianite
+	checkitemspace ITEM_ALTARIANITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	call Route119East_Hide_Altarianite
+	special DrawWholeMapView
+	giveitem ITEM_ALTARIANITE
+	setflag FLAG_HIDDEN_ITEM_ALTARIANITE
+Route119East_End_Altarianite::
+	release
+	end	
 
 Route119East_OnResume:
 	setstepcallback STEP_CB_FORTREE_BRIDGE
