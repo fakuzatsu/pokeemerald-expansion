@@ -11548,21 +11548,21 @@ static const struct TrainerMon sParty_Crissy[] = {
 static const struct TrainerMon sParty_Lara[] = {
     #ifdef CANON_MODE
     {
-    .lvl = 5,
-    .species = SPECIES_SHROOMISH,
+    .lvl = 32,
+    .species = SPECIES_BRELOOM,
     },
     {
-    .lvl = 5,
-    .species = SPECIES_SEEDOT,
+    .lvl = 33,
+    .species = SPECIES_SHIFTRY,
     }
     #else // CANON_MODE
     {
-    .lvl = 6,
-    .species = SPECIES_COTTONEE,
+    .lvl = 32,
+    .species = SPECIES_WHIMSICOTT,
     },
     {
-    .lvl = 6,
-    .species = SPECIES_FLABEBE,
+    .lvl = 33,
+    .species = SPECIES_FLORGES,
     }
     #endif // CANON_MODE
 };

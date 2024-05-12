@@ -314,8 +314,8 @@
     },
     {
       "type": "sign",
-      "x": 2,
-      "y": 6,
+      "x": 3,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "MauvilleCity_EventScript_FlowerShopSign"

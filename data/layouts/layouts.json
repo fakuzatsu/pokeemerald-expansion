@@ -4434,7 +4434,7 @@
     {
       "id": "LAYOUT_ACORN_ACRE",
       "name": "AcornAcre_Layout",
-      "width": 28,
+      "width": 25,
       "height": 16,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
