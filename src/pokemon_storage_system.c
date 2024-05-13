@@ -5995,7 +5995,7 @@ static bool8 UpdateCursorPos(void)
 
 static void InitNewCursorPos(u8 newCursorArea, u8 newCursorPosition)
 {
-    u16 x, y = 0;
+    u16 x = 0, y = 0;
 
     GetCursorCoordsByPos(newCursorArea, newCursorPosition, &x, &y);
     sStorage->newCursorArea = newCursorArea;
@@ -7819,7 +7819,7 @@ static void SpriteCB_CursorShadow(struct Sprite *sprite)
 
 static void CreateCursorSprites(void)
 {
-    u16 x, y = 0;
+    u16 x = 0, y = 0;
     u8 spriteId;
     u8 priority, subpriority;
     struct SpriteSheet spriteSheets[] =
