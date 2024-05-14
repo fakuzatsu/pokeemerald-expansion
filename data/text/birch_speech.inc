@@ -42,10 +42,20 @@ gText_Birch_WhatsYourName::
 gText_Birch_SoItsPlayer::
 	.string "So it's {PLAYER}{KUN}?$"
 
+gText_Birch_SoItsAFamiliarName::
+	.string "Your name is {PLAYER}{KUN}?$"
+
 gText_Birch_YourePlayer::
 	.string "Ah, okay!\p"
 	.string "You're {PLAYER}{KUN} who's moving to my\n"
 	.string "hometown of LITTLEROOT.\l"
+	.string "I get it now!\p"
+	.string "$"
+
+gText_Birch_OhYourePlayer::
+	.string "Ah, okay!\p"
+	.string "So you're this {PLAYER}{KUN} I keep\n"
+	.string "hearing about!\l"
 	.string "I get it now!\p"
 	.string "$"
 

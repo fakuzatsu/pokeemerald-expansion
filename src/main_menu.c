@@ -1606,10 +1606,18 @@ static void Task_NewGameBirchSpeech_StartNamingScreen(u8 taskId)
     }
 }
 
+static const u8 sText_NameToCompare0[] = _("Zatsu");
+static const u8 sText_NameToCompare1[] = _("ZATSU");
+static const u8 sText_NameToCompare2[] = _("zatsu");
+
 static void Task_NewGameBirchSpeech_SoItsPlayerName(u8 taskId)
 {
     NewGameBirchSpeech_ClearWindow(0);
-    StringExpandPlaceholders(gStringVar4, gText_Birch_SoItsPlayer);
+        if (!StringCompare(gStringVar4, sText_NameToCompare0) || !StringCompare(gStringVar4, sText_NameToCompare1) 
+        || !StringCompare(gStringVar4, sText_NameToCompare2))
+            StringExpandPlaceholders(gStringVar4, gText_Birch_SoItsAFamiliarName);
+        else
+            StringExpandPlaceholders(gStringVar4, gText_Birch_SoItsPlayer);
     AddTextPrinterForMessage(TRUE);
     gTasks[taskId].func = Task_NewGameBirchSpeech_CreateNameYesNo;
 }
@@ -1675,7 +1683,11 @@ static void Task_NewGameBirchSpeech_ReshowBirchLotad(u8 taskId)
         NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 2);
         NewGameBirchSpeech_StartFadePlatformOut(taskId, 1);
         NewGameBirchSpeech_ClearWindow(0);
-        StringExpandPlaceholders(gStringVar4, gText_Birch_YourePlayer);
+        if (!StringCompare(gStringVar4, sText_NameToCompare0) || !StringCompare(gStringVar4, sText_NameToCompare1) 
+        || !StringCompare(gStringVar4, sText_NameToCompare2))
+            StringExpandPlaceholders(gStringVar4, gText_Birch_OhYourePlayer);
+        else
+            StringExpandPlaceholders(gStringVar4, gText_Birch_YourePlayer);
         AddTextPrinterForMessage(TRUE);
         gTasks[taskId].func = Task_NewGameBirchSpeech_WaitForSpriteFadeInAndTextPrinter;
     }

@@ -38,7 +38,7 @@ static u8 ConvertStringToPokemon(u8 *string);
 // -------------------TEMPLATE----------------------
 
 // Activation Code:
-const u8 sText_Code0[] = _("None");
+static const u8 sText_Code0[] = _("None");
 
 // Code Execution:
 static void Task_DontActivateCode(u8 taskId)
@@ -48,13 +48,13 @@ static void Task_DontActivateCode(u8 taskId)
 }
 
 // Response:
-const u8 sText_NoCodeActivated[] = _("No known code.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_NoCodeActivated[] = _("No known code.{PAUSE_UNTIL_PRESS}");
 
 // -------------------------------------------------
 
 // --------------------CODE 1-----------------------
 
-const u8 sText_FloetteCode[] = _("UltiWep");
+static const u8 sText_FloetteCode[] = _("UltiWep");
 
 static void Task_GiveEternalFloette(u8 taskId)
 {
@@ -76,14 +76,14 @@ static void Task_GiveEternalFloette(u8 taskId)
         DisplayItemMessageOnField(taskId, gText_FailedToAddMon, Task_DontActivateCode);
 }
 
-const u8 sText_FloetteCodeActivated[] = _("Code “UltiWep” activated!{PAUSE_UNTIL_PRESS}");
-const u8 sText_FloetteCodeAlreadyActivated[] = _("Code “UltiWep” already claimed!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_FloetteCodeActivated[] = _("Code “UltiWep” activated!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_FloetteCodeAlreadyActivated[] = _("Code “UltiWep” already claimed!{PAUSE_UNTIL_PRESS}");
 
 // -------------------------------------------------
 
 // --------------------CODE 2-----------------------
 
-const u8 sText_ReRandomiseCode[] = _("ReRand");
+static const u8 sText_ReRandomiseCode[] = _("ReRand");
 
 static void Task_ActivateReRandomiseCode(u8 taskId)
 {
@@ -92,13 +92,13 @@ static void Task_ActivateReRandomiseCode(u8 taskId)
     ScriptContext_Enable();
 }
 
-const u8 sText_AbilityRandomiserActivated[] = _("Seed has been re-randomised. {PAUSE_UNTIL_PRESS}");
+static const u8 sText_AbilityRandomiserActivated[] = _("Seed has been re-randomised. {PAUSE_UNTIL_PRESS}");
 
 // -------------------------------------------------
 
 // --------------------CODE 3-----------------------
 
-const u8 sText_AllDexFlagsCode[] = _("DexAll");
+static const u8 sText_AllDexFlagsCode[] = _("DexAll");
 
 static void Task_ActivateAllDexFlagsCode(u8 taskId)
 {
@@ -111,13 +111,13 @@ static void Task_ActivateAllDexFlagsCode(u8 taskId)
     ScriptContext_Enable();
 }
 
-const u8 sText_AllDexFlagsActivated[] = _("All Pokémon marked as seen. {PAUSE_UNTIL_PRESS}");
+static const u8 sText_AllDexFlagsActivated[] = _("All Pokémon marked as seen. {PAUSE_UNTIL_PRESS}");
 
 // -------------------------------------------------
 
 // --------------------CODE 4-----------------------
 
-const u8 sText_StunkyModeCode[] = _("Smellie");
+static const u8 sText_StunkyModeCode[] = _("Smellie");
 
 static void Task_ToggleStunkyModeCode(u8 taskId)
 {
@@ -129,8 +129,8 @@ static void Task_ToggleStunkyModeCode(u8 taskId)
     ScriptContext_Enable();
 }
 
-const u8 sText_StunkyModeActivated[] = _("Stunky mode activated! {PAUSE_UNTIL_PRESS}");
-const u8 sText_StunkyModeDectivated[] = _("Stunky mode deactivated. {PAUSE_UNTIL_PRESS}");
+static const u8 sText_StunkyModeActivated[] = _("Stunky mode activated! {PAUSE_UNTIL_PRESS}");
+static const u8 sText_StunkyModeDectivated[] = _("Stunky mode deactivated. {PAUSE_UNTIL_PRESS}");
 
 //--------------------------------------------------
 // End of Codes and Effects
@@ -170,8 +170,8 @@ static void MapPostLoadHook_ReturnToCodeActivation(void)
     CreateTask(Task_ReturnToCodeActivation, 8);
 }
 
-const u8 sText_ChangedSeed[] = _("Changed randomiser seed.{PAUSE_UNTIL_PRESS}");
-const u8 sText_InvalidSeed[] = _("Invalid seed.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_ChangedSeed[] = _("Changed randomiser seed.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_InvalidSeed[] = _("Invalid seed.{PAUSE_UNTIL_PRESS}");
 
 static void Task_ReturnToCodeActivation(u8 taskId)
 {
