@@ -336,6 +336,7 @@ extern const u8 gText_SaveFileCorrupted[];
 extern const u8 gJPText_No1MSubCircuit[];
 extern const u8 gText_BatteryRunDry[];
 extern const u8 gText_MainMenuNewGame[];
+extern const u8 gText_MainMenuInternet[];
 extern const u8 gText_MainMenuOption[];
 extern const u8 gText_MainMenuContinue[];
 extern const u8 gText_MainMenuMysteryGift2[];
@@ -3423,5 +3424,18 @@ extern const u8 gText_ExpShareOn[];
 extern const u8 gText_ExpShareOff[];
 
 extern const u8 gText_BasePointsResetToZero[];
+
+//Internet
+extern const u8 gText_GiftDownload[];
+extern const u8 gText_ViaInternet[];
+extern const u8 gText_ViaCode[];
+extern const u8 gText_Bank[];
+extern const u8 gText_Friends[];
+extern const u8 gText_AddFriends[];
+extern const u8 gText_ViewFriends[];
+extern const u8 gText_Sync[];
+extern const u8 gText_GameSync[];
+extern const u8 gText_UploadSecretBase[];
+extern const u8 gText_UploadRecordedBattle[];
 
 #endif // GUARD_STRINGS_H

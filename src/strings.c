@@ -23,7 +23,8 @@ const u8 gText_Pokemon[] = _("Pokémon");
 const u8 gText_ProfBirchMatchCallName[] = _("Prof. Birch");
 const u8 gText_MainMenuNewGame[] = _("New Game");
 const u8 gText_MainMenuContinue[] = _("Continue");
-const u8 gText_MainMenuOption[] = _("Option");
+const u8 gText_MainMenuInternet[] = _("Internet Options");
+const u8 gText_MainMenuOption[] = _("Options");
 const u8 gText_MainMenuMysteryGift[] = _("Mystery Gift");
 const u8 gText_MainMenuMysteryGift2[] = _("Mystery Gift");
 const u8 gText_MainMenuMysteryEvents[] = _("Mystery Events");
@@ -1995,3 +1996,16 @@ const u8 gText_Sunday[] = _("Sunday");
 const u8 gText_ExpShareOn[] = _("The Exp. Share has been turned on.{PAUSE_UNTIL_PRESS}");
 const u8 gText_ExpShareOff[] = _("The Exp. Share has been turned off.{PAUSE_UNTIL_PRESS}");
 const u8 gText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all reset to zero!{PAUSE_UNTIL_PRESS}");
+
+//Internet
+const u8 gText_GiftDownload[] = _("Download Gift");
+const u8 gText_ViaInternet[] = _("Via Internet");
+const u8 gText_ViaCode[] = _("Via Code");
+const u8 gText_Bank[] = _("Bank");
+const u8 gText_Friends[] = _("Friends");
+const u8 gText_AddFriends[] = _("Add Friend");
+const u8 gText_ViewFriends[] = _("View Friends");
+const u8 gText_Sync[] = _("Sync Data");
+const u8 gText_GameSync[] = _("Game Sync");
+const u8 gText_UploadSecretBase[] = _("Upload Secret Base");
+const u8 gText_UploadRecordedBattle[] = _("Upload Recorded Battle");
