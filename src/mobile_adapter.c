@@ -62,17 +62,20 @@ int maGetEEPROMData(MA_TELDATA *maTel, char *maUserID, char *maMailID){
     int isError = 0;
 
     MA_GetTel(maTel);
-    if(isError = maWait() > 0) {
+    isError = maWait();
+    if(isError > 0) {
         return isError;
     }
 
     MA_GetUserID(maUserID);
-    if(isError = maWait() > 0) {
+    isError = maWait();
+    if(isError > 0) {
         return isError;
     }
 
     MA_GetMailID(maMailID);
-    if(isError = maWait() > 0) {
+    isError = maWait();
+    if(isError > 0) {
         return isError;
     }
 
@@ -94,11 +97,7 @@ int maDownload(const char *pURL, char *pHeadBuf, u16 headBufSize, u8 *pRecvData,
 
 //Upload data (and then also download data)
 int maUpload(const char *pURL, char *pHeadBuf, u16 headBufSize, const u8 *pSendData, u16 sendSize, u8 *pRecvData, u16 recvBufSize, u16 *pRecvSize, const char *pUserID, const char *pPassword){
-    int siz;
-    int maCondition;
-
     MA_HTTP_Post(pURL, pHeadBuf, headBufSize, pSendData, sendSize, pRecvData, 4, pRecvSize, pUserID, pPassword);
-
     return maWait();
 }
 
@@ -166,16 +165,17 @@ int maWait(void){
 int maExample(void){
     int errNum; //The error code for the error encountered
     const char *pURL;   //URL to query
-    char pHeadBuf[100]; //Buffer to hold the HTTP header
-    const u8 *pSendData;    //Data to send
-    pSendData="GIFT";
+    //char pHeadBuf[100]; //Buffer to hold the HTTP header
+    u8 pSendData[4];    //Data to send
+    memcpy(pSendData, "GIFT", 4);
+    //pSendData="GIFT";
     u16 recvBufSize = 100;  //Size of received data
     u8 pRecvData[recvBufSize];  //Buffer to hold received data
     u16 pRecvSize;  //How many bytes were copied to pRecvData after calling maUpload once
     int tracker=0;  //Keep track of No of bytes copied to pRecvData
-    char pUserID[17];  //User ID from the MA EEPROM, has max lenght of 17
-    char pPassword[17];    //User passwoord from the MA EEPROM, has max lenght of 17
-    char *maMailID; //User mail ID from the MA EEPROM
+    char pUserID[32];  //User ID from the MA EEPROM, has max lenght of 32
+    char pPassword[16];    //User passwoord from the MA EEPROM, has max lenght of 16
+    char maMailID[30]; //User mail ID from the MA EEPROM
     int i = 0;
 
     MA_TELDATA maTel;   //MA Telephone struct
@@ -252,7 +252,7 @@ int maExample(void){
 
     //If no room in party send mon to PC, otherwise put in party
     if(i >= PARTY_SIZE){
-        struct Pokemon *pRecvData;
+        struct Pokemon pRecvData[0];
         i = CopyMonToPC(pRecvData); //Checks for full PC
         if(i==2){   //Box is full
             return i;
