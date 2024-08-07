@@ -149,6 +149,7 @@ CPPFLAGS += -I tools/agbcc/include -I tools/agbcc -nostdinc -undef
 endif
 
 SHA1 := $(shell { command -v sha1sum || command -v shasum; } 2>/dev/null) -c
+ALPHABETSOUP = tools/alphabetsoup
 GFX := tools/gbagfx/gbagfx$(EXE)
 AIF := tools/aif2pcm/aif2pcm$(EXE)
 MID := tools/mid2agb/mid2agb$(EXE)
@@ -182,7 +183,7 @@ MAKEFLAGS += --no-print-directory
 # Secondary expansion is required for dependency variables in object rules.
 .SECONDEXPANSION:
 
-.PHONY: all rom clean compare tidy tools check-tools mostlyclean clean-tools clean-check-tools $(TOOLDIRS) $(CHECKTOOLDIRS) libagbsyscall agbcc libma modern tidymodern tidynonmodern check
+.PHONY: all rom clean compare tidy tools alphabetsoup check-tools mostlyclean clean-tools clean-alphabetsoup clean-check-tools $(TOOLDIRS) $(CHECKTOOLDIRS) libagbsyscall agbcc libma modern tidymodern tidynonmodern check
 
 infoshell = $(foreach line, $(shell $1 | sed "s/ /__SPACE__/g"), $(info $(subst __SPACE__, ,$(line))))
 
@@ -251,7 +252,10 @@ AUTO_GEN_TARGETS :=
 
 all: rom
 
-tools: $(TOOLDIRS)
+tools: $(TOOLDIRS) alphabetsoup
+
+alphabetsoup:
+	$(MAKE) -C $(ALPHABETSOUP)
 
 check-tools: $(CHECKTOOLDIRS)
 
@@ -271,13 +275,16 @@ endif
 # For contributors to make sure a change didn't affect the contents of the ROM.
 compare: all
 
-clean: mostlyclean clean-tools clean-check-tools
+clean: mostlyclean clean-tools clean-check-tools clean-alphabetsoup
 
 clean-tools:
 	@$(foreach tooldir,$(TOOLDIRS),$(MAKE) clean -C $(tooldir);)
 
 clean-check-tools:
 	@$(foreach tooldir,$(CHECKTOOLDIRS),$(MAKE) clean -C $(tooldir);)
+
+clean-alphabetsoup:
+	$(MAKE) -C $(ALPHABETSOUP) clean
 
 mostlyclean: tidynonmodern tidymodern tidycheck
 	find sound -iname '*.bin' -exec rm {} +
