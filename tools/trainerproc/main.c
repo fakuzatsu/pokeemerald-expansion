@@ -1057,6 +1057,9 @@ static const struct {
     { "Genesect-Chill", "Genesect", "Chill Drive" },
     { "Genesect-Douse", "Genesect", "Douse Drive" },
     { "Genesect-Shock", "Genesect", "Shock Drive" },
+    { "Ogerpon-Cornerstone", "Ogerpon", "Cornerstone Mask" },
+    { "Ogerpon-Hearthflame", "Ogerpon", "Hearthflame Mask" },
+    { "Ogerpon-Wellspring", "Ogerpon", "Wellspring Mask" },
     { "Silvally-Bug", "Silvally", "Bug Memory" },
     { "Silvally-Dark", "Silvally", "Dark Memory" },
     { "Silvally-Dragon", "Silvally", "Dragon Memory" },
@@ -1583,7 +1586,7 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
     fprintf(f, "// DO NOT MODIFY THIS FILE! It is auto-generated from %s\n", parsed->source->path);
     fprintf(f, "//\n");
     fprintf(f, "// If you want to modify this file set COMPETITIVE_PARTY_SYNTAX to FALSE\n");
-    fprintf(f, "// in include/config.h and remove this notice.\n");
+    fprintf(f, "// in include/config/general.h and remove this notice.\n");
     fprintf(f, "// Use sed -i '/^#line/d' '%s' to remove #line markers.\n", output_path);
     fprintf(f, "//\n");
     fprintf(f, "\n");
