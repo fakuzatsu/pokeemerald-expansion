@@ -41,7 +41,9 @@ static const u32 sWirelessLinkIconPic[] = INCBIN_U32("graphics/link/wireless_ico
 static const u8 sWireless_ASCIItoRSETable[256] = {
     EOS,
     0x95, 0x96, 0x97, 0x98, 0x99, 0x9a, 0x37,
-    0x38, 0x39, 0x3a, 0x3b, 0x3c, 0x3d, 0x3e, 0x3f,
+    0x38, 0x39, 
+    ['\n'] = CHAR_NEWLINE,
+    0x3b, 0x3c, 0x3d, 0x3e, 0x3f,
     0x40, 0x41, 0x42, 0x43, 0x44, 0x45, 0x46, 0x47,
     0x48, 0x49, 0x4a, 0x4b, 0x4c, 0x4d, 0x4e, 0x4f,
     [' '] = CHAR_SPACE,
@@ -61,7 +63,8 @@ static const u8 sWireless_ASCIItoRSETable[256] = {
     ['7'] = CHAR_7,
     ['8'] = CHAR_8,
     ['9'] = CHAR_9,
-    0x00, 0x9b, 0x9c, 0x9d, 0x9e, 0x9f, 0x00,
+    [':'] = CHAR_COLON,
+    0x9b, 0x9c, 0x9d, 0x9e, 0x9f, 0x00,
     ['A'] = CHAR_A,
     ['B'] = CHAR_B,
     ['C'] = CHAR_C,
@@ -615,7 +618,7 @@ static void UNUSED PkmnStrToASCII(u8 *asciiStr, const u8 *pkmnStr)
     asciiStr[i] = 0;
 }
 
-static void UNUSED ASCIIToPkmnStr(u8 *pkmnStr, const u8 *asciiStr)
+void ASCIIToPkmnStr(u8 *pkmnStr, const u8 *asciiStr)
 {
     s32 i;
 

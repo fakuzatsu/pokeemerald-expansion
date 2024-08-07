@@ -537,7 +537,7 @@ struct Pokeblock
 struct SaveBlock2
 {
              u16 saveVersion;
-             u32 uniqueID;
+             u32 PID;
     /*0x00*/ u8 playerName[PLAYER_NAME_LENGTH + 1];
     /*0x08*/ u8 playerGender; // MALE, FEMALE
     /*0x09*/ u8 specialSaveWarpFlags;

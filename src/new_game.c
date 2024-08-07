@@ -154,7 +154,7 @@ void NewGameInitData(void)
 
     gDifferentSaveFile = TRUE;
     gSaveBlock2Ptr->saveVersion = SAVE_VERSION;
-    gSaveBlock2Ptr->uniqueID = 0xFFFFFFFF;
+    gSaveBlock2Ptr->PID = 0xFFFFFFFF;
     gSaveBlock2Ptr->encryptionKey = 0;
     ZeroPlayerPartyMons();
     ZeroEnemyPartyMons();

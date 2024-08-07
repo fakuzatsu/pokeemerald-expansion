@@ -230,6 +230,7 @@ u8 MAAPI_ErrorCheck(
 
 
 bool8 maConnected(void);
+int maExample(void);
 int maInitLibrary(void);
 int maDisconnect(void);
 void maKill(void);

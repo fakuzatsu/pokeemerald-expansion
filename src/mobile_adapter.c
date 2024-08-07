@@ -175,7 +175,7 @@ int maExample(void){
     int tracker=0;  //Keep track of No of bytes copied to pRecvData
     char pUserID[32];  //User ID from the MA EEPROM, has max lenght of 32
     char pPassword[16];    //User passwoord from the MA EEPROM, has max lenght of 16
-    char maMailID[30]; //User mail ID from the MA EEPROM
+    char maMailID[30]; //User mail ID from the MA EEPROM, max length of 30
     int i = 0;
 
     MA_TELDATA maTel;   //MA Telephone struct

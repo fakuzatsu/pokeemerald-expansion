@@ -2009,3 +2009,5 @@ const u8 gText_Sync[] = _("Sync Data");
 const u8 gText_GameSync[] = _("Game Sync");
 const u8 gText_UploadSecretBase[] = _("Upload Secret Base");
 const u8 gText_UploadRecordedBattle[] = _("Upload Recorded Battle");
+ALIGNED(4) const u8 gText_InternetOptions[] = _("Internet Options");
+ALIGNED(4) const u8 gText_CreateFriendCode[] = _("No Friend Code found.\nGo online and create one?");

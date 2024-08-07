@@ -3437,5 +3437,7 @@ extern const u8 gText_Sync[];
 extern const u8 gText_GameSync[];
 extern const u8 gText_UploadSecretBase[];
 extern const u8 gText_UploadRecordedBattle[];
+extern const u8 gText_InternetOptions[];
+extern const u8 gText_CreateFriendCode[];
 
 #endif // GUARD_STRINGS_H

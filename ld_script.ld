@@ -345,7 +345,7 @@ SECTIONS {
         src/international_string_util.o(.text);
         src/soar.o(.text);
 		src/dexnav.o(.text);
-        src/global_trade_station.o(.text)
+        src/global_trade_station.o(.text);
         src/pokemon_debug.o(.text);
         src/expansion_intro.o(.text);
     } > ROM =0
@@ -717,7 +717,8 @@ SECTIONS {
         src/m4a_tables.o(.rodata);
         data/sound_data.o(.rodata);
 		src/dexnav.o(.rodata);
-        src/global_trade_station.o(.rodata)
+        src/global_trade_station.o(.rodata);
+        src/internet_options_menu.o(.rodata);
         src/pokemon_debug.o(.rodata);
         src/expansion_intro.o(.rodata);
     } > ROM =0
